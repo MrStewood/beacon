@@ -3,298 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beacon — Community Resource Directory</title>
+    <title>Beacon — Find Help Near You</title>
     <meta name="description" content="Find food, shelter, healthcare, recovery, and crisis support in Kentucky. Free community resource directory.">
     <meta property="og:title" content="Beacon — Community Resource Directory">
     <meta property="og:description" content="Find food, shelter, healthcare, recovery, and crisis support in Kentucky.">
     <meta property="og:image" content="https://mrstewood.github.io/beacon/assets/img/social-preview.svg">
-    <meta property="og:url" content="https://mrstewood.github.io/beacon/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        :root{--primary:#1d4ed8;--primary-light:#dbeafe;--bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--green:#16a34a;--yellow:#ca8a04;--red:#dc2626;--radius:10px}
-        *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
-        .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
-        header{background:linear-gradient(135deg,#0f172a,#1e40af);color:#fff;padding:2rem 0 1.5rem;text-align:center}
-        header h1{font-size:2rem;font-weight:700;letter-spacing:-.5px}
-        header p{opacity:.85;margin-top:.25rem;font-size:1rem}
-        .stats{display:flex;justify-content:center;gap:2rem;margin-top:1rem;flex-wrap:wrap}
-        .stat-num{font-size:1.5rem;font-weight:700}
-        .stat-lbl{font-size:.75rem;opacity:.75;text-transform:uppercase;letter-spacing:.5px}
-        .emergency-banner{background:#dc2626;color:#fff;padding:.5rem 0;text-align:center;font-size:.85rem}
-        .emergency-banner strong{margin-right:.4rem}
-        .emergency-banner a{color:#fff;font-weight:600;text-decoration:underline;margin:0 .4rem}
-        .search-wrap{background:var(--card);border-bottom:1px solid var(--border);padding:.75rem 0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-        .search-row{display:flex;gap:.5rem;flex-wrap:wrap}
-        .search-input{flex:1;min-width:200px;padding:.6rem .9rem;font-size:.95rem;border:2px solid var(--border);border-radius:var(--radius);outline:none}
-        .search-input:focus{border-color:var(--primary)}
-        select{padding:.6rem .8rem;font-size:.9rem;border:2px solid var(--border);border-radius:var(--radius);background:#fff;min-width:130px}
-        .filter-row{display:flex;gap:.5rem;flex-wrap:wrap;padding:.5rem 0;align-items:center}
-        .filter-label{font-size:.8rem;color:var(--muted);font-weight:500}
-        .need-chips{display:flex;flex-wrap:wrap;gap:.35rem;padding:.5rem 0}
-        .chip{padding:.3rem .7rem;border-radius:9999px;font-size:.75rem;font-weight:500;cursor:pointer;border:2px solid var(--border);background:#fff;color:var(--muted);transition:all .15s;user-select:none}
-        .chip:hover{border-color:var(--primary);color:var(--primary)}
-        .chip.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-        .clear-btn{padding:.3rem .7rem;border-radius:9999px;font-size:.75rem;font-weight:500;cursor:pointer;border:2px solid var(--red);background:#fff;color:var(--red);transition:all .15s}
-        .clear-btn:hover{background:var(--red);color:#fff}
-        .toolbar{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;flex-wrap:wrap;gap:.5rem}
-        .info{color:var(--muted);font-size:.85rem}
-        .sort-select{padding:.4rem .6rem;font-size:.85rem;border:1px solid var(--border);border-radius:6px;background:#fff}
-        .view-toggle{display:flex;gap:2px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
-        .view-btn{padding:.3rem .6rem;font-size:.8rem;cursor:pointer;border:none;background:#fff;color:var(--muted)}
-        .view-btn.active{background:var(--primary);color:#fff}
-        .grid{display:grid;gap:.6rem;padding-bottom:2rem}
-        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;transition:box-shadow .15s}
-        .card:hover{box-shadow:0 3px 10px rgba(0,0,0,.08)}
-        .card-name{font-size:1rem;font-weight:600;color:var(--primary);margin-bottom:.3rem}
-        .card-meta{display:flex;flex-wrap:wrap;gap:.5rem;font-size:.82rem;color:var(--muted);margin-bottom:.4rem}
-        .card-meta span{white-space:nowrap}
-        .card-desc{font-size:.85rem;margin-bottom:.4rem}
-        .tags{display:flex;flex-wrap:wrap;gap:.3rem}
-        .tag{padding:.12rem .5rem;border-radius:9999px;font-size:.7rem;font-weight:500}
-        .tag-need{background:#dbeafe;color:#1e40af}
-        .tag-pop{background:#dcfce7;color:#166534}
-        .tag-svc{background:#fef3c7;color:#92400e}
-        .tag-status{background:#f0fdf4;color:#166534}
-        .tag-status.verify{background:#fef9c3;color:#854d0e}
-        .tag-status.closed{background:#fee2e2;color:#991b1b}
-        .card-actions{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
-        .action-btn{padding:.35rem .7rem;border-radius:6px;font-size:.78rem;font-weight:500;text-decoration:none;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;transition:all .15s}
-        .action-btn:hover{border-color:var(--primary);color:var(--primary)}
-        .action-btn.call{background:var(--green);color:#fff;border-color:var(--green)}
-        .action-btn.call:hover{background:#15803d}
-        .card-details{margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--border);font-size:.82rem;color:var(--muted)}
-        .card-details dt{font-weight:600;color:var(--text);margin-top:.25rem}
-        .card-details dd{margin-left:0;margin-bottom:.1rem}
-        a.phone{color:var(--green);text-decoration:none;font-weight:500}
-        a.phone:hover{text-decoration:underline}
-        a.site{color:var(--primary);text-decoration:none}
-        a.site:hover{text-decoration:underline}
-        .pagination{display:flex;justify-content:center;gap:.5rem;padding:1rem 0}
-        .page-btn{padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:.85rem}
-        .page-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-        .page-btn:disabled{opacity:.5;cursor:not-allowed}
-        .zero-results{text-align:center;padding:2rem;color:var(--muted)}
-        .zero-results h3{color:var(--text);margin-bottom:.5rem}
-        .zero-results a{color:var(--primary);font-weight:500}
-        .dl-section{background:var(--card);border-top:1px solid var(--border);padding:1rem 0;text-align:center}
-        .dl-btns{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem}
-        .dl-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.5rem 1rem;border-radius:var(--radius);font-weight:500;text-decoration:none;font-size:.85rem}
-        .dl-btn.pri{background:var(--primary);color:#fff}
-        .dl-btn.pri:hover{background:#1e3a8a}
-        .dl-btn.sec{background:#fff;color:var(--primary);border:2px solid var(--primary)}
-        .dl-btn.sec:hover{background:var(--primary-light)}
-        footer{background:#0f172a;color:#94a3b8;padding:1.25rem 0;text-align:center;font-size:.8rem}
-        footer a{color:#93c5fd;text-decoration:none}
-        footer a:hover{text-decoration:underline}
-        @media print{.search-wrap,.dl-section,.emergency-banner,header,footer,.need-chips,.toolbar{display:none}.card{break-inside:avoid}}
-        @media(max-width:640px){header h1{font-size:1.5rem}.stats{gap:1rem}.search-row{flex-direction:column}select{width:100%}.filter-row{flex-direction:column;align-items:stretch}select{min-width:100%}}
-    </style>
+    <link rel="stylesheet" href="/beacon/assets/css/beacon.css">
 </head>
 <body>
-<header><div class="wrap"><h1>Beacon</h1><p>Community Resource Directory</p><div class="stats"><div><div class="stat-num" id="stat-total">—</div><div class="stat-lbl">Resources</div></div><div><div class="stat-num" id="stat-counties">—</div><div class="stat-lbl">Counties</div></div><div><div class="stat-num" id="stat-needs">—</div><div class="stat-lbl">Categories</div></div></div></div></header>
-<div class="emergency-banner" role="alert"><div class="wrap"><strong>In immediate danger?</strong><a href="tel:911">Call 911</a> emergencies · <a href="tel:988">Call 988</a> crisis · <a href="tel:211">Call 211</a> resources</div></div>
-<div class="search-wrap"><div class="wrap">
-    <div class="search-row">
-        <input type="text" class="search-input" id="q" placeholder="What do you need? (food, shelter, healthcare…)" autocomplete="off">
-        <select id="county"><option value="">All Counties</option></select>
-        <select id="pop"><option value="">All People</option></select>
-        <select id="svc"><option value="">All Services</option></select>
+    <a href="#results" class="skip-link">Skip to results</a>
+
+    <!-- Emergency Banner -->
+    <div class="emergency" role="alert" aria-label="Emergency contacts">
+        <div class="emergency-grid wrap">
+            <a href="tel:911" class="emergency-item danger">
+                <span aria-hidden="true">🚨</span>
+                <span>Immediate danger — Call <strong>911</strong></span>
+            </a>
+            <a href="tel:988" class="emergency-item warning">
+                <span aria-hidden="true">💬</span>
+                <span>Crisis support — Call or text <strong>988</strong></span>
+            </a>
+            <a href="tel:211" class="emergency-item info">
+                <span aria-hidden="true">📞</span>
+                <span>Find services — Call <strong>211</strong></span>
+            </a>
+        </div>
     </div>
-    <div class="filter-row">
-        <span class="filter-label">I need:</span>
-        <select id="cost" style="min-width:120px"><option value="">Any Cost</option><option value="free">Free</option><option value="sliding-scale">Sliding Scale</option><option value="insurance">Insurance OK</option></select>
-        <select id="lang" style="min-width:120px"><option value="">Any Language</option><option value="English">English</option><option value="Spanish">Spanish</option></select>
-        <select id="verified" style="min-width:130px"><option value="">Any Status</option><option value="high">Confirmed</option><option value="medium">Inferred</option><option value="low">Unverified</option></select>
-        <label style="font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;opacity:.5;cursor:not-allowed" title="Referral data not yet available"><input type="checkbox" id="referral" disabled> No Referral (coming soon)</label>
-    </div>
-    <div class="need-chips" id="chips"><button class="clear-btn" id="clear-filters" style="display:none" onclick="clearAllFilters()">Clear all</button></div>
-</div></div>
-<div class="wrap">
-    <div class="toolbar"><div class="info" id="info"></div><div style="display:flex;gap:.5rem;align-items:center"><select class="sort-select" id="sort"><option value="relevance">Relevance</option><option value="alpha">A → Z</option><option value="county">By County</option></select><div class="view-toggle"><button class="view-btn active" data-view="detailed" onclick="setView('detailed')">Detailed</button><button class="view-btn" data-view="compact" onclick="setView('compact')">Compact</button></div></div></div>
-    <div class="grid" id="results"><div class="no-results">Loading…</div></div>
-    <div class="pagination" id="pagination"></div>
-</div>
-<div class="dl-section"><div class="wrap"><strong>Download Data</strong><div class="dl-btns"><a href="/beacon/data/resources.csv" class="dl-btn pri" download>CSV</a><a href="/beacon/data/resources.json" class="dl-btn sec" download>JSON</a><a href="/beacon/print/all.html" class="dl-btn sec" target="_blank" rel="noopener noreferrer">Print</a></div></div></div>
-<footer><div class="wrap"><p>Data from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries</a> · <span id="updated">—</span> · <a href="https://github.com/MrStewood/beacon">GitHub</a> · <a href="https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md">Suggest a Resource</a></p></div></footer>
-<script src="/beacon/assets/js/config.js"></script>
-<script>
-const NL=BEACON_CONFIG.needs,PL=BEACON_CONFIG.populations,SL=BEACON_CONFIG.serviceTypes;
-let ALL=[],activeNeeds=new Set(),currentPage=1,pageSize=25,currentView='detailed',lastResults=[];
 
-// Controlled stop words - only remove conversational filler
-const STOP_WORDS=new Set(['i','me','my','we','our','you','your','a','an','the','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','need','to','of','in','for','on','with','at','by','from','as','into','through','during','before','after','above','below','between','out','off','over','under','again','further','then','once','please','thanks','thank','help','looking','find','want','near']);
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Main navigation">
+        <a href="/beacon/" class="nav-brand">Beacon</a>
+        <a href="/beacon/" aria-current="page">Find Help</a>
+        <a href="/beacon/organizations.html">For Organizations</a>
+        <a href="https://github.com/MrStewood/beacon" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
 
-// Phrase-to-category mapping
-const PHRASE_MAP={
-    'food tonight':'food','tonight food':'food','hungry':'food','hungry tonight':'food',
-    'meal':'food','eat':'food','dinner':'food','lunch':'food','pantry':'food','snack':'food',
-    'place to sleep':'shelter','bed tonight':'shelter','sleep tonight':'shelter','sleep outside':'shelter','warm bed':'shelter',
-    'somewhere to stay':'shelter','night shelter':'shelter','warming':'shelter',
-    'detox':'addiction','rehab':'addiction','sober living':'addiction','recovery house':'addiction',
-    'substance abuse':'addiction','drug treatment':'addiction','alcohol treatment':'addiction',
-    'therapy':'mental-health','counseling':'mental-health','depression':'mental-health',
-    'anxiety':'mental-health','mental health':'mental-health','psychiatric':'mental-health',
-    'electric bill':'utility','power bill':'utility','utility bill':'utility','electricity':'utility',
-    'heat bill':'utility','gas bill':'utility','pay bill':'utility',
-    'lawyer':'legal','attorney':'legal','legal help':'legal','legal aid':'legal','court':'legal',
-    'bus':'transportation','ride':'transportation','transit':'transportation',
-    'clothes':'clothing','coat':'clothing','jacket':'clothing','blanket':'clothing',
-    'job':'jobs','employment':'jobs','work':'jobs','hire':'jobs','career':'jobs',
-    'child':'family','kid':'family','youth':'family','baby':'family','foster':'family',
-    'veteran':'veterans','military':'veterans',
-    'domestic violence':'crisis','abuse':'crisis','suicide':'crisis','crisis':'crisis'
-};
+    <!-- Search Section -->
+    <section class="section" style="background: var(--color-surface); border-bottom: 1px solid var(--color-divider);">
+        <div class="wrap">
+            <h2 style="text-align: center; margin-bottom: var(--space-2);">What kind of help do you need?</h2>
+            <p style="text-align: center; color: var(--color-text-muted); margin-bottom: var(--space-6);">Search for food, shelter, healthcare, recovery services, and more.</p>
 
-// Word-to-category mapping
-const WORD_MAP={
-    'hungry':'food','food':'food','meal':'food','eat':'food','pantry':'food',
-    'sleep':'shelter','shelter':'shelter','bed':'shelter','warm':'shelter','night':'shelter',
-    'detox':'addiction','rehab':'addiction','sober':'addiction','recovery':'addiction','substance':'addiction',
-    'therapy':'mental-health','counseling':'mental-health','counsel':'mental-health',
-    'depression':'mental-health','anxiety':'mental-health',
-    'electric':'utility','power':'utility','utility':'utility','bill':'utility',
-    'lawyer':'legal','attorney':'legal','legal':'legal','court':'legal',
-    'clothes':'clothing','coat':'clothing','jacket':'clothing','blanket':'clothing',
-    'job':'jobs','employment':'jobs','work':'jobs','hire':'jobs',
-    'child':'family','kid':'family','youth':'family','baby':'family',
-    'veteran':'veterans','military':'veterans',
-    'crisis':'crisis','hotline':'crisis','emergency':'crisis','suicide':'crisis'
-};
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div class="field">
+                    <label for="search-input" class="sr-only">Search resources</label>
+                    <input type="text" id="search-input" class="input" placeholder="Search by name, service, or location..." autocomplete="off" style="font-size: 16px; padding: 12px 16px;">
+                </div>
 
-function tokenize(q){
-    return q.toLowerCase().split(/\s+/).filter(w=>w.length>0&&!STOP_WORDS.has(w));
-}
+                <div class="field">
+                    <label for="county-select" class="sr-only">Select county</label>
+                    <select id="county-select" class="input">
+                        <option value="">All Counties</option>
+                    </select>
+                </div>
 
-function expandTokens(tokens){
-    let needs=new Set();
-    let extraWords=[];
-    // Check for multi-word phrases first
-    const joined=tokens.join(' ');
-    for(const[phrase,categ]of Object.entries(PHRASE_MAP)){
-        if(joined.includes(phrase)){needs.add(categ);}}
-    // Map individual words
-    for(const t of tokens){
-        if(WORD_MAP[t])needs.add(WORD_MAP[t]);
-        else extraWords.push(t);
-    }
-    return{needs:[...needs],words:extraWords};
-}
+                <button class="btn btn-primary btn-block" onclick="search()" type="button">Search</button>
+            </div>
 
-function fuzzyWord(q,word){
-    if(word.includes(q))return true;
-    if(q.length<3||word.length<3)return false;
-    let i=0;for(const c of word){if(c===q[i])i++;}return i>=Math.ceil(q.length*.75);
-}
+            <!-- Need Chips -->
+            <div class="chip-group" style="justify-content: center; margin-top: var(--space-4);" role="group" aria-label="Quick filters">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
 
-function scoreResource(r,queryTokens,queryNeeds,queryWords){
-    let score=0;
-    const name=(r.name||'').toLowerCase();
-    const desc=(r.description||'').toLowerCase();
-    const county=(r.county||'').toLowerCase();
-    const needs=r.needs||[];
-    const phones=(r.phones||[]).join(' ');
-    const allText=`${name} ${desc} ${r.address||''} ${county} ${phones} ${(r.eligibility||'')} ${(r.notes||'')}`.toLowerCase();
+    <!-- Results -->
+    <section class="section" id="results" aria-label="Search results">
+        <div class="wrap">
+            <div class="results-header">
+                <span class="results-count" id="results-count" aria-live="polite">Loading resources...</span>
+                <div style="display: flex; gap: var(--space-2); align-items: center;">
+                    <label for="sort-select" class="sr-only">Sort by</label>
+                    <select id="sort-select" class="input" style="width: auto; min-width: 120px;">
+                        <option value="relevance">Relevance</option>
+                        <option value="alpha">A → Z</option>
+                        <option value="county">By County</option>
+                    </select>
+                </div>
+            </div>
 
-    // Exact name match (highest priority)
-    if(queryTokens.every(t=>name.includes(t)))score+=100;
+            <div id="results-grid" style="display: grid; gap: var(--space-3);">
+                <div class="card" style="text-align: center; color: var(--color-text-muted);">Loading...</div>
+            </div>
 
-    // Need category match
-    for(const n of queryNeeds){if(needs.includes(n))score+=50;}
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </section>
 
-    // Word match in name
-    for(const w of queryWords){if(name.includes(w))score+=30;}
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="wrap">
+            <p>Beacon Community Resource Directory</p>
+            <p style="margin-top: var(--space-2);">Data from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries</a> · <a href="https://github.com/MrStewood/beacon">Source Code</a> · <a href="https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md">Suggest a Resource</a></p>
+        </div>
+    </footer>
 
-    // Word match in needs
-    for(const w of queryWords){
-        for(const n of needs){
-            if((NL[n]||n).toLowerCase().includes(w))score+=25;
-        }
+    <script src="/beacon/assets/js/config.js"></script>
+    <script>
+    const NL=BEACON_CONFIG.needs,PL=BEACON_CONFIG.populations,SL=BEACON_CONFIG.serviceTypes;
+    let ALL=[],currentPage=1,pageSize=25,lastResults=[];
+
+    const STOP_WORDS=new Set(['i','me','my','we','our','you','your','a','an','the','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','need','to','of','in','for','on','with','at','by','from','as','into','through','during','before','after','above','below','between','out','off','over','under','again','further','then','once','please','thanks','thank','help','looking','find','want','near']);
+    const PHRASE_MAP={'food tonight':'food','hungry':'food','meal':'food','place to sleep':'shelter','bed tonight':'shelter','detox':'addiction','rehab':'addiction','sober living':'addiction','therapy':'mental-health','counseling':'mental-health','electric bill':'utility-assistance','power bill':'utility-assistance','lawyer':'legal','attorney':'legal','crisis':'crisis','hotline':'crisis','emergency':'crisis','suicide':'crisis'};
+    const WORD_MAP={'hungry':'food','food':'food','meal':'food','shelter':'shelter','bed':'shelter','sleep':'shelter','detox':'addiction','rehab':'addiction','sober':'addiction','recovery':'addiction','therapy':'mental-health','counseling':'mental-health','electric':'utility-assistance','power':'utility-assistance','utility':'utility-assistance','lawyer':'legal','attorney':'legal','legal':'legal','job':'jobs','employment':'jobs','work':'jobs','crisis':'crisis','hotline':'crisis','emergency':'crisis','suicide':'crisis'};
+
+    function tokenize(q){return q.toLowerCase().split(/\s+/).filter(w=>w.length>0&&!STOP_WORDS.has(w))}
+    function expandTokens(tokens){let needs=new Set(),words=[];const joined=tokens.join(' ');for(const[phrase,categ]of Object.entries(PHRASE_MAP)){if(joined.includes(phrase))needs.add(categ)}for(const t of tokens){if(WORD_MAP[t])needs.add(WORD_MAP[t]);else words.push(t)}return{needs:[...needs],words}}
+    function fuzzyWord(q,word){if(word.includes(q))return true;if(q.length<3||word.length<3)return false;let i=0;for(const c of word){if(c===q[i])i++}return i>=Math.ceil(q.length*.75)}
+    function scoreResource(r,tokens,needs,words){let score=0;const name=(r.name||'').toLowerCase(),desc=(r.description||'').toLowerCase(),rneeds=r.needs||[],phones=(r.phones||[]).join(' ');if(tokens.every(t=>name.includes(t)))score+=100;for(const n of needs){if(rneeds.includes(n))score+=50}for(const w of words){if(name.includes(w))score+=30}for(const w of words){if(desc.includes(w))score+=10}return score}
+    function searchWithQuery(q){const tokens=tokenize(q);if(!tokens.length)return ALL.slice();const{needs,words}=expandTokens(tokens);return ALL.map(r=>({r,score:scoreResource(r,tokens,needs,words)})).filter(s=>s.score>0).sort((a,b)=>b.score-a.score).map(s=>s.r)}
+
+    async function init(){
+        const r=await fetch('/beacon/data/resources.json');const d=await r.json();ALL=d.resources;
+        const counties=[...new Set(ALL.map(r=>r.county).filter(c=>c!=='Statewide'))].sort();
+        const cs=document.getElementById('county-select');
+        counties.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c+' County';cs.appendChild(o)});
+
+        // Build need chips
+        const chipGroup=document.querySelector('.chip-group');
+        d.metadata.needs.forEach(n=>{
+            const btn=document.createElement('button');
+            btn.className='chip';
+            btn.setAttribute('aria-pressed','false');
+            btn.textContent=NL[n]||n;
+            btn.onclick=()=>{const pressed=btn.getAttribute('aria-pressed')==='true';btn.setAttribute('aria-pressed',!pressed);search()};
+            btn.dataset.need=n;
+            chipGroup.appendChild(btn);
+        });
+
+        search();
     }
 
-    // Word match in description
-    for(const w of queryWords){if(desc.includes(w))score+=10;}
-
-    // Fuzzy match on name words
-    const nameWords=name.split(/\s+/);
-    for(const w of queryWords){
-        for(const nw of nameWords){
-            if(fuzzyWord(w,nw))score+=5;
-        }
+    function search(){
+        const q=document.getElementById('search-input').value.trim();
+        const county=document.getElementById('county-select').value;
+        const activeNeeds=[...document.querySelectorAll('.chip[aria-pressed="true"]')].map(c=>c.dataset.need);
+        let r=ALL;
+        if(county)r=r.filter(x=>x.county===county);
+        if(activeNeeds.length)r=r.filter(x=>x.needs.some(n=>activeNeeds.includes(n)));
+        if(q)r=searchWithQuery(q).filter(x=>r.includes(x));
+        const sort=document.getElementById('sort-select').value;
+        if(sort==='alpha')r.sort((a,b)=>a.name.localeCompare(b.name));
+        else if(sort==='county')r.sort((a,b)=>a.county.localeCompare(b.county)||a.name.localeCompare(b.name));
+        currentPage=1;lastResults=r;render(r);
     }
 
-    // County exact match bonus
-    if(queryTokens.some(t=>county===t))score+=20;
-
-    // Phone number match
-    if(queryTokens.some(t=>phones.includes(t)))score+=40;
-
-    return score;
-}
-
-function searchWithQuery(q){
-    const tokens=tokenize(q);
-    if(tokens.length===0)return ALL.slice();
-    const{needs:queryNeeds,words:queryWords}=expandTokens(tokens);
-    let scored=ALL.map(r=>({r,score:scoreResource(r,tokens,queryNeeds,queryWords)}));
-    scored=scored.filter(s=>s.score>0);
-    scored.sort((a,b)=>b.score-a.score);
-    return scored.map(s=>s.r);
-}
-
-async function init(){
-    const r=await fetch('data/resources.json');const d=await r.json();ALL=d.resources;
-    document.getElementById('stat-total').textContent=ALL.length;
-    document.getElementById('stat-counties').textContent=d.metadata.regions.KY.filter(c=>c!=='Statewide').length;
-    document.getElementById('stat-needs').textContent=d.metadata.needs.length;
-    document.getElementById('updated').textContent=d.metadata.last_updated;
-    const cs=document.getElementById('county');
-    d.metadata.regions.KY.filter(c=>c!=='Statewide').sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c+' County';cs.appendChild(o)});
-    const ps=document.getElementById('pop');d.metadata.populations.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=PL[p]||p;ps.appendChild(o)});
-    const ss=document.getElementById('svc');d.metadata.service_types.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=SL[s]||s;ss.appendChild(o)});
-    const chips=document.getElementById('chips'),cb=document.getElementById('clear-filters');
-    d.metadata.needs.forEach(n=>{const c=document.createElement('span');c.className='chip';c.dataset.need=n;c.textContent=NL[n]||n;c.onclick=()=>toggleNeed(n,c);chips.insertBefore(c,cb)});
-    loadFromURL();search();
-}
-
-function toggleNeed(n,el){if(activeNeeds.has(n)){activeNeeds.delete(n);el.classList.remove('active')}else{activeNeeds.add(n);el.classList.add('active')}updateURL();search()}
-function setView(v){currentView=v;document.querySelectorAll('.view-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render(lastResults)}
-
-function updateURL(){const p=new URLSearchParams();const q=document.getElementById('q').value.trim();const co=document.getElementById('county').value;const po=document.getElementById('pop').value;const sv=document.getElementById('svc').value;const co2=document.getElementById('cost').value;const la=document.getElementById('lang').value;const ve=document.getElementById('verified').value;const re=document.getElementById('referral').checked;
-if(q)p.set('q',q);if(co)p.set('county',co);if(po)p.set('pop',po);if(sv)p.set('svc',sv);if(co2)p.set('cost',co2);if(la)p.set('lang',la);if(ve)p.set('verified',ve);if(re)p.set('referral','1');
-history.replaceState(null,'',p.toString()?`${location.pathname}?${p}`:location.pathname);
-document.getElementById('clear-filters').style.display=(q||co||po||sv||co2||la||ve||re||activeNeeds.size)?'inline-block':'none'}
-
-function clearAllFilters(){document.getElementById('q').value='';document.getElementById('county').value='';document.getElementById('pop').value='';document.getElementById('svc').value='';document.getElementById('cost').value='';document.getElementById('lang').value='';document.getElementById('verified').value='';document.getElementById('referral').checked=false;activeNeeds.clear();document.querySelectorAll('.chip.active').forEach(c=>c.classList.remove('active'));updateURL();search()}
-
-function loadFromURL(){const p=new URLSearchParams(location.search);
-if(p.get('q'))document.getElementById('q').value=p.get('q');if(p.get('county'))document.getElementById('county').value=p.get('county');if(p.get('pop'))document.getElementById('pop').value=p.get('pop');if(p.get('svc'))document.getElementById('svc').value=p.get('svc');if(p.get('cost'))document.getElementById('cost').value=p.get('cost');if(p.get('lang'))document.getElementById('lang').value=p.get('lang');if(p.get('verified'))document.getElementById('verified').value=p.get('verified');if(p.get('referral')==='1')document.getElementById('referral').checked=true;
-if(p.get('needs'))p.get('needs').split(',').forEach(n=>{activeNeeds.add(n);const c=document.querySelector(`[data-need="${n}"]`);if(c)c.classList.add('active')})}
-
-function search(){const q=document.getElementById('q').value.trim();const county=document.getElementById('county').value;const pop=document.getElementById('pop').value;const svc=document.getElementById('svc').value;const cost=document.getElementById('cost').value;const lang=document.getElementById('lang').value;const verified=document.getElementById('verified').value;const noRef=document.getElementById('referral').checked;
-let r=ALL;
-if(county)r=r.filter(x=>x.county===county);if(pop)r=r.filter(x=>x.populations.includes(pop));if(svc)r=r.filter(x=>x.service_types.includes(svc));if(cost)r=r.filter(x=>x.cost===cost);if(lang)r=r.filter(x=>(x.languages||[]).includes(lang));if(verified)r=r.filter(x=>x.confidence===verified);if(noRef)r=r.filter(x=>x.referral_required===false);
-if(activeNeeds.size)r=r.filter(x=>x.needs.some(n=>activeNeeds.has(n)));
-if(q){r=searchWithQuery(q).filter(x=>r.includes(x))}
-const sort=document.getElementById('sort').value;
-if(sort==='alpha')r.sort((a,b)=>a.name.localeCompare(b.name));else if(sort==='county')r.sort((a,b)=>a.county.localeCompare(b.county)||a.name.localeCompare(b.name));
-else{r.sort((a,b)=>{const sa=a.confidence==='high'?0:a.confidence==='medium'?1:2;const sb=b.confidence==='high'?0:b.confidence==='medium'?1:2;return sa-sb||a.name.localeCompare(b.name)})}
-currentPage=1;updateURL();lastResults=r;render(r)}
-
-function render(list){const g=document.getElementById('results'),info=document.getElementById('info'),pg=document.getElementById('pagination');
-if(!list.length){g.innerHTML=`<div class="zero-results"><h3>No resources found</h3><p>Try different filters or search terms.</p><p style="margin-top:1rem"><strong>Need immediate help?</strong><br><a href="tel:988">Call 988</a> for crisis support · <a href="tel:211">Call 211</a> for local resources</p></div>`;info.textContent='0 results';pg.innerHTML='';return}
-const total=list.length;const pages=Math.ceil(total/pageSize);const start=(currentPage-1)*pageSize;const page=list.slice(start,start+pageSize);
-info.textContent=`Showing ${start+1}–${Math.min(start+pageSize,total)} of ${total} resources`;
-g.innerHTML=page.map(r=>{
-    if(currentView==='compact')return`<div class="card" style="padding:.75rem"><div style="display:flex;justify-content:space-between;align-items:start;gap:1rem"><div><div class="card-name" style="font-size:.95rem">${h(r.name)}</div><div class="card-meta"><span>${h(r.address||r.county)}</span>${r.phones.length?`<a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a>`:''}</div></div><div class="tags">${r.needs.slice(0,2).map(n=>`<span class="tag tag-need">${NL[n]||n}</span>`).join('')}</div></div></div>`;
-    return`<div class="card"><div class="card-name">${h(r.name)}</div><div class="card-meta">${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" rel="noopener noreferrer" style="font-size:.72rem">Map</a>`:''}</span>`:''}${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}${r.languages&&r.languages.length>1?`<span>🗣 ${r.languages.join(', ')}</span>`:''}</div>${r.description?`<div class="card-desc">${h(r.description)}</div>`:''}<div class="tags"><span class="tag tag-status ${r.status==='needs-verification'?'verify':r.status==='closed'?'closed':''}">${r.status==='active'?'Active':r.status==='needs-verification'?'Needs Review':'Closed'}</span>${r.referral_required===true?`<span class="tag" style="background:#fee2e2;color:#991b1b">Referral Required</span>`:''}${r.needs.map(n=>`<span class="tag tag-need">${NL[n]||n}</span>`).join('')}${r.populations.filter(p=>p!=='anyone').map(p=>`<span class="tag tag-pop">${PL[p]||p}</span>`).join('')}${r.service_types.map(s=>`<span class="tag tag-svc">${SL[s]||s}</span>`).join('')}</div><div class="card-actions">${r.phones.length?`<a href="tel:${r.phones[0]}" class="action-btn call">📞 Call</a>`:''}${r.url?`<a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="action-btn">🌐 Website</a>`:''}${r.map_url?`<a href="${r.map_url}" target="_blank" rel="noopener noreferrer" class="action-btn">🗺 Directions</a>`:''}<a href="https://github.com/MrStewood/beacon/issues/new?template=update-resource.md&title=Update:${encodeURIComponent(r.name)}" target="_blank" rel="noopener noreferrer" class="action-btn">✏️ Report</a></div>${(r.eligibility||r.intake_process||r.notes)?`<div class="card-details"><dl>${r.eligibility?`<dt>Eligibility</dt><dd>${h(r.eligibility)}</dd>`:''}${r.intake_process?`<dt>Intake</dt><dd>${h(r.intake_process)}</dd>`:''}${r.notes?`<dt>Notes</dt><dd>${h(r.notes)}</dd>`:''}</dl></div>`:''}</div>`}).join('');
-    if(pages<=1){pg.innerHTML=''}else{let b='';b+=`<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>← Prev</button>`;for(let i=1;i<=Math.min(pages,7);i++)b+=`<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;if(pages>7)b+=`<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>Next →</button>`;pg.innerHTML=b}}
-
-function goPage(p){currentPage=p;render(lastResults);document.getElementById('results').scrollIntoView({behavior:'smooth'})}
-function h(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
-document.getElementById('q').addEventListener('input',search);document.getElementById('county').addEventListener('change',search);document.getElementById('pop').addEventListener('change',search);document.getElementById('svc').addEventListener('change',search);document.getElementById('cost').addEventListener('change',search);document.getElementById('lang').addEventListener('change',search);document.getElementById('verified').addEventListener('change',search);document.getElementById('referral').addEventListener('change',search);document.getElementById('sort').addEventListener('change',search);
-init();
-</script>
+    function render(list){
+        const grid=document.getElementById('results-grid'),count=document.getElementById('results-count'),pg=document.getElementById('pagination');
+        if(!list.length){grid.innerHTML='<div class="card" style="text-align:center"><h3>No resources found</h3><p style="color:var(--color-text-muted)">Try different search terms or filters.</p><p style="margin-top:var(--space-3)"><strong>Need immediate help?</strong><br><a href="tel:988">Call 988</a> for crisis · <a href="tel:211">Call 211</a> for services</p></div>';count.textContent='0 results';pg.innerHTML='';return}
+        const total=list.length,pages=Math.ceil(total/pageSize),start=(currentPage-1)*pageSize,page=list.slice(start,start+pageSize);
+        count.textContent=`Showing ${start+1}–${Math.min(start+pageSize,total)} of ${total} resources`;
+        grid.innerHTML=page.map(r=>`<div class="card">
+            <div class="card-title"><a href="/beacon/pages/resource/${r.id}.html">${h(r.name)}</a></div>
+            <div class="card-meta">
+                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}</span>`:''}
+                ${r.phones.length?`<a href="tel:${r.phones[0]}" style="color:var(--color-success)">📞 ${h(r.phones[0])}</a>`:''}
+                ${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}
+            </div>
+            ${r.description?`<div class="card-body">${h(r.description.slice(0,150))}${r.description.length>150?'…':''}</div>`:''}
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-1)">
+                ${r.needs.slice(0,3).map(n=>`<span class="tag tag-accent">${NL[n]||n}</span>`).join('')}
+                ${r.needs.length>3?`<span class="tag">+${r.needs.length-3}</span>`:''}
+            </div>
+            <div class="card-actions">
+                ${r.phones.length?`<a href="tel:${r.phones[0]}" class="btn btn-success" style="font-size:13px">📞 Call</a>`:''}
+                ${r.url?`<a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size:13px">🌐 Website</a>`:''}
+                ${r.map_url?`<a href="${r.map_url}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size:13px">🗺 Directions</a>`:''}
+                <a href="/beacon/pages/resource/${r.id}.html" class="btn btn-ghost" style="font-size:13px">View Details →</a>
+            </div>
+        </div>`).join('');
+        if(pages<=1)pg.innerHTML='';else{let b='';b+=`<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''} aria-label="Previous page">←</button>`;for(let i=1;i<=Math.min(pages,7);i++)b+=`<button class="page-btn" onclick="goPage(${i})" ${i===currentPage?'aria-current="page"':''}>${i}</button>`;if(pages>7)b+=`<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''} aria-label="Next page">→</button>`;pg.innerHTML=b}}
+    function goPage(p){currentPage=p;render(lastResults);document.getElementById('results').scrollIntoView({behavior:'smooth'})}
+    function h(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+    document.getElementById('search-input').addEventListener('input',search);
+    document.getElementById('county-select').addEventListener('change',search);
+    document.getElementById('sort-select').addEventListener('change',search);
+    init();
+    </script>
 </body>
 </html>
