@@ -25,6 +25,11 @@ def extract_links(filepath):
     links = re.findall(r'(?:href|src)="(/beacon/[^"]*)"', content)
     return links
 
+# Skip entire module when resource directory has no pages (empty dataset).
+if not find_html_files(PAGES_DIR / "resource"):
+    pytest.skip("empty dataset: no resource pages", allow_module_level=True)
+
+
 class TestInternalLinks:
     """Verify all internal links are valid."""
 

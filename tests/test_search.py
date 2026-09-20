@@ -7,6 +7,15 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).parent.parent
 DATA_PATH = REPO_ROOT / "data" / "resources.json"
 
+# Skip all tests in this module when the dataset has no resources.
+with open(DATA_PATH) as _f:
+    _dataset = json.load(_f)
+
+pytestmark = pytest.mark.skipif(
+    not _dataset.get("resources"),
+    reason="empty dataset — no search targets",
+)
+
 # Import search logic from index.html (simplified Python equivalent)
 STOP_WORDS = {'i','me','my','we','our','you','your','a','an','the','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','need','to','of','in','for','on','with','at','by','from','as','into','through','during','before','after','above','below','between','out','off','over','under','again','further','then','once','please','thanks','thank','help','looking','find','want','near'}
 

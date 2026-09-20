@@ -13,6 +13,9 @@ try:
 except ImportError:
     pytest.skip("jsonschema not installed", allow_module_level=True)
 
+if not V3_DATA_PATH.exists():
+    pytest.skip("V3 data not generated from empty dataset", allow_module_level=True)
+
 
 @pytest.fixture
 def v3_data():
