@@ -4,307 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beacon — Community Resource Directory</title>
-    <meta name="description" content="Searchable directory of resources for people experiencing homelessness, hunger, and crisis. Find food, shelter, healthcare, recovery, and more.">
+    <meta name="description" content="Find food, shelter, healthcare, recovery, and crisis support in Kentucky. Free community resource directory.">
     <style>
-        :root {
-            --primary: #1d4ed8;
-            --primary-light: #dbeafe;
-            --bg: #f1f5f9;
-            --card: #ffffff;
-            --text: #0f172a;
-            --muted: #64748b;
-            --border: #e2e8f0;
-            --green: #16a34a;
-            --yellow: #ca8a04;
-            --red: #dc2626;
-            --radius: 10px;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
-        .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
-
-        /* Header */
-        header { background: linear-gradient(135deg, #0f172a, #1e40af); color: white; padding: 2.5rem 0 2rem; text-align: center; }
-        header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; }
-        header p { opacity: .85; margin-top: .3rem; font-size: 1.05rem; }
-        .stats { display: flex; justify-content: center; gap: 2.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
-        .stat-num { font-size: 1.8rem; font-weight: 700; }
-        .stat-lbl { font-size: .8rem; opacity: .75; text-transform: uppercase; letter-spacing: .5px; }
-
-        /* Search bar */
-        .search-wrap { background: var(--card); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-        .search-row { display: flex; gap: .75rem; flex-wrap: wrap; }
-        .search-input { flex: 1; min-width: 220px; padding: .7rem 1rem; font-size: 1rem; border: 2px solid var(--border); border-radius: var(--radius); outline: none; }
-        .search-input:focus { border-color: var(--primary); }
-        select { padding: .7rem 1rem; font-size: .95rem; border: 2px solid var(--border); border-radius: var(--radius); background: white; min-width: 140px; }
-
-        /* Need chips */
-        .need-chips { display: flex; flex-wrap: wrap; gap: .4rem; padding: .75rem 0; }
-        .chip { padding: .35rem .8rem; border-radius: 9999px; font-size: .8rem; font-weight: 500; cursor: pointer; border: 2px solid var(--border); background: white; color: var(--muted); transition: all .15s; user-select: none; }
-        .chip:hover { border-color: var(--primary); color: var(--primary); }
-        .chip.active { background: var(--primary); color: white; border-color: var(--primary); }
-        .clear-btn { padding: .35rem .8rem; border-radius: 9999px; font-size: .8rem; font-weight: 500; cursor: pointer; border: 2px solid #dc2626; background: white; color: #dc2626; transition: all .15s; }
-        .clear-btn:hover { background: #dc2626; color: white; }
-
-        /* Results */
-        .info { padding: .75rem 0; color: var(--muted); font-size: .85rem; }
-        .grid { display: grid; gap: .75rem; padding-bottom: 3rem; }
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: box-shadow .15s; }
-        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-        .card-name { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: .35rem; }
-        .card-meta { display: flex; flex-wrap: wrap; gap: .6rem; font-size: .85rem; color: var(--muted); margin-bottom: .5rem; }
-        .card-meta span { white-space: nowrap; }
-        .card-desc { font-size: .9rem; margin-bottom: .6rem; }
-        .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
-        .tag { padding: .15rem .55rem; border-radius: 9999px; font-size: .72rem; font-weight: 500; }
-        .tag-need { background: #dbeafe; color: #1e40af; }
-        .tag-pop { background: #dcfce7; color: #166534; }
-        .tag-svc { background: #fef3c7; color: #92400e; }
-        .tag-status { background: #f0fdf4; color: #166534; }
-        .tag-status.verify { background: #fef9c3; color: #854d0e; }
-        .tag-status.closed { background: #fee2e2; color: #991b1b; }
-        .card-details { margin-top: .6rem; padding-top: .6rem; border-top: 1px dashed var(--border); font-size: .85rem; color: var(--muted); }
-        .card-details dt { font-weight: 600; color: var(--text); margin-top: .3rem; }
-        .card-details dd { margin-left: 0; margin-bottom: .15rem; }
-        a.phone { color: var(--green); text-decoration: none; font-weight: 500; }
-        a.phone:hover { text-decoration: underline; }
-        a.site { color: var(--primary); text-decoration: none; }
-        a.site:hover { text-decoration: underline; }
-
-        /* Emergency Banner */
-        .emergency-banner { background: #dc2626; color: white; padding: .6rem 0; text-align: center; font-size: .9rem; }
-        .emergency-banner strong { margin-right: .5rem; }
-        .emergency-banner a { color: white; font-weight: 600; text-decoration: underline; margin: 0 .5rem; }
-        .emergency-banner a:hover { opacity: .9; }
-
-        /* Download */
-        .dl-section { background: var(--card); border-top: 1px solid var(--border); padding: 1.5rem 0; text-align: center; }
-        .dl-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-top: .75rem; }
-        .dl-btn { display: inline-flex; align-items: center; gap: .4rem; padding: .6rem 1.2rem; border-radius: var(--radius); font-weight: 500; text-decoration: none; font-size: .9rem; }
-        .dl-btn.pri { background: var(--primary); color: white; }
-        .dl-btn.pri:hover { background: #1e3a8a; }
-        .dl-btn.sec { background: white; color: var(--primary); border: 2px solid var(--primary); }
-        .dl-btn.sec:hover { background: var(--primary-light); }
-
-        footer { background: #0f172a; color: #94a3b8; padding: 1.5rem 0; text-align: center; font-size: .85rem; }
-        footer a { color: #93c5fd; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        .no-results { text-align: center; padding: 3rem; color: var(--muted); }
-
-        @media print { .search-wrap, .dl-section, header, footer, .need-chips { display: none; } .card { break-inside: avoid; } }
-        @media (max-width: 640px) { header h1 { font-size: 1.6rem; } .stats { gap: 1.5rem; } .search-row { flex-direction: column; } select { width: 100%; } }
+        :root{--primary:#1d4ed8;--primary-light:#dbeafe;--bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--green:#16a34a;--yellow:#ca8a04;--red:#dc2626;--radius:10px}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+        .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
+        header{background:linear-gradient(135deg,#0f172a,#1e40af);color:#fff;padding:2rem 0 1.5rem;text-align:center}
+        header h1{font-size:2rem;font-weight:700;letter-spacing:-.5px}
+        header p{opacity:.85;margin-top:.25rem;font-size:1rem}
+        .stats{display:flex;justify-content:center;gap:2rem;margin-top:1rem;flex-wrap:wrap}
+        .stat-num{font-size:1.5rem;font-weight:700}
+        .stat-lbl{font-size:.75rem;opacity:.75;text-transform:uppercase;letter-spacing:.5px}
+        .emergency-banner{background:#dc2626;color:#fff;padding:.5rem 0;text-align:center;font-size:.85rem}
+        .emergency-banner strong{margin-right:.4rem}
+        .emergency-banner a{color:#fff;font-weight:600;text-decoration:underline;margin:0 .4rem}
+        .search-wrap{background:var(--card);border-bottom:1px solid var(--border);padding:.75rem 0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+        .search-row{display:flex;gap:.5rem;flex-wrap:wrap}
+        .search-input{flex:1;min-width:200px;padding:.6rem .9rem;font-size:.95rem;border:2px solid var(--border);border-radius:var(--radius);outline:none}
+        .search-input:focus{border-color:var(--primary)}
+        select{padding:.6rem .8rem;font-size:.9rem;border:2px solid var(--border);border-radius:var(--radius);background:#fff;min-width:130px}
+        .filter-row{display:flex;gap:.5rem;flex-wrap:wrap;padding:.5rem 0;align-items:center}
+        .filter-label{font-size:.8rem;color:var(--muted);font-weight:500}
+        .need-chips{display:flex;flex-wrap:wrap;gap:.35rem;padding:.5rem 0}
+        .chip{padding:.3rem .7rem;border-radius:9999px;font-size:.75rem;font-weight:500;cursor:pointer;border:2px solid var(--border);background:#fff;color:var(--muted);transition:all .15s;user-select:none}
+        .chip:hover{border-color:var(--primary);color:var(--primary)}
+        .chip.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+        .clear-btn{padding:.3rem .7rem;border-radius:9999px;font-size:.75rem;font-weight:500;cursor:pointer;border:2px solid var(--red);background:#fff;color:var(--red);transition:all .15s}
+        .clear-btn:hover{background:var(--red);color:#fff}
+        .toolbar{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;flex-wrap:wrap;gap:.5rem}
+        .info{color:var(--muted);font-size:.85rem}
+        .sort-select{padding:.4rem .6rem;font-size:.85rem;border:1px solid var(--border);border-radius:6px;background:#fff}
+        .view-toggle{display:flex;gap:2px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+        .view-btn{padding:.3rem .6rem;font-size:.8rem;cursor:pointer;border:none;background:#fff;color:var(--muted)}
+        .view-btn.active{background:var(--primary);color:#fff}
+        .grid{display:grid;gap:.6rem;padding-bottom:2rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;transition:box-shadow .15s}
+        .card:hover{box-shadow:0 3px 10px rgba(0,0,0,.08)}
+        .card-name{font-size:1rem;font-weight:600;color:var(--primary);margin-bottom:.3rem}
+        .card-meta{display:flex;flex-wrap:wrap;gap:.5rem;font-size:.82rem;color:var(--muted);margin-bottom:.4rem}
+        .card-meta span{white-space:nowrap}
+        .card-desc{font-size:.85rem;margin-bottom:.4rem}
+        .tags{display:flex;flex-wrap:wrap;gap:.3rem}
+        .tag{padding:.12rem .5rem;border-radius:9999px;font-size:.7rem;font-weight:500}
+        .tag-need{background:#dbeafe;color:#1e40af}
+        .tag-pop{background:#dcfce7;color:#166534}
+        .tag-svc{background:#fef3c7;color:#92400e}
+        .tag-status{background:#f0fdf4;color:#166534}
+        .tag-status.verify{background:#fef9c3;color:#854d0e}
+        .tag-status.closed{background:#fee2e2;color:#991b1b}
+        .card-actions{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
+        .action-btn{padding:.35rem .7rem;border-radius:6px;font-size:.78rem;font-weight:500;text-decoration:none;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;transition:all .15s}
+        .action-btn:hover{border-color:var(--primary);color:var(--primary)}
+        .action-btn.call{background:var(--green);color:#fff;border-color:var(--green)}
+        .action-btn.call:hover{background:#15803d}
+        .card-details{margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--border);font-size:.82rem;color:var(--muted)}
+        .card-details dt{font-weight:600;color:var(--text);margin-top:.25rem}
+        .card-details dd{margin-left:0;margin-bottom:.1rem}
+        a.phone{color:var(--green);text-decoration:none;font-weight:500}
+        a.phone:hover{text-decoration:underline}
+        a.site{color:var(--primary);text-decoration:none}
+        a.site:hover{text-decoration:underline}
+        .pagination{display:flex;justify-content:center;gap:.5rem;padding:1rem 0}
+        .page-btn{padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:.85rem}
+        .page-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+        .page-btn:disabled{opacity:.5;cursor:not-allowed}
+        .zero-results{text-align:center;padding:2rem;color:var(--muted)}
+        .zero-results h3{color:var(--text);margin-bottom:.5rem}
+        .zero-results a{color:var(--primary);font-weight:500}
+        .dl-section{background:var(--card);border-top:1px solid var(--border);padding:1rem 0;text-align:center}
+        .dl-btns{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem}
+        .dl-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.5rem 1rem;border-radius:var(--radius);font-weight:500;text-decoration:none;font-size:.85rem}
+        .dl-btn.pri{background:var(--primary);color:#fff}
+        .dl-btn.pri:hover{background:#1e3a8a}
+        .dl-btn.sec{background:#fff;color:var(--primary);border:2px solid var(--primary)}
+        .dl-btn.sec:hover{background:var(--primary-light)}
+        footer{background:#0f172a;color:#94a3b8;padding:1.25rem 0;text-align:center;font-size:.8rem}
+        footer a{color:#93c5fd;text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        @media print{.search-wrap,.dl-section,.emergency-banner,header,footer,.need-chips,.toolbar{display:none}.card{break-inside:avoid}}
+        @media(max-width:640px){header h1{font-size:1.5rem}.stats{gap:1rem}.search-row{flex-direction:column}select{width:100%}.filter-row{flex-direction:column;align-items:stretch}select{min-width:100%}}
     </style>
 </head>
 <body>
-<header>
-    <div class="wrap">
-        <h1>Beacon</h1>
-        <p>Community Resource Directory</p>
-        <div class="stats">
-            <div><div class="stat-num" id="stat-total">—</div><div class="stat-lbl">Resources</div></div>
-            <div><div class="stat-num" id="stat-counties">—</div><div class="stat-lbl">Counties</div></div>
-            <div><div class="stat-num" id="stat-needs">—</div><div class="stat-lbl">Need Types</div></div>
-        </div>
+<header><div class="wrap"><h1>Beacon</h1><p>Community Resource Directory</p><div class="stats"><div><div class="stat-num" id="stat-total">—</div><div class="stat-lbl">Resources</div></div><div><div class="stat-num" id="stat-counties">—</div><div class="stat-lbl">Counties</div></div><div><div class="stat-num" id="stat-needs">—</div><div class="stat-lbl">Categories</div></div></div></div></header>
+<div class="emergency-banner" role="alert"><div class="wrap"><strong>In immediate danger?</strong><a href="tel:911">Call 911</a> emergencies · <a href="tel:988">Call 988</a> crisis · <a href="tel:211">Call 211</a> resources</div></div>
+<div class="search-wrap"><div class="wrap">
+    <div class="search-row">
+        <input type="text" class="search-input" id="q" placeholder="What do you need? (food, shelter, healthcare…)" autocomplete="off">
+        <select id="county"><option value="">All Counties</option></select>
+        <select id="pop"><option value="">All People</option></select>
+        <select id="svc"><option value="">All Services</option></select>
     </div>
-</header>
-
-<div class="emergency-banner" role="alert">
-    <div class="wrap">
-        <strong>In immediate danger?</strong>
-        <a href="tel:911">Call 911</a> for emergencies.
-        <a href="tel:988">Call 988</a> for crisis support.
-        <a href="tel:211">Call 211</a> for local resources.
+    <div class="filter-row">
+        <span class="filter-label">I need:</span>
+        <select id="cost" style="min-width:120px"><option value="">Any Cost</option><option value="free">Free</option><option value="sliding-scale">Sliding Scale</option><option value="insurance">Insurance OK</option></select>
+        <select id="lang" style="min-width:120px"><option value="">Any Language</option><option value="English">English</option><option value="Spanish">Spanish</option></select>
+        <select id="verified" style="min-width:130px"><option value="">Any Status</option><option value="high">Verified</option><option value="medium">Web Checked</option><option value="low">Unverified</option></select>
+        <label style="font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.3rem"><input type="checkbox" id="referral"> No Referral</label>
     </div>
-</div>
-
-<div class="search-wrap">
-    <div class="wrap">
-        <div class="search-row">
-            <input type="text" class="search-input" id="q" placeholder="Search — name, service, location, phone…" autocomplete="off">
-            <select id="county"><option value="">All Counties</option></select>
-            <select id="pop"><option value="">All Populations</option></select>
-            <select id="svc"><option value="">All Service Types</option></select>
-        </div>
-        <div class="need-chips" id="chips">
-            <button class="clear-btn" id="clear-filters" style="display:none" onclick="clearAllFilters()">Clear filters</button>
-        </div>
-    </div>
-</div>
-
+    <div class="need-chips" id="chips"><button class="clear-btn" id="clear-filters" style="display:none" onclick="clearAllFilters()">Clear all</button></div>
+</div></div>
 <div class="wrap">
-    <div class="info" id="info"></div>
+    <div class="toolbar"><div class="info" id="info"></div><div style="display:flex;gap:.5rem;align-items:center"><select class="sort-select" id="sort"><option value="relevance">Relevance</option><option value="alpha">A → Z</option><option value="county">By County</option></select><div class="view-toggle"><button class="view-btn active" data-view="detailed" onclick="setView('detailed')">Detailed</button><button class="view-btn" data-view="compact" onclick="setView('compact')">Compact</button></div></div></div>
     <div class="grid" id="results"><div class="no-results">Loading…</div></div>
+    <div class="pagination" id="pagination"></div>
 </div>
-
-<div class="dl-section">
-    <div class="wrap">
-        <strong>Download Resource Data</strong>
-        <div class="dl-btns">
-            <a href="data/resources.csv" class="dl-btn pri" download>CSV (Spreadsheet)</a>
-            <a href="data/resources.json" class="dl-btn sec" download>JSON (Developers)</a>
-            <a href="print/all.html" class="dl-btn sec" target="_blank" rel="noopener noreferrer">Print Version</a>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <div class="wrap">
-        <p>Data sourced from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries & Outreach</a></p>
-        <p style="margin-top:.4rem">Last updated: <span id="updated">—</span> · <a href="https://github.com/MrStewood/beacon">GitHub</a> · <a href="https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md">Suggest a Resource</a></p>
-    </div>
-</footer>
-
+<div class="dl-section"><div class="wrap"><strong>Download Data</strong><div class="dl-btns"><a href="data/resources.csv" class="dl-btn pri" download>CSV</a><a href="data/resources.json" class="dl-btn sec" download>JSON</a><a href="print/all.html" class="dl-btn sec" target="_blank" rel="noopener noreferrer">Print</a></div></div></div>
+<footer><div class="wrap"><p>Data from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries</a> · <span id="updated">—</span> · <a href="https://github.com/MrStewood/beacon">GitHub</a> · <a href="https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md">Suggest a Resource</a></p></div></footer>
 <script src="assets/js/config.js"></script>
 <script>
-const NEED_LABELS = BEACON_CONFIG.needs;
-const POP_LABELS = BEACON_CONFIG.populations;
-const SVC_LABELS = BEACON_CONFIG.serviceTypes;
+const NL=BEACON_CONFIG.needs,PL=BEACON_CONFIG.populations,SL=BEACON_CONFIG.serviceTypes;
+let ALL=[],activeNeeds=new Set(),currentPage=1,pageSize=25,currentView='detailed',lastResults=[];
+const SYNONYMS={shelter:['housing','bed','sleep','night','warm'],food:['hungry','meal','eat','dinner','lunch','pantry'],healthcare:['medical','doctor','clinic','hospital','dental'],mentalhealth:['counseling','therapy','therapist','psychiatric','depression','anxiety'],addiction:['recovery','rehab','detox','substance','drug','alcohol','sober'],crisis:['hotline','emergency','suicide','danger','help'],housing:['apartment','rent','section 8','voucher','living'],clothing:['clothes','coat','jacket','blanket','hygiene'],jobs:['employment','work','hire','career','training','resume'],legal:['lawyer','attorney','court','legal aid','expungement'],transportation:['bus','ride','car','transit','nemt'],family:['child','kid','youth','baby','parent','foster'],veterans:['veteran','va','military','vfw','dav']};
 
-let ALL=[], activeNeeds=new Set();
+function fuzzyMatch(q,text){
+    if(text.includes(q))return true;
+    if(q.length<3)return false;
+    let i=0;for(let c of text){if(c===q[i])i++;}return i>=q.length*.7;
+}
+
+function expandQuery(q){
+    let terms=[q];
+    for(const[concept,syns]of Object.entries(SYNONYMS)){if(syns.some(s=>q.includes(s))){terms.push(concept);syns.forEach(s=>{if(!q.includes(s))terms.push(s)});}}
+    return terms;
+}
 
 async function init(){
-    const r=await fetch('data/resources.json');
-    const d=await r.json();
-    ALL=d.resources;
+    const r=await fetch('data/resources.json');const d=await r.json();ALL=d.resources;
     document.getElementById('stat-total').textContent=ALL.length;
     document.getElementById('stat-counties').textContent=d.metadata.regions.KY.filter(c=>c!=='Statewide').length;
     document.getElementById('stat-needs').textContent=d.metadata.needs.length;
     document.getElementById('updated').textContent=d.metadata.last_updated;
-
-    // Populate county
     const cs=document.getElementById('county');
     d.metadata.regions.KY.filter(c=>c!=='Statewide').sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c+' County';cs.appendChild(o)});
-
-    // Populate populations
-    const ps=document.getElementById('pop');
-    d.metadata.populations.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=POP_LABELS[p]||p;ps.appendChild(o)});
-
-    // Populate service types
-    const ss=document.getElementById('svc');
-    d.metadata.service_types.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=SVC_LABELS[s]||s;ss.appendChild(o)});
-
-    // Build need chips (after clear button)
-    const chips=document.getElementById('chips');
-    const clearBtn=document.getElementById('clear-filters');
-    d.metadata.needs.forEach(n=>{const c=document.createElement('span');c.className='chip';c.dataset.need=n;c.textContent=NEED_LABELS[n]||n;c.onclick=()=>toggleNeed(n,c);chips.insertBefore(c,clearBtn)});
-
-    // Load filters from URL and apply them
-    loadFromURL();
-    search();
+    const ps=document.getElementById('pop');d.metadata.populations.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=PL[p]||p;ps.appendChild(o)});
+    const ss=document.getElementById('svc');d.metadata.service_types.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=SL[s]||s;ss.appendChild(o)});
+    const chips=document.getElementById('chips'),cb=document.getElementById('clear-filters');
+    d.metadata.needs.forEach(n=>{const c=document.createElement('span');c.className='chip';c.dataset.need=n;c.textContent=NL[n]||n;c.onclick=()=>toggleNeed(n,c);chips.insertBefore(c,cb)});
+    loadFromURL();search();
 }
 
-function toggleNeed(n,el){
-    if(activeNeeds.has(n)){activeNeeds.delete(n);el.classList.remove('active')}
-    else{activeNeeds.add(n);el.classList.add('active')}
-    updateURL();
-    search();
-}
+function toggleNeed(n,el){if(activeNeeds.has(n)){activeNeeds.delete(n);el.classList.remove('active')}else{activeNeeds.add(n);el.classList.add('active')}updateURL();search()}
+function setView(v){currentView=v;document.querySelectorAll('.view-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render(lastResults)}
 
-function updateURL(){
-    const params=new URLSearchParams();
-    const q=document.getElementById('q').value.trim();
-    const county=document.getElementById('county').value;
-    const pop=document.getElementById('pop').value;
-    const svc=document.getElementById('svc').value;
-    if(q)params.set('q',q);
-    if(county)params.set('county',county);
-    if(pop)params.set('pop',pop);
-    if(svc)params.set('svc',svc);
-    if(activeNeeds.size)params.set('needs',[...activeNeeds].join(','));
-    const newURL=params.toString()?`${window.location.pathname}?${params}`:window.location.pathname;
-    history.replaceState(null,'',newURL);
-    document.getElementById('clear-filters').style.display=(q||county||pop||svc||activeNeeds.size)?'inline-block':'none';
-}
+function updateURL(){const p=new URLSearchParams();const q=document.getElementById('q').value.trim();const co=document.getElementById('county').value;const po=document.getElementById('pop').value;const sv=document.getElementById('svc').value;const co2=document.getElementById('cost').value;const la=document.getElementById('lang').value;const ve=document.getElementById('verified').value;const re=document.getElementById('referral').checked;
+if(q)p.set('q',q);if(co)p.set('county',co);if(po)p.set('pop',po);if(sv)p.set('svc',sv);if(co2)p.set('cost',co2);if(la)p.set('lang',la);if(ve)p.set('verified',ve);if(re)p.set('referral','1');
+history.replaceState(null,'',p.toString()?`${location.pathname}?${p}`:location.pathname);
+document.getElementById('clear-filters').style.display=(q||co||po||sv||co2||la||ve||re||activeNeeds.size)?'inline-block':'none'}
 
-function clearAllFilters(){
-    document.getElementById('q').value='';
-    document.getElementById('county').value='';
-    document.getElementById('pop').value='';
-    document.getElementById('svc').value='';
-    activeNeeds.clear();
-    document.querySelectorAll('.chip.active').forEach(c=>c.classList.remove('active'));
-    updateURL();
-    search();
-}
+function clearAllFilters(){document.getElementById('q').value='';document.getElementById('county').value='';document.getElementById('pop').value='';document.getElementById('svc').value='';document.getElementById('cost').value='';document.getElementById('lang').value='';document.getElementById('verified').value='';document.getElementById('referral').checked=false;activeNeeds.clear();document.querySelectorAll('.chip.active').forEach(c=>c.classList.remove('active'));updateURL();search()}
 
-function loadFromURL(){
-    const params=new URLSearchParams(window.location.search);
-    if(params.get('q'))document.getElementById('q').value=params.get('q');
-    if(params.get('county'))document.getElementById('county').value=params.get('county');
-    if(params.get('pop'))document.getElementById('pop').value=params.get('pop');
-    if(params.get('svc'))document.getElementById('svc').value=params.get('svc');
-    if(params.get('needs')){
-        params.get('needs').split(',').forEach(n=>{
-            activeNeeds.add(n);
-            const chip=document.querySelector(`[data-need="${n}"]`);
-            if(chip)chip.classList.add('active');
-        });
-    }
-}
+function loadFromURL(){const p=new URLSearchParams(location.search);
+if(p.get('q'))document.getElementById('q').value=p.get('q');if(p.get('county'))document.getElementById('county').value=p.get('county');if(p.get('pop'))document.getElementById('pop').value=p.get('pop');if(p.get('svc'))document.getElementById('svc').value=p.get('svc');if(p.get('cost'))document.getElementById('cost').value=p.get('cost');if(p.get('lang'))document.getElementById('lang').value=p.get('lang');if(p.get('verified'))document.getElementById('verified').value=p.get('verified');if(p.get('referral')==='1')document.getElementById('referral').checked=true;
+if(p.get('needs'))p.get('needs').split(',').forEach(n=>{activeNeeds.add(n);const c=document.querySelector(`[data-need="${n}"]`);if(c)c.classList.add('active')})}
 
-function search(){
-    const q=document.getElementById('q').value.toLowerCase().trim();
-    const county=document.getElementById('county').value;
-    const pop=document.getElementById('pop').value;
-    const svc=document.getElementById('svc').value;
-    let r=ALL;
-    if(county) r=r.filter(x=>x.county===county);
-    if(pop) r=r.filter(x=>x.populations.includes(pop));
-    if(svc) r=r.filter(x=>x.service_types.includes(svc));
-    if(activeNeeds.size) r=r.filter(x=>x.needs.some(n=>activeNeeds.has(n)));
-    if(q) r=r.filter(x=>{
-        const t=[x.name,x.address||'',x.city||'',x.description||'',x.county,...x.needs,...x.phones,...x.populations,...x.service_types,(x.eligibility||''),(x.what_to_bring||''),(x.languages||[]).join(' ')].join(' ').toLowerCase();
-        return t.includes(q);
-    });
-    updateURL();
-    render(r);
-}
+function search(){const q=document.getElementById('q').value.toLowerCase().trim();const county=document.getElementById('county').value;const pop=document.getElementById('pop').value;const svc=document.getElementById('svc').value;const cost=document.getElementById('cost').value;const lang=document.getElementById('lang').value;const verified=document.getElementById('verified').value;const noRef=document.getElementById('referral').checked;
+let r=ALL;
+if(county)r=r.filter(x=>x.county===county);if(pop)r=r.filter(x=>x.populations.includes(pop));if(svc)r=r.filter(x=>x.service_types.includes(svc));if(cost)r=r.filter(x=>x.cost===cost);if(lang)r=r.filter(x=>(x.languages||[]).includes(lang));if(verified)r=r.filter(x=>x.confidence===verified);if(noRef)r=r.filter(x=>x.referral_required!==true);
+if(activeNeeds.size)r=r.filter(x=>x.needs.some(n=>activeNeeds.has(n)));
+if(q){const terms=expandQuery(q);r=r.filter(x=>{const t=[x.name,x.address||'',x.city||'',x.description||'',x.county,...x.needs,...x.phones,...x.populations,...x.service_types,x.eligibility||'',x.what_to_bring||'',...(x.languages||[])].join(' ').toLowerCase();return terms.some(term=>t.includes(term)||fuzzyMatch(term,t))})}
+const sort=document.getElementById('sort').value;
+if(sort==='alpha')r.sort((a,b)=>a.name.localeCompare(b.name));else if(sort==='county')r.sort((a,b)=>a.county.localeCompare(b.county)||a.name.localeCompare(b.name));
+else{r.sort((a,b)=>{const sa=a.confidence==='high'?0:a.confidence==='medium'?1:2;const sb=b.confidence==='high'?0:b.confidence==='medium'?1:2;return sa-sb||a.name.localeCompare(b.name)})}
+currentPage=1;updateURL();lastResults=r;render(r)}
 
-function render(list){
-    const g=document.getElementById('results');
-    const info=document.getElementById('info');
-    if(!list.length){g.innerHTML='<div class="no-results">No resources match your search.</div>';info.textContent='0 results';return}
-    info.textContent=`Showing ${list.length} of ${ALL.length} resources`;
-    g.innerHTML=list.map(r=>`
-        <div class="card">
-            <div class="card-name">${h(r.name)}</div>
-            <div class="card-meta">
-                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" rel="noopener noreferrer" style="font-size:.75rem">Map</a>`:''}</span>`:''}
-                ${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}
-                ${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}
-                ${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}
-                ${r.cost&&r.cost!=='unknown'?`<span>💰 ${r.cost}</span>`:''}
-                ${r.languages&&r.languages.length>1?`<span>🗣 ${r.languages.join(', ')}</span>`:''}
-            </div>
-            ${r.description?`<div class="card-desc">${h(r.description)}</div>`:''}
-            <div class="tags">
-                <span class="tag tag-status ${r.status==='needs-verification'?'verify':r.status==='closed'?'closed':''}">${r.status}</span>
-                ${r.referral_required===true?`<span class="tag" style="background:#fee2e2;color:#991b1b">Referral Required</span>`:''}
-                ${r.needs.map(n=>`<span class="tag tag-need">${NEED_LABELS[n]||n}</span>`).join('')}
-                ${r.populations.filter(p=>p!=='anyone').map(p=>`<span class="tag tag-pop">${POP_LABELS[p]||p}</span>`).join('')}
-                ${r.service_types.map(s=>`<span class="tag tag-svc">${SVC_LABELS[s]||s}</span>`).join('')}
-            </div>
-            ${(r.eligibility||r.intake_process||r.intake_hours||r.what_to_bring||r.capacity||r.waitlist!=null||r.notes)?`
-            <div class="card-details">
-                <dl>
-                    ${r.eligibility?`<dt>Eligibility</dt><dd>${h(r.eligibility)}</dd>`:''}
-                    ${r.intake_process?`<dt>Intake</dt><dd>${h(r.intake_process)}</dd>`:''}
-                    ${r.intake_hours?`<dt>Intake Hours</dt><dd>${h(r.intake_hours)}</dd>`:''}
-                    ${r.what_to_bring?`<dt>What to Bring</dt><dd>${h(r.what_to_bring)}</dd>`:''}
-                    ${r.capacity?`<dt>Capacity</dt><dd>${h(r.capacity)}</dd>`:''}
-                    ${r.waitlist===true?`<dt>Waitlist</dt><dd>Currently has a waiting list</dd>`:''}
-                    ${r.notes?`<dt>Notes</dt><dd>${h(r.notes)}</dd>`:''}
-                </dl>
-            </div>`:''}
-        </div>
-    `).join('');
-}
+function render(list){const g=document.getElementById('results'),info=document.getElementById('info'),pg=document.getElementById('pagination');
+if(!list.length){g.innerHTML=`<div class="zero-results"><h3>No resources found</h3><p>Try different filters or search terms.</p><p style="margin-top:1rem"><strong>Need immediate help?</strong><br><a href="tel:988">Call 988</a> for crisis support · <a href="tel:211">Call 211</a> for local resources</p></div>`;info.textContent='0 results';pg.innerHTML='';return}
+const total=list.length;const pages=Math.ceil(total/pageSize);const start=(currentPage-1)*pageSize;const page=list.slice(start,start+pageSize);
+info.textContent=`Showing ${start+1}–${Math.min(start+pageSize,total)} of ${total} resources`;
+g.innerHTML=page.map(r=>{
+    if(currentView==='compact')return`<div class="card" style="padding:.75rem"><div style="display:flex;justify-content:space-between;align-items:start;gap:1rem"><div><div class="card-name" style="font-size:.95rem">${h(r.name)}</div><div class="card-meta"><span>${h(r.address||r.county)}</span>${r.phones.length?`<a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a>`:''}</div></div><div class="tags">${r.needs.slice(0,2).map(n=>`<span class="tag tag-need">${NL[n]||n}</span>`).join('')}</div></div></div>`;
+    return`<div class="card"><div class="card-name">${h(r.name)}</div><div class="card-meta">${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" rel="noopener noreferrer" style="font-size:.72rem">Map</a>`:''}</span>`:''}${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}${r.languages&&r.languages.length>1?`<span>🗣 ${r.languages.join(', ')}</span>`:''}</div>${r.description?`<div class="card-desc">${h(r.description)}</div>`:''}<div class="tags"><span class="tag tag-status ${r.status==='needs-verification'?'verify':r.status==='closed'?'closed':''}">${r.status}</span>${r.referral_required===true?`<span class="tag" style="background:#fee2e2;color:#991b1b">Referral Required</span>`:''}${r.needs.map(n=>`<span class="tag tag-need">${NL[n]||n}</span>`).join('')}${r.populations.filter(p=>p!=='anyone').map(p=>`<span class="tag tag-pop">${PL[p]||p}</span>`).join('')}${r.service_types.map(s=>`<span class="tag tag-svc">${SL[s]||s}</span>`).join('')}</div><div class="card-actions">${r.phones.length?`<a href="tel:${r.phones[0]}" class="action-btn call">📞 Call</a>`:''}${r.url?`<a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="action-btn">🌐 Website</a>`:''}${r.map_url?`<a href="${r.map_url}" target="_blank" rel="noopener noreferrer" class="action-btn">🗺 Directions</a>`:''}<a href="https://github.com/MrStewood/beacon/issues/new?template=update-resource.md&title=Update:${encodeURIComponent(r.name)}" target="_blank" rel="noopener noreferrer" class="action-btn">✏️ Report</a></div>${(r.eligibility||r.intake_process||r.notes)?`<div class="card-details"><dl>${r.eligibility?`<dt>Eligibility</dt><dd>${h(r.eligibility)}</dd>`:''}${r.intake_process?`<dt>Intake</dt><dd>${h(r.intake_process)}</dd>`:''}${r.notes?`<dt>Notes</dt><dd>${h(r.notes)}</dd>`:''}</dl></div>`:''}</div>`}).join('');
+    if(pages<=1){pg.innerHTML=''}else{let b='';b+=`<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>← Prev</button>`;for(let i=1;i<=Math.min(pages,7);i++)b+=`<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;if(pages>7)b+=`<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>Next →</button>`;pg.innerHTML=b}}
 
+function goPage(p){currentPage=p;render(lastResults);document.getElementById('results').scrollIntoView({behavior:'smooth'})}
 function h(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
-document.getElementById('q').addEventListener('input',search);
-document.getElementById('county').addEventListener('change',search);
-document.getElementById('pop').addEventListener('change',search);
-document.getElementById('svc').addEventListener('change',search);
+document.getElementById('q').addEventListener('input',search);document.getElementById('county').addEventListener('change',search);document.getElementById('pop').addEventListener('change',search);document.getElementById('svc').addEventListener('change',search);document.getElementById('cost').addEventListener('change',search);document.getElementById('lang').addEventListener('change',search);document.getElementById('verified').addEventListener('change',search);document.getElementById('referral').addEventListener('change',search);document.getElementById('sort').addEventListener('change',search);
 init();
 </script>
 </body>
