@@ -7,7 +7,12 @@ The only hand-edited source files are:
 ```
 source/approved/**/*.yaml     # Approved canonical records
 source/overrides/**/*.yaml    # Manual corrections (take precedence)
+source/candidates/**/*.yaml   # Unpublished candidates under research/verification (schema/candidate.schema.json)
 ```
+
+Candidates are never canonical. A candidate only becomes `source/approved/`
+content by passing every gate in TRUST_SCORING.md and having its `decision`
+block recomputed and matched by `scripts/validate_candidate.py` in CI.
 
 ## Source Hierarchy
 
@@ -24,21 +29,18 @@ The following are generated from canonical sources:
 
 ## Evidence Standards
 
-### Acceptable Sources
-- Official provider website
-- Government directory
-- Direct phone confirmation
-- 211 directory
-- Licensed provider directory
+Full claim-level scoring, source tiers (A-F), caps, and formulas: see
+[TRUST_SCORING.md](TRUST_SCORING.md). Summary:
 
-### Not Acceptable as Evidence
-- Search engine snippets
-- AI-generated content
-- Map listings alone
-- Social media posts
-- Third-party mentions without verification
+- Sources are classified by tier (A=authoritative primary … F=discovery-only)
+  **per claim type**, not once for the whole record.
+- Two sources that copied the same upstream feed share one `chain_id` and
+  count as **one** evidence chain for corroboration/independence, not two.
+- Not acceptable as evidence for any claim: search engine snippets,
+  AI-generated content, map listings alone, social media posts, unattributed
+  third-party mentions. These may only be used to locate a better source.
 
 ## Migration
 
-The legacy `source/raw/kentucky.csv` may remain as historical reference.
+The legacy CSV was archived outside the repository during the clean resource reset.
 All new records must use the YAML format in `source/approved/`.

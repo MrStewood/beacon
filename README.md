@@ -48,17 +48,14 @@ python -m http.server 8000
 ```
 
 ### Data Pipeline
-Source data lives in `source/raw/kentucky.csv`. The parser generates:
-- `data/resources.json` — canonical dataset
+Canonical resource data lives in `source/approved/**/*.yaml`. The build generates:
+- `data/resources.json` — public dataset
 - `data/resources.csv` — spreadsheet export
-- `data/resources-by-county/*.json` — per-county splits
-- `data/resources-by-need/*.json` — per-need splits
 - `data/index.json` — lightweight search index
 
 ```bash
 # Regenerate all data
-python scripts/parse_resources.py
-python scripts/generate_csv.py
+python scripts/build.py
 
 # Validate
 python scripts/validate.py

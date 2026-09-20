@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Generate CSV from resources.json (v2 schema)."""
 import json, csv, os
+from config import DATA_DIR
 
 def main():
-    with open('/tmp/beacon/data/resources.json') as f:
+    with open(DATA_DIR / 'resources.json') as f:
         data = json.load(f)
 
     resources = data['resources']
 
     # Main CSV
-    with open('/tmp/beacon/data/resources.csv', 'w', newline='') as f:
+    with open(DATA_DIR / 'resources.csv', 'w', newline='') as f:
         w = csv.writer(f)
         w.writerow([
             'Name', 'Address', 'City', 'State', 'Zip', 'County',
@@ -53,10 +54,10 @@ def main():
         c = r.get('county', 'Unknown')
         by_county.setdefault(c, []).append(r)
 
-    os.makedirs('/tmp/beacon/data/csv-by-county', exist_ok=True)
+    os.makedirs(DATA_DIR / 'csv-by-county', exist_ok=True)
     for county, items in sorted(by_county.items()):
         fname = county.lower().replace(' ', '-')
-        with open(f'/tmp/beacon/data/csv-by-county/{fname}.csv', 'w', newline='') as f:
+        with open(DATA_DIR / 'csv-by-county' / f'{fname}.csv', 'w', newline='') as f:
             w = csv.writer(f)
             w.writerow(['Name', 'Address', 'Phone', 'Website', 'Needs', 'Description', 'Hours', 'Cost', 'Status'])
             for r in items:

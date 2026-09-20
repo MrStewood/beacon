@@ -30,12 +30,28 @@ Maintain an accurate, safe, transparent community-resource directory using trace
 - Preserve stable resource IDs and legacy URLs.
 - Do not mark a resource closed based on one broken website or unanswered call.
 
-## Separation of Duties
+## Separation of Duties (code-enforced, not advisory)
 
+`scripts/workflow_state.py` enforces every rule below in code. An agent
+identity that already acted in one role is technically blocked
+(`IllegalTransition`) from acting in a role listed in `DISTINCT_FROM` for it —
+this is not a prompt instruction an agent could choose to ignore.
+
+- Research Agent A and Research Agent B must work independently: neither may
+  read the other's notes/conclusions before both `research_packages` are
+  locked.
 - The discovering agent cannot verify the same candidate.
-- The verifying agent cannot publish or merge it.
-- The publishing agent cannot approve its own PR.
+- The verifying agent cannot approve, publish, or merge it.
+- The Resource Operations Director who signs the decision (`scripts/sign_candidate.py`)
+  must be distinct from every researcher and verifier on that candidate.
+- The publishing agent cannot approve its own PR (also enforced by GitHub
+  branch protection on `main`: 1 required approving review + required status
+  checks `validate` and `recompute-decision`).
 - Sensitive resources require human approval.
+- No claim may move to `verified`/`verified-with-limitation` on the strength
+  of an agent's own restated conclusion; `scripts/validate_candidate.py`
+  independently recomputes every score from the raw evidence and fails the
+  build if the committed decision does not match.
 
 ## Pull Request Rules
 

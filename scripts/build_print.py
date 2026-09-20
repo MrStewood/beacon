@@ -203,7 +203,7 @@ def main():
         with open(path, "w") as f:
             f.write(html)
 
-    print(f"Done! Generated {len(counties)} county + {len(need)} need print pages")
+    print(f"Done! Generated {len(counties)} county + {len(needs)} need print pages")
 
 if __name__ == "__main__":
     main()

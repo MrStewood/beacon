@@ -2,6 +2,13 @@
 
 All notable changes to Beacon are documented here.
 
+## Unreleased
+
+- Back up and clear existing resource records, development candidates, legacy imports, and generated resource outputs for a clean local restart.
+- Build from canonical YAML instead of the embedded legacy resource list; remove that obsolete importer.
+- Resolve CSV paths relative to the repository and support empty page/print generation.
+- Keep required crisis-resource validation intact: an empty data set is not a deployable release.
+
 ## [2.1.0] - 2026-09-20
 
 ### Phase 7: Documentation, SEO, Releases

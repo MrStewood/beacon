@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mrstewood.github.io/beacon/schema/candidate.schema.json",
+  "title": "Beacon Candidate Resource",
+  "description": "Unpublished resource under research/verification. Contains claim-level evidence and a deterministic decision artifact. Never a canonical published record.",
+  "type": "object",
+  "required": ["candidate_id", "workflow_state", "risk_tier", "resource", "claims", "research_packages", "policy_version"],
+  "properties": {
+    "candidate_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+    "lead": {
+      "type": "object",
+      "required": ["source_type", "received_at"],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": ["community-submission", "search-result", "government-directory", "org-website", "partner-org", "public-dataset", "monitoring-alert", "broken-link-check", "closure-report", "scheduled-discovery", "existing-record-reverification"]
+        },
+        "received_at": { "type": "string", "format": "date" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "workflow_state": {
+      "type": "string",
+      "enum": [
+        "lead-received", "intake-classified", "duplicate-checked",
+        "research-a-locked", "research-b-locked", "evidence-compared",
+        "verified", "risk-verification-complete", "policy-checked",
+        "trust-scored", "decision-signed", "yaml-created",
+        "pr-opened", "ci-passed", "merged", "deployed",
+        "production-verified", "monitoring", "reverification-due",
+        "quarantined", "temporarily-suppressed", "rejected", "system-paused"
+      ]
+    },
+    "risk_tier": { "type": "string", "enum": ["low", "elevated", "critical"] },
+    "existing_record_id": { "type": ["string", "null"], "description": "Set when this candidate is a reverification/update of a published record." },
+    "resource": {
+      "type": "object",
+      "description": "Proposed resource fields. Structurally the same vocabulary as resource.schema.v3.json but every field here is a proposal, not a fact, until its owning claim is verified.",
+      "type": "object"
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/claim" }
+    },
+    "research_packages": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/$defs/research_package" }
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "verifiers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "verifier_agreement": { "type": ["boolean", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "conflicts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/conflict" }
+    },
+    "decision": { "$ref": "#/$defs/decision" },
+    "policy_version": { "type": "string" },
+    "audit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["state", "actor", "actor_role", "at"],
+        "properties": {
+          "state": { "type": "string" },
+          "actor": { "type": "string" },
+          "actor_role": { "type": "string" },
+          "at": { "type": "string" },
+          "note": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["id", "url", "source_type", "tier", "retrieved_at", "chain_id", "directness", "supports"],
+      "properties": {
+        "id": { "type": "string" },
+        "url": { "type": "string" },
+        "title": { "type": ["string", "null"] },
+        "publisher": { "type": ["string", "null"] },
+        "source_type": { "type": "string" },
+        "tier": { "type": "string", "enum": ["A", "B", "C", "D", "E", "F"] },
+        "retrieved_at": { "type": "string", "format": "date" },
+        "published_or_updated_at": { "type": ["string", "null"], "format": "date" },
+        "excerpt": { "type": ["string", "null"] },
+        "content_hash": { "type": ["string", "null"] },
+        "archived_snapshot": { "type": ["string", "null"] },
+        "chain_id": { "type": "string", "description": "Sources sharing the same upstream data (e.g. two directories importing one gov dataset) share a chain_id and count as one evidence chain." },
+        "chain_independence_known": { "type": "boolean", "default": false },
+        "directness": { "type": "integer", "enum": [0, 8, 15, 20] },
+        "supports": { "type": "boolean", "description": "true = supports the claim value under evaluation; false = contradicts it." },
+        "reopenable": { "type": "boolean", "default": true, "description": "false if the URL/citation cannot be reopened for audit." },
+        "fabrication_suspected": { "type": "boolean", "default": false }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": ["claim_id", "field", "value", "material", "essential", "freshness_class", "evidence"],
+      "properties": {
+        "claim_id": { "type": "string" },
+        "field": { "type": "string" },
+        "value": {},
+        "material": { "type": "boolean" },
+        "essential": { "type": "boolean" },
+        "freshness_class": {
+          "type": "string",
+          "enum": ["operating_status", "crisis", "hours_phone", "eligibility", "address", "service_description", "stable_program_identity"]
+        },
+        "weight": { "type": "number", "default": 1.0, "minimum": 0 },
+        "requires_inference": { "type": "boolean", "default": false },
+        "confidential_address_uncertain": { "type": "boolean", "default": false },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidence" }
+        },
+        "status": {
+          "type": "string",
+          "enum": ["verified", "verified-with-limitation", "contradicted", "uncertain", "stale", "not-found", "not-applicable", "unsafe-to-publish"]
+        },
+        "score": { "type": ["integer", "null"], "minimum": 0, "maximum": 100 },
+        "score_breakdown": { "type": ["object", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "research_package": {
+      "type": "object",
+      "required": ["researcher", "locked_at", "proposed_claims", "unknown_fields", "possible_duplicates", "privacy_concerns", "proposed_risk_tier", "limitations"],
+      "properties": {
+        "researcher": { "type": "string" },
+        "locked_at": { "type": "string" },
+        "proposed_claims": { "type": "array", "items": { "type": "string" } },
+        "unknown_fields": { "type": "array", "items": { "type": "string" } },
+        "possible_duplicates": { "type": "array", "items": { "type": "string" } },
+        "privacy_concerns": { "type": "array", "items": { "type": "string" } },
+        "proposed_risk_tier": { "type": "string", "enum": ["low", "elevated", "critical"] },
+        "limitations": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "conflict": {
+      "type": "object",
+      "required": ["claim_id", "kind", "values", "resolution"],
+      "properties": {
+        "claim_id": { "type": "string" },
+        "kind": { "type": "string", "enum": ["wording", "nonessential-detail", "hours-eligibility-coverage", "phone-address-status", "closure-evidence", "privacy-safety"] },
+        "values": { "type": "array" },
+        "penalty_applied": { "type": "integer", "minimum": 0, "maximum": 40 },
+        "resolution": {
+          "type": "string",
+          "enum": ["resolved-stronger-evidence", "modeled-separately", "verified-with-limitation", "uncertain", "quarantined", "record-suppressed", "incident-triggered", "unresolved"]
+        },
+        "rejected_values_preserved": { "type": "boolean", "default": true },
+        "note": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["record_trust_score", "lowest_essential_claim_score", "eligibility", "outcome", "policy_version", "signature", "signed_at"],
+      "properties": {
+        "record_trust_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "lowest_essential_claim_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "average_essential_claim_score": { "type": "number" },
+        "average_material_claim_score": { "type": "number" },
+        "unresolved_conflicts": { "type": "integer", "minimum": 0 },
+        "stale_claims": { "type": "integer", "minimum": 0 },
+        "corroborated_claims": { "type": "integer", "minimum": 0 },
+        "risk_tier": { "type": "string", "enum": ["low", "elevated", "critical"] },
+        "eligibility": { "type": "boolean" },
+        "outcome": {
+          "type": "string",
+          "enum": ["publication-authorized", "correction-required", "quarantined", "temporarily-suppressed", "rejected", "system-pause-required"]
+        },
+        "reasons": { "type": "array", "items": { "type": "string" } },
+        "policy_version": { "type": "string" },
+        "signature": { "type": "string", "description": "sha256 hex digest over the canonicalized candidate content this decision was computed from. Any change to claims/evidence after signing invalidates it." },
+        "signed_by": { "type": ["string", "null"] },
+        "signed_at": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

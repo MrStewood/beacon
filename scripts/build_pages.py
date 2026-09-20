@@ -346,7 +346,6 @@ def main():
     print("Generating sitemap...")
     sitemap_urls = [
         ('https://mrstewood.github.io/beacon/', '1.0', 'weekly'),
-        ('https://mrstewood.github.io/beacon/print/all.html', '0.8', 'weekly'),
     ]
     for r in resources:
         sitemap_urls.append((f'https://mrstewood.github.io/beacon/pages/resource/{r["id"]}.html', '0.7', 'monthly'))
@@ -363,7 +362,7 @@ def main():
     with open(REPO_ROOT / "sitemap.xml", "w") as f:
         f.write(sitemap)
 
-    print(f"Done! Generated {len(resources)} resource + {len(counties)} county + {len(need)} need pages + sitemap")
+    print(f"Done! Generated {len(resources)} resource + {len(counties)} county + {len(needs)} need pages + sitemap")
 
 if __name__ == "__main__":
     main()

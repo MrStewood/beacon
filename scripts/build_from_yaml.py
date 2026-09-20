@@ -91,7 +91,8 @@ def generate_outputs(resources):
             "version": "3.0",
             "source": "Canonical YAML records",
             "last_updated": __import__("datetime").datetime.now().strftime("%Y-%m-%d"),
-            "total_resources": len(resources)
+            "total_resources": len(resources),
+            "needs": sorted({need for r in resources for need in r.get("needs", [])}),
         },
         "resources": resources
     }

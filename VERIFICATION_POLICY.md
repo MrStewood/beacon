@@ -1,6 +1,17 @@
 # Beacon Verification Policy
 
-## Verification Levels
+Full formulas, source tiers, caps, and thresholds: see [TRUST_SCORING.md](TRUST_SCORING.md).
+This file summarizes the operational rules; TRUST_SCORING.md and its enforcing
+code (`scripts/trust_scoring.py`, `scripts/validate_candidate.py`) are authoritative.
+
+Verification is **claim-level**, never one record-wide checkbox. Every
+material claim carries its own evidence list and its own status: `verified`,
+`verified-with-limitation`, `contradicted`, `uncertain`, `stale`,
+`not-found`, `not-applicable`, or `unsafe-to-publish`. A candidate's
+`verification_status`/legacy field below is a display summary computed from
+claim statuses, not something an agent sets directly.
+
+## Verification Levels (legacy display labels — derived, not authored)
 
 | Level | Description | Evidence Required |
 |-------|-------------|-------------------|
@@ -56,3 +67,13 @@ Sensitive resources (crisis, DV, children, medical) require:
 - Official provider source OR
 - Two independent reputable sources
 - Human approval before publication
+
+## Enforcement
+
+None of the above is voluntary. Every candidate under `source/candidates/**`
+is validated by `scripts/validate_candidate.py`, which independently
+recomputes claim/record scores and the publication decision and compares
+them to the signed `decision` block in the file. `.github/workflows/candidate-verification.yml`
+runs this as a required branch-protection check on `main` — a PR cannot merge
+if the recomputed decision disagrees with the committed one, or if a
+quarantined candidate has reached `pr-opened` or later. See TRUST_SCORING.md.

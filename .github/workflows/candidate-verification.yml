@@ -1,0 +1,41 @@
+name: Candidate Verification
+
+# Required check for every PR touching a candidate file. This job independently
+# recomputes trust scores and the publication decision from the committed
+# claims/evidence and compares them to the signed decision artifact in the
+# file. It does not trust the agent pipeline's own conclusion — it recomputes
+# it. Mismatch, hard-gate failure, or a quarantined candidate advancing past
+# decision-signed fails the build and blocks merge (see branch protection).
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'source/candidates/**'
+      - 'source/approved/**'
+      - 'schema/candidate.schema.json'
+      - 'scripts/trust_scoring.py'
+      - 'scripts/workflow_state.py'
+      - 'scripts/validate_candidate.py'
+  push:
+    branches: [main]
+    paths:
+      - 'source/candidates/**'
+
+permissions:
+  contents: read
+
+jobs:
+  recompute-decision:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install jsonschema pyyaml pytest
+      - name: Run trust-scoring adversarial test suite
+        run: pytest tests/test_trust_scoring.py -v
+      - name: Recompute and verify every candidate decision (fail closed)
+        run: python scripts/validate_candidate.py --all

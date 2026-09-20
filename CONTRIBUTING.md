@@ -44,12 +44,12 @@ pip install jsonschema pytest
 
 ### Data Changes
 
-Source data is in `source/raw/kentucky.csv`. To add or update resources:
+Canonical records live in `source/approved/**/*.yaml`. Unpublished research belongs in `source/candidates/`, not the public data set.
 
-1. Edit the CSV file
+1. Prepare canonical YAML only after the required evidence and publication checks
 2. Run the build: `python scripts/build.py`
 3. Verify the output in `data/resources.json`
-4. Commit both the source CSV and generated files
+4. Include canonical YAML and generated changes in the reviewed pull request
 
 ### Schema Changes
 
@@ -57,7 +57,7 @@ If you need to add new fields:
 
 1. Update `schema/resource.schema.json`
 2. Update `schema/categories.json` if adding new categories
-3. Update `scripts/parse_resources.py` to populate the new field
+3. Update `scripts/build_from_yaml.py` to populate the new field
 4. Update `index.html` to display the new field
 5. Add tests for the new field
 

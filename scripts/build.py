@@ -39,7 +39,7 @@ def main():
     print(f"Python: {sys.version}")
 
     steps = [
-        ("python3 scripts/parse_resources.py", "Parsing source data → resources.json"),
+        ("python3 scripts/build_from_yaml.py", "Building public data from canonical YAML"),
         ("python3 scripts/generate_csv.py", "Generating CSV exports"),
         ("python3 scripts/build_pages.py", "Generating resource, county, and need pages"),
         ("python3 scripts/build_print.py", "Generating print-ready guides"),
