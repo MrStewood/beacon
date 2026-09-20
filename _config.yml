@@ -1,9 +1,0 @@
-title: Beacon
-description: Community Resource Directory for Eastern Kentucky
-theme: jekyll-theme-minimal
-
-exclude:
-  - scripts/
-  - "*.py"
-  - README.md
-  - LICENSE
