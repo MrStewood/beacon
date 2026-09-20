@@ -302,8 +302,7 @@
       "url": "https://hhck.org",
       "facebook": null,
       "needs": [
-        "housing",
-        "documents"
+        "housing"
       ],
       "service_types": [
         "residential",
@@ -795,7 +794,6 @@
       "needs": [
         "food",
         "housing",
-        "crisis",
         "jobs",
         "family",
         "community"
@@ -1181,7 +1179,6 @@
         "housing",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [

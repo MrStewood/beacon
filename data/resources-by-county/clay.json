@@ -510,8 +510,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
-        "family",
         "community"
       ],
       "service_types": [
@@ -671,7 +669,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "jobs",
         "family",
         "education"

@@ -24,7 +24,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "family",
         "community"
       ],
@@ -136,7 +135,7 @@
       "url": "https://meridzo.org",
       "facebook": null,
       "needs": [
-        "documents"
+        "community"
       ],
       "service_types": [
         "walk-in"

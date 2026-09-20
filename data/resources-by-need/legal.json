@@ -186,7 +186,6 @@
       "url": "https://kyequaljustice.org",
       "facebook": null,
       "needs": [
-        "documents",
         "legal"
       ],
       "service_types": [
@@ -349,7 +348,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
         "legal"
       ],
       "service_types": [

@@ -38,7 +38,6 @@
       "clothing",
       "community",
       "crisis",
-      "documents",
       "education",
       "family",
       "food",
@@ -78,6 +77,59 @@
   },
   "resources": [
     {
+      "id": "211-national-resource-helpline",
+      "name": "211 - National Resource Helpline",
+      "alternate_names": [],
+      "description": "National resource information and referrals for local services",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "211"
+      ],
+      "email": null,
+      "url": "https://211.org",
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": true,
+      "intake_hours": null,
+      "map_url": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
       "id": "harlan-4th-dimension-treatment-center",
       "name": "4th Dimension Treatment Center",
       "alternate_names": [],
@@ -99,7 +151,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "family",
         "community"
       ],
@@ -150,13 +201,14 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "988"
+      ],
       "email": null,
       "url": "https://988lifeline.org",
       "facebook": null,
       "needs": [
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "hotline"
@@ -262,8 +314,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "hotline"
@@ -582,7 +633,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents"
+        "community"
       ],
       "service_types": [
         "residential",
@@ -748,7 +799,6 @@
       "needs": [
         "health",
         "addiction",
-        "documents",
         "family"
       ],
       "service_types": [
@@ -973,7 +1023,6 @@
       "needs": [
         "food",
         "shelter",
-        "crisis",
         "community"
       ],
       "service_types": [
@@ -1028,8 +1077,7 @@
       "facebook": null,
       "needs": [
         "shelter",
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "residential"
@@ -1196,7 +1244,6 @@
       "facebook": null,
       "needs": [
         "health",
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -1305,7 +1352,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "crisis"
       ],
       "service_types": [
@@ -1521,8 +1567,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "food",
-        "documents"
+        "food"
       ],
       "service_types": [
         "walk-in"
@@ -1628,7 +1673,6 @@
       "url": "https://kynect.ky.gov",
       "facebook": null,
       "needs": [
-        "documents",
         "family"
       ],
       "service_types": [
@@ -1683,8 +1727,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "family",
-        "transportation"
+        "family"
       ],
       "service_types": [
         "hotline"
@@ -1737,7 +1780,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -1792,7 +1834,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -2593,7 +2634,9 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "741741"
+      ],
       "email": null,
       "url": null,
       "facebook": null,
@@ -2928,7 +2971,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -3421,8 +3463,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents"
+        "health"
       ],
       "service_types": [
         "government"
@@ -3689,7 +3730,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family"
       ],
       "service_types": [
@@ -3747,8 +3787,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "food",
-        "crisis"
+        "food"
       ],
       "service_types": [
         "walk-in"
@@ -3915,8 +3954,7 @@
       "url": "https://facebook.com/feedingsoulsforjesus",
       "facebook": null,
       "needs": [
-        "food",
-        "crisis"
+        "food"
       ],
       "service_types": [
         "walk-in"
@@ -3962,7 +4000,9 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "833-8KY-HELP"
+      ],
       "email": null,
       "url": null,
       "facebook": null,
@@ -4445,7 +4485,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -4555,10 +4594,8 @@
         "mental-health",
         "addiction",
         "crisis",
-        "documents",
         "jobs",
         "family",
-        "transportation",
         "veterans"
       ],
       "service_types": [
@@ -4723,8 +4760,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
-        "family",
         "community"
       ],
       "service_types": [
@@ -4885,8 +4920,7 @@
       "url": "https://hhck.org",
       "facebook": null,
       "needs": [
-        "housing",
-        "documents"
+        "housing"
       ],
       "service_types": [
         "residential",
@@ -5643,8 +5677,7 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -5700,8 +5733,7 @@
       "facebook": null,
       "needs": [
         "food",
-        "clothing",
-        "documents"
+        "clothing"
       ],
       "service_types": [
         "walk-in"
@@ -5756,7 +5788,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "jobs",
         "family",
         "education"
@@ -5816,7 +5847,6 @@
       "needs": [
         "food",
         "housing",
-        "crisis",
         "jobs",
         "family",
         "community"
@@ -5877,7 +5907,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family",
         "transportation"
       ],
@@ -5935,7 +5964,6 @@
       "url": "https://kyequaljustice.org",
       "facebook": null,
       "needs": [
-        "documents",
         "legal"
       ],
       "service_types": [
@@ -6413,7 +6441,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "family"
       ],
       "service_types": [
@@ -6469,8 +6496,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents"
+        "health"
       ],
       "service_types": [
         "walk-in"
@@ -6683,8 +6709,7 @@
       "url": "https://988Lifeline.org",
       "facebook": null,
       "needs": [
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -7066,10 +7091,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents",
-        "jobs",
-        "education"
+        "health"
       ],
       "service_types": [
         "walk-in"
@@ -7127,7 +7149,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -7241,7 +7262,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -7509,7 +7529,7 @@
       "url": "https://meridzo.org",
       "facebook": null,
       "needs": [
-        "documents"
+        "community"
       ],
       "service_types": [
         "walk-in"
@@ -7940,7 +7960,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction"
+        "community"
       ],
       "service_types": [
         "walk-in"
@@ -7994,8 +8014,7 @@
       "facebook": null,
       "needs": [
         "health",
-        "mental-health",
-        "addiction"
+        "mental-health"
       ],
       "service_types": [
         "walk-in"
@@ -8050,57 +8069,6 @@
       "needs": [
         "crisis",
         "jobs"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "national-resource-information",
-      "name": "National Resource information",
-      "alternate_names": [],
-      "description": "",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [],
-      "email": null,
-      "url": "https://National resource list",
-      "facebook": null,
-      "needs": [
-        "addiction"
       ],
       "service_types": [
         "walk-in"
@@ -8206,7 +8174,6 @@
       "url": "https://nvf.org",
       "facebook": null,
       "needs": [
-        "documents",
         "veterans"
       ],
       "service_types": [
@@ -8312,8 +8279,6 @@
       "facebook": null,
       "needs": [
         "health",
-        "crisis",
-        "documents",
         "transportation"
       ],
       "service_types": [
@@ -8531,7 +8496,6 @@
         "health",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -8587,7 +8551,6 @@
       "url": "https://nosw.org",
       "facebook": null,
       "needs": [
-        "documents",
         "jobs",
         "family",
         "transportation",
@@ -8648,7 +8611,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -8812,8 +8774,7 @@
       "url": "https://piecefullywhole.org",
       "facebook": null,
       "needs": [
-        "addiction",
-        "documents"
+        "addiction"
       ],
       "service_types": [
         "walk-in"
@@ -8870,7 +8831,6 @@
         "housing",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -8928,8 +8888,7 @@
       "facebook": null,
       "needs": [
         "shelter",
-        "addiction",
-        "documents"
+        "addiction"
       ],
       "service_types": [
         "residential"
@@ -8983,7 +8942,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "crisis"
+        "community"
       ],
       "service_types": [
         "walk-in"
@@ -9091,8 +9050,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "family",
-        "transportation"
+        "family"
       ],
       "service_types": [
         "walk-in"
@@ -9146,8 +9104,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "jobs",
-        "transportation"
+        "jobs"
       ],
       "service_types": [
         "walk-in"
@@ -9741,8 +9698,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "shelter",
-        "documents"
+        "shelter"
       ],
       "service_types": [
         "walk-in"
@@ -9957,8 +9913,7 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -10119,8 +10074,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "hotline"
@@ -10280,13 +10234,14 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "988"
+      ],
       "email": null,
       "url": "https://988lifeline.org",
       "facebook": null,
       "needs": [
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "hotline"
@@ -10450,7 +10405,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
         "transportation"
       ],
       "service_types": [
@@ -10504,7 +10458,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
         "transportation"
       ],
       "service_types": [
@@ -10881,7 +10834,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "jobs"
       ],
       "service_types": [
@@ -10936,7 +10888,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "jobs",
         "family"
       ],
@@ -10994,7 +10945,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "education",
         "community"
       ],
@@ -11049,7 +10999,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
         "legal"
       ],
       "service_types": [
@@ -11101,7 +11050,6 @@
       "url": "https://Moral injury, preventing suicide, SSVF, homeless veterans reintegration",
       "facebook": null,
       "needs": [
-        "documents",
         "veterans"
       ],
       "service_types": [
@@ -11435,8 +11383,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents"
+        "health"
       ],
       "service_types": [
         "walk-in"

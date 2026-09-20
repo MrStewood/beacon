@@ -80,7 +80,6 @@
       "needs": [
         "health",
         "addiction",
-        "documents",
         "family"
       ],
       "service_types": [
@@ -193,7 +192,6 @@
       "facebook": null,
       "needs": [
         "health",
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -800,7 +798,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -857,8 +854,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents"
+        "health"
       ],
       "service_types": [
         "government"
@@ -1241,8 +1237,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents"
+        "health"
       ],
       "service_types": [
         "walk-in"
@@ -1404,10 +1399,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents",
-        "jobs",
-        "education"
+        "health"
       ],
       "service_types": [
         "walk-in"
@@ -1465,7 +1457,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1579,7 +1570,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1850,8 +1840,7 @@
       "facebook": null,
       "needs": [
         "health",
-        "mental-health",
-        "addiction"
+        "mental-health"
       ],
       "service_types": [
         "walk-in"
@@ -1903,8 +1892,6 @@
       "facebook": null,
       "needs": [
         "health",
-        "crisis",
-        "documents",
         "transportation"
       ],
       "service_types": [
@@ -1961,7 +1948,6 @@
         "health",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -2344,8 +2330,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "health",
-        "documents"
+        "health"
       ],
       "service_types": [
         "walk-in"

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Beacon Category Definitions",
+  "description": "Canonical category definitions. All resource needs, service_types, and populations must be drawn from these lists.",
+  "needs": {
+    "addiction": { "label": "Addiction & Recovery", "description": "Substance use treatment, detox, rehab, recovery support" },
+    "clothing": { "label": "Clothing & Supplies", "description": "Clothes, blankets, hygiene kits, sleeping bags, shoes" },
+    "community": { "label": "Community Support", "description": "Peer groups, recovery communities, mentoring, faith communities" },
+    "crisis": { "label": "Crisis & Safety", "description": "Hotlines, domestic violence, suicide prevention, trafficking, emergency services" },
+    "documents": { "label": "ID & Documents", "description": "Birth certificates, state ID, Social Security cards, legal documents" },
+    "education": { "label": "Education", "description": "GED, college, trade school, literacy, tutoring" },
+    "family": { "label": "Family & Children", "description": "Childcare, parenting, foster care, family reunification, youth services" },
+    "food": { "label": "Food & Water", "description": "Meals, food pantries, SNAP, WIC, soup kitchens, food banks" },
+    "health": { "label": "Healthcare", "description": "Medical, dental, vision, pharmacy, NEMT, immunizations" },
+    "housing": { "label": "Housing", "description": "Transitional, permanent, Section 8, rent assistance, utility help" },
+    "jobs": { "label": "Jobs & Income", "description": "Job training, employment, resume help, GED, skills programs" },
+    "legal": { "label": "Legal Help", "description": "Legal aid, expungement, court advocacy, victim rights" },
+    "mental-health": { "label": "Mental Health", "description": "Counseling, therapy, psychiatric care, crisis counseling, screenings" },
+    "shelter": { "label": "Shelter & Sleep", "description": "Emergency shelters, overnight warming, hotel vouchers, couch programs" },
+    "transportation": { "label": "Transportation", "description": "Bus passes, ride programs, vehicle repair, NEMT" },
+    "veterans": { "label": "Veterans", "description": "VA benefits, VSOs, veteran-specific housing and employment" }
+  },
+  "service_types": {
+    "hotline": { "label": "Hotline", "description": "Phone/text, often available 24/7" },
+    "walk-in": { "label": "Walk-In", "description": "Show up during hours, no appointment needed" },
+    "appointment": { "label": "Appointment", "description": "Must call or schedule ahead" },
+    "residential": { "label": "Residential", "description": "Stay overnight or long-term" },
+    "outpatient": { "label": "Outpatient", "description": "Visit during the day, go home at night" },
+    "mobile": { "label": "Mobile / Outreach", "description": "Comes to you — outreach van, delivery" },
+    "online": { "label": "Online", "description": "Website, telehealth, app-based" },
+    "peer-led": { "label": "Peer-Led", "description": "Run by people with lived experience" },
+    "faith-based": { "label": "Faith-Based", "description": "Church, ministry, or faith-affiliated" },
+    "government": { "label": "Government", "description": "Federal, state, or local agency" }
+  },
+  "populations": {
+    "anyone": { "label": "Open to All", "description": "No specific requirements" },
+    "families": { "label": "Families", "description": "Serves families with children" },
+    "women": { "label": "Women", "description": "Women-specific services" },
+    "men": { "label": "Men", "description": "Men-specific services" },
+    "youth": { "label": "Youth", "description": "Ages 18-24, or younger" },
+    "seniors": { "label": "Seniors", "description": "Age 55+ or 60+" },
+    "veterans": { "label": "Veterans", "description": "Military service required or targeted" },
+    "lgbtq+": { "label": "LGBTQ+", "description": "Affirming/safe for LGBTQ+ individuals" },
+    "disability": { "label": "Disability", "description": "Serves people with disabilities" },
+    "re-entry": { "label": "Re-Entry", "description": "Post-incarceration, justice-involved" },
+    "pregnant": { "label": "Pregnant", "description": "Prenatal, maternity services" },
+    "substance-use": { "label": "Active Substance Use", "description": "Accepts people actively using" },
+    "recovery": { "label": "In Recovery", "description": "Must be in recovery or sober" }
+  },
+  "cost": {
+    "free": "No cost to the person",
+    "sliding-scale": "Cost based on ability to pay",
+    "insurance": "Accepts insurance / Medicaid",
+    "private-pay": "Private pay required",
+    "unknown": "Cost not yet determined"
+  },
+  "verification_status": {
+    "unverified": "No verification attempted",
+    "auto-inferred": "Classified from source data keywords",
+    "website-checked": "Organization website confirmed",
+    "phone-confirmed": "Called and confirmed with staff",
+    "in-person-verified": "Visited in person"
+  },
+  "confidence": {
+    "high": "Confirmed by direct contact or recent source",
+    "medium": "Inferred from website or reliable secondary source",
+    "low": "Unverified, from third-party list or unclear source"
+  }
+}

@@ -1,5 +1,20 @@
 [
   {
+    "id": "211-national-resource-helpline",
+    "name": "211 - National Resource Helpline",
+    "county": "Statewide",
+    "city": null,
+    "needs": [
+      "community"
+    ],
+    "phones": [
+      "211"
+    ],
+    "address": "Statewide",
+    "status": "active",
+    "confidence": "medium"
+  },
+  {
     "id": "harlan-4th-dimension-treatment-center",
     "name": "4th Dimension Treatment Center",
     "county": "Harlan",
@@ -7,7 +22,6 @@
     "needs": [
       "mental-health",
       "addiction",
-      "documents",
       "family",
       "community"
     ],
@@ -25,10 +39,11 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "crisis",
-      "documents"
+      "crisis"
     ],
-    "phones": [],
+    "phones": [
+      "988"
+    ],
     "address": "Statewide",
     "status": "active",
     "confidence": "medium"
@@ -54,8 +69,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "crisis",
-      "transportation"
+      "crisis"
     ],
     "phones": [
       "800-752-6200"
@@ -146,7 +160,7 @@
     "county": "Whitley",
     "city": "Corbin",
     "needs": [
-      "documents"
+      "community"
     ],
     "phones": [
       "606-528-4381"
@@ -193,7 +207,6 @@
     "needs": [
       "health",
       "addiction",
-      "documents",
       "family"
     ],
     "phones": [
@@ -262,7 +275,6 @@
     "needs": [
       "food",
       "shelter",
-      "crisis",
       "community"
     ],
     "phones": [
@@ -279,8 +291,7 @@
     "city": "",
     "needs": [
       "shelter",
-      "crisis",
-      "transportation"
+      "crisis"
     ],
     "phones": [
       "800-755-2017"
@@ -331,7 +342,6 @@
     "city": null,
     "needs": [
       "health",
-      "addiction",
       "family"
     ],
     "phones": [
@@ -364,7 +374,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "addiction",
       "crisis"
     ],
     "phones": [
@@ -427,8 +436,7 @@
     "county": "Whitley",
     "city": "Williamsburg",
     "needs": [
-      "food",
-      "documents"
+      "food"
     ],
     "phones": [
       "606-549-1373"
@@ -458,7 +466,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "documents",
       "family"
     ],
     "phones": [
@@ -475,8 +482,7 @@
     "city": null,
     "needs": [
       "crisis",
-      "family",
-      "transportation"
+      "family"
     ],
     "phones": [
       "877-597-2331"
@@ -491,7 +497,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "addiction",
       "family"
     ],
     "phones": [
@@ -507,7 +512,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "addiction",
       "family"
     ],
     "phones": [
@@ -744,7 +748,9 @@
     "needs": [
       "crisis"
     ],
-    "phones": [],
+    "phones": [
+      "741741"
+    ],
     "address": "Statewide",
     "status": "active",
     "confidence": "medium"
@@ -842,7 +848,6 @@
       "addiction",
       "crisis",
       "family",
-      "transportation",
       "community"
     ],
     "phones": [
@@ -985,8 +990,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "health",
-      "documents"
+      "health"
     ],
     "phones": [
       "800-635-2570"
@@ -1062,7 +1066,6 @@
       "food",
       "shelter",
       "clothing",
-      "crisis",
       "family"
     ],
     "phones": [
@@ -1079,8 +1082,7 @@
     "county": "Knox",
     "city": "Barbourville",
     "needs": [
-      "food",
-      "crisis"
+      "food"
     ],
     "phones": [
       "606-546-3152"
@@ -1131,8 +1133,7 @@
     "county": "Whitley",
     "city": "Corbin",
     "needs": [
-      "food",
-      "crisis"
+      "food"
     ],
     "phones": [
       "606-521-2349"
@@ -1149,7 +1150,9 @@
     "needs": [
       "community"
     ],
-    "phones": [],
+    "phones": [
+      "833-8KY-HELP"
+    ],
     "address": "Statewide",
     "status": "active",
     "confidence": "medium"
@@ -1280,7 +1283,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "addiction",
       "family"
     ],
     "phones": [
@@ -1314,10 +1316,8 @@
       "mental-health",
       "addiction",
       "crisis",
-      "documents",
       "jobs",
       "family",
-      "transportation",
       "veterans"
     ],
     "phones": [
@@ -1365,8 +1365,6 @@
     "county": "Clay",
     "city": "",
     "needs": [
-      "documents",
-      "family",
       "community"
     ],
     "phones": [
@@ -1413,8 +1411,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "housing",
-      "documents"
+      "housing"
     ],
     "phones": [
       "502-223-1834"
@@ -1632,8 +1629,7 @@
     "city": null,
     "needs": [
       "addiction",
-      "crisis",
-      "transportation"
+      "crisis"
     ],
     "phones": [
       "606-523-9386"
@@ -1649,8 +1645,7 @@
     "city": "London",
     "needs": [
       "food",
-      "clothing",
-      "documents"
+      "clothing"
     ],
     "phones": [
       "502-801-9119"
@@ -1667,7 +1662,6 @@
     "needs": [
       "mental-health",
       "addiction",
-      "documents",
       "jobs",
       "family",
       "education"
@@ -1687,7 +1681,6 @@
     "needs": [
       "food",
       "housing",
-      "crisis",
       "jobs",
       "family",
       "community"
@@ -1708,7 +1701,6 @@
       "food",
       "shelter",
       "clothing",
-      "crisis",
       "family",
       "transportation"
     ],
@@ -1725,7 +1717,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "documents",
       "legal"
     ],
     "phones": [
@@ -1860,7 +1851,6 @@
     "city": null,
     "needs": [
       "addiction",
-      "documents",
       "family"
     ],
     "phones": [
@@ -1876,8 +1866,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "health",
-      "documents"
+      "health"
     ],
     "phones": [
       "800-420-7431"
@@ -1938,8 +1927,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "crisis",
-      "documents"
+      "crisis"
     ],
     "phones": [
       "888-628-9454"
@@ -2050,10 +2038,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "health",
-      "documents",
-      "jobs",
-      "education"
+      "health"
     ],
     "phones": [
       "800-807-4027"
@@ -2073,7 +2058,6 @@
       "addiction",
       "crisis",
       "family",
-      "transportation",
       "community"
     ],
     "phones": [
@@ -2107,7 +2091,6 @@
       "addiction",
       "crisis",
       "family",
-      "transportation",
       "community"
     ],
     "phones": [
@@ -2183,7 +2166,7 @@
     "county": "Harlan",
     "city": "Lynch",
     "needs": [
-      "documents"
+      "community"
     ],
     "phones": [
       "606-848-2766"
@@ -2305,7 +2288,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "addiction"
+      "community"
     ],
     "phones": [
       "800-424-5323"
@@ -2321,8 +2304,7 @@
     "city": null,
     "needs": [
       "health",
-      "mental-health",
-      "addiction"
+      "mental-health"
     ],
     "phones": [
       "833-943-5749"
@@ -2348,19 +2330,6 @@
     "confidence": "medium"
   },
   {
-    "id": "national-resource-information",
-    "name": "National Resource information",
-    "county": "Statewide",
-    "city": null,
-    "needs": [
-      "addiction"
-    ],
-    "phones": [],
-    "address": "Statewide",
-    "status": "active",
-    "confidence": "medium"
-  },
-  {
     "id": "national-sexual-assault-hotline",
     "name": "National Sexual Assault Hotline",
     "county": "Statewide",
@@ -2381,7 +2350,6 @@
     "county": "Statewide",
     "city": "Los Angeles",
     "needs": [
-      "documents",
       "veterans"
     ],
     "phones": [
@@ -2413,8 +2381,6 @@
     "city": null,
     "needs": [
       "health",
-      "crisis",
-      "documents",
       "transportation"
     ],
     "phones": [],
@@ -2478,7 +2444,6 @@
       "health",
       "mental-health",
       "addiction",
-      "documents",
       "community"
     ],
     "phones": [
@@ -2494,7 +2459,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "documents",
       "jobs",
       "family",
       "transportation",
@@ -2514,7 +2478,6 @@
     "city": "Somerset",
     "needs": [
       "addiction",
-      "documents",
       "community"
     ],
     "phones": [
@@ -2563,8 +2526,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "addiction",
-      "documents"
+      "addiction"
     ],
     "phones": [
       "859-412-2320"
@@ -2582,7 +2544,6 @@
       "housing",
       "mental-health",
       "addiction",
-      "documents",
       "community"
     ],
     "phones": [
@@ -2600,8 +2561,7 @@
     "city": null,
     "needs": [
       "shelter",
-      "addiction",
-      "documents"
+      "addiction"
     ],
     "phones": [
       "606-922-2012"
@@ -2616,7 +2576,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "crisis"
+      "community"
     ],
     "phones": [
       "800-222-1222"
@@ -2648,8 +2608,7 @@
     "city": null,
     "needs": [
       "crisis",
-      "family",
-      "transportation"
+      "family"
     ],
     "phones": [
       "800-432-9251"
@@ -2665,8 +2624,7 @@
     "city": null,
     "needs": [
       "crisis",
-      "jobs",
-      "transportation"
+      "jobs"
     ],
     "phones": [
       "800-656-4673"
@@ -2839,8 +2797,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "shelter",
-      "documents"
+      "shelter"
     ],
     "phones": [
       "800-505-2742"
@@ -2902,8 +2859,7 @@
     "city": null,
     "needs": [
       "addiction",
-      "crisis",
-      "documents"
+      "crisis"
     ],
     "phones": [
       "937-262-4100",
@@ -2951,8 +2907,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "crisis",
-      "transportation"
+      "crisis"
     ],
     "phones": [
       "800-544-2022"
@@ -3003,10 +2958,11 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "crisis",
-      "documents"
+      "crisis"
     ],
-    "phones": [],
+    "phones": [
+      "988"
+    ],
     "address": "Statewide",
     "status": "active",
     "confidence": "medium"
@@ -3052,7 +3008,6 @@
     "county": "McCreary",
     "city": "",
     "needs": [
-      "documents",
       "transportation"
     ],
     "phones": [
@@ -3068,7 +3023,6 @@
     "county": "McCreary",
     "city": "",
     "needs": [
-      "documents",
       "transportation"
     ],
     "phones": [
@@ -3177,7 +3131,6 @@
     "city": null,
     "needs": [
       "addiction",
-      "documents",
       "jobs"
     ],
     "phones": [
@@ -3194,7 +3147,6 @@
     "city": "Louisville",
     "needs": [
       "addiction",
-      "documents",
       "jobs",
       "family"
     ],
@@ -3212,7 +3164,6 @@
     "city": "Manchester",
     "needs": [
       "addiction",
-      "documents",
       "education",
       "community"
     ],
@@ -3229,7 +3180,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "documents",
       "legal"
     ],
     "phones": [
@@ -3245,7 +3195,6 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "documents",
       "veterans"
     ],
     "phones": [],
@@ -3343,8 +3292,7 @@
     "county": "Statewide",
     "city": null,
     "needs": [
-      "health",
-      "documents"
+      "health"
     ],
     "phones": [
       "800-372-2970"

@@ -74,7 +74,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
         "transportation"
       ],
       "service_types": [
@@ -128,7 +127,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
         "transportation"
       ],
       "service_types": [

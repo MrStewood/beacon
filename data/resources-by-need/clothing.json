@@ -139,7 +139,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family"
       ],
       "service_types": [
@@ -322,8 +321,7 @@
       "facebook": null,
       "needs": [
         "food",
-        "clothing",
-        "documents"
+        "clothing"
       ],
       "service_types": [
         "walk-in"
@@ -379,7 +377,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family",
         "transportation"
       ],

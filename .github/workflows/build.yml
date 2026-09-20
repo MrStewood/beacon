@@ -1,0 +1,83 @@
+name: Build & Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install jsonschema pytest
+      - name: Validate schema
+        run: python scripts/validate.py
+      - name: Run tests
+        run: pytest tests/ -v
+      - name: Build data
+        run: python scripts/build.py
+      - name: Check for XSS in widget
+        run: python -c "
+          import re
+          with open('widget/embed.js') as f:
+              content = f.read()
+          # Check that innerHTML is not used with raw data
+          if 'innerHTML' in content and 'escape' not in content.lower():
+              print('WARNING: innerHTML used without escaping in widget')
+              exit(1)
+          print('Widget XSS check passed')
+          "
+      - name: Check crisis resources
+        run: python -c "
+          import json
+          with open('data/resources.json') as f:
+              data = json.load(f)
+          resources = data['resources']
+          # 988 must exist and have phone
+          r988 = [r for r in resources if '988' in r.get('name','')]
+          assert len(r988) > 0, '988 crisis hotline not found'
+          assert r988[0].get('phones'), f'988 has no phone numbers: {r988[0][\"id\"]}'
+          assert 'crisis' in r988[0].get('needs',[]), f'988 not in crisis category: {r988[0][\"needs\"]}'
+          print(f'988 check passed: phones={r988[0][\"phones\"]}, needs={r988[0][\"needs\"]}')
+          "
+
+  build:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build exports
+        run: python scripts/build_exports.py
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,57 +2,101 @@
 
 Community Resource Directory — helping people find food, shelter, healthcare, recovery, and more.
 
-## Browse
-
 **[View the Directory](https://mrstewood.github.io/beacon/)**
 
-## Download
+## Quick Start
 
+### Browse
+Visit https://mrstewood.github.io/beacon/ to search resources by need, location, or service type.
+
+### Download
 | Format | Link |
 |--------|------|
 | CSV (Spreadsheet) | [resources.csv](data/resources.csv) |
-| JSON (Developers) | [resources.json](data/resources.json) |
+| JSON (Full) | [resources.json](data/resources.json) |
+| JSON (Compact) | [index.json](data/index.json) |
 | By County | [resources-by-county/](data/resources-by-county/) |
 | By Need | [resources-by-need/](data/resources-by-need/) |
-| By State | [resources-by-state/ky.json](data/resources-by-state/ky.json) |
 
-## Embed on Your Site
-
+### Embed
 ```html
 <script src="https://mrstewood.github.io/beacon/embed/widget.js"
         data-county="laurel" data-need="food" data-theme="light" data-limit="10"></script>
 ```
 
-Options: `data-county`, `data-need`, `data-theme` (light/dark), `data-limit`
+## Development
+
+### Prerequisites
+- Python 3.10+
+- pip install jsonschema pytest
+
+### Local Development
+```bash
+# Clone the repo
+git clone git@github.com:MrStewood/beacon.git
+cd beacon
+
+# Validate data
+python scripts/validate.py
+
+# Run tests
+pytest tests/ -v
+
+# Serve locally
+python -m http.server 8000
+# Open http://localhost:8000
+```
+
+### Data Pipeline
+Source data lives in `source/raw/kentucky.csv`. The parser generates:
+- `data/resources.json` — canonical dataset
+- `data/resources.csv` — spreadsheet export
+- `data/resources-by-county/*.json` — per-county splits
+- `data/resources-by-need/*.json` — per-need splits
+- `data/index.json` — lightweight search index
+
+```bash
+# Regenerate all data
+python scripts/parse_resources.py
+python scripts/generate_csv.py
+
+# Validate
+python scripts/validate.py
+```
+
+### Testing
+```bash
+# Run all tests
+pytest tests/ -v
+
+# Run specific test file
+pytest tests/test_crisis.py -v
+pytest tests/test_schema.py -v
+```
 
 ## Data Schema
 
-Each resource includes:
-- **Identity**: name, description, alternate names
-- **Location**: address, city, state, zip, county, lat/lng
-- **Contact**: phones, email, website, facebook
-- **Services**: needs (what they solve), service types (how they deliver), populations (who they serve)
-- **Operations**: eligibility, cost, hours, intake process, capacity, waitlist, insurance
-- **Verification**: last verified date, confidence level, source URLs
-- **Metadata**: first seen, notes, related resources
+See [schema/resource.schema.json](schema/resource.schema.json) for the full JSON Schema.
 
-## Needs
+Key fields:
+- **needs**: food, shelter, housing, clothing, health, mental-health, addiction, crisis, documents, jobs, legal, family, transportation, education, veterans, community
+- **service_types**: hotline, walk-in, appointment, residential, outpatient, mobile, online, peer-led, faith-based, government
+- **populations**: anyone, families, women, men, youth, seniors, veterans, lgbtq+, disability, re-entry, pregnant, substance-use, recovery
+- **confidence**: high (confirmed), medium (inferred from web), low (unverified)
 
-food · shelter · housing · clothing · health · mental-health · addiction · crisis · documents · jobs · legal · family · transportation · education · veterans · community
+## Contributing
 
-## Service Types
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-hotline · walk-in · appointment · residential · outpatient · mobile · online · peer-led · faith-based · government
-
-## Populations
-
-anyone · families · women · men · youth · seniors · veterans · lgbtq+ · disability · re-entry · pregnant · substance-use
-
-## Contribute
-
+To suggest a resource or report an error, open an issue using our templates:
 - [Suggest a Resource](https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md)
-- [Report an Update](https://github.com/MrStewood/beacon/issues/new?template=update-resource.md)
+- [Report a Correction](https://github.com/MrStewood/beacon/issues/new?template=update-resource.md)
 
-## Data Source
+## License
 
-Initial data from [Isaiah 58:10 Ministries & Outreach](https://is5810.com/main/resources/). Expanding to cover all of Kentucky and beyond.
+- **Code**: MIT License (see [LICENSE](LICENSE))
+- **Data**: CC BY 4.0 (see [LICENSE](LICENSE))
+
+## Disclaimer
+
+Resource data may contain errors or outdated information. Always verify hours, eligibility, availability, and intake requirements directly with the provider. Beacon is not affiliated with any listed organization.

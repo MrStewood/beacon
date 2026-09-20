@@ -7,7 +7,7 @@ from datetime import datetime
 
 # Raw data from Isaiah 58:10 resource guide
 # Format: Name\tAddress\tPhone\tURL\tDescription
-RAW_STATEWIDE = """National Resource information\t\t211.org\tNational resource list
+RAW_STATEWIDE = """211 - National Resource Helpline\t\t211\t211.org\tNational resource information and referrals for local services
 988 Suicide Hotline & Crisis Lifeline\t\t988\t988lifeline.org\tcall or text 988 or chat
 Adoption Hotline\t\t800-432-9346\t\thotline
 Adult Abuse Hotline\t\t800-752-6200\t\thotline
@@ -300,7 +300,7 @@ NEED_KEYWORDS = {
     "health": ["medical", "health", "hospital", "clinic", "dental", "hiv", "hepatitis", "nemt", "pharmacy", "medicare", "medicaid"],
     "mental-health": ["mental health", "counseling", "therapy", "psychiatric", "behavioral health", "psychotherapy", "screening"],
     "addiction": ["addiction", "recovery", "substance", "drug", "alcohol", "detox", "rehab", "iop", "treatment", "mat", "sober"],
-    "crisis": ["crisis", "hotline", "suicide", "lifeline", "emergency", "abuse", "trafficking", "violence"],
+    "crisis": ["crisis", "hotline", "suicide", "lifeline", "emergency shelter", "abuse", "trafficking", "violence"],
     "documents": ["id", "birth certificate", "social security", "documents", "identification"],
     "jobs": ["job", "employment", "work", "career", "training", "resume", "ged"],
     "legal": ["legal", "law", "court", "attorney", "justice", "expungement"],
@@ -344,19 +344,46 @@ def slugify(text):
     return text[:80].strip('-')
 
 
+# Known short crisis codes that should be preserved
+KNOWN_SHORT_CODES = {'988', '211', '741741', '411', '311'}
+
 def parse_phones(phone_str):
     if not phone_str:
         return []
-    phones = re.findall(r'[\d][\d()-]{6,}(?:\s*ext\.?\s*\d+)?', phone_str)
-    return [p.strip() for p in phones if len(p.strip()) >= 7]
+    phones = []
+    # Match standard phone patterns (7+ digits with optional formatting)
+    for m in re.finditer(r'[\d][\d()-]{2,}(?:\s*ext\.?\s*\d+)?', phone_str):
+        val = m.group().strip()
+        digits_only = re.sub(r'[^\d]', '', val)
+        # Keep if it has 7+ digits OR is a known short code
+        if len(digits_only) >= 7 or digits_only in KNOWN_SHORT_CODES:
+            phones.append(val)
+    # Also match alphanumeric/vanity codes like "833-8KY-HELP", "1-800-786-2929"
+    for m in re.finditer(r'\b\d{3}[-][\w-]+\b', phone_str):
+        val = m.group().strip()
+        # Skip if it's just a standard phone number (already captured)
+        digits_only = re.sub(r'[^\d]', '', val)
+        if len(digits_only) >= 7:
+            continue
+        if val not in phones:
+            phones.append(val)
+    return phones
 
 
 def detect_needs(name, desc):
     text = f"{name} {desc}".lower()
     needs = []
     for need, keywords in NEED_KEYWORDS.items():
-        if any(kw in text for kw in keywords):
-            needs.append(need)
+        for kw in keywords:
+            # Use word boundaries for short keywords to avoid false matches
+            if len(kw) <= 3:
+                if re.search(r'\b' + re.escape(kw) + r'\b', text):
+                    needs.append(need)
+                    break
+            else:
+                if kw in text:
+                    needs.append(need)
+                    break
     return needs or ["community"]
 
 

@@ -123,7 +123,7 @@
         <div class="dl-btns">
             <a href="data/resources.csv" class="dl-btn pri" download>CSV (Spreadsheet)</a>
             <a href="data/resources.json" class="dl-btn sec" download>JSON (Developers)</a>
-            <a href="print/all.html" class="dl-btn sec" target="_blank">Print Version</a>
+            <a href="print/all.html" class="dl-btn sec" target="_blank" rel="noopener noreferrer">Print Version</a>
         </div>
     </div>
 </div>
@@ -202,9 +202,9 @@ function render(list){
         <div class="card">
             <div class="card-name">${h(r.name)}</div>
             <div class="card-meta">
-                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" style="font-size:.75rem">Map</a>`:''}</span>`:''}
+                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" rel="noopener noreferrer" style="font-size:.75rem">Map</a>`:''}</span>`:''}
                 ${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}
-                ${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}
+                ${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}
                 ${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}
                 ${r.cost&&r.cost!=='unknown'?`<span>💰 ${r.cost}</span>`:''}
                 ${r.languages&&r.languages.length>1?`<span>🗣 ${r.languages.join(', ')}</span>`:''}

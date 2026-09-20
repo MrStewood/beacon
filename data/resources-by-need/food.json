@@ -23,7 +23,6 @@
       "needs": [
         "food",
         "shelter",
-        "crisis",
         "community"
       ],
       "service_types": [
@@ -238,8 +237,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "food",
-        "documents"
+        "food"
       ],
       "service_types": [
         "walk-in"
@@ -516,7 +514,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family"
       ],
       "service_types": [
@@ -574,8 +571,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "food",
-        "crisis"
+        "food"
       ],
       "service_types": [
         "walk-in"
@@ -687,8 +683,7 @@
       "url": "https://facebook.com/feedingsoulsforjesus",
       "facebook": null,
       "needs": [
-        "food",
-        "crisis"
+        "food"
       ],
       "service_types": [
         "walk-in"
@@ -1218,8 +1213,7 @@
       "facebook": null,
       "needs": [
         "food",
-        "clothing",
-        "documents"
+        "clothing"
       ],
       "service_types": [
         "walk-in"
@@ -1274,7 +1268,6 @@
       "needs": [
         "food",
         "housing",
-        "crisis",
         "jobs",
         "family",
         "community"
@@ -1335,7 +1328,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family",
         "transportation"
       ],

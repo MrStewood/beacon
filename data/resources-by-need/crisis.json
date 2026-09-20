@@ -1,6 +1,6 @@
 {
   "need": "crisis",
-  "count": 48,
+  "count": 40,
   "resources": [
     {
       "id": "988-suicide-hotline-crisis-lifeline",
@@ -14,13 +14,14 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "988"
+      ],
       "email": null,
       "url": "https://988lifeline.org",
       "facebook": null,
       "needs": [
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "hotline"
@@ -126,8 +127,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "hotline"
@@ -382,62 +382,6 @@
       "related": []
     },
     {
-      "id": "whitley-bell-whitley-community-action-agency",
-      "name": "Bell-Whitley Community Action Agency",
-      "alternate_names": [],
-      "description": "Food, shelter, natural disaster emergency funds.",
-      "address": "U.S. Hwy 25W, Williamsburg, KY 40769",
-      "city": "Williamsburg",
-      "state": "KY",
-      "zip": "40769",
-      "county": "Whitley",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "606-549-3933"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "food",
-        "shelter",
-        "crisis",
-        "community"
-      ],
-      "service_types": [
-        "residential"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": "https://www.google.com/maps/search/?api=1&query=U.S.+Hwy+25W,+Williamsburg,+KY+40769",
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
       "id": "pulaski-bethany-house-abuse-shelter",
       "name": "Bethany House Abuse Shelter",
       "alternate_names": [],
@@ -457,8 +401,7 @@
       "facebook": null,
       "needs": [
         "shelter",
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "residential"
@@ -511,7 +454,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "crisis"
       ],
       "service_types": [
@@ -566,8 +508,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "family",
-        "transportation"
+        "family"
       ],
       "service_types": [
         "hotline"
@@ -721,7 +662,9 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "741741"
+      ],
       "email": null,
       "url": null,
       "facebook": null,
@@ -784,7 +727,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -934,122 +876,6 @@
       "related": []
     },
     {
-      "id": "whitley-emergency-christian-ministries",
-      "name": "Emergency Christian Ministries",
-      "alternate_names": [],
-      "description": "75 beds. Men, women, children. Food, clothing, supportive services.",
-      "address": "630 South Hwy 25, Williamsburg, KY 40769",
-      "city": "Williamsburg",
-      "state": "KY",
-      "zip": "40769",
-      "county": "Whitley",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "606-549-2922",
-        "606-400-1464"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "food",
-        "shelter",
-        "clothing",
-        "crisis",
-        "family"
-      ],
-      "service_types": [
-        "residential",
-        "faith-based"
-      ],
-      "populations": [
-        "families",
-        "women",
-        "men",
-        "youth"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": "https://www.google.com/maps/search/?api=1&query=630+South+Hwy+25,+Williamsburg,+KY+40769",
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "knox-emergency-fund-services",
-      "name": "Emergency Fund Services",
-      "alternate_names": [],
-      "description": "Emergency assistance, food.",
-      "address": "P.O. Box 8, Barbourville, KY 40906",
-      "city": "Barbourville",
-      "state": "KY",
-      "zip": "40906",
-      "county": "Knox",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "606-546-3152"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "food",
-        "crisis"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": "https://www.google.com/maps/search/?api=1&query=P.O.+Box+8,+Barbourville,+KY+40906",
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
       "id": "clay-emergency-shelter-cumberland-valley-dv-services",
       "name": "Emergency Shelter - Cumberland Valley DV Services",
       "alternate_names": [],
@@ -1092,60 +918,6 @@
       "referral_required": null,
       "intake_hours": null,
       "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "knox-feeding-souls-for-jesus",
-      "name": "Feeding Souls for Jesus",
-      "alternate_names": [],
-      "description": "Emergency food service.",
-      "address": "Parkway Ministries, Corbin, KY",
-      "city": "Corbin",
-      "state": "KY",
-      "zip": null,
-      "county": "Whitley",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "606-521-2349"
-      ],
-      "email": null,
-      "url": "https://facebook.com/feedingsoulsforjesus",
-      "facebook": null,
-      "needs": [
-        "food",
-        "crisis"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": "https://www.google.com/maps/search/?api=1&query=Parkway+Ministries,+Corbin,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1239,10 +1011,8 @@
         "mental-health",
         "addiction",
         "crisis",
-        "documents",
         "jobs",
         "family",
-        "transportation",
         "veterans"
       ],
       "service_types": [
@@ -1408,8 +1178,7 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -1429,127 +1198,6 @@
       "referral_required": null,
       "intake_hours": null,
       "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "kceoc-community-action-partnership",
-      "name": "KCEOC - Community Action Partnership",
-      "alternate_names": [],
-      "description": "Senior programs, energy assistance, summer food, weatherization, housing, youth homelessness, emergency support, career center, child development",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "606-546-3152"
-      ],
-      "email": null,
-      "url": "https://kceoc.org",
-      "facebook": null,
-      "needs": [
-        "food",
-        "housing",
-        "crisis",
-        "jobs",
-        "family",
-        "community"
-      ],
-      "service_types": [
-        "residential"
-      ],
-      "populations": [
-        "men",
-        "youth",
-        "seniors"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "knox-kceoc-womens-emergency-support-center",
-      "name": "KCEOC Women's Emergency Support Center",
-      "alternate_names": [],
-      "description": "Women and children. 15 semi-private beds. Meals, clothing, supportive services, transportation.",
-      "address": "U.S. Hwy 25E, Barbourville, KY 40906",
-      "city": "Barbourville",
-      "state": "KY",
-      "zip": "40906",
-      "county": "Knox",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "606-546-3152"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "food",
-        "shelter",
-        "clothing",
-        "crisis",
-        "family",
-        "transportation"
-      ],
-      "service_types": [
-        "residential"
-      ],
-      "populations": [
-        "families",
-        "women",
-        "men",
-        "youth"
-      ],
-      "eligibility": null,
-      "cost": "private-pay",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": "https://www.google.com/maps/search/?api=1&query=U.S.+Hwy+25E,+Barbourville,+KY+40906",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1692,8 +1340,7 @@
       "url": "https://988Lifeline.org",
       "facebook": null,
       "needs": [
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -1752,7 +1399,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1815,7 +1461,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -2067,113 +1712,6 @@
       "related": []
     },
     {
-      "id": "nemt-non-emergency-medical-transportation",
-      "name": "NEMT - Non-Emergency Medical Transportation",
-      "alternate_names": [],
-      "description": "Medicaid transportation to appointments",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "health",
-        "crisis",
-        "documents",
-        "transportation"
-      ],
-      "service_types": [
-        "online"
-      ],
-      "populations": [
-        "men"
-      ],
-      "eligibility": null,
-      "cost": "insurance",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "poison-control",
-      "name": "Poison Control",
-      "alternate_names": [],
-      "description": "Poison emergency",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-222-1222"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "crisis"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
       "id": "prevent-child-abuse-kentucky",
       "name": "Prevent Child Abuse Kentucky",
       "alternate_names": [],
@@ -2193,8 +1731,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "family",
-        "transportation"
+        "family"
       ],
       "service_types": [
         "walk-in"
@@ -2248,8 +1785,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "jobs",
-        "transportation"
+        "jobs"
       ],
       "service_types": [
         "walk-in"
@@ -2357,8 +1893,7 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -2411,8 +1946,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "hotline"
@@ -2458,13 +1992,14 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "988"
+      ],
       "email": null,
       "url": "https://988lifeline.org",
       "facebook": null,
       "needs": [
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "hotline"

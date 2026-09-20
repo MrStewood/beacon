@@ -1,6 +1,6 @@
 {
   "need": "addiction",
-  "count": 58,
+  "count": 50,
   "resources": [
     {
       "id": "harlan-4th-dimension-treatment-center",
@@ -24,7 +24,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "family",
         "community"
       ],
@@ -244,7 +243,6 @@
       "needs": [
         "health",
         "addiction",
-        "documents",
         "family"
       ],
       "service_types": [
@@ -453,224 +451,6 @@
       "related": []
     },
     {
-      "id": "bluegrass-first-steps",
-      "name": "Bluegrass First Steps",
-      "alternate_names": [],
-      "description": "Maternal/child health",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-454-2764"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "health",
-        "addiction",
-        "family"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "youth"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "cancer-information-services",
-      "name": "Cancer Information Services",
-      "alternate_names": [],
-      "description": "Cancer support hotline",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-422-6237"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "addiction",
-        "crisis"
-      ],
-      "service_types": [
-        "hotline"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "child-support-information",
-      "name": "Child Support Information",
-      "alternate_names": [],
-      "description": "Child support enforcement",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-248-1163"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "addiction",
-        "family"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "men",
-        "youth"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "child-support-voice-response",
-      "name": "Child Support Voice Response",
-      "alternate_names": [],
-      "description": "Child support information",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-443-1576"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "addiction",
-        "family"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "youth"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
       "id": "jefferson-choose-hope-llc",
       "name": "Choose Hope LLC",
       "alternate_names": [],
@@ -750,7 +530,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -958,60 +737,6 @@
       "related": []
     },
     {
-      "id": "foster-care-information",
-      "name": "Foster Care Information",
-      "alternate_names": [],
-      "description": "Foster care information",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-232-5437"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "addiction",
-        "family"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
       "id": "gps-getting-peace-for-those-who-served",
       "name": "GPS - Getting Peace for Those Who Served",
       "alternate_names": [],
@@ -1033,10 +758,8 @@
         "mental-health",
         "addiction",
         "crisis",
-        "documents",
         "jobs",
         "family",
-        "transportation",
         "veterans"
       ],
       "service_types": [
@@ -1159,8 +882,7 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -1217,7 +939,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "jobs",
         "family",
         "education"
@@ -1331,7 +1052,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "family"
       ],
       "service_types": [
@@ -1560,7 +1280,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1623,7 +1342,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1645,165 +1363,6 @@
       "referral_required": null,
       "intake_hours": null,
       "map_url": "https://www.google.com/maps/search/?api=1&query=Rt.+9+Box+940,+Manchester,+KY+40962",
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "national-lead-information-center",
-      "name": "National Lead Information Center",
-      "alternate_names": [],
-      "description": "Lead poisoning info",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-424-5323"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "addiction"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "national-maternal-mental-health-line",
-      "name": "National Maternal Mental Health Line",
-      "alternate_names": [],
-      "description": "Maternal mental health",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "833-943-5749"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "health",
-        "mental-health",
-        "addiction"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "men"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "national-resource-information",
-      "name": "National Resource information",
-      "alternate_names": [],
-      "description": "",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [],
-      "email": null,
-      "url": "https://National resource list",
-      "facebook": null,
-      "needs": [
-        "addiction"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1950,7 +1509,6 @@
         "health",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -2007,7 +1565,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -2171,8 +1728,7 @@
       "url": "https://piecefullywhole.org",
       "facebook": null,
       "needs": [
-        "addiction",
-        "documents"
+        "addiction"
       ],
       "service_types": [
         "walk-in"
@@ -2229,7 +1785,6 @@
         "housing",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -2287,8 +1842,7 @@
       "facebook": null,
       "needs": [
         "shelter",
-        "addiction",
-        "documents"
+        "addiction"
       ],
       "service_types": [
         "residential"
@@ -2561,8 +2115,7 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "crisis",
-        "documents"
+        "crisis"
       ],
       "service_types": [
         "walk-in"
@@ -2785,7 +2338,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "jobs"
       ],
       "service_types": [
@@ -2840,7 +2392,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "jobs",
         "family"
       ],
@@ -2898,7 +2449,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "education",
         "community"
       ],

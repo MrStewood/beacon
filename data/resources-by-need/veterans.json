@@ -129,10 +129,8 @@
         "mental-health",
         "addiction",
         "crisis",
-        "documents",
         "jobs",
         "family",
-        "transportation",
         "veterans"
       ],
       "service_types": [
@@ -353,7 +351,6 @@
       "url": "https://nvf.org",
       "facebook": null,
       "needs": [
-        "documents",
         "veterans"
       ],
       "service_types": [
@@ -458,7 +455,6 @@
       "url": "https://Moral injury, preventing suicide, SSVF, homeless veterans reintegration",
       "facebook": null,
       "needs": [
-        "documents",
         "veterans"
       ],
       "service_types": [

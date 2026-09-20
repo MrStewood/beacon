@@ -347,7 +347,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -404,8 +403,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "food",
-        "crisis"
+        "food"
       ],
       "service_types": [
         "walk-in"
@@ -620,7 +618,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family",
         "transportation"
       ],
@@ -684,7 +681,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [

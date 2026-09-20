@@ -22,8 +22,7 @@
       "facebook": null,
       "needs": [
         "shelter",
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "residential"
@@ -396,7 +395,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [

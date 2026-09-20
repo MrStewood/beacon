@@ -24,7 +24,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "family",
         "community"
       ],
@@ -524,7 +523,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -584,10 +582,8 @@
         "mental-health",
         "addiction",
         "crisis",
-        "documents",
         "jobs",
         "family",
-        "transportation",
         "veterans"
       ],
       "service_types": [
@@ -765,7 +761,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "jobs",
         "family",
         "education"
@@ -886,7 +881,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -949,7 +943,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1328,8 +1321,7 @@
       "facebook": null,
       "needs": [
         "health",
-        "mental-health",
-        "addiction"
+        "mental-health"
       ],
       "service_types": [
         "walk-in"
@@ -1439,7 +1431,6 @@
         "health",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -1499,7 +1490,6 @@
         "housing",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [

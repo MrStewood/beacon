@@ -1,6 +1,6 @@
 {
   "need": "jobs",
-  "count": 17,
+  "count": 16,
   "resources": [
     {
       "id": "bell-cumberland-river-rhoar-center",
@@ -84,10 +84,8 @@
         "mental-health",
         "addiction",
         "crisis",
-        "documents",
         "jobs",
         "family",
-        "transportation",
         "veterans"
       ],
       "service_types": [
@@ -266,7 +264,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "jobs",
         "family",
         "education"
@@ -326,7 +323,6 @@
       "needs": [
         "food",
         "housing",
-        "crisis",
         "jobs",
         "family",
         "community"
@@ -474,62 +470,6 @@
       "related": []
     },
     {
-      "id": "medicaid-managed-care-ombudsman",
-      "name": "Medicaid Managed Care Ombudsman",
-      "alternate_names": [],
-      "description": "Medicaid advocacy",
-      "address": "Statewide",
-      "city": null,
-      "state": "KY",
-      "zip": null,
-      "county": "Statewide",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "800-807-4027"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "health",
-        "documents",
-        "jobs",
-        "education"
-      ],
-      "service_types": [
-        "walk-in"
-      ],
-      "populations": [
-        "men"
-      ],
-      "eligibility": null,
-      "cost": "insurance",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
       "id": "national-network-to-end-domestic-violence",
       "name": "National Network to End Domestic Violence",
       "alternate_names": [],
@@ -655,7 +595,6 @@
       "url": "https://nosw.org",
       "facebook": null,
       "needs": [
-        "documents",
         "jobs",
         "family",
         "transportation",
@@ -716,8 +655,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "jobs",
-        "transportation"
+        "jobs"
       ],
       "service_types": [
         "walk-in"
@@ -884,7 +822,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "jobs"
       ],
       "service_types": [
@@ -939,7 +876,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "jobs",
         "family"
       ],

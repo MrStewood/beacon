@@ -1,6 +1,6 @@
 {
   "need": "family",
-  "count": 42,
+  "count": 41,
   "resources": [
     {
       "id": "harlan-4th-dimension-treatment-center",
@@ -24,7 +24,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "family",
         "community"
       ],
@@ -141,7 +140,6 @@
       "needs": [
         "health",
         "addiction",
-        "documents",
         "family"
       ],
       "service_types": [
@@ -200,7 +198,6 @@
       "facebook": null,
       "needs": [
         "health",
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -418,7 +415,6 @@
       "url": "https://kynect.ky.gov",
       "facebook": null,
       "needs": [
-        "documents",
         "family"
       ],
       "service_types": [
@@ -473,8 +469,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "family",
-        "transportation"
+        "family"
       ],
       "service_types": [
         "hotline"
@@ -527,7 +522,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -582,7 +576,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -750,7 +743,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -925,7 +917,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family"
       ],
       "service_types": [
@@ -1042,7 +1033,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "addiction",
         "family"
       ],
       "service_types": [
@@ -1099,10 +1089,8 @@
         "mental-health",
         "addiction",
         "crisis",
-        "documents",
         "jobs",
         "family",
-        "transportation",
         "veterans"
       ],
       "service_types": [
@@ -1178,61 +1166,6 @@
       "referral_required": null,
       "intake_hours": null,
       "map_url": null,
-      "status": "active",
-      "intake_process": null,
-      "capacity": null,
-      "waitlist": null,
-      "accepts_insurance": null,
-      "last_verified": "2026-09-20",
-      "verified_by": "initial-import",
-      "confidence": "medium",
-      "source_urls": [
-        "https://is5810.com/main/resources/"
-      ],
-      "first_seen": "2026-09-20",
-      "tags": [],
-      "notes": null,
-      "related": []
-    },
-    {
-      "id": "clay-grief-support-group",
-      "name": "Grief Support Group",
-      "alternate_names": [],
-      "description": "Contact Sharon Kidd.",
-      "address": "London, KY",
-      "city": "",
-      "state": "KY",
-      "zip": null,
-      "county": "Clay",
-      "latitude": null,
-      "longitude": null,
-      "phones": [
-        "606-312-1513"
-      ],
-      "email": null,
-      "url": null,
-      "facebook": null,
-      "needs": [
-        "documents",
-        "family",
-        "community"
-      ],
-      "service_types": [
-        "peer-led"
-      ],
-      "populations": [
-        "anyone"
-      ],
-      "eligibility": null,
-      "cost": "unknown",
-      "hours": null,
-      "languages": [
-        "English"
-      ],
-      "what_to_bring": null,
-      "referral_required": null,
-      "intake_hours": null,
-      "map_url": "https://www.google.com/maps/search/?api=1&query=London,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1335,7 +1268,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "jobs",
         "family",
         "education"
@@ -1395,7 +1327,6 @@
       "needs": [
         "food",
         "housing",
-        "crisis",
         "jobs",
         "family",
         "community"
@@ -1456,7 +1387,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family",
         "transportation"
       ],
@@ -1569,7 +1499,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "family"
       ],
       "service_types": [
@@ -1683,7 +1612,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1746,7 +1674,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1859,7 +1786,6 @@
       "url": "https://nosw.org",
       "facebook": null,
       "needs": [
-        "documents",
         "jobs",
         "family",
         "transportation",
@@ -1974,8 +1900,7 @@
       "facebook": null,
       "needs": [
         "crisis",
-        "family",
-        "transportation"
+        "family"
       ],
       "service_types": [
         "walk-in"
@@ -2195,7 +2120,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "jobs",
         "family"
       ],

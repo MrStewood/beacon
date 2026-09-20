@@ -1,7 +1,60 @@
 {
   "need": "community",
-  "count": 42,
+  "count": 47,
   "resources": [
+    {
+      "id": "211-national-resource-helpline",
+      "name": "211 - National Resource Helpline",
+      "alternate_names": [],
+      "description": "National resource information and referrals for local services",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "211"
+      ],
+      "email": null,
+      "url": "https://211.org",
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": true,
+      "intake_hours": null,
+      "map_url": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
     {
       "id": "harlan-4th-dimension-treatment-center",
       "name": "4th Dimension Treatment Center",
@@ -24,7 +77,6 @@
       "needs": [
         "mental-health",
         "addiction",
-        "documents",
         "family",
         "community"
       ],
@@ -117,6 +169,61 @@
       "related": []
     },
     {
+      "id": "knox-appalachian-phoenix-house",
+      "name": "Appalachian Phoenix House",
+      "alternate_names": [],
+      "description": "17-bed residential program for mentally ill men and women.",
+      "address": "401 Roy Kidd Ave, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-4381"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "online"
+      ],
+      "populations": [
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=401+Roy+Kidd+Ave,+Corbin,+KY+40701",
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
       "id": "appalachian-research-defense-fund-of-ky",
       "name": "Appalachian Research & Defense Fund of KY",
       "alternate_names": [],
@@ -190,7 +297,6 @@
       "needs": [
         "food",
         "shelter",
-        "crisis",
         "community"
       ],
       "service_types": [
@@ -683,7 +789,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -946,7 +1051,9 @@
       "county": "Statewide",
       "latitude": null,
       "longitude": null,
-      "phones": [],
+      "phones": [
+        "833-8KY-HELP"
+      ],
       "email": null,
       "url": null,
       "facebook": null,
@@ -1004,8 +1111,6 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "documents",
-        "family",
         "community"
       ],
       "service_types": [
@@ -1232,7 +1337,6 @@
       "needs": [
         "food",
         "housing",
-        "crisis",
         "jobs",
         "family",
         "community"
@@ -1459,7 +1563,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1522,7 +1625,6 @@
         "addiction",
         "crisis",
         "family",
-        "transportation",
         "community"
       ],
       "service_types": [
@@ -1561,6 +1663,112 @@
       "related": []
     },
     {
+      "id": "harlan-meridzo-center",
+      "name": "Meridzo Center",
+      "alternate_names": [],
+      "description": "Distribution center, Hope House, Redeemed Living Transitions.",
+      "address": "202 Church St, Lynch, KY 40855",
+      "city": "Lynch",
+      "state": "KY",
+      "zip": "40855",
+      "county": "Harlan",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-848-2766"
+      ],
+      "email": null,
+      "url": "https://meridzo.org",
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=202+Church+St,+Lynch,+KY+40855",
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "national-lead-information-center",
+      "name": "National Lead Information Center",
+      "alternate_names": [],
+      "description": "Lead poisoning info",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-424-5323"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
       "id": "morgan-new-vision-recovery-center",
       "name": "New Vision Recovery Center",
       "alternate_names": [],
@@ -1582,7 +1790,6 @@
         "health",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -1639,7 +1846,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -1754,7 +1960,6 @@
         "housing",
         "mental-health",
         "addiction",
-        "documents",
         "community"
       ],
       "service_types": [
@@ -1776,6 +1981,59 @@
       "referral_required": null,
       "intake_hours": null,
       "map_url": "https://www.google.com/maps/search/?api=1&query=1018+E.+New+Circle+Rd+Ste+204,+Lexington,+KY+40505",
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "poison-control",
+      "name": "Poison Control",
+      "alternate_names": [],
+      "description": "Poison emergency",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-222-1222"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -2191,7 +2449,6 @@
       "facebook": null,
       "needs": [
         "addiction",
-        "documents",
         "education",
         "community"
       ],

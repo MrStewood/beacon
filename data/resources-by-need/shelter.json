@@ -78,7 +78,6 @@
       "needs": [
         "food",
         "shelter",
-        "crisis",
         "community"
       ],
       "service_types": [
@@ -133,8 +132,7 @@
       "facebook": null,
       "needs": [
         "shelter",
-        "crisis",
-        "transportation"
+        "crisis"
       ],
       "service_types": [
         "residential"
@@ -309,7 +307,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family"
       ],
       "service_types": [
@@ -589,7 +586,6 @@
         "food",
         "shelter",
         "clothing",
-        "crisis",
         "family",
         "transportation"
       ],
@@ -648,8 +644,7 @@
       "facebook": null,
       "needs": [
         "shelter",
-        "addiction",
-        "documents"
+        "addiction"
       ],
       "service_types": [
         "residential"
@@ -703,8 +698,7 @@
       "url": null,
       "facebook": null,
       "needs": [
-        "shelter",
-        "documents"
+        "shelter"
       ],
       "service_types": [
         "walk-in"

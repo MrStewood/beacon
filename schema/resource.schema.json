@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mrstewood.github.io/beacon/schema/resource.schema.json",
+  "title": "Beacon Community Resource",
+  "description": "A community resource entry in the Beacon directory. All fields are optional except id, name, county, and status.",
+  "type": "object",
+  "required": ["id", "name", "county", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+      "minLength": 3,
+      "maxLength": 120,
+      "description": "Stable, human-readable, URL-safe identifier. Format: {county}-{slugified-name} or {slugified-name} for statewide."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "Official organization name."
+    },
+    "alternate_names": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 100 },
+      "uniqueItems": true,
+      "description": "DBAs, abbreviations, old names."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Plain English description of what the organization does."
+    },
+    "address": {
+      "type": ["string", "null"],
+      "description": "Street address, or 'Statewide' / 'Online' for non-local resources."
+    },
+    "city": {
+      "type": ["string", "null"],
+      "maxLength": 100,
+      "description": "City or town."
+    },
+    "state": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "Two-letter state code."
+    },
+    "zip": {
+      "type": ["string", "null"],
+      "pattern": "^\\d{5}(-\\d{4})?$",
+      "description": "US zip code."
+    },
+    "county": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Primary service county, or 'Statewide'."
+    },
+    "latitude": {
+      "type": ["number", "null"],
+      "minimum": -90,
+      "maximum": 90,
+      "description": "Decimal latitude for mapping."
+    },
+    "longitude": {
+      "type": ["number", "null"],
+      "minimum": -180,
+      "maximum": 180,
+      "description": "Decimal longitude for mapping."
+    },
+    "phones": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 30
+      },
+      "uniqueItems": true,
+      "description": "Phone numbers including short codes (988, 211) and vanity numbers (833-8KY-HELP)."
+    },
+    "email": {
+      "type": ["string", "null"],
+      "format": "email",
+      "description": "General or intake email."
+    },
+    "url": {
+      "type": ["string", "null"],
+      "pattern": "^https?://.*",
+      "description": "Website URL (must start with http:// or https://)."
+    },
+    "facebook": {
+      "type": ["string", "null"],
+      "pattern": "^https?://.*",
+      "description": "Facebook page URL."
+    },
+    "needs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "addiction", "clothing", "community", "crisis", "documents",
+          "education", "family", "food", "health", "housing",
+          "jobs", "legal", "mental-health", "shelter", "transportation",
+          "veterans"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "What problem this resource solves."
+    },
+    "service_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hotline", "walk-in", "appointment", "residential",
+          "outpatient", "mobile", "online", "peer-led",
+          "faith-based", "government"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "How help is delivered."
+    },
+    "populations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "anyone", "families", "women", "men", "youth",
+          "seniors", "veterans", "lgbtq+", "disability",
+          "re-entry", "pregnant", "substance-use", "recovery"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Who this resource serves."
+    },
+    "eligibility": {
+      "type": ["string", "null"],
+      "maxLength": 1000,
+      "description": "Who qualifies and what is required."
+    },
+    "cost": {
+      "type": "string",
+      "enum": ["free", "sliding-scale", "insurance", "private-pay", "unknown"],
+      "description": "Cost to the person receiving services."
+    },
+    "hours": {
+      "type": ["string", "null"],
+      "maxLength": 200,
+      "description": "When services are available. Free text for flexibility."
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 50 },
+      "uniqueItems": true,
+      "default": ["English"],
+      "description": "Languages in which services are available."
+    },
+    "what_to_bring": {
+      "type": ["string", "null"],
+      "maxLength": 500,
+      "description": "Documents or items to bring for intake."
+    },
+    "referral_required": {
+      "type": ["boolean", "null"],
+      "description": "Whether a referral from another organization is required."
+    },
+    "intake_hours": {
+      "type": ["string", "null"],
+      "maxLength": 200,
+      "description": "When walk-in intake is accepted."
+    },
+    "map_url": {
+      "type": ["string", "null"],
+      "pattern": "^https?://.*",
+      "description": "Auto-generated Google Maps link."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "needs-verification", "closed"],
+      "description": "Current operational status."
+    },
+    "intake_process": {
+      "type": ["string", "null"],
+      "maxLength": 500,
+      "description": "How to start receiving services."
+    },
+    "capacity": {
+      "type": ["string", "null"],
+      "maxLength": 100,
+      "description": "Beds, slots, or 'Unknown'."
+    },
+    "waitlist": {
+      "type": ["boolean", "null"],
+      "description": "Whether there is currently a waiting list."
+    },
+    "accepts_insurance": {
+      "type": ["array", "null"],
+      "items": { "type": "string", "maxLength": 100 },
+      "uniqueItems": true,
+      "description": "Insurance plans accepted."
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": ["unverified", "auto-inferred", "website-checked", "phone-confirmed", "in-person-verified"],
+      "default": "auto-inferred",
+      "description": "How thoroughly this record has been verified."
+    },
+    "last_verified": {
+      "type": ["string", "null"],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date (YYYY-MM-DD) when information was last confirmed with the provider."
+    },
+    "verified_by": {
+      "type": ["string", "null"],
+      "maxLength": 100,
+      "description": "Agent ID, human name, or 'initial-import'."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "Confidence in data accuracy. high=confirmed, medium=inferred from web, low=unverified."
+    },
+    "source_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https?://.*"
+      },
+      "description": "URLs where this information was found."
+    },
+    "first_seen": {
+      "type": ["string", "null"],
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date when Beacon first discovered this resource."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 50 },
+      "uniqueItems": true,
+      "description": "Freeform tags for search."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "maxLength": 1000,
+      "description": "Tips, quirks, internal notes. Visible on the public site."
+    },
+    "related": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "IDs of same-org different-location entries."
+    }
+  },
+  "additionalProperties": false
+}
