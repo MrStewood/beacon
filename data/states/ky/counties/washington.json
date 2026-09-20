@@ -1,0 +1,61 @@
+{
+  "county": "Washington",
+  "state": "KY",
+  "count": 1,
+  "resources": [
+    {
+      "id": "washington-cumberland-mountain-healthcare",
+      "name": "Cumberland Mountain Healthcare",
+      "alternate_names": [],
+      "description": "Psychiatry, family care, AODE certified, weight loss, wellness memberships.",
+      "address": "323 Main St, Williamsburg, KY 40769",
+      "city": "Williamsburg",
+      "state": "KY",
+      "zip": "40769",
+      "county": "Washington",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-825-6011"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "health",
+        "family"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=323+Main+St,+Williamsburg,+KY+40769",
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}
