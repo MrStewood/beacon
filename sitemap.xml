@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mrstewood.github.io/beacon/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/organizations.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/print/all.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/resource/211-national-resource-helpline.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/resource/harlan-4th-dimension-treatment-center.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/resource/988-suicide-hotline-crisis-lifeline.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -220,25 +220,39 @@
   <url><loc>https://mrstewood.github.io/beacon/pages/resource/womens-cancer-screening.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/resource/madison-yonder-behavioral-health.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/resource/jefferson-ypr-young-people-in-recovery.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/jefferson.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/lawrence.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/floyd.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/clay.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/harlan.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/county/bell.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/morgan.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/lincoln.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/perry.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/county/clark.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/clay.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/fayette.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/floyd.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/county/franklin.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/harlan.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/jefferson.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/jessamine.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/county/knox.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/lawrence.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/lincoln.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/madison.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/mccreary.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/morgan.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/perry.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/pulaski.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/county/taylor.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/county/washington.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mrstewood.github.io/beacon/pages/county/whitley.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/mccreary.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/jessamine.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/taylor.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/pulaski.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/fayette.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/county/madison.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mrstewood.github.io/beacon/pages/state/ky.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/addiction.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/clothing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/community.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/crisis.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/education.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/family.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/food.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/health.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/housing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/jobs.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/legal.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/mental-health.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/shelter.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/transportation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mrstewood.github.io/beacon/pages/need/veterans.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

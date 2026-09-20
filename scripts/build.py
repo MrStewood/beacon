@@ -44,6 +44,8 @@ def main():
         ("python3 scripts/build_pages.py", "Generating resource, county, and need pages"),
         ("python3 scripts/build_print.py", "Generating print-ready guides"),
         ("python3 scripts/validate.py", "Validating data against schema"),
+        ("python3 scripts/validate_sources.py", "Validating sources and workflow"),
+        ("python3 scripts/generate_report.py", "Generating change report"),
     ]
 
     # Add test step if requested

@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-09-20T13:50:53.154456",
+  "base_ref": "origin/main",
+  "changed_files": [
+    "scripts/build.py",
+    "sitemap.xml"
+  ],
+  "added": [],
+  "updated": [],
+  "removed": [],
+  "verification_changes": [],
+  "geographic_changes": [],
+  "sensitive_changes": [],
+  "summary": {
+    "total_changes": 2,
+    "resources_added": 0,
+    "resources_updated": 0,
+    "resources_removed": 0,
+    "verification_changes": 0,
+    "geographic_changes": 0,
+    "sensitive_changes": 0
+  }
+}
