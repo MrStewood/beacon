@@ -40,18 +40,18 @@ class TestGeolocation:
 
     def test_geolocation_function_exists(self):
         """useMyLocation function should exist."""
-        html = (REPO_ROOT / "index.html").read_text()
-        assert 'function useMyLocation' in html
+        js = (REPO_ROOT / "assets" / "js" / "app.js").read_text()
+        assert 'useMyLocation' in js
 
     def test_haversine_function_exists(self):
         """Haversine distance function should exist."""
-        html = (REPO_ROOT / "index.html").read_text()
-        assert 'function haversine' in html
+        js = (REPO_ROOT / "assets" / "js" / "app.js").read_text()
+        assert 'haversine' in js
 
     def test_permission_handling(self):
         """Should handle permission denied gracefully."""
-        html = (REPO_ROOT / "index.html").read_text()
-        assert 'permission denied' in html.lower() or 'Permission denied' in html
+        js = (REPO_ROOT / "assets" / "js" / "app.js").read_text()
+        assert 'permission denied' in js.lower() or 'Permission denied' in js
 
     def test_location_button_exists(self):
         """Use My Location button should exist."""
@@ -65,8 +65,8 @@ class TestGeolocation:
 
     def test_distance_displayed(self):
         """Distance should be displayed on cards."""
-        html = (REPO_ROOT / "index.html").read_text()
-        assert '_distance' in html
+        js = (REPO_ROOT / "assets" / "js" / "app.js").read_text()
+        assert '_distance' in js
 
 class TestPerformance:
     """Basic performance checks."""

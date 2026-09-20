@@ -249,6 +249,41 @@ class TestNationwideArchitecture:
         counties = list((DATA_DIR / "states" / "ky" / "counties").glob("*.json"))
         assert len(counties) >= 15
 
+class TestJavaScript:
+    """Verify JavaScript is valid and functional."""
+
+    def test_app_js_exists(self):
+        """app.js should exist."""
+        assert (REPO_ROOT / "assets" / "js" / "app.js").exists()
+
+    def test_config_js_exists(self):
+        """config.js should exist."""
+        assert (REPO_ROOT / "assets" / "js" / "config.js").exists()
+
+    def test_app_js_syntax(self):
+        """app.js should have valid JavaScript syntax."""
+        import subprocess
+        result = subprocess.run(
+            ["node", "--check", str(REPO_ROOT / "assets" / "js" / "app.js")],
+            capture_output=True, text=True
+        )
+        assert result.returncode == 0, f"JS syntax error: {result.stderr}"
+
+    def test_config_js_syntax(self):
+        """config.js should have valid JavaScript syntax."""
+        import subprocess
+        result = subprocess.run(
+            ["node", "--check", str(REPO_ROOT / "assets" / "js" / "config.js")],
+            capture_output=True, text=True
+        )
+        assert result.returncode == 0, f"JS syntax error: {result.stderr}"
+
+    def test_index_uses_external_js(self):
+        """index.html should use external JS files."""
+        html = (REPO_ROOT / "index.html").read_text()
+        assert 'src="/beacon/assets/js/app.js"' in html
+        assert 'src="/beacon/assets/js/config.js"' in html
+
 class TestFileStructure:
     """Repository structure is correct."""
 
