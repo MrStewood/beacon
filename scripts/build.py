@@ -41,6 +41,7 @@ def main():
     steps = [
         ("python3 scripts/parse_resources.py", "Parsing source data → resources.json"),
         ("python3 scripts/generate_csv.py", "Generating CSV exports"),
+        ("python3 scripts/build_pages.py", "Generating resource, county, and need pages"),
         ("python3 scripts/validate.py", "Validating data against schema"),
     ]
 
