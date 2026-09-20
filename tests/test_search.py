@@ -26,7 +26,7 @@ WORD_MAP = {
     'sleep':'shelter','shelter':'shelter','bed':'shelter',
     'detox':'addiction','rehab':'addiction','sober':'addiction','recovery':'addiction',
     'therapy':'mental-health','counseling':'mental-health',
-    'electric':'utility','power':'utility','utility':'utility',
+    'electric':'utility-assistance','power':'utility-assistance','utility':'utility-assistance',
     'lawyer':'legal','attorney':'legal','legal':'legal',
     'job':'jobs','employment':'jobs','work':'jobs',
     'crisis':'crisis','hotline':'crisis','emergency':'crisis','suicide':'crisis',

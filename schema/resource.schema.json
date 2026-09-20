@@ -100,7 +100,7 @@
           "addiction", "clothing", "community", "crisis", "documents",
           "education", "family", "food", "health", "housing",
           "jobs", "legal", "mental-health", "shelter", "transportation",
-          "veterans"
+          "utility-assistance", "veterans"
         ]
       },
       "minItems": 1,

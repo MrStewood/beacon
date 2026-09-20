@@ -18,6 +18,7 @@
     "mental-health": { "label": "Mental Health", "description": "Counseling, therapy, psychiatric care, crisis counseling, screenings" },
     "shelter": { "label": "Shelter & Sleep", "description": "Emergency shelters, overnight warming, hotel vouchers, couch programs" },
     "transportation": { "label": "Transportation", "description": "Bus passes, ride programs, vehicle repair, NEMT" },
+    "utility-assistance": { "label": "Utility Assistance", "description": "Electric, gas, water bill help, LIHEAP, shutoff prevention" },
     "veterans": { "label": "Veterans", "description": "VA benefits, VSOs, veteran-specific housing and employment" }
   },
   "service_types": {

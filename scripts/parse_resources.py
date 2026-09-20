@@ -306,6 +306,7 @@ NEED_KEYWORDS = {
     "legal": ["legal", "law", "court", "attorney", "justice", "expungement"],
     "family": ["child", "youth", "family", "parent", "pregnancy", "prenatal", "baby", "kid", "foster", "maternity"],
     "transportation": ["transport", "bus", "ride", "vehicle", "nemt"],
+    "utility-assistance": ["utility", "electric", "power bill", "gas bill", "water bill", "heating", "liheap", "shutoff"],
     "education": ["education", "ged", "school", "college", "learning", "literacy", "classes"],
     "veterans": ["veteran", "vfw", "dav", "va ", "ssvf"],
     "community": ["peer", "community", "support group", "celebrate recovery", "aa ", "na ", "meeting"]

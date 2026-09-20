@@ -27,6 +27,7 @@ const BEACON_CONFIG = {
     "mental-health": "Mental Health",
     shelter: "Shelter & Sleep",
     transportation: "Transportation",
+    "utility-assistance": "Utility Assistance",
     veterans: "Veterans"
   },
 
