@@ -121,8 +121,8 @@
     <div class="wrap">
         <strong>Download Resource Data</strong>
         <div class="dl-btns">
-            <a href="../data/resources.csv" class="dl-btn pri" download>CSV (Spreadsheet)</a>
-            <a href="../data/resources.json" class="dl-btn sec" download>JSON (Developers)</a>
+            <a href="data/resources.csv" class="dl-btn pri" download>CSV (Spreadsheet)</a>
+            <a href="data/resources.json" class="dl-btn sec" download>JSON (Developers)</a>
             <a href="print/all.html" class="dl-btn sec" target="_blank">Print Version</a>
         </div>
     </div>
@@ -143,7 +143,7 @@ const SVC_LABELS = {faith-based:"Faith-Based",government:"Government",hotline:"H
 let ALL=[], activeNeeds=new Set();
 
 async function init(){
-    const r=await fetch('../data/resources.json');
+    const r=await fetch('data/resources.json');
     const d=await r.json();
     ALL=d.resources;
     document.getElementById('stat-total').textContent=ALL.length;

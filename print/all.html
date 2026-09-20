@@ -33,7 +33,7 @@
 <script>
 const NL={addiction:"Addiction & Recovery",clothing:"Clothing & Supplies",community:"Community",crisis:"Crisis & Safety",documents:"ID & Documents",education:"Education",family:"Family & Children",food:"Food & Water",health:"Healthcare",housing:"Housing",jobs:"Jobs & Income",legal:"Legal Aid","mental-health":"Mental Health",shelter:"Shelter & Sleep",transportation:"Transportation",veterans:"Veterans"};
 async function load(){
-    const r=await fetch('../../data/resources.json');
+    const r=await fetch('../data/resources.json');
     const d=await r.json();
     document.getElementById('upd').textContent=d.metadata.last_updated;
     const byC={};
