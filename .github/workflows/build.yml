@@ -28,7 +28,7 @@ jobs:
       - name: Run tests
         run: pytest tests/ -v
       - name: Verify generated files match
-        run: python scripts/build.py && git diff --exit-code data/ pages/ print/ sitemap.xml -- ':!data/change-report.json' || (echo "Generated files differ from committed" && exit 1)
+        run: python scripts/build.py && git diff --exit-code -- data/ pages/ print/ sitemap.xml ':(exclude)data/change-report.json' || (echo "Generated files differ from committed" && exit 1)
 
   build:
     needs: validate
