@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mrstewood.github.io/beacon/schema/resource.schema.v3.json",
+  "title": "Beacon Community Resource v3",
+  "description": "Version 3 schema with structured geographic modeling for nationwide expansion.",
+  "type": "object",
+  "required": ["id", "name", "status", "coverage_scope"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$",
+      "minLength": 3,
+      "maxLength": 120,
+      "description": "Stable, human-readable, URL-safe identifier."
+    },
+    "legacy_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Previous IDs for URL compatibility."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "alternate_names": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 100 },
+      "uniqueItems": true
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "organization_id": {
+      "type": ["string", "null"],
+      "description": "Stable ID for the parent organization."
+    },
+    "program_id": {
+      "type": ["string", "null"],
+      "description": "Stable ID for this specific program/service."
+    },
+
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "location_type"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+          "name": { "type": ["string", "null"] },
+          "location_type": {
+            "type": "string",
+            "enum": ["physical", "mailing", "mobile", "virtual", "confidential", "unknown"]
+          },
+          "address_line_1": { "type": ["string", "null"] },
+          "address_line_2": { "type": ["string", "null"] },
+          "city": { "type": ["string", "null"] },
+          "county_name": { "type": ["string", "null"] },
+          "county_fips": { "type": ["string", "null"], "pattern": "^\\d{5}$" },
+          "state": { "type": ["string", "null"], "pattern": "^[A-Z]{2}$" },
+          "postal_code": { "type": ["string", "null"], "pattern": "^\\d{5}(-\\d{4})?$" },
+          "country": { "type": "string", "default": "US", "pattern": "^[A-Z]{2}$" },
+          "latitude": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
+          "longitude": { "type": ["number", "null"], "minimum": -180, "maximum": 180 },
+          "geocoding_status": {
+            "type": "string",
+            "enum": ["verified", "approximate", "failed", "not-geocoded", "excluded"],
+            "default": "not-geocoded"
+          },
+          "geocoding_source": { "type": ["string", "null"] },
+          "geocoded_at": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "publicly_displayed": { "type": "boolean", "default": true }
+        },
+        "additionalProperties": false
+      },
+      "description": "Physical and virtual locations. Confidential locations are never geocoded or publicly displayed."
+    },
+
+    "coverage_scope": {
+      "type": "string",
+      "enum": [
+        "national", "multi-state", "state", "multi-county", "county",
+        "multi-city", "city", "postal-code", "radius", "tribal-area",
+        "custom-region", "online", "unknown"
+      ],
+      "description": "How broadly this resource provides services."
+    },
+    "service_areas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["country", "state", "county", "city", "postal-code", "radius", "tribal-area", "custom-region"]
+          },
+          "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "fips": { "type": ["string", "null"] },
+                "state": { "type": "string", "pattern": "^[A-Z]{2}$" }
+              }
+            }
+          },
+          "center": {
+            "type": "object",
+            "properties": {
+              "latitude": { "type": "number" },
+              "longitude": { "type": "number" }
+            }
+          },
+          "radius_miles": { "type": "number", "minimum": 1, "maximum": 500 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "states_served": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[A-Z]{2}$" },
+      "description": "States where this resource provides services."
+    },
+    "remote_service": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether services can be delivered remotely."
+    },
+    "location_restrictions": {
+      "type": ["string", "null"],
+      "maxLength": 500,
+      "description": "Eligibility restrictions based on geography."
+    },
+
+    "phones": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 3, "maxLength": 30 },
+      "uniqueItems": true
+    },
+    "email": { "type": ["string", "null"] },
+    "url": { "type": ["string", "null"], "pattern": "^https?://.*" },
+    "facebook": { "type": ["string", "null"] },
+
+    "needs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "addiction", "clothing", "community", "crisis", "documents",
+          "education", "family", "food", "health", "housing",
+          "jobs", "legal", "mental-health", "shelter", "transportation",
+          "utility-assistance", "veterans"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "service_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hotline", "walk-in", "appointment", "residential",
+          "outpatient", "mobile", "online", "peer-led",
+          "faith-based", "government"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "resource_type": {
+      "type": "string",
+      "enum": [
+        "direct-provider", "hotline", "information-referral",
+        "government", "advocacy", "regulator", "housing-provider",
+        "treatment-provider", "community-program", "unknown"
+      ],
+      "default": "unknown",
+      "description": "What kind of organization this is."
+    },
+    "populations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "anyone", "families", "women", "men", "youth",
+          "seniors", "veterans", "lgbtq+", "disability",
+          "re-entry", "pregnant", "substance-use", "recovery"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "eligibility": { "type": ["string", "null"], "maxLength": 1000 },
+    "cost": {
+      "type": "string",
+      "enum": ["free", "sliding-scale", "insurance", "private-pay", "unknown"]
+    },
+    "hours": { "type": ["string", "null"], "maxLength": 200 },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 50 },
+      "uniqueItems": true,
+      "default": ["English"]
+    },
+    "what_to_bring": { "type": ["string", "null"], "maxLength": 500 },
+    "referral_required": { "type": ["boolean", "null"] },
+    "intake_hours": { "type": ["string", "null"], "maxLength": 200 },
+    "intake_process": { "type": ["string", "null"], "maxLength": 500 },
+    "capacity": { "type": ["string", "null"], "maxLength": 100 },
+    "waitlist": { "type": ["boolean", "null"] },
+    "accepts_insurance": {
+      "type": ["array", "null"],
+      "items": { "type": "string", "maxLength": 100 },
+      "uniqueItems": true
+    },
+
+    "verification_status": {
+      "type": "string",
+      "enum": ["verified", "website-checked", "source-only", "needs-review", "reported-closed"],
+      "default": "source-only"
+    },
+    "last_verified": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "verified_by": { "type": ["string", "null"], "maxLength": 100 },
+    "website_last_checked": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "source_urls": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^https?://.*" }
+    },
+
+    "first_seen": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 50 },
+      "uniqueItems": true
+    },
+    "notes": { "type": ["string", "null"], "maxLength": 1000 },
+    "related": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+
+    "county": {
+      "type": ["string", "null"],
+      "description": "DEPRECATED: Use locations and service_areas instead."
+    },
+    "address": {
+      "type": ["string", "null"],
+      "description": "DEPRECATED: Use locations[].address_line_1 instead."
+    },
+    "city": {
+      "type": ["string", "null"],
+      "description": "DEPRECATED: Use locations[].city instead."
+    },
+    "state": {
+      "type": ["string", "null"],
+      "description": "DEPRECATED: Use locations[].state or states_served instead."
+    },
+    "zip": {
+      "type": ["string", "null"],
+      "description": "DEPRECATED: Use locations[].postal_code instead."
+    }
+  },
+  "additionalProperties": false
+}
