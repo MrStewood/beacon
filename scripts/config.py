@@ -33,3 +33,6 @@ BUILD_DATE = "2026-09-20"
 
 # Version
 VERSION = "2.0.0"
+
+# Base path for GitHub Pages (all internal links must use this)
+BASE_PATH = "/beacon"

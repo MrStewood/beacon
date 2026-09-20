@@ -116,9 +116,9 @@
     <div class="grid" id="results"><div class="no-results">Loading…</div></div>
     <div class="pagination" id="pagination"></div>
 </div>
-<div class="dl-section"><div class="wrap"><strong>Download Data</strong><div class="dl-btns"><a href="data/resources.csv" class="dl-btn pri" download>CSV</a><a href="data/resources.json" class="dl-btn sec" download>JSON</a><a href="print/all.html" class="dl-btn sec" target="_blank" rel="noopener noreferrer">Print</a></div></div></div>
+<div class="dl-section"><div class="wrap"><strong>Download Data</strong><div class="dl-btns"><a href="/beacon/data/resources.csv" class="dl-btn pri" download>CSV</a><a href="/beacon/data/resources.json" class="dl-btn sec" download>JSON</a><a href="/beacon/print/all.html" class="dl-btn sec" target="_blank" rel="noopener noreferrer">Print</a></div></div></div>
 <footer><div class="wrap"><p>Data from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries</a> · <span id="updated">—</span> · <a href="https://github.com/MrStewood/beacon">GitHub</a> · <a href="https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md">Suggest a Resource</a></p></div></footer>
-<script src="assets/js/config.js"></script>
+<script src="/beacon/assets/js/config.js"></script>
 <script>
 const NL=BEACON_CONFIG.needs,PL=BEACON_CONFIG.populations,SL=BEACON_CONFIG.serviceTypes;
 let ALL=[],activeNeeds=new Set(),currentPage=1,pageSize=25,currentView='detailed',lastResults=[];

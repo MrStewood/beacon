@@ -10,6 +10,7 @@ REPO_ROOT = Path(__file__).parent.parent
 DATA_DIR = REPO_ROOT / "data"
 PAGES_DIR = REPO_ROOT / "pages"
 SCHEMA_DIR = REPO_ROOT / "schema"
+BASE_PATH = "/beacon"
 
 NEED_LABELS = {
     "addiction": "Addiction & Recovery", "clothing": "Clothing & Supplies",
@@ -73,11 +74,18 @@ def resource_page(r, data):
                and x["county"] != "Statewide"][:5]
 
     # Breadcrumbs
-    breadcrumbs = f'''<nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a> ›
-        <a href="/pages/county/{county.lower()}.html">{esc(county)} County</a> ›
-        <span>{esc(r["name"])}</span>
-    </nav>'''
+    if county != "Statewide":
+        breadcrumbs = f'''<nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/beacon/">Home</a> ›
+            <a href="/beacon/pages/county/{county.lower()}.html">{esc(county)} County</a> ›
+            <span>{esc(r["name"])}</span>
+        </nav>'''
+    else:
+        breadcrumbs = f'''<nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/beacon/">Home</a> ›
+            <span>Statewide Resources</span> ›
+            <span>{esc(r["name"])}</span>
+        </nav>'''
 
     # Action buttons
     actions = ""
@@ -114,7 +122,7 @@ def resource_page(r, data):
     if related:
         related_html = '<div class="related"><h3>Related Resources</h3><ul>'
         for x in related:
-            related_html += f'<li><a href="/pages/resource/{x["id"]}.html">{esc(x["name"])}</a> — {esc(x.get("description","")[:80])}</li>'
+            related_html += f'<li><a href="/beacon/pages/resource/{x["id"]}.html">{esc(x["name"])}</a> — {esc(x.get("description","")[:80])}</li>'
         related_html += '</ul></div>'
 
     return f'''<!DOCTYPE html>
@@ -188,7 +196,7 @@ def resource_page(r, data):
         {f'<div class="details"><dl>{details}</dl></div>' if details else ''}
     </div>
     {related_html}
-    <a href="/" class="back">← Back to Directory</a>
+    <a href="/beacon/" class="back">← Back to Directory</a>
 </div>
 <footer><div class="wrap">Beacon Community Resource Directory · Data from Isaiah 58:10 Ministries</div></footer>
 </body>
@@ -202,7 +210,7 @@ def county_page(county, resources, data):
     resource_list = ""
     for r in county_resources:
         phones = f' · 📞 <a href="tel:{r["phones"][0]}">{esc(r["phones"][0])}</a>' if r.get("phones") else ""
-        resource_list += f'<li><a href="/pages/resource/{r["id"]}.html">{esc(r["name"])}</a>{phones} — {esc(r.get("description","")[:100])}</li>\n'
+        resource_list += f'<li><a href="/beacon/pages/resource/{r["id"]}.html">{esc(r["name"])}</a>{phones} — {esc(r.get("description","")[:100])}</li>\n'
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -230,14 +238,14 @@ def county_page(county, resources, data):
 </head>
 <body>
 <div class="wrap">
-    <nav style="padding:1rem 0;font-size:.85rem;color:var(--muted)"><a href="/" style="color:var(--primary);text-decoration:none">Home</a> › <span>{esc(county)} County</span></nav>
+    <nav style="padding:1rem 0;font-size:.85rem;color:var(--muted)"><a href="/beacon/" style="color:var(--primary);text-decoration:none">Home</a> › <span>{esc(county)} County</span></nav>
     <h1>{esc(county)} County</h1>
     <p class="count">{len(county_resources)} resources available</p>
     <p>Browse by need:</p>
-    <div class="needs">{"".join(f'<a href="/?county={county}&needs={n}" class="need-link">{NEED_LABELS.get(n,n)}</a>' for n in needs_in_county)}</div>
+    <div class="needs">{"".join(f'<a href="/beacon/?county={county}&needs={n}" class="need-link">{NEED_LABELS.get(n,n)}</a>' for n in needs_in_county)}</div>
     <h2 style="font-size:1.2rem;margin:1rem 0 .5rem">All Resources</h2>
     <ul>{resource_list}</ul>
-    <a href="/" class="back">← Back to Directory</a>
+    <a href="/beacon/" class="back">← Back to Directory</a>
 </div>
 <footer><div class="wrap">Beacon Community Resource Directory</div></footer>
 </body>
@@ -250,9 +258,9 @@ def need_page(need, resources):
 
     resource_list = ""
     for r in need_resources[:50]:  # Limit to 50
-        county_link = f' · <a href="/pages/county/{r["county"].lower()}.html">{esc(r["county"])}</a>' if r["county"] != "Statewide" else ""
+        county_link = f' · <a href="/beacon/pages/county/{r["county"].lower()}.html">{esc(r["county"])}</a>' if r["county"] != "Statewide" else ""
         phones = f' · 📞 {esc(r["phones"][0])}' if r.get("phones") else ""
-        resource_list += f'<li><a href="/pages/resource/{r["id"]}.html">{esc(r["name"])}</a>{county_link}{phones}</li>\n'
+        resource_list += f'<li><a href="/beacon/pages/resource/{r["id"]}.html">{esc(r["name"])}</a>{county_link}{phones}</li>\n'
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -280,14 +288,14 @@ def need_page(need, resources):
 </head>
 <body>
 <div class="wrap">
-    <nav style="padding:1rem 0;font-size:.85rem;color:var(--muted)"><a href="/" style="color:var(--primary);text-decoration:none">Home</a> › <span>{NEED_LABELS.get(need, need)}</span></nav>
+    <nav style="padding:1rem 0;font-size:.85rem;color:var(--muted)"><a href="/beacon/" style="color:var(--primary);text-decoration:none">Home</a> › <span>{NEED_LABELS.get(need, need)}</span></nav>
     <h1>{NEED_LABELS.get(need, need)}</h1>
     <p class="count">{len(need_resources)} resources available</p>
     <p>Browse by county:</p>
-    <div class="county-links">{"".join(f'<a href="/?county={c}&needs={need}" class="county-link">{esc(c)}</a>' for c in counties_in)}</div>
+    <div class="county-links">{"".join(f'<a href="/beacon/?county={c}&needs={need}" class="county-link">{esc(c)}</a>' for c in counties_in)}</div>
     <h2 style="font-size:1.2rem;margin:1rem 0 .5rem">Resources</h2>
     <ul>{resource_list}</ul>
-    <a href="/" class="back">← Back to Directory</a>
+    <a href="/beacon/" class="back">← Back to Directory</a>
 </div>
 <footer><div class="wrap">Beacon Community Resource Directory</div></footer>
 </body>
