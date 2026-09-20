@@ -48,15 +48,39 @@
             <div style="max-width: 600px; margin: 0 auto;">
                 <div class="field">
                     <label for="search-input" class="sr-only">Search resources</label>
-                    <input type="text" id="search-input" class="input" placeholder="Search by name, service, or location..." autocomplete="off" style="font-size: 16px; padding: 12px 16px;">
+                    <input type="text" id="search-input" class="input" placeholder="Search by name, service, or keyword..." autocomplete="off" style="font-size: 16px; padding: 12px 16px;">
                 </div>
 
-                <div class="field">
-                    <label for="county-select" class="sr-only">Select county</label>
-                    <select id="county-select" class="input">
-                        <option value="">All Counties</option>
-                    </select>
+                <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3);">
+                    <div class="field" style="flex: 1; margin-bottom: 0;">
+                        <label for="location-input" class="sr-only">Location</label>
+                        <input type="text" id="location-input" class="input" placeholder="Enter ZIP, city, or county..." autocomplete="off">
+                    </div>
+                    <button class="btn btn-secondary" onclick="useMyLocation()" type="button" style="white-space: nowrap;" aria-label="Use my current location">
+                        📍 Use my location
+                    </button>
                 </div>
+
+                <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3);">
+                    <div class="field" style="flex: 1; margin-bottom: 0;">
+                        <label for="county-select" class="sr-only">Select county</label>
+                        <select id="county-select" class="input">
+                            <option value="">All Counties</option>
+                        </select>
+                    </div>
+                    <div class="field" style="flex: 1; margin-bottom: 0;">
+                        <label for="radius-select" class="sr-only">Search radius</label>
+                        <select id="radius-select" class="input" disabled>
+                            <option value="">Any distance</option>
+                            <option value="10">Within 10 miles</option>
+                            <option value="25">Within 25 miles</option>
+                            <option value="50">Within 50 miles</option>
+                            <option value="100">Within 100 miles</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="location-status" style="font-size: 13px; color: var(--color-text-muted); margin-bottom: var(--space-3); display: none;"></div>
 
                 <button class="btn btn-primary btn-block" onclick="search()" type="button">Search</button>
             </div>
@@ -108,11 +132,94 @@
     const PHRASE_MAP={'food tonight':'food','hungry':'food','meal':'food','place to sleep':'shelter','bed tonight':'shelter','detox':'addiction','rehab':'addiction','sober living':'addiction','therapy':'mental-health','counseling':'mental-health','electric bill':'utility-assistance','power bill':'utility-assistance','lawyer':'legal','attorney':'legal','crisis':'crisis','hotline':'crisis','emergency':'crisis','suicide':'crisis'};
     const WORD_MAP={'hungry':'food','food':'food','meal':'food','shelter':'shelter','bed':'shelter','sleep':'shelter','detox':'addiction','rehab':'addiction','sober':'addiction','recovery':'addiction','therapy':'mental-health','counseling':'mental-health','electric':'utility-assistance','power':'utility-assistance','utility':'utility-assistance','lawyer':'legal','attorney':'legal','legal':'legal','job':'jobs','employment':'jobs','work':'jobs','crisis':'crisis','hotline':'crisis','emergency':'crisis','suicide':'crisis'};
 
+    // Location state
+    let userLocation=null;
+
     function tokenize(q){return q.toLowerCase().split(/\s+/).filter(w=>w.length>0&&!STOP_WORDS.has(w))}
     function expandTokens(tokens){let needs=new Set(),words=[];const joined=tokens.join(' ');for(const[phrase,categ]of Object.entries(PHRASE_MAP)){if(joined.includes(phrase))needs.add(categ)}for(const t of tokens){if(WORD_MAP[t])needs.add(WORD_MAP[t]);else words.push(t)}return{needs:[...needs],words}}
     function fuzzyWord(q,word){if(word.includes(q))return true;if(q.length<3||word.length<3)return false;let i=0;for(const c of word){if(c===q[i])i++}return i>=Math.ceil(q.length*.75)}
-    function scoreResource(r,tokens,needs,words){let score=0;const name=(r.name||'').toLowerCase(),desc=(r.description||'').toLowerCase(),rneeds=r.needs||[],phones=(r.phones||[]).join(' ');if(tokens.every(t=>name.includes(t)))score+=100;for(const n of needs){if(rneeds.includes(n))score+=50}for(const w of words){if(name.includes(w))score+=30}for(const w of words){if(desc.includes(w))score+=10}return score}
-    function searchWithQuery(q){const tokens=tokenize(q);if(!tokens.length)return ALL.slice();const{needs,words}=expandTokens(tokens);return ALL.map(r=>({r,score:scoreResource(r,tokens,needs,words)})).filter(s=>s.score>0).sort((a,b)=>b.score-a.score).map(s=>s.r)}
+
+    // Haversine distance in miles
+    function haversine(lat1,lon1,lat2,lon2){
+        const R=3959;const dLat=(lat2-lat1)*Math.PI/180;const dLon=(lon2-lon1)*Math.PI/180;
+        const a=Math.sin(dLat/2)**2+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
+        return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+    }
+
+    function scoreResource(r,tokens,needs,words){
+        let score=0;const name=(r.name||'').toLowerCase(),desc=(r.description||'').toLowerCase(),rneeds=r.needs||[],phones=(r.phones||[]).join(' ');
+        if(tokens.every(t=>name.includes(t)))score+=100;
+        for(const n of needs){if(rneeds.includes(n))score+=50}
+        for(const w of words){if(name.includes(w))score+=30}
+        for(const w of words){if(desc.includes(w))score+=10}
+        return score;
+    }
+
+    function searchWithQuery(q){
+        const tokens=tokenize(q);if(!tokens.length)return ALL.slice();
+        const{needs,words}=expandTokens(tokens);
+        let results=ALL.map(r=>({r,score:scoreResource(r,tokens,needs,words)})).filter(s=>s.score>0);
+
+        // Apply distance scoring if location is set
+        if(userLocation){
+            results.forEach(({r})=>{
+                const loc=r.locations?.[0];
+                if(loc?.latitude&&loc?.longitude){
+                    const dist=haversine(userLocation.lat,userLocation.lon,loc.latitude,loc.longitude);
+                    r._distance=dist;
+                    // Boost nearby resources
+                    if(dist<10)r.score+=20;
+                    else if(dist<25)r.score+=10;
+                    else if(dist<50)r.score+=5;
+                }
+            });
+        }
+        return results.sort((a,b)=>b.score-a.score).map(s=>s.r);
+    }
+
+    function useMyLocation(){
+        if(!navigator.geolocation){
+            showLocationStatus('Geolocation is not supported by your browser','error');
+            return;
+        }
+        showLocationStatus('Getting your location...', 'loading');
+        navigator.geolocation.getCurrentPosition(
+            (pos)=>{
+                userLocation={lat:pos.coords.latitude,lon:pos.coords.longitude};
+                showLocationStatus(`📍 Searching near your location (${userLocation.lat.toFixed(2)}, ${userLocation.lon.toFixed(2)})`,'success');
+                document.getElementById('radius-select').disabled=false;
+                search();
+            },
+            (err)=>{
+                let msg='Unable to get your location';
+                if(err.code===1)msg='Location permission denied. Please enter a location manually.';
+                else if(err.code===2)msg='Location unavailable. Please enter a location manually.';
+                else if(err.code===3)msg='Location request timed out. Please try again.';
+                showLocationStatus(msg,'error');
+            },
+            {enableHighAccuracy:false,timeout:10000,maximumAge:300000}
+        );
+    }
+
+    function showLocationStatus(msg,type){
+        const el=document.getElementById('location-status');
+        el.style.display='block';
+        el.textContent=msg;
+        el.style.color=type==='error'?'var(--color-danger)':type==='success'?'var(--color-success)':'var(--color-text-muted)';
+    }
+
+    function parseLocationInput(input){
+        // Simple ZIP code detection
+        const zipMatch=input.match(/\b(\d{5})\b/);
+        if(zipMatch)return{type:'zip',value:zipMatch[1]};
+        // County detection
+        const countyMatch=input.match(/(.+?)\s*(?:county|co\.?)/i);
+        if(countyMatch)return{type:'county',value:countyMatch[1].trim()};
+        // City, State detection
+        const cityStateMatch=input.match(/(.+?),\s*([A-Z]{2})/);
+        if(cityStateMatch)return{type:'city',city:cityStateMatch[1].trim(),state:cityStateMatch[2]};
+        return{type:'text',value:input};
+    }
 
     async function init(){
         const r=await fetch('/beacon/data/resources.json');const d=await r.json();ALL=d.resources;
@@ -138,14 +245,41 @@
     function search(){
         const q=document.getElementById('search-input').value.trim();
         const county=document.getElementById('county-select').value;
+        const radius=parseInt(document.getElementById('radius-select').value)||0;
         const activeNeeds=[...document.querySelectorAll('.chip[aria-pressed="true"]')].map(c=>c.dataset.need);
         let r=ALL;
+
+        // County filter
         if(county)r=r.filter(x=>x.county===county);
+
+        // Need filter
         if(activeNeeds.length)r=r.filter(x=>x.needs.some(n=>activeNeeds.includes(n)));
-        if(q)r=searchWithQuery(q).filter(x=>r.includes(x));
+
+        // Text search with scoring
+        if(q){r=searchWithQuery(q).filter(x=>r.includes(x))}
+
+        // Distance filter
+        if(userLocation&&radius>0){
+            r=r.filter(x=>{
+                const loc=x.locations?.[0];
+                if(!loc?.latitude||!loc?.longitude)return false;
+                return haversine(userLocation.lat,userLocation.lon,loc.latitude,loc.longitude)<=radius;
+            });
+        }
+
+        // Sort
         const sort=document.getElementById('sort-select').value;
         if(sort==='alpha')r.sort((a,b)=>a.name.localeCompare(b.name));
         else if(sort==='county')r.sort((a,b)=>a.county.localeCompare(b.county)||a.name.localeCompare(b.name));
+        else if(userLocation){
+            // Sort by distance when location is set
+            r.sort((a,b)=>{
+                const locA=a.locations?.[0],locB=b.locations?.[0];
+                const distA=(locA?.latitude&&locA?.longitude)?haversine(userLocation.lat,userLocation.lon,locA.latitude,locA.longitude):9999;
+                const distB=(locB?.latitude&&locB?.longitude)?haversine(userLocation.lat,userLocation.lon,locB.latitude,locB.longitude):9999;
+                return distA-distB;
+            });
+        }
         currentPage=1;lastResults=r;render(r);
     }
 
@@ -154,10 +288,12 @@
         if(!list.length){grid.innerHTML='<div class="card" style="text-align:center"><h3>No resources found</h3><p style="color:var(--color-text-muted)">Try different search terms or filters.</p><p style="margin-top:var(--space-3)"><strong>Need immediate help?</strong><br><a href="tel:988">Call 988</a> for crisis · <a href="tel:211">Call 211</a> for services</p></div>';count.textContent='0 results';pg.innerHTML='';return}
         const total=list.length,pages=Math.ceil(total/pageSize),start=(currentPage-1)*pageSize,page=list.slice(start,start+pageSize);
         count.textContent=`Showing ${start+1}–${Math.min(start+pageSize,total)} of ${total} resources`;
-        grid.innerHTML=page.map(r=>`<div class="card">
+        grid.innerHTML=page.map(r=>{
+            const dist=r._distance?` · ${r._distance.toFixed(1)} miles`:'';
+            return`<div class="card">
             <div class="card-title"><a href="/beacon/pages/resource/${r.id}.html">${h(r.name)}</a></div>
             <div class="card-meta">
-                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}</span>`:''}
+                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${dist}</span>`:dist?`<span>📍 ${r.county||'Statewide'}${dist}</span>`:''}
                 ${r.phones.length?`<a href="tel:${r.phones[0]}" style="color:var(--color-success)">📞 ${h(r.phones[0])}</a>`:''}
                 ${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}
             </div>
