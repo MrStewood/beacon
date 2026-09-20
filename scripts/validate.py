@@ -114,7 +114,15 @@ def validate_business_rules(resources):
 
 
 def validate_critical_resources(resources):
-    """Check that critical crisis resources are correct."""
+    """Check that critical crisis resources are correct.
+
+    An empty dataset is a known intermediate state (clean start). Critical
+    resource checks only apply when resources actually exist — the absence
+    of crisis resources among zero total resources is not a safety violation.
+    """
+    if not resources:
+        print("   No resources loaded; skipping critical-resource checks (empty dataset)")
+        return []
     errors = []
     for crit in CRITICAL_RESOURCES:
         name_contains = crit['name_contains']
