@@ -1,0 +1,185 @@
+name: New Resource
+description: Suggest a new community resource for Beacon
+title: "[NEW] "
+labels: ["stage:discovered", "type:new-resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new resource. Please provide as much detail as possible.
+
+  - type: input
+    id: org_name
+    attributes:
+      label: Organization Name
+      description: Official name of the organization
+      placeholder: "Example: Community Food Bank"
+    validations:
+      required: true
+
+  - type: input
+    id: program_name
+    attributes:
+      label: Program Name
+      description: Specific program or service (if different from org name)
+      placeholder: "Example: Emergency Food Assistance Program"
+
+  - type: input
+    id: website
+    attributes:
+      label: Official Website
+      description: URL of the organization's website
+      placeholder: "https://example.org"
+    validations:
+      required: true
+
+  - type: input
+    id: phone
+    attributes:
+      label: Phone Number
+      description: Main contact number
+      placeholder: "859-555-0100"
+    validations:
+      required: true
+
+  - type: input
+    id: address
+    attributes:
+      label: Public Address
+      description: Physical location (not confidential shelters)
+      placeholder: "123 Main St, Lexington, KY 40507"
+
+  - type: input
+    id: service_area
+    attributes:
+      label: Service Area
+      description: Counties or regions served
+      placeholder: "Fayette County, KY"
+
+  - type: textarea
+    id: services
+    attributes:
+      label: Services Provided
+      description: What services does this organization provide?
+      placeholder: "Emergency food assistance, clothing, hygiene supplies"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: needs
+    attributes:
+      label: Primary Need Category
+      options:
+        - food
+        - shelter
+        - housing
+        - healthcare
+        - mental-health
+        - addiction
+        - crisis
+        - clothing
+        - documents
+        - jobs
+        - legal
+        - family
+        - transportation
+        - education
+        - veterans
+        - community
+        - utility-assistance
+    validations:
+      required: true
+
+  - type: dropdown
+    id: population
+    attributes:
+      label: Population Served
+      multiple: true
+      options:
+        - anyone
+        - families
+        - women
+        - men
+        - youth
+        - seniors
+        - veterans
+        - lgbtq+
+        - disability
+        - re-entry
+
+  - type: textarea
+    id: eligibility
+    attributes:
+      label: Eligibility Requirements
+      description: Who can use this service?
+
+  - type: input
+    id: cost
+    attributes:
+      label: Cost
+      description: "free, sliding-scale, insurance, or private-pay"
+
+  - type: input
+    id: hours
+    attributes:
+      label: Hours of Operation
+      placeholder: "Mon-Fri 9am-5pm"
+
+  - type: textarea
+    id: intake
+    attributes:
+      label: Intake Process
+      description: How do people access this service?
+
+  - type: textarea
+    id: source_urls
+    attributes:
+      label: Source URLs
+      description: URLs where you found this information
+      placeholder: "https://example.org/services"
+    validations:
+      required: true
+
+  - type: input
+    id: date_observed
+    attributes:
+      label: Date Information Was Observed
+      placeholder: "2026-09-20"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Your Relationship to Organization
+      options:
+        - Staff member
+        - Volunteer
+        - Client/former client
+        - Community member
+        - Other
+
+  - type: checkbox
+    id: duplicate
+    attributes:
+      label: Potential Duplicates
+      options:
+        - label: I searched for duplicates and found none
+        - label: I found similar organizations (describe below)
+
+  - type: dropdown
+    id: confidential
+    attributes:
+      label: Confidential Location Concern
+      options:
+        - No - public location
+        - Yes - confidential shelter or protected location
+
+  - type: checkbox
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm this submission contains no personal client information
+    validations:
+      required: true

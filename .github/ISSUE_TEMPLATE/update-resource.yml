@@ -1,0 +1,86 @@
+name: Update Resource
+description: Report incorrect or outdated information
+title: "[UPDATE] "
+labels: ["stage:needs-evidence", "type:update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us keep Beacon accurate. Please provide the correction and supporting evidence.
+
+  - type: input
+    id: resource_id
+    attributes:
+      label: Resource ID or Beacon URL
+      description: The resource that needs updating
+      placeholder: "ky-fayette-example-resource or https://mrstewood.github.io/beacon/pages/resource/..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: What needs updating?
+      options:
+        - Phone number
+        - Address
+        - Website
+        - Hours
+        - Services
+        - Eligibility
+        - Cost
+        - Population served
+        - Service area
+        - Name
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_value
+    attributes:
+      label: Current Value (in Beacon)
+      description: What does Beacon currently show?
+
+  - type: textarea
+    id: proposed_value
+    attributes:
+      label: Proposed Value
+      description: What should it be?
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Supporting Source
+      description: URL or other evidence supporting this change
+      placeholder: "https://example.org/contact"
+    validations:
+      required: true
+
+  - type: input
+    id: date_observed
+    attributes:
+      label: Date Observed
+      placeholder: "2026-09-20"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - Low - whenever convenient
+        - Medium - within a month
+        - High - within a week
+        - Critical - safety issue
+
+  - type: checkbox
+    id: confidentiality
+    attributes:
+      label: Confidentiality
+      options:
+        - label: This change involves a confidential location
+        - label: No confidentiality concerns

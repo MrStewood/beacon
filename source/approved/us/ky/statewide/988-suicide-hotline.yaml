@@ -1,0 +1,94 @@
+schema_version: "3.0"
+id: 988-suicide-hotline-crisis-lifeline
+legacy_ids: []
+organization_id: null
+program_id: null
+
+name: "988 Suicide & Crisis Lifeline"
+alternate_names: []
+description: "24/7 crisis support via call or text. Provides free, confidential support for people in suicidal crisis or mental health distress."
+
+locations:
+  - id: national-hotline
+    location_type: virtual
+    address_line_1: null
+    city: null
+    county_name: null
+    county_fips: null
+    state: null
+    postal_code: null
+    country: US
+    latitude: null
+    longitude: null
+    geocoding_status: not-geocoded
+    geocoding_source: null
+    geocoded_at: null
+    publicly_displayed: true
+
+coverage_scope: national
+service_areas:
+  - type: country
+    country: US
+states_served: []
+remote_service: true
+location_restrictions: null
+
+phones:
+  - "988"
+email: null
+url: "https://988lifeline.org"
+facebook: null
+
+needs:
+  - crisis
+service_types:
+  - hotline
+resource_type: hotline
+populations:
+  - anyone
+
+eligibility: null
+cost: free
+hours: "24/7"
+languages:
+  - English
+  - Spanish
+what_to_bring: null
+referral_required: false
+intake_hours: null
+intake_process: "Call or text 988"
+capacity: null
+waitlist: null
+accepts_insurance: null
+
+verification:
+  status: verified
+  checked_at: "2026-09-20"
+  checked_by: "initial-import"
+
+sources:
+  - id: official-988
+    url: "https://988lifeline.org"
+    source_type: official-provider
+    retrieved_at: "2026-09-20"
+    supports:
+      - name
+      - phones
+      - url
+      - needs
+      - cost
+      - hours
+
+workflow:
+  discovered_by: "initial-import"
+  discovered_at: "2026-09-20"
+  verified_by: "initial-import"
+  verified_at: "2026-09-20"
+  prepared_by: null
+  approved_by: null
+  published_at: "2026-09-20"
+
+first_seen: "2026-09-20"
+tags: []
+notes: null
+related: []

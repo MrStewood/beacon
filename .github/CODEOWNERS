@@ -1,0 +1,28 @@
+# Code Owners for Beacon
+# These owners will be automatically requested for review
+
+# Default owner for everything
+*                               @MrStewood
+
+# Schema and validation
+/schema/                        @MrStewood
+
+# Scripts and build pipeline
+/scripts/                       @MrStewood
+
+# GitHub Actions workflows
+/.github/workflows/             @MrStewood
+
+# Source data (override authority)
+/source/overrides/              @MrStewood
+
+# National resources (sensitive)
+/source/approved/national/      @MrStewood
+
+# Governance and policy
+/GOVERNANCE.md                  @MrStewood
+/VERIFICATION_POLICY.md         @MrStewood
+/PRIVACY_AND_SAFETY.md          @MrStewood
+/AGENT_POLICY.md                @MrStewood
+/LICENSE                        @MrStewood
+/AGENTS.md                      @MrStewood

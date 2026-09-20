@@ -1,0 +1,99 @@
+schema_version: "3.0"
+id: knox-corbin-united-effort
+legacy_ids: []
+organization_id: null
+program_id: null
+
+name: "Corbin United Effort"
+alternate_names: []
+description: "Food pantry, meals, help finding housing, clothing, help finding healthcare, navigating the system."
+
+locations:
+  - id: corbin-office
+    location_type: physical
+    address_line_1: "311 Barbourville St"
+    city: "Corbin"
+    county_name: "Knox"
+    county_fips: "21121"
+    state: "KY"
+    postal_code: "40701"
+    country: US
+    latitude: null
+    longitude: null
+    geocoding_status: not-geocoded
+    geocoding_source: null
+    geocoded_at: null
+    publicly_displayed: true
+
+coverage_scope: county
+service_areas:
+  - type: county
+    state: KY
+    country: US
+    values:
+      - name: Knox
+        fips: "21121"
+states_served:
+  - KY
+remote_service: false
+location_restrictions: null
+
+phones:
+  - "606-528-7523"
+email: null
+url: null
+facebook: null
+
+needs:
+  - food
+  - housing
+  - clothing
+  - health
+service_types:
+  - walk-in
+resource_type: community-program
+populations:
+  - anyone
+
+eligibility: null
+cost: free
+hours: null
+languages:
+  - English
+what_to_bring: null
+referral_required: false
+intake_hours: null
+intake_process: "Walk in during business hours"
+capacity: null
+waitlist: null
+accepts_insurance: null
+
+verification:
+  status: source-only
+  checked_at: null
+  checked_by: null
+
+sources:
+  - id: is5810-directory
+    url: "https://is5810.com/main/resources/"
+    source_type: nonprofit-directory
+    retrieved_at: "2026-09-20"
+    supports:
+      - name
+      - phones
+      - description
+      - needs
+
+workflow:
+  discovered_by: "initial-import"
+  discovered_at: "2026-09-20"
+  verified_by: null
+  verified_at: null
+  prepared_by: null
+  approved_by: null
+  published_at: "2026-09-20"
+
+first_seen: "2026-09-20"
+tags: []
+notes: null
+related: []
