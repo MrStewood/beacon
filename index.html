@@ -43,6 +43,8 @@
         .chip { padding: .35rem .8rem; border-radius: 9999px; font-size: .8rem; font-weight: 500; cursor: pointer; border: 2px solid var(--border); background: white; color: var(--muted); transition: all .15s; user-select: none; }
         .chip:hover { border-color: var(--primary); color: var(--primary); }
         .chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .clear-btn { padding: .35rem .8rem; border-radius: 9999px; font-size: .8rem; font-weight: 500; cursor: pointer; border: 2px solid #dc2626; background: white; color: #dc2626; transition: all .15s; }
+        .clear-btn:hover { background: #dc2626; color: white; }
 
         /* Results */
         .info { padding: .75rem 0; color: var(--muted); font-size: .85rem; }
@@ -68,6 +70,12 @@
         a.phone:hover { text-decoration: underline; }
         a.site { color: var(--primary); text-decoration: none; }
         a.site:hover { text-decoration: underline; }
+
+        /* Emergency Banner */
+        .emergency-banner { background: #dc2626; color: white; padding: .6rem 0; text-align: center; font-size: .9rem; }
+        .emergency-banner strong { margin-right: .5rem; }
+        .emergency-banner a { color: white; font-weight: 600; text-decoration: underline; margin: 0 .5rem; }
+        .emergency-banner a:hover { opacity: .9; }
 
         /* Download */
         .dl-section { background: var(--card); border-top: 1px solid var(--border); padding: 1.5rem 0; text-align: center; }
@@ -100,6 +108,15 @@
     </div>
 </header>
 
+<div class="emergency-banner" role="alert">
+    <div class="wrap">
+        <strong>In immediate danger?</strong>
+        <a href="tel:911">Call 911</a> for emergencies.
+        <a href="tel:988">Call 988</a> for crisis support.
+        <a href="tel:211">Call 211</a> for local resources.
+    </div>
+</div>
+
 <div class="search-wrap">
     <div class="wrap">
         <div class="search-row">
@@ -108,7 +125,9 @@
             <select id="pop"><option value="">All Populations</option></select>
             <select id="svc"><option value="">All Service Types</option></select>
         </div>
-        <div class="need-chips" id="chips"></div>
+        <div class="need-chips" id="chips">
+            <button class="clear-btn" id="clear-filters" style="display:none" onclick="clearAllFilters()">Clear filters</button>
+        </div>
     </div>
 </div>
 
@@ -135,10 +154,11 @@
     </div>
 </footer>
 
+<script src="assets/js/config.js"></script>
 <script>
-const NEED_LABELS = {addiction:"Addiction & Recovery",clothing:"Clothing & Supplies",community:"Community",crisis:"Crisis & Safety",documents:"ID & Documents",education:"Education",family:"Family & Children",food:"Food & Water",health:"Healthcare",housing:"Housing",jobs:"Jobs & Income",legal:"Legal Aid","mental-health":"Mental Health",shelter:"Shelter & Sleep",transportation:"Transportation",veterans:"Veterans"};
-const POP_LABELS = {anyone:"Anyone",disability:"Disability",families:"Families",lgbtq:"LGBTQ+",men:"Men","re-entry":"Re-entry",seniors:"Seniors","substance-use":"Active Use",veterans:"Veterans",women:"Women",youth:"Youth"};
-const SVC_LABELS = {"faith-based":"Faith-Based",government:"Government",hotline:"Hotline",mobile:"Mobile/Outreach",online:"Online",outpatient:"Outpatient","peer-led":"Peer-Led",residential:"Residential","walk-in":"Walk-In"};
+const NEED_LABELS = BEACON_CONFIG.needs;
+const POP_LABELS = BEACON_CONFIG.populations;
+const SVC_LABELS = BEACON_CONFIG.serviceTypes;
 
 let ALL=[], activeNeeds=new Set();
 
@@ -163,17 +183,63 @@ async function init(){
     const ss=document.getElementById('svc');
     d.metadata.service_types.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=SVC_LABELS[s]||s;ss.appendChild(o)});
 
-    // Build need chips
+    // Build need chips (after clear button)
     const chips=document.getElementById('chips');
-    d.metadata.needs.forEach(n=>{const c=document.createElement('span');c.className='chip';c.dataset.need=n;c.textContent=NEED_LABELS[n]||n;c.onclick=()=>toggleNeed(n,c);chips.appendChild(c)});
+    const clearBtn=document.getElementById('clear-filters');
+    d.metadata.needs.forEach(n=>{const c=document.createElement('span');c.className='chip';c.dataset.need=n;c.textContent=NEED_LABELS[n]||n;c.onclick=()=>toggleNeed(n,c);chips.insertBefore(c,clearBtn)});
 
-    render(ALL);
+    // Load filters from URL and apply them
+    loadFromURL();
+    search();
 }
 
 function toggleNeed(n,el){
     if(activeNeeds.has(n)){activeNeeds.delete(n);el.classList.remove('active')}
     else{activeNeeds.add(n);el.classList.add('active')}
+    updateURL();
     search();
+}
+
+function updateURL(){
+    const params=new URLSearchParams();
+    const q=document.getElementById('q').value.trim();
+    const county=document.getElementById('county').value;
+    const pop=document.getElementById('pop').value;
+    const svc=document.getElementById('svc').value;
+    if(q)params.set('q',q);
+    if(county)params.set('county',county);
+    if(pop)params.set('pop',pop);
+    if(svc)params.set('svc',svc);
+    if(activeNeeds.size)params.set('needs',[...activeNeeds].join(','));
+    const newURL=params.toString()?`${window.location.pathname}?${params}`:window.location.pathname;
+    history.replaceState(null,'',newURL);
+    document.getElementById('clear-filters').style.display=(q||county||pop||svc||activeNeeds.size)?'inline-block':'none';
+}
+
+function clearAllFilters(){
+    document.getElementById('q').value='';
+    document.getElementById('county').value='';
+    document.getElementById('pop').value='';
+    document.getElementById('svc').value='';
+    activeNeeds.clear();
+    document.querySelectorAll('.chip.active').forEach(c=>c.classList.remove('active'));
+    updateURL();
+    search();
+}
+
+function loadFromURL(){
+    const params=new URLSearchParams(window.location.search);
+    if(params.get('q'))document.getElementById('q').value=params.get('q');
+    if(params.get('county'))document.getElementById('county').value=params.get('county');
+    if(params.get('pop'))document.getElementById('pop').value=params.get('pop');
+    if(params.get('svc'))document.getElementById('svc').value=params.get('svc');
+    if(params.get('needs')){
+        params.get('needs').split(',').forEach(n=>{
+            activeNeeds.add(n);
+            const chip=document.querySelector(`[data-need="${n}"]`);
+            if(chip)chip.classList.add('active');
+        });
+    }
 }
 
 function search(){
@@ -190,6 +256,7 @@ function search(){
         const t=[x.name,x.address||'',x.city||'',x.description||'',x.county,...x.needs,...x.phones,...x.populations,...x.service_types,(x.eligibility||''),(x.what_to_bring||''),(x.languages||[]).join(' ')].join(' ').toLowerCase();
         return t.includes(q);
     });
+    updateURL();
     render(r);
 }
 
