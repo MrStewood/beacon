@@ -106,7 +106,7 @@
         <span class="filter-label">I need:</span>
         <select id="cost" style="min-width:120px"><option value="">Any Cost</option><option value="free">Free</option><option value="sliding-scale">Sliding Scale</option><option value="insurance">Insurance OK</option></select>
         <select id="lang" style="min-width:120px"><option value="">Any Language</option><option value="English">English</option><option value="Spanish">Spanish</option></select>
-        <select id="verified" style="min-width:130px"><option value="">Any Status</option><option value="high">Verified</option><option value="medium">Web Checked</option><option value="low">Unverified</option></select>
+        <select id="verified" style="min-width:130px"><option value="">Any Status</option><option value="high">Confirmed</option><option value="medium">Inferred</option><option value="low">Unverified</option></select>
         <label style="font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.3rem"><input type="checkbox" id="referral"> No Referral</label>
     </div>
     <div class="need-chips" id="chips"><button class="clear-btn" id="clear-filters" style="display:none" onclick="clearAllFilters()">Clear all</button></div>
@@ -122,18 +122,125 @@
 <script>
 const NL=BEACON_CONFIG.needs,PL=BEACON_CONFIG.populations,SL=BEACON_CONFIG.serviceTypes;
 let ALL=[],activeNeeds=new Set(),currentPage=1,pageSize=25,currentView='detailed',lastResults=[];
-const SYNONYMS={shelter:['housing','bed','sleep','night','warm'],food:['hungry','meal','eat','dinner','lunch','pantry'],healthcare:['medical','doctor','clinic','hospital','dental'],mentalhealth:['counseling','therapy','therapist','psychiatric','depression','anxiety'],addiction:['recovery','rehab','detox','substance','drug','alcohol','sober'],crisis:['hotline','emergency','suicide','danger','help'],housing:['apartment','rent','section 8','voucher','living'],clothing:['clothes','coat','jacket','blanket','hygiene'],jobs:['employment','work','hire','career','training','resume'],legal:['lawyer','attorney','court','legal aid','expungement'],transportation:['bus','ride','car','transit','nemt'],family:['child','kid','youth','baby','parent','foster'],veterans:['veteran','va','military','vfw','dav']};
 
-function fuzzyMatch(q,text){
-    if(text.includes(q))return true;
-    if(q.length<3)return false;
-    let i=0;for(let c of text){if(c===q[i])i++;}return i>=q.length*.7;
+// Controlled stop words - only remove conversational filler
+const STOP_WORDS=new Set(['i','me','my','we','our','you','your','a','an','the','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','need','to','of','in','for','on','with','at','by','from','as','into','through','during','before','after','above','below','between','out','off','over','under','again','further','then','once','please','thanks','thank','help','looking','find','want','near']);
+
+// Phrase-to-category mapping
+const PHRASE_MAP={
+    'food tonight':'food','tonight food':'food','hungry':'food','hungry tonight':'food',
+    'meal':'food','eat':'food','dinner':'food','lunch':'food','pantry':'food','snack':'food',
+    'place to sleep':'shelter','bed tonight':'shelter','sleep tonight':'shelter','sleep outside':'shelter','warm bed':'shelter',
+    'somewhere to stay':'shelter','night shelter':'shelter','warming':'shelter',
+    'detox':'addiction','rehab':'addiction','sober living':'addiction','recovery house':'addiction',
+    'substance abuse':'addiction','drug treatment':'addiction','alcohol treatment':'addiction',
+    'therapy':'mental-health','counseling':'mental-health','depression':'mental-health',
+    'anxiety':'mental-health','mental health':'mental-health','psychiatric':'mental-health',
+    'electric bill':'utility','power bill':'utility','utility bill':'utility','electricity':'utility',
+    'heat bill':'utility','gas bill':'utility','pay bill':'utility',
+    'lawyer':'legal','attorney':'legal','legal help':'legal','legal aid':'legal','court':'legal',
+    'bus':'transportation','ride':'transportation','transit':'transportation',
+    'clothes':'clothing','coat':'clothing','jacket':'clothing','blanket':'clothing',
+    'job':'jobs','employment':'jobs','work':'jobs','hire':'jobs','career':'jobs',
+    'child':'family','kid':'family','youth':'family','baby':'family','foster':'family',
+    'veteran':'veterans','military':'veterans',
+    'domestic violence':'crisis','abuse':'crisis','suicide':'crisis','crisis':'crisis'
+};
+
+// Word-to-category mapping
+const WORD_MAP={
+    'hungry':'food','food':'food','meal':'food','eat':'food','pantry':'food',
+    'sleep':'shelter','shelter':'shelter','bed':'shelter','warm':'shelter','night':'shelter',
+    'detox':'addiction','rehab':'addiction','sober':'addiction','recovery':'addiction','substance':'addiction',
+    'therapy':'mental-health','counseling':'mental-health','counsel':'mental-health',
+    'depression':'mental-health','anxiety':'mental-health',
+    'electric':'utility','power':'utility','utility':'utility','bill':'utility',
+    'lawyer':'legal','attorney':'legal','legal':'legal','court':'legal',
+    'clothes':'clothing','coat':'clothing','jacket':'clothing','blanket':'clothing',
+    'job':'jobs','employment':'jobs','work':'jobs','hire':'jobs',
+    'child':'family','kid':'family','youth':'family','baby':'family',
+    'veteran':'veterans','military':'veterans',
+    'crisis':'crisis','hotline':'crisis','emergency':'crisis','suicide':'crisis'
+};
+
+function tokenize(q){
+    return q.toLowerCase().split(/\s+/).filter(w=>w.length>0&&!STOP_WORDS.has(w));
 }
 
-function expandQuery(q){
-    let terms=[q];
-    for(const[concept,syns]of Object.entries(SYNONYMS)){if(syns.some(s=>q.includes(s))){terms.push(concept);syns.forEach(s=>{if(!q.includes(s))terms.push(s)});}}
-    return terms;
+function expandTokens(tokens){
+    let needs=new Set();
+    let extraWords=[];
+    // Check for multi-word phrases first
+    const joined=tokens.join(' ');
+    for(const[phrase,categ]of Object.entries(PHRASE_MAP)){
+        if(joined.includes(phrase)){needs.add(categ);}}
+    // Map individual words
+    for(const t of tokens){
+        if(WORD_MAP[t])needs.add(WORD_MAP[t]);
+        else extraWords.push(t);
+    }
+    return{needs:[...needs],words:extraWords};
+}
+
+function fuzzyWord(q,word){
+    if(word.includes(q))return true;
+    if(q.length<3||word.length<3)return false;
+    let i=0;for(const c of word){if(c===q[i])i++;}return i>=Math.ceil(q.length*.75);
+}
+
+function scoreResource(r,queryTokens,queryNeeds,queryWords){
+    let score=0;
+    const name=(r.name||'').toLowerCase();
+    const desc=(r.description||'').toLowerCase();
+    const county=(r.county||'').toLowerCase();
+    const needs=r.needs||[];
+    const phones=(r.phones||[]).join(' ');
+    const allText=`${name} ${desc} ${r.address||''} ${county} ${phones} ${(r.eligibility||'')} ${(r.notes||'')}`.toLowerCase();
+
+    // Exact name match (highest priority)
+    if(queryTokens.every(t=>name.includes(t)))score+=100;
+
+    // Need category match
+    for(const n of queryNeeds){if(needs.includes(n))score+=50;}
+
+    // Word match in name
+    for(const w of queryWords){if(name.includes(w))score+=30;}
+
+    // Word match in needs
+    for(const w of queryWords){
+        for(const n of needs){
+            if((NL[n]||n).toLowerCase().includes(w))score+=25;
+        }
+    }
+
+    // Word match in description
+    for(const w of queryWords){if(desc.includes(w))score+=10;}
+
+    // Fuzzy match on name words
+    const nameWords=name.split(/\s+/);
+    for(const w of queryWords){
+        for(const nw of nameWords){
+            if(fuzzyWord(w,nw))score+=5;
+        }
+    }
+
+    // County exact match bonus
+    if(queryTokens.some(t=>county===t))score+=20;
+
+    // Phone number match
+    if(queryTokens.some(t=>phones.includes(t)))score+=40;
+
+    return score;
+}
+
+function searchWithQuery(q){
+    const tokens=tokenize(q);
+    if(tokens.length===0)return ALL.slice();
+    const{needs:queryNeeds,words:queryWords}=expandTokens(tokens);
+    let scored=ALL.map(r=>({r,score:scoreResource(r,tokens,queryNeeds,queryWords)}));
+    scored=scored.filter(s=>s.score>0);
+    scored.sort((a,b)=>b.score-a.score);
+    return scored.map(s=>s.r);
 }
 
 async function init(){
@@ -165,11 +272,11 @@ function loadFromURL(){const p=new URLSearchParams(location.search);
 if(p.get('q'))document.getElementById('q').value=p.get('q');if(p.get('county'))document.getElementById('county').value=p.get('county');if(p.get('pop'))document.getElementById('pop').value=p.get('pop');if(p.get('svc'))document.getElementById('svc').value=p.get('svc');if(p.get('cost'))document.getElementById('cost').value=p.get('cost');if(p.get('lang'))document.getElementById('lang').value=p.get('lang');if(p.get('verified'))document.getElementById('verified').value=p.get('verified');if(p.get('referral')==='1')document.getElementById('referral').checked=true;
 if(p.get('needs'))p.get('needs').split(',').forEach(n=>{activeNeeds.add(n);const c=document.querySelector(`[data-need="${n}"]`);if(c)c.classList.add('active')})}
 
-function search(){const q=document.getElementById('q').value.toLowerCase().trim();const county=document.getElementById('county').value;const pop=document.getElementById('pop').value;const svc=document.getElementById('svc').value;const cost=document.getElementById('cost').value;const lang=document.getElementById('lang').value;const verified=document.getElementById('verified').value;const noRef=document.getElementById('referral').checked;
+function search(){const q=document.getElementById('q').value.trim();const county=document.getElementById('county').value;const pop=document.getElementById('pop').value;const svc=document.getElementById('svc').value;const cost=document.getElementById('cost').value;const lang=document.getElementById('lang').value;const verified=document.getElementById('verified').value;const noRef=document.getElementById('referral').checked;
 let r=ALL;
-if(county)r=r.filter(x=>x.county===county);if(pop)r=r.filter(x=>x.populations.includes(pop));if(svc)r=r.filter(x=>x.service_types.includes(svc));if(cost)r=r.filter(x=>x.cost===cost);if(lang)r=r.filter(x=>(x.languages||[]).includes(lang));if(verified)r=r.filter(x=>x.confidence===verified);if(noRef)r=r.filter(x=>x.referral_required!==true);
+if(county)r=r.filter(x=>x.county===county);if(pop)r=r.filter(x=>x.populations.includes(pop));if(svc)r=r.filter(x=>x.service_types.includes(svc));if(cost)r=r.filter(x=>x.cost===cost);if(lang)r=r.filter(x=>(x.languages||[]).includes(lang));if(verified)r=r.filter(x=>x.confidence===verified);if(noRef)r=r.filter(x=>x.referral_required===false);
 if(activeNeeds.size)r=r.filter(x=>x.needs.some(n=>activeNeeds.has(n)));
-if(q){const terms=expandQuery(q);r=r.filter(x=>{const t=[x.name,x.address||'',x.city||'',x.description||'',x.county,...x.needs,...x.phones,...x.populations,...x.service_types,x.eligibility||'',x.what_to_bring||'',...(x.languages||[])].join(' ').toLowerCase();return terms.some(term=>t.includes(term)||fuzzyMatch(term,t))})}
+if(q){r=searchWithQuery(q).filter(x=>r.includes(x))}
 const sort=document.getElementById('sort').value;
 if(sort==='alpha')r.sort((a,b)=>a.name.localeCompare(b.name));else if(sort==='county')r.sort((a,b)=>a.county.localeCompare(b.county)||a.name.localeCompare(b.name));
 else{r.sort((a,b)=>{const sa=a.confidence==='high'?0:a.confidence==='medium'?1:2;const sb=b.confidence==='high'?0:b.confidence==='medium'?1:2;return sa-sb||a.name.localeCompare(b.name)})}
@@ -181,7 +288,7 @@ const total=list.length;const pages=Math.ceil(total/pageSize);const start=(curre
 info.textContent=`Showing ${start+1}–${Math.min(start+pageSize,total)} of ${total} resources`;
 g.innerHTML=page.map(r=>{
     if(currentView==='compact')return`<div class="card" style="padding:.75rem"><div style="display:flex;justify-content:space-between;align-items:start;gap:1rem"><div><div class="card-name" style="font-size:.95rem">${h(r.name)}</div><div class="card-meta"><span>${h(r.address||r.county)}</span>${r.phones.length?`<a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a>`:''}</div></div><div class="tags">${r.needs.slice(0,2).map(n=>`<span class="tag tag-need">${NL[n]||n}</span>`).join('')}</div></div></div>`;
-    return`<div class="card"><div class="card-name">${h(r.name)}</div><div class="card-meta">${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" rel="noopener noreferrer" style="font-size:.72rem">Map</a>`:''}</span>`:''}${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}${r.languages&&r.languages.length>1?`<span>🗣 ${r.languages.join(', ')}</span>`:''}</div>${r.description?`<div class="card-desc">${h(r.description)}</div>`:''}<div class="tags"><span class="tag tag-status ${r.status==='needs-verification'?'verify':r.status==='closed'?'closed':''}">${r.status}</span>${r.referral_required===true?`<span class="tag" style="background:#fee2e2;color:#991b1b">Referral Required</span>`:''}${r.needs.map(n=>`<span class="tag tag-need">${NL[n]||n}</span>`).join('')}${r.populations.filter(p=>p!=='anyone').map(p=>`<span class="tag tag-pop">${PL[p]||p}</span>`).join('')}${r.service_types.map(s=>`<span class="tag tag-svc">${SL[s]||s}</span>`).join('')}</div><div class="card-actions">${r.phones.length?`<a href="tel:${r.phones[0]}" class="action-btn call">📞 Call</a>`:''}${r.url?`<a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="action-btn">🌐 Website</a>`:''}${r.map_url?`<a href="${r.map_url}" target="_blank" rel="noopener noreferrer" class="action-btn">🗺 Directions</a>`:''}<a href="https://github.com/MrStewood/beacon/issues/new?template=update-resource.md&title=Update:${encodeURIComponent(r.name)}" target="_blank" rel="noopener noreferrer" class="action-btn">✏️ Report</a></div>${(r.eligibility||r.intake_process||r.notes)?`<div class="card-details"><dl>${r.eligibility?`<dt>Eligibility</dt><dd>${h(r.eligibility)}</dd>`:''}${r.intake_process?`<dt>Intake</dt><dd>${h(r.intake_process)}</dd>`:''}${r.notes?`<dt>Notes</dt><dd>${h(r.notes)}</dd>`:''}</dl></div>`:''}</div>`}).join('');
+    return`<div class="card"><div class="card-name">${h(r.name)}</div><div class="card-meta">${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" rel="noopener noreferrer" style="font-size:.72rem">Map</a>`:''}</span>`:''}${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}${r.languages&&r.languages.length>1?`<span>🗣 ${r.languages.join(', ')}</span>`:''}</div>${r.description?`<div class="card-desc">${h(r.description)}</div>`:''}<div class="tags"><span class="tag tag-status ${r.status==='needs-verification'?'verify':r.status==='closed'?'closed':''}">${r.status==='active'?'Active':r.status==='needs-verification'?'Needs Review':'Closed'}</span>${r.referral_required===true?`<span class="tag" style="background:#fee2e2;color:#991b1b">Referral Required</span>`:''}${r.needs.map(n=>`<span class="tag tag-need">${NL[n]||n}</span>`).join('')}${r.populations.filter(p=>p!=='anyone').map(p=>`<span class="tag tag-pop">${PL[p]||p}</span>`).join('')}${r.service_types.map(s=>`<span class="tag tag-svc">${SL[s]||s}</span>`).join('')}</div><div class="card-actions">${r.phones.length?`<a href="tel:${r.phones[0]}" class="action-btn call">📞 Call</a>`:''}${r.url?`<a href="${h(r.url)}" target="_blank" rel="noopener noreferrer" class="action-btn">🌐 Website</a>`:''}${r.map_url?`<a href="${r.map_url}" target="_blank" rel="noopener noreferrer" class="action-btn">🗺 Directions</a>`:''}<a href="https://github.com/MrStewood/beacon/issues/new?template=update-resource.md&title=Update:${encodeURIComponent(r.name)}" target="_blank" rel="noopener noreferrer" class="action-btn">✏️ Report</a></div>${(r.eligibility||r.intake_process||r.notes)?`<div class="card-details"><dl>${r.eligibility?`<dt>Eligibility</dt><dd>${h(r.eligibility)}</dd>`:''}${r.intake_process?`<dt>Intake</dt><dd>${h(r.intake_process)}</dd>`:''}${r.notes?`<dt>Notes</dt><dd>${h(r.notes)}</dd>`:''}</dl></div>`:''}</div>`}).join('');
     if(pages<=1){pg.innerHTML=''}else{let b='';b+=`<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>← Prev</button>`;for(let i=1;i<=Math.min(pages,7);i++)b+=`<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;if(pages>7)b+=`<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>Next →</button>`;pg.innerHTML=b}}
 
 function goPage(p){currentPage=p;render(lastResults);document.getElementById('results').scrollIntoView({behavior:'smooth'})}

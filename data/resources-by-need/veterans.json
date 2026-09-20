@@ -59,7 +59,7 @@
       "id": "dav-disabled-american-veterans",
       "name": "DAV - Disabled American Veterans",
       "alternate_names": [],
-      "description": "",
+      "description": "Veterans with disabilities",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -69,7 +69,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Veterans with disabilities",
+      "url": null,
       "facebook": null,
       "needs": [
         "veterans"
@@ -442,7 +442,7 @@
       "id": "voa-mid-states-veteran-services",
       "name": "VOA Mid-States Veteran Services",
       "alternate_names": [],
-      "description": "",
+      "description": "Moral injury, preventing suicide, SSVF, homeless veterans reintegration",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -452,7 +452,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Moral injury, preventing suicide, SSVF, homeless veterans reintegration",
+      "url": null,
       "facebook": null,
       "needs": [
         "veterans"

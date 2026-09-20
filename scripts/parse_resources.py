@@ -483,11 +483,29 @@ def build_resource(name, address, phone, url, description, county, source="Isaia
     if "must" in desc_lower_check and ("provide" in desc_lower_check or "bring" in desc_lower_check or "have" in desc_lower_check):
         what_to_bring = description
 
+    # Validate and normalize URL
+    validated_url = None
+    extra_desc = None
+    if url:
+        url_clean = url.strip()
+        if url_clean.startswith(("http://", "https://")):
+            validated_url = url_clean
+        elif re.match(r'^[a-zA-Z0-9][-a-zA-Z0-9]*\.[a-zA-Z]{2,}', url_clean):
+            validated_url = f"https://{url_clean}"
+        else:
+            # Not a valid URL - move to description
+            extra_desc = url_clean
+
+    # Merge extra description
+    full_desc = description or ""
+    if extra_desc:
+        full_desc = f"{extra_desc}. {full_desc}" if full_desc else extra_desc
+
     return {
         "id": resource_id,
         "name": name,
         "alternate_names": [],
-        "description": description or "",
+        "description": full_desc,
         "address": address or "Statewide",
         "city": city,
         "state": state,
@@ -497,7 +515,7 @@ def build_resource(name, address, phone, url, description, county, source="Isaia
         "longitude": None,
         "phones": phones,
         "email": None,
-        "url": url if url and url.startswith("http") else (f"https://{url}" if url else None),
+        "url": validated_url,
         "facebook": None,
         "needs": needs,
         "service_types": service_types,

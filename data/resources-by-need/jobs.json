@@ -365,7 +365,7 @@
       "id": "kfan-kentucky-food-action-network",
       "name": "KFAN - Kentucky Food Action Network",
       "alternate_names": [],
-      "description": "",
+      "description": "Food security advocacy",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -375,7 +375,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Food security advocacy",
+      "url": null,
       "facebook": null,
       "needs": [
         "food",

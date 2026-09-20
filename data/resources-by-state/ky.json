@@ -333,7 +333,7 @@
       "id": "alcoholaddiction-rehab-program",
       "name": "Alcohol/Addiction Rehab Program",
       "alternate_names": [],
-      "description": "",
+      "description": "faith-based rehab program",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -343,7 +343,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://faith-based rehab program",
+      "url": null,
       "facebook": null,
       "needs": [
         "addiction"
@@ -599,7 +599,7 @@
       "id": "appalachian-research-defense-fund-of-ky",
       "name": "Appalachian Research & Defense Fund of KY",
       "alternate_names": [],
-      "description": "",
+      "description": "Free legal assistance based on eligibility",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -611,7 +611,7 @@
         "866-277-5733"
       ],
       "email": null,
-      "url": "https://Free legal assistance based on eligibility",
+      "url": null,
       "facebook": null,
       "needs": [
         "community"
@@ -3268,7 +3268,7 @@
       "id": "dav-disabled-american-veterans",
       "name": "DAV - Disabled American Veterans",
       "alternate_names": [],
-      "description": "",
+      "description": "Veterans with disabilities",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -3278,7 +3278,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Veterans with disabilities",
+      "url": null,
       "facebook": null,
       "needs": [
         "veterans"
@@ -3427,7 +3427,7 @@
       "id": "dept-of-health-and-human-services",
       "name": "Dept of Health and Human Services",
       "alternate_names": [],
-      "description": "",
+      "description": "Federal resources for homelessness, trafficking, refugees",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -3437,7 +3437,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Federal resources for homelessness, trafficking, refugees",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"
@@ -4292,7 +4292,7 @@
       "id": "food-for-the-poor",
       "name": "Food for the Poor",
       "alternate_names": [],
-      "description": "",
+      "description": "Food assistance organization",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -4302,7 +4302,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Food assistance organization",
+      "url": null,
       "facebook": null,
       "needs": [
         "food"
@@ -5098,7 +5098,7 @@
       "id": "homelessshelterdirectory",
       "name": "HomelessShelterDirectory",
       "alternate_names": [],
-      "description": "",
+      "description": "National shelter directory",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -5108,7 +5108,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://National shelter directory",
+      "url": null,
       "facebook": null,
       "needs": [
         "shelter"
@@ -6143,7 +6143,7 @@
       "id": "kentucky-voices-for-health",
       "name": "Kentucky Voices for Health",
       "alternate_names": [],
-      "description": "",
+      "description": "Health advocacy",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -6153,7 +6153,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Health advocacy",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"
@@ -6194,7 +6194,7 @@
       "id": "kfan-kentucky-food-action-network",
       "name": "KFAN - Kentucky Food Action Network",
       "alternate_names": [],
-      "description": "",
+      "description": "Food security advocacy",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -6204,7 +6204,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Food security advocacy",
+      "url": null,
       "facebook": null,
       "needs": [
         "food",
@@ -6246,7 +6246,7 @@
       "id": "khc-kentucky-housing-corporation",
       "name": "KHC - Kentucky Housing Corporation",
       "alternate_names": [],
-      "description": "",
+      "description": "Housing Choice Voucher/Section 8",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -6256,7 +6256,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Housing Choice Voucher/Section 8",
+      "url": null,
       "facebook": null,
       "needs": [
         "housing"
@@ -7116,7 +7116,7 @@
       "id": "medicaregov",
       "name": "Medicare.gov",
       "alternate_names": [],
-      "description": "",
+      "description": "Medicare information",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -7126,7 +7126,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Medicare information",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"
@@ -7283,7 +7283,7 @@
       "id": "mental-health-screenings-online-247",
       "name": "Mental Health Screenings Online 24/7",
       "alternate_names": [],
-      "description": "",
+      "description": "Online mental health screening",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -7293,7 +7293,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Online mental health screening",
+      "url": null,
       "facebook": null,
       "needs": [
         "health",
@@ -7335,7 +7335,7 @@
       "id": "mental-health-support-for-ky-farmers",
       "name": "Mental Health Support for KY Farmers",
       "alternate_names": [],
-      "description": "",
+      "description": "Farm-specific mental health support",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -7345,7 +7345,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Farm-specific mental health support",
+      "url": null,
       "facebook": null,
       "needs": [
         "health",
@@ -9340,7 +9340,7 @@
       "id": "restoration-healthcare",
       "name": "Restoration Healthcare",
       "alternate_names": [],
-      "description": "",
+      "description": "Healthcare services",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -9350,7 +9350,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Healthcare services",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"
@@ -10260,7 +10260,7 @@
       "id": "knox-the-everlasting-arm",
       "name": "The Everlasting Arm",
       "alternate_names": [],
-      "description": "16-bed emergency shelter up to 90 days. Food and clothing bank.",
+      "description": "theeverlastingarminc@gmail.com. 16-bed emergency shelter up to 90 days. Food and clothing bank.",
       "address": "2006 S. Main St, Corbin, KY 40701",
       "city": "Corbin",
       "state": "KY",
@@ -10272,7 +10272,7 @@
         "606-528-3669"
       ],
       "email": null,
-      "url": "https://theeverlastingarminc@gmail.com",
+      "url": null,
       "facebook": null,
       "needs": [
         "food",
@@ -10855,7 +10855,7 @@
       "id": "voa-mid-states-recovery-community-center",
       "name": "VOA Mid-States Recovery Community Center",
       "alternate_names": [],
-      "description": "Safe, supportive recovery community. Education, connections, support.",
+      "description": "FB: VOA Recovery Community Center. Safe, supportive recovery community. Education, connections, support.",
       "address": "48 Owens Rd, Manchester, KY 40962",
       "city": "Manchester",
       "state": "KY",
@@ -10867,7 +10867,7 @@
         "606-658-9236"
       ],
       "email": null,
-      "url": "https://FB: VOA Recovery Community Center",
+      "url": null,
       "facebook": null,
       "needs": [
         "addiction",
@@ -10963,7 +10963,7 @@
       "id": "voa-mid-states-veteran-services",
       "name": "VOA Mid-States Veteran Services",
       "alternate_names": [],
-      "description": "",
+      "description": "Moral injury, preventing suicide, SSVF, homeless veterans reintegration",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -10973,7 +10973,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Moral injury, preventing suicide, SSVF, homeless veterans reintegration",
+      "url": null,
       "facebook": null,
       "needs": [
         "veterans"

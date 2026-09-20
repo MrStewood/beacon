@@ -29,6 +29,22 @@ jobs:
         run: python scripts/validate.py
       - name: Run tests
         run: pytest tests/ -v
+      - name: Check search accuracy
+        run: |
+          python -c "
+          import json
+          with open('data/resources.json') as f: d=json.load(f)
+          r=d['resources']
+          # Verify 988 has phone
+          r988=[x for x in r if '988' in x.get('name','')]
+          assert r988 and r988[0].get('phones'), '988 missing phone'
+          # Verify no malformed URLs
+          for x in r:
+              url=x.get('url','') or ''
+              if url and ' ' in url and '%' not in url:
+                  raise ValueError(f'Malformed URL in {x[\"id\"]}: {url}')
+          print('Search and URL checks passed')
+          "
       - name: Build data
         run: python scripts/build.py
       - name: Check for XSS in widget

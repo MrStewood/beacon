@@ -227,7 +227,7 @@
       "id": "appalachian-research-defense-fund-of-ky",
       "name": "Appalachian Research & Defense Fund of KY",
       "alternate_names": [],
-      "description": "",
+      "description": "Free legal assistance based on eligibility",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -239,7 +239,7 @@
         "866-277-5733"
       ],
       "email": null,
-      "url": "https://Free legal assistance based on eligibility",
+      "url": null,
       "facebook": null,
       "needs": [
         "community"
@@ -2433,7 +2433,7 @@
       "id": "voa-mid-states-recovery-community-center",
       "name": "VOA Mid-States Recovery Community Center",
       "alternate_names": [],
-      "description": "Safe, supportive recovery community. Education, connections, support.",
+      "description": "FB: VOA Recovery Community Center. Safe, supportive recovery community. Education, connections, support.",
       "address": "48 Owens Rd, Manchester, KY 40962",
       "city": "Manchester",
       "state": "KY",
@@ -2445,7 +2445,7 @@
         "606-658-9236"
       ],
       "email": null,
-      "url": "https://FB: VOA Recovery Community Center",
+      "url": null,
       "facebook": null,
       "needs": [
         "addiction",

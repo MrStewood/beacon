@@ -892,7 +892,7 @@
       "id": "dept-of-health-and-human-services",
       "name": "Dept of Health and Human Services",
       "alternate_names": [],
-      "description": "",
+      "description": "Federal resources for homelessness, trafficking, refugees",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -902,7 +902,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Federal resources for homelessness, trafficking, refugees",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"
@@ -1171,7 +1171,7 @@
       "id": "kentucky-voices-for-health",
       "name": "Kentucky Voices for Health",
       "alternate_names": [],
-      "description": "",
+      "description": "Health advocacy",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -1181,7 +1181,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Health advocacy",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"
@@ -1498,7 +1498,7 @@
       "id": "medicaregov",
       "name": "Medicare.gov",
       "alternate_names": [],
-      "description": "",
+      "description": "Medicare information",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -1508,7 +1508,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Medicare information",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"
@@ -1665,7 +1665,7 @@
       "id": "mental-health-screenings-online-247",
       "name": "Mental Health Screenings Online 24/7",
       "alternate_names": [],
-      "description": "",
+      "description": "Online mental health screening",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -1675,7 +1675,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Online mental health screening",
+      "url": null,
       "facebook": null,
       "needs": [
         "health",
@@ -1717,7 +1717,7 @@
       "id": "mental-health-support-for-ky-farmers",
       "name": "Mental Health Support for KY Farmers",
       "alternate_names": [],
-      "description": "",
+      "description": "Farm-specific mental health support",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -1727,7 +1727,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Farm-specific mental health support",
+      "url": null,
       "facebook": null,
       "needs": [
         "health",
@@ -2043,7 +2043,7 @@
       "id": "restoration-healthcare",
       "name": "Restoration Healthcare",
       "alternate_names": [],
-      "description": "",
+      "description": "Healthcare services",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -2053,7 +2053,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Healthcare services",
+      "url": null,
       "facebook": null,
       "needs": [
         "health"

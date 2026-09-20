@@ -79,10 +79,15 @@ def validate_business_rules(resources):
         if 'crisis' in r.get('needs', []) and not r.get('phones'):
             errors.append({'resource_id': rid, 'field': 'phones', 'message': 'Crisis resource has no phone number', 'severity': 'error'})
 
-        # Rule: URL must start with http:// or https://
+        # Rule: URL must be valid
         url = r.get('url', '')
-        if url and not url.startswith(('http://', 'https://')):
-            errors.append({'resource_id': rid, 'field': 'url', 'message': f'Malformed URL: {url}', 'severity': 'error'})
+        if url:
+            if not url.startswith(('http://', 'https://')):
+                errors.append({'resource_id': rid, 'field': 'url', 'message': f'URL must start with http:// or https://: {url}', 'severity': 'error'})
+            elif ' ' in url and '%' not in url:
+                errors.append({'resource_id': rid, 'field': 'url', 'message': f'URL contains spaces (may be description): {url}', 'severity': 'error'})
+            elif not re.search(r'\.[a-zA-Z]{2,}', url):
+                errors.append({'resource_id': rid, 'field': 'url', 'message': f'URL lacks valid domain: {url}', 'severity': 'error'})
 
         # Rule: Detect duplicate phone numbers
         for phone in r.get('phones', []):

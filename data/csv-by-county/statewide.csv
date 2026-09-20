@@ -4,10 +4,10 @@ Name,Address,Phone,Website,Needs,Description,Hours,Cost,Status
 Adoption Hotline,Statewide,800-432-9346,,crisis,hotline,,unknown,active
 Adult Abuse Hotline,Statewide,800-752-6200,,crisis,hotline,,unknown,active
 Adult and Child Health Hotline,Statewide,800-462-6122,,health; crisis; family,haline,,unknown,active
-Alcohol/Addiction Rehab Program,Statewide,,https://faith-based rehab program,addiction,,,unknown,active
+Alcohol/Addiction Rehab Program,Statewide,,,addiction,faith-based rehab program,,unknown,active
 Alcohol/Drug Hotline,Statewide,800-729-6686,,addiction; crisis,hotline,,unknown,active
 Alcoholics Anonymous,Statewide,800-467-8091,,addiction,12-step recovery support,,unknown,active
-Appalachian Research & Defense Fund of KY,Statewide,866-277-5733,https://Free legal assistance based on eligibility,community,,,unknown,active
+Appalachian Research & Defense Fund of KY,Statewide,866-277-5733,,community,Free legal assistance based on eligibility,,unknown,active
 Battered Women Justice Project,Statewide,800-903-0111,,crisis; legal,Domestic violence hotline,,unknown,active
 Bluegrass First Steps,Statewide,800-454-2764,,health; family,Maternal/child health,,unknown,active
 Cabinet for Health and Family Services,Statewide,855-306-8959,,food; health; family,Food Stamps/Medical Card,,unknown,active
@@ -24,14 +24,14 @@ Consumer Product Safety Commission,Statewide,800-638-2772,,community,Product saf
 Crisis - General,Statewide,800-592-3980,,crisis,General crisis hotline,,unknown,active
 Crisis for Parents - 1-800-Children,Statewide,800-432-9251,,crisis; family,Parenting crisis support,,unknown,active
 Crisis Text Line,Statewide,741741,,crisis,Text or call for crisis support,,unknown,active
-DAV - Disabled American Veterans,Statewide,,https://Veterans with disabilities,veterans,,,unknown,active
+DAV - Disabled American Veterans,Statewide,,,veterans,Veterans with disabilities,,unknown,active
 Department for Housing,Statewide,800-669-9777,,housing,Housing assistance,,unknown,active
 Department for Medicaid Services,Statewide,800-635-2570,,health,Medicaid enrollment,,insurance,active
-Dept of Health and Human Services,Statewide,,"https://Federal resources for homelessness, trafficking, refugees",health,,,unknown,active
+Dept of Health and Human Services,Statewide,,,health,"Federal resources for homelessness, trafficking, refugees",,unknown,active
 Domestic Violence Prevention Board,Statewide,800-258-3803,,crisis,Domestic violence hotline,,unknown,active
 Find Help Now KY,Statewide,833-8KY-HELP,,community,Help line for services,,unknown,active
 Food and Drug Administration,Statewide,800-332-4010,,food; addiction,Medication and food safety,,unknown,active
-Food for the Poor,Statewide,,https://Food assistance organization,food,,,unknown,active
+Food for the Poor,Statewide,,,food,Food assistance organization,,unknown,active
 Food Stamp Case Changes Reporting,Statewide,800-248-5861,,food,SNAP reporting,,unknown,active
 Foster Care Information,Statewide,800-232-5437,,family,Foster care information,,unknown,active
 GPS - Getting Peace for Those Who Served,Statewide,606-215-1417,,mental-health; addiction; crisis; jobs; family; veterans,"Veteran emotional support, readjustment therapy, family/marriage/substance abuse counseling, spiritual guidance, financial management, job placement",,unknown,active
@@ -40,7 +40,7 @@ Greyhound Free Ticket Home for Runaways,Statewide,1-800-786-2929,https://www.180
 HHCK - Homeless & Housing Coalition of KY,Statewide,502-223-1834,https://hhck.org,housing,Statewide housing coalition,,unknown,active
 Home Health Agency Hotline,Statewide,800-635-6290,,health; crisis,Home health referrals,,unknown,active
 Homeless Veterans Reintegration Program,Statewide,606-866-4343; 606-548-8977,https://vivian.taylor@mtcomp.org,jobs; veterans,"Resume prep, job searching, job resources for homeless veterans. Must be willing to work, non-dishonorable discharge.",,unknown,active
-HomelessShelterDirectory,Statewide,,https://National shelter directory,shelter,,,unknown,active
+HomelessShelterDirectory,Statewide,,,shelter,National shelter directory,,unknown,active
 Horizon Health,Statewide,606-657-2030,https://horizonhealthky.org,housing; clothing; health; mental-health; addiction; jobs; family; community,"Job support, clothing, shoes, counseling, addiction recovery, women's housing, IOP, MAT, child care, peer support, mental health, behavioral health, youth services, employment, care coordination, harm reduction, ADHD testing, smoking cessation",,unknown,active
 Housing Voucher Programs Manchester KY,Statewide,877-424-3838,,housing; veterans,Veteran housing vouchers,,unknown,active
 KCEOC - Community Action Partnership,Statewide,606-546-3152,https://kceoc.org,food; housing; jobs; family; community,"Senior programs, energy assistance, summer food, weatherization, housing, youth homelessness, emergency support, career center, child development",,unknown,active
@@ -48,9 +48,9 @@ KEJC - Kentucky Equal Justice Center,Statewide,859-788-2927,https://kyequaljusti
 Kentucky Attorney General's Office,Statewide,800-372-2551,,crisis; legal,Legal hotline,,unknown,active
 Kentucky Domestic Violence Association,Statewide,502-209-5382,,crisis,DV support,,unknown,active
 Kentucky Harm Reduction Coalition,"1202 S. 3rd St #103, Louisville, KY 40203",502-537-6061,https://kyhrc.org,clothing; addiction; education,Harm reduction education and supplies for substance use disorders,,unknown,active
-Kentucky Voices for Health,Statewide,,https://Health advocacy,health,,,unknown,active
-KFAN - Kentucky Food Action Network,Statewide,,https://Food security advocacy,food; jobs,,,unknown,active
-KHC - Kentucky Housing Corporation,Statewide,,https://Housing Choice Voucher/Section 8,housing,,,unknown,active
+Kentucky Voices for Health,Statewide,,,health,Health advocacy,,unknown,active
+KFAN - Kentucky Food Action Network,Statewide,,,food; jobs,Food security advocacy,,unknown,active
+KHC - Kentucky Housing Corporation,Statewide,,,housing,Housing Choice Voucher/Section 8,,unknown,active
 KTAP - Cash Assistance,Statewide,859-306-8959,https://kynect.ky.gov,family,Basic cash assistance for families with children,,unknown,active
 KY Help Statewide Call Center,Statewide,1-833-859-4357,https://OperationUNITE.org/programs/kyhelp-call-center/,addiction; family,Substance use disorder assistance and family support,,unknown,active
 KY HIV/AIDS Program,Statewide,800-420-7431,,health,HIV/AIDS services,,unknown,active
@@ -60,10 +60,10 @@ Kynect Health Coverage,Statewide,606-389-6708,https://gracehealth.org,health,Hea
 La Red Nacional De Prevencion Del Suicidio,Statewide,888-628-9454,https://988Lifeline.org,crisis,Spanish language suicide prevention,,unknown,active
 Long Term Care Ombudsman,Statewide,800-372-2991,,community,Nursing home advocacy,,unknown,active
 Medicaid Managed Care Ombudsman,Statewide,800-807-4027,,health,Medicaid advocacy,,insurance,active
-Medicare.gov,Statewide,,https://Medicare information,health,,,unknown,active
+Medicare.gov,Statewide,,,health,Medicare information,,unknown,active
 Mental Health Counseling,Statewide,800-928-8000,,health; mental-health,Mental health referrals,,unknown,active
-Mental Health Screenings Online 24/7,Statewide,,https://Online mental health screening,health; mental-health,,,unknown,active
-Mental Health Support for KY Farmers,Statewide,,https://Farm-specific mental health support,health; mental-health,,,unknown,active
+Mental Health Screenings Online 24/7,Statewide,,,health; mental-health,Online mental health screening,,unknown,active
+Mental Health Support for KY Farmers,Statewide,,,health; mental-health,Farm-specific mental health support,,unknown,active
 MHA - Mental Health America of KY,Statewide,859-684-7778,https://mhaky.org,health; mental-health; education,"Mental health screenings, education, advocacy, system navigation",,unknown,active
 National Domestic Violence Hotline,Statewide,800-779-7233,,crisis,DV hotline,,unknown,active
 National Human Trafficking Hotline,Statewide,888-373-7888,,crisis,Trafficking hotline,,unknown,active
@@ -84,7 +84,7 @@ Prevent Child Abuse Kentucky,Statewide,800-432-9251,,crisis; family,Child abuse 
 Rape Crisis Hotline,Statewide,800-422-1060,,crisis,Rape crisis support,,unknown,active
 Recovery Care - ARC,"332 River Bend Rd, Louisa, KY",888-530-7632,https://arccenters.com,health; addiction; legal,"Casey's Law intervention, accepts Wellcare, United Health Care, Anthem",,unknown,active
 Resource Center for Child Protection,Statewide,800-527-3232,,family,Child protection,,unknown,active
-Restoration Healthcare,Statewide,,https://Healthcare services,health,,,unknown,active
+Restoration Healthcare,Statewide,,,health,Healthcare services,,unknown,active
 Serenity Ranch Recovery,Statewide,270-515-0212,https://serenityranchrecovery.com,addiction,Kentucky's leading detox and rehab. 6 locations in KY and TN.,,unknown,active
 SHIP - State Health Insurance Assistance,Statewide,877-293-7447,,health; mental-health,Medicare counseling,,insurance,active
 SID's Back to Sleep Campaign,Statewide,800-505-2742,,shelter,Safe sleep for infants,,unknown,active
@@ -101,9 +101,9 @@ Trevor Project - LGBTQ+ Youth,Statewide,866-488-7386,,crisis; family,LGBTQ+ yout
 VFW - Veterans of Foreign Wars,"3027 W. Laurel Rd, London, KY 40741",606-862-9336,,veterans,Veterans service organization,,unknown,active
 VOA Mid-States Employment Services,Statewide,606-765-3566,,addiction; jobs,Employment for people in recovery,,unknown,active
 VOA Mid-States Freedom House,"1025 2nd St, Louisville, KY 40203",502-635-4530,https://voamid.org/recovery,addiction; jobs; family,Treatment without leaving children. Insurance assistance. Employment services.,,free,active
-VOA Mid-States Recovery Community Center,"48 Owens Rd, Manchester, KY 40962",606-658-9236,https://FB: VOA Recovery Community Center,addiction; education; community,"Safe, supportive recovery community. Education, connections, support.",,unknown,active
+VOA Mid-States Recovery Community Center,"48 Owens Rd, Manchester, KY 40962",606-658-9236,,addiction; education; community,"FB: VOA Recovery Community Center. Safe, supportive recovery community. Education, connections, support.",,unknown,active
 VOA Mid-States Restorative Justice,Statewide,502-585-9920,,legal,Victim healing and restoration,,unknown,active
-VOA Mid-States Veteran Services,Statewide,,"https://Moral injury, preventing suicide, SSVF, homeless veterans reintegration",veterans,,,unknown,active
+VOA Mid-States Veteran Services,Statewide,,,veterans,"Moral injury, preventing suicide, SSVF, homeless veterans reintegration",,unknown,active
 Vocal Kentucky,"723 S. Brook St, Louisville, KY 40203",502-356-2322,https://vocal-ky.org,community,Harm reduction and advocacy,,unknown,active
 Walker House Sober Living,"Winchester & Lexington, KY",859-310-3567,https://walkerhouseinc.com,housing; mental-health; addiction; family; transportation,"Transport, sober living, recovery, addiction/family/teen counseling, anxiety therapy",,unknown,active
 Welfare and Medicaid Fraud,Statewide,800-372-2970,,health,Report fraud,,insurance,active

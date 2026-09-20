@@ -836,7 +836,7 @@
       "id": "khc-kentucky-housing-corporation",
       "name": "KHC - Kentucky Housing Corporation",
       "alternate_names": [],
-      "description": "",
+      "description": "Housing Choice Voucher/Section 8",
       "address": "Statewide",
       "city": null,
       "state": "KY",
@@ -846,7 +846,7 @@
       "longitude": null,
       "phones": [],
       "email": null,
-      "url": "https://Housing Choice Voucher/Section 8",
+      "url": null,
       "facebook": null,
       "needs": [
         "housing"
