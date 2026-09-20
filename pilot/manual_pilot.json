@@ -1,0 +1,73 @@
+{
+  "mode": "manual_pilot",
+  "description": "All automation disabled. Advance one stage at a time via stage_controller.py.",
+
+  "safety_switches": {
+    "agent_autostart": false,
+    "heartbeats_enabled": false,
+    "routines_enabled": false,
+    "webhook_execution_enabled": false,
+    "auto_assignment_enabled": false,
+    "auto_retry_enabled": false,
+    "auto_state_transitions": false,
+    "discovery_enabled": false,
+    "github_write_enabled": false,
+    "pr_creation_enabled": false,
+    "auto_merge_enabled": false,
+    "production_deployment_enabled": false,
+    "automatic_rollback_enabled": false,
+    "geographic_expansion_enabled": false,
+    "bulk_import_enabled": false
+  },
+
+  "pilot_limits": {
+    "max_active_cases": 1,
+    "max_agents_running": 1,
+    "allowed_risk_tiers": ["low"],
+    "allowed_geography": {
+      "counties": ["Laurel"],
+      "states": ["KY"],
+      "radius_miles_from": {"lat": 37.1690, "lon": -84.0824, "miles": 15},
+      "note": "London, KY is the center. Statewide/national resources that serve Laurel County are in scope."
+    },
+    "no_confidential_address": true,
+    "no_closure_or_deletion": true,
+    "no_geographic_expansion": true,
+    "no_bulk_discovery": true,
+    "no_agent_self_modification": true,
+    "fixed_budget_cents": 5000
+  },
+
+  "execution_levels": {
+    "simulation": {
+      "github_writes": false,
+      "production_data": false,
+      "pull_request": false,
+      "deployment": false,
+      "use_fixture": true,
+      "simulate_ci": true
+    },
+    "github_dry_run": {
+      "github_writes": true,
+      "feature_branch_only": true,
+      "draft_pr": true,
+      "allow_merge": false,
+      "real_ci": true
+    },
+    "controlled_live": {
+      "github_writes": true,
+      "real_resource": true,
+      "auto_merge": false,
+      "explicit_merge_required": true,
+      "post_merge_verification": true
+    }
+  },
+
+  "current_execution_level": "simulation",
+
+  "paperclip_config": {
+    "company_id": "76e932b7-637f-4341-b40e-7e9bb18a27b0",
+    "project_name": "London-Laurel County Foundation",
+    "project_goal": "Prove the complete Beacon resource workflow using one low-risk London or Laurel County lead, advancing manually through every stage and inspecting every artifact before any production automation is enabled."
+  }
+}

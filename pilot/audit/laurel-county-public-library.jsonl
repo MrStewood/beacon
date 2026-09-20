@@ -1,0 +1,5 @@
+{"case_id": "laurel-county-public-library", "from_state": "received", "to_state": "triage-ready", "triggered_by": "operator", "triggered_at": "2026-09-20T22:00:14.921168+00:00", "note": ""}
+{"case_id": "laurel-county-public-library", "from_state": "triage-ready", "to_state": "received", "triggered_by": "operator", "triggered_at": "2026-09-20T22:00:36.254827+00:00", "note": "reset"}
+{"case_id": "laurel-county-public-library", "from_state": "received", "to_state": "triage-ready", "triggered_by": "operator", "triggered_at": "2026-09-20T22:00:36.322171+00:00", "note": ""}
+{"case_id": "laurel-county-public-library", "from_state": "triage-ready", "to_state": "triage-active", "triggered_by": "operator", "triggered_at": "2026-09-20T22:00:36.389203+00:00", "note": ""}
+{"case_id": "laurel-county-public-library", "from_state": "triage-active", "to_state": "received", "triggered_by": "operator", "triggered_at": "2026-09-20T22:01:26.943714+00:00", "note": "reset"}
