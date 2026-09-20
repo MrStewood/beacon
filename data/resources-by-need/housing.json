@@ -1,0 +1,1412 @@
+{
+  "need": "housing",
+  "count": 29,
+  "resources": [
+    {
+      "id": "fayette-bg-recovery",
+      "name": "BG Recovery",
+      "alternate_names": [],
+      "description": "Recovery education, IOP/OP, peer support, transportation, housing assistance.",
+      "address": "711 E Loudon Ave, Lexington, KY 40505",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40505",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-333-4128",
+        "214-566-1078"
+      ],
+      "email": null,
+      "url": "https://bgrecovery.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction",
+        "transportation",
+        "education",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-corbin-united-effort",
+      "name": "Corbin United Effort",
+      "alternate_names": [],
+      "description": "Food pantry, meals, housing help, clothing, healthcare, system navigation.",
+      "address": "311 Barbourville St, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-7523"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "housing",
+        "clothing",
+        "health"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "bell-cumberland-river-rhoar-center",
+      "name": "Cumberland River RHOAR Center",
+      "alternate_names": [],
+      "description": "Recovery, Hope, Opportunity and Resiliency. 100 women beds, 12 family reunification apartments, education & employment opportunities.",
+      "address": "141 Tech Park Drive, Middlesboro, KY 40965",
+      "city": "Middlesboro",
+      "state": "KY",
+      "zip": "40965",
+      "county": "Bell",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-248-4949"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "shelter",
+        "housing",
+        "addiction",
+        "jobs",
+        "family",
+        "education"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-cumberland-valley-regional-housing-authority",
+      "name": "Cumberland Valley Regional Housing Authority",
+      "alternate_names": [],
+      "description": "",
+      "address": "221 N. 3rd St, Williamsburg, KY 40769",
+      "city": "Williamsburg",
+      "state": "KY",
+      "zip": "40769",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "department-for-housing",
+      "name": "Department for Housing",
+      "alternate_names": [],
+      "description": "Housing assistance",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-669-9777"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential",
+        "government"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "hhck-homeless-housing-coalition-of-ky",
+      "name": "HHCK - Homeless & Housing Coalition of KY",
+      "alternate_names": [],
+      "description": "Statewide housing coalition",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-223-1834"
+      ],
+      "email": null,
+      "url": "https://hhck.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "documents"
+      ],
+      "service_types": [
+        "residential",
+        "government"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-homeless-and-housing-coalition-of-ky",
+      "name": "Homeless and Housing Coalition of KY",
+      "alternate_names": [],
+      "description": "Housing programs.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://hhck.org",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "horizon-health",
+      "name": "Horizon Health",
+      "alternate_names": [],
+      "description": "Job support, clothing, shoes, counseling, addiction recovery, women's housing, IOP, MAT, child care, peer support, mental health, behavioral health, youth services, employment, care coordination, harm reduction, ADHD testing, smoking cessation",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-657-2030"
+      ],
+      "email": null,
+      "url": "https://horizonhealthky.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "clothing",
+        "health",
+        "mental-health",
+        "addiction",
+        "jobs",
+        "family",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "women",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-housing-authority-of-corbin",
+      "name": "Housing Authority of Corbin",
+      "alternate_names": [],
+      "description": "",
+      "address": "1336 Madison Ave, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-5104"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "perry-housing-authority-of-hazzard",
+      "name": "Housing Authority of Hazzard",
+      "alternate_names": [],
+      "description": "",
+      "address": "100 Campbell St Apt A, Hazzard, KY",
+      "city": "Hazzard",
+      "state": "KY",
+      "zip": null,
+      "county": "Perry",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-436-5741"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-housing-authority-of-manchester",
+      "name": "Housing Authority of Manchester",
+      "alternate_names": [],
+      "description": "",
+      "address": "306 Town Branch Rd, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-3884"
+      ],
+      "email": null,
+      "url": "https://housingauthorityofmanchester.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "pulaski-housing-authority-of-somerset",
+      "name": "Housing Authority of Somerset",
+      "alternate_names": [],
+      "description": "",
+      "address": "400 Hail Knob Rd, Somerset, KY 42503",
+      "city": "Somerset",
+      "state": "KY",
+      "zip": "42503",
+      "county": "Pulaski",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-679-1332"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "mccreary-housing-authority-of-whitley-city",
+      "name": "Housing Authority of Whitley City",
+      "alternate_names": [],
+      "description": "",
+      "address": "488 St Hwy 2792, Pine Knot, KY 42635",
+      "city": "Pine Knot",
+      "state": "KY",
+      "zip": "42635",
+      "county": "McCreary",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-354-2200"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "housing-voucher-programs-manchester-ky",
+      "name": "Housing Voucher Programs Manchester KY",
+      "alternate_names": [],
+      "description": "Veteran housing vouchers",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "877-424-3838"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing",
+        "veterans"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men",
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "kceoc-community-action-partnership",
+      "name": "KCEOC - Community Action Partnership",
+      "alternate_names": [],
+      "description": "Senior programs, energy assistance, summer food, weatherization, housing, youth homelessness, emergency support, career center, child development",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3152"
+      ],
+      "email": null,
+      "url": "https://kceoc.org",
+      "facebook": null,
+      "needs": [
+        "food",
+        "housing",
+        "crisis",
+        "jobs",
+        "family",
+        "community"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men",
+        "youth",
+        "seniors"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "khc-kentucky-housing-corporation",
+      "name": "KHC - Kentucky Housing Corporation",
+      "alternate_names": [],
+      "description": "",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://Housing Choice Voucher/Section 8",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "ky-river-foothills-ssvf",
+      "name": "KY River Foothills SSVF",
+      "alternate_names": [],
+      "description": "Temporary rental assistance for qualifying veterans. POC: Lisa Roark.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-372-7601"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing",
+        "veterans"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-manchester-miracles",
+      "name": "Manchester Miracles",
+      "alternate_names": [],
+      "description": "Sober living, clinical services, life skills, job assistance.",
+      "address": "Manchester, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-681-6060"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing",
+        "health",
+        "addiction",
+        "jobs"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-mercy-mountain-housing",
+      "name": "Mercy Mountain Housing",
+      "alternate_names": [],
+      "description": "Rental and acquisition for transitional and permanent housing.",
+      "address": "1866 Whetstone Rd, Rockholds, KY 40759",
+      "city": "Rockholds",
+      "state": "KY",
+      "zip": "40759",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "866-338-0557"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-new-hope-village-apartments",
+      "name": "New Hope Village Apartments",
+      "alternate_names": [],
+      "description": "11 one-bedroom units for mentally ill adults.",
+      "address": "P.O. Box 568, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-7010 ext 202"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "oxford-house",
+      "name": "Oxford House",
+      "alternate_names": [],
+      "description": "Peer-run, self-sustaining, substance-free housing",
+      "address": "1010 Wayne Ave Suite 300, Silver Spring, MD 20910",
+      "city": "Silver Spring",
+      "state": "KY",
+      "zip": null,
+      "county": "Franklin",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "301-587-2916",
+        "859-353-8452"
+      ],
+      "email": null,
+      "url": "https://oxfordhouse.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "peer-led"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-perfect-imperfections",
+      "name": "Perfect Imperfections",
+      "alternate_names": [],
+      "description": "Licensed AODE, IOP, individual/group counseling, substance use counseling, case management, peer support, recovery housing.",
+      "address": "1018 E. New Circle Rd Ste 204, Lexington, KY 40505",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40505",
+      "county": "Madison",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-693-6089",
+        "859-368-0003"
+      ],
+      "email": null,
+      "url": "https://perfectimperfectionsky.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "mental-health",
+        "addiction",
+        "documents",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-roaring-brook-recovery",
+      "name": "Roaring Brook Recovery",
+      "alternate_names": [],
+      "description": "PHP, IOP, aftercare, men's/women's rehab, sober living, MAT, Hep-C treatment, alumni program.",
+      "address": "600 Perimeter Dr Ste 125, Lexington, KY 40517",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40517",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "866-678-8123"
+      ],
+      "email": null,
+      "url": "https://roaringbrookrecovery.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "madison-st-john-recovery-for-men",
+      "name": "St. John Recovery for Men",
+      "alternate_names": [],
+      "description": "Behavioral health counseling, structured recovery housing.",
+      "address": "Richmond, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Madison",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-300-1503"
+      ],
+      "email": null,
+      "url": "https://stjohnrecoveryllc.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "health",
+        "mental-health",
+        "addiction"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-voa-recovery-freedom-house-manchester",
+      "name": "VOA Recovery - Freedom House Manchester",
+      "alternate_names": [],
+      "description": "Recovery housing.",
+      "address": "8467 US-421, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-603-2486"
+      ],
+      "email": null,
+      "url": "https://voamid.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-walker-house",
+      "name": "Walker House",
+      "alternate_names": [],
+      "description": "Sober living, recovery house, addiction/family/teen counseling, anxiety therapy.",
+      "address": "Lexington, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-310-3567"
+      ],
+      "email": null,
+      "url": "https://walkerhouseinc.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "mental-health",
+        "addiction",
+        "family"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "walker-house-sober-living",
+      "name": "Walker House Sober Living",
+      "alternate_names": [],
+      "description": "Transport, sober living, recovery, addiction/family/teen counseling, anxiety therapy",
+      "address": "Winchester & Lexington, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-310-3567"
+      ],
+      "email": null,
+      "url": "https://walkerhouseinc.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "mental-health",
+        "addiction",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "perry-whispering-pines",
+      "name": "Whispering Pines",
+      "alternate_names": [],
+      "description": "Affordable housing.",
+      "address": "Hazzard, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Perry",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-438-5929"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-williamsburg-housing-authority",
+      "name": "Williamsburg Housing Authority",
+      "alternate_names": [],
+      "description": "",
+      "address": "600 Brush Arbour Church Rd, Williamsburg, KY",
+      "city": "Williamsburg",
+      "state": "KY",
+      "zip": null,
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-549-0282"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

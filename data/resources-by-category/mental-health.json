@@ -1,0 +1,522 @@
+{
+  "category": "mental-health",
+  "count": 27,
+  "resources": [
+    {
+      "id": "harlan-4th-dimention-treatment-center",
+      "name": "4th Dimention Treatment Center",
+      "address": "Harlan, KY",
+      "phones": [
+        "606-621-5007",
+        "606-273-2134"
+      ],
+      "url": "https://www.4thDimentionTreatment.com",
+      "description": "Residential Treatment, Individual, group & family therapy, Adventure & Experiential Therapy, 12-step integration, Case Management & Peer Support",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "family-services"
+      ],
+      "counties": [
+        "Harlan"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-apprisen",
+      "name": "Apprisen",
+      "address": "2265 Harrodsburg Rd. Lexington, KY 40504",
+      "phones": [
+        "800-355-2227"
+      ],
+      "url": "https://www.apprisen.com",
+      "description": "Financial Advocates providing HUD-approved counseling when changes in your finances impact home ownership. Offers specific solutions for mortgage delinquency and foreclosure prevention, and also provide reverse mortgage counseling. Appointments can be conducted by phone, on-line or face-to-face. Other locations Louisville, Elizabethtown, and Florence.",
+      "categories": [
+        "mental-health"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "jefferson-choose-hope-llc",
+      "name": "Choose Hope LLC",
+      "address": "620 S. 3rd St Suite 101 Louisville, KY 40202",
+      "phones": [
+        "502-631-5291"
+      ],
+      "url": "https://www.choosehopellc.org",
+      "description": "Mental Health/addiction treatment, Theraputic groups, Alumni program, Relapse prevention",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "healthcare"
+      ],
+      "counties": [
+        "Jefferson"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "jessamine-clearview-behavioral-health",
+      "name": "Clearview Behavioral Health",
+      "address": "1001 Park Central Ave. Nicholasville, KY 40356",
+      "phones": [
+        "859-241-1096"
+      ],
+      "url": "https://for intake information contact clearviewbehavioralhealth@gmail.com",
+      "description": null,
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "Jessamine"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "cumberland-river-behavioral-health",
+      "name": "Cumberland River Behavioral Health",
+      "address": "Barbourville, Capers, Corbin, Harlan, London, Pineville, Manchester, McKee, Middlesboro, Mt. Vernon, Williamsburg",
+      "phones": [
+        "606-896-2466",
+        "606-837-0100",
+        "606-598-5172"
+      ],
+      "url": "https://crbhky.org",
+      "description": "Offers a variety of services for inpatient and outpatients.",
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "statewide",
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-cumberland-river-behavioral-health-inc",
+      "name": "Cumberland River Behavioral Health Inc",
+      "address": "Barbourville",
+      "phones": [
+        "606-546-3104",
+        "606-526-9459"
+      ],
+      "url": "https://www.crbhky.org",
+      "description": null,
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "grace-health",
+      "name": "Grace Health",
+      "address": null,
+      "phones": [
+        "888-883-9005"
+      ],
+      "url": "https://www.gracehealthky.org",
+      "description": "has Behavioral health services including Comprehensive Care, Medication Management, Targeted Case Management, Referral Services",
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "horizon-health",
+      "name": "Horizon Health",
+      "address": null,
+      "phones": [
+        "606-657-2030"
+      ],
+      "url": "https://horizonhealthky.org",
+      "description": "Offers Job Support such as transportation, clothing, shoes, and other work related needs. They also provide counseling and addiction recovery. Offers Womens housing with IOP, IOP Counceling, and MAT treatment. Child care, PEER Support, Mental health, Behavioral Health, Youth services, Employment services, Care coordination, Harm reduction, ADHD Testing, Smoking Cessation",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "transportation",
+        "childcare",
+        "healthcare",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "isaiah-house",
+      "name": "Isaiah House",
+      "address": "Chaplin, KY Louisville, KY Williamsburg, KY Willisburg, KY Versailles, KY Harrodsburg, KY Danville, KY Georgetown, KY Hillview, KY",
+      "phones": [
+        "859-375-9200"
+      ],
+      "url": "https://Isaiah-House.org",
+      "description": "We'll pick you up, We offer Family, marriage, and couples counceling, GED and College classes onsite, Job skill training, Individual and group therapy, Detox, DOC case management",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "statewide",
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-medical-and-mental-health-services-cumberland-river-comprehensive-care-center",
+      "name": "Medical and Mental Health Services - Cumberland River Comprehensive Care Center",
+      "address": "P.O. Box 84 Williamsburg, KY 40769",
+      "phones": [
+        "606-549-1440"
+      ],
+      "url": "https://Community Mental Health Center; mental health assistance and service referrals; Substance abuse services; Intellectual or developmental disabilities services; Supportive Community Living Programs; Childten's services; and First Steps/Early Intervention (CBIS). Services provided in all counties in the Cumberland River ADD",
+      "description": null,
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mental-health-screenings-available-online-247",
+      "name": "Mental Health Screenings available online 24/7",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-mental-health-services-cumberland-river-comprehensive-care-center",
+      "name": "Mental Health Services -Cumberland River Comprehensive Care Center",
+      "address": "Rt. 9 Box 940 Manchester, KY 40962",
+      "phones": [
+        "606-598-5172",
+        "606-546-3104"
+      ],
+      "url": "https://Community Mental Health Center; mental health assistance and service referrals; Substance abuse services; intellectual or developmental disabilities; Supportive Community Living Programs; childten's services; and First Steps/Early intervention (CBIS). Services provided in all counties in the Cumberland River ADD",
+      "description": null,
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "Clay",
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mental-health-support-for-ky-farmers",
+      "name": "Mental Health Support for KY Farmers",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mha-mental-health-america-of-kentucky",
+      "name": "MHA - Mental Health America of Kentucky",
+      "address": null,
+      "phones": [
+        "859-684-7778"
+      ],
+      "url": "https://mhaky.org",
+      "description": "(offers Mental Health Screenings, Education, Advocacy network & System navigation",
+      "categories": [
+        "mental-health",
+        "education",
+        "healthcare",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-mortgage-and-credit-counceling-apprisen",
+      "name": "Mortgage and Credit Counceling - Apprisen",
+      "address": "2265 Harrodsburg Rd. Lexington, KY 40504",
+      "phones": [
+        "800-355-2227"
+      ],
+      "url": "https://www.apprisen.com",
+      "description": "Financial Advocates providing HUD-approved counseling when changes in your finances impact home ownership. Offering specific solutions for mortgage delinquency and forclosure prevention, and also provide reverse mortgage counseling. Appointments can be conducted by phone, on-line, or face-to-face. Other locations in Louisville, Elizabethtown, and Florence.",
+      "categories": [
+        "mental-health"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-mortgage-and-credit-counseling-apprisen",
+      "name": "Mortgage and Credit Counseling - Apprisen",
+      "address": "2265 Harrodsburg Rd Suite 303 Lexington, KY 40504",
+      "phones": [
+        "800-355-2227"
+      ],
+      "url": "https://apprisen.com",
+      "description": "Financial Advocates providing HUD-approved counseling when changes in your finances impact home ownership.",
+      "categories": [
+        "mental-health"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-new-hope-counceling-recovery",
+      "name": "New Hope Counceling Recovery",
+      "address": null,
+      "phones": [
+        "606-594-7479"
+      ],
+      "url": "https://www.nhcr4u.com",
+      "description": "FB@New Hope Counseling RecoveryLLC Inspiring hope and changing lives",
+      "categories": [
+        "mental-health",
+        "addiction-recovery"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-new-hope-counseling-recovery",
+      "name": "New Hope Counseling Recovery",
+      "address": null,
+      "phones": [
+        "606-594-7479"
+      ],
+      "url": "https://www.nhcr4.com",
+      "description": "fb@NewHopeCounselingRecoveryLLC Inspiring Hope Changing Lives",
+      "categories": [
+        "mental-health",
+        "addiction-recovery"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-open-arms-recovery-center",
+      "name": "Open Arms Recovery Center",
+      "address": "166 Griffin Ave. Somerset, KY 42501",
+      "phones": [
+        "859-494-2656"
+      ],
+      "url": "https://openarmsrecovery.org",
+      "description": "Structured individualized treatment, Longterm Sobriety, Strive to reduce the impact of mental health and substance abuse challenges to promote optimal outcomes, Harm reduction, Community Integration",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "domestic-violence",
+        "transportation",
+        "healthcare"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-perfect-imperfections",
+      "name": "Perfect Imperfections",
+      "address": "1018 East New Circle RD Ste 204 Lexington, KY 40505",
+      "phones": [
+        "859-693-6089",
+        "859-368-0003"
+      ],
+      "url": "https://perfectimperfectionsky.com",
+      "description": "Licensed AODE, Intensive Outpatient Program, Individual & Group Counseling, Substance Use Counseling, Case Management, Peer Support, Recovery Housing | faith based treatment facility. Can accept couples",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery"
+      ],
+      "counties": [
+        "Fayette",
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "madison-st-john-recovery-for-men",
+      "name": "St. John Recovery for men",
+      "address": "Richmond, KY",
+      "phones": [
+        "859-300-1503"
+      ],
+      "url": "https://StJohnRecoveryllc.com",
+      "description": "Behavioral Health Counseling, Structured Recovery Housing",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "healthcare"
+      ],
+      "counties": [
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-still-waters-counceling-recovery-resources",
+      "name": "Still Waters Counceling & Recovery Resources",
+      "address": "828 Lane Allen Rd Lexington, KY 40504",
+      "phones": [
+        "859-399-1373",
+        "859-382-5687"
+      ],
+      "url": "https://stillwaters.org",
+      "description": "IOP group therapy, OP group therapy, Peer support, Case Management",
+      "categories": [
+        "mental-health",
+        "addiction-recovery"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "madison-total-abstinence-behavioral-health-outpatient-center",
+      "name": "Total Abstinence Behavioral Health Outpatient Center",
+      "address": "230 Battlefield Memorial Hwy Richmond, KY 40475",
+      "phones": [
+        "859-408-7031"
+      ],
+      "url": "https://totalabstinence24.com",
+      "description": "Behavioral Health Counceling",
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-walker-house",
+      "name": "Walker House",
+      "address": "Lexington",
+      "phones": [
+        "859-310-3567"
+      ],
+      "url": "https://walkerhouseinc.com",
+      "description": "Sober Living, Recovery House, Addiction Counseling, Family Counceling, Teen Counseling, Anxiety Therapist",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "walker-house-sober-living",
+      "name": "Walker House Sober Living",
+      "address": "Winchester & Lexington",
+      "phones": [
+        "859-310-3567"
+      ],
+      "url": "https://walkerhouseinc,com",
+      "description": "Will provide transport, Sober Living, Recovery House, Addiction Counseling, Family Counseling, Teen Counseling, Anxiety Therapist",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "transportation"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "winds-of-change-counseling-services",
+      "name": "Winds of Change Counseling Services",
+      "address": "1220 Master St. Corbin, KY 40701 ; 105 S Pine St. Pineville, KY 40977",
+      "phones": [
+        "606-515-3582",
+        "606-404-5104",
+        "606-404-5105"
+      ],
+      "url": "https://windsofchangeky.com",
+      "description": "Creates a safe place for the healing process to begin. Offers a range of tailored services and dedicated to providing professional support across a spectrum of needs.",
+      "categories": [
+        "mental-health"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "madison-yonder-behavioral-health",
+      "name": "Yonder Behavioral Health",
+      "address": "330 Hotel Court Berea, KY 40403",
+      "phones": [
+        "502-604-0228"
+      ],
+      "url": "https://yonderbh.com",
+      "description": null,
+      "categories": [
+        "mental-health",
+        "healthcare"
+      ],
+      "counties": [
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

@@ -1,0 +1,769 @@
+{
+  "category": "hotline",
+  "count": 45,
+  "resources": [
+    {
+      "id": "adoption",
+      "name": "Adoption",
+      "address": null,
+      "phones": [
+        "800-432-9346"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "adult-abuse",
+      "name": "Adult abuse",
+      "address": null,
+      "phones": [
+        "800-752-6200"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "adult-and-child-health",
+      "name": "Adult and Child Health",
+      "address": null,
+      "phones": [
+        "800-462-6122"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "alcoholdrug-hotline",
+      "name": "Alcohol/Drug hotline",
+      "address": null,
+      "phones": [
+        "800-729-6686"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "alcoholics-anonymous",
+      "name": "Alcoholics Anonymous",
+      "address": null,
+      "phones": [
+        "800-467-8091"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "battered-women-justice-project",
+      "name": "Battered Women Justice Project",
+      "address": null,
+      "phones": [
+        "800-903-0111"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "bluegrass-first-steps",
+      "name": "Bluegrass First Steps",
+      "address": null,
+      "phones": [
+        "800-454-2764"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "cancer-information-services",
+      "name": "Cancer Information Services",
+      "address": null,
+      "phones": [
+        "800-422-6237"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "child-protection-hotline",
+      "name": "Child Protection Hotline",
+      "address": null,
+      "phones": [
+        "877-597-2331"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "child-support-informationenforcment",
+      "name": "Child Support Information/Enforcment",
+      "address": null,
+      "phones": [
+        "800-248-1163"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "child-support-voice-response",
+      "name": "Child Support Voice Response",
+      "address": null,
+      "phones": [
+        "800-443-1576"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "community-based-services",
+      "name": "Community Based Services",
+      "address": null,
+      "phones": [
+        "800-635-2570"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "community-mental-health-centers",
+      "name": "Community Mental Health Centers",
+      "address": null,
+      "phones": [
+        "800-928-8000"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "consumer-product-saftey-commission",
+      "name": "Consumer Product Saftey Commission",
+      "address": null,
+      "phones": [
+        "800-638-2772"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "crisis-general",
+      "name": "Crisis - General",
+      "address": null,
+      "phones": [
+        "800-592-3980"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "crisis-for-parents-1-800-children",
+      "name": "Crisis for parents 1-800-Children",
+      "address": null,
+      "phones": [
+        "800-432-9251"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "department-for-housing",
+      "name": "Department for Housing",
+      "address": null,
+      "phones": [
+        "800-669-9777"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "department-for-medicaid-services",
+      "name": "Department for Medicaid Services",
+      "address": null,
+      "phones": [
+        "800-635-2570"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "domestic-violence-prevention-board",
+      "name": "Domestic Violence Prevention Board",
+      "address": null,
+      "phones": [
+        "800-258-3803"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "food-and-drug-administration",
+      "name": "Food and Drug Administration",
+      "address": null,
+      "phones": [
+        "800-332-4010"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "food-stamp-case-and-changes-reporting",
+      "name": "Food Stamp Case and Changes Reporting",
+      "address": null,
+      "phones": [
+        "800-248-5861"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "foster-care-information",
+      "name": "Foster Care Information",
+      "address": null,
+      "phones": [
+        "800-232-5437"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "home-health-agency-hotline",
+      "name": "Home Health Agency Hotline",
+      "address": null,
+      "phones": [
+        "800-635-6290"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "kentucky-attorney-generals-office",
+      "name": "Kentucky Attorney General's Office",
+      "address": null,
+      "phones": [
+        "800-372-2551"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "kentucky-domestic-violence-association",
+      "name": "Kentucky Domestic Violence Association",
+      "address": null,
+      "phones": [
+        "502-209-5382"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "ky-hivaids-program",
+      "name": "KY HIV/AIDS Program",
+      "address": null,
+      "phones": [
+        "800-420-7431"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "long-term-care-ombudsman",
+      "name": "Long Term Care - Ombudsman",
+      "address": null,
+      "phones": [
+        "800-372-2991"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "medicaid-managed-care-ombudsman",
+      "name": "Medicaid Managed Care - Ombudsman",
+      "address": null,
+      "phones": [
+        "800-807-4027"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mental-health-counseling",
+      "name": "Mental Health Counseling",
+      "address": null,
+      "phones": [
+        "800-928-8000"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-domestic-violence-hotline",
+      "name": "National Domestic Violence Hotline",
+      "address": null,
+      "phones": [
+        "800-779-"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-human-trafficking-hotline",
+      "name": "National Human Trafficking Hotline",
+      "address": null,
+      "phones": [
+        "888-373-7888"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-lead-information-center",
+      "name": "National Lead Information Center",
+      "address": null,
+      "phones": [
+        "800-424-5323"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-maternal-mental-health-line",
+      "name": "National Maternal Mental Health Line",
+      "address": null,
+      "phones": [
+        "833-943-5749"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-network-to-end-domestic-violence",
+      "name": "National Network to End Domestic Violence",
+      "address": null,
+      "phones": [
+        "202-543-5566"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-sexual-assult-hotline",
+      "name": "National Sexual Assult Hotline",
+      "address": null,
+      "phones": [
+        "800-656-4673"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-victim-notificaton-network",
+      "name": "National Victim Notificaton Network",
+      "address": null,
+      "phones": [
+        "800-511-1670"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "poison-control-emergency-information",
+      "name": "Poison Control Emergency Information",
+      "address": null,
+      "phones": [
+        "800-222-1222"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "prevent-child-abuse-kentucky",
+      "name": "Prevent Child Abuse Kentucky",
+      "address": null,
+      "phones": [
+        "800-432-9251"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "rape-crisis-hotline",
+      "name": "Rape Crisis Hotline",
+      "address": null,
+      "phones": [
+        "800-422-1060"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "rape-abuse-and-incest-national-network-rainn",
+      "name": "Rape, Abuse and Incest National Network (RAINN)",
+      "address": null,
+      "phones": [
+        "800-656-"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "resource-center-for-child-protection-and-custody",
+      "name": "Resource Center for Child Protection and Custody",
+      "address": null,
+      "phones": [
+        "800-527-3232"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "special-needs-adoption",
+      "name": "Special Needs Adoption",
+      "address": null,
+      "phones": [
+        "800-423-9346"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "spouse-abuse-hotline",
+      "name": "Spouse Abuse Hotline",
+      "address": null,
+      "phones": [
+        "800-544-2022"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "suicide-and-crisis-hotline",
+      "name": "Suicide and Crisis Hotline",
+      "address": null,
+      "phones": [],
+      "url": "https://988lifeline.org",
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "welfare-and-medicaid-fraud",
+      "name": "Welfare and Medicaid fraud",
+      "address": null,
+      "phones": [
+        "800-372-2970"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "hotline"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

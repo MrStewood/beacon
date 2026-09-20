@@ -1,0 +1,225 @@
+{
+  "category": "employment",
+  "count": 11,
+  "resources": [
+    {
+      "id": "bell-cumberland-river-rhoar-center",
+      "name": "Cumberland River RHOAR Center",
+      "address": "141 Tech Park Drive Middlesboro, KY 40965",
+      "phones": [
+        "606-248-4949"
+      ],
+      "url": "https://crbhky.org",
+      "description": "Recovery, Hope, Opportunity and Resiliency. Will serve 100 Women, 12 family reunification appartments, Education & Employment opportunities, Self-sufficiency",
+      "categories": [
+        "addiction-recovery",
+        "family-services",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "Bell"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "homeless-veterans-reintegration-program",
+      "name": "Homeless Veterans Reintegration Program",
+      "address": null,
+      "phones": [
+        "606-866-4343",
+        "606-548-8977"
+      ],
+      "url": null,
+      "description": "Vivian Taylor, Coordinator, 606-548-8977 vivian.taylor@mtcomp.org : Helps homeless or potentially homeless veterans get back on their feet. Veterans must be willing and able to work, and have a discharge other than dishonorable. Mountain Comprehensive Care assists in resume prep, job searching, and other job related resources.",
+      "categories": [
+        "shelter",
+        "veterans",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "horizon-health",
+      "name": "Horizon Health",
+      "address": null,
+      "phones": [
+        "606-657-2030"
+      ],
+      "url": "https://horizonhealthky.org",
+      "description": "Offers Job Support such as transportation, clothing, shoes, and other work related needs. They also provide counseling and addiction recovery. Offers Womens housing with IOP, IOP Counceling, and MAT treatment. Child care, PEER Support, Mental health, Behavioral Health, Youth services, Employment services, Care coordination, Harm reduction, ADHD Testing, Smoking Cessation",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "transportation",
+        "childcare",
+        "healthcare",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "isaiah-house",
+      "name": "Isaiah House",
+      "address": "Chaplin, KY Louisville, KY Williamsburg, KY Willisburg, KY Versailles, KY Harrodsburg, KY Danville, KY Georgetown, KY Hillview, KY",
+      "phones": [
+        "859-375-9200"
+      ],
+      "url": "https://Isaiah-House.org",
+      "description": "We'll pick you up, We offer Family, marriage, and couples counceling, GED and College classes onsite, Job skill training, Individual and group therapy, Detox, DOC case management",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "statewide",
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "kceoc-community-action-partnership",
+      "name": "KCEOC - Community Action Partnership",
+      "address": null,
+      "phones": [
+        "606-546-3152"
+      ],
+      "url": "https://www.kceoc.org",
+      "description": "Has programs availablefor Seniors, Low income energy assistance, Summer Food Service, Weatherization Assistance, Kentucky Housing Corporation, Youth homelessness, Emergency Support, Kentucky Career Center, Child Development, and more. also on FB",
+      "categories": [
+        "food",
+        "shelter",
+        "family-services",
+        "utility-assistance",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "kfan-kentucky-food-action-network",
+      "name": "KFAN - Kentucky Food Action Network",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "food",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mha-mental-health-america-of-kentucky",
+      "name": "MHA - Mental Health America of Kentucky",
+      "address": null,
+      "phones": [
+        "859-684-7778"
+      ],
+      "url": "https://mhaky.org",
+      "description": "(offers Mental Health Screenings, Education, Advocacy network & System navigation",
+      "categories": [
+        "mental-health",
+        "education",
+        "healthcare",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "nosw-new-opportunity-school-for-women-18-years-old-and-up",
+      "name": "NOSW - New Opportunity School for Women 18 years old and up.",
+      "address": null,
+      "phones": [
+        "859-985-7200"
+      ],
+      "url": "https://NOSW.org",
+      "description": "Free programs - reimbursement available for childcare and transportation. 2 week Residential Program in Berea that includes lodging, meals, books and other materials. Explore self-esteem, wellness, career, education, arts, culture and community. Gain skills to turn dreams into goals and goals into action. On-line shorter program courses are free; helps to build confidence skills. Meet other women and build connections.",
+      "categories": [
+        "food",
+        "family-services",
+        "transportation",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "sparc-job-training",
+      "name": "S.P.A.R.C. - job training",
+      "address": "1442 W. Steve Wariner Dr. Russel Springs, KY 42642",
+      "phones": [
+        "859-396-0260"
+      ],
+      "url": "https://sparcrecovery.com",
+      "description": "Achieving Sobriety, Finding Peace, Building Awareness, Maintaining Recovery",
+      "categories": [
+        "addiction-recovery",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "voa-mid-states-employment-services",
+      "name": "VOA (mid states) Employment Services",
+      "address": null,
+      "phones": [
+        "606-765-3566"
+      ],
+      "url": "https://Employment services for people in recovery",
+      "description": null,
+      "categories": [
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "volunteers-of-america-mid-states-freedom-house",
+      "name": "Volunteers of America (mid-states) Freedom House",
+      "address": "1025 2nd ST Louisville, KY 40203; 1436 Shelby St. Louisville, KY 40217; 8467 N Hwy 421 Manchester, KY 40962",
+      "phones": [
+        "502-635-4530",
+        "606-658-8050"
+      ],
+      "url": "https://VOAMID.ORG/RECOVERY",
+      "description": "Find a treatment for substance use disorder WITHOUT leaving your children behind. FB / Instagram / Twitter @VOAMID (Can help you to get on insurance.) Also offers Employment Services",
+      "categories": [
+        "addiction-recovery",
+        "family-services",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

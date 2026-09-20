@@ -1,0 +1,25 @@
+{
+  "county": "Boone",
+  "count": 1,
+  "resources": [
+    {
+      "id": "boone-ethan-health-addiction-treatment",
+      "name": "Ethan Health Addiction Treatment",
+      "address": "6159 1st Financial Dr Burlington, KY 41005",
+      "phones": [
+        "859-625-5235"
+      ],
+      "url": "https://www.ethanhealth.org",
+      "description": "Intensive Outpatient Program support svailable 24/7 | Intensive Outpatient Program",
+      "categories": [
+        "addiction-recovery",
+        "healthcare"
+      ],
+      "counties": [
+        "Boone",
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beacon — Community Resource Directory (Print)</title>
+    <style>
+        @page { margin: .6in; size: letter; }
+        body { font-family: -apple-system, system-ui, sans-serif; font-size: 9pt; line-height: 1.35; color: #0f172a; }
+        h1 { font-size: 16pt; border-bottom: 2px solid #1d4ed8; padding-bottom: .08in; margin-bottom: .15in; }
+        .sub { font-size: 9pt; color: #64748b; margin-bottom: .2in; }
+        h2 { font-size: 13pt; color: #1d4ed8; margin: .2in 0 .08in; page-break-after: avoid; }
+        h3 { font-size: 10pt; margin: .12in 0 .04in; page-break-after: avoid; color: #334155; }
+        .county { page-break-before: always; }
+        .county:first-of-type { page-break-before: avoid; }
+        .r { margin-bottom: .12in; padding-bottom: .08in; border-bottom: 1px solid #e2e8f0; page-break-inside: avoid; }
+        .r-name { font-weight: 600; }
+        .r-meta { font-size: 8pt; color: #475569; }
+        .r-meta span { margin-right: .12in; }
+        .r-desc { font-size: 8pt; color: #64748b; }
+        .r-tags { font-size: 7.5pt; color: #1d4ed8; }
+        .cat-hdr { background: #f1f5f9; padding: 3pt 6pt; font-weight: 600; margin: .08in 0 .04in; page-break-after: avoid; font-size: 9pt; }
+        .footer { margin-top: .2in; border-top: 1px solid #e2e8f0; font-size: 7pt; color: #94a3b8; text-align: center; }
+        .print-btn { position: fixed; top: 12px; right: 12px; padding: 8px 16px; background: #1d4ed8; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 12pt; z-index: 999; }
+        @media print { .print-btn { display: none; } }
+    </style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">🖨 Print</button>
+<h1>Beacon — Community Resource Directory</h1>
+<div class="sub">Eastern Kentucky · Last updated: <span id="upd">—</span></div>
+<div id="content">Loading…</div>
+<div class="footer">Beacon Community Resource Directory · Data from Isaiah 58:10 Ministries & Outreach · mrstewood.github.io/beacon</div>
+<script>
+const NL={addiction:"Addiction & Recovery",clothing:"Clothing & Supplies",community:"Community",crisis:"Crisis & Safety",documents:"ID & Documents",education:"Education",family:"Family & Children",food:"Food & Water",health:"Healthcare",housing:"Housing",jobs:"Jobs & Income",legal:"Legal Aid","mental-health":"Mental Health",shelter:"Shelter & Sleep",transportation:"Transportation",veterans:"Veterans"};
+async function load(){
+    const r=await fetch('../../data/resources.json');
+    const d=await r.json();
+    document.getElementById('upd').textContent=d.metadata.last_updated;
+    const byC={};
+    d.resources.forEach(r=>{r.county&&(byC[r.county]||(byC[r.county]=[])).push(r)});
+    let html='';
+    Object.keys(byC).sort().forEach(c=>{
+        html+=`<div class="county"><h2>${c} County</h2>`;
+        const byN={};
+        byC[c].forEach(r=>{r.needs.forEach(n=>{(byN[n]||(byN[n]=[])).push(r)})});
+        Object.keys(byN).sort().forEach(n=>{
+            html+=`<div class="cat-hdr">${NL[n]||n}</div>`;
+            byN[n].sort((a,b)=>a.name.localeCompare(b.name)).forEach(r=>{
+                html+=`<div class="r"><div class="r-name">${e(r.name)}</div><div class="r-meta">`;
+                if(r.address&&r.address!=='Statewide')html+=`<span>📍 ${e(r.address)}</span>`;
+                if(r.phones.length)html+=`<span>📞 ${e(r.phones[0])}</span>`;
+                if(r.url)html+=`<span>🌐 ${e(r.url.replace(/^https?:\/\//,''))}</span>`;
+                if(r.hours)html+=`<span>🕐 ${e(r.hours)}</span>`;
+                html+=`</div>`;
+                if(r.description)html+=`<div class="r-desc">${e(r.description)}</div>`;
+                html+=`</div>`;
+            });
+        });
+        html+=`</div>`;
+    });
+    document.getElementById('content').innerHTML=html;
+}
+function e(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+load();
+</script>
+</body>
+</html>

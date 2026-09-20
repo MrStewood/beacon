@@ -1,0 +1,189 @@
+{
+  "category": "transportation",
+  "count": 9,
+  "resources": [
+    {
+      "id": "pulaski-bethany-house-abuse-shelter",
+      "name": "Bethany House, Abuse Shelter",
+      "address": "Somerset",
+      "phones": [
+        "800-755-2017"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter",
+        "domestic-violence",
+        "transportation"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-bg-recovery",
+      "name": "BG Recovery",
+      "address": "711 E Loudin Ave Lexington, KY 40505",
+      "phones": [
+        "859-333-4128",
+        "214-566-1078"
+      ],
+      "url": "https://bgrecovery.org",
+      "description": "Recovery Education, IOP/OP, Peer Support, Transportation, Assistance with Housing. (If they can't help they'll find someone who can.)",
+      "categories": [
+        "shelter",
+        "addiction-recovery",
+        "transportation",
+        "education"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "horizon-health",
+      "name": "Horizon Health",
+      "address": null,
+      "phones": [
+        "606-657-2030"
+      ],
+      "url": "https://horizonhealthky.org",
+      "description": "Offers Job Support such as transportation, clothing, shoes, and other work related needs. They also provide counseling and addiction recovery. Offers Womens housing with IOP, IOP Counceling, and MAT treatment. Child care, PEER Support, Mental health, Behavioral Health, Youth services, Employment services, Care coordination, Harm reduction, ADHD Testing, Smoking Cessation",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "transportation",
+        "childcare",
+        "healthcare",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "nemt-non-emergency-medical-transportation",
+      "name": "NEMT Non-Emergency Medical Transportation",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "transportation",
+        "healthcare"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "nosw-new-opportunity-school-for-women-18-years-old-and-up",
+      "name": "NOSW - New Opportunity School for Women 18 years old and up.",
+      "address": null,
+      "phones": [
+        "859-985-7200"
+      ],
+      "url": "https://NOSW.org",
+      "description": "Free programs - reimbursement available for childcare and transportation. 2 week Residential Program in Berea that includes lodging, meals, books and other materials. Explore self-esteem, wellness, career, education, arts, culture and community. Gain skills to turn dreams into goals and goals into action. On-line shorter program courses are free; helps to build confidence skills. Meet other women and build connections.",
+      "categories": [
+        "food",
+        "family-services",
+        "transportation",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-open-arms-recovery-center",
+      "name": "Open Arms Recovery Center",
+      "address": "166 Griffin Ave. Somerset, KY 42501",
+      "phones": [
+        "859-494-2656"
+      ],
+      "url": "https://openarmsrecovery.org",
+      "description": "Structured individualized treatment, Longterm Sobriety, Strive to reduce the impact of mental health and substance abuse challenges to promote optimal outcomes, Harm reduction, Community Integration",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "domestic-violence",
+        "transportation",
+        "healthcare"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "peacefully-whole-recovery",
+      "name": "Peacefully Whole Recovery",
+      "address": "22 counties served.",
+      "phones": [
+        "859-412-2320"
+      ],
+      "url": "https://peacefullywhole.org",
+      "description": "Empowering individuals to reclaim their lives from alcohol, opioid and other substance abuse, and trauma through comprehensive holistic recovery.",
+      "categories": [
+        "addiction-recovery",
+        "domestic-violence",
+        "transportation"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-red-bird-mission",
+      "name": "Red Bird Mission",
+      "address": "70 Queendale Center Beverly, KY 40913",
+      "phones": [
+        "606-598-0520"
+      ],
+      "url": "https://www.rbmission.org",
+      "description": "offers food, clothing, household items, furniture and transportation. GED and free tax preparation services. Pre-natal and parenting education and baby pantry. Daycare (24 months - 6 years old), preschool and K-12 school for children. Other Service referrals.",
+      "categories": [
+        "food",
+        "family-services",
+        "transportation",
+        "childcare",
+        "education"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "walker-house-sober-living",
+      "name": "Walker House Sober Living",
+      "address": "Winchester & Lexington",
+      "phones": [
+        "859-310-3567"
+      ],
+      "url": "https://walkerhouseinc,com",
+      "description": "Will provide transport, Sober Living, Recovery House, Addiction Counseling, Family Counseling, Teen Counseling, Anxiety Therapist",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "transportation"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon — Community Resource Directory</title>
+    <meta name="description" content="Searchable directory of resources for people experiencing homelessness, hunger, and crisis. Find food, shelter, healthcare, recovery, and more.">
+    <style>
+        :root {
+            --primary: #1d4ed8;
+            --primary-light: #dbeafe;
+            --bg: #f1f5f9;
+            --card: #ffffff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --green: #16a34a;
+            --yellow: #ca8a04;
+            --red: #dc2626;
+            --radius: 10px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+        .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+
+        /* Header */
+        header { background: linear-gradient(135deg, #0f172a, #1e40af); color: white; padding: 2.5rem 0 2rem; text-align: center; }
+        header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; }
+        header p { opacity: .85; margin-top: .3rem; font-size: 1.05rem; }
+        .stats { display: flex; justify-content: center; gap: 2.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .stat-num { font-size: 1.8rem; font-weight: 700; }
+        .stat-lbl { font-size: .8rem; opacity: .75; text-transform: uppercase; letter-spacing: .5px; }
+
+        /* Search bar */
+        .search-wrap { background: var(--card); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+        .search-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+        .search-input { flex: 1; min-width: 220px; padding: .7rem 1rem; font-size: 1rem; border: 2px solid var(--border); border-radius: var(--radius); outline: none; }
+        .search-input:focus { border-color: var(--primary); }
+        select { padding: .7rem 1rem; font-size: .95rem; border: 2px solid var(--border); border-radius: var(--radius); background: white; min-width: 140px; }
+
+        /* Need chips */
+        .need-chips { display: flex; flex-wrap: wrap; gap: .4rem; padding: .75rem 0; }
+        .chip { padding: .35rem .8rem; border-radius: 9999px; font-size: .8rem; font-weight: 500; cursor: pointer; border: 2px solid var(--border); background: white; color: var(--muted); transition: all .15s; user-select: none; }
+        .chip:hover { border-color: var(--primary); color: var(--primary); }
+        .chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* Results */
+        .info { padding: .75rem 0; color: var(--muted); font-size: .85rem; }
+        .grid { display: grid; gap: .75rem; padding-bottom: 3rem; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: box-shadow .15s; }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+        .card-name { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: .35rem; }
+        .card-meta { display: flex; flex-wrap: wrap; gap: .6rem; font-size: .85rem; color: var(--muted); margin-bottom: .5rem; }
+        .card-meta span { white-space: nowrap; }
+        .card-desc { font-size: .9rem; margin-bottom: .6rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+        .tag { padding: .15rem .55rem; border-radius: 9999px; font-size: .72rem; font-weight: 500; }
+        .tag-need { background: #dbeafe; color: #1e40af; }
+        .tag-pop { background: #dcfce7; color: #166534; }
+        .tag-svc { background: #fef3c7; color: #92400e; }
+        .tag-status { background: #f0fdf4; color: #166534; }
+        .tag-status.verify { background: #fef9c3; color: #854d0e; }
+        .tag-status.closed { background: #fee2e2; color: #991b1b; }
+        .card-details { margin-top: .6rem; padding-top: .6rem; border-top: 1px dashed var(--border); font-size: .85rem; color: var(--muted); }
+        .card-details dt { font-weight: 600; color: var(--text); margin-top: .3rem; }
+        .card-details dd { margin-left: 0; margin-bottom: .15rem; }
+        a.phone { color: var(--green); text-decoration: none; font-weight: 500; }
+        a.phone:hover { text-decoration: underline; }
+        a.site { color: var(--primary); text-decoration: none; }
+        a.site:hover { text-decoration: underline; }
+
+        /* Download */
+        .dl-section { background: var(--card); border-top: 1px solid var(--border); padding: 1.5rem 0; text-align: center; }
+        .dl-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-top: .75rem; }
+        .dl-btn { display: inline-flex; align-items: center; gap: .4rem; padding: .6rem 1.2rem; border-radius: var(--radius); font-weight: 500; text-decoration: none; font-size: .9rem; }
+        .dl-btn.pri { background: var(--primary); color: white; }
+        .dl-btn.pri:hover { background: #1e3a8a; }
+        .dl-btn.sec { background: white; color: var(--primary); border: 2px solid var(--primary); }
+        .dl-btn.sec:hover { background: var(--primary-light); }
+
+        footer { background: #0f172a; color: #94a3b8; padding: 1.5rem 0; text-align: center; font-size: .85rem; }
+        footer a { color: #93c5fd; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .no-results { text-align: center; padding: 3rem; color: var(--muted); }
+
+        @media print { .search-wrap, .dl-section, header, footer, .need-chips { display: none; } .card { break-inside: avoid; } }
+        @media (max-width: 640px) { header h1 { font-size: 1.6rem; } .stats { gap: 1.5rem; } .search-row { flex-direction: column; } select { width: 100%; } }
+    </style>
+</head>
+<body>
+<header>
+    <div class="wrap">
+        <h1>Beacon</h1>
+        <p>Community Resource Directory</p>
+        <div class="stats">
+            <div><div class="stat-num" id="stat-total">—</div><div class="stat-lbl">Resources</div></div>
+            <div><div class="stat-num" id="stat-counties">—</div><div class="stat-lbl">Counties</div></div>
+            <div><div class="stat-num" id="stat-needs">—</div><div class="stat-lbl">Need Types</div></div>
+        </div>
+    </div>
+</header>
+
+<div class="search-wrap">
+    <div class="wrap">
+        <div class="search-row">
+            <input type="text" class="search-input" id="q" placeholder="Search — name, service, location, phone…" autocomplete="off">
+            <select id="county"><option value="">All Counties</option></select>
+            <select id="pop"><option value="">All Populations</option></select>
+            <select id="svc"><option value="">All Service Types</option></select>
+        </div>
+        <div class="need-chips" id="chips"></div>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="info" id="info"></div>
+    <div class="grid" id="results"><div class="no-results">Loading…</div></div>
+</div>
+
+<div class="dl-section">
+    <div class="wrap">
+        <strong>Download Resource Data</strong>
+        <div class="dl-btns">
+            <a href="../data/resources.csv" class="dl-btn pri" download>CSV (Spreadsheet)</a>
+            <a href="../data/resources.json" class="dl-btn sec" download>JSON (Developers)</a>
+            <a href="print/all.html" class="dl-btn sec" target="_blank">Print Version</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="wrap">
+        <p>Data sourced from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries & Outreach</a></p>
+        <p style="margin-top:.4rem">Last updated: <span id="updated">—</span> · <a href="https://github.com/MrStewood/beacon">GitHub</a> · <a href="https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md">Suggest a Resource</a></p>
+    </div>
+</footer>
+
+<script>
+const NEED_LABELS = {addiction:"Addiction & Recovery",clothing:"Clothing & Supplies",community:"Community",crisis:"Crisis & Safety",documents:"ID & Documents",education:"Education",family:"Family & Children",food:"Food & Water",health:"Healthcare",housing:"Housing",jobs:"Jobs & Income",legal:"Legal Aid",mental-health:"Mental Health",shelter:"Shelter & Sleep",transportation:"Transportation",veterans:"Veterans"};
+const POP_LABELS = {anyone:"Anyone",disability:"Disability",families:"Families",lgbtq:"LGBTQ+",men:"Men",re-entry:"Re-entry",seniors:"Seniors","substance-use":"Active Use",veterans:"Veterans",women:"Women",youth:"Youth"};
+const SVC_LABELS = {faith-based:"Faith-Based",government:"Government",hotline:"Hotline",mobile:"Mobile/Outreach",online:"Online",outpatient:"Outpatient",peer-led:"Peer-Led",residential:"Residential","walk-in":"Walk-In"};
+
+let ALL=[], activeNeeds=new Set();
+
+async function init(){
+    const r=await fetch('../data/resources.json');
+    const d=await r.json();
+    ALL=d.resources;
+    document.getElementById('stat-total').textContent=ALL.length;
+    document.getElementById('stat-counties').textContent=d.metadata.regions.KY.filter(c=>c!=='Statewide').length;
+    document.getElementById('stat-needs').textContent=d.metadata.needs.length;
+    document.getElementById('updated').textContent=d.metadata.last_updated;
+
+    // Populate county
+    const cs=document.getElementById('county');
+    d.metadata.regions.KY.filter(c=>c!=='Statewide').sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c+' County';cs.appendChild(o)});
+
+    // Populate populations
+    const ps=document.getElementById('pop');
+    d.metadata.populations.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=POP_LABELS[p]||p;ps.appendChild(o)});
+
+    // Populate service types
+    const ss=document.getElementById('svc');
+    d.metadata.service_types.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=SVC_LABELS[s]||s;ss.appendChild(o)});
+
+    // Build need chips
+    const chips=document.getElementById('chips');
+    d.metadata.needs.forEach(n=>{const c=document.createElement('span');c.className='chip';c.dataset.need=n;c.textContent=NEED_LABELS[n]||n;c.onclick=()=>toggleNeed(n,c);chips.appendChild(c)});
+
+    render(ALL);
+}
+
+function toggleNeed(n,el){
+    if(activeNeeds.has(n)){activeNeeds.delete(n);el.classList.remove('active')}
+    else{activeNeeds.add(n);el.classList.add('active')}
+    search();
+}
+
+function search(){
+    const q=document.getElementById('q').value.toLowerCase().trim();
+    const county=document.getElementById('county').value;
+    const pop=document.getElementById('pop').value;
+    const svc=document.getElementById('svc').value;
+    let r=ALL;
+    if(county) r=r.filter(x=>x.county===county);
+    if(pop) r=r.filter(x=>x.populations.includes(pop));
+    if(svc) r=r.filter(x=>x.service_types.includes(svc));
+    if(activeNeeds.size) r=r.filter(x=>x.needs.some(n=>activeNeeds.has(n)));
+    if(q) r=r.filter(x=>{
+        const t=[x.name,x.address||'',x.city||'',x.description||'',x.county,...x.needs,...x.phones,...x.populations,...x.service_types,(x.eligibility||'')].join(' ').toLowerCase();
+        return t.includes(q);
+    });
+    render(r);
+}
+
+function render(list){
+    const g=document.getElementById('results');
+    const info=document.getElementById('info');
+    if(!list.length){g.innerHTML='<div class="no-results">No resources match your search.</div>';info.textContent='0 results';return}
+    info.textContent=`Showing ${list.length} of ${ALL.length} resources`;
+    g.innerHTML=list.map(r=>`
+        <div class="card">
+            <div class="card-name">${h(r.name)}</div>
+            <div class="card-meta">
+                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}</span>`:''}
+                ${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}
+                ${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}
+                ${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}
+                ${r.cost&&r.cost!=='unknown'?`<span>💰 ${r.cost}</span>`:''}
+            </div>
+            ${r.description?`<div class="card-desc">${h(r.description)}</div>`:''}
+            <div class="tags">
+                <span class="tag tag-status ${r.status==='needs-verification'?'verify':r.status==='closed'?'closed':''}">${r.status}</span>
+                ${r.needs.map(n=>`<span class="tag tag-need">${NEED_LABELS[n]||n}</span>`).join('')}
+                ${r.populations.filter(p=>p!=='anyone').map(p=>`<span class="tag tag-pop">${POP_LABELS[p]||p}</span>`).join('')}
+                ${r.service_types.map(s=>`<span class="tag tag-svc">${SVC_LABELS[s]||s}</span>`).join('')}
+            </div>
+            ${(r.eligibility||r.intake_process||r.capacity||r.waitlist!=null||r.notes)?`
+            <div class="card-details">
+                <dl>
+                    ${r.eligibility?`<dt>Eligibility</dt><dd>${h(r.eligibility)}</dd>`:''}
+                    ${r.intake_process?`<dt>Intake</dt><dd>${h(r.intake_process)}</dd>`:''}
+                    ${r.capacity?`<dt>Capacity</dt><dd>${h(r.capacity)}</dd>`:''}
+                    ${r.waitlist===true?`<dt>Waitlist</dt><dd>Currently has a waiting list</dd>`:''}
+                    ${r.notes?`<dt>Notes</dt><dd>${h(r.notes)}</dd>`:''}
+                </dl>
+            </div>`:''}
+        </div>
+    `).join('');
+}
+
+function h(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+document.getElementById('q').addEventListener('input',search);
+document.getElementById('county').addEventListener('change',search);
+document.getElementById('pop').addEventListener('change',search);
+document.getElementById('svc').addEventListener('change',search);
+init();
+</script>
+</body>
+</html>

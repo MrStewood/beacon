@@ -1,0 +1,2865 @@
+{
+  "need": "addiction",
+  "count": 58,
+  "resources": [
+    {
+      "id": "harlan-4th-dimension-treatment-center",
+      "name": "4th Dimension Treatment Center",
+      "alternate_names": [],
+      "description": "Residential treatment, individual/group/family therapy, adventure therapy, 12-step, case management, peer support.",
+      "address": "Harlan, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Harlan",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-621-5007",
+        "606-273-2134"
+      ],
+      "email": null,
+      "url": "https://4thdimentiontreatment.com",
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "documents",
+        "family",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "families",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "alcoholaddiction-rehab-program",
+      "name": "Alcohol/Addiction Rehab Program",
+      "alternate_names": [],
+      "description": "",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://faith-based rehab program",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "alcoholdrug-hotline",
+      "name": "Alcohol/Drug Hotline",
+      "alternate_names": [],
+      "description": "hotline",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-729-6686"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "crisis"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "alcoholics-anonymous",
+      "name": "Alcoholics Anonymous",
+      "alternate_names": [],
+      "description": "12-step recovery support",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-467-8091"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "arc-addiction-recovery-care",
+      "name": "ARC - Addiction Recovery Care",
+      "alternate_names": [],
+      "description": "Residential Treatment, Outpatient Treatment, ARC Anywhere, Bellefonte Hospital & Recovery Care, Karen's Place Maternity Center",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Lawrence",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "888-351-1761",
+        "833-647-0674",
+        "606-638-0938"
+      ],
+      "email": null,
+      "url": "https://arccenters.com",
+      "facebook": null,
+      "needs": [
+        "health",
+        "addiction",
+        "documents",
+        "family"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-baptist-health-trillium-center",
+      "name": "Baptist Health Trillium Center",
+      "alternate_names": [],
+      "description": "Detox services.",
+      "address": "1 Trillium Way #5, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-1212"
+      ],
+      "email": null,
+      "url": "https://baptisthealth.com",
+      "facebook": null,
+      "needs": [
+        "health",
+        "addiction"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clark-beacon-of-hope",
+      "name": "Beacon of Hope",
+      "alternate_names": [],
+      "description": "Emergency shelter with random drug testing.",
+      "address": "Winchester, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Clark",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-644-5171"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "shelter",
+        "addiction",
+        "crisis"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-bg-recovery",
+      "name": "BG Recovery",
+      "alternate_names": [],
+      "description": "Recovery education, IOP/OP, peer support, transportation, housing assistance.",
+      "address": "711 E Loudon Ave, Lexington, KY 40505",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40505",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-333-4128",
+        "214-566-1078"
+      ],
+      "email": null,
+      "url": "https://bgrecovery.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction",
+        "transportation",
+        "education",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "bluegrass-first-steps",
+      "name": "Bluegrass First Steps",
+      "alternate_names": [],
+      "description": "Maternal/child health",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-454-2764"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "health",
+        "addiction",
+        "family"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "cancer-information-services",
+      "name": "Cancer Information Services",
+      "alternate_names": [],
+      "description": "Cancer support hotline",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-422-6237"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "crisis"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "child-support-information",
+      "name": "Child Support Information",
+      "alternate_names": [],
+      "description": "Child support enforcement",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-248-1163"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "family"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "child-support-voice-response",
+      "name": "Child Support Voice Response",
+      "alternate_names": [],
+      "description": "Child support information",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-443-1576"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "family"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "jefferson-choose-hope-llc",
+      "name": "Choose Hope LLC",
+      "alternate_names": [],
+      "description": "Mental health/addiction treatment, therapeutic groups, alumni program, relapse prevention.",
+      "address": "620 S. 3rd St Suite 101, Louisville, KY 40202",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40202",
+      "county": "Jefferson",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-631-5291"
+      ],
+      "email": null,
+      "url": "https://choosehopellc.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-cumberland-river-comprehensive-care-center",
+      "name": "Cumberland River Comprehensive Care Center",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "American Greeting Card Rd, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-7010"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "bell-cumberland-river-rhoar-center",
+      "name": "Cumberland River RHOAR Center",
+      "alternate_names": [],
+      "description": "Recovery, Hope, Opportunity and Resiliency. 100 women beds, 12 family reunification apartments, education & employment opportunities.",
+      "address": "141 Tech Park Drive, Middlesboro, KY 40965",
+      "city": "Middlesboro",
+      "state": "KY",
+      "zip": "40965",
+      "county": "Bell",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-248-4949"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "shelter",
+        "housing",
+        "addiction",
+        "jobs",
+        "family",
+        "education"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "boone-ethan-health-addiction-treatment",
+      "name": "Ethan Health Addiction Treatment",
+      "alternate_names": [],
+      "description": "Intensive Outpatient Program. 24/7 support available.",
+      "address": "6159 1st Financial Dr, Burlington, KY 41005",
+      "city": "Burlington",
+      "state": "KY",
+      "zip": "41005",
+      "county": "Madison",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-625-5235"
+      ],
+      "email": null,
+      "url": "https://ethanhealth.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "addiction"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": "24/7",
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "food-and-drug-administration",
+      "name": "Food and Drug Administration",
+      "alternate_names": [],
+      "description": "Medication and food safety",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-332-4010"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "foster-care-information",
+      "name": "Foster Care Information",
+      "alternate_names": [],
+      "description": "Foster care information",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-232-5437"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "family"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "gps-getting-peace-for-those-who-served",
+      "name": "GPS - Getting Peace for Those Who Served",
+      "alternate_names": [],
+      "description": "Veteran emotional support, readjustment therapy, family/marriage/substance abuse counseling, spiritual guidance, financial management, job placement",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-215-1417"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "crisis",
+        "documents",
+        "jobs",
+        "family",
+        "transportation",
+        "veterans"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "veterans",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "horizon-health",
+      "name": "Horizon Health",
+      "alternate_names": [],
+      "description": "Job support, clothing, shoes, counseling, addiction recovery, women's housing, IOP, MAT, child care, peer support, mental health, behavioral health, youth services, employment, care coordination, harm reduction, ADHD testing, smoking cessation",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-657-2030"
+      ],
+      "email": null,
+      "url": "https://horizonhealthky.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "clothing",
+        "health",
+        "mental-health",
+        "addiction",
+        "jobs",
+        "family",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "women",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-independence-house",
+      "name": "Independence House",
+      "alternate_names": [],
+      "description": "Substance abuse treatment for women. 5-bed transitional (6 months) and 10-bed short-term (30 days).",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-523-9386"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "crisis",
+        "transportation"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "women",
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "isaiah-house",
+      "name": "Isaiah House",
+      "alternate_names": [],
+      "description": "Addiction recovery: family/marriage/couples counseling, GED/college classes, job skill training, individual/group therapy, detox, DOC case management",
+      "address": "Chaplin, Louisville, Williamsburg, Willisburg, Versailles, Harrodsburg, Danville, Georgetown, Hillview, KY",
+      "city": "Hillview",
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-375-9200"
+      ],
+      "email": null,
+      "url": "https://isaiah-house.org",
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "documents",
+        "jobs",
+        "family",
+        "education"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "kentucky-harm-reduction-coalition",
+      "name": "Kentucky Harm Reduction Coalition",
+      "alternate_names": [],
+      "description": "Harm reduction education and supplies for substance use disorders",
+      "address": "1202 S. 3rd St #103, Louisville, KY 40203",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40203",
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-537-6061"
+      ],
+      "email": null,
+      "url": "https://kyhrc.org",
+      "facebook": null,
+      "needs": [
+        "clothing",
+        "addiction",
+        "education"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "ky-help-statewide-call-center",
+      "name": "KY Help Statewide Call Center",
+      "alternate_names": [],
+      "description": "Substance use disorder assistance and family support",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "1-833-859-4357"
+      ],
+      "email": null,
+      "url": "https://OperationUNITE.org/programs/kyhelp-call-center/",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "documents",
+        "family"
+      ],
+      "service_types": [
+        "hotline",
+        "government"
+      ],
+      "populations": [
+        "families",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "pulaski-lake-cumberland-recovery",
+      "name": "Lake Cumberland Recovery",
+      "alternate_names": [],
+      "description": "24-hour intake. Genesis House (16-bed female), Lighthouse (48-bed male), Exodus Outpatient.",
+      "address": "8294 US Hwy 27, Burnside, KY 42519",
+      "city": "Burnside",
+      "state": "KY",
+      "zip": "42519",
+      "county": "Pulaski",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-341-1160"
+      ],
+      "email": null,
+      "url": "https://lcrecovery.com",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-level-up-recovery",
+      "name": "Level Up Recovery",
+      "alternate_names": [],
+      "description": "Drug & alcohol counseling, case management, peer support, intensive outpatient.",
+      "address": "1555 E. New Circle Rd Suite 190, Lexington, KY 40509",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40509",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-329-1181",
+        "859-556-7401"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "community"
+      ],
+      "service_types": [
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-manchester-miracles",
+      "name": "Manchester Miracles",
+      "alternate_names": [],
+      "description": "Sober living, clinical services, life skills, job assistance.",
+      "address": "Manchester, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-681-6060"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing",
+        "health",
+        "addiction",
+        "jobs"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-medicalmental-health-cumberland-river-comprehensive-care",
+      "name": "Medical/Mental Health - Cumberland River Comprehensive Care",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "P.O. Box 84, Williamsburg, KY 40769",
+      "city": "Williamsburg",
+      "state": "KY",
+      "zip": "40769",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-549-1440"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-mental-health-cumberland-river-comprehensive-care",
+      "name": "Mental Health - Cumberland River Comprehensive Care",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "Rt. 9 Box 940, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-5172",
+        "606-546-3104"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "national-lead-information-center",
+      "name": "National Lead Information Center",
+      "alternate_names": [],
+      "description": "Lead poisoning info",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-424-5323"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "national-maternal-mental-health-line",
+      "name": "National Maternal Mental Health Line",
+      "alternate_names": [],
+      "description": "Maternal mental health",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "833-943-5749"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "national-resource-information",
+      "name": "National Resource information",
+      "alternate_names": [],
+      "description": "",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://National resource list",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-new-day-recovery-center",
+      "name": "New Day Recovery Center",
+      "alternate_names": [],
+      "description": "",
+      "address": "711 E. Loudon Ave, Lexington, KY 40505",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40505",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-749-4370",
+        "844-923-4357"
+      ],
+      "email": null,
+      "url": "https://newdaycenter.com",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-new-hope-counseling-recovery",
+      "name": "New Hope Counseling Recovery",
+      "alternate_names": [],
+      "description": "Inspiring hope, changing lives.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-594-7479"
+      ],
+      "email": null,
+      "url": "https://nhcr4u.com",
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "morgan-new-vision-recovery-center",
+      "name": "New Vision Recovery Center",
+      "alternate_names": [],
+      "description": "IOP/outpatient, 24-hour intake, drug screening, clinical & peer support, individualized treatment, case management, life skills.",
+      "address": "559 Riverside Dr, West Liberty, KY 41472",
+      "city": "West Liberty",
+      "state": "KY",
+      "zip": "41472",
+      "county": "Morgan",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-743-2107"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "documents",
+        "community"
+      ],
+      "service_types": [
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "pulaski-open-arms-recovery-center",
+      "name": "Open Arms Recovery Center",
+      "alternate_names": [],
+      "description": "Structured individualized treatment, long-term sobriety, harm reduction, community integration.",
+      "address": "166 Griffin Ave, Somerset, KY 42501",
+      "city": "Somerset",
+      "state": "KY",
+      "zip": "42501",
+      "county": "Pulaski",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-494-2656"
+      ],
+      "email": null,
+      "url": "https://openarmsrecovery.org",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "documents",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "operation-unite",
+      "name": "Operation UNITE",
+      "alternate_names": [],
+      "description": "Substance misuse prevention and recovery facilitation",
+      "address": "350 C.A.P. Dr, London, KY 40744",
+      "city": "London",
+      "state": "KY",
+      "zip": "40744",
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "1-866-678-6483"
+      ],
+      "email": null,
+      "url": "https://OperationUNITE.org",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "oxford-house",
+      "name": "Oxford House",
+      "alternate_names": [],
+      "description": "Peer-run, self-sustaining, substance-free housing",
+      "address": "1010 Wayne Ave Suite 300, Silver Spring, MD 20910",
+      "city": "Silver Spring",
+      "state": "KY",
+      "zip": null,
+      "county": "Franklin",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "301-587-2916",
+        "859-353-8452"
+      ],
+      "email": null,
+      "url": "https://oxfordhouse.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "peer-led"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "peacefully-whole-recovery",
+      "name": "Peacefully Whole Recovery",
+      "alternate_names": [],
+      "description": "Holistic recovery from alcohol, opioids, trauma. Serves 22 counties.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-412-2320"
+      ],
+      "email": null,
+      "url": "https://piecefullywhole.org",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "documents"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-perfect-imperfections",
+      "name": "Perfect Imperfections",
+      "alternate_names": [],
+      "description": "Licensed AODE, IOP, individual/group counseling, substance use counseling, case management, peer support, recovery housing.",
+      "address": "1018 E. New Circle Rd Ste 204, Lexington, KY 40505",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40505",
+      "county": "Madison",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-693-6089",
+        "859-368-0003"
+      ],
+      "email": null,
+      "url": "https://perfectimperfectionsky.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "mental-health",
+        "addiction",
+        "documents",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "pinnacle-treatment-centers",
+      "name": "Pinnacle Treatment Centers",
+      "alternate_names": [],
+      "description": "24/7 admission, male/female beds, detox and residential",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-922-2012"
+      ],
+      "email": null,
+      "url": "https://pinnacletreatment.com",
+      "facebook": null,
+      "needs": [
+        "shelter",
+        "addiction",
+        "documents"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": "24/7",
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "recovery-care-arc",
+      "name": "Recovery Care - ARC",
+      "alternate_names": [],
+      "description": "Casey's Law intervention, accepts Wellcare, United Health Care, Anthem",
+      "address": "332 River Bend Rd, Louisa, KY",
+      "city": "Louisa",
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "888-530-7632"
+      ],
+      "email": null,
+      "url": "https://arccenters.com",
+      "facebook": null,
+      "needs": [
+        "health",
+        "addiction",
+        "legal"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-redemption-road-recovery",
+      "name": "Redemption Road Recovery",
+      "alternate_names": [],
+      "description": "",
+      "address": "Barbourville, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-545-5169"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-roaring-brook-recovery",
+      "name": "Roaring Brook Recovery",
+      "alternate_names": [],
+      "description": "PHP, IOP, aftercare, men's/women's rehab, sober living, MAT, Hep-C treatment, alumni program.",
+      "address": "600 Perimeter Dr Ste 125, Lexington, KY 40517",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40517",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "866-678-8123"
+      ],
+      "email": null,
+      "url": "https://roaringbrookrecovery.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "serenity-ranch-recovery",
+      "name": "Serenity Ranch Recovery",
+      "alternate_names": [],
+      "description": "Kentucky's leading detox and rehab. 6 locations in KY and TN.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "270-515-0212"
+      ],
+      "email": null,
+      "url": "https://serenityranchrecovery.com",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "sos-ministries-mission-field",
+      "name": "SOS Ministries Mission Field",
+      "alternate_names": [],
+      "description": "Picks up and assists victims of trafficking and addiction. Provides safety and recovery support.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "937-262-4100",
+        "855-696-2453"
+      ],
+      "email": null,
+      "url": "https://saveoursoulsministries.org",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "crisis",
+        "documents"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "sparc-job-training",
+      "name": "SPARC - Job Training",
+      "alternate_names": [],
+      "description": "Sobriety, peace, awareness, recovery, community",
+      "address": "1442 W. Steve Wariner Dr, Russell Springs, KY 42642",
+      "city": "Russell Springs",
+      "state": "KY",
+      "zip": "42642",
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-396-0260"
+      ],
+      "email": null,
+      "url": "https://sparcrecovery.com",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "jobs",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "madison-st-john-recovery-for-men",
+      "name": "St. John Recovery for Men",
+      "alternate_names": [],
+      "description": "Behavioral health counseling, structured recovery housing.",
+      "address": "Richmond, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Madison",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-300-1503"
+      ],
+      "email": null,
+      "url": "https://stjohnrecoveryllc.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "health",
+        "mental-health",
+        "addiction"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-still-waters-counseling",
+      "name": "Still Waters Counseling",
+      "alternate_names": [],
+      "description": "IOP/OP group therapy, peer support, case management.",
+      "address": "828 Lane Allen Rd, Lexington, KY 40504",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40504",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-399-1373",
+        "859-382-5687"
+      ],
+      "email": null,
+      "url": "https://stillwaters.org",
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "community"
+      ],
+      "service_types": [
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "voa-mid-states-employment-services",
+      "name": "VOA Mid-States Employment Services",
+      "alternate_names": [],
+      "description": "Employment for people in recovery",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-765-3566"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "documents",
+        "jobs"
+      ],
+      "service_types": [
+        "government"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "voa-mid-states-freedom-house",
+      "name": "VOA Mid-States Freedom House",
+      "alternate_names": [],
+      "description": "Treatment without leaving children. Insurance assistance. Employment services.",
+      "address": "1025 2nd St, Louisville, KY 40203",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40203",
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-635-4530"
+      ],
+      "email": null,
+      "url": "https://voamid.org/recovery",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "documents",
+        "jobs",
+        "family"
+      ],
+      "service_types": [
+        "government"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "voa-mid-states-recovery-community-center",
+      "name": "VOA Mid-States Recovery Community Center",
+      "alternate_names": [],
+      "description": "Safe, supportive recovery community. Education, connections, support.",
+      "address": "48 Owens Rd, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-658-9236"
+      ],
+      "email": null,
+      "url": "https://FB: VOA Recovery Community Center",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "documents",
+        "education",
+        "community"
+      ],
+      "service_types": [
+        "government"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-voa-recovery-freedom-house-manchester",
+      "name": "VOA Recovery - Freedom House Manchester",
+      "alternate_names": [],
+      "description": "Recovery housing.",
+      "address": "8467 US-421, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-603-2486"
+      ],
+      "email": null,
+      "url": "https://voamid.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-voices-of-hope",
+      "name": "Voices of Hope",
+      "alternate_names": [],
+      "description": "Recovery community center and support services.",
+      "address": "644 N. Broadway, Lexington, KY 40508",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40508",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-303-7671"
+      ],
+      "email": null,
+      "url": "https://voicesofhopelex.org",
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-walker-house",
+      "name": "Walker House",
+      "alternate_names": [],
+      "description": "Sober living, recovery house, addiction/family/teen counseling, anxiety therapy.",
+      "address": "Lexington, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-310-3567"
+      ],
+      "email": null,
+      "url": "https://walkerhouseinc.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "mental-health",
+        "addiction",
+        "family"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "walker-house-sober-living",
+      "name": "Walker House Sober Living",
+      "alternate_names": [],
+      "description": "Transport, sober living, recovery, addiction/family/teen counseling, anxiety therapy",
+      "address": "Winchester & Lexington, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-310-3567"
+      ],
+      "email": null,
+      "url": "https://walkerhouseinc.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "mental-health",
+        "addiction",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "mccreary-whitley-city-treatment-center",
+      "name": "Whitley City Treatment Center",
+      "alternate_names": [],
+      "description": "",
+      "address": "Whitley City, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "McCreary",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "423-560-6594"
+      ],
+      "email": null,
+      "url": "https://recovery.org",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "jefferson-ypr-young-people-in-recovery",
+      "name": "YPR Young People in Recovery",
+      "alternate_names": [],
+      "description": "Recovery services for young people.",
+      "address": "Louisville, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Jefferson",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-821-6759"
+      ],
+      "email": null,
+      "url": "https://youngpeopleinrecovery.org",
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

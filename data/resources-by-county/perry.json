@@ -1,0 +1,191 @@
+{
+  "county": "Perry",
+  "count": 4,
+  "resources": [
+    {
+      "id": "perry-haven-house-homeless-shelter",
+      "name": "Haven House Homeless Shelter",
+      "alternate_names": [],
+      "description": "Emergency shelter.",
+      "address": "Hazzard, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Perry",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-436-5761"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "shelter",
+        "crisis"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "perry-housing-authority-of-hazzard",
+      "name": "Housing Authority of Hazzard",
+      "alternate_names": [],
+      "description": "",
+      "address": "100 Campbell St Apt A, Hazzard, KY",
+      "city": "Hazzard",
+      "state": "KY",
+      "zip": null,
+      "county": "Perry",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-436-5741"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "perry-kentucky-river-community-care",
+      "name": "Kentucky River Community Care",
+      "alternate_names": [],
+      "description": "Call 8:30am M-F.",
+      "address": "Hazzard, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Perry",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-436-1945"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "perry-whispering-pines",
+      "name": "Whispering Pines",
+      "alternate_names": [],
+      "description": "Affordable housing.",
+      "address": "Hazzard, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Perry",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-438-5929"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

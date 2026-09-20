@@ -1,0 +1,434 @@
+{
+  "need": "veterans",
+  "count": 9,
+  "resources": [
+    {
+      "id": "combat-vets-association",
+      "name": "Combat Vets Association",
+      "alternate_names": [],
+      "description": "Veterans support",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "931-206-4043"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "veterans"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "dav-disabled-american-veterans",
+      "name": "DAV - Disabled American Veterans",
+      "alternate_names": [],
+      "description": "",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://Veterans with disabilities",
+      "facebook": null,
+      "needs": [
+        "veterans"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "veterans",
+        "disability"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "gps-getting-peace-for-those-who-served",
+      "name": "GPS - Getting Peace for Those Who Served",
+      "alternate_names": [],
+      "description": "Veteran emotional support, readjustment therapy, family/marriage/substance abuse counseling, spiritual guidance, financial management, job placement",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-215-1417"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "crisis",
+        "documents",
+        "jobs",
+        "family",
+        "transportation",
+        "veterans"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "veterans",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "homeless-veterans-reintegration-program",
+      "name": "Homeless Veterans Reintegration Program",
+      "alternate_names": [],
+      "description": "Resume prep, job searching, job resources for homeless veterans. Must be willing to work, non-dishonorable discharge.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-866-4343",
+        "606-548-8977"
+      ],
+      "email": null,
+      "url": "https://vivian.taylor@mtcomp.org",
+      "facebook": null,
+      "needs": [
+        "jobs",
+        "veterans"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "veterans"
+      ],
+      "eligibility": "Resume prep, job searching, job resources for homeless veterans. Must be willing to work, non-dishonorable discharge.",
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "housing-voucher-programs-manchester-ky",
+      "name": "Housing Voucher Programs Manchester KY",
+      "alternate_names": [],
+      "description": "Veteran housing vouchers",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "877-424-3838"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing",
+        "veterans"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men",
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "ky-river-foothills-ssvf",
+      "name": "KY River Foothills SSVF",
+      "alternate_names": [],
+      "description": "Temporary rental assistance for qualifying veterans. POC: Lisa Roark.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-372-7601"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing",
+        "veterans"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "national-veterans-foundation",
+      "name": "National Veterans Foundation",
+      "alternate_names": [],
+      "description": "Vet-to-vet service, real solutions for veteran problems. Nationwide.",
+      "address": "5777 West Century Blvd Suite 350, Los Angeles, CA 90045",
+      "city": "Los Angeles",
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "888-777-4443"
+      ],
+      "email": null,
+      "url": "https://nvf.org",
+      "facebook": null,
+      "needs": [
+        "documents",
+        "veterans"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "vfw-veterans-of-foreign-wars",
+      "name": "VFW - Veterans of Foreign Wars",
+      "alternate_names": [],
+      "description": "Veterans service organization",
+      "address": "3027 W. Laurel Rd, London, KY 40741",
+      "city": "London",
+      "state": "KY",
+      "zip": "40741",
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-862-9336"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "veterans"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "voa-mid-states-veteran-services",
+      "name": "VOA Mid-States Veteran Services",
+      "alternate_names": [],
+      "description": "",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://Moral injury, preventing suicide, SSVF, homeless veterans reintegration",
+      "facebook": null,
+      "needs": [
+        "documents",
+        "veterans"
+      ],
+      "service_types": [
+        "government"
+      ],
+      "populations": [
+        "veterans"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

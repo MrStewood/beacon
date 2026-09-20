@@ -1,0 +1,866 @@
+{
+  "county": "Clay",
+  "count": 18,
+  "resources": [
+    {
+      "id": "clay-chads-hope-center",
+      "name": "Chad's Hope Center",
+      "alternate_names": [],
+      "description": "",
+      "address": "300 Chad McWhorter Ln, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-599-9716"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-christian-appalachian-project",
+      "name": "Christian Appalachian Project",
+      "alternate_names": [],
+      "description": "",
+      "address": "Outreach RR4, Mt. Vernon, KY 40456",
+      "city": "Mt. Vernon",
+      "state": "KY",
+      "zip": "40456",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-256-4810"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "online",
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-community-outreach-center",
+      "name": "Community Outreach Center",
+      "alternate_names": [],
+      "description": "",
+      "address": "1 Fayette Properties 1-C, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-5127"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "mobile"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "cumberland-river-behavioral-health",
+      "name": "Cumberland River Behavioral Health",
+      "alternate_names": [],
+      "description": "Inpatient and outpatient behavioral health services",
+      "address": "Barbourville, Corbin, Harlan, London, Pineville, Manchester, McKee, Middlesboro, Mt. Vernon, Williamsburg",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-896-2466",
+        "606-837-0100",
+        "606-598-5172"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "cumberland-valley-aging-disability-resource",
+      "name": "Cumberland Valley Aging & Disability Resource",
+      "alternate_names": [],
+      "description": "Senior and disability services",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-877-5763"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "seniors",
+        "disability"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-cumberland-valley-child-advocacy-center",
+      "name": "Cumberland Valley Child Advocacy Center",
+      "alternate_names": [],
+      "description": "Child advocacy services.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-878-9116",
+        "1-877-597-2331"
+      ],
+      "email": null,
+      "url": "https://cv-cac.org",
+      "facebook": null,
+      "needs": [
+        "family"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-daniel-boone-community-action-agency",
+      "name": "Daniel Boone Community Action Agency",
+      "alternate_names": [],
+      "description": "CSBG Homeless Program.",
+      "address": "1535 Shamrock Rd, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-5127"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-dismas-charities-manchester",
+      "name": "Dismas Charities Manchester",
+      "alternate_names": [],
+      "description": "",
+      "address": "845 Muddy Gap Rd, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-5555"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-emergency-shelter-cumberland-valley-dv-services",
+      "name": "Emergency Shelter - Cumberland Valley DV Services",
+      "alternate_names": [],
+      "description": "20-bed emergency shelter for DV victims and children. Food, clothing, basic necessities.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-256-9511",
+        "800-755-5348"
+      ],
+      "email": null,
+      "url": "https://cvdvs.org",
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis",
+        "family"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "families",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-grief-support-group",
+      "name": "Grief Support Group",
+      "alternate_names": [],
+      "description": "Contact Sharon Kidd.",
+      "address": "London, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-312-1513"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "documents",
+        "family",
+        "community"
+      ],
+      "service_types": [
+        "peer-led"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-homeless-and-housing-coalition-of-ky",
+      "name": "Homeless and Housing Coalition of KY",
+      "alternate_names": [],
+      "description": "Housing programs.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": "https://hhck.org",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-housing-authority-of-manchester",
+      "name": "Housing Authority of Manchester",
+      "alternate_names": [],
+      "description": "",
+      "address": "306 Town Branch Rd, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-3884"
+      ],
+      "email": null,
+      "url": "https://housingauthorityofmanchester.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "isaiah-house",
+      "name": "Isaiah House",
+      "alternate_names": [],
+      "description": "Addiction recovery: family/marriage/couples counseling, GED/college classes, job skill training, individual/group therapy, detox, DOC case management",
+      "address": "Chaplin, Louisville, Williamsburg, Willisburg, Versailles, Harrodsburg, Danville, Georgetown, Hillview, KY",
+      "city": "Hillview",
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-375-9200"
+      ],
+      "email": null,
+      "url": "https://isaiah-house.org",
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "documents",
+        "jobs",
+        "family",
+        "education"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-manchester-miracles",
+      "name": "Manchester Miracles",
+      "alternate_names": [],
+      "description": "Sober living, clinical services, life skills, job assistance.",
+      "address": "Manchester, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-681-6060"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing",
+        "health",
+        "addiction",
+        "jobs"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-mommy-me",
+      "name": "Mommy & Me",
+      "alternate_names": [],
+      "description": "Helps women with children.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-603-2486"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "family"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-mortgage-and-credit-counseling-apprisen",
+      "name": "Mortgage and Credit Counseling - Apprisen",
+      "alternate_names": [],
+      "description": "HUD-approved counseling, mortgage delinquency, foreclosure prevention, reverse mortgage.",
+      "address": "2265 Harrodsburg Rd, Lexington, KY 40504",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40504",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-355-2227"
+      ],
+      "email": null,
+      "url": "https://apprisen.com",
+      "facebook": null,
+      "needs": [
+        "mental-health"
+      ],
+      "service_types": [
+        "outpatient",
+        "online"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-red-bird-mission",
+      "name": "Red Bird Mission",
+      "alternate_names": [],
+      "description": "Food, clothing, household items, furniture, transportation, GED, tax prep, prenatal education, daycare, school K-12.",
+      "address": "70 Queendale Center, Beverly, KY 40913",
+      "city": "Beverly",
+      "state": "KY",
+      "zip": "40913",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-0520"
+      ],
+      "email": null,
+      "url": "https://rbmission.org",
+      "facebook": null,
+      "needs": [
+        "food",
+        "clothing",
+        "jobs",
+        "family",
+        "transportation",
+        "education"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "seniors"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-voa-recovery-freedom-house-manchester",
+      "name": "VOA Recovery - Freedom House Manchester",
+      "alternate_names": [],
+      "description": "Recovery housing.",
+      "address": "8467 US-421, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-603-2486"
+      ],
+      "email": null,
+      "url": "https://voamid.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

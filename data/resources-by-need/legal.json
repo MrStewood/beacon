@@ -1,0 +1,339 @@
+{
+  "need": "legal",
+  "count": 7,
+  "resources": [
+    {
+      "id": "battered-women-justice-project",
+      "name": "Battered Women Justice Project",
+      "alternate_names": [],
+      "description": "Domestic violence hotline",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-903-0111"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "crisis",
+        "legal"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "women",
+        "men",
+        "re-entry"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-casa-court-appointed-special-advocate",
+      "name": "CASA - Court Appointed Special Advocate",
+      "alternate_names": [],
+      "description": "Child advocacy.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-389-5968"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "legal",
+        "family"
+      ],
+      "service_types": [
+        "online"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "casa-court-appointed-special-advocate-for-children",
+      "name": "CASA - Court Appointed Special Advocate for Children",
+      "alternate_names": [],
+      "description": "Child advocacy",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-389-5968"
+      ],
+      "email": null,
+      "url": "https://casaclayknoxlaurel.com",
+      "facebook": null,
+      "needs": [
+        "legal",
+        "family"
+      ],
+      "service_types": [
+        "online"
+      ],
+      "populations": [
+        "families",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "kejc-kentucky-equal-justice-center",
+      "name": "KEJC - Kentucky Equal Justice Center",
+      "alternate_names": [],
+      "description": "Legal aid",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-788-2927"
+      ],
+      "email": null,
+      "url": "https://kyequaljustice.org",
+      "facebook": null,
+      "needs": [
+        "documents",
+        "legal"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "re-entry"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "kentucky-attorney-generals-office",
+      "name": "Kentucky Attorney General's Office",
+      "alternate_names": [],
+      "description": "Legal hotline",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-372-2551"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "crisis",
+        "legal"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "recovery-care-arc",
+      "name": "Recovery Care - ARC",
+      "alternate_names": [],
+      "description": "Casey's Law intervention, accepts Wellcare, United Health Care, Anthem",
+      "address": "332 River Bend Rd, Louisa, KY",
+      "city": "Louisa",
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "888-530-7632"
+      ],
+      "email": null,
+      "url": "https://arccenters.com",
+      "facebook": null,
+      "needs": [
+        "health",
+        "addiction",
+        "legal"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "voa-mid-states-restorative-justice",
+      "name": "VOA Mid-States Restorative Justice",
+      "alternate_names": [],
+      "description": "Victim healing and restoration",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-585-9920"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "documents",
+        "legal"
+      ],
+      "service_types": [
+        "government"
+      ],
+      "populations": [
+        "re-entry"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

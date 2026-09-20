@@ -1,0 +1,823 @@
+{
+  "county": "Knox",
+  "count": 17,
+  "resources": [
+    {
+      "id": "knox-apprisen",
+      "name": "Apprisen",
+      "alternate_names": [],
+      "description": "HUD-approved counseling, mortgage delinquency, foreclosure prevention.",
+      "address": "2265 Harrodsburg Rd, Lexington, KY 40504",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40504",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-355-2227"
+      ],
+      "email": null,
+      "url": "https://apprisen.com",
+      "facebook": null,
+      "needs": [
+        "mental-health"
+      ],
+      "service_types": [
+        "outpatient",
+        "online"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-casa-court-appointed-special-advocate",
+      "name": "CASA - Court Appointed Special Advocate",
+      "alternate_names": [],
+      "description": "Child advocacy.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-389-5968"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "legal",
+        "family"
+      ],
+      "service_types": [
+        "online"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-christian-life-fellowship",
+      "name": "Christian Life Fellowship",
+      "alternate_names": [],
+      "description": "Food assistance.",
+      "address": "165 Black St, Barbourville, KY 40906",
+      "city": "Barbourville",
+      "state": "KY",
+      "zip": "40906",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-9415"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-church-of-the-nazarene-basket-ministry",
+      "name": "Church of the Nazarene Basket Ministry",
+      "alternate_names": [],
+      "description": "",
+      "address": "409 Master St, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-5935"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-corbin-presbyterian-church",
+      "name": "Corbin Presbyterian Church",
+      "alternate_names": [],
+      "description": "Food assistance.",
+      "address": "601 Master Ct, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-1444"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-cumberland-river-behavioral-health-barbourville",
+      "name": "Cumberland River Behavioral Health - Barbourville",
+      "alternate_names": [],
+      "description": "Behavioral health services.",
+      "address": "Barbourville, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3104"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-cumberland-river-comprehensive-care-center",
+      "name": "Cumberland River Comprehensive Care Center",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "American Greeting Card Rd, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-7010"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-emergency-fund-services",
+      "name": "Emergency Fund Services",
+      "alternate_names": [],
+      "description": "Emergency assistance, food.",
+      "address": "P.O. Box 8, Barbourville, KY 40906",
+      "city": "Barbourville",
+      "state": "KY",
+      "zip": "40906",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3152"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "crisis"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-first-baptist-church-barbourville",
+      "name": "First Baptist Church Barbourville",
+      "alternate_names": [],
+      "description": "Food assistance.",
+      "address": "201 N. Main St, Barbourville, KY",
+      "city": "Barbourville",
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3636"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-first-united-methodist-church-barbourville",
+      "name": "First United Methodist Church Barbourville",
+      "alternate_names": [],
+      "description": "Food assistance.",
+      "address": "312 N. Main St, Barbourville, KY",
+      "city": "Barbourville",
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3695"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-housing-authority-of-corbin",
+      "name": "Housing Authority of Corbin",
+      "alternate_names": [],
+      "description": "",
+      "address": "1336 Madison Ave, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-5104"
+      ],
+      "email": null,
+      "url": "https://affordablehousing.com",
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-kceoc-womens-emergency-support-center",
+      "name": "KCEOC Women's Emergency Support Center",
+      "alternate_names": [],
+      "description": "Women and children. 15 semi-private beds. Meals, clothing, supportive services, transportation.",
+      "address": "U.S. Hwy 25E, Barbourville, KY 40906",
+      "city": "Barbourville",
+      "state": "KY",
+      "zip": "40906",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3152"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "private-pay",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-mental-health-cumberland-river-comprehensive-care",
+      "name": "Mental Health - Cumberland River Comprehensive Care",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "Rt. 9 Box 940, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-5172",
+        "606-546-3104"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-new-hope-counseling-recovery",
+      "name": "New Hope Counseling Recovery",
+      "alternate_names": [],
+      "description": "Inspiring hope, changing lives.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-594-7479"
+      ],
+      "email": null,
+      "url": "https://nhcr4u.com",
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-new-hope-village-apartments",
+      "name": "New Hope Village Apartments",
+      "alternate_names": [],
+      "description": "11 one-bedroom units for mentally ill adults.",
+      "address": "P.O. Box 568, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-7010 ext 202"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "housing"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-redemption-road-recovery",
+      "name": "Redemption Road Recovery",
+      "alternate_names": [],
+      "description": "",
+      "address": "Barbourville, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-545-5169"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-the-everlasting-arm",
+      "name": "The Everlasting Arm",
+      "alternate_names": [],
+      "description": "16-bed emergency shelter up to 90 days. Food and clothing bank.",
+      "address": "2006 S. Main St, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-3669"
+      ],
+      "email": null,
+      "url": "https://theeverlastingarminc@gmail.com",
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

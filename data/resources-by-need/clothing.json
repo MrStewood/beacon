@@ -1,0 +1,521 @@
+{
+  "need": "clothing",
+  "count": 10,
+  "resources": [
+    {
+      "id": "knox-corbin-united-effort",
+      "name": "Corbin United Effort",
+      "alternate_names": [],
+      "description": "Food pantry, meals, housing help, clothing, healthcare, system navigation.",
+      "address": "311 Barbourville St, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-7523"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "housing",
+        "clothing",
+        "health"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-cumberland-valley-dv-services",
+      "name": "Cumberland Valley DV Services",
+      "alternate_names": [],
+      "description": "20-bed emergency shelter for DV victims. Food, clothing, necessities.",
+      "address": "P.O. Box 2162, London, KY 40456",
+      "city": "London",
+      "state": "KY",
+      "zip": "40456",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-256-9511",
+        "800-755-5348",
+        "606-843-2022"
+      ],
+      "email": null,
+      "url": "https://cvdvs.org",
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-emergency-christian-ministries",
+      "name": "Emergency Christian Ministries",
+      "alternate_names": [],
+      "description": "75 beds. Men, women, children. Food, clothing, supportive services.",
+      "address": "630 South Hwy 25, Williamsburg, KY 40769",
+      "city": "Williamsburg",
+      "state": "KY",
+      "zip": "40769",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-549-2922",
+        "606-400-1464"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis",
+        "family"
+      ],
+      "service_types": [
+        "residential",
+        "faith-based"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-emergency-shelter-cumberland-valley-dv-services",
+      "name": "Emergency Shelter - Cumberland Valley DV Services",
+      "alternate_names": [],
+      "description": "20-bed emergency shelter for DV victims and children. Food, clothing, basic necessities.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-256-9511",
+        "800-755-5348"
+      ],
+      "email": null,
+      "url": "https://cvdvs.org",
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis",
+        "family"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "families",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "horizon-health",
+      "name": "Horizon Health",
+      "alternate_names": [],
+      "description": "Job support, clothing, shoes, counseling, addiction recovery, women's housing, IOP, MAT, child care, peer support, mental health, behavioral health, youth services, employment, care coordination, harm reduction, ADHD testing, smoking cessation",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-657-2030"
+      ],
+      "email": null,
+      "url": "https://horizonhealthky.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "clothing",
+        "health",
+        "mental-health",
+        "addiction",
+        "jobs",
+        "family",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "women",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-isaiah-5810-ministries",
+      "name": "Isaiah 58:10 Ministries",
+      "alternate_names": [],
+      "description": "Sack lunches, blankets, jackets, cold weather supplies, resource guides. Soup Kitchen Mon/Tues/Thurs/Fri/Sat 11am-1pm at Good Samaritan House.",
+      "address": "220 E. 4th St, London, KY 40741",
+      "city": "London",
+      "state": "KY",
+      "zip": "40741",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-801-9119"
+      ],
+      "email": null,
+      "url": "https://is5810.com",
+      "facebook": null,
+      "needs": [
+        "food",
+        "clothing",
+        "documents"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "seniors"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": "Mon/Tues/Thurs/Fri/Sat 11am-1pm",
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": "Soup Kitchen on-site",
+      "related": []
+    },
+    {
+      "id": "knox-kceoc-womens-emergency-support-center",
+      "name": "KCEOC Women's Emergency Support Center",
+      "alternate_names": [],
+      "description": "Women and children. 15 semi-private beds. Meals, clothing, supportive services, transportation.",
+      "address": "U.S. Hwy 25E, Barbourville, KY 40906",
+      "city": "Barbourville",
+      "state": "KY",
+      "zip": "40906",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3152"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "private-pay",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "kentucky-harm-reduction-coalition",
+      "name": "Kentucky Harm Reduction Coalition",
+      "alternate_names": [],
+      "description": "Harm reduction education and supplies for substance use disorders",
+      "address": "1202 S. 3rd St #103, Louisville, KY 40203",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40203",
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "502-537-6061"
+      ],
+      "email": null,
+      "url": "https://kyhrc.org",
+      "facebook": null,
+      "needs": [
+        "clothing",
+        "addiction",
+        "education"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-red-bird-mission",
+      "name": "Red Bird Mission",
+      "alternate_names": [],
+      "description": "Food, clothing, household items, furniture, transportation, GED, tax prep, prenatal education, daycare, school K-12.",
+      "address": "70 Queendale Center, Beverly, KY 40913",
+      "city": "Beverly",
+      "state": "KY",
+      "zip": "40913",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-0520"
+      ],
+      "email": null,
+      "url": "https://rbmission.org",
+      "facebook": null,
+      "needs": [
+        "food",
+        "clothing",
+        "jobs",
+        "family",
+        "transportation",
+        "education"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "seniors"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-the-everlasting-arm",
+      "name": "The Everlasting Arm",
+      "alternate_names": [],
+      "description": "16-bed emergency shelter up to 90 days. Food and clothing bank.",
+      "address": "2006 S. Main St, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-3669"
+      ],
+      "email": null,
+      "url": "https://theeverlastingarminc@gmail.com",
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

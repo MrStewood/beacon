@@ -1,0 +1,890 @@
+{
+  "category": "community",
+  "count": 52,
+  "resources": [
+    {
+      "id": "whitley-anchored-ministries",
+      "name": "Anchored Ministries",
+      "address": "Williamsburg, KY",
+      "phones": [
+        "606-765-7336"
+      ],
+      "url": "https://free if no insurance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-appalachian-pheonix-house-cumberland-river-comprehensive-care",
+      "name": "Appalachian Pheonix House - Cumberland River Comprehensive Care",
+      "address": "401 Roy Kidd Ave Corbin, KY 40741",
+      "phones": [
+        "606-528-4381"
+      ],
+      "url": "https://17-bed fully staffed residential program housing for mentally ill men and women. Clients focus on learning independent living skills.",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "appalachian-research-defense-fund-of-kentucky",
+      "name": "Appalachian Research & Defense Fund of Kentucky",
+      "address": null,
+      "phones": [
+        "866-277-5733"
+      ],
+      "url": "https://Free legal assistance based on eligibility",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clark-beacon-of-hope",
+      "name": "Beacon of Hope",
+      "address": "Winchester, KY",
+      "phones": [
+        "859-644-5171"
+      ],
+      "url": "https://Emergency Shelter (random drug testing)",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clark"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-bell-whitley-community-action-agency-inc",
+      "name": "Bell-Whitley Community Action Agency, Inc.",
+      "address": "U.S. Hwy 25W P.O. Box 427 Williamsburg, KY 40769",
+      "phones": [
+        "606-549-3933"
+      ],
+      "url": "https://Food and shelter; natural disaster emergency funds",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-capers-office",
+      "name": "Capers office",
+      "address": "Corbin",
+      "phones": [
+        "606-526-9459"
+      ],
+      "url": "https://www.crbhky.org",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-catholic-church",
+      "name": "Catholic Church",
+      "address": "76 W. Sycamore St Williamsburg, KY",
+      "phones": [
+        "606-549-2156"
+      ],
+      "url": "https://food assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-cedaridge-ministries",
+      "name": "Cedaridge Ministries",
+      "address": "Factory Ln Williamsburg, KY",
+      "phones": [
+        "606-549-1373"
+      ],
+      "url": "https://food assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-chads-hope-center",
+      "name": "Chad's Hope Center",
+      "address": "300 Chad McWhorter Ln. Manchester, KY 40962",
+      "phones": [
+        "606-599-9716"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-christian-appalachian-project",
+      "name": "Christian Appalachian Project",
+      "address": "Outreach RR4 Mt. Vernon, KY 40456",
+      "phones": [
+        "606-256-4810"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-christian-life-fellowship",
+      "name": "Christian Life Fellowship",
+      "address": "165 Black St Barbourville, KY 40906",
+      "phones": [
+        "606-546-9415"
+      ],
+      "url": "https://Food assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-church-of-the-nazarene-basket-ministry-project",
+      "name": "Church of the Nazarene Basket Ministry Project",
+      "address": "409 Master St. Corbin, KY 40701",
+      "phones": [
+        "606-528-5935"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "combat-vets-association",
+      "name": "Combat Vets Association",
+      "address": null,
+      "phones": [
+        "931-206-4043"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-community-outreach-center",
+      "name": "Community Outreach Center",
+      "address": "1 Fayette Properties 1-C Manchester, KY 40962",
+      "phones": [
+        "606-598-5127"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-corbin-presbyterian-church",
+      "name": "Corbin Presbyterian Church",
+      "address": "601 Master Ct. Corbin, KY 40701",
+      "phones": [
+        "606-528-1444"
+      ],
+      "url": "https://Food assistance.",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-corbin-united-effort",
+      "name": "Corbin United Effort",
+      "address": "311 Barbourville St. Corbin, KY 40701",
+      "phones": [
+        "606-528-7523"
+      ],
+      "url": "https://services provided: food pantry, meals, help finding housing, clothing, help finding healthcare, navigating the system",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-cumberland-river-comprehensive-care-center",
+      "name": "Cumberland River Comprehensive Care Center",
+      "address": "American Greeting Card Rd. P.O. Box 568 Corbin, KY 40701",
+      "phones": [
+        "606-528-7010"
+      ],
+      "url": "https://Community Mental Health Center; mental health assistance and service referrals; Substance abuse services; Intellectual or developmental disabilities services; Supportive Community Living Programs; Children's services and First Steps/Early Intervention (CBIS) services provided in all counties in the Cumberland River ADD",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "cumberland-valley-aging-disability-resource",
+      "name": "Cumberland Valley Aging & Disability Resource",
+      "address": null,
+      "phones": [
+        "606-877-5763"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide",
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-dismis-charities-manchester",
+      "name": "Dismis Charities Manchester",
+      "address": "845 Muddy Gap Rd Manchester, KY 40962",
+      "phones": [
+        "606-598-5555"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "madison-dry-dock",
+      "name": "Dry Dock",
+      "address": "262 Four Mile Ave Richmond, KY 40475",
+      "phones": [
+        "859-575-7260"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-emergency-fund-services-inc",
+      "name": "Emergency Fund Services, Inc.",
+      "address": "P.O. Box 8 Barbourville, KY 40906",
+      "phones": [
+        "606-546-3152"
+      ],
+      "url": "https://Emergency assistance; food",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "find-help-now-ky",
+      "name": "Find Help Now KY",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": "help line",
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-first-baptist-church",
+      "name": "First Baptist Church",
+      "address": "201 N. Main St Barbourvile, KY",
+      "phones": [
+        "606-546-3636",
+        "606-528-4738",
+        "606-549-0280"
+      ],
+      "url": "https://Food Assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-first-united-methodist-church",
+      "name": "First United Methodist Church",
+      "address": "312 N. Main St Barbourville, KY",
+      "phones": [
+        "606-546-3695"
+      ],
+      "url": "https://Food Assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "gps-getting-peace-for-those-who-served",
+      "name": "GPS - (Getting Peace for those who Served)",
+      "address": null,
+      "phones": [
+        "606-215-1417"
+      ],
+      "url": "https://Services for Veterans - emotional support, readjustment therapy, family/marriage/substance abuse counseling, spiritual guidance, financial management, & job placement services.",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "greyhound-free-ticket-home-for-run-a-ways",
+      "name": "Greyhound free ticket home for run a ways",
+      "address": null,
+      "phones": [
+        "1-800-786-2929"
+      ],
+      "url": "https://www.1800runaway.org/youth-teens/home-free",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-grief-support-group-london-ky",
+      "name": "Grief Support Group London, KY",
+      "address": null,
+      "phones": [
+        "606-312-1513"
+      ],
+      "url": "https://Contact Sharon Kidd for more information",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-high-street-baptist-church",
+      "name": "High Street Baptist Church",
+      "address": "102 Bourne Ave Somerset, KY",
+      "phones": [
+        "606-678-8973"
+      ],
+      "url": "https://Food Assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-hope-place-corbin",
+      "name": "Hope Place Corbin",
+      "address": "409 Master St Corbin, KY 40701",
+      "phones": [
+        "606-215-6285"
+      ],
+      "url": "https://hopeplaceky.org",
+      "description": "Helps with transitioning | helps with transitioning",
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-independence-house-cumberland-river-comprehensive-care",
+      "name": "Independence House - Cumberland River Comprehensive Care",
+      "address": null,
+      "phones": [
+        "606-523-9386"
+      ],
+      "url": "https://Substance abuse treatment for women (5 beds - 6 month transitional program, 10 beds - 30 day treatment program).",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-kceoc-community-action-partnership-womens-emergency-support-center",
+      "name": "KCEOC Community Action Partnership Women's emergency Support Center",
+      "address": "U.S. Hwy 25E P.O. Box 490 Barbourville, KY 40906",
+      "phones": [
+        "606-546-3152"
+      ],
+      "url": "https://Women and children (15 semi-private beds, length of stay based on need) meals and clothing; supportive services and transportation.",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "perry-kentucky-river-community-care",
+      "name": "Kentucky River Community Care",
+      "address": "Hazzard, KY",
+      "phones": [
+        "606-436-1945"
+      ],
+      "url": "https://call at 8:30 M-F",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Perry"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "la-red-nacional-de-prevencion-del-suicidio",
+      "name": "La Red Nacional De Prevencion Del Suicidio",
+      "address": null,
+      "phones": [
+        "888-628-9454"
+      ],
+      "url": "https://988Lifeline.org",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-life-abundant-ministries",
+      "name": "Life Abundant Ministries",
+      "address": "303 S. Main St. Somerset, KY",
+      "phones": [
+        "606-677-0088"
+      ],
+      "url": "https://Food assiatance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-manchester-miracles",
+      "name": "Manchester Miracles",
+      "address": "Manchester, KY",
+      "phones": [
+        "606-681-6060"
+      ],
+      "url": "https://Sober Living Environment, Clinical Services, Life Skills & Job Assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "medicaregov",
+      "name": "Medicare.gov",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "harlan-meridzo-center-inc",
+      "name": "Meridzo Center, Inc",
+      "address": "202 Church St. Lynch, Ky 40855",
+      "phones": [
+        "606-848-2766"
+      ],
+      "url": "https://www.meridzo.org",
+      "description": "Distribution Center of God's blessings. Hope House, Redeemed Living Transitions and much more.",
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Harlan"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-mommy-me",
+      "name": "Mommy & Me",
+      "address": null,
+      "phones": [
+        "606-603-2486"
+      ],
+      "url": "https://helps women with children",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-resource-information",
+      "name": "National Resource information",
+      "address": null,
+      "phones": [],
+      "url": "https://National resource list",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "ombudsman",
+      "name": "Ombudsman",
+      "address": null,
+      "phones": [
+        "800-372-2973"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "secretarys-office",
+      "name": "Secretary's office",
+      "address": null,
+      "phones": [
+        "800-564-7042"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-shepherds-house",
+      "name": "Shepherds House",
+      "address": "635 Maxwelton Ct. Lexington, KY 40508",
+      "phones": [
+        "859-252-1939",
+        "859-447-4020"
+      ],
+      "url": "https://shepherdshouseinc.com",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "sids-back-to-sleep-campaign",
+      "name": "SID's Back to Sleep Campaign",
+      "address": null,
+      "phones": [
+        "800-505-"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "soar-shaping-our-appalachian-region",
+      "name": "SOAR (Shaping Our Appalachian Region)",
+      "address": null,
+      "phones": [
+        "606-766-1160",
+        "606-280-6108"
+      ],
+      "url": "https://soar.org",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mccreary-the-next-chapter-llc-mens",
+      "name": "The Next Chapter LLC Men's",
+      "address": "Whitley City, KY",
+      "phones": [
+        "606-376-7416"
+      ],
+      "url": "https://Faith Based, Will provide transport",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "McCreary"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mccreary-the-next-chapter-llc-womens",
+      "name": "The Next Chapter LLC Women's",
+      "address": "Whitley City, KY",
+      "phones": [
+        "606-376-7414"
+      ],
+      "url": "https://Faith Based, Will provide transport",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "McCreary"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "trevor-project-for-lgbtq-young-people",
+      "name": "Trevor Project for lgbtq+ young people",
+      "address": null,
+      "phones": [
+        "866-488-7386"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "lincoln-turnersville-christian-mission",
+      "name": "Turnersville Christian Mission",
+      "address": "200 Hwy 198 Stanford, KY 40484",
+      "phones": [
+        "859-583-8155"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Lincoln"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-united-way",
+      "name": "United Way",
+      "address": "208 E. Mt Vernon St. Somerset, KY",
+      "phones": [
+        "606-679-2974"
+      ],
+      "url": "https://Food Assistance",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "vocal-kentucky",
+      "name": "Vocal Kentucky",
+      "address": "723 S. Brook St Louisville, KY 40203",
+      "phones": [
+        "502-356-2322"
+      ],
+      "url": "https://vocal-ky.org",
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-williamsburg",
+      "name": "Williamsburg",
+      "address": "606-549-1440",
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "womens-cancer-screening",
+      "name": "Women's Cancer Screening",
+      "address": null,
+      "phones": [
+        "800-462-6122"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "community"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

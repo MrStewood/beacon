@@ -1,0 +1,1017 @@
+{
+  "need": "transportation",
+  "count": 20,
+  "resources": [
+    {
+      "id": "adult-abuse-hotline",
+      "name": "Adult Abuse Hotline",
+      "alternate_names": [],
+      "description": "hotline",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-752-6200"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "crisis",
+        "transportation"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "pulaski-bethany-house-abuse-shelter",
+      "name": "Bethany House Abuse Shelter",
+      "alternate_names": [],
+      "description": "Abuse shelter.",
+      "address": "Somerset, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Pulaski",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-755-2017"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "shelter",
+        "crisis",
+        "transportation"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "fayette-bg-recovery",
+      "name": "BG Recovery",
+      "alternate_names": [],
+      "description": "Recovery education, IOP/OP, peer support, transportation, housing assistance.",
+      "address": "711 E Loudon Ave, Lexington, KY 40505",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40505",
+      "county": "Fayette",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-333-4128",
+        "214-566-1078"
+      ],
+      "email": null,
+      "url": "https://bgrecovery.org",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "addiction",
+        "transportation",
+        "education",
+        "community"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient",
+        "peer-led"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "child-protection-hotline",
+      "name": "Child Protection Hotline",
+      "alternate_names": [],
+      "description": "Report child abuse",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "877-597-2331"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "crisis",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-cumberland-river-comprehensive-care-center",
+      "name": "Cumberland River Comprehensive Care Center",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "American Greeting Card Rd, Corbin, KY 40701",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40701",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-528-7010"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "gps-getting-peace-for-those-who-served",
+      "name": "GPS - Getting Peace for Those Who Served",
+      "alternate_names": [],
+      "description": "Veteran emotional support, readjustment therapy, family/marriage/substance abuse counseling, spiritual guidance, financial management, job placement",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-215-1417"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "mental-health",
+        "addiction",
+        "crisis",
+        "documents",
+        "jobs",
+        "family",
+        "transportation",
+        "veterans"
+      ],
+      "service_types": [
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "veterans",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "greyhound-free-ticket-home-for-runaways",
+      "name": "Greyhound Free Ticket Home for Runaways",
+      "alternate_names": [],
+      "description": "Free bus ticket home for runaway youth",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "1-800-786-2929"
+      ],
+      "email": null,
+      "url": "https://www.1800runaway.org/youth-teens/home-free",
+      "facebook": null,
+      "needs": [
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-independence-house",
+      "name": "Independence House",
+      "alternate_names": [],
+      "description": "Substance abuse treatment for women. 5-bed transitional (6 months) and 10-bed short-term (30 days).",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-523-9386"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "addiction",
+        "crisis",
+        "transportation"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "women",
+        "men",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "knox-kceoc-womens-emergency-support-center",
+      "name": "KCEOC Women's Emergency Support Center",
+      "alternate_names": [],
+      "description": "Women and children. 15 semi-private beds. Meals, clothing, supportive services, transportation.",
+      "address": "U.S. Hwy 25E, Barbourville, KY 40906",
+      "city": "Barbourville",
+      "state": "KY",
+      "zip": "40906",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-546-3152"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "food",
+        "shelter",
+        "clothing",
+        "crisis",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "residential"
+      ],
+      "populations": [
+        "families",
+        "women",
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "private-pay",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "whitley-medicalmental-health-cumberland-river-comprehensive-care",
+      "name": "Medical/Mental Health - Cumberland River Comprehensive Care",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "P.O. Box 84, Williamsburg, KY 40769",
+      "city": "Williamsburg",
+      "state": "KY",
+      "zip": "40769",
+      "county": "Whitley",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-549-1440"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-mental-health-cumberland-river-comprehensive-care",
+      "name": "Mental Health - Cumberland River Comprehensive Care",
+      "alternate_names": [],
+      "description": "Community mental health, substance abuse, developmental disabilities, supportive living, children's services, First Steps.",
+      "address": "Rt. 9 Box 940, Manchester, KY 40962",
+      "city": "Manchester",
+      "state": "KY",
+      "zip": "40962",
+      "county": "Knox",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-5172",
+        "606-546-3104"
+      ],
+      "email": null,
+      "url": "https://crbhky.org",
+      "facebook": null,
+      "needs": [
+        "health",
+        "mental-health",
+        "addiction",
+        "crisis",
+        "family",
+        "transportation",
+        "community"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "families",
+        "men",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "nemt-non-emergency-medical-transportation",
+      "name": "NEMT - Non-Emergency Medical Transportation",
+      "alternate_names": [],
+      "description": "Medicaid transportation to appointments",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "health",
+        "crisis",
+        "documents",
+        "transportation"
+      ],
+      "service_types": [
+        "online"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "insurance",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "nosw-new-opportunity-school-for-women",
+      "name": "NOSW - New Opportunity School for Women",
+      "alternate_names": [],
+      "description": "Free 2-week residential program in Berea: self-esteem, wellness, career, education, arts. Childcare/transportation reimbursement. Free online courses.",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-985-7200"
+      ],
+      "email": null,
+      "url": "https://nosw.org",
+      "facebook": null,
+      "needs": [
+        "documents",
+        "jobs",
+        "family",
+        "transportation",
+        "education"
+      ],
+      "service_types": [
+        "residential",
+        "online"
+      ],
+      "populations": [
+        "women",
+        "men",
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "prevent-child-abuse-kentucky",
+      "name": "Prevent Child Abuse Kentucky",
+      "alternate_names": [],
+      "description": "Child abuse prevention",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-432-9251"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "crisis",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "youth"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "rainn-rape-abuse-and-incest-national-network",
+      "name": "RAINN - Rape, Abuse and Incest National Network",
+      "alternate_names": [],
+      "description": "Sexual assault support",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-656-4673"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "crisis",
+        "jobs",
+        "transportation"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "clay-red-bird-mission",
+      "name": "Red Bird Mission",
+      "alternate_names": [],
+      "description": "Food, clothing, household items, furniture, transportation, GED, tax prep, prenatal education, daycare, school K-12.",
+      "address": "70 Queendale Center, Beverly, KY 40913",
+      "city": "Beverly",
+      "state": "KY",
+      "zip": "40913",
+      "county": "Clay",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-598-0520"
+      ],
+      "email": null,
+      "url": "https://rbmission.org",
+      "facebook": null,
+      "needs": [
+        "food",
+        "clothing",
+        "jobs",
+        "family",
+        "transportation",
+        "education"
+      ],
+      "service_types": [
+        "walk-in"
+      ],
+      "populations": [
+        "seniors"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "spouse-abuse-hotline",
+      "name": "Spouse Abuse Hotline",
+      "alternate_names": [],
+      "description": "Spouse abuse hotline",
+      "address": "Statewide",
+      "city": null,
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "800-544-2022"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "crisis",
+        "transportation"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "mccreary-the-next-chapter-men",
+      "name": "The Next Chapter - Men",
+      "alternate_names": [],
+      "description": "Faith-based. Provides transport.",
+      "address": "Whitley City, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "McCreary",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-376-7416"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "documents",
+        "transportation"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "mccreary-the-next-chapter-women",
+      "name": "The Next Chapter - Women",
+      "alternate_names": [],
+      "description": "Faith-based. Provides transport.",
+      "address": "Whitley City, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "McCreary",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "606-376-7414"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "documents",
+        "transportation"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "women",
+        "men"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    },
+    {
+      "id": "walker-house-sober-living",
+      "name": "Walker House Sober Living",
+      "alternate_names": [],
+      "description": "Transport, sober living, recovery, addiction/family/teen counseling, anxiety therapy",
+      "address": "Winchester & Lexington, KY",
+      "city": "",
+      "state": "KY",
+      "zip": null,
+      "county": "Statewide",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-310-3567"
+      ],
+      "email": null,
+      "url": "https://walkerhouseinc.com",
+      "facebook": null,
+      "needs": [
+        "housing",
+        "mental-health",
+        "addiction",
+        "family",
+        "transportation"
+      ],
+      "service_types": [
+        "residential",
+        "outpatient"
+      ],
+      "populations": [
+        "families",
+        "youth",
+        "substance-use"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}

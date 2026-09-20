@@ -1,0 +1,645 @@
+{
+  "category": "shelter",
+  "count": 35,
+  "resources": [
+    {
+      "id": "pulaski-bethany-house-abuse-shelter",
+      "name": "Bethany House, Abuse Shelter",
+      "address": "Somerset",
+      "phones": [
+        "800-755-2017"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter",
+        "domestic-violence",
+        "transportation"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-bg-recovery",
+      "name": "BG Recovery",
+      "address": "711 E Loudin Ave Lexington, KY 40505",
+      "phones": [
+        "859-333-4128",
+        "214-566-1078"
+      ],
+      "url": "https://bgrecovery.org",
+      "description": "Recovery Education, IOP/OP, Peer Support, Transportation, Assistance with Housing. (If they can't help they'll find someone who can.)",
+      "categories": [
+        "shelter",
+        "addiction-recovery",
+        "transportation",
+        "education"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-cumberland-valley-domestic-violence-services",
+      "name": "Cumberland Valley Domestic Violence Services",
+      "address": "P.O. Box 2162 London, KY 40456",
+      "phones": [
+        "606-256-9511",
+        "800-755-5348",
+        "606-843-2022"
+      ],
+      "url": "https://www.cvdvs.org",
+      "description": "A safe secure environment with food, clothing, basic necessities, a 20-bed emergency shelter and advocacy center for victims of doestic violence and their children in Cumberland Valley Area Development District. | a safe and secure environment with food, clothing, basic necessities, a 20-bed emergency shelter and advocacy center for victims of domestic violence and their children in Cumberland Valley Area Development District.",
+      "categories": [
+        "food",
+        "shelter",
+        "domestic-violence",
+        "family-services"
+      ],
+      "counties": [
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-cumberland-valley-regional-housing-authority",
+      "name": "Cumberland Valley Regional Housing Authority",
+      "address": "221 N. 3rd St. Williamsburg, KY 40769",
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-daniel-boone-community-action-agency-inc",
+      "name": "Daniel Boone Community Action Agency, Inc.",
+      "address": "1535 Shamrock Rd. Manchester, KY 40962",
+      "phones": [
+        "606-598-5127"
+      ],
+      "url": "https://Manchester",
+      "description": "CSBG Homeless Program",
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-emergency-christian-ministriesshelter",
+      "name": "Emergency Christian Ministries/shelter",
+      "address": "630 South Hwy 25 P.O. Box 1107 Williamsburg, KY 40769",
+      "phones": [
+        "606-549-2922",
+        "606-400-1464"
+      ],
+      "url": "https://Men, women and children (75 beds - congregate facilitities, length of stay based on need) Food, clothing, and supportive services",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-emergency-shelter-and-assistance-cumberland-valley-domestic-violence-services",
+      "name": "Emergency Shelter and Assistance Cumberland Valley Domestic Violence Services",
+      "address": null,
+      "phones": [
+        "606-256-9511",
+        "800-755-5348"
+      ],
+      "url": "https://www.cvdvs.org",
+      "description": "A safe and secure environment with food, clothing, basic necessities, a 20 bed emergency shelter and advocacy center for victims of domestic violence and their children in Cumberland Valley Area Development District",
+      "categories": [
+        "food",
+        "shelter",
+        "domestic-violence",
+        "family-services"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "floyd-floyd-county-shelter",
+      "name": "Floyd County Shelter",
+      "address": "Martin, KY",
+      "phones": [
+        "606-949-2018"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Floyd"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "perry-haven-house-homeless-shelter",
+      "name": "Haven House Homeless Shelter",
+      "address": "Hazzard, KY",
+      "phones": [
+        "606-436-5761"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Perry"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-help-for-homeless",
+      "name": "Help for Homeless",
+      "address": "Somerset, KY",
+      "phones": [
+        "606-875-3893"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "hhck-homeless-housing-coalition-of-ky",
+      "name": "HHCK - Homeless & Housing Coalition of KY",
+      "address": null,
+      "phones": [
+        "502-223-1834"
+      ],
+      "url": "https://hhck.org",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-homeless-and-housing-coalition-of-ky",
+      "name": "Homeless and Housing Coalition of KY",
+      "address": null,
+      "phones": [],
+      "url": "https://housing-programs",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "homeless-veterans-reintegration-program",
+      "name": "Homeless Veterans Reintegration Program",
+      "address": null,
+      "phones": [
+        "606-866-4343",
+        "606-548-8977"
+      ],
+      "url": null,
+      "description": "Vivian Taylor, Coordinator, 606-548-8977 vivian.taylor@mtcomp.org : Helps homeless or potentially homeless veterans get back on their feet. Veterans must be willing and able to work, and have a discharge other than dishonorable. Mountain Comprehensive Care assists in resume prep, job searching, and other job related resources.",
+      "categories": [
+        "shelter",
+        "veterans",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "homelessshelterdirectory",
+      "name": "HomelessShelterdirectory",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "horizon-health",
+      "name": "Horizon Health",
+      "address": null,
+      "phones": [
+        "606-657-2030"
+      ],
+      "url": "https://horizonhealthky.org",
+      "description": "Offers Job Support such as transportation, clothing, shoes, and other work related needs. They also provide counseling and addiction recovery. Offers Womens housing with IOP, IOP Counceling, and MAT treatment. Child care, PEER Support, Mental health, Behavioral Health, Youth services, Employment services, Care coordination, Harm reduction, ADHD Testing, Smoking Cessation",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "transportation",
+        "childcare",
+        "healthcare",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-housing-authority-of-corbin",
+      "name": "Housing Authority of Corbin",
+      "address": "1336 Madison Ave Corbin, KY 40701",
+      "phones": [
+        "606-528-5104"
+      ],
+      "url": "https://www.affordablehousing.com",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "perry-housing-authority-of-hazzard-ky",
+      "name": "Housing Authority of Hazzard KY",
+      "address": "100 Campbell St. Apt. A",
+      "phones": [
+        "606-436-5741"
+      ],
+      "url": "https://affordablehousing.com",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Perry"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-housing-authority-of-manchester",
+      "name": "Housing Authority of Manchester",
+      "address": "306 Town Branch Rd Manchester, KY 40962",
+      "phones": [
+        "606-598-3884"
+      ],
+      "url": "https://www.housingauthorityofmanchester.com",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-housing-authority-of-somerset",
+      "name": "Housing Authority of Somerset",
+      "address": "400 Hail Knob Rd. Somerset, KY 42503",
+      "phones": [
+        "606-679-1332"
+      ],
+      "url": "https://affordablehousing.com",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mccreary-housing-authority-of-whitley-city",
+      "name": "Housing Authority of Whitley City",
+      "address": "488 St Hwy 2792 Pine Knot, KY 42635",
+      "phones": [
+        "606-354-2200"
+      ],
+      "url": "https://affordablehousing.com",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "McCreary"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "housing-voucher-programs-in-manchester-ky",
+      "name": "Housing Voucher Programs in Manchester, KY",
+      "address": null,
+      "phones": [
+        "877-424-3838"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-isaiah-5810-ministries-and-outreach",
+      "name": "Isaiah 58:10 Ministries and Outreach",
+      "address": "220n E. 4th St London, Ky 40741",
+      "phones": [
+        "502-801-9119"
+      ],
+      "url": "https://is5810.com",
+      "description": "We take sack lunches to the homeless and needy in our community. We also offer blankets, jackets and other cold weather supplies during the colder months, and we offer Resource Guides in case someone has specific needs that we can not provide, but we know where they can have that need met, and we run the Soup Kitchen located at the Good Samaritan House at 220 E. 4th St in London five days a week Mon, Tues, Thurs, Fri, and Sat from 11-1 | We take sack lunches to the homeless and needy in our community. | We take sack lunches to the homeless and needy in our community.",
+      "categories": [
+        "food",
+        "shelter"
+      ],
+      "counties": [
+        "Clay",
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "kceoc-community-action-partnership",
+      "name": "KCEOC - Community Action Partnership",
+      "address": null,
+      "phones": [
+        "606-546-3152"
+      ],
+      "url": "https://www.kceoc.org",
+      "description": "Has programs availablefor Seniors, Low income energy assistance, Summer Food Service, Weatherization Assistance, Kentucky Housing Corporation, Youth homelessness, Emergency Support, Kentucky Career Center, Child Development, and more. also on FB",
+      "categories": [
+        "food",
+        "shelter",
+        "family-services",
+        "utility-assistance",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "khc-kentucky-housing-corporation-housing-choice-vouchersection-8-program",
+      "name": "KHC - Kentucky Housing Corporation Housing Choice Voucher/Section 8 Program",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-new-hope-village-apartments-cumberland-river-comprehensive-care-center",
+      "name": "New Hope Village Apartments - Cumberland River Comprehensive Care Center",
+      "address": "P.O. Box 568 Corbin, KY 40701",
+      "phones": [
+        "606-528-7010 ext 202"
+      ],
+      "url": "https://Mentally Ill adults (11 one-bedroom units",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-perfect-imperfections",
+      "name": "Perfect Imperfections",
+      "address": "1018 East New Circle RD Ste 204 Lexington, KY 40505",
+      "phones": [
+        "859-693-6089",
+        "859-368-0003"
+      ],
+      "url": "https://perfectimperfectionsky.com",
+      "description": "Licensed AODE, Intensive Outpatient Program, Individual & Group Counseling, Substance Use Counseling, Case Management, Peer Support, Recovery Housing | faith based treatment facility. Can accept couples",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery"
+      ],
+      "counties": [
+        "Fayette",
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-permanent-housing-appalachian-phoenix-house-cumberland-river-comprehensive-care",
+      "name": "Permanent Housing - Appalachian Phoenix House Cumberland River Comprehensive Care",
+      "address": "401 Roy Kidd Ave. Corbin, KY 40701",
+      "phones": [
+        "606-528-4381"
+      ],
+      "url": "https://17-bed fully staffed residential program housing mentally ill men and women.",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-permanent-housing-mercy-mountain-housing",
+      "name": "Permanent Housing - Mercy Mountain Housing",
+      "address": "1866 Whetstone Rd. Rockholds, KY 40759",
+      "phones": [
+        "866-338-0557"
+      ],
+      "url": "https://Rental and acquisition for transitional and permanent housing for low-income persons.",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-roaring-brook-recovery",
+      "name": "Roaring Brook Recovery",
+      "address": "600 Perimeter Dr, Ste 125 Lexington, Ky 40517",
+      "phones": [
+        "866-678-8123"
+      ],
+      "url": "https://roaringbrookrecovery.com",
+      "description": "There is always hope. Offers Partial Hospitalization Program, Intensive Outpatient Program, Aftercare Program, Men's Rehab Program, Women's Rehab Program, Sober Living Program, Medicaiton-Assisted Treatment Program, Hepatitis-C Treatment Program, Alumni Program",
+      "categories": [
+        "shelter",
+        "addiction-recovery",
+        "healthcare"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "madison-st-john-recovery-for-men",
+      "name": "St. John Recovery for men",
+      "address": "Richmond, KY",
+      "phones": [
+        "859-300-1503"
+      ],
+      "url": "https://StJohnRecoveryllc.com",
+      "description": "Behavioral Health Counseling, Structured Recovery Housing",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "healthcare"
+      ],
+      "counties": [
+        "Madison"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-the-everlasting-arm-inc",
+      "name": "The Everlasting Arm, Inc",
+      "address": "2006 S. Main St. Corbin, KY 40701",
+      "phones": [
+        "606-528-3669"
+      ],
+      "url": null,
+      "description": "16-bed emergency shelter for up to 90 days. Food and clothing bank.",
+      "categories": [
+        "food",
+        "shelter"
+      ],
+      "counties": [
+        "Knox"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "fayette-walker-house",
+      "name": "Walker House",
+      "address": "Lexington",
+      "phones": [
+        "859-310-3567"
+      ],
+      "url": "https://walkerhouseinc.com",
+      "description": "Sober Living, Recovery House, Addiction Counseling, Family Counceling, Teen Counseling, Anxiety Therapist",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "walker-house-sober-living",
+      "name": "Walker House Sober Living",
+      "address": "Winchester & Lexington",
+      "phones": [
+        "859-310-3567"
+      ],
+      "url": "https://walkerhouseinc,com",
+      "description": "Will provide transport, Sober Living, Recovery House, Addiction Counseling, Family Counseling, Teen Counseling, Anxiety Therapist",
+      "categories": [
+        "shelter",
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "transportation"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "perry-whispering-pines",
+      "name": "Whispering Pines",
+      "address": "Hazzard, KY",
+      "phones": [
+        "606-438-5929"
+      ],
+      "url": "https://www.affordablehousing.com",
+      "description": "affordable housing",
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Perry"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "whitley-williamsburg-housing-authority",
+      "name": "Williamsburg Housing Authority",
+      "address": "600 Brush Arbour Church Rd. Williamsburg, KY",
+      "phones": [
+        "606-549-0282"
+      ],
+      "url": "https://affordablehousing.com",
+      "description": null,
+      "categories": [
+        "shelter"
+      ],
+      "counties": [
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "category": "education",
+  "count": 9,
+  "resources": [
+    {
+      "id": "fayette-bg-recovery",
+      "name": "BG Recovery",
+      "address": "711 E Loudin Ave Lexington, KY 40505",
+      "phones": [
+        "859-333-4128",
+        "214-566-1078"
+      ],
+      "url": "https://bgrecovery.org",
+      "description": "Recovery Education, IOP/OP, Peer Support, Transportation, Assistance with Housing. (If they can't help they'll find someone who can.)",
+      "categories": [
+        "shelter",
+        "addiction-recovery",
+        "transportation",
+        "education"
+      ],
+      "counties": [
+        "Fayette"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "bell-cumberland-river-rhoar-center",
+      "name": "Cumberland River RHOAR Center",
+      "address": "141 Tech Park Drive Middlesboro, KY 40965",
+      "phones": [
+        "606-248-4949"
+      ],
+      "url": "https://crbhky.org",
+      "description": "Recovery, Hope, Opportunity and Resiliency. Will serve 100 Women, 12 family reunification appartments, Education & Employment opportunities, Self-sufficiency",
+      "categories": [
+        "addiction-recovery",
+        "family-services",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "Bell"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "isaiah-house",
+      "name": "Isaiah House",
+      "address": "Chaplin, KY Louisville, KY Williamsburg, KY Willisburg, KY Versailles, KY Harrodsburg, KY Danville, KY Georgetown, KY Hillview, KY",
+      "phones": [
+        "859-375-9200"
+      ],
+      "url": "https://Isaiah-House.org",
+      "description": "We'll pick you up, We offer Family, marriage, and couples counceling, GED and College classes onsite, Job skill training, Individual and group therapy, Detox, DOC case management",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "family-services",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "statewide",
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "harlan-lindsey-wilson-university",
+      "name": "Lindsey Wilson University",
+      "address": "700 College Rd Cumberland, KY 40823",
+      "phones": [
+        "606-589-3075"
+      ],
+      "url": "https://lindsey.edu",
+      "description": "Coordinator of Educational Outreach and Online programs",
+      "categories": [
+        "education"
+      ],
+      "counties": [
+        "Harlan"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "mha-mental-health-america-of-kentucky",
+      "name": "MHA - Mental Health America of Kentucky",
+      "address": null,
+      "phones": [
+        "859-684-7778"
+      ],
+      "url": "https://mhaky.org",
+      "description": "(offers Mental Health Screenings, Education, Advocacy network & System navigation",
+      "categories": [
+        "mental-health",
+        "education",
+        "healthcare",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "nosw-new-opportunity-school-for-women-18-years-old-and-up",
+      "name": "NOSW - New Opportunity School for Women 18 years old and up.",
+      "address": null,
+      "phones": [
+        "859-985-7200"
+      ],
+      "url": "https://NOSW.org",
+      "description": "Free programs - reimbursement available for childcare and transportation. 2 week Residential Program in Berea that includes lodging, meals, books and other materials. Explore self-esteem, wellness, career, education, arts, culture and community. Gain skills to turn dreams into goals and goals into action. On-line shorter program courses are free; helps to build confidence skills. Meet other women and build connections.",
+      "categories": [
+        "food",
+        "family-services",
+        "transportation",
+        "education",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-red-bird-mission",
+      "name": "Red Bird Mission",
+      "address": "70 Queendale Center Beverly, KY 40913",
+      "phones": [
+        "606-598-0520"
+      ],
+      "url": "https://www.rbmission.org",
+      "description": "offers food, clothing, household items, furniture and transportation. GED and free tax preparation services. Pre-natal and parenting education and baby pantry. Daycare (24 months - 6 years old), preschool and K-12 school for children. Other Service referrals.",
+      "categories": [
+        "food",
+        "family-services",
+        "transportation",
+        "childcare",
+        "education"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-somerset-communtiy-college",
+      "name": "Somerset Communtiy College",
+      "address": "808 Monticello St Somerset, KY 42501",
+      "phones": [
+        "606-451-6885"
+      ],
+      "url": "https://somerset.kctcs.edu",
+      "description": "Offers classes in Human & Social Services",
+      "categories": [
+        "education"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "target-4-project",
+      "name": "Target 4 Project",
+      "address": null,
+      "phones": [
+        "606-878-7754 ext. 247"
+      ],
+      "url": null,
+      "description": "Free & rapid HIV screening, Hepatitis C testing, PrEP referrals, Narcan distribution, Health education, Safer sex supplies, Linkage to care.",
+      "categories": [
+        "education",
+        "healthcare"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

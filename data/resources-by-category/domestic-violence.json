@@ -1,0 +1,109 @@
+{
+  "category": "domestic-violence",
+  "count": 5,
+  "resources": [
+    {
+      "id": "pulaski-bethany-house-abuse-shelter",
+      "name": "Bethany House, Abuse Shelter",
+      "address": "Somerset",
+      "phones": [
+        "800-755-2017"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "shelter",
+        "domestic-violence",
+        "transportation"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "knox-cumberland-valley-domestic-violence-services",
+      "name": "Cumberland Valley Domestic Violence Services",
+      "address": "P.O. Box 2162 London, KY 40456",
+      "phones": [
+        "606-256-9511",
+        "800-755-5348",
+        "606-843-2022"
+      ],
+      "url": "https://www.cvdvs.org",
+      "description": "A safe secure environment with food, clothing, basic necessities, a 20-bed emergency shelter and advocacy center for victims of doestic violence and their children in Cumberland Valley Area Development District. | a safe and secure environment with food, clothing, basic necessities, a 20-bed emergency shelter and advocacy center for victims of domestic violence and their children in Cumberland Valley Area Development District.",
+      "categories": [
+        "food",
+        "shelter",
+        "domestic-violence",
+        "family-services"
+      ],
+      "counties": [
+        "Knox",
+        "Whitley"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "clay-emergency-shelter-and-assistance-cumberland-valley-domestic-violence-services",
+      "name": "Emergency Shelter and Assistance Cumberland Valley Domestic Violence Services",
+      "address": null,
+      "phones": [
+        "606-256-9511",
+        "800-755-5348"
+      ],
+      "url": "https://www.cvdvs.org",
+      "description": "A safe and secure environment with food, clothing, basic necessities, a 20 bed emergency shelter and advocacy center for victims of domestic violence and their children in Cumberland Valley Area Development District",
+      "categories": [
+        "food",
+        "shelter",
+        "domestic-violence",
+        "family-services"
+      ],
+      "counties": [
+        "Clay"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "pulaski-open-arms-recovery-center",
+      "name": "Open Arms Recovery Center",
+      "address": "166 Griffin Ave. Somerset, KY 42501",
+      "phones": [
+        "859-494-2656"
+      ],
+      "url": "https://openarmsrecovery.org",
+      "description": "Structured individualized treatment, Longterm Sobriety, Strive to reduce the impact of mental health and substance abuse challenges to promote optimal outcomes, Harm reduction, Community Integration",
+      "categories": [
+        "mental-health",
+        "addiction-recovery",
+        "domestic-violence",
+        "transportation",
+        "healthcare"
+      ],
+      "counties": [
+        "Pulaski"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "peacefully-whole-recovery",
+      "name": "Peacefully Whole Recovery",
+      "address": "22 counties served.",
+      "phones": [
+        "859-412-2320"
+      ],
+      "url": "https://peacefullywhole.org",
+      "description": "Empowering individuals to reclaim their lives from alcohol, opioid and other substance abuse, and trauma through comprehensive holistic recovery.",
+      "categories": [
+        "addiction-recovery",
+        "domestic-violence",
+        "transportation"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

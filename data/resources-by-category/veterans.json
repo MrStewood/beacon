@@ -1,0 +1,107 @@
+{
+  "category": "veterans",
+  "count": 6,
+  "resources": [
+    {
+      "id": "dav-disabled-american-veterans",
+      "name": "DAV - Disabled American Veterans",
+      "address": null,
+      "phones": [],
+      "url": null,
+      "description": null,
+      "categories": [
+        "veterans"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "homeless-veterans-reintegration-program",
+      "name": "Homeless Veterans Reintegration Program",
+      "address": null,
+      "phones": [
+        "606-866-4343",
+        "606-548-8977"
+      ],
+      "url": null,
+      "description": "Vivian Taylor, Coordinator, 606-548-8977 vivian.taylor@mtcomp.org : Helps homeless or potentially homeless veterans get back on their feet. Veterans must be willing and able to work, and have a discharge other than dishonorable. Mountain Comprehensive Care assists in resume prep, job searching, and other job related resources.",
+      "categories": [
+        "shelter",
+        "veterans",
+        "employment"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "ky-river-foothills-supportive-services-for-veteran-families-ssvf",
+      "name": "KY River Foothills Supportive Services for Veteran Families (SSVF)",
+      "address": null,
+      "phones": [
+        "800-372-7601"
+      ],
+      "url": "https://POC: Lisa Roark They provide temporary rental assistance to qualifying veterans",
+      "description": null,
+      "categories": [
+        "veterans"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "national-veterans-foundation",
+      "name": "National Veterans Foundation",
+      "address": "5777 West Century Blvd Suite 350 Los Angeles, CA 90045",
+      "phones": [
+        "888-777-4443"
+      ],
+      "url": "https://nvf.org",
+      "description": "Life Line for Vets. Non- governmental, provides Vet to Vet service and real solutions to real problems that Veterans face. Nation Wide",
+      "categories": [
+        "veterans"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "vfw-veterans-of-foreign-wars",
+      "name": "VFW - Veterans of Foreign Wars",
+      "address": "3027 W. Laurel Rd. London, KY 40741",
+      "phones": [
+        "606-862-9336"
+      ],
+      "url": null,
+      "description": null,
+      "categories": [
+        "veterans"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    },
+    {
+      "id": "voa-mid-states-veteran-services",
+      "name": "VOA - (mid states) Veteran Services",
+      "address": null,
+      "phones": [],
+      "url": "https://Moral Injury and Preventing Suicide, Supportive Services for Veteran Families, Homeless Veterans Reintegration Program",
+      "description": null,
+      "categories": [
+        "veterans"
+      ],
+      "counties": [
+        "statewide"
+      ],
+      "source": "Isaiah 58:10 Ministries & Outreach Resource Guide"
+    }
+  ]
+}

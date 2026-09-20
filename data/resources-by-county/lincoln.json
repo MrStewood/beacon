@@ -1,0 +1,52 @@
+{
+  "county": "Lincoln",
+  "count": 1,
+  "resources": [
+    {
+      "id": "lincoln-turnersville-christian-mission",
+      "name": "Turnersville Christian Mission",
+      "alternate_names": [],
+      "description": "Community mission.",
+      "address": "200 Hwy 198, Stanford, KY 40484",
+      "city": "Stanford",
+      "state": "KY",
+      "zip": "40484",
+      "county": "Lincoln",
+      "latitude": null,
+      "longitude": null,
+      "phones": [
+        "859-583-8155"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "faith-based"
+      ],
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": null,
+      "status": "active",
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "last_verified": "2026-09-20",
+      "verified_by": "initial-import",
+      "confidence": "medium",
+      "source_urls": [
+        "https://is5810.com/main/resources/"
+      ],
+      "first_seen": "2026-09-20",
+      "tags": [],
+      "notes": null,
+      "related": []
+    }
+  ]
+}
