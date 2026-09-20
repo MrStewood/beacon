@@ -28,17 +28,20 @@ Discovered
                 → Scheduled Reverification
 ```
 
-## Approval Requirements
+## Approval Requirements (Pilot Phase)
+
+**During the Paperclip pilot, ALL resource publications require human approval.**
 
 | Change Type | Approval Required |
 |-------------|-------------------|
-| New resource (low-risk) | Quality Agent + CI pass |
-| New resource (sensitive) | Human Publisher |
-| Resource correction | Quality Agent + CI pass |
+| New resource (any) | Human Publisher |
+| Resource correction (any) | Human Publisher |
 | Closure report | Human Publisher |
 | Schema change | Human Publisher |
 | GitHub Actions change | Human Publisher |
 | License change | Human Publisher |
+
+After the pilot is proven successful, low-risk changes may be approved by Quality Agent with CI pass.
 
 ## Sensitive Resources
 

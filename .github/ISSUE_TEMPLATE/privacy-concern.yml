@@ -1,0 +1,43 @@
+name: Privacy or Safety Concern
+description: Report a privacy or safety issue
+title: "[PRIVACY] "
+labels: ["risk:confidential-location", "human-review-required"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not include personal information about individuals seeking services.**
+        This form is for reporting concerns about the Beacon directory itself.
+
+  - type: dropdown
+    id: concern_type
+    attributes:
+      label: Type of Concern
+      options:
+        - Confidential location exposed
+        - Personal information visible
+        - Safety risk from published data
+        - Incorrect sensitive resource info
+        - Other
+
+  - type: input
+    id: resource_id
+    attributes:
+      label: Resource ID (if applicable)
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of Concern
+      description: Describe the issue without including personal information
+    validations:
+      required: true
+
+  - type: checkbox
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This report does not contain personal information about individuals
+    validations:
+      required: true

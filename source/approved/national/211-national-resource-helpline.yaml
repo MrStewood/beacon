@@ -5,11 +5,11 @@ organization_id: null
 program_id: null
 
 name: "211 - National Resource Helpline"
-alternate_names: []
+alternate_names: ["211"]
 description: "National resource information and referrals for local services. Connects people to health and human services."
 
 locations:
-  - id: national-hotline
+  - id: national-virtual
     location_type: virtual
     address_line_1: null
     city: null
@@ -62,9 +62,9 @@ waitlist: null
 accepts_insurance: null
 
 verification:
-  status: verified
+  status: website-checked
   checked_at: "2026-09-20"
-  checked_by: "initial-import"
+  checked_by: "migration-import"
 
 sources:
   - id: official-211
@@ -79,15 +79,16 @@ sources:
       - cost
 
 workflow:
-  discovered_by: "initial-import"
+  discovered_by: "migration-import"
   discovered_at: "2026-09-20"
-  verified_by: "initial-import"
-  verified_at: "2026-09-20"
-  prepared_by: null
+  verified_by: null
+  verified_at: null
+  prepared_by: "migration-import"
   approved_by: null
   published_at: "2026-09-20"
+  notes: "Grandfathered migration example. Website-checked but not independently verified by separate agent."
 
 first_seen: "2026-09-20"
-tags: []
-notes: null
+tags: ["community", "national", "referral"]
+notes: "Grandfathered from initial import. Website verified but not independently confirmed by separate verification agent."
 related: []

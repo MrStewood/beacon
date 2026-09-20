@@ -1,0 +1,38 @@
+name: Duplicate Report
+description: Report duplicate resources
+title: "[DUPLICATE] "
+labels: ["type:duplicate", "stage:needs-evidence"]
+body:
+  - type: input
+    id: resource_id_1
+    attributes:
+      label: First Resource ID
+      placeholder: "resource-id-1"
+    validations:
+      required: true
+
+  - type: input
+    id: resource_id_2
+    attributes:
+      label: Second Resource ID (suspected duplicate)
+      placeholder: "resource-id-2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Why do you believe these are duplicates?
+      description: Explain the relationship (same org, same program, etc.)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: resolution
+    attributes:
+      label: Suggested Resolution
+      options:
+        - Keep first, remove second
+        - Keep second, remove first
+        - Merge into single record
+        - Keep both (different programs)

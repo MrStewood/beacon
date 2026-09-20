@@ -23,7 +23,7 @@ The public repository must never contain:
 
 ## Confidential Locations
 
-某些服务提供者（如 DV 庇护所）的物理位置是保密的。
+Some service providers (such as domestic violence shelters) have confidential physical locations that must never be publicly disclosed.
 
 Rules:
 - Never geocode confidential locations
