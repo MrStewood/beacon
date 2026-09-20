@@ -130,7 +130,7 @@ def resource_page(r, data):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{esc(r["name"])} — Beacon Resource Directory</title>
+    <title>{esc(r["name"])} — Beacon</title>
     <meta name="description" content="{esc(r.get("description","")[:160])}">
     <meta property="og:title" content="{esc(r["name"])} — Beacon">
     <meta property="og:description" content="{esc(r.get("description","")[:160])}">
@@ -138,67 +138,73 @@ def resource_page(r, data):
     <meta property="og:url" content="https://mrstewood.github.io/beacon/pages/resource/{r["id"]}.html">
     <link rel="canonical" href="https://mrstewood.github.io/beacon/pages/resource/{r["id"]}.html">
     <script type="application/ld+json">{json.dumps(jsonld)}</script>
+    <link rel="stylesheet" href="/beacon/assets/css/beacon.css">
     <style>
-        :root{{--primary:#1d4ed8;--bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;--green:#16a34a;--red:#dc2626;--radius:10px}}
-        *{{box-sizing:border-box;margin:0;padding:0}}
-        body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}}
-        .wrap{{max-width:800px;margin:0 auto;padding:0 1rem}}
-        .breadcrumbs{{padding:1rem 0;font-size:.85rem;color:var(--muted)}}
-        .breadcrumbs a{{color:var(--primary);text-decoration:none}}
-        .breadcrumbs a:hover{{text-decoration:underline}}
-        .card{{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin:1rem 0}}
-        h1{{font-size:1.5rem;color:var(--primary);margin-bottom:.5rem}}
-        .meta{{display:flex;flex-wrap:wrap;gap:.75rem;font-size:.9rem;color:var(--muted);margin-bottom:1rem}}
-        .meta span{{display:flex;align-items:center;gap:.25rem}}
-        .tags{{display:flex;flex-wrap:wrap;gap:.3rem;margin:1rem 0}}
-        .tag{{padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:500}}
-        .tag-need{{background:#dbeafe;color:#1e40af}}
-        .tag-pop{{background:#dcfce7;color:#166534}}
-        .tag-svc{{background:#fef3c7;color:#92400e}}
-        .actions{{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}}
-        .action-btn{{padding:.5rem 1rem;border-radius:6px;font-size:.85rem;font-weight:500;text-decoration:none;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}}
-        .action-btn:hover{{border-color:var(--primary);color:var(--primary)}}
-        .action-btn.call{{background:var(--green);color:#fff;border-color:var(--green)}}
-        .details{{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}}
-        .details dt{{font-weight:600;margin-top:.75rem;color:var(--text)}}
-        .details dd{{margin-left:0;color:var(--muted)}}
-        .related{{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)}}
-        .related h3{{font-size:1rem;margin-bottom:.5rem}}
-        .related ul{{list-style:none}}
-        .related li{{padding:.25rem 0;font-size:.9rem}}
-        .related a{{color:var(--primary);text-decoration:none}}
-        .related a:hover{{text-decoration:underline}}
-        .back{{display:inline-block;margin-top:1rem;color:var(--primary);text-decoration:none;font-size:.9rem}}
-        .back:hover{{text-decoration:underline}}
-        footer{{background:#0f172a;color:#94a3b8;padding:1rem 0;text-align:center;font-size:.8rem;margin-top:2rem}}
+        .resource-detail{{max-width:800px;margin:0 auto;padding:var(--space-4)}}
+        .resource-header{{margin-bottom:var(--space-6)}}
+        .resource-title{{font-size:28px;margin-bottom:var(--space-2)}}
+        .resource-meta{{display:flex;flex-wrap:wrap;gap:var(--space-3);font-size:14px;color:var(--color-text-muted);margin-bottom:var(--space-4)}}
+        .resource-meta span{{display:flex;align-items:center;gap:var(--space-1)}}
+        .resource-actions{{display:flex;flex-wrap:wrap;gap:var(--space-2);margin:var(--space-4) 0}}
+        .resource-details{{margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--color-divider)}}
+        .resource-details dt{{font-weight:600;margin-top:var(--space-3);font-size:14px;color:var(--color-text)}}
+        .resource-details dd{{margin:0;color:var(--color-text-muted);font-size:14px}}
+        .resource-related{{margin-top:var(--space-6);padding-top:var(--space-4);border-top:1px solid var(--color-divider)}}
+        .resource-related h3{{font-size:18px;margin-bottom:var(--space-3)}}
+        .resource-related ul{{list-style:none;padding:0}}
+        .resource-related li{{padding:var(--space-2) 0;font-size:14px;border-bottom:1px solid var(--color-divider)}}
+        .resource-related li:last-child{{border-bottom:none}}
+        .resource-related a{{color:var(--color-accent);text-decoration:none}}
+        .resource-related a:hover{{text-decoration:underline}}
+    </style>
+</head>
         footer a{{color:#93c5fd;text-decoration:none}}
     </style>
 </head>
 <body>
-<div class="wrap">
-    {breadcrumbs}
-    <div class="card">
-        <h1>{esc(r["name"])}</h1>
-        <div class="meta">
-            {f'<span>📍 {esc(r["address"])}</span>' if r.get("address") and r["address"] != "Statewide" else ''}
-            {f'<span>📞 <a href="tel:{r["phones"][0]}" style="color:var(--green);text-decoration:none">{esc(r["phones"][0])}</a></span>' if r.get("phones") else ''}
-            {f'<span>🌐 <a href="{esc(r["url"])}" target="_blank" rel="noopener noreferrer" style="color:var(--primary)">{r["url"].replace("https://","").replace("http://","")}</a></span>' if r.get("url") else ''}
-            {f'<span>🕐 {esc(r["hours"])}</span>' if r.get("hours") else ''}
-            {f'<span>🗣 {", ".join(r["languages"])}</span>' if r.get("languages") and len(r["languages"]) > 1 else ''}
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Main navigation">
+        <a href="/beacon/" class="nav-brand">Beacon</a>
+        <a href="/beacon/">Find Help</a>
+        <a href="/beacon/organizations.html">For Organizations</a>
+        <a href="https://github.com/MrStewood/beacon" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+
+    <main id="main-content" class="resource-detail">
+        {breadcrumbs}
+
+        <div class="resource-header">
+            <h1 class="resource-title">{esc(r["name"])}</h1>
+            <div class="resource-meta">
+                {f'<span>📍 {esc(r["address"])}</span>' if r.get("address") and r["address"] != "Statewide" else ''}
+                {f'<span>📞 <a href="tel:{r["phones"][0]}" class="phone" style="color:var(--color-success)">{esc(r["phones"][0])}</a></span>' if r.get("phones") else ''}
+                {f'<span>🌐 <a href="{esc(r["url"])}" target="_blank" rel="noopener noreferrer">{r["url"].replace("https://","").replace("http://","")}</a></span>' if r.get("url") else ''}
+                {f'<span>🕐 {esc(r["hours"])}</span>' if r.get("hours") else ''}
+                {f'<span>🗣 {", ".join(r["languages"])}</span>' if r.get("languages") and len(r["languages"]) > 1 else ''}
+            </div>
+            {f'<p>{esc(r["description"])}</p>' if r.get("description") else ''}
+            <div class="chip-group">
+                {"".join(f'<span class="tag tag-accent">{NEED_LABELS.get(n,n)}</span>' for n in needs)}
+                {"".join(f'<span class="tag">{POP_LABELS.get(p,p)}</span>' for p in pops)}
+            </div>
+            <div class="resource-actions">{actions}</div>
         </div>
-        {f'<p>{esc(r["description"])}</p>' if r.get("description") else ''}
-        <div class="tags">
-            {"".join(f'<span class="tag tag-need">{NEED_LABELS.get(n,n)}</span>' for n in needs)}
-            {"".join(f'<span class="tag tag-pop">{POP_LABELS.get(p,p)}</span>' for p in pops)}
-            {"".join(f'<span class="tag tag-svc">{s}</span>' for s in svcs)}
+
+        {f'<div class="resource-details"><dl>{details}</dl></div>' if details else ''}
+
+        {related_html}
+
+        <a href="/beacon/" class="btn btn-ghost" style="margin-top:var(--space-4)">← Back to Directory</a>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap">
+            <p>Beacon Community Resource Directory</p>
+            <p style="margin-top:var(--space-2)">Data from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries</a> · <a href="https://github.com/MrStewood/beacon">Source Code</a></p>
         </div>
-        <div class="actions">{actions}</div>
-        {f'<div class="details"><dl>{details}</dl></div>' if details else ''}
-    </div>
-    {related_html}
-    <a href="/beacon/" class="back">← Back to Directory</a>
-</div>
-<footer><div class="wrap">Beacon Community Resource Directory · Data from Isaiah 58:10 Ministries</div></footer>
+    </footer>
 </body>
 </html>'''
 
