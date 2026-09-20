@@ -32,6 +32,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=262+Four+Mile+Ave,+Richmond,+KY+40475",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -80,6 +87,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": "24/7",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=6159+1st+Financial+Dr,+Burlington,+KY+41005",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -134,6 +148,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1018+E.+New+Circle+Rd+Ste+204,+Lexington,+KY+40505",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -184,6 +205,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Richmond,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -231,6 +259,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=230+Battlefield+Memorial+Hwy,+Richmond,+KY+40475",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -278,6 +313,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=330+Hotel+Court,+Berea,+KY+40403",
       "status": "active",
       "intake_process": null,
       "capacity": null,

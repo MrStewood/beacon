@@ -36,6 +36,13 @@
       "eligibility": null,
       "cost": "free",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1010+Wayne+Ave+Suite+300,+Silver+Spring,+MD+20910",
       "status": "active",
       "intake_process": null,
       "capacity": null,

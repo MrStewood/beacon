@@ -435,6 +435,27 @@ def build_resource(name, address, phone, url, description, county, source="Isaia
 
     resource_id = f"{county.lower()}-{slugify(name)}" if county != "Statewide" else slugify(name)
 
+    # Auto-generate map URL from address
+    map_url = None
+    if address and address != "Statewide":
+        map_url = f"https://www.google.com/maps/search/?api=1&query={address.replace(' ', '+')}"
+
+    # Detect languages from description
+    languages = ["English"]
+    desc_lower_check = (description or "").lower()
+    if "spanish" in desc_lower_check or "español" in desc_lower_check:
+        languages.append("Spanish")
+
+    # Detect if referral is needed
+    referral_required = None
+    if "referral" in desc_lower_check:
+        referral_required = True
+
+    # Detect what to bring from description
+    what_to_bring = None
+    if "must" in desc_lower_check and ("provide" in desc_lower_check or "bring" in desc_lower_check or "have" in desc_lower_check):
+        what_to_bring = description
+
     return {
         "id": resource_id,
         "name": name,
@@ -457,6 +478,11 @@ def build_resource(name, address, phone, url, description, county, source="Isaia
         "eligibility": eligibility,
         "cost": cost,
         "hours": hours,
+        "languages": languages,
+        "what_to_bring": what_to_bring,
+        "referral_required": referral_required,
+        "intake_hours": None,
+        "map_url": map_url,
         "status": "active",
         "intake_process": intake,
         "capacity": None,

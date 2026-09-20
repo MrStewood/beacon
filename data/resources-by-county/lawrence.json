@@ -41,6 +41,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,

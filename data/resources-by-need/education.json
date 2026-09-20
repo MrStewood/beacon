@@ -39,6 +39,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=711+E+Loudon+Ave,+Lexington,+KY+40505",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -92,6 +99,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=141+Tech+Park+Drive,+Middlesboro,+KY+40965",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -145,6 +159,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Chaplin,+Louisville,+Williamsburg,+Willisburg,+Versailles,+Harrodsburg,+Danville,+Georgetown,+Hillview,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -193,6 +214,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1202+S.+3rd+St+#103,+Louisville,+KY+40203",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -240,6 +268,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=700+College+Rd,+Cumberland,+KY+40823",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -289,6 +324,13 @@
       "eligibility": null,
       "cost": "insurance",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -337,6 +379,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -390,6 +439,13 @@
       "eligibility": null,
       "cost": "free",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -441,6 +497,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=70+Queendale+Center,+Beverly,+KY+40913",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -488,6 +551,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=808+Monticello+St,+Somerset,+KY+42501",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -536,6 +606,13 @@
       "eligibility": null,
       "cost": "free",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": true,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -585,6 +662,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=48+Owens+Rd,+Manchester,+KY+40962",
       "status": "active",
       "intake_process": null,
       "capacity": null,

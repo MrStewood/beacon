@@ -33,6 +33,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=323+Main+St,+Williamsburg,+KY+40769",
       "status": "active",
       "intake_process": null,
       "capacity": null,

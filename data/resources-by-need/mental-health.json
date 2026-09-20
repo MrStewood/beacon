@@ -40,6 +40,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Harlan,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -87,6 +94,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=2265+Harrodsburg+Rd,+Lexington,+KY+40504",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -136,6 +150,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=620+S.+3rd+St+Suite+101,+Louisville,+KY+40202",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -183,6 +204,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1001+Park+Central+Ave,+Nicholasville,+KY+40356",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -231,6 +259,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": true,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -280,6 +315,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Barbourville,+Corbin,+Harlan,+London,+Pineville,+Manchester,+McKee,+Middlesboro,+Mt.+Vernon,+Williamsburg",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -327,6 +369,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Barbourville,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -374,6 +423,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Corbin,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -421,6 +477,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Williamsburg,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -476,6 +539,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=American+Greeting+Card+Rd,+Corbin,+KY+40701",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -532,6 +602,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -579,6 +656,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": true,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -637,6 +721,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -690,6 +781,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Chaplin,+Louisville,+Williamsburg,+Willisburg,+Versailles,+Harrodsburg,+Danville,+Georgetown,+Hillview,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -741,6 +839,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1555+E.+New+Circle+Rd+Suite+190,+Lexington,+KY+40509",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -796,6 +901,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=P.O.+Box+84,+Williamsburg,+KY+40769",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -852,6 +964,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Rt.+9+Box+940,+Manchester,+KY+40962",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -899,6 +1018,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": true,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -944,6 +1070,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -989,6 +1122,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1037,6 +1177,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1084,6 +1231,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=2265+Harrodsburg+Rd,+Lexington,+KY+40504",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1131,6 +1285,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=2265+Harrodsburg+Rd,+Lexington,+KY+40504",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1179,6 +1340,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1226,6 +1394,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1278,6 +1453,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=559+Riverside+Dr,+West+Liberty,+KY+41472",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1332,6 +1514,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1018+E.+New+Circle+Rd+Ste+204,+Lexington,+KY+40505",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1380,6 +1569,13 @@
       "eligibility": null,
       "cost": "insurance",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1430,6 +1626,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Richmond,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1480,6 +1683,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=828+Lane+Allen+Rd,+Lexington,+KY+40504",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1528,6 +1738,13 @@
       "eligibility": null,
       "cost": "free",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": true,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1575,6 +1792,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=230+Battlefield+Memorial+Hwy,+Richmond,+KY+40475",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1627,6 +1851,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Lexington,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1680,6 +1911,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Winchester+&+Lexington,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1727,6 +1965,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1220+Master+St,+Corbin,+KY+40701",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1774,6 +2019,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -1821,6 +2073,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=330+Hotel+Court,+Berea,+KY+40403",
       "status": "active",
       "intake_process": null,
       "capacity": null,

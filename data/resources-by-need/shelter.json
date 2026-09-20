@@ -34,6 +34,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Winchester,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -83,6 +90,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=U.S.+Hwy+25W,+Williamsburg,+KY+40769",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -131,6 +145,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Somerset,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -184,6 +205,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=141+Tech+Park+Drive,+Middlesboro,+KY+40965",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -235,6 +263,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=P.O.+Box+2162,+London,+KY+40456",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -290,6 +325,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=630+South+Hwy+25,+Williamsburg,+KY+40769",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -342,6 +384,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -390,6 +439,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Martin,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -437,6 +493,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Hazzard,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -481,6 +544,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -535,6 +605,13 @@
       "eligibility": null,
       "cost": "private-pay",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=U.S.+Hwy+25E,+Barbourville,+KY+40906",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -584,6 +661,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": "24/7",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -631,6 +715,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -680,6 +771,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=2006+S.+Main+St,+Corbin,+KY+40701",
       "status": "active",
       "intake_process": null,
       "capacity": null,

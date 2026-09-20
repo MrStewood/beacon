@@ -14,8 +14,9 @@ def main():
         w.writerow([
             'Name', 'Address', 'City', 'State', 'Zip', 'County',
             'Phone', 'Website', 'Needs', 'Service Types', 'Populations',
-            'Description', 'Eligibility', 'Cost', 'Hours', 'Status',
-            'Intake Process', 'Last Verified', 'Confidence', 'Notes'
+            'Description', 'Eligibility', 'Cost', 'Hours', 'Languages',
+            'What to Bring', 'Referral Required', 'Intake Hours', 'Map URL',
+            'Status', 'Intake Process', 'Last Verified', 'Confidence', 'Notes'
         ])
         for r in resources:
             w.writerow([
@@ -34,6 +35,11 @@ def main():
                 r.get('eligibility', '') or '',
                 r.get('cost', ''),
                 r.get('hours', '') or '',
+                '; '.join(r.get('languages', [])),
+                r.get('what_to_bring', '') or '',
+                r.get('referral_required', '') if r.get('referral_required') is not None else '',
+                r.get('intake_hours', '') or '',
+                r.get('map_url', '') or '',
                 r.get('status', ''),
                 r.get('intake_process', '') or '',
                 r.get('last_verified', ''),

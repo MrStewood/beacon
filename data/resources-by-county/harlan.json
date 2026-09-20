@@ -40,6 +40,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Harlan,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -87,6 +94,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=700+College+Rd,+Cumberland,+KY+40823",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -133,6 +147,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=202+Church+St,+Lynch,+KY+40855",
       "status": "active",
       "intake_process": null,
       "capacity": null,

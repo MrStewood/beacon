@@ -35,6 +35,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=311+Barbourville+St,+Corbin,+KY+40701",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -86,6 +93,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=P.O.+Box+2162,+London,+KY+40456",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -141,6 +155,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=630+South+Hwy+25,+Williamsburg,+KY+40769",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -193,6 +214,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -251,6 +279,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": null,
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -299,6 +334,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": "Mon/Tues/Thurs/Fri/Sat 11am-1pm",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=220+E.+4th+St,+London,+KY+40741",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -353,6 +395,13 @@
       "eligibility": null,
       "cost": "private-pay",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=U.S.+Hwy+25E,+Barbourville,+KY+40906",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -401,6 +450,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1202+S.+3rd+St+#103,+Louisville,+KY+40203",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -452,6 +508,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=70+Queendale+Center,+Beverly,+KY+40913",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -501,6 +564,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=2006+S.+Main+St,+Corbin,+KY+40701",
       "status": "active",
       "intake_process": null,
       "capacity": null,

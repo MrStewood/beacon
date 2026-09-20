@@ -35,6 +35,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=620+S.+3rd+St+Suite+101,+Louisville,+KY+40202",
       "status": "active",
       "intake_process": null,
       "capacity": null,
@@ -81,6 +88,13 @@
       "eligibility": null,
       "cost": "unknown",
       "hours": null,
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "map_url": "https://www.google.com/maps/search/?api=1&query=Louisville,+KY",
       "status": "active",
       "intake_process": null,
       "capacity": null,

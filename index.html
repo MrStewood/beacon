@@ -187,7 +187,7 @@ function search(){
     if(svc) r=r.filter(x=>x.service_types.includes(svc));
     if(activeNeeds.size) r=r.filter(x=>x.needs.some(n=>activeNeeds.has(n)));
     if(q) r=r.filter(x=>{
-        const t=[x.name,x.address||'',x.city||'',x.description||'',x.county,...x.needs,...x.phones,...x.populations,...x.service_types,(x.eligibility||'')].join(' ').toLowerCase();
+        const t=[x.name,x.address||'',x.city||'',x.description||'',x.county,...x.needs,...x.phones,...x.populations,...x.service_types,(x.eligibility||''),(x.what_to_bring||''),(x.languages||[]).join(' ')].join(' ').toLowerCase();
         return t.includes(q);
     });
     render(r);
@@ -202,24 +202,28 @@ function render(list){
         <div class="card">
             <div class="card-name">${h(r.name)}</div>
             <div class="card-meta">
-                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}</span>`:''}
+                ${r.address&&r.address!=='Statewide'?`<span>📍 ${h(r.address)}${r.map_url?` <a href="${r.map_url}" target="_blank" style="font-size:.75rem">Map</a>`:''}</span>`:''}
                 ${r.phones.length?`<span>📞 <a href="tel:${r.phones[0]}" class="phone">${h(r.phones[0])}</a></span>`:''}
                 ${r.url?`<span>🌐 <a href="${h(r.url)}" target="_blank" class="site">${r.url.replace(/^https?:\/\//,'').replace(/\/$/,'')}</a></span>`:''}
                 ${r.hours?`<span>🕐 ${h(r.hours)}</span>`:''}
                 ${r.cost&&r.cost!=='unknown'?`<span>💰 ${r.cost}</span>`:''}
+                ${r.languages&&r.languages.length>1?`<span>🗣 ${r.languages.join(', ')}</span>`:''}
             </div>
             ${r.description?`<div class="card-desc">${h(r.description)}</div>`:''}
             <div class="tags">
                 <span class="tag tag-status ${r.status==='needs-verification'?'verify':r.status==='closed'?'closed':''}">${r.status}</span>
+                ${r.referral_required===true?`<span class="tag" style="background:#fee2e2;color:#991b1b">Referral Required</span>`:''}
                 ${r.needs.map(n=>`<span class="tag tag-need">${NEED_LABELS[n]||n}</span>`).join('')}
                 ${r.populations.filter(p=>p!=='anyone').map(p=>`<span class="tag tag-pop">${POP_LABELS[p]||p}</span>`).join('')}
                 ${r.service_types.map(s=>`<span class="tag tag-svc">${SVC_LABELS[s]||s}</span>`).join('')}
             </div>
-            ${(r.eligibility||r.intake_process||r.capacity||r.waitlist!=null||r.notes)?`
+            ${(r.eligibility||r.intake_process||r.intake_hours||r.what_to_bring||r.capacity||r.waitlist!=null||r.notes)?`
             <div class="card-details">
                 <dl>
                     ${r.eligibility?`<dt>Eligibility</dt><dd>${h(r.eligibility)}</dd>`:''}
                     ${r.intake_process?`<dt>Intake</dt><dd>${h(r.intake_process)}</dd>`:''}
+                    ${r.intake_hours?`<dt>Intake Hours</dt><dd>${h(r.intake_hours)}</dd>`:''}
+                    ${r.what_to_bring?`<dt>What to Bring</dt><dd>${h(r.what_to_bring)}</dd>`:''}
                     ${r.capacity?`<dt>Capacity</dt><dd>${h(r.capacity)}</dd>`:''}
                     ${r.waitlist===true?`<dt>Waitlist</dt><dd>Currently has a waiting list</dd>`:''}
                     ${r.notes?`<dt>Notes</dt><dd>${h(r.notes)}</dd>`:''}
