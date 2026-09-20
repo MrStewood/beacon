@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install jsonschema pytest --break-system-packages
+
+      - name: Build all
+        run: python scripts/build.py
+
+      - name: Run tests
+        run: pytest tests/ -v
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Create release bundle
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          mkdir -p release/beacon-${VERSION}
+          cp -r data/ release/beacon-${VERSION}/
+          cp -r pages/ release/beacon-${VERSION}/
+          cp -r print/ release/beacon-${VERSION}/
+          cp -r embed/ release/beacon-${VERSION}/
+          cp -r schema/ release/beacon-${VERSION}/
+          cp index.html organizations.html robots.txt sitemap.xml LICENSE README.md release/beacon-${VERSION}/
+          cd release
+          zip -r ../beacon-${VERSION}.zip beacon-${VERSION}/
+          cd ..
+          sha256sum beacon-${VERSION}.zip > beacon-${VERSION}.zip.sha256
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            beacon-${{ steps.version.outputs.VERSION }}.zip
+            beacon-${{ steps.version.outputs.VERSION }}.zip.sha256
+          generate_release_notes: true
+          draft: false
+          prerelease: false
