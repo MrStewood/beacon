@@ -1,0 +1,51 @@
+{
+  "lead_id": "laurel-gods-pantry-food-bank-se-kentucky",
+  "investigation_date": "2026-09-23",
+  "investigator": "main-agent",
+  "name": "God's Pantry Food Bank of Southeast Kentucky",
+  "alternate_names": ["God's Pantry SE KY", "Southeast Regional Distribution Center"],
+  "description": "Regional food bank distribution center serving Southeast Kentucky. Part of the God's Pantry network distributing to 200+ pantries across Central and Eastern Kentucky. Opened London location in 2013.",
+  "category": "food",
+  "needs": ["food"],
+  "service_types": ["government"],
+  "populations": ["anyone"],
+  "cost": "free",
+  "eligibility": "Individuals and families in need. Pantry partner organizations in the service area.",
+  "phones": ["606-862-6693"],
+  "email": null,
+  "url": "https://www.godspantry.org",
+  "facebook": "https://www.facebook.com/foodbanksoutheastky/",
+  "address": "1215 East 4th Street",
+  "city": "London",
+  "state": "KY",
+  "zip": "40741",
+  "county": "Laurel",
+  "hours": "Monday-Friday 7:00 AM - 3:30 PM",
+  "what_to_bring": null,
+  "intake_process": "Walk-in distribution",
+  "verification_status": "website-checked",
+  "confidence": "high",
+  "last_verified": "2026-09-23",
+  "verified_by": "main-agent",
+  "source_urls": [
+    "https://www.godspantry.org/contact",
+    "https://www.laurelcohealthdept.org/resources-food",
+    "https://www.facebook.com/foodbanksoutheastky/"
+  ],
+  "cross_references": [
+    {
+      "source": "godspantry.org/contact",
+      "findings": "London listed as 'Southeast Regional Distribution Center'. Address matches. Phone: main HQ 859-255-6592, London-specific number not on their site."
+    },
+    {
+      "source": "laurelcohealthdept.org/resources-food",
+      "findings": "Address: 1215 East 4th Street, London, KY 40741. Phone: 606-862-6693. Hours: Mon-Fri 7a-3:30p."
+    },
+    {
+      "source": "facebook.com/foodbanksoutheastky",
+      "findings": "1,573 likes. 'Fighting Hunger | Delivering Hope | Since 1955'. Confirms organization identity."
+    }
+  ],
+  "notes": "DISTRIBUTION CENTER (warehouse), not a walk-in pantry. Distributes TO partner pantries. Individuals should use godspantry.org/help to find a pantry. Phone 606-862-6693 confirmed by Health Dept and third-party listings but not on godspantry.org.",
+  "status": "active"
+}
