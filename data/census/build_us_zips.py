@@ -25,7 +25,9 @@ OUT_PATH = HERE / "us-zips.json"
 
 def build() -> None:
     if not CSV_PATH.exists():
-        print(f"ERROR: {CSV_PATH} not found.  Run curl first.", file=sys.stderr)
+        print(f"ERROR: {CSV_PATH} not found.", file=sys.stderr)
+        print(f"  Download from: https://raw.githubusercontent.com/scpike/us-state-county-zip/master/geo-data.csv", file=sys.stderr)
+        print(f"  curl -sL 'https://raw.githubusercontent.com/scpike/us-state-county-zip/master/geo-data.csv' -o {CSV_PATH}", file=sys.stderr)
         sys.exit(1)
 
     zips: dict[str, list[dict]] = defaultdict(list)
