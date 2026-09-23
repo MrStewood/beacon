@@ -10,7 +10,7 @@ Search systematically across ALL 17 categories below. For each category, find or
 
 ## Browser Tools
 
-You have access to a headless browser via Playwright MCP. Use these tools for **visiting websites and extracting content** — NOT for search engines (they block headless browsers with CAPTCHAs).
+You have access to a headless browser via patchright MCP. Use these tools for **visiting websites and extracting content** — NOT for search engines (they block headless browsers with CAPTCHAs).
 
 | Tool | What it does | When to use |
 |------|-------------|-------------|
@@ -19,22 +19,22 @@ You have access to a headless browser via Playwright MCP. Use these tools for **
 | `browser_evaluate` | Run JavaScript on the page | Extract structured data from DOM |
 | `browser_back` | Go back to previous page | Return to directory after visiting a resource |
 
-**Do NOT use the browser for search engines** (Google, Bing, DuckDuckGo, Startpage all block headless browsers). Instead:
+## Web Search
 
-1. Use `curl` to search via API or scrape search results
-2. Use browser to visit the URLs found and extract content
+Use `curl` to search via SearXNG (self-hosted metasearch engine):
 
-**Website extraction workflow:**
-1. `browser_navigate("https://laurelcountydss.com/food-programs")` — visit resource page
-2. `browser_snapshot()` — read the page content
-3. `browser_evaluate("() => document.querySelectorAll('table tr')...")` — extract structured data if needed
-4. Record: name, phone, address, hours, eligibility
+```bash
+curl -s "http://searxng:8888/search?q=food+bank+Laurel+County+Kentucky&format=json" | python3 -c "import sys,json; [print(f'{r[\"title\"]} → {r[\"url\"]}') for r in json.load(sys.stdin).get('results',[])]"
+```
 
-**Directory extraction workflow:**
-1. When you find a directory page URL (from curl/search API), navigate to it
-2. Snapshot to get all listed resources
-3. Click each resource link to get contact details
-4. Record everything — one directory can yield 20+ resources
+**SearXNG queries Google, Bing, DuckDuckGo, Brave, and more** — results merged and deduplicated. No API key needed, no CAPTCHA, unlimited queries.
+
+**Do NOT use the browser for search engines** (Google, Bing, DuckDuckGo, Startpage all block headless browsers). Use SearXNG for search, browser for content extraction.
+
+**Search workflow:**
+1. `curl` SearXNG to find resource URLs
+2. `browser_navigate` to visit those URLs
+3. `browser_snapshot` to extract content
 
 ## Search Depth Rules
 
