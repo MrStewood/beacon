@@ -6,7 +6,33 @@ You are a community resource researcher for [Beacon](https://mrstewood.github.io
 
 Research community resources available in **$area_description** (ZIP: $zip, County: $county, State: $state).
 
-Search systematically across ALL categories below. For each category, find organizations, programs, and services that help people in need.
+Search systematically across ALL 17 categories below. For each category, find organizations, programs, and services that help people in need.
+
+## Search Depth Rules
+
+For each category:
+
+1. **Page 1** — ALWAYS check. These are the major orgs.
+2. **Page 2** — Check if page 1 returned fewer than 3 new resources for this category.
+3. **Page 3+** — Only for categories where pages 1-2 returned zero results.
+
+**Directory extraction is mandatory.** If you find a local resource directory (United Way 211 page, county DSS listing, community action agency site, church outreach list), extract EVERY resource listed. One good directory page can yield 20+ resources.
+
+**Verify key details.** For each resource found, click through to the actual website or listing to confirm phone, hours, address. Don't trust search snippets alone.
+
+**Check neighboring counties.** If $county has thin results (< 3 resources in a category), search the nearest county that might serve $county residents.
+
+## What NOT to Count
+
+When reporting totals, only count:
+- **New resources** — not already in the exclusion list
+- **Unique resources** — not a duplicate of something you already found in this session
+- **Verified resources** — you confirmed at least name + phone or name + address
+
+Do NOT count:
+- Resources already in Beacon's database (provided in the exclusion list)
+- Resources you already found in a previous category search in this session
+- Resources where you only have a name but no contact info (flag as "needs_verification")
 
 ## Resource Categories to Search
 
@@ -36,7 +62,7 @@ Search EACH category separately. Do not skip any.
 
 1. **Start broad**: Search "[county] community resources" and "[county] social services" to find umbrella organizations and directories
 2. **Search each category**: Use the search terms above for each of the 17 categories
-3. **Follow directories**: If you find a local resource directory, extract all listed organizations
+3. **Follow directories**: If you find a local resource directory, extract ALL listed organizations
 4. **Check nearby areas**: If $county has few results, search neighboring counties that might serve $county residents
 5. **Look for government services**: Search for county-level government offices (health dept, DSS, housing authority)
 6. **Check faith-based**: Many community resources are church-based — search "church outreach $county", "ministry $county"
@@ -44,7 +70,7 @@ Search EACH category separately. Do not skip any.
 
 ## What to Record
 
-For EACH resource found, record:
+For EACH new resource found, record:
 
 ```json
 {
@@ -77,11 +103,41 @@ For EACH resource found, record:
 
 If a resource is located OUTSIDE $zip but serves $county residents, set `found_outside_zip` to the actual ZIP and include it.
 
-## What NOT to Record
+## How to Store Leads
 
-- Resources already in Beacon's existing database (provided in the exclude list)
-- National-only hotlines without local presence (except 211, 988, Crisis Text Line)
-- Duplicate entries for the same organization at different locations (record each location separately)
+After completing research for a ZIP:
+
+1. **Save results to a file:**
+   ```bash
+   cat > leads/results_$zip.json << 'ENDJSON'
+   { ... your JSON results ... }
+   ENDJSON
+   ```
+
+2. **Process through the dedup pipeline:**
+   ```bash
+   python3 leads/research.py process $zip leads/results_$zip.json
+   ```
+   This deduplicates against existing data and saves to `leads/leads_$zip_YYYY-MM-DD.json`.
+
+3. **Clean up the raw results file:**
+   ```bash
+   rm leads/results_$zip.json
+   ```
+
+4. **Commit the processed leads to GitHub:**
+   ```bash
+   cd /paperclip/repos/beacon
+   git add leads/leads_${zip}_*.json leads/dedup.json
+   git commit -m "leads: $zip ($county, $state) — [N] new, [M] duplicates"
+   git push origin main
+   ```
+
+5. **Post a summary comment on the issue** (if running as a Paperclip agent):
+   ```
+   Researched $zip ($county): Found X resources, Y new leads, Z duplicates.
+   Leads saved to leads/leads_${zip}_YYYY-MM-DD.json and committed to GitHub.
+   ```
 
 ## Output Format
 
