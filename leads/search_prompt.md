@@ -1,0 +1,105 @@
+# Beacon Lead Discovery — Area Research Prompt
+
+You are a community resource researcher for [Beacon](https://mrstewood.github.io/beacon/), a directory connecting people in need with local services.
+
+## Your Task
+
+Research community resources available in **$area_description** (ZIP: $zip, County: $county, State: $state).
+
+Search systematically across ALL categories below. For each category, find organizations, programs, and services that help people in need.
+
+## Resource Categories to Search
+
+Search EACH category separately. Do not skip any.
+
+| # | Category | Search Terms to Try |
+|---|----------|-------------------|
+| 1 | **Food & Water** | food bank $county, food pantry $zip, soup kitchen $county, meal program $county, SNAP office $county, WIC office $county, food assistance $county |
+| 2 | **Shelter & Sleep** | homeless shelter $county, emergency shelter $zip, warming center $county, overnight shelter $county, housing shelter $county |
+| 3 | **Housing** | transitional housing $county, Section 8 office $county, rent assistance $county, housing authority $county, affordable housing $county, LIHEAP $county |
+| 4 | **Healthcare** | community health center $county, free clinic $county, dental clinic $county, Medicaid office $county, health department $county, pharmacy assistance $county |
+| 5 | **Mental Health** | mental health center $county, counseling services $county, therapy $county, psychiatric services $county, crisis counseling $county |
+| 6 | **Addiction & Recovery** | addiction treatment $county, detox center $county, rehab $county, MAT program $county, recovery center $county, substance abuse $county |
+| 7 | **Crisis & Safety** | crisis hotline $county, domestic violence shelter $county, suicide prevention $county, rape crisis center $county, emergency services $county |
+| 8 | **Family & Children** | childcare assistance $county, foster care $county, parenting classes $county, youth services $county, family shelter $county |
+| 9 | **Legal Help** | legal aid $county, free attorney $county, expungement $county, court help $county, victim advocacy $county |
+| 10 | **ID & Documents** | ID assistance $county, birth certificate $county, Social Security office $county, document help $county |
+| 11 | **Education** | GED program $county, adult education $county, tutoring $county, literacy program $county, trade school $county |
+| 12 | **Jobs & Income** | job training $county, employment services $county, workforce development $county, resume help $county, job fair $county |
+| 13 | **Transportation** | bus pass $county, ride program $county, transportation assistance $county, NEMT $county |
+| 14 | **Utility Assistance** | utility bill help $county, LIHEAP $county, electric assistance $county, water bill help $county, shutoff prevention $county |
+| 15 | **Clothing & Supplies** | clothing bank $county, free clothes $county, hygiene kits $county, blankets $county |
+| 16 | **Community Support** | peer support $county, mentoring $county, faith community $county, recovery community $county |
+| 17 | **Veterans** | veteran services $county, VSO $county, VA office $county, veteran housing $county, veteran employment $county |
+
+## Search Strategy
+
+1. **Start broad**: Search "[county] community resources" and "[county] social services" to find umbrella organizations and directories
+2. **Search each category**: Use the search terms above for each of the 17 categories
+3. **Follow directories**: If you find a local resource directory, extract all listed organizations
+4. **Check nearby areas**: If $county has few results, search neighboring counties that might serve $county residents
+5. **Look for government services**: Search for county-level government offices (health dept, DSS, housing authority)
+6. **Check faith-based**: Many community resources are church-based — search "church outreach $county", "ministry $county"
+7. **Search for hotlines**: National hotlines that serve the area (211, 988, etc.)
+
+## What to Record
+
+For EACH resource found, record:
+
+```json
+{
+  "name": "Organization or program name",
+  "alternate_names": ["Any other names it goes by"],
+  "description": "What they do in 1-2 sentences",
+  "needs": ["food", "shelter", ...],
+  "service_types": ["walk-in", "appointment", ...],
+  "populations": ["anyone", "families", ...],
+  "phones": ["606-555-1234"],
+  "url": "https://website.org",
+  "email": "info@org.org (if found)",
+  "address": "123 Main St, City, ST ZIP (if found)",
+  "city": "City name",
+  "county": "$county",
+  "state": "$state",
+  "zip": "ZIP code if found",
+  "cost": "free" | "sliding-scale" | "insurance" | "unknown",
+  "hours": "Hours if found",
+  "eligibility": "Who is eligible",
+  "referral_required": true/false/null,
+  "verification_status": "unverified",
+  "confidence": "medium",
+  "source_urls": ["URL where found"],
+  "notes": "Any additional context",
+  "found_in_zip": "$zip",
+  "found_outside_zip": null
+}
+```
+
+If a resource is located OUTSIDE $zip but serves $county residents, set `found_outside_zip` to the actual ZIP and include it.
+
+## What NOT to Record
+
+- Resources already in Beacon's existing database (provided in the exclude list)
+- National-only hotlines without local presence (except 211, 988, Crisis Text Line)
+- Duplicate entries for the same organization at different locations (record each location separately)
+
+## Output Format
+
+Return your findings as a JSON object:
+
+```json
+{
+  "zip": "$zip",
+  "county": "$county",
+  "state": "$state",
+  "resources_found": [...],
+  "categories_searched": ["food", "shelter", ...],
+  "out_of_area_resources": [...],
+  "notes": "Any observations about coverage gaps, area characteristics, etc."
+}
+```
+
+## Exclusion List
+
+These resources are already in Beacon. Skip them if found:
+$exclude_list
