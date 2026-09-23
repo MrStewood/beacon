@@ -12,22 +12,19 @@ Output: JSON with `prompt` field containing the full search instructions, plus m
 
 ### 2. Feed the prompt to a research agent
 
-Give the `prompt` field to a web-search-capable agent. The agent should:
+The agent uses **Playwright MCP browser tools** to search the web:
 
-**Search depth:**
-- Page 1 — always check
-- Page 2 — if page 1 returned fewer than 3 new resources
-- Page 3+ — only if pages 1-2 returned zero
-- **Directory extraction is mandatory** — extract every resource from any directory page found
+| Tool | Purpose |
+|------|---------|
+| `browser_navigate` | Go to Google, visit directories |
+| `browser_type` | Enter search queries |
+| `browser_click` | Follow links, click results |
+| `browser_snapshot` | Read page content (accessibility tree) |
+| `browser_back` | Return to results |
 
-**Counting rules:**
-- Only count new, unique, verified resources (not already in exclusion list, not duplicate, has contact info)
-- Do NOT count duplicates or already-known resources in totals
-
-**Recording:**
-- Record organization name, phone, address, website, services, cost, eligibility
-- Note any resources found outside the target ZIP
-- Return results as JSON matching the schema in the prompt
+**Search depth:** Page 1 always, page 2 if thin, page 3+ for zeros.
+**Directory extraction:** Mandatory — extract every resource from directory pages.
+**Counting:** Only count new + unique + verified resources.
 
 ### 3. Save agent results, process, and commit
 
