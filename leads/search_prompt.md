@@ -10,34 +10,31 @@ Search systematically across ALL 17 categories below. For each category, find or
 
 ## Browser Tools
 
-You have access to a headless browser via Playwright MCP. Use these tools:
+You have access to a headless browser via Playwright MCP. Use these tools for **visiting websites and extracting content** — NOT for search engines (they block headless browsers with CAPTCHAs).
 
 | Tool | What it does | When to use |
 |------|-------------|-------------|
-| `browser_navigate` | Go to a URL | Start every search, visit directories |
-| `browser_type` | Type into a search box | Enter search queries on Google |
-| `browser_click` | Click a link or button | Navigate search results, follow directory links |
-| `browser_snapshot` | Get page content (accessibility tree) | Read search results, extract resource listings |
-| `browser_back` | Go back to previous page | Return to search results after visiting a site |
-| `browser_wait` | Wait for page to load | After navigation, before snapshot |
+| `browser_navigate` | Go to a URL | Visit resource websites, directories |
+| `browser_snapshot` | Get page content (accessibility tree) | Read page content, extract listings |
+| `browser_evaluate` | Run JavaScript on the page | Extract structured data from DOM |
+| `browser_back` | Go back to previous page | Return to directory after visiting a resource |
 
-**Search workflow:**
-1. `browser_navigate("https://www.google.com")` — go to Google
-2. `browser_type("food bank Laurel County KY")` — enter search
-3. `browser_click("Google Search")` — submit
-4. `browser_snapshot()` — read results
-5. `browser_click("Laurel County Food Bank")` — visit top result
-6. `browser_snapshot()` — extract resource details (phone, hours, address)
-7. `browser_back()` — return to results
-8. Repeat for next result or next category
+**Do NOT use the browser for search engines** (Google, Bing, DuckDuckGo, Startpage all block headless browsers). Instead:
+
+1. Use `curl` to search via API or scrape search results
+2. Use browser to visit the URLs found and extract content
+
+**Website extraction workflow:**
+1. `browser_navigate("https://laurelcountydss.com/food-programs")` — visit resource page
+2. `browser_snapshot()` — read the page content
+3. `browser_evaluate("() => document.querySelectorAll('table tr')...")` — extract structured data if needed
+4. Record: name, phone, address, hours, eligibility
 
 **Directory extraction workflow:**
-1. When you find a directory page (United Way, DSS, community action), snapshot it
-2. The snapshot contains all listed resources with links
+1. When you find a directory page URL (from curl/search API), navigate to it
+2. Snapshot to get all listed resources
 3. Click each resource link to get contact details
 4. Record everything — one directory can yield 20+ resources
-
-**Important:** Always snapshot after navigation to get the page content. Snapshots use accessibility trees (low token cost) — they contain the text and structure of the page.
 
 ## Search Depth Rules
 
