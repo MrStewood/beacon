@@ -24,7 +24,7 @@ You have access to a headless browser via patchright MCP. Use these tools for **
 Use `curl` to search via SearXNG (self-hosted metasearch engine):
 
 ```bash
-curl -s "http://searxng:8888/search?q=food+bank+Laurel+County+Kentucky&format=json" | python3 -c "import sys,json; [print(f'{r[\"title\"]} → {r[\"url\"]}') for r in json.load(sys.stdin).get('results',[])]"
+curl -s "http://searxng:8080/search?q=food+bank+Laurel+County+Kentucky&format=json" | python3 -c "import sys,json; [print(f'{r[\"title\"]} → {r[\"url\"]}') for r in json.load(sys.stdin).get('results',[])]"
 ```
 
 **SearXNG queries Google, Bing, DuckDuckGo, Brave, and more** — results merged and deduplicated. No API key needed, no CAPTCHA, unlimited queries.
