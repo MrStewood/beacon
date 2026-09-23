@@ -1,0 +1,12 @@
+{
+  "discovered": {},
+  "out_of_area": {},
+  "processed_zips": {},
+  "stats": {
+    "total_discovered": 0,
+    "total_new": 0,
+    "total_duplicates": 0,
+    "total_out_of_area": 0,
+    "last_run": null
+  }
+}

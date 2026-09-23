@@ -1,10 +1,4 @@
 {
-  "metadata": {
-    "version": "3.0",
-    "source": "Canonical YAML records",
-    "last_updated": "2026-09-20",
-    "total_resources": 0,
-    "needs": []
-  },
+  "version": "3.0",
   "resources": []
 }
