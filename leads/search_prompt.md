@@ -8,6 +8,37 @@ Research community resources available in **$area_description** (ZIP: $zip, Coun
 
 Search systematically across ALL 17 categories below. For each category, find organizations, programs, and services that help people in need.
 
+## Browser Tools
+
+You have access to a headless browser via Playwright MCP. Use these tools:
+
+| Tool | What it does | When to use |
+|------|-------------|-------------|
+| `browser_navigate` | Go to a URL | Start every search, visit directories |
+| `browser_type` | Type into a search box | Enter search queries on Google |
+| `browser_click` | Click a link or button | Navigate search results, follow directory links |
+| `browser_snapshot` | Get page content (accessibility tree) | Read search results, extract resource listings |
+| `browser_back` | Go back to previous page | Return to search results after visiting a site |
+| `browser_wait` | Wait for page to load | After navigation, before snapshot |
+
+**Search workflow:**
+1. `browser_navigate("https://www.google.com")` — go to Google
+2. `browser_type("food bank Laurel County KY")` — enter search
+3. `browser_click("Google Search")` — submit
+4. `browser_snapshot()` — read results
+5. `browser_click("Laurel County Food Bank")` — visit top result
+6. `browser_snapshot()` — extract resource details (phone, hours, address)
+7. `browser_back()` — return to results
+8. Repeat for next result or next category
+
+**Directory extraction workflow:**
+1. When you find a directory page (United Way, DSS, community action), snapshot it
+2. The snapshot contains all listed resources with links
+3. Click each resource link to get contact details
+4. Record everything — one directory can yield 20+ resources
+
+**Important:** Always snapshot after navigation to get the page content. Snapshots use accessibility trees (low token cost) — they contain the text and structure of the page.
+
 ## Search Depth Rules
 
 For each category:
