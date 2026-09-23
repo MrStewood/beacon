@@ -105,6 +105,7 @@ For EACH new resource found, record:
   "name": "Organization or program name",
   "alternate_names": ["Any other names it goes by"],
   "description": "What they do in 1-2 sentences",
+  "category": "food",
   "needs": ["food", "shelter", ...],
   "service_types": ["walk-in", "appointment", ...],
   "populations": ["anyone", "families", ...],
@@ -128,6 +129,11 @@ For EACH new resource found, record:
   "found_outside_zip": null
 }
 ```
+
+**`category` is REQUIRED.** It must be exactly one of the 17 categories:
+`food`, `shelter`, `housing`, `health`, `mental-health`, `addiction`, `crisis`, `family`, `legal`, `documents`, `education`, `jobs`, `transportation`, `utility-assistance`, `clothing`, `community`, `veteran`
+
+Pick the PRIMARY category — the one thing this organization does most. If it fits multiple, put the most important one in `category` and list all in `needs`.
 
 If a resource is located OUTSIDE $zip but serves $county residents, set `found_outside_zip` to the actual ZIP and include it.
 
