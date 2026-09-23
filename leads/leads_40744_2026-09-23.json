@@ -1,0 +1,1466 @@
+{
+  "zip": "40744",
+  "county": "Laurel",
+  "state": "KY",
+  "processed_at": "2026-09-23T02:54:13.343079+00:00",
+  "new_leads": [
+    {
+      "name": "Come-Unity Cooperative Care",
+      "alternate_names": [
+        "Come-Unity Co-op Care",
+        "CCC"
+      ],
+      "description": "Nonprofit Christian organization providing food, clothing, furniture, household items, and Christmas programs to low-income Laurel County residents.",
+      "needs": [
+        "food",
+        "clothing",
+        "community"
+      ],
+      "phones": [
+        "606-864-2351"
+      ],
+      "url": "https://www.idealist.org/en/nonprofit/d88c4f1d5e014cb695fd53d9b549e810-come-unity-cooperative-care-inc-london",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Low-income Laurel County residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.idealist.org/en/nonprofit/d88c4f1d5e014cb695fd53d9b549e810-come-unity-cooperative-care-inc-london"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "comeunity cooperative care|6068642351"
+    },
+    {
+      "name": "God's Pantry Food Bank of Southeast Kentucky",
+      "alternate_names": [
+        "God's Pantry",
+        "Food Bank Southeast KY"
+      ],
+      "description": "Regional food bank serving Central and Eastern Kentucky. Fighting hunger since 1955.",
+      "needs": [
+        "food"
+      ],
+      "phones": [],
+      "url": "https://www.godspantry.org/help",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Anyone in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.godspantry.org/help"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "gods pantry food bank of southeast kentucky|"
+    },
+    {
+      "name": "Grace Fellowship Food Pantry",
+      "alternate_names": [],
+      "description": "Food pantry at Grace Fellowship Church providing emergency food assistance.",
+      "needs": [
+        "food"
+      ],
+      "phones": [],
+      "url": "https://www.mapquest.com/us/kentucky/grace-fellowship-food-pantry-482042975",
+      "address": "502 Barbourville Rd, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "free",
+      "eligibility": "Anyone in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.mapquest.com/us/kentucky/grace-fellowship-food-pantry-482042975"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "grace fellowship food pantry|"
+    },
+    {
+      "name": "New Salem Baptist Church Food Pantry",
+      "alternate_names": [],
+      "description": "Emergency food baskets on case-by-case basis. Open last Tuesday of each month at 6pm.",
+      "needs": [
+        "food"
+      ],
+      "phones": [],
+      "url": "https://www.findhelp.org/new-salem-baptist-church--london-ky--food-pantry/4916643855859712",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Anyone in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.findhelp.org/new-salem-baptist-church--london-ky--food-pantry/4916643855859712"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "new salem baptist church food pantry|"
+    },
+    {
+      "name": "Laurel County Health Department",
+      "alternate_names": [],
+      "description": "Public health department providing food pantries, WIC, immunizations, health education, disease prevention, and community resources.",
+      "needs": [
+        "food",
+        "health"
+      ],
+      "phones": [
+        "606-657-2030"
+      ],
+      "url": "https://www.laurelcohealthdept.org/",
+      "address": "934 S Laurel Rd Suite #2, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "free",
+      "eligibility": "All Laurel County residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.laurelcohealthdept.org/resources-food",
+        "https://www.laurelcohealthdept.org/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "laurel county health department|6066572030"
+    },
+    {
+      "name": "Second Mile 541 Outreach Client Food Pantry",
+      "alternate_names": [
+        "Second Mile 541 Outreach"
+      ],
+      "description": "Food pantry providing meals to community members.",
+      "needs": [
+        "food"
+      ],
+      "phones": [
+        "606-657-5504"
+      ],
+      "url": "https://www.laurelcohealthdept.org/resources-food",
+      "address": "280 Levi Jackson Mill Road, Suite A, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "free",
+      "eligibility": "Anyone in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://www.laurelcohealthdept.org/resources-food"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "second mile 541 outreach client food pantry|6066575504"
+    },
+    {
+      "name": "First Presbyterian Church Food Pantry",
+      "alternate_names": [],
+      "description": "Food pantry open Wednesdays 10am-12pm.",
+      "needs": [
+        "food"
+      ],
+      "phones": [
+        "606-864-6789"
+      ],
+      "url": "https://www.kentuckyneighborinneed.org/resources",
+      "address": "123 Keavy Rd, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "free",
+      "eligibility": "Anyone in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.kentuckyneighborinneed.org/resources"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "first presbyterian church food pantry|6068646789"
+    },
+    {
+      "name": "First United Methodist Church - Backpack Program",
+      "alternate_names": [
+        "FUMC London",
+        "Backpack Program of Laurel County"
+      ],
+      "description": "Backpack program providing food to children on weekends. Meets at God's Pantry Food Bank Southeast Regional Distribution Center.",
+      "needs": [
+        "food"
+      ],
+      "phones": [],
+      "url": "https://londonumc.org/programs",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Children in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://londonumc.org/programs"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "first united methodist church backpack program|"
+    },
+    {
+      "name": "Grace Health Levi Center Clinic & Pharmacy",
+      "alternate_names": [
+        "Levi Center Clinic",
+        "Grace Health Levi Center"
+      ],
+      "description": "Comprehensive primary care, pediatric care, women's health, chronic disease management, and full-service pharmacy.",
+      "needs": [
+        "health"
+      ],
+      "phones": [
+        "606-526-8604",
+        "606-526-9680"
+      ],
+      "url": "https://gracehealthky.org/locations/levi-center-clinic-pharmacy/",
+      "address": "934 S Laurel Rd, Suite 1 (Clinic), Suite 5 (Pharmacy), London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "sliding-scale",
+      "eligibility": "All residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://gracehealthky.org/locations/levi-center-clinic-pharmacy/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "grace health levi center clinic pharmacy|6065268604|6065269680"
+    },
+    {
+      "name": "Fast Pace Health - London Urgent Care",
+      "alternate_names": [
+        "Fast Pace Urgent Care"
+      ],
+      "description": "Walk-in urgent care clinic accepting most major insurances including Medicaid and Medicare.",
+      "needs": [
+        "health"
+      ],
+      "phones": [],
+      "url": "https://fastpacehealth.com/location/london-urgent-care/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "insurance",
+      "eligibility": "All residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://fastpacehealth.com/location/london-urgent-care/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "fast pace health london urgent care|"
+    },
+    {
+      "name": "Faith Healthcare",
+      "alternate_names": [],
+      "description": "Quality medical and dental services. Care regardless of ability to pay.",
+      "needs": [
+        "health"
+      ],
+      "phones": [],
+      "url": "https://faithhealthcare.net/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "sliding-scale",
+      "eligibility": "All residents regardless of ability to pay",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://faithhealthcare.net/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "faith healthcare|"
+    },
+    {
+      "name": "Heartstrings Mental Health",
+      "alternate_names": [
+        "Heartstrings Mental Health PLLC"
+      ],
+      "description": "Mental and behavioral health services including therapy, psychological testing, TMS and Spravato treatments.",
+      "needs": [
+        "mental-health"
+      ],
+      "phones": [
+        "606-770-5086"
+      ],
+      "url": "https://heartstringsmentalhealth.org/",
+      "address": "95 S Laurel Rd, Ste 1, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "insurance",
+      "eligibility": "All residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://heartstringsmentalhealth.org/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "heartstrings mental health|6067705086"
+    },
+    {
+      "name": "Cumberland River Behavioral Health",
+      "alternate_names": [
+        "CRBH"
+      ],
+      "description": "Mental health, developmental and intellectual disabilities, and substance use services across eight county service area including Laurel.",
+      "needs": [
+        "mental-health",
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://crbhky.org/",
+      "address": "915 North Laurel Road, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "sliding-scale",
+      "eligibility": "Residents of 8-county service area",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://crbhky.org/",
+        "https://crbhky.org/substance-abuse/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "cumberland river behavioral health|"
+    },
+    {
+      "name": "Second Mile Behavioral Health",
+      "alternate_names": [
+        "Second Mile Behavioral Health LLC"
+      ],
+      "description": "Case management, therapy, counseling and full range of mental health service options.",
+      "needs": [
+        "mental-health"
+      ],
+      "phones": [],
+      "url": "https://www.facebook.com/secondmilebehavioralhealth/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "unknown",
+      "eligibility": "All residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.facebook.com/secondmilebehavioralhealth/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "second mile behavioral health|"
+    },
+    {
+      "name": "Kentucky Counseling Center - London",
+      "alternate_names": [
+        "KCC London"
+      ],
+      "description": "Online mental health services including counseling, psychiatry, and targeted case management.",
+      "needs": [
+        "mental-health"
+      ],
+      "phones": [],
+      "url": "https://kentuckycounselingcenter.com/kentucky-counseling-center/london/",
+      "address": "1340 S Laurel Rd, London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "insurance",
+      "eligibility": "All residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://kentuckycounselingcenter.com/kentucky-counseling-center/london/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "kentucky counseling center london|"
+    },
+    {
+      "name": "Horizon Health",
+      "alternate_names": [],
+      "description": "Non-profit providing behavioral health, addiction treatment, food pantry, and support services.",
+      "needs": [
+        "mental-health",
+        "addiction",
+        "food"
+      ],
+      "phones": [
+        "606-416-1394"
+      ],
+      "url": "https://horizonhealthky.org/",
+      "address": "934 S. Laurel Rd, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "sliding-scale",
+      "eligibility": "All residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://horizonhealthky.org/",
+        "https://horizonhealthky.org/services/food-pantry/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "horizon health|6064161394"
+    },
+    {
+      "name": "BrightView London Addiction Treatment Center",
+      "alternate_names": [
+        "BrightView London"
+      ],
+      "description": "Outpatient addiction treatment with counseling, recovery support, and medication assisted treatment.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://www.brightviewhealth.com/locations/london-addiction-treatment-center/",
+      "address": "2645 North Laurel Road Suite A, London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "insurance",
+      "eligibility": "All residents with substance use disorder",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.brightviewhealth.com/locations/london-addiction-treatment-center/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "brightview london addiction treatment center|"
+    },
+    {
+      "name": "Spero Health - London",
+      "alternate_names": [
+        "Spero Health London KY"
+      ],
+      "description": "Addiction treatment and recovery support in Laurel County and surrounding areas. Suboxone clinic.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://sperohealth.com/locations/london-ky/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "insurance",
+      "eligibility": "Adults with substance use disorder",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://sperohealth.com/locations/london-ky/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "spero health london|"
+    },
+    {
+      "name": "Groups Recover Together - London",
+      "alternate_names": [
+        "GRT London"
+      ],
+      "description": "Drug counseling and opioid addiction treatment including Suboxone.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://locations.joingroups.com/ky/london/groups-recover-together-london-ky-grt089.html",
+      "address": "1501 S Main St, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "insurance",
+      "eligibility": "Individuals with opioid use disorder",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://locations.joingroups.com/ky/london/groups-recover-together-london-ky-grt089.html"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "groups recover together london|"
+    },
+    {
+      "name": "Stepworks of London",
+      "alternate_names": [
+        "Stepworks"
+      ],
+      "description": "Alcohol and drug rehab facility providing residential treatment.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://www.addictions.com/rehabs/kentucky/london/",
+      "address": "3825 Marydell Road, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "insurance",
+      "eligibility": "Individuals with substance use disorder",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://www.addictions.com/rehabs/kentucky/london/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "stepworks of london|"
+    },
+    {
+      "name": "Addiction Recovery Care (ARC)",
+      "alternate_names": [
+        "ARC"
+      ],
+      "description": "Residential and outpatient drug and alcohol addiction treatment in Eastern and Central Kentucky.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://www.arccenters.com/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "insurance",
+      "eligibility": "Individuals with substance use disorder",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.arccenters.com/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "addiction recovery care arc|"
+    },
+    {
+      "name": "Laurel County ASAP",
+      "alternate_names": [
+        "ASAP",
+        "Area Substance Abuse Policy"
+      ],
+      "description": "Substance abuse resources and Operation UNITE service region information for Laurel County.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://www.laurelcountyasap.com/resources",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Laurel County residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.laurelcountyasap.com/resources"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "laurel county asap|"
+    },
+    {
+      "name": "Good Samaritan House",
+      "alternate_names": [
+        "Good Samaritan House Homeless Shelter"
+      ],
+      "description": "Christian homeless shelter providing temporary shelter, meals, and case management for men, women, and families in Laurel County.",
+      "needs": [
+        "shelter"
+      ],
+      "phones": [
+        "606-862-4600"
+      ],
+      "url": "http://www.goodsamaritanhouseinc.com/",
+      "address": "220 East 4th St, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "free",
+      "eligibility": "Homeless individuals and families in Laurel County",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "http://www.goodsamaritanhouseinc.com/",
+        "https://www.homelessshelterdirectory.org/shelter/ky_good-samaritan-house-homeless-shelter"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "good samaritan house|6068624600"
+    },
+    {
+      "name": "Laurel County Housing Authority",
+      "alternate_names": [
+        "Housing Authority of London"
+      ],
+      "description": "Public housing for low-income families, seniors, and people with disabilities. Also administers Housing Choice Voucher program.",
+      "needs": [
+        "housing"
+      ],
+      "phones": [],
+      "url": "https://www.shelterlistings.org/details/32272",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "sliding-scale",
+      "eligibility": "Low-income families, seniors, people with disabilities",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.shelterlistings.org/details/32272",
+        "https://www.laurelcohealthdept.org/resources-housing"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "laurel county housing authority|"
+    },
+    {
+      "name": "Cumberland Valley Domestic Violence Services",
+      "alternate_names": [
+        "CVDVS"
+      ],
+      "description": "Domestic violence advocacy, shelter, counseling, and 24-hour crisis line serving 8 Kentucky counties including Laurel.",
+      "needs": [
+        "crisis",
+        "shelter"
+      ],
+      "phones": [
+        "1-800-755-5348"
+      ],
+      "url": "https://cvdvs.org/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Domestic violence survivors in 8-county service area",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://cvdvs.org/",
+        "https://www.domesticshelters.org/help/ky/london/40741/cumberland-valley-domestic-violence-services"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "cumberland valley domestic violence services|18007555348"
+    },
+    {
+      "name": "Cumberland River Victims Services",
+      "alternate_names": [
+        "CRVS"
+      ],
+      "description": "Regional rape crisis center serving Bell, Clay, Knox, Harlan, Jackson, Laurel, Rockcastle, and Whitley counties.",
+      "needs": [
+        "crisis"
+      ],
+      "phones": [],
+      "url": "https://crvsky.org/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Victims of sexual assault in 8-county region",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://crvsky.org/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "cumberland river victims services|"
+    },
+    {
+      "name": "Family Support Office - Laurel County",
+      "alternate_names": [
+        "DCBS Laurel County",
+        "Family Support"
+      ],
+      "description": "Food stamps (SNAP), TANF, welfare, Medicaid, EBT card applications, and social services.",
+      "needs": [
+        "family",
+        "documents"
+      ],
+      "phones": [
+        "855-306-8959",
+        "606-330-2025"
+      ],
+      "url": "https://www.financialhelpresources.com/details/family_support_office_laurel_county.html",
+      "address": "31 South Laurel Road, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "free",
+      "eligibility": "Laurel County residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.financialhelpresources.com/details/family_support_office_laurel_county.html"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "family support office laurel county|6063302025|8553068959"
+    },
+    {
+      "name": "Laurel County Life Center",
+      "alternate_names": [],
+      "description": "Pregnancy resources, parenting classes, and baby supplies in Laurel County for over 30 years.",
+      "needs": [
+        "family"
+      ],
+      "phones": [],
+      "url": "https://lclifecenter.org/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Expectant and new parents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://lclifecenter.org/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "laurel county life center|"
+    },
+    {
+      "name": "AppalReD Legal Aid - Barbourville Office",
+      "alternate_names": [
+        "AppalReD",
+        "Appalachian Research and Defense Fund"
+      ],
+      "description": "Free legal services to low-income and vulnerable individuals in eastern and south central Kentucky.",
+      "needs": [
+        "legal"
+      ],
+      "phones": [],
+      "url": "https://www.ardfky.org/node/31/barbourville-office",
+      "address": "Barbourville, KY",
+      "city": "Barbourville",
+      "county": "Knox",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Low-income residents of service area",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.ardfky.org/node/31/barbourville-office"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "appalred legal aid barbourville office|"
+    },
+    {
+      "name": "Laurel County Adult Education",
+      "alternate_names": [
+        "Laurel County Adult Education & Literacy"
+      ],
+      "description": "Free instruction for adults in basic skills, workplace readiness, GED preparation, college preparation. Official GED Testing facility offered every Wednesday 12:00 PM - 8:00 PM.",
+      "needs": [
+        "education"
+      ],
+      "phones": [
+        "606-862-4768"
+      ],
+      "url": "https://laureladulted.org/",
+      "address": "103 S Laurel Rd, London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Adults without high school diploma",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://laureladulted.org/",
+        "https://www.nld.org/laurel-county-adult-education"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "laurel county adult education|6068624768"
+    },
+    {
+      "name": "Somerset Community College - Laurel Campus",
+      "alternate_names": [
+        "SCC Laurel Campus"
+      ],
+      "description": "Community college with student resources, housing, food, and support services including veterans services.",
+      "needs": [
+        "education",
+        "veterans"
+      ],
+      "phones": [
+        "606-862-2872"
+      ],
+      "url": "https://somerset.kctcs.edu/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "unknown",
+      "eligibility": "All residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://somerset.kctcs.edu/",
+        "https://somerset.kctcs.edu/current-students/student-resources/learning-commons/college-navigators/resources.aspx"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "somerset community college laurel campus|6068622872"
+    },
+    {
+      "name": "Kentucky Career Center - Cumberlands",
+      "alternate_names": [
+        "KCC Cumberlands"
+      ],
+      "description": "Job fairs, workforce development, employment services, and vocational rehabilitation for the region.",
+      "needs": [
+        "jobs"
+      ],
+      "phones": [],
+      "url": "https://cumberlandsworkforce.com/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "All residents seeking employment",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://cumberlandsworkforce.com/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "kentucky career center cumberlands|"
+    },
+    {
+      "name": "Staffmark - London, KY",
+      "alternate_names": [
+        "Staffmark London"
+      ],
+      "description": "Employment agency with multiple positions and shifts available.",
+      "needs": [
+        "jobs"
+      ],
+      "phones": [
+        "606-864-9675"
+      ],
+      "url": "https://staffmark.com/locations/london-ky/",
+      "address": "85 S Laurel Rd, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "free",
+      "eligibility": "Job seekers",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://staffmark.com/locations/london-ky/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "staffmark london ky|6068649675"
+    },
+    {
+      "name": "RTEC Public Transit",
+      "alternate_names": [
+        "Rural Transit Enterprises Coordinated"
+      ],
+      "description": "Public transportation serving Bell, Clinton, Cumberland, Knox, Laurel, McCreary counties. Over 50,000 trips annually.",
+      "needs": [
+        "transportation"
+      ],
+      "phones": [],
+      "url": "https://www.ridertec.org/public-transportation",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "sliding-scale",
+      "eligibility": "Residents of service area counties",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.ridertec.org/public-transportation"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "rtec public transit|"
+    },
+    {
+      "name": "Daniel Boone Community Action Agency - Transit",
+      "alternate_names": [
+        "DBCAA Transit",
+        "Daniel Boone Transit"
+      ],
+      "description": "Intercity Greyhound bus connection. Feeder service to Greyhound terminals in London, Berea, Lexington, and Louisville.",
+      "needs": [
+        "transportation"
+      ],
+      "phones": [],
+      "url": "https://danielboonecaa.org/programs/transportation",
+      "address": "188 Dog Patch Trading Center, London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "sliding-scale",
+      "eligibility": "Residents of service area",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://danielboonecaa.org/programs/transportation"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "daniel boone community action agency transit|"
+    },
+    {
+      "name": "Daniel Boone Community Action Agency - LIHEAP",
+      "alternate_names": [
+        "DBCAA LIHEAP"
+      ],
+      "description": "Low Income Home Energy Assistance Program (LIHEAP) for heating and cooling costs. Serves Clay, Jackson, Laurel, Rockcastle counties.",
+      "needs": [
+        "utility-assistance"
+      ],
+      "phones": [],
+      "url": "https://danielboonecaa.org/low-income-home-energy-assistance-program-liheap-crisis",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Low-income households",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://danielboonecaa.org/low-income-home-energy-assistance-program-liheap-crisis"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "daniel boone community action agency liheap|"
+    },
+    {
+      "name": "Saint William Catholic Church - Outreach",
+      "alternate_names": [
+        "St. William Catholic Church Outreach"
+      ],
+      "description": "Outreach office providing assistance with utility bill payments, utility deposits, and rent.",
+      "needs": [
+        "utility-assistance"
+      ],
+      "phones": [],
+      "url": "https://stwilliamlondon.com/outreach-team",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Community members in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://stwilliamlondon.com/outreach-team"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "saint william catholic church outreach|"
+    },
+    {
+      "name": "Salvation Army - Central Kentucky",
+      "alternate_names": [
+        "Salvation Army Central Kentucky"
+      ],
+      "description": "Utility and rent assistance, food pantries, holiday giving, youth services, spiritual and worship services.",
+      "needs": [
+        "utility-assistance",
+        "food",
+        "community"
+      ],
+      "phones": [],
+      "url": "https://www.salvationarmyusa.org/usa-eastern-territory/southwest-ohio-northeast-kentucky/central-kentucky-area-services/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Community members in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.salvationarmyusa.org/usa-eastern-territory/southwest-ohio-northeast-kentucky/central-kentucky-area-services/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "salvation army central kentucky|"
+    },
+    {
+      "name": "Victory Behavioral Health - Free Community Closet",
+      "alternate_names": [
+        "Victory BH Free Store"
+      ],
+      "description": "Free store supplying clothes, household items to anyone who comes.",
+      "needs": [
+        "clothing"
+      ],
+      "phones": [],
+      "url": "https://www.facebook.com/groups/777347005676867/posts/9872928796118597/",
+      "address": "934 Laurel Road, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "free",
+      "eligibility": "Anyone",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.facebook.com/groups/777347005676867/posts/9872928796118597/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "victory behavioral health free community closet|"
+    },
+    {
+      "name": "Hope for London",
+      "alternate_names": [],
+      "description": "Nonprofit providing disaster relief, housing support, and community services.",
+      "needs": [
+        "community"
+      ],
+      "phones": [],
+      "url": "https://www.facebook.com/HopeforLondonKY/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Community members in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.facebook.com/HopeforLondonKY/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "hope for london|"
+    },
+    {
+      "name": "The Center for Rural Development",
+      "alternate_names": [],
+      "description": "Nonprofit providing leadership that stimulates innovative and sustainable economic development.",
+      "needs": [
+        "community"
+      ],
+      "phones": [],
+      "url": "https://centertech.com/",
+      "address": "Somerset, KY",
+      "city": "Somerset",
+      "county": "Pulaski",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Residents of Southern Kentucky",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://centertech.com/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "the center for rural development|"
+    },
+    {
+      "name": "Laurel County Veterans Affairs Office",
+      "alternate_names": [
+        "VSO",
+        "Laurel County VSO"
+      ],
+      "description": "Veterans affairs office helping file VA claims at no charge.",
+      "needs": [
+        "veterans"
+      ],
+      "phones": [
+        "606-344-1003"
+      ],
+      "url": "https://veteranai.co/find-a-veteran-service-organization/ky/laurel-county-ky",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Veterans in Laurel County",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://veteranai.co/find-a-veteran-service-organization/ky/laurel-county-ky"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "laurel county veterans affairs office|6063441003"
+    },
+    {
+      "name": "Disabled American Veterans Chapter 158 - Keavy",
+      "alternate_names": [
+        "DAV Chapter 158"
+      ],
+      "description": "Assists with filing claims for healthcare, disability, employment, and education benefits. Hosts Veterans Game Day and Veteran Coffee Muster.",
+      "needs": [
+        "veterans"
+      ],
+      "phones": [],
+      "url": "https://davwebsites.dav.org/ky/66/SystemPages/Home.aspx",
+      "address": "300 DAV Ln, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "free",
+      "eligibility": "Veterans",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://davwebsites.dav.org/ky/66/SystemPages/Home.aspx"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "disabled american veterans chapter 158 keavy|"
+    },
+    {
+      "name": "Haven House",
+      "alternate_names": [],
+      "description": "Mental health treatment center in Laurel County at 349 Riverbend Road.",
+      "needs": [
+        "mental-health"
+      ],
+      "phones": [],
+      "url": "https://www.mentalhealthcenters.net/clinics/kentucky/laurel-county.html",
+      "address": "349 Riverbend Road, London, KY 40744",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40744",
+      "cost": "unknown",
+      "eligibility": "Individuals with mental health disorders",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.mentalhealthcenters.net/clinics/kentucky/laurel-county.html"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "haven house|"
+    },
+    {
+      "name": "Kentucky Homeplace Program",
+      "alternate_names": [
+        "KY Homeplace"
+      ],
+      "description": "Connects rural individuals and families to medical, social and environmental services, and delivers education.",
+      "needs": [
+        "community",
+        "health"
+      ],
+      "phones": [],
+      "url": "https://www.findhelp.org/transit/transportation--london-ky",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Rural residents",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.findhelp.org/transit/transportation--london-ky"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "kentucky homeplace program|"
+    },
+    {
+      "name": "London Women's Care - Behavioral Health",
+      "alternate_names": [
+        "LWC Behavioral Health"
+      ],
+      "description": "Comprehensive mental health services with experienced providers in a confidential environment.",
+      "needs": [
+        "mental-health"
+      ],
+      "phones": [],
+      "url": "https://londonwomenscare.com/services/behavioral-health/",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "insurance",
+      "eligibility": "Women",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://londonwomenscare.com/services/behavioral-health/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "london womens care behavioral health|"
+    },
+    {
+      "name": "Be the Village - Resource Center",
+      "alternate_names": [],
+      "description": "Resource center with clothing donations, new items with exception of excellent condition used clothing.",
+      "needs": [
+        "clothing",
+        "community"
+      ],
+      "phones": [],
+      "url": "https://www.bethevillageky.com/resource-center-donations",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "Community members in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.bethevillageky.com/resource-center-donations"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "be the village resource center|"
+    },
+    {
+      "name": "South Kentucky RECC - CARES Program",
+      "alternate_names": [
+        "SKRECC CARES"
+      ],
+      "description": "Community Assistance Resources for Energy Savings - weatherization and energy efficiency services.",
+      "needs": [
+        "utility-assistance"
+      ],
+      "phones": [],
+      "url": "https://www.skrecc.com/cares",
+      "address": "London, KY",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "",
+      "cost": "free",
+      "eligibility": "SKRECC members",
+      "found_in_zip": "40744",
+      "found_outside_zip": null,
+      "source_urls": [
+        "https://www.skrecc.com/cares"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "south kentucky recc cares program|"
+    }
+  ],
+  "duplicates": [],
+  "out_of_area": [
+    {
+      "name": "Second Mile 541 Outreach Client Food Pantry",
+      "alternate_names": [
+        "Second Mile 541 Outreach"
+      ],
+      "description": "Food pantry providing meals to community members.",
+      "needs": [
+        "food"
+      ],
+      "phones": [
+        "606-657-5504"
+      ],
+      "url": "https://www.laurelcohealthdept.org/resources-food",
+      "address": "280 Levi Jackson Mill Road, Suite A, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "free",
+      "eligibility": "Anyone in need",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://www.laurelcohealthdept.org/resources-food"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "second mile 541 outreach client food pantry|6066575504"
+    },
+    {
+      "name": "Cumberland River Behavioral Health",
+      "alternate_names": [
+        "CRBH"
+      ],
+      "description": "Mental health, developmental and intellectual disabilities, and substance use services across eight county service area including Laurel.",
+      "needs": [
+        "mental-health",
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://crbhky.org/",
+      "address": "915 North Laurel Road, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "sliding-scale",
+      "eligibility": "Residents of 8-county service area",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://crbhky.org/",
+        "https://crbhky.org/substance-abuse/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "cumberland river behavioral health|"
+    },
+    {
+      "name": "Groups Recover Together - London",
+      "alternate_names": [
+        "GRT London"
+      ],
+      "description": "Drug counseling and opioid addiction treatment including Suboxone.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://locations.joingroups.com/ky/london/groups-recover-together-london-ky-grt089.html",
+      "address": "1501 S Main St, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "insurance",
+      "eligibility": "Individuals with opioid use disorder",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://locations.joingroups.com/ky/london/groups-recover-together-london-ky-grt089.html"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "groups recover together london|"
+    },
+    {
+      "name": "Stepworks of London",
+      "alternate_names": [
+        "Stepworks"
+      ],
+      "description": "Alcohol and drug rehab facility providing residential treatment.",
+      "needs": [
+        "addiction"
+      ],
+      "phones": [],
+      "url": "https://www.addictions.com/rehabs/kentucky/london/",
+      "address": "3825 Marydell Road, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "insurance",
+      "eligibility": "Individuals with substance use disorder",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://www.addictions.com/rehabs/kentucky/london/"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "stepworks of london|"
+    },
+    {
+      "name": "Good Samaritan House",
+      "alternate_names": [
+        "Good Samaritan House Homeless Shelter"
+      ],
+      "description": "Christian homeless shelter providing temporary shelter, meals, and case management for men, women, and families in Laurel County.",
+      "needs": [
+        "shelter"
+      ],
+      "phones": [
+        "606-862-4600"
+      ],
+      "url": "http://www.goodsamaritanhouseinc.com/",
+      "address": "220 East 4th St, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "free",
+      "eligibility": "Homeless individuals and families in Laurel County",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "http://www.goodsamaritanhouseinc.com/",
+        "https://www.homelessshelterdirectory.org/shelter/ky_good-samaritan-house-homeless-shelter"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "good samaritan house|6068624600"
+    },
+    {
+      "name": "Disabled American Veterans Chapter 158 - Keavy",
+      "alternate_names": [
+        "DAV Chapter 158"
+      ],
+      "description": "Assists with filing claims for healthcare, disability, employment, and education benefits. Hosts Veterans Game Day and Veteran Coffee Muster.",
+      "needs": [
+        "veterans"
+      ],
+      "phones": [],
+      "url": "https://davwebsites.dav.org/ky/66/SystemPages/Home.aspx",
+      "address": "300 DAV Ln, London, KY 40741",
+      "city": "London",
+      "county": "Laurel",
+      "state": "KY",
+      "zip": "40741",
+      "cost": "free",
+      "eligibility": "Veterans",
+      "found_in_zip": "40744",
+      "found_outside_zip": "40741",
+      "source_urls": [
+        "https://davwebsites.dav.org/ky/66/SystemPages/Home.aspx"
+      ],
+      "first_seen": "2026-09-23T02:54:13.343079+00:00",
+      "dedup_key": "disabled american veterans chapter 158 keavy|"
+    }
+  ],
+  "summary": {
+    "total_found": 48,
+    "new": 48,
+    "duplicates": 0,
+    "out_of_area": 6
+  }
+}
