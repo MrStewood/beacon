@@ -13,21 +13,44 @@ Output: JSON with `prompt` field containing the full search instructions, plus m
 ### 2. Feed the prompt to a research agent
 
 Give the `prompt` field to a web-search-capable agent. The agent should:
-- Search each of the 17 categories systematically
+
+**Search depth:**
+- Page 1 — always check
+- Page 2 — if page 1 returned fewer than 3 new resources
+- Page 3+ — only if pages 1-2 returned zero
+- **Directory extraction is mandatory** — extract every resource from any directory page found
+
+**Counting rules:**
+- Only count new, unique, verified resources (not already in exclusion list, not duplicate, has contact info)
+- Do NOT count duplicates or already-known resources in totals
+
+**Recording:**
 - Record organization name, phone, address, website, services, cost, eligibility
 - Note any resources found outside the target ZIP
 - Return results as JSON matching the schema in the prompt
 
-### 3. Save agent results and process them
-
-Save the agent's JSON output to a file, then run:
+### 3. Save agent results, process, and commit
 
 ```bash
-python3 leads/research.py process 41640 agent_results.json
+# Save results
+cat > leads/results_41640.json << 'ENDJSON'
+{ ... agent JSON ... }
+ENDJSON
+
+# Process (dedup + save)
+python3 leads/research.py process 41640 leads/results_41640.json
+
+# Commit to GitHub
+git add leads/leads_41640_*.json leads/dedup.json
+git commit -m "leads: 41640 (Clay, KY) — 12 new, 3 duplicates"
+git push origin main
+
+# Clean up raw results
+rm leads/results_41640.json
 ```
 
 This will:
-- Deduplicate against existing Beacon data (436 resources)
+- Deduplicate against existing Beacon data
 - Deduplicate against previously discovered leads
 - Separate new leads from duplicates
 - Flag out-of-area resources for future expansion
