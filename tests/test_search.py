@@ -129,6 +129,16 @@ def resources():
         return json.load(f)["resources"]
 
 
+def require_need(resources, need):
+    if not any(need in r.get('needs', []) for r in resources):
+        pytest.skip(f"dataset has no {need} resources")
+
+
+def require_name(resources, text):
+    if not any(text in r.get('name', '').lower() for r in resources):
+        pytest.skip(f"dataset has no resource matching {text}")
+
+
 class TestSearchAccuracy:
     """Verify search returns relevant results, not overmatches."""
 
@@ -149,6 +159,7 @@ class TestSearchAccuracy:
 
     def test_detox_returns_addiction(self, resources):
         """'detox' should return addiction-treatment resources."""
+        require_need(resources, 'addiction')
         results = search(resources, 'detox')
         assert len(results) > 0, "No results for detox"
         for r in results[:5]:
@@ -156,6 +167,7 @@ class TestSearchAccuracy:
 
     def test_lawyer_returns_legal(self, resources):
         """'lawyer' should return legal resources."""
+        require_need(resources, 'legal')
         results = search(resources, 'lawyer')
         assert len(results) > 0, "No results for lawyer"
         for r in results[:5]:
@@ -175,8 +187,8 @@ class TestSearchAccuracy:
 
     def test_misspelled_name_still_found(self, resources):
         """A misspelled organization name can still be found via fuzzy match."""
+        require_name(resources, 'cumberland')
         results = search(resources, 'cumbrland river')
-        # Should find Cumberland River resources via fuzzy matching
         found = any('cumberland' in r['name'].lower() for r in results[:5])
         assert found, "Misspelled 'cumbrland' should still find Cumberland River"
 

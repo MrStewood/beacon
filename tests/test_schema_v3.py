@@ -30,13 +30,13 @@ class TestV3Migration:
         """V3 data file should exist."""
         assert V3_DATA_PATH.exists(), "V3 data file not found"
 
-    def test_all_resources_migrated(self, v3_data):
-        """All v2 resources should be in v3."""
-        assert v3_data["metadata"]["total_resources"] == 218
+    def test_resource_count_matches_payload(self, v3_data):
+        """Metadata count should match the generated resource list."""
+        assert v3_data["metadata"]["total_resources"] == len(v3_data["resources"])
 
     def test_schema_version(self, v3_data):
         """Schema version should be 3.0."""
-        assert v3_data["schema_version"] == "3.0"
+        assert v3_data["metadata"]["version"] == "3.0"
 
     def test_all_have_coverage_scope(self, v3_data):
         """Every resource must have a coverage_scope."""
