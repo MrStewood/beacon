@@ -12,19 +12,16 @@ Output: JSON with `prompt` field containing the full search instructions, plus m
 
 ### 2. Feed the prompt to a research agent
 
-The agent uses **Playwright MCP browser tools** to search the web:
+The agent uses **Playwright MCP browser tools** to visit websites and extract content:
 
 | Tool | Purpose |
 |------|---------|
-| `browser_navigate` | Go to Google, visit directories |
-| `browser_type` | Enter search queries |
-| `browser_click` | Follow links, click results |
+| `browser_navigate` | Visit resource websites, directories |
 | `browser_snapshot` | Read page content (accessibility tree) |
-| `browser_back` | Return to results |
+| `browser_evaluate` | Extract structured data via JavaScript |
+| `browser_back` | Return to directory after visiting a resource |
 
-**Search depth:** Page 1 always, page 2 if thin, page 3+ for zeros.
-**Directory extraction:** Mandatory — extract every resource from directory pages.
-**Counting:** Only count new + unique + verified resources.
+**Search engines block headless browsers** — use `curl` for search/discovery, browser for content extraction.
 
 ### 3. Save agent results, process, and commit
 

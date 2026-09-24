@@ -22,6 +22,7 @@
 
   "pilot_limits": {
     "max_active_cases": 1,
+    "max_received_leads": 50,
     "max_agents_running": 1,
     "allowed_risk_tiers": ["low"],
     "allowed_geography": {
