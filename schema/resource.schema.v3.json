@@ -32,6 +32,10 @@
       "type": "string",
       "maxLength": 2000
     },
+    "status": {
+      "type": "string",
+      "enum": ["active", "needs-verification", "closed"]
+    },
     "organization_id": {
       "type": ["string", "null"],
       "description": "Stable ID for the parent organization."
@@ -267,6 +271,11 @@
     "zip": {
       "type": ["string", "null"],
       "description": "DEPRECATED: Use locations[].postal_code instead."
+    },
+    "map_url": {
+      "type": ["string", "null"],
+      "pattern": "^https?://.*",
+      "description": "DEPRECATED: Generated map link for current public clients."
     }
   },
   "additionalProperties": false

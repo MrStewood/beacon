@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate CSV from resources.json (v2 schema)."""
+"""Generate CSV from the generated v3+compat public resources dataset."""
 import json, csv, os
 from config import DATA_DIR
 
@@ -51,7 +51,7 @@ def main():
     # Per-county CSVs
     by_county = {}
     for r in resources:
-        c = r.get('county', 'Unknown')
+        c = r.get('county') or 'Unknown'
         by_county.setdefault(c, []).append(r)
 
     os.makedirs(DATA_DIR / 'csv-by-county', exist_ok=True)

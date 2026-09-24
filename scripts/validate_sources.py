@@ -5,6 +5,12 @@ import json
 import sys
 from pathlib import Path
 
+try:
+    import yaml
+except ImportError:
+    print("ERROR: pyyaml not installed. Run: pip install pyyaml")
+    sys.exit(1)
+
 REPO_ROOT = Path(__file__).parent.parent
 
 ALLOWED_SOURCE_TYPES = {
@@ -90,17 +96,18 @@ def validate_sensitive(resources):
     return errors, warnings
 
 
+def load_approved_resources():
+    resources = []
+    source_dir = REPO_ROOT / "source" / "approved"
+    for path in source_dir.rglob("*.yaml"):
+        data = yaml.safe_load(path.read_text())
+        if data and data.get("id"):
+            resources.append(data)
+    return resources
+
+
 def main():
-    # Load v3 data
-    data_path = REPO_ROOT / "data" / "v3" / "resources.json"
-    if not data_path.exists():
-        print("V3 data not found, skipping source validation")
-        return 0
-
-    with open(data_path) as f:
-        data = json.load(f)
-
-    resources = data.get('resources', [])
+    resources = load_approved_resources()
 
     print("=== Source & Workflow Validation ===\n")
 

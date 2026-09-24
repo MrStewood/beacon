@@ -10,7 +10,7 @@ except ImportError:
     pytest.skip("jsonschema not installed", allow_module_level=True)
 
 REPO_ROOT = Path(__file__).parent.parent
-SCHEMA_PATH = REPO_ROOT / "schema" / "resource.schema.json"
+SCHEMA_PATH = REPO_ROOT / "schema" / "resource.schema.v3.json"
 DATA_PATH = REPO_ROOT / "data" / "resources.json"
 
 
@@ -59,7 +59,7 @@ class TestSchemaValidation:
             "addiction", "clothing", "community", "crisis", "documents",
             "education", "family", "food", "health", "housing",
             "jobs", "legal", "mental-health", "shelter", "transportation",
-            "veterans"
+            "utility-assistance", "veterans"
         }
         for r in resources:
             for need in r.get("needs", []):
