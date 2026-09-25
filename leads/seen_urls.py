@@ -2,13 +2,13 @@
 """
 Persistent URL registry for Beacon lead generation.
 
-Tracks every URL the model has evaluated, keyed by URL, with outcome and run metadata.
-Used to filter presearch results so the model never sees the same URL twice.
+Tracks every URL the model has evaluated, keyed by URL, with outcome and run
+metadata, so repeat runs can skip work that is already done.
 
 Usage:
-  python3 leads/seen_urls.py rebuild          # rebuild from all processed runs
-  python3 leads/seen_urls.py show             # print stats
-  python3 leads/seen_urls.py filter <file>    # filter a presearch JSON file, print filtered JSON
+  python3 leads/seen_urls.py show                 # print stats (default)
+  python3 leads/seen_urls.py rebuild              # rebuild from all processed runs
+  python3 leads/seen_urls.py update <processed>   # add URLs from one processed run
 """
 
 import json
@@ -91,21 +91,6 @@ def update_from_processed(processed_path: str) -> dict:
     return registry, added
 
 
-def filter_presearch(presearch: dict, registry: dict) -> tuple[dict, int]:
-    """Remove already-seen URLs from a presearch result dict. Returns (filtered, removed_count)."""
-    removed = 0
-    for cat, results in presearch.get("results_by_category", {}).items():
-        before = len(results)
-        presearch["results_by_category"][cat] = [
-            r for r in results if r.get("url") not in registry
-        ]
-        removed += before - len(presearch["results_by_category"][cat])
-    presearch["total_unique_urls"] = sum(
-        len(v) for v in presearch["results_by_category"].values()
-    )
-    return presearch, removed
-
-
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "show"
 
@@ -135,13 +120,6 @@ if __name__ == "__main__":
         registry, added = update_from_processed(sys.argv[2])
         save(registry)
         print(f"Updated registry: +{added} URLs, total {len(registry)}")
-
-    elif cmd == "filter" and len(sys.argv) > 2:
-        registry = load()
-        presearch = json.load(open(sys.argv[2]))
-        filtered, removed = filter_presearch(presearch, registry)
-        print(json.dumps(filtered), file=sys.stdout)
-        print(f"Filtered {removed} already-seen URLs", file=sys.stderr)
 
     else:
         print(__doc__)
