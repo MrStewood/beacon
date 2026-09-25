@@ -2,13 +2,13 @@
 
 ## End-to-End Workflow
 
-### 1. Generate a research prompt for a ZIP code
+### 1. Create a lead-generation run for a ZIP code
 
 ```bash
-python3 leads/research.py prompt 41640
+python3 pilot/routines.py lead-generation 41640
 ```
 
-Output: JSON with `prompt` field containing the full search instructions, plus metadata (county, state, categories, existing resources to exclude).
+Output: a planned run under `leads/runs/41640/` with a prompt JSON containing search instructions, metadata, categories, and exclusions from published resources, open pilot cases, and previously discovered leads.
 
 ### 2. Feed the prompt to a research agent
 
@@ -32,23 +32,23 @@ cat > leads/results_41640.json << 'ENDJSON'
 ENDJSON
 
 # Process (dedup + save)
-python3 leads/research.py process 41640 leads/results_41640.json
+python3 pilot/routines.py lead-generation 41640 leads/results_41640.json
 
-# Commit to GitHub
-git add leads/leads_41640_*.json leads/dedup.json
+# Commit to GitHub from a feature branch
+git add leads/runs/41640/ leads/leads_41640_*.json leads/dedup.json
 git commit -m "leads: 41640 (Clay, KY) — 12 new, 3 duplicates"
-git push origin main
 
 # Clean up raw results
 rm leads/results_41640.json
 ```
 
 This will:
-- Deduplicate against existing Beacon data
-- Deduplicate against previously discovered leads
-- Separate new leads from duplicates
-- Flag out-of-area resources for future expansion
-- Save leads to `leads/leads_41640_YYYY-MM-DD.json`
+- Deduplicate against published Beacon records
+- Deduplicate against current pilot cases
+- Deduplicate against previously discovered leads and prior run artifacts
+- Respect previously rejected leads
+- Separate new leads, duplicates, near-duplicates, related programs, rejected leads, insufficient-info findings, and out-of-area resources
+- Save unique run artifacts to `leads/runs/<zip>/leadgen-<zip>-<timestamp>-*.json`
 - Update `leads/dedup.json`
 
 ### 4. Review results
@@ -66,10 +66,14 @@ python3 leads/research.py out-of-area
 
 ## Deduplication
 
-Three levels of dedup:
-1. **Exact match**: Same normalized name + same phone digits → already in Beacon
-2. **Lead match**: Same key in `dedup.json` → already discovered
-3. **Near-duplicate**: Same normalized name but different phone → flagged for review
+Lead generation checks every durable place a resource can already exist:
+1. **Published records**: `source/approved/**/*.yaml` and generated resource JSON.
+2. **Pilot cases**: every `pilot/cases/*.json` state, including `received` and active work.
+3. **Lead queue**: `leads/dedup.json`.
+4. **Prior run artifacts**: `leads/runs/<zip>/*-processed.json` and legacy `leads/leads_*.json`.
+5. **Rejected leads**: `pilot/rejected/*.json` and rejected dedup statuses.
+
+Classifications are explicit: `new`, `duplicate_existing_resource`, `duplicate_existing_case`, `duplicate_existing_lead`, `duplicate_prior_run`, `previously_rejected`, `reconsider_rejected`, `near_duplicate_review`, `possible_related_program`, `out_of_area_new`, `insufficient_info`, or `policy_rejected`.
 
 ## Out-of-Area Tracking
 

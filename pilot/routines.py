@@ -3,6 +3,7 @@
 
 Usage:
     python pilot/routines.py safety
+    python pilot/routines.py lead-generation <zip> [results.json] [--dry-run]
 """
 
 from __future__ import annotations
@@ -209,9 +210,51 @@ def cmd_safety(_: list[str]) -> int:
     print("tests=passed")
     return 0
 
+def cmd_lead_generation(args: list[str]) -> int:
+    if not args:
+        print("Usage: lead-generation <zip> [results.json] [--dry-run]")
+        return 1
+
+    zip_code = args[0]
+    dry_run = "--dry-run" in args
+    positional = [arg for arg in args[1:] if arg != "--dry-run"]
+
+    safety_status = cmd_safety([])
+    if safety_status != 0:
+        return safety_status
+
+    if positional:
+        command = [sys.executable, "leads/research.py", "process", zip_code, positional[0]]
+        if dry_run:
+            command.append("--dry-run")
+    else:
+        command = [sys.executable, "leads/research.py", "plan", zip_code]
+
+    ok, output = run_command(command)
+    print(output)
+    if not ok:
+        print("ERROR: lead generation routine failed")
+        return 1
+
+    # Auto-update seen_urls registry if we just processed results
+    if positional:
+        try:
+            result = json.loads(output)
+            processed_file = result.get("processed_file")
+            if processed_file:
+                uu_ok, uu_out = run_command([sys.executable, "leads/seen_urls.py", "update", processed_file])
+                print(uu_out)
+        except Exception:
+            pass  # non-fatal; registry can be rebuilt with 'python leads/seen_urls.py rebuild'
+
+    return 0
+
+
+
 
 COMMANDS = {
     "safety": cmd_safety,
+    "lead-generation": cmd_lead_generation,
 }
 
 
