@@ -1,6 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "processed_zips": {},
+  "zip_runs": {},
   "discovered": {},
   "out_of_area": {},
   "stats": {
