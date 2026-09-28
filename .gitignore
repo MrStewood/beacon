@@ -39,6 +39,7 @@ data/csv-by-county/
 
 # AI operational runtime state — written during research/pipeline runs
 leads/runs/
+leads/needs_human_review/
 # leads/investigations/ — committed; evidence trail for candidates
 pilot/cases/
 pilot/audit/

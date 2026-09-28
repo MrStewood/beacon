@@ -31,6 +31,7 @@ public_access: 'yes'
 access_notes: 'Call 1-800-755-5348 (24-hour crisis line) or 606-843-2022; self-referral accepted. Website does not publish
   a street address — call for location. Emergency: 911.'
 phones:
+- 1-800-755-5348
 - (606) 843-2022
 url: https://cvdvs.org/
 hours: 24/7 crisis line; safe shelter available around the clock

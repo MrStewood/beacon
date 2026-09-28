@@ -346,7 +346,7 @@ def resource_page(r, data):
     <footer class="footer">
         <div class="wrap">
             <p>Beacon Community Resource Directory</p>
-            <p style="margin-top:var(--space-2)">Data from <a href="https://is5810.com/main/resources/">Isaiah 58:10 Ministries</a> · <a href="https://github.com/MrStewood/beacon">Source Code</a></p>
+            <p style="margin-top:var(--space-2)"><a href="https://github.com/MrStewood/beacon">Beacon on GitHub</a> · Data from public sources</p>
         </div>
     </footer>
 </body>
@@ -453,7 +453,9 @@ def need_page(need, resources):
 
 def main():
     data = load_data()
-    resources = data["resources"]
+    # Only generate pages for active resources — inactive ones would show
+    # stale info and could mislead people in need.
+    resources = [r for r in data["resources"] if r.get("status", "active") != "inactive"]
 
     # Create directories
     os.makedirs(PAGES_DIR / "resource", exist_ok=True)

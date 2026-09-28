@@ -66,7 +66,34 @@ if extra:
         print(f"  - {rid}")
     ok = False
 
-if ok:
+# --- Also check index.json and v3/resources.json contain the same IDs ---
+for label, path in [
+    ("data/index.json",        REPO / "data" / "index.json"),
+    ("data/v3/resources.json", REPO / "data" / "v3" / "resources.json"),
+]:
+    if not path.exists():
+        print(f"FAIL: {label} does not exist — run scripts/build_from_yaml.py and commit")
+        ok = False
+        continue
+    try:
+        d = json.loads(path.read_text())
+        ids = {r["id"] for r in d.get("resources", [])}
+    except Exception as e:
+        print(f"FAIL: could not parse {label}: {e}")
+        ok = False
+        continue
+    missing2 = approved_ids - ids
+    extra2   = ids - approved_ids
+    if missing2 or extra2:
+        print(f"FAIL: {label} out of sync with source/approved/")
+        for rid in sorted(missing2): print(f"  missing: {rid}")
+        for rid in sorted(extra2):   print(f"  extra:   {rid}")
+        print(f"Run 'python scripts/build_from_yaml.py' and commit {label}")
+        ok = False
+    else:
+        print(f"OK: {label} in sync — {len(approved_ids)} resource(s)")
+
+if ok and not missing and not extra:
     print(f"OK: data/resources.json in sync — {len(approved_ids)} resource(s) match source/approved/")
 
 sys.exit(0 if ok else 1)

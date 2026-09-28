@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -468,37 +469,98 @@ Rules:
 
 def execute(action: dict) -> None:
     """Dispatch the decided action to the appropriate pipeline module."""
-    a = action["action"]
+    a      = action["action"]
     target = action.get("target")
+    meta   = action.get("meta", {})   # extra data the LLM may pass (lead dict, paths, etc.)
+
+    def _run(*args: str) -> None:
+        cmd = [sys.executable, "-m"] + list(args)
+        log.info("running: %s", " ".join(cmd))
+        result = subprocess.run(cmd, cwd=BEACON_ROOT)
+        if result.returncode != 0:
+            log.warning("command exited %d: %s", result.returncode, " ".join(cmd))
 
     if a == "investigate_lead":
-        print(f"  → would run: python -m app.pipeline.investigate --lead {target!r}")
-        print("    (execute wiring pending)")
+        # target is the lead name; look it up in dedup.json to get full lead data
+        lead_json = _resolve_lead(target)
+        if lead_json is None:
+            log.error("investigate_lead: could not find lead %r in dedup.json", target)
+            return
+        _run("app.pipeline.investigate", "--json", json.dumps(lead_json))
 
     elif a == "build_candidate":
-        print(f"  → would run: python -m app.pipeline.candidate {target!r}")
+        # target is the investigation JSON file path
+        inv_path = _resolve_investigation(target)
+        if inv_path is None:
+            log.error("build_candidate: no investigation file found for %r", target)
+            return
+        _run("app.pipeline.candidate", str(inv_path))
 
     elif a == "review_candidate":
-        print(f"  → would run: python -m app.pipeline.review_candidate {target!r}")
+        # target is the candidate YAML path or candidate ID
+        cand_path = _resolve_candidate(target)
+        if cand_path is None:
+            log.error("review_candidate: no candidate file found for %r", target)
+            return
+        _run("app.pipeline.review_candidate", str(cand_path))
 
     elif a == "run_followup":
-        print(f"  → would run: python -m app.pipeline.followup {target!r}")
+        cand_path = _resolve_candidate(target)
+        if cand_path:
+            _run("app.pipeline.followup", str(cand_path))
 
     elif a == "research_zip":
-        print(f"  → would run: python -m app.pipeline.research {target!r}")
+        _run("app.pipeline.research", str(target))
 
     elif a == "expand_geography":
-        print(f"  → would run: python -m app.pipeline.research {target!r} (new ZIP)")
+        _run("app.pipeline.research", str(target))
 
     elif a == "alert_human":
         _write_alert(action)
-        print(f"  ⚠ Alert written to leads/alerts/")
+        log.info("⚠ Alert written to leads/alerts/")
 
     elif a == "idle":
-        print("  → nothing to do right now")
+        log.info("nothing to do right now")
 
     else:
-        print(f"  → unknown action: {a!r}")
+        log.warning("unknown action: %r", a)
+
+
+def _resolve_lead(name: str | None) -> dict | None:
+    """Look up a lead by name in dedup.json and return its full dict."""
+    if not name or not DEDUP_FILE.exists():
+        return None
+    dedup = json.loads(DEDUP_FILE.read_text()).get("discovered", {})
+    name_lower = name.lower().strip()
+    for slug, lead in dedup.items():
+        if lead.get("name", "").lower().strip() == name_lower:
+            return {**lead, "slug": slug}
+    return None
+
+
+def _resolve_investigation(target: str | None) -> Path | None:
+    """Find the most recent investigation JSON file matching target."""
+    if not target or not INVESTIGATIONS_DIR.exists():
+        return None
+    # target may be a path or a name slug
+    p = Path(target)
+    if p.exists():
+        return p
+    target_slug = target.lower().replace(" ", "-")
+    matches = sorted(INVESTIGATIONS_DIR.rglob(f"*{target_slug}*.json"), key=lambda x: x.stat().st_mtime, reverse=True)
+    return matches[0] if matches else None
+
+
+def _resolve_candidate(target: str | None) -> Path | None:
+    """Find a candidate YAML file matching target (path or name slug)."""
+    if not target or not CANDIDATES_DIR.exists():
+        return None
+    p = Path(target)
+    if p.exists():
+        return p
+    target_slug = target.lower().replace(" ", "-")
+    matches = sorted(CANDIDATES_DIR.rglob(f"*{target_slug}*.yaml"), key=lambda x: x.stat().st_mtime, reverse=True)
+    return matches[0] if matches else None
 
 
 def _write_alert(action: dict) -> None:
