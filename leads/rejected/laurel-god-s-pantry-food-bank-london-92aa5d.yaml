@@ -1,9 +1,15 @@
-# Approved resource — God's Pantry Food Bank - London
-# Reviewed: 2026-09-28T05:46:32Z
-# Reviewer decision: Address confirmed by two independent sources (godspantry.org contact page lists the London site as its Southeast Regional Distribution Center; Laurel County Health Department food resource guide lists God's Pantry Food Bank at 1215 East 4th St). The health department guide — a public-facing food resource list — also supplies the London phone 606-862-6693 and hours Mon–Fri 7:00 AM–3:30 PM, resolving the researcher's unknown phone/hours fields. Organization is active (Facebook page updated April 2025), category 'food' is accurate, and the flagged duplicates are the parent org/alternate-name listings rather than separate approved records.
+# Rejected candidate — God's Pantry Food Bank - London
+# Rejected: 2026-09-28
+# Reason: London site is a regional distribution center/warehouse, not a public-facing direct-service pantry.
 
 id: laurel-god-s-pantry-food-bank-london-92aa5d
 name: God's Pantry Food Bank - London
+workflow_state: rejected
+rejection:
+  reason: not_public_facing
+  reviewed_at: '2026-09-28'
+  reviewer: human
+  reasoning: User confirmed this site is not open to the public; keep rejected so it is not re-queued or published.
 status: active
 coverage_scope: multi-county
 needs:
@@ -23,10 +29,12 @@ locations:
   geocoding_source: nominatim
   geocoded_at: '2026-09-28'
   county_fips: '21125'
-verification_status: verified
+verification_status: rejected
 last_verified: '2026-09-28'
-verified_by: review-agent
-confidence: medium
+verified_by: human-review
+confidence: high
+public_access: 'no'
+access_notes: London site is a regional distribution center/warehouse, not a public-facing direct-service pantry.
 phones:
 - (606) 862-6693
 hours: Mon-Fri 7:00 AM-3:30 PM
@@ -40,7 +48,7 @@ cost: unknown
 what_to_bring: 'Health Care Pantry Program: emergency food box of pre-selected shelf-stable meal components feeding a household
   for 1-2 days. Eligibility: patients only, screened by health care providers (no ID/proof of address stated); providers also
   refer to local food pantries. Includes CHI Saint Joseph London, 1001 St. Joseph Lane, London, KY 40701.'
-intake_process: Walk-ins welcome; no appointments needed for many distributions
+intake_process: Not public-facing; use God's Pantry partner pantry finder or local public pantries instead.
 source_urls:
 - https://www.godspantry.org/help
 - https://www.godspantry.org/

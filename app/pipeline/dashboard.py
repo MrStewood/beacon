@@ -29,6 +29,7 @@ from app.pipeline.supervisor import (
     BEACON_ROOT,
     CATEGORY_PRIORITY,
     INVESTIGATIONS_DIR,
+    REJECTED_DIR,
     SENSITIVE_CATEGORIES,
     snapshot_state,
 )
@@ -146,11 +147,16 @@ def collect(snap: dict | None = None) -> dict:
                 1 for f in findings if f.get("conflicts_with")
             )
 
-    # Published vs reviewed ---------------------------------------------------
+    # Published / rejected vs reviewed ----------------------------------------
     approved_stems = {p.stem for p in APPROVED_DIR.rglob("*.yaml")} if APPROVED_DIR.exists() else set()
+    rejected_stems = {p.stem for p in REJECTED_DIR.glob("*.yaml")} if REJECTED_DIR.exists() else set()
     unpublished_approve = [
         r for r in reviews
-        if r.get("decision") == "approve" and r.get("candidate_id") not in approved_stems
+        if (
+            r.get("decision") == "approve"
+            and r.get("candidate_id") not in approved_stems
+            and r.get("candidate_id") not in rejected_stems
+        )
     ]
 
     # Git ---------------------------------------------------------------------
@@ -176,6 +182,7 @@ def collect(snap: dict | None = None) -> dict:
         "review_decisions": dict(review_decisions),
         "investigations": inv,
         "approved_stems": approved_stems,
+        "rejected_stems": rejected_stems,
         "unpublished_approve": unpublished_approve,
         "branch": branch,
         "head": head,

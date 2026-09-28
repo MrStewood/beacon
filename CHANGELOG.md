@@ -15,6 +15,11 @@ All notable changes to Beacon are documented here.
   steps; stops itself on `idle` or `alert_human`
 - Ctrl+C once = finish current step and stop cleanly; Ctrl+C again = force quit
 - `_read_leads` now tracks `by_cat_status` (queued/investigated per category)
+- Rejected record cleanup: God's Pantry London is explicitly marked
+  `workflow_state: rejected` / `public_access: no` because the London site is
+  a regional distribution center/warehouse, not public-facing direct service
+- Dashboard now treats reviewed approvals in `leads/rejected/` as resolved
+  rejections instead of publish-missing health flags
 - `beacon-supervisor.timer` disabled — loop mode is started manually
 
 ## Unreleased — Repo Restructuring (2026-09-27)
