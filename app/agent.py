@@ -57,16 +57,19 @@ async def run(
     model: str = llm_mod.FLASH,
     max_steps: int = 20,
     extra_messages: list[dict] | None = None,
+    extra_handlers: dict[str, Callable[[dict], Awaitable[str]]] | None = None,
 ) -> AgentResult:
     """Run the model in a tool loop until it stops calling tools.
 
     Args:
-        system:     System prompt.
-        user:       Initial user message.
-        tools:      OpenAI-format tool schemas.
-        model:      Model alias (default: flash).
-        max_steps:  Hard cap on tool-call rounds.
+        system:         System prompt.
+        user:           Initial user message.
+        tools:          OpenAI-format tool schemas.
+        model:          Model alias (default: flash).
+        max_steps:      Hard cap on tool-call rounds.
         extra_messages: Prepend after system, before user (e.g. few-shot examples).
+        extra_handlers: Per-run handlers that override/extend the global registry.
+                        Use for BrowserSession and SearchSession tool binding.
     """
     messages: list[dict] = [{"role": "system", "content": system}]
     if extra_messages:
@@ -104,7 +107,8 @@ async def run(
             log.info("→ tool: %s(%s)", fn_name, _fmt_args(args))
             recorded_calls.append({"tool": fn_name, "args": args})
 
-            handler = _TOOL_HANDLERS.get(fn_name)
+            _handlers = {**_TOOL_HANDLERS, **(extra_handlers or {})}
+            handler = _handlers.get(fn_name)
             if handler is None:
                 result_str = f"[error: unknown tool '{fn_name}']"
             else:
