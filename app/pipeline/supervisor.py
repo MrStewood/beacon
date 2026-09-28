@@ -801,9 +801,17 @@ def main() -> None:
         return
 
     if args.loop:
+        stop_file = BEACON_ROOT / "leads" / "STOP"
         step = 0
+        print(f"\nRunning in loop mode. To stop cleanly after the current step:")
+        print(f"  touch {stop_file}\n")
         try:
             while True:
+                # Check for stop request before starting next step
+                if stop_file.exists():
+                    stop_file.unlink()
+                    print("\nStop file detected — exiting cleanly after this check.")
+                    break
                 step += 1
                 print(f"\n{'#'*60}")
                 print(f"  LOOP STEP {step}")
@@ -815,7 +823,7 @@ def main() -> None:
                 import time
                 time.sleep(3)   # brief pause between steps
         except KeyboardInterrupt:
-            print("\nLoop interrupted by user.")
+            print("\nCtrl+C — current step may be incomplete. Use 'touch leads/STOP' next time for a clean stop.")
         return
 
     _run_one(dry_run=args.dry_run)
