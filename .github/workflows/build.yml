@@ -19,6 +19,8 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install jsonschema pytest pyyaml
+      - name: Build data (required for validate.py to read data/resources.json)
+        run: python scripts/build.py
       - name: Validate schema
         run: python scripts/validate.py
       - name: Validate sources and workflow
