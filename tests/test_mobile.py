@@ -82,7 +82,11 @@ class TestPerformance:
         assert len(css) < 20000, f"CSS too large: {len(css)} bytes"
 
     def test_no_large_images(self):
-        """No unoptimized images in repo."""
-        images = list(REPO_ROOT.glob("**/*.png")) + list(REPO_ROOT.glob("**/*.jpg"))
+        """No unoptimized images in site assets (excludes leads/ evidence screenshots)."""
+        leads_dir = REPO_ROOT / "leads"
+        images = [
+            p for p in list(REPO_ROOT.glob("**/*.png")) + list(REPO_ROOT.glob("**/*.jpg"))
+            if not str(p).startswith(str(leads_dir))
+        ]
         large = [img for img in images if img.stat().st_size > 100000]
         assert len(large) == 0, f"Large images found: {large}"

@@ -41,11 +41,13 @@ class TestEndToEndReadiness:
         assert any("211" in n for n in names), "211 not in national directory"
 
     def test_ky_resources_exist(self):
-        """Kentucky resources must exist."""
-        ky_dir = SOURCE_DIR / "us" / "ky"
-        assert ky_dir.exists(), "KY directory missing"
-        yaml_files = list(ky_dir.rglob("*.yaml"))
-        assert len(yaml_files) >= 1, "No KY resources found"
+        """Kentucky resources must exist (county-flat structure under source/approved/<county>/)."""
+        # Our directory structure is county-flat: source/approved/<county>/*.yaml
+        # not us/ky/ nesting. Verify at least one non-national county directory exists.
+        county_dirs = [d for d in SOURCE_DIR.iterdir() if d.is_dir() and d.name != "national"]
+        assert len(county_dirs) >= 1, "No county resource directories found"
+        yaml_files = [f for d in county_dirs for f in d.rglob("*.yaml")]
+        assert len(yaml_files) >= 1, "No KY county resources found"
 
     def test_governance_files_exist(self):
         """All governance documents must exist."""
