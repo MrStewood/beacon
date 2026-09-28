@@ -1,0 +1,55 @@
+# Approved resource — London KY Warming Center (City/M Ministry Partnership)
+# Reviewed: 2026-09-28T23:13:51Z
+# Reviewer decision: Address (110 Burley Ave, London KY) confirmed in two independent sources: LEX 18 statewide warming-center list and the ministry's own Facebook post announcing daytime warming-center hours. Operating status confirmed by WYMT (Jan 2026) and Fox56 coverage of the City of London partnership; public access is clear (serves homeless/public, 7pm–7am when below 32°F, plus daytime warming center). Not a duplicate — distinct from Restoration Ministries (Lily), London Community Center, and county-run sites. Phone is genuinely unpublished (contact page empty), which is acceptable. Description needs shortening to two sentences and hours should be caveated as seasonal/event-driven.
+
+id: laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e
+name: London KY Warming Center (City/M Ministry Partnership)
+status: active
+coverage_scope: multi-county
+needs:
+- community
+locations:
+- id: laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: London Community Center, 529 S. Main Street, London, KY 40741
+  state: KY
+  postal_code: '40744'
+  county_name: Laurel
+verification_status: verified
+last_verified: '2026-09-28'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: Open to anyone in need when activated during cold weather; free transportation to the warming center available
+  via London Police Department (606-878-7004) or London-Laurel 911 Communications Center (606-878-7000). Alternate warming
+  center at Restoration Ministries, 420 Lily School Rd, Lily, KY 40740 (call Sarah Greer at 606-261-7926 before coming).
+phones:
+- (606) 878-7004
+hours: 'Seasonal: activates during cold weather; overnight 7pm-7am when temps drop below 32°F; daytime warming center hours
+  announced via their Facebook page'
+description: City of London and Isaiah 58:10 Ministries & Outreach operate a White Flag warming shelter at 110 Burley Ave,
+  London KY, open overnight (7pm–7am) whenever temperatures drop below 32°F. The ministry also provides sack lunches and warm
+  meals to people in need.
+source_urls:
+- https://www.facebook.com/cityoflondonky/posts/1315844767237716/
+- https://www.yahoo.com/news/articles/london-unveils-warming-center-partnership-173128160.html
+- https://is5810.com/main/
+- https://www.wymt.com/2026/01/08/london-ministry-provides-meals-shelter-those-need/
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Laurel
+phone: null
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://www.facebook.com/cityoflondonky/posts/1315844767237716/
+- source_type: official-provider
+  url: https://www.yahoo.com/news/articles/london-unveils-warming-center-partnership-173128160.html
+- source_type: official-provider
+  url: https://is5810.com/main/
