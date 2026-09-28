@@ -133,7 +133,7 @@ def _map_and_service_area_html(r):
         "function initMap(){{"
         "var map=L.map('resource-map',{{zoomControl:true,scrollWheelZoom:false}});"
         "L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{"
-        "attribution:'\u00a9 <a href=\'https://www.openstreetmap.org/copyright\'>OpenStreetMap</a> contributors',"
+        "attribution:'\u00a9 <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors',"
         "maxZoom:18}}).addTo(map);"
         "var marker=L.marker(PIN).addTo(map);"
         "marker.bindPopup('<strong>'+NAME+'</strong>'+(ADDR?'<br>'+ADDR:''));"
