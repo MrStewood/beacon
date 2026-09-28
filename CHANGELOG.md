@@ -4,12 +4,10 @@ All notable changes to Beacon are documented here.
 
 ## Unreleased — Pipeline Supervisor CLI (2026-09-28)
 
-- `app/pipeline/dashboard.py` — data-centric CLI dashboard (requires `rich`):
-  pipeline funnel with pending/done per stage, per-run counters, health flags
-  (unacked alerts, sensitive leads pending, approved reviews not published),
-  goals progress (Wave-1 counties, categories, lead queue), coverage by
-  category with GAP markers, geography (lead ZIPs → county), recent reviews
-  and commits, priority queue
+- `app/pipeline/dashboard.py` — readable single-screen CLI dashboard (requires
+  `rich`): watch-mode essentials only, low-border layout, clear current focus,
+  health line, progress bars, small queue preview, and width/height-safe
+  truncation instead of dense full-catalog tables
 - `supervisor --dashboard` renders the dashboard once and exits; output is
   capped to the terminal height so fullscreen watch mode never requires scrollback
 - `supervisor --loop` runs continuously, re-rendering the dashboard between
