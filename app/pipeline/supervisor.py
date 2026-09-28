@@ -432,16 +432,27 @@ async def decide(snap: dict) -> dict:
     """Ask the LLM for one typed action decision. Returns action dict."""
     import app.llm as llm
 
-    # Hard-coded gates — no LLM needed
+    # Hard-coded gates — no LLM needed; target is always deterministic here
     if snap["alerts"]["unacknowledged"] > 0:
         alert = snap["alerts"]["items"][0]
-        return {
-            "action": "alert_human",
-            "target": alert.get("file", "unknown"),
-            "reason": f"Unacknowledged alert: {alert.get('message', 'see alerts dir')}",
-            "priority": 5,
-            "auto": True,
-        }
+        return {"action": "alert_human", "target": alert.get("file", "unknown"),
+                "reason": f"Unacknowledged alert: {alert.get('message', 'see alerts dir')}",
+                "priority": 5, "auto": True}
+    if snap["candidates"]["requeued"] > 0:
+        item = snap["candidates"]["requeued_items"][0]
+        return {"action": "run_followup", "target": item["id"],
+                "reason": "Requeued candidate needs follow-up investigation.",
+                "priority": 5, "auto": True}
+    if snap["candidates"]["pending_review"] > 0:
+        item = snap["candidates"]["pending_items"][0]
+        return {"action": "review_candidate", "target": item["id"],
+                "reason": "Candidate is ready for AI review.",
+                "priority": 5, "auto": True}
+    if snap["investigations"]["needs_candidate"] > 0:
+        item = snap["investigations"]["items"][0]
+        return {"action": "build_candidate", "target": item["path"],
+                "reason": f"Investigation complete for {item['name']} — build candidate YAML.",
+                "priority": 5, "auto": True}
 
     # LLM decision for everything else
     prompt = _build_prompt(snap)
