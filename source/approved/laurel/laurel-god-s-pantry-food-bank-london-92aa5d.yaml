@@ -12,11 +12,17 @@ locations:
 - id: laurel-god-s-pantry-food-bank-london-92aa5d-loc-1
   location_type: physical
   publicly_displayed: true
-  address_line_1: 1215 East 4th Street London, KY 40741
+  address_line_1: 1215 East 4th Street
   city: London
   state: KY
   postal_code: '40741'
   county_name: Laurel
+  latitude: 37.1214477
+  longitude: -84.0550149
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-28'
+  county_fips: '21125'
 verification_status: verified
 last_verified: '2026-09-28'
 verified_by: review-agent
@@ -52,3 +58,10 @@ sources:
   url: https://www.godspantry.org/
 - source_type: official-provider
   url: https://www.laurelcohealthdept.org/resources-food
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Laurel
+    fips: '21125'

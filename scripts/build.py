@@ -121,6 +121,7 @@ def main():
     print(f"Python: {sys.version}")
 
     steps = [
+        ("python3 scripts/geocode.py", "Geocoding addresses and deriving service areas"),
         ("python3 scripts/build_from_yaml.py", "Building public data from canonical YAML"),
         ("python3 scripts/generate_csv.py", "Generating CSV exports"),
         ("python3 scripts/build_pages.py", "Generating resource, county, and need pages"),

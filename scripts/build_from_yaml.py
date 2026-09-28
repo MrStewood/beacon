@@ -99,8 +99,15 @@ def build_public_data(resources):
 
     for r in resources:
         loc = _first_public_location(r)
-        verification = r.get("verification", {})
-        verification_status = verification.get("status", "needs-review")
+        # Support both flat fields (our pipeline) and nested verification object (legacy)
+        _v = r.get("verification", {})
+        verification_status = (
+            r.get("verification_status")
+            or _v.get("status")
+            or "needs-review"
+        )
+        _last_verified = r.get("last_verified") or _v.get("checked_at")
+        _verified_by   = r.get("verified_by")   or _v.get("checked_by")
         public = {
             "id": r["id"],
             "name": r.get("name", ""),
@@ -133,8 +140,8 @@ def build_public_data(resources):
             "location_restrictions": r.get("location_restrictions"),
             "locations": r.get("locations", []),
             "verification_status": verification_status,
-            "last_verified": verification.get("checked_at"),
-            "verified_by": verification.get("checked_by"),
+            "last_verified": _last_verified,
+            "verified_by": _verified_by,
             "confidence": _confidence(verification_status),
             "source_urls": [s.get("url") for s in r.get("sources", []) if s.get("url")],
             "first_seen": r.get("first_seen"),

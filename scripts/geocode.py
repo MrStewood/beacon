@@ -1,212 +1,367 @@
 #!/usr/bin/env python3
-"""Geocode physical addresses using US Census Geocoder (free, no API key)."""
+"""Geocode approved resources and derive service areas.
 
+Adds to each approved YAML:
+  location.latitude / longitude / geocoding_status / geocoding_source / geocoded_at
+  service_areas — expressed as zip, city, county, or radius entries
+
+Usage:
+  python scripts/geocode.py            # all approved YAMLs missing coords
+  python scripts/geocode.py --id <id>  # single resource
+  python scripts/geocode.py --all      # re-geocode everything (overwrites)
+
+Nominatim rate limit: 1 req/s.  User-Agent is required.
+"""
+
+from __future__ import annotations
+
+import argparse
 import json
-import os
+import re
+import sys
 import time
-import urllib.request
-import urllib.parse
+from datetime import date
 from pathlib import Path
+from typing import Any
 
-REPO_ROOT = Path(__file__).parent.parent
-DATA_DIR = REPO_ROOT / "data"
-CACHE_FILE = DATA_DIR / "v3" / "geocode_cache.json"
+import yaml
 
-CENSUS_GEOCODER_URL = "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress"
+try:
+    import urllib.request as _req
+    import urllib.parse as _parse
+except ImportError:
+    pass
 
-def geocode_address(address, city=None, state="KY", zip_code=None):
-    """Geocode an address using US Census Geocoder."""
-    # Build address string
-    parts = []
-    if address:
-        parts.append(address)
+REPO_ROOT   = Path(__file__).parent.parent
+APPROVED    = REPO_ROOT / "source" / "approved"
+SCHEMA_DIR  = REPO_ROOT / "schema" / "reference"
+
+NOMINATIM_URL   = "https://nominatim.openstreetmap.org/search"
+NOMINATIM_AGENT = "Beacon-Community-Directory/1.0 (https://mrstewood.github.io/beacon)"
+RATE_LIMIT_S    = 1.1   # Nominatim requires ≥1 req/s
+
+
+# ---------------------------------------------------------------------------
+# FIPS reference
+# ---------------------------------------------------------------------------
+
+def _load_fips(state: str = "KY") -> dict[str, str]:
+    """Return county_name → FIPS for a state."""
+    fname = SCHEMA_DIR / f"{state.lower()}_counties.json"
+    if not fname.exists():
+        return {}
+    with open(fname) as f:
+        data = json.load(f)
+    return {c["name"]: c["fips"] for c in data.get("counties", [])}
+
+
+# ---------------------------------------------------------------------------
+# Address parsing
+# ---------------------------------------------------------------------------
+
+def _clean_address_line(raw: str, city: str | None, state: str | None, postal: str | None) -> str:
+    """Strip city/state/zip from address_line_1 if the agent embedded them.
+
+    Anchors on the known city name to avoid stripping real street words.
+    """
+    if not raw:
+        return raw
+    # Anchor on known city name followed by optional ", STATE ZIP"
     if city:
-        parts.append(city)
-    if state:
-        parts.append(state)
-    if zip_code:
-        parts.append(zip_code)
+        pattern = re.compile(
+            r",?\s+" + re.escape(city) + r"(?:\s*,\s*[A-Z]{2}(?:\s+\d{5}(?:-\d{4})?)?)?\s*$",
+            re.IGNORECASE,
+        )
+        m = pattern.search(raw)
+        if m:
+            street = raw[:m.start()].strip().rstrip(",")
+            if street:
+                return street
+    # Fallback: strip trailing STATE ZIP only
+    if state and postal:
+        p2 = re.compile(
+            r",?\s+" + re.escape(state) + r"\s+" + re.escape(postal[:5]) + r"(?:-\d{4})?\s*$"
+        )
+        m2 = p2.search(raw)
+        if m2:
+            street = raw[:m2.start()].strip().rstrip(",")
+            if street:
+                return street
+    return raw
 
-    address_str = ", ".join(parts)
 
-    params = {
-        "address": address_str,
-        "benchmark": "Public_AR_Current",
-        "format": "json"
+def _build_query(loc: dict) -> dict[str, str]:
+    """Build Nominatim structured query params from a location dict."""
+    raw = loc.get("address_line_1") or ""
+    city   = loc.get("city")
+    state  = loc.get("state")
+    postal = loc.get("postal_code")
+    street = _clean_address_line(raw, city, state, postal)
+
+    params: dict[str, str] = {
+        "format":          "json",
+        "limit":           "1",
+        "addressdetails":  "1",
+        "countrycodes":    "us",
     }
+    if street:
+        params["street"] = street
+    if city:
+        params["city"] = city
+    if state:
+        params["state"] = state
+    if postal:
+        params["postalcode"] = postal
+    return params
 
-    url = f"{CENSUS_GEOCODER_URL}?{urllib.parse.urlencode(params)}"
 
+# ---------------------------------------------------------------------------
+# Nominatim caller
+# ---------------------------------------------------------------------------
+
+_last_call: float = 0.0
+
+
+def _nominatim(params: dict) -> list[dict]:
+    global _last_call
+    wait = RATE_LIMIT_S - (time.time() - _last_call)
+    if wait > 0:
+        time.sleep(wait)
+
+    qs  = _parse.urlencode(params)
+    url = f"{NOMINATIM_URL}?{qs}"
+    rq  = _req.Request(url, headers={"User-Agent": NOMINATIM_AGENT})
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Beacon/1.0"})
-        with urllib.request.urlopen(req, timeout=10) as response:
-            data = json.loads(response.read().decode())
-
-        result = data.get("result", {})
-        matches = result.get("addressMatches", [])
-
-        if matches:
-            match = matches[0]
-            coords = match["coordinates"]
-            return {
-                "latitude": coords["y"],
-                "longitude": coords["x"],
-                "geocoding_status": "verified",
-                "geocoding_source": "US Census Geocoder",
-                "match_address": match.get("matchedAddress", "")
-            }
-        else:
-            return {
-                "latitude": None,
-                "longitude": None,
-                "geocoding_status": "failed",
-                "geocoding_source": "US Census Geocoder",
-                "match_address": None
-            }
+        with _req.urlopen(rq, timeout=10) as resp:
+            data = json.loads(resp.read())
     except Exception as e:
-        return {
-            "latitude": None,
-            "longitude": None,
-            "geocoding_status": "failed",
-            "geocoding_source": f"Error: {str(e)}",
-            "match_address": None
-        }
+        print(f"  WARN: Nominatim error: {e}", file=sys.stderr)
+        data = []
+    finally:
+        _last_call = time.time()
+    return data
 
-def load_cache():
-    """Load geocoding cache."""
-    if CACHE_FILE.exists():
-        with open(CACHE_FILE) as f:
-            return json.load(f)
-    return {}
 
-def save_cache(cache):
-    """Save geocoding cache."""
-    os.makedirs(CACHE_FILE.parent, exist_ok=True)
-    with open(CACHE_FILE, "w") as f:
-        json.dump(cache, f, indent=2)
+# ---------------------------------------------------------------------------
+# Service area derivation
+# ---------------------------------------------------------------------------
+
+def _derive_service_areas(r: dict, fips_map: dict[str, str]) -> list[dict]:
+    """
+    Derive service_areas list from coverage_scope and location.
+
+    Supported types: postal-code, city, county, radius.
+    national/state scopes → no service_area entries (use coverage_scope field).
+    """
+    scope = r.get("coverage_scope", "unknown")
+    loc   = _first_physical(r)
+    areas: list[dict] = []
+
+    if scope in ("national", "multi-state", "state", "online", "unknown"):
+        return areas   # coverage_scope field carries meaning; no map zones
+
+    state = (loc or {}).get("state") or (r.get("states_served") or [None])[0]
+
+    if scope == "county":
+        county_name = (loc or {}).get("county_name")
+        if county_name and state:
+            fips = fips_map.get(county_name)
+            area: dict[str, Any] = {
+                "type":    "county",
+                "state":   state,
+                "country": "US",
+                "values":  [{"name": county_name}],
+            }
+            if fips:
+                area["values"][0]["fips"] = fips
+            areas.append(area)
+
+    elif scope in ("city", "multi-city"):
+        city = (loc or {}).get("city")
+        if city and state:
+            areas.append({
+                "type":    "city",
+                "state":   state,
+                "country": "US",
+                "values":  [{"name": city}],
+            })
+
+    elif scope == "postal-code":
+        postal = (loc or {}).get("postal_code")
+        if postal and state:
+            areas.append({
+                "type":    "postal-code",
+                "state":   state,
+                "country": "US",
+                "values":  [{"name": postal}],
+            })
+
+    elif scope == "radius":
+        lat = (loc or {}).get("latitude")
+        lon = (loc or {}).get("longitude")
+        radius = r.get("radius_miles", 25)
+        if lat and lon:
+            areas.append({
+                "type":         "radius",
+                "center":       {"latitude": lat, "longitude": lon},
+                "radius_miles": radius,
+            })
+
+    elif scope == "multi-county":
+        # Only derive if service_areas already absent — can't guess multiple counties
+        pass
+
+    return areas
+
+
+def _first_physical(r: dict) -> dict | None:
+    for loc in r.get("locations", []):
+        if loc.get("publicly_displayed", True) and loc.get("location_type") != "virtual":
+            return loc
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Geocode one location
+# ---------------------------------------------------------------------------
+
+def geocode_location(loc: dict, force: bool = False) -> bool:
+    """Geocode a single location dict in-place. Returns True if updated."""
+    if loc.get("location_type") in ("virtual", "confidential"):
+        return False
+    if not loc.get("address_line_1"):
+        return False
+    if not force and loc.get("geocoding_status") in ("verified", "approximate"):
+        return False
+
+    params  = _build_query(loc)
+    results = _nominatim(params)
+
+    if not results:
+        # Fallback: try city+state+postal only
+        fallback = {k: v for k, v in params.items() if k not in ("street",)}
+        results  = _nominatim(fallback)
+
+    if not results:
+        loc["geocoding_status"] = "failed"
+        loc["geocoding_source"] = "nominatim"
+        loc["geocoded_at"]      = str(date.today())
+        print(f"  FAIL: no result for {loc.get('address_line_1')!r}")
+        return True
+
+    hit = results[0]
+    loc["latitude"]         = float(hit["lat"])
+    loc["longitude"]        = float(hit["lon"])
+    loc["geocoding_status"] = "approximate"
+    loc["geocoding_source"] = "nominatim"
+    loc["geocoded_at"]      = str(date.today())
+
+    # Also clean address_line_1 if city/state/zip were embedded
+    raw    = loc.get("address_line_1", "")
+    street = _clean_address_line(raw, loc.get("city"), loc.get("state"), loc.get("postal_code"))
+    if street != raw:
+        loc["address_line_1"] = street
+
+    # Backfill city/state/postal from Nominatim if missing
+    addr = hit.get("address", {})
+    if not loc.get("city"):
+        loc["city"] = addr.get("city") or addr.get("town") or addr.get("village")
+    if not loc.get("state"):
+        loc["state"] = addr.get("state_code") or addr.get("ISO3166-2-lvl4", "").split("-")[-1] or None
+    if not loc.get("postal_code"):
+        loc["postal_code"] = addr.get("postcode")
+    if not loc.get("county_name"):
+        county_raw = addr.get("county", "")
+        loc["county_name"] = re.sub(r"\s+County$", "", county_raw, flags=re.I).strip() or None
+
+    print(f"  OK: ({loc['latitude']:.5f}, {loc['longitude']:.5f})  {hit['display_name'][:80]}")
+    return True
+
+
+# ---------------------------------------------------------------------------
+# Process one resource YAML
+# ---------------------------------------------------------------------------
+
+def process_yaml(path: Path, fips_map: dict[str, str], force: bool = False) -> bool:
+    with open(path) as f:
+        # Preserve leading comment
+        raw = f.read()
+    header = ""
+    if raw.startswith("#"):
+        lines = raw.splitlines(keepends=True)
+        header_lines = []
+        for line in lines:
+            if line.startswith("#") or line.strip() == "":
+                header_lines.append(line)
+            else:
+                break
+        header = "".join(header_lines)
+
+    r = yaml.safe_load(raw)
+    changed = False
+
+    # 1. Geocode each physical location
+    for loc in r.get("locations", []):
+        if geocode_location(loc, force=force):
+            changed = True
+
+    # 2. Derive service_areas if missing or empty
+    if not r.get("service_areas"):
+        areas = _derive_service_areas(r, fips_map)
+        if areas:
+            r["service_areas"] = areas
+            changed = True
+
+    # 3. Add county_fips to locations that have county_name
+    for loc in r.get("locations", []):
+        if loc.get("county_name") and not loc.get("county_fips"):
+            fips = fips_map.get(loc["county_name"])
+            if fips:
+                loc["county_fips"] = fips
+                changed = True
+
+    if changed:
+        with open(path, "w") as f:
+            if header:
+                f.write(header)
+            yaml.dump(r, f, allow_unicode=True, sort_keys=False, width=120, default_flow_style=False)
+        print(f"  Saved: {path.name}")
+
+    return changed
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
 
 def main():
-    # Load v3 data
-    with open(DATA_DIR / "v3" / "resources.json") as f:
-        v3_data = json.load(f)
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--id",  dest="rid",  help="Single resource ID")
+    ap.add_argument("--all", dest="force", action="store_true",
+                    help="Re-geocode even already-geocoded locations")
+    args = ap.parse_args()
 
-    # Load cache
-    cache = load_cache()
+    fips_map = _load_fips("KY")   # expand when we cover more states
 
-    geocoded = 0
-    cached = 0
-    failed = 0
-    skipped = 0
+    yamls: list[Path] = []
+    if args.rid:
+        matches = list(APPROVED.rglob(f"*{args.rid}*.yaml"))
+        if not matches:
+            print(f"No YAML found for id {args.rid!r}", file=sys.stderr)
+            sys.exit(1)
+        yamls = matches
+    else:
+        yamls = sorted(APPROVED.rglob("*.yaml"))
 
-    for r in v3_data["resources"]:
-        for loc in r.get("locations", []):
-            # Skip non-physical or confidential locations
-            if loc["location_type"] not in ("physical", "mailing"):
-                skipped += 1
-                continue
+    total = changed = 0
+    for p in yamls:
+        print(f"\n{p.relative_to(REPO_ROOT)}")
+        total   += 1
+        if process_yaml(p, fips_map, force=args.force):
+            changed += 1
 
-            if not loc.get("publicly_displayed", True):
-                skipped += 1
-                continue
+    print(f"\nDone: {changed}/{total} files updated")
 
-            if not loc.get("address_line_1"):
-                skipped += 1
-                continue
-
-            # Skip if already geocoded
-            if loc.get("geocoding_status") == "verified" and loc.get("latitude"):
-                cached += 1
-                continue
-
-            # Build cache key
-            cache_key = f"{loc.get('address_line_1', '')}, {loc.get('city', '')}, {loc.get('state', 'KY')} {loc.get('postal_code', '')}"
-
-            # Check cache
-            if cache_key in cache:
-                cached_result = cache[cache_key]
-                loc["latitude"] = cached_result.get("latitude")
-                loc["longitude"] = cached_result.get("longitude")
-                loc["geocoding_status"] = cached_result.get("geocoding_status", "verified")
-                loc["geocoding_source"] = cached_result.get("geocoding_source", "cache")
-                loc["geocoded_at"] = cached_result.get("geocoded_at", "2026-09-20")
-                cached += 1
-                continue
-
-            # Geocode
-            print(f"Geocoding: {r['name']} - {cache_key}")
-            result = geocode_address(
-                loc.get("address_line_1"),
-                loc.get("city"),
-                loc.get("state", "KY"),
-                loc.get("postal_code")
-            )
-
-            loc["latitude"] = result["latitude"]
-            loc["longitude"] = result["longitude"]
-            loc["geocoding_status"] = result["geocoding_status"]
-            loc["geocoding_source"] = result["geocoding_source"]
-            loc["geocoded_at"] = "2026-09-20"
-
-            # Cache result
-            cache[cache_key] = {
-                "latitude": result["latitude"],
-                "longitude": result["longitude"],
-                "geocoding_status": result["geocoding_status"],
-                "geocoding_source": result["geocoding_source"],
-                "geocoded_at": "2026-09-20"
-            }
-
-            if result["geocoding_status"] == "verified":
-                geocoded += 1
-            else:
-                failed += 1
-
-            # Rate limit (Census allows 5 req/sec)
-            time.sleep(0.25)
-
-    # Save updated data
-    with open(DATA_DIR / "v3" / "resources.json", "w") as f:
-        json.dump(v3_data, f, indent=2)
-
-    # Save cache
-    save_cache(cache)
-
-    # Generate GeoJSON
-    features = []
-    for r in v3_data["resources"]:
-        for loc in r.get("locations", []):
-            if loc.get("latitude") and loc.get("longitude") and loc.get("publicly_displayed", True):
-                features.append({
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [loc["longitude"], loc["latitude"]]
-                    },
-                    "properties": {
-                        "id": r["id"],
-                        "name": r["name"],
-                        "county": loc.get("county_name"),
-                        "state": loc.get("state"),
-                        "needs": r.get("needs", []),
-                        "phones": r.get("phones", []),
-                        "coverage_scope": r.get("coverage_scope")
-                    }
-                })
-
-    geojson = {
-        "type": "FeatureCollection",
-        "features": features
-    }
-
-    with open(DATA_DIR / "v3" / "geojson.json", "w") as f:
-        json.dump(geojson, f, indent=2)
-
-    print(f"\n=== Geocoding Results ===")
-    print(f"Geocoded: {geocoded}")
-    print(f"Cached: {cached}")
-    print(f"Failed: {failed}")
-    print(f"Skipped: {skipped}")
-    print(f"GeoJSON features: {len(features)}")
 
 if __name__ == "__main__":
     main()
