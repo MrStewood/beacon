@@ -11,6 +11,9 @@ Thumbs.db
 __pycache__/
 *.pyc
 
+# Virtual environment
+.venv/
+
 # Node
 node_modules/
 
