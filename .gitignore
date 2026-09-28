@@ -16,3 +16,8 @@ node_modules/
 
 # Build artifacts (regenerated from scripts)
 # Don't ignore - data/ is committed as source of truth
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
