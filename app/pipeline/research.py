@@ -101,14 +101,19 @@ async def run_zip(zip_code: str, *, dry_run: bool = False) -> dict:
                 f"Save every valid resource immediately with create_lead()."
             )
 
-            log.info("starting agent — %d tools, max 200 steps", len(schemas))
-            result = await agent.run(
-                system=system,
-                user=user_msg,
-                tools=schemas,
-                extra_handlers=handlers,
-                max_steps=200,
-            )
+            log.info("starting agent — %d tools, max 500 steps", len(schemas))
+            try:
+                result = await agent.run(
+                    system=system,
+                    user=user_msg,
+                    tools=schemas,
+                    extra_handlers=handlers,
+                    max_steps=500,
+                )
+            except Exception as exc:
+                log.error("agent crashed: %s", exc)
+                store.finalize()
+                raise
 
     log.info("agent done in %d steps, %d tool calls", result.steps, len(result.tool_calls))
 
