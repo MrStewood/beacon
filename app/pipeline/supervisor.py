@@ -145,22 +145,73 @@ def _read_candidates() -> dict:
 
 def _read_investigations() -> dict:
     """Find investigations that don't yet have a matching candidate."""
+    import re as _re3
+
+    candidate_ids = {p.stem for p in CANDIDATES_DIR.rglob("*.yaml")}
+
+    # Approved resource signals — skip investigations for already-published leads
+    approved_names:   set[str] = set()
+    approved_phones:  set[str] = set()
+    approved_domains: set[str] = set()
+    if APPROVED_DIR.exists():
+        for p in APPROVED_DIR.rglob("*.yaml"):
+            try:
+                r = yaml.safe_load(p.read_text()) or {}
+                n = (r.get("name") or "").lower().strip()
+                if n:
+                    approved_names.add(n)
+                    approved_names.add(_slug(n, ""))
+                for ph in r.get("phones", []):
+                    approved_phones.add(_re3.sub(r"\D", "", str(ph)))
+                for u in [r.get("url") or ""] + r.get("source_urls", []):
+                    m = _re3.search(r"(?:https?://)?(?:www\.)?([^/]+)", u)
+                    if m:
+                        approved_domains.add(m.group(1).lower())
+            except Exception:
+                pass
+
+    rejected_names: set[str] = set()
+    if REJECTED_DIR.exists():
+        for p in REJECTED_DIR.glob("*.yaml"):
+            try:
+                r = yaml.safe_load(p.read_text()) or {}
+                n = (r.get("resource", {}).get("name") or r.get("name") or "").lower().strip()
+                if n:
+                    rejected_names.add(n)
+            except Exception:
+                pass
+
     investigated: list[dict] = []
-    candidate_ids = {
-        p.stem for p in CANDIDATES_DIR.rglob("*.yaml")
-    }
+    if not INVESTIGATIONS_DIR.exists():
+        return {"needs_candidate": 0, "items": []}
+
     for zip_dir in INVESTIGATIONS_DIR.iterdir():
         if not zip_dir.is_dir():
             continue
         for p in zip_dir.glob("*.json"):
             try:
                 inv = json.loads(p.read_text())
-                # Only complete investigations (both passes done)
-                if not inv.get("complete"):
+                is_complete = inv.get("complete") or (inv.get("pass_b") and inv.get("summary"))
+                if not is_complete:
                     continue
                 lead = inv.get("lead", {})
+                name = (lead.get("name") or "").lower().strip()
                 cid  = inv.get("candidate_id") or _slug(lead.get("name", ""), zip_dir.name)
-                if cid not in candidate_ids:
+                lead_phones = {_re3.sub(r"\D", "", str(ph)) for ph in lead.get("phones", [])}
+                lead_domains: set[str] = set()
+                for u in [lead.get("source_url") or ""] + lead.get("urls", []) + lead.get("domains", []):
+                    m = _re3.search(r"(?:https?://)?(?:www\.)?([^/\s]+)", str(u))
+                    if m:
+                        lead_domains.add(m.group(1).lower())
+                already_done = (
+                    cid in candidate_ids
+                    or name in approved_names
+                    or _slug(name, "") in approved_names
+                    or name in rejected_names
+                    or bool(lead_phones & approved_phones)
+                    or bool(lead_domains & approved_domains)
+                )
+                if not already_done:
                     investigated.append({
                         "path":     str(p.relative_to(BEACON_ROOT)),
                         "zip":      zip_dir.name,
@@ -169,10 +220,7 @@ def _read_investigations() -> dict:
                     })
             except Exception:
                 pass
-    return {
-        "needs_candidate": len(investigated),
-        "items":           investigated,
-    }
+    return {"needs_candidate": len(investigated), "items": investigated}
 
 
 def _read_leads() -> dict:
