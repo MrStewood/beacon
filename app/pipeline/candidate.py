@@ -336,7 +336,25 @@ def _build_resource(result: dict, candidate_id: str, category: str) -> dict:
     hours    = _get("hours")
     eligibility = _get("eligibility")
     cost     = _get("cost")
-    description = _get("description") or lead.get("description", "")
+    # Description: prefer the shortest Pass-A finding that mentions the org's services,
+    # not org-history or SOS-profile boilerplate. If multiple description findings
+    # exist, pick the one that best describes what the location does.
+    _desc_findings = [f["value"] for f in findings if f["field"] == "description" and f["pass"] == "A"]
+    if _desc_findings:
+        # Prefer findings that mention "food", "serve", "provide", "pantry", "shelter" etc.
+        _SERVICE_WORDS = {"food", "serve", "provid", "pantry", "shelter", "clinic", "assist", "help"}
+        _desc_findings.sort(key=lambda s: (
+            -sum(1 for w in _SERVICE_WORDS if w in s.lower()),
+            len(s)  # prefer shorter when score ties
+        ))
+        description = _desc_findings[0]
+    else:
+        description = _get("description") or lead.get("description", "")
+
+    # public_access: yes/no/unknown — determines publishability
+    public_access = str(_get("public_access") or "unknown").lower().strip()
+    access_notes  = _get("access_notes") or ""
+
     populations = _get("populations") or lead.get("populations") or []
     service_types = _get("service_types") or lead.get("service_types") or []
     languages = _get("languages") or []
@@ -401,7 +419,11 @@ def _build_resource(result: dict, candidate_id: str, category: str) -> dict:
         "last_verified":       _utc_now()[:10],
         "verified_by":         "investigation-agent",
         "confidence":          "medium",
+        # Publishability gate — reviewer hard-checks this
+        "public_access":       public_access,   # yes | no | unknown
     }
+    if access_notes:
+        resource["access_notes"] = access_notes
     if clean_phones:
         resource["phones"] = clean_phones
     if url:

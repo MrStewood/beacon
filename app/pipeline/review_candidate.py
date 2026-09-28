@@ -229,23 +229,30 @@ Description:{description[:200]}
 Review this candidate and call complete_review() with ONE decision:
 
 **approve** — if ALL of these are true:
-  1. Real organization that serves the general public (not agencies-only, not a warehouse)
-  2. Phone/address confirmed in 2+ independent sources (check claim scores above)
-  3. Currently operating — no evidence of closure
-  4. Category is accurate
+  1. public_access is confirmed YES — this location serves individual members of the public
+     (NOT a warehouse, distribution hub, or agency-only site)
+  2. Phone/address confirmed in 2+ independent sources
+  3. Currently operating — no closure evidence
+  4. Category is accurate for the services provided at THIS location
   5. Not a known duplicate already in the directory
-  You may include minor `corrections` (e.g. cleaner hours format, better description).
+  Include `corrections` to fix any of these description quality issues:
+  - Description exceeds 2 sentences → shorten to what the location actually does
+  - Description contains program codes (TEFAP, CSFP, etc.) without plain-language explanation → rewrite in plain English
+  - Description is about the org's statewide network, not this specific location → rewrite for this location
+  - what_to_bring contains program descriptions instead of physical items → correct or remove
+  - Hours are warehouse/office hours without confirmed public access → add caveat or move to access_notes
 
 **reject** — if ANY of these are true:
-  - Not public-facing (warehouse distributes to agencies, not individuals)
+  - public_access=no, or investigation evidence shows warehouse/distribution/agency-only
+  - Eligibility text says "not listed as a public pantry" or "does not serve individuals"
   - Permanently closed
   - Duplicate of an already-approved record
   - Not a genuine community resource (commercial, admin-only, etc.)
   - Sensitive resource requiring manual review (DV shelter location)
 
 **needs_more_research** — if BOTH:
-  - The resource is probably real and public-facing, BUT
-  - Specific answerable questions remain (hours, eligibility, public vs agency access)
+  - The resource is probably real and publicly accessible, BUT
+  - Public access status is unconfirmed, OR hours/eligibility are unverified
   Provide concrete `guidance` and `questions_to_answer` for the next investigation pass.
 
 ## Tools available (use sparingly — 2–3 searches max)
@@ -268,6 +275,46 @@ async def review_candidate(candidate_path: Path) -> dict:
     if state in _PAST_REVIEW_STATES:
         log.info("skipping %s — already past review (%s)", candidate_path.name, state)
         return {"decision": "already_processed", "workflow_state": state}
+
+    # --- Pre-flight gates (no LLM call needed) ---
+    resource_pre = candidate.get("resource", {})
+    public_access = str(resource_pre.get("public_access", "unknown")).lower().strip()
+
+    if public_access == "no":
+        reason = (
+            "Auto-rejected: investigation found public_access=no — "
+            "this location does not serve the general public directly "
+            "(warehouse, distribution center, admin office, or agency-only site). "
+            "If public access is actually available, re-investigate and record public_access=yes."
+        )
+        log.info("AUTO-REJECT %s — public_access=no", candidate_path.name)
+        _do_reject(candidate, candidate_path, county, {
+            "decision": "reject",
+            "reasoning": reason,
+            "confidence": "high",
+        })
+        return {"decision": "reject", "reasoning": reason, "auto": True}
+
+    if public_access == "unknown":
+        log.info("AUTO-NEEDS-MORE-RESEARCH %s — public_access=unknown", candidate_path.name)
+        result = {
+            "decision": "needs_more_research",
+            "reasoning": "Public access status was not confirmed during investigation.",
+            "confidence": "low",
+            "guidance": (
+                "Confirm whether this location is open to the general public. "
+                "Look for: walk-in hours, 'open to all', intake language on the org website. "
+                "If it is a warehouse, distribution center, or serves agencies only, "
+                "record public_access=no (will be auto-rejected). "
+                "If it is publicly accessible, record public_access=yes."
+            ),
+            "questions_to_answer": [
+                "Is this location open to the general public, or does it only serve partner agencies/organizations?",
+                "Are the listed hours (if any) public walk-in hours or internal warehouse/office hours?",
+            ],
+        }
+        _write_requeue(candidate, candidate_path, result)
+        return result
 
     candidate_id = candidate.get("candidate_id", candidate_path.stem)
     resource     = candidate.get("resource", {})
