@@ -87,7 +87,7 @@ async def run_zip(zip_code: str, *, dry_run: bool = False) -> dict:
     evidence_dir = BEACON_ROOT / "leads" / "runs" / zip_code / "evidence"
 
     async with BrowserSession(evidence_dir=evidence_dir) as browser:
-        async with SearchSession() as search:
+        async with SearchSession(known_urls=store._seen_urls) as search:
             schemas, handlers = session_tools(browser, search)
 
             # Add pipeline-specific tools

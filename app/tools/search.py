@@ -63,6 +63,11 @@ class SearchSession:
     Usage:
         async with SearchSession() as s:
             results = await s.search("Laurel County food bank Kentucky")
+
+    Pass `known_urls` (a shared dict keyed by URL) to auto-exclude already-processed
+    URLs from every search result set.  The LeadStore._seen_urls dict is the right
+    thing to pass — it is updated live as leads are saved, so URLs discovered mid-run
+    are excluded from subsequent searches too.
     """
 
     def __init__(
@@ -72,11 +77,16 @@ class SearchSession:
         session_cap: int = _DEFAULT_SESSION_CAP,
         min_delay: float = _MIN_DELAY,
         max_delay: float = _MAX_DELAY,
+        known_urls: dict | None = None,
     ):
         self._base_url = base_url.rstrip("/")
         self._cap = session_cap
         self._min = min_delay
         self._max = max_delay
+        # Shared reference to LeadStore._seen_urls — auto-updated as leads are saved.
+        # Search results whose URL is in this dict are filtered out before the agent
+        # ever sees them, preventing token burn on already-processed URLs.
+        self._known_urls: dict = known_urls if known_urls is not None else {}
 
         self._count = 0
         self._last_search_at: float = 0.0
@@ -171,9 +181,19 @@ class SearchSession:
 
         results = _parse_results(data, max_results)
 
+        # Filter out URLs already known to this session / prior runs.
+        # This prevents the agent from burning tokens re-examining pages
+        # it has already processed.
+        if self._known_urls:
+            before = len(results)
+            results = [r for r in results if r.get("url") not in self._known_urls]
+            filtered = before - len(results)
+            if filtered:
+                log.debug("auto-excluded %d already-seen URL(s) from results", filtered)
+
         self._count += 1
         self._seen_queries[key] = len(results)
-        log.debug("← %d results", len(results))
+        log.debug("← %d results (after exclusions)", len(results))
         return results
 
     # ------------------------------------------------------------------

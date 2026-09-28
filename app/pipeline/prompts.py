@@ -42,9 +42,20 @@ def build_system_prompt(zip_info: dict, context: dict) -> str:
         context["known_leads"]
     )
 
-    category_block = "\n".join(
-        f"  {i+1:2}. {cat:<22} — {terms}"
-        for i, (cat, terms) in enumerate(CATEGORIES)
+    known_by_cat = context.get("known_by_category", {})
+    category_rows = []
+    for i, (cat, terms) in enumerate(CATEGORIES):
+        n = known_by_cat.get(cat, 0)
+        coverage = f"({n} known)" if n else "(0 known — priority)"
+        category_rows.append(f"  {i+1:2}. {cat:<22} {coverage:<22} — {terms}")
+    category_block = "\n".join(category_rows)
+
+    is_rerun = known_total > 0
+    rerun_note = (
+        f"\n- RE-RUN: {known_total} resources already on file. "
+        "Already-evaluated URLs are auto-excluded from search results. "
+        "Focus on categories showing 0 known and try new query angles."
+        if is_rerun else ""
     )
 
     return f"""You are a community resource researcher building a directory for {area}.
@@ -56,8 +67,8 @@ Save each valid resource immediately with create_lead(). Do not batch results at
 ## Area context
 - ZIP: {zip_}  |  County: {county}  |  State: {state}  |  City: {city}
 - Need score: {need_score}/100 ({need_flag}) — poverty, unemployment, SNAP, disability rates
-- Already known: {known_total} resources (published + in-progress + prior leads)
-- Seen URLs: {context['seen_urls']} (already evaluated this ZIP — skip them)
+- Already known: {known_total} resources (published + in-progress + prior leads){rerun_note}
+- Seen URLs auto-excluded from search results — you only see fresh URLs
 
 ## Categories to cover (ALL 17 — do not skip any)
 {category_block}

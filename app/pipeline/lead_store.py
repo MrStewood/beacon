@@ -84,12 +84,38 @@ class LeadStore:
         # Seen-URL registry (persists between runs)
         self._seen_urls: dict[str, dict] = _su.load()
 
+        # Pre-populate seen_urls from the dedup index so that org websites
+        # discovered in any prior run are auto-excluded from future search
+        # results — not just pages we navigated to in the last session.
+        pre = 0
+        for record in self._indexes["dedup"] + self._indexes["published"] + self._indexes["cases"]:
+            for url in (record.get("urls") or []):
+                if url and url not in self._seen_urls:
+                    self._seen_urls[url] = {
+                        "outcome": "already_known",
+                        "name": record.get("name", ""),
+                        "zip": record.get("zip", zip_code),
+                        "source": "dedup_index",
+                    }
+                    pre += 1
+            # Also mark the source_url used to discover it
+            src = record.get("source_url")
+            if src and src not in self._seen_urls:
+                self._seen_urls[src] = {
+                    "outcome": "already_known",
+                    "name": record.get("name", ""),
+                    "zip": record.get("zip", zip_code),
+                    "source": "dedup_index",
+                }
+                pre += 1
+
         log.info(
-            "LeadStore ready — %d published, %d cases, %d dedup, %d seen_urls",
+            "LeadStore ready — %d published, %d cases, %d dedup, %d seen_urls (%d pre-populated)",
             len(self._indexes["published"]),
             len(self._indexes["cases"]),
             len(self._indexes["dedup"]),
             len(self._seen_urls),
+            pre,
         )
 
     # ------------------------------------------------------------------
@@ -98,12 +124,34 @@ class LeadStore:
 
     def context_summary(self) -> dict:
         """Counts the agent needs to know up front."""
+        from collections import Counter
+        from pathlib import Path as _Path
+        import json as _json
+
+        # Build per-category count from the LATEST raw run file only
+        # (multiple raw files accumulate across reruns — only count once per org)
+        cats: Counter = Counter()
+        run_dir = BEACON_ROOT / "leads" / "runs" / self.zip_code
+        if run_dir.exists():
+            raw_files = sorted(run_dir.glob("*-raw.json"))
+            if raw_files:
+                try:
+                    data = _json.loads(raw_files[-1].read_text())
+                    for r in data.get("resources_found", []):
+                        cat = r.get("category")
+                        if cat:
+                            cats[cat] += 1
+                except Exception:
+                    pass
+
+        known = self._indexes["dedup"]
         return {
-            "published_resources": len(self._indexes["published"]),
+            "published_resources":    len(self._indexes["published"]),
             "in_progress_candidates": len(self._indexes["cases"]),
-            "known_leads": len(self._indexes["dedup"]),
-            "seen_urls": len(self._seen_urls),
-            "session_leads_so_far": len(self.session_leads),
+            "known_leads":            len(known),
+            "known_by_category":      dict(cats),
+            "seen_urls":              len(self._seen_urls),
+            "session_leads_so_far":   len(self.session_leads),
         }
 
     # ------------------------------------------------------------------
