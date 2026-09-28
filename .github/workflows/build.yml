@@ -20,14 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install jsonschema pytest pyyaml
       - name: Verify committed data is in sync with approved YAMLs
-        run: |
-          python scripts/build_from_yaml.py
-          if ! git diff --exit-code data/resources.json data/v3/resources.json data/index.json; then
-            echo "FAIL: committed data/resources.json is out of sync with source/approved/"
-            echo "Run 'python scripts/build_from_yaml.py' locally and commit the result."
-            exit 1
-          fi
-          echo "OK: committed data files match approved YAMLs"
+        run: python scripts/check_data_sync.py
       - name: Validate schema
         run: python scripts/validate.py
       - name: Validate sources and workflow
