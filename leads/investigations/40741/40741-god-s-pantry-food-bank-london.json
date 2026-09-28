@@ -238,6 +238,45 @@
       "content_hash": "sha256:792f71025005108ac8e8b8221b79110a243d451da307bf6021750733a05244bd",
       "conflicts_with": null,
       "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-c-017",
+      "pass": "C",
+      "field": "hours",
+      "value": "Monday-Friday: 7:00 AM – 3:30 PM (listed for God's Pantry Food Bank, 1215 East 4th Street, London KY 40741; not confirmed as public/client access hours — org publishes no hours for this warehouse location)",
+      "source_url": "https://www.laurelcohealthdept.org/resources-food",
+      "source_type": "gov-directory",
+      "text_excerpt": "God’s Pantry Food Bank 1215 East 4th Street; London, KY 40741 606-862-6693 Hours: Monday-Friday: 7:00 AM – 3:30 PM",
+      "snapshot_url": null,
+      "content_hash": "sha256:7548d2f2e5feedff3d2e0432d72643485d014842d1c1a2be3335a9212d5fe36e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-c-018",
+      "pass": "C",
+      "field": "intake_process",
+      "value": "1215 E 4th St is listed by God's Pantry under \"Warehouse locations\" as the Southeast Regional Distribution Center and does NOT appear in the org's Find Food pantry locator; individuals are served through partner pantries/meal programs (500+ network) rather than walk-in pickup at this address. Find Food: godspantry.org/help",
+      "source_url": "https://www.godspantry.org/contact",
+      "source_type": "org-website",
+      "text_excerpt": "Warehouse locations ... Southeast Regional Distribution Center. 1215 East 4th Street London, KY 40741 ... Partner food pantries and meal programs. Shanda Oakley 859-288-5341 soakley@godspantry.org",
+      "snapshot_url": null,
+      "content_hash": "sha256:fd2f0c3f65a622c72afc1006df9b4cbd8dde9757f8e7c559eb5456548a8cd395",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-c-019",
+      "pass": "C",
+      "field": "eligibility",
+      "value": "No eligibility stated for on-site access at 1215 E 4th St (site not listed as a public pantry). Org-wide: free food for food-insecure residents of the 50-county service area; income eligibility applies to USDA TEFAP/CSFP commodities; Health Care Pantry boxes are patient-only via provider referral.",
+      "source_url": "https://www.godspantry.org/help",
+      "source_type": "org-website",
+      "text_excerpt": "Find a food pantry or meal program near you in Central and Eastern Kentucky. Our food pantries and meal programs offer free food to Kentuckians facing hunger.",
+      "snapshot_url": null,
+      "content_hash": "sha256:7e4e96642a8779cfbecc8ee7c12aeeaf695ff3e7e755006edff35837752dc60f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
     }
   ],
   "pass_a": {
@@ -287,12 +326,14 @@
     "operating_status": "active"
   },
   "summary": {
-    "total_findings": 16,
+    "total_findings": 19,
     "pass_a_count": 7,
     "pass_b_count": 9,
+    "pass_c_count": 3,
     "fields_found": [
       "address",
       "description",
+      "eligibility",
       "hours",
       "intake_process",
       "operating_status",
@@ -300,8 +341,80 @@
       "service_types",
       "what_to_bring"
     ],
+    "answers": [
+      {
+        "question": "Does the London 1215 E 4th St location distribute food directly to individuals/families, or only to partner agencies/pantries?",
+        "answer": "Only to partner agencies/pantries — no direct walk-in distribution confirmed. God's Pantry's own contact page lists 1215 E 4th St under \"Warehouse locations\" as the \"Southeast Regional Distribution Center,\" and the org's \"Find Food\" pantry locator (godspantry.org/help) does NOT list 1215 E 4th St as a pantry site — the only God's Pantry-operated direct-service sites it lists are in Lexington (GPFB Northside, 817 Winchester Rd, Cambridge Dr, etc.). Laurel County direct-service pantries listed there are separate organizations (Calvary Baptist, Fed By Grace, FPC, etc.). The org's direct-to-individual programs (Mobile Pantry, Health Care Pantry) do not include the London warehouse address.",
+        "evidence_url": "https://www.godspantry.org/help",
+        "confidence": "medium",
+        "content_hash": null,
+        "answered_at": "2026-09-28T05:38:57Z"
+      },
+      {
+        "question": "Are the hours Monday-Friday 7:00 AM-3:30 PM (per Laurel County Health Dept) current and accurate for public access?",
+        "answer": "Hours Mon-Fri 7:00 AM-3:30 PM are confirmed as the location's operating hours by the Laurel County Health Dept resource guide, but they are NOT confirmed as public/client access hours — they most likely reflect warehouse/agency receiving hours. God's Pantry's own site publishes no hours for this location, the Find Food tool shows no hours for it, and MapQuest lists it as a business \"Closed until 7 am.\" Could not confirm public-access accuracy without a phone call (606-862-6693), which was not possible in this pass.",
+        "evidence_url": "https://www.laurelcohealthdept.org/resources-food",
+        "confidence": "low",
+        "content_hash": null,
+        "answered_at": "2026-09-28T05:38:57Z"
+      },
+      {
+        "question": "Is there a separate public-facing pantry or distribution site in London operated by God's Pantry for walk-in clients?",
+        "answer": "No separate God's Pantry-operated walk-in pantry in London was found. The Find Food locator lists no God's Pantry-branded pantry in London/Laurel County (its own direct pantries are in Lexington only), and the Mobile Pantry program's county list does not include Laurel County. Walk-in food access in London is provided by partner agencies instead — e.g., Calvary Baptist Church (111 N McWhorter St), Come-Unity Co-Op Care (755 S Dixie St), FPC Food Pantry (123 Keavy Rd), Fed By Grace (911 TLC Lane), and Second Mile 541 Outreach (280 Levi Jackson Mill Rd) per the Laurel County Health Dept guide.",
+        "evidence_url": "https://www.godspantry.org/help",
+        "confidence": "medium",
+        "content_hash": null,
+        "answered_at": "2026-09-28T05:38:57Z"
+      }
+    ],
     "conflicts": [],
     "operating_status": "active",
     "risk_tier": "low"
+  },
+  "pass_c": {
+    "pass": "C",
+    "locked_at": "2026-09-28T05:39:24.089259+00:00",
+    "unknown_fields": [
+      "Verified public/client-facing hours at 1215 E 4th St (only agency/warehouse hours Mon-Fri 7:00 AM-3:30 PM found, via Laurel County Health Dept)"
+    ],
+    "possible_duplicates": [
+      "God's Pantry Food Bank Southeast Regional Distribution Center (same address, listed by PantryPath/ChamberofCommerce as a 'food bank' listing)"
+    ],
+    "privacy_concerns": [],
+    "proposed_risk_tier": "low",
+    "limitations": [
+      "Could not call 606-862-6693 to confirm whether individuals can pick up food on-site (no phone capability in this pass).",
+      "findfood.godspantry.org did not resolve; used godspantry.org/help Find Food tool instead.",
+      "Facebook page facebook.com/foodbanksoutheastky was consolidated into the main God's Pantry Food Bank page (April 18, 2025 post) and shows no London-specific public distribution posts without login.",
+      "foodbanks.net listing returned 403 Forbidden.",
+      "Find Food locator page text was truncated; London-area entries reviewed but full list not exhaustively verified."
+    ],
+    "operating_status": "active",
+    "answers": [
+      {
+        "question": "Does the London 1215 E 4th St location distribute food directly to individuals/families, or only to partner agencies/pantries?",
+        "answer": "Only to partner agencies/pantries — no direct walk-in distribution confirmed. God's Pantry's own contact page lists 1215 E 4th St under \"Warehouse locations\" as the \"Southeast Regional Distribution Center,\" and the org's \"Find Food\" pantry locator (godspantry.org/help) does NOT list 1215 E 4th St as a pantry site — the only God's Pantry-operated direct-service sites it lists are in Lexington (GPFB Northside, 817 Winchester Rd, Cambridge Dr, etc.). Laurel County direct-service pantries listed there are separate organizations (Calvary Baptist, Fed By Grace, FPC, etc.). The org's direct-to-individual programs (Mobile Pantry, Health Care Pantry) do not include the London warehouse address.",
+        "evidence_url": "https://www.godspantry.org/help",
+        "confidence": "medium",
+        "content_hash": null,
+        "answered_at": "2026-09-28T05:38:57Z"
+      },
+      {
+        "question": "Are the hours Monday-Friday 7:00 AM-3:30 PM (per Laurel County Health Dept) current and accurate for public access?",
+        "answer": "Hours Mon-Fri 7:00 AM-3:30 PM are confirmed as the location's operating hours by the Laurel County Health Dept resource guide, but they are NOT confirmed as public/client access hours — they most likely reflect warehouse/agency receiving hours. God's Pantry's own site publishes no hours for this location, the Find Food tool shows no hours for it, and MapQuest lists it as a business \"Closed until 7 am.\" Could not confirm public-access accuracy without a phone call (606-862-6693), which was not possible in this pass.",
+        "evidence_url": "https://www.laurelcohealthdept.org/resources-food",
+        "confidence": "low",
+        "content_hash": null,
+        "answered_at": "2026-09-28T05:38:57Z"
+      },
+      {
+        "question": "Is there a separate public-facing pantry or distribution site in London operated by God's Pantry for walk-in clients?",
+        "answer": "No separate God's Pantry-operated walk-in pantry in London was found. The Find Food locator lists no God's Pantry-branded pantry in London/Laurel County (its own direct pantries are in Lexington only), and the Mobile Pantry program's county list does not include Laurel County. Walk-in food access in London is provided by partner agencies instead — e.g., Calvary Baptist Church (111 N McWhorter St), Come-Unity Co-Op Care (755 S Dixie St), FPC Food Pantry (123 Keavy Rd), Fed By Grace (911 TLC Lane), and Second Mile 541 Outreach (280 Levi Jackson Mill Rd) per the Laurel County Health Dept guide.",
+        "evidence_url": "https://www.godspantry.org/help",
+        "confidence": "medium",
+        "content_hash": null,
+        "answered_at": "2026-09-28T05:38:57Z"
+      }
+    ]
   }
 }

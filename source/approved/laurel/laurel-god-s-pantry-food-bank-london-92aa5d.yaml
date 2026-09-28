@@ -1,0 +1,35 @@
+# Approved resource — God's Pantry Food Bank - London
+# Note: Southeast Regional Distribution Center (partner agency distribution + county-listed food resource)
+# Hours reflect warehouse operating hours per Laurel County Health Dept guide; call ahead to confirm public access
+
+id: laurel-god-s-pantry-food-bank-london-92aa5d
+name: God's Pantry Food Bank - London
+status: active
+coverage_scope: county
+needs:
+- food
+locations:
+- id: laurel-god-s-pantry-food-bank-london-92aa5d-loc-1
+  location_type: physical
+  address:
+    street: 1215 East 4th Street
+    city: London
+    state: KY
+    zip: '40741'
+    county: Laurel
+  phones:
+  - (606) 862-6693
+  hours: Hours not available. Please call ahead.
+description: God's Pantry Food Bank's Southeast Regional Distribution Center in London, KY, providing food assistance to food-insecure
+  residents of Central and Eastern Kentucky.
+eligibility: 'No eligibility stated for on-site access at 1215 E 4th St (site not listed as a public pantry). Org-wide: free
+  food for food-insecure residents of the 50-county service area; income eligibility applies to USDA TEFAP/CSFP commodities;
+  Health Care Pantry boxes are patient-only via provider referral.'
+cost: unknown
+service_types: 'Free food: fresh produce, dairy, meat/poultry, frozen foods, canned goods, dry goods, bread; mobile pantry;
+  SNAP enrollment help; TEFAP/CSFP certified'
+hours: Mon-Fri 7:00 AM - 3:30 PM
+phone: (606) 862-6693
+verification_status: verified
+verified_at: '2026-09-28T05:40:07Z'
+verified_by: review-agent
