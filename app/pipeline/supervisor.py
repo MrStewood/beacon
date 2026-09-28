@@ -801,29 +801,34 @@ def main() -> None:
         return
 
     if args.loop:
-        stop_file = BEACON_ROOT / "leads" / "STOP"
+        import signal, time
+        _stop_requested = False
+
+        def _handle_sigint(sig, frame):
+            nonlocal _stop_requested
+            if _stop_requested:
+                print("\nForce quit.")
+                sys.exit(1)
+            _stop_requested = True
+            print("\n[Ctrl+C] Finishing current step then stopping… (Ctrl+C again to force quit)")
+
+        signal.signal(signal.SIGINT, _handle_sigint)
+
         step = 0
-        print(f"\nRunning in loop mode. To stop cleanly after the current step:")
-        print(f"  touch {stop_file}\n")
-        try:
-            while True:
-                # Check for stop request before starting next step
-                if stop_file.exists():
-                    stop_file.unlink()
-                    print("\nStop file detected — exiting cleanly after this check.")
-                    break
-                step += 1
-                print(f"\n{'#'*60}")
-                print(f"  LOOP STEP {step}")
-                print(f"{'#'*60}")
-                taken = _run_one(dry_run=args.dry_run)
-                if taken in _STOP_ACTIONS:
-                    print(f"\nLoop stopped: action={taken}. Nothing more to do right now.")
-                    break
-                import time
-                time.sleep(3)   # brief pause between steps
-        except KeyboardInterrupt:
-            print("\nCtrl+C — current step may be incomplete. Use 'touch leads/STOP' next time for a clean stop.")
+        print("\nRunning in loop mode.  Ctrl+C = finish current step then stop.\n")
+        while True:
+            if _stop_requested:
+                print("Stopped cleanly.")
+                break
+            step += 1
+            print(f"\n{'#'*60}")
+            print(f"  LOOP STEP {step}")
+            print(f"{'#'*60}")
+            taken = _run_one(dry_run=args.dry_run)
+            if taken in _STOP_ACTIONS:
+                print(f"\nLoop stopped: action={taken}. Nothing more to do right now.")
+                break
+            time.sleep(3)
         return
 
     _run_one(dry_run=args.dry_run)
