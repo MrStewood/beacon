@@ -153,9 +153,9 @@ class TestSearchAccuracy:
         assert len(results) < 50
 
     def test_misspelled_name_still_found(self, resources):
-        require_name(resources, 'cumberland')
+        require_name(resources, 'cumberland river')
         results = search(resources, 'cumbrland river')
-        found = any('cumberland' in r['name'].lower() for r in results[:5])
+        found = any('cumberland river' in r['name'].lower() for r in results[:5])
         assert found
 
     def test_unrelated_no_match(self, resources):
