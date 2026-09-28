@@ -292,8 +292,6 @@ def _priority_order(snap: dict) -> list[str]:
     order = []
     if snap["alerts"]["unacknowledged"] > 0:
         order.append("alert_human: unacknowledged alerts exist")
-    if snap["leads"]["sensitive_pending"]:
-        order.append("alert_human: sensitive leads pending investigation")
     if snap["candidates"]["requeued"] > 0:
         order.append("run_followup")
     if snap["candidates"]["pending_review"] > 0:
@@ -326,22 +324,6 @@ async def decide(snap: dict) -> dict:
             "reason": f"Unacknowledged alert: {alert.get('message', 'see alerts dir')}",
             "priority": 5,
             "auto": True,
-        }
-
-    if snap["leads"]["sensitive_pending"]:
-        items = snap["leads"]["sensitive_pending"]
-        return {
-            "action": "alert_human",
-            "target": items[0]["name"],
-            "reason": f"{len(items)} sensitive lead(s) in queue require human review before investigation",
-            "priority": 5,
-            "auto": True,
-            "human_message": (
-                f"{len(items)} sensitive resource lead(s) found in the queue that require human approval:\n"
-                + "\n".join(f"  - {i['name']} ({i['category']})" for i in items)
-                + "\n\nReview each lead. If the address should be kept confidential, "
-                "mark sensitive=true in the lead before investigation runs."
-            ),
         }
 
     # LLM decision for everything else
