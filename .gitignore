@@ -21,3 +21,21 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Generated build outputs — rebuilt by scripts/build.py, never committed
+_site/
+pages/
+print/
+data/resources.json
+data/resources.csv
+data/index.json
+data/catalog.json
+data/change-report.json
+data/v3/
+
+# AI operational runtime state — written during research/pipeline runs
+leads/runs/
+leads/investigations/
+pilot/cases/
+pilot/audit/
+pilot/rejected/

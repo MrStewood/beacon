@@ -2,12 +2,37 @@
 
 All notable changes to Beacon are documented here.
 
-## Unreleased
+## Unreleased — Repo Restructuring (2026-09-27)
 
-- Back up and clear existing resource records, development candidates, legacy imports, and generated resource outputs for a clean local restart.
-- Build from canonical YAML instead of the embedded legacy resource list; remove that obsolete importer.
-- Resolve CSV paths relative to the repository and support empty page/print generation.
-- Keep required crisis-resource validation intact: an empty data set is not a deployable release.
+### GitHub Pages — serve only public content
+- Changed Pages artifact from repo root (`.`) to `_site/` directory
+- `scripts/build.py` now assembles `_site/` containing only: `index.html`,
+  `organizations.html`, `assets/`, `embed/`, `schema/`, `data/` (public JSON/CSV),
+  `pages/`, `print/`, `sitemap.xml`, `robots.txt`
+- `data/census/` excluded from `_site/` — operational AI reference data (35 MB),
+  not part of the public web interface
+- Operational directories (`leads/`, `pilot/`, `source/candidates/`, `scripts/`,
+  `tests/`) never served publicly
+- Fixed GitHub Actions permissions: `pages: write` / `id-token: write` moved to
+  `deploy` job where `actions/deploy-pages` actually runs
+- Removed `git diff --exit-code` check on generated files (they are no longer committed)
+
+### Generated outputs — gitignored, built by CI
+- `data/resources.json`, `data/resources.csv`, `data/index.json`,
+  `data/catalog.json`, `data/change-report.json`, `data/v3/` removed from git tracking
+- `pages/`, `print/`, `_site/` added to `.gitignore`
+- AI runtime state directories (`leads/runs/`, `leads/investigations/`,
+  `pilot/cases/`, `pilot/audit/`, `pilot/rejected/`) added to `.gitignore`
+
+### source/ directory structure
+- `source/approved/` — canonical published records (YAML); the only content that
+  appears on the public site; populated via human-approved PRs
+- `source/candidates/` — in-progress candidates; CI validates trust scores;
+  never served publicly; promoted to `source/approved/` on merge
+
+### Data reset
+- Backed up and cleared prior resource records for clean restart
+- Removed embedded legacy resource list; build reads only `source/approved/`
 
 ## [2.1.0] - 2026-09-20
 

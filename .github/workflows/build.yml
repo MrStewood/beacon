@@ -27,16 +27,15 @@ jobs:
         run: node --check assets/js/app.js && node --check assets/js/config.js
       - name: Run tests
         run: pytest tests/ -v
-      - name: Verify generated files match
-        run: python scripts/build.py && git diff --exit-code -- data/ pages/ print/ sitemap.xml ':(exclude)data/change-report.json' || (echo "Generated files differ from committed" && exit 1)
+      - name: Validate candidates (if any exist)
+        run: python scripts/validate_candidate.py --all
 
   build:
     needs: validate
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
-      pages: write
-      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -44,16 +43,21 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install jsonschema pytest pyyaml
-      - name: Build all outputs
+      - name: Build all outputs and assemble _site/
         run: python scripts/build.py
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          # Only the assembled public site — never the whole repo.
+          # source/candidates/, leads/, pilot/, scripts/, tests/ stay private.
+          path: _site
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -4,21 +4,33 @@ Community Resource Directory — helping people find food, shelter, healthcare, 
 
 **[View the Directory](https://mrstewood.github.io/beacon/)**
 
-## Quick Start
+## How This Works
 
-### Browse
+```
+source/candidates/    ← AI researches leads, writes candidate YAMLs, opens PRs
+        ↓  (CI validates trust scores; human approves PR)
+source/approved/      ← canonical published records
+        ↓  (CI builds on merge to main)
+_site/                ← public website deployed to GitHub Pages
+```
+
+Only records in `source/approved/` appear on the public site.
+Candidates, leads, scripts, and operational data are never served publicly.
+
+## Browse
+
 Visit https://mrstewood.github.io/beacon/ to search resources by need, location, or service type.
 
-### Download
+## Download
+
 | Format | Link |
 |--------|------|
 | CSV (Spreadsheet) | [resources.csv](data/resources.csv) |
 | JSON (Full) | [resources.json](data/resources.json) |
 | JSON (Compact) | [index.json](data/index.json) |
-| By County | [resources-by-county/](data/resources-by-county/) |
-| By Need | [resources-by-need/](data/resources-by-need/) |
 
-### Embed
+## Embed
+
 ```html
 <script src="https://mrstewood.github.io/beacon/embed/widget.js"
         data-county="laurel" data-need="food" data-theme="light" data-limit="10"></script>
@@ -27,48 +39,71 @@ Visit https://mrstewood.github.io/beacon/ to search resources by need, location,
 ## Development
 
 ### Prerequisites
+
 - Python 3.10+
-- pip install jsonschema pytest
+- `pip install jsonschema pyyaml pytest`
 
-### Local Development
+### Local Build
+
 ```bash
-# Clone the repo
-git clone git@github.com:MrStewood/beacon.git
-cd beacon
+# Validate + build everything → _site/
+python3 scripts/build.py
 
-# Validate data
-python scripts/validate.py
+# Build + run tests
+python3 scripts/build.py --test
 
-# Run tests
-pytest tests/ -v
+# Validate only (no build)
+python3 scripts/validate.py
 
 # Serve locally
-python -m http.server 8000
+python3 -m http.server 8000 --directory _site
 # Open http://localhost:8000
 ```
 
-### Data Pipeline
-Canonical resource data lives in `source/approved/**/*.yaml`. The build generates:
-- `data/resources.json` — public dataset
-- `data/resources.csv` — spreadsheet export
-- `data/index.json` — lightweight search index
+### Repository Layout
 
-```bash
-# Regenerate all data
-python scripts/build.py
+```
+source/
+  approved/         ← canonical published records (YAML) — build reads only here
+  candidates/       ← in-progress candidates with claim/evidence metadata
 
-# Validate
-python scripts/validate.py
+leads/              ← AI research tooling and runtime state (never served publicly)
+pilot/              ← workflow state machine and case management
+
+scripts/            ← build, validation, geocoding, trust scoring
+tests/              ← test suite
+schema/             ← JSON schemas for resources and candidates
+
+assets/             ← CSS, JS, images (static)
+embed/              ← embeddable widget
+index.html          ← public search interface
+organizations.html  ← organization portal
+
+data/               ← GITIGNORED generated JSON/CSV outputs
+pages/              ← GITIGNORED generated resource/county/need HTML
+print/              ← GITIGNORED generated print guides
+_site/              ← GITIGNORED complete built site (deployed to GitHub Pages)
 ```
 
-### Testing
-```bash
-# Run all tests
-pytest tests/ -v
+### Data Pipeline
 
-# Run specific test file
-pytest tests/test_crisis.py -v
-pytest tests/test_schema.py -v
+Canonical resource data lives in `source/approved/**/*.yaml`.
+Generated outputs (`data/`, `pages/`, `print/`, `_site/`) are never committed —
+CI builds them fresh on every push to `main`.
+
+### Adding a Resource
+
+1. AI agent researches lead → writes `source/candidates/<county>/<id>.yaml`
+2. PR opened → CI runs schema validation + trust score recomputation
+3. Human reviews and approves PR
+4. On merge: CI builds the site and deploys to GitHub Pages
+
+### Testing
+
+```bash
+pytest tests/ -v                    # full suite
+pytest tests/test_crisis.py -v      # crisis resource checks
+pytest tests/test_trust_scoring.py -v  # trust scoring invariants
 ```
 
 ## Data Schema
@@ -85,14 +120,16 @@ Key fields:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-To suggest a resource or report an error, open an issue using our templates:
+To suggest a resource or report an error, open an issue:
 - [Suggest a Resource](https://github.com/MrStewood/beacon/issues/new?template=suggest-resource.md)
 - [Report a Correction](https://github.com/MrStewood/beacon/issues/new?template=update-resource.md)
 
 ## License
 
-- **Code**: MIT License (see [LICENSE](LICENSE))
-- **Data**: CC BY 4.0 (see [LICENSE](LICENSE))
+- **Code**: MIT License
+- **Data**: CC BY 4.0
+
+See [LICENSE](LICENSE).
 
 ## Disclaimer
 
