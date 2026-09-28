@@ -480,18 +480,13 @@ def _do_approve(candidate: dict, candidate_path: Path, county: str, review: dict
 
     log.info("APPROVED → %s", out_path.relative_to(BEACON_ROOT))
 
-    # Update candidate workflow_state
-    candidate["workflow_state"] = "yaml-created"
-    candidate["audit"] = candidate.get("audit", []) + [{
-        "state": "yaml-created",
-        "actor": "review-agent",
-        "actor_role": "publisher",
-        "at": _utc_now(),
-        "note": review.get("reasoning", ""),
-    }]
-    candidate_path.write_text(
-        yaml.dump(candidate, allow_unicode=True, sort_keys=False, width=120)
-    )
+    # Remove from candidates — the approved copy in source/approved/ is now the
+    # canonical record. Leaving it in source/candidates/ causes validate_candidate.py
+    # to re-check (and fail on signature mismatch after corrections are applied).
+    candidate_path.unlink(missing_ok=True)
+    # Also remove any requeue guidance file written by a prior review cycle.
+    requeue = candidate_path.with_suffix(".requeue.json")
+    requeue.unlink(missing_ok=True)
 
 
 def _do_reject(candidate: dict, candidate_path: Path, review: dict) -> None:
