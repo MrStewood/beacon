@@ -1,0 +1,488 @@
+{
+  "lead_id": "40743-cvdvs-london-corbin-valley-domestic-violence-services",
+  "investigated_at": "2026-09-28T15:32:04.615416+00:00",
+  "lead": {
+    "name": "CVDVS London (Corbin Valley Domestic Violence Services)",
+    "category": "crisis",
+    "phones": [
+      "6068432022"
+    ],
+    "url": null,
+    "address": "3100 HWY 30 Bypass",
+    "city": "London",
+    "county": "Laurel",
+    "state": "KY",
+    "zip": "40743",
+    "populations": [
+      "women",
+      "families"
+    ],
+    "service_types": [
+      "hotline",
+      "residential"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-food"
+    ],
+    "found_in_zip": "40744"
+  },
+  "findings": [
+    {
+      "ev_id": "ev-a-001",
+      "pass": "A",
+      "field": "phone",
+      "value": "1-800-755-5348",
+      "source_url": "https://cvdvs.org/",
+      "source_type": "org-website",
+      "text_excerpt": "If you are concerned that your computer use may be monitored, please contact us directly at 1-800-755-5348.",
+      "snapshot_url": null,
+      "content_hash": "sha256:8660a4724ebf8c0349849dc7c2a0a0341a85d2dd557ab674706fd0602fb92445",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-002",
+      "pass": "A",
+      "field": "service_area",
+      "value": "Laurel, Knox, Jackson, Whitley, Rockcastle, Bell, Clay, and Harlan counties, KY",
+      "source_url": "https://cvdvs.org/",
+      "source_type": "org-website",
+      "text_excerpt": "Serving 8 Kentucky counties including Laurel, Knox, Jackson, Whitley, Rockcastle, Bell, Clay, and Harlan.",
+      "snapshot_url": null,
+      "content_hash": "sha256:8660a4724ebf8c0349849dc7c2a0a0341a85d2dd557ab674706fd0602fb92445",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-003",
+      "pass": "A",
+      "field": "coverage_scope",
+      "value": "multi-county",
+      "source_url": "https://cvdvs.org/",
+      "source_type": "org-website",
+      "text_excerpt": "Serving 8 Kentucky counties including Laurel, Knox, Jackson, Whitley, Rockcastle, Bell, Clay, and Harlan.",
+      "snapshot_url": null,
+      "content_hash": "sha256:8660a4724ebf8c0349849dc7c2a0a0341a85d2dd557ab674706fd0602fb92445",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-004",
+      "pass": "A",
+      "field": "description",
+      "value": "Cumberland Valley Domestic Violence Services, Inc. — 24/7 safe shelter and domestic violence advocacy; 2025 Non-Profit of the Year (London–Laurel County Chamber of Commerce). All staff are trained domestic violence advocates, serving resident and non-residential clients.",
+      "source_url": "https://cvdvs.org/",
+      "source_type": "org-website",
+      "text_excerpt": "24/7 Safe Shelter — All of our staff are trained domestic violence advocates, offering services to resident and non-residential clients.",
+      "snapshot_url": null,
+      "content_hash": "sha256:8660a4724ebf8c0349849dc7c2a0a0341a85d2dd557ab674706fd0602fb92445",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-005",
+      "pass": "A",
+      "field": "phone",
+      "value": "606-843-2022",
+      "source_url": "https://cvdvs.org/contact-us/",
+      "source_type": "org-website",
+      "text_excerpt": "How To Reach Us 606-843-2022 1-800-755-5348 info@cvdvs.org",
+      "snapshot_url": null,
+      "content_hash": "sha256:005b078184c27438232173521ff4e6197ec437001b87dbffdec278b6c0e2530f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-006",
+      "pass": "A",
+      "field": "email",
+      "value": "info@cvdvs.org",
+      "source_url": "https://cvdvs.org/contact-us/",
+      "source_type": "org-website",
+      "text_excerpt": "How To Reach Us 606-843-2022 1-800-755-5348 info@cvdvs.org",
+      "snapshot_url": null,
+      "content_hash": "sha256:005b078184c27438232173521ff4e6197ec437001b87dbffdec278b6c0e2530f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-007",
+      "pass": "A",
+      "field": "service_types",
+      "value": "Emergency shelter (residential): food, clothing, hygiene items, case management, individual & group counseling, housing assistance, parenting classes, life skills, safety planning, legal & agency advocacy, domestic violence education. Non-residential: court advocacy, counseling, DV education, information & referrals, safety planning, crisis intervention, advocacy, casework.",
+      "source_url": "https://cvdvs.org/services/",
+      "source_type": "org-website",
+      "text_excerpt": "Residential Services: Emergency Shelter, Food/Clothing/Hygiene Items, Case Management, Counseling, Housing Assistance, Safety Planning, Legal & Agency Advocacy. Non-Residential: Court Advocacy, Counseling, Crisis Intervention, Advocacy, Casework.",
+      "snapshot_url": null,
+      "content_hash": "sha256:1ebddd8e5a3757f6224a7dac1c0c67db83d15532d580ed6ba50ac33ecce96c91",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-008",
+      "pass": "A",
+      "field": "populations",
+      "value": "Victims of domestic violence and abuse (resident and non-residential clients)",
+      "source_url": "https://cvdvs.org/services/",
+      "source_type": "org-website",
+      "text_excerpt": "Residential Services — Emergency Shelter ... Non-Residential Services ...",
+      "snapshot_url": null,
+      "content_hash": "sha256:1ebddd8e5a3757f6224a7dac1c0c67db83d15532d580ed6ba50ac33ecce96c91",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-009",
+      "pass": "A",
+      "field": "hours",
+      "value": "24-hour crisis line; staffed around the clock (24/7) by state certified Domestic Violence Advocates",
+      "source_url": "https://cvdvs.org/about/",
+      "source_type": "org-website",
+      "text_excerpt": "The center provides a 24-hour crisis line and is staffed around the clock by state certified Domestic Violence Advocates. Our contact number is 1-800-755-5348.",
+      "snapshot_url": null,
+      "content_hash": "sha256:f13f848389fecf3bab2c2344e74a4141502b857c6926630d1457d6401c749f7e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-010",
+      "pass": "A",
+      "field": "intake_process",
+      "value": "Self-referral or referral by local law enforcement or community agencies; call 1-800-755-5348",
+      "source_url": "https://cvdvs.org/about/",
+      "source_type": "org-website",
+      "text_excerpt": "Clients can refer themselves or be referred by local law enforcement or community agencies.",
+      "snapshot_url": null,
+      "content_hash": "sha256:f13f848389fecf3bab2c2344e74a4141502b857c6926630d1457d6401c749f7e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-011",
+      "pass": "A",
+      "field": "eligibility",
+      "value": "All services free of charge for participants and their dependent children; no income eligibility standards",
+      "source_url": "https://cvdvs.org/about/",
+      "source_type": "org-website",
+      "text_excerpt": "All services are provided free of charge for participants and their dependent children. This program imposes no income eligibility standards on individuals receiving assistance.",
+      "snapshot_url": null,
+      "content_hash": "sha256:f13f848389fecf3bab2c2344e74a4141502b857c6926630d1457d6401c749f7e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-012",
+      "pass": "A",
+      "field": "cost",
+      "value": "Free",
+      "source_url": "https://cvdvs.org/about/",
+      "source_type": "org-website",
+      "text_excerpt": "All services are provided free of charge for participants and their dependent children.",
+      "snapshot_url": null,
+      "content_hash": "sha256:f13f848389fecf3bab2c2344e74a4141502b857c6926630d1457d6401c749f7e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-013",
+      "pass": "A",
+      "field": "address",
+      "value": "London, Laurel County, Kentucky (specific street address not published on website)",
+      "source_url": "https://cvdvs.org/about/",
+      "source_type": "org-website",
+      "text_excerpt": "We are located in London, Laurel County, Kentucky, serving the Cumberland Valley Area.",
+      "snapshot_url": null,
+      "content_hash": "sha256:f13f848389fecf3bab2c2344e74a4141502b857c6926630d1457d6401c749f7e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-014",
+      "pass": "A",
+      "field": "operating_status",
+      "value": "active",
+      "source_url": "https://cvdvs.org/",
+      "source_type": "org-website",
+      "text_excerpt": "2025 Non-Profit of the Year — We were truly honored to be selected by the London – Laurel County Chamber of Commerce as their 2025 Non-Profit of the Year. Upcoming Events 16th Annual Celebration of Appalachian Women Conference • Saturday, August 1, 2026",
+      "snapshot_url": null,
+      "content_hash": "sha256:8660a4724ebf8c0349849dc7c2a0a0341a85d2dd557ab674706fd0602fb92445",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-015",
+      "pass": "A",
+      "field": "public_access",
+      "value": "yes",
+      "source_url": "https://cvdvs.org/about/",
+      "source_type": "org-website",
+      "text_excerpt": "Clients can refer themselves or be referred by local law enforcement or community agencies. The center provides a 24-hour crisis line and is staffed around the clock by state certified Domestic Violence Advocates.",
+      "snapshot_url": null,
+      "content_hash": "sha256:f13f848389fecf3bab2c2344e74a4141502b857c6926630d1457d6401c749f7e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-016",
+      "pass": "A",
+      "field": "access_notes",
+      "value": "Call 1-800-755-5348 (24-hour crisis line) or 606-843-2022; self-referral accepted. Website does not publish a street address — call for location. Emergency: 911.",
+      "source_url": "https://cvdvs.org/about/",
+      "source_type": "org-website",
+      "text_excerpt": "Clients can refer themselves or be referred by local law enforcement or community agencies. The center provides a 24-hour crisis line...",
+      "snapshot_url": null,
+      "content_hash": "sha256:f13f848389fecf3bab2c2344e74a4141502b857c6926630d1457d6401c749f7e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-017",
+      "pass": "A",
+      "field": "url",
+      "value": "https://cvdvs.org/",
+      "source_url": "https://cvdvs.org/contact-us/",
+      "source_type": "org-website",
+      "text_excerpt": "Contact Us — How To Reach Us 606-843-2022 1-800-755-5348 info@cvdvs.org",
+      "snapshot_url": null,
+      "content_hash": "sha256:005b078184c27438232173521ff4e6197ec437001b87dbffdec278b6c0e2530f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-018",
+      "pass": "B",
+      "field": "phone",
+      "value": "606-843-2022",
+      "source_url": "https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46",
+      "source_type": "established-directory",
+      "text_excerpt": "Hours Mon-Sun 24 hours | 606-843-2022 Voice · Main",
+      "snapshot_url": null,
+      "content_hash": "sha256:5125c7e39cf1460f2ff46527eff609b442ae9a903008fe77e4e2c154f84ae758",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-019",
+      "pass": "B",
+      "field": "hours",
+      "value": "Mon-Sun 24 hours",
+      "source_url": "https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46",
+      "source_type": "established-directory",
+      "text_excerpt": "Hours Mon-Sun 24 hours",
+      "snapshot_url": null,
+      "content_hash": "sha256:5125c7e39cf1460f2ff46527eff609b442ae9a903008fe77e4e2c154f84ae758",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-020",
+      "pass": "B",
+      "field": "service_area",
+      "value": "Jackson County, KY; Harlan County, KY; Laurel County, KY; Bell County, KY; Rockcastle County, KY; Clay County, KY; Knox County, KY; Whitley County, KY",
+      "source_url": "https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46",
+      "source_type": "established-directory",
+      "text_excerpt": "Service area: Jackson County, KY; Harlan County, KY; Laurel County, KY; Bell County, KY; Rockcastle County, KY; Clay County, KY; Knox County, KY; Whitley County, KY",
+      "snapshot_url": null,
+      "content_hash": "sha256:5125c7e39cf1460f2ff46527eff609b442ae9a903008fe77e4e2c154f84ae758",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-021",
+      "pass": "B",
+      "field": "cost",
+      "value": "Free",
+      "source_url": "https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46",
+      "source_type": "established-directory",
+      "text_excerpt": "Fees: Free",
+      "snapshot_url": null,
+      "content_hash": "sha256:5125c7e39cf1460f2ff46527eff609b442ae9a903008fe77e4e2c154f84ae758",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-022",
+      "pass": "B",
+      "field": "eligibility",
+      "value": "Must be in an intimate partner relationship; No documentation required",
+      "source_url": "https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46",
+      "source_type": "established-directory",
+      "text_excerpt": "Eligibility: Must be in an intimate partner relationship. Required documents: No documentation required",
+      "snapshot_url": null,
+      "content_hash": "sha256:5125c7e39cf1460f2ff46527eff609b442ae9a903008fe77e4e2c154f84ae758",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-023",
+      "pass": "B",
+      "field": "intake_process",
+      "value": "Walk-in or call",
+      "source_url": "https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46",
+      "source_type": "established-directory",
+      "text_excerpt": "Application process: Walk-in or call",
+      "snapshot_url": null,
+      "content_hash": "sha256:5125c7e39cf1460f2ff46527eff609b442ae9a903008fe77e4e2c154f84ae758",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-024",
+      "pass": "B",
+      "field": "phone",
+      "value": "1-800-755-5348 (24-hour crisis line); 1-606-843-2022",
+      "source_url": "https://www.laurelcohealthdept.org/resources-dv",
+      "source_type": "gov-directory",
+      "text_excerpt": "Toll Free 24-hour crisis line 1-800-755-5348 / 1-606-843-2022",
+      "snapshot_url": null,
+      "content_hash": "sha256:43b58aefc65dbf46feec69ca79338a9c96ca393e3e096452861f9802747e9d3f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-025",
+      "pass": "B",
+      "field": "address",
+      "value": "P.O. Box 2162, London, KY 40743",
+      "source_url": "https://www.laurelcohealthdept.org/resources-dv",
+      "source_type": "gov-directory",
+      "text_excerpt": "Cumberland Valley Domestic Violence Services, P.O. Box 2162, London, KY 40743",
+      "snapshot_url": null,
+      "content_hash": "sha256:43b58aefc65dbf46feec69ca79338a9c96ca393e3e096452861f9802747e9d3f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-026",
+      "pass": "B",
+      "field": "hours",
+      "value": "Always Open (24-hour crisis line, staffed around the clock)",
+      "source_url": "https://www.laurelcohealthdept.org/resources-dv",
+      "source_type": "gov-directory",
+      "text_excerpt": "Hours of Operation: Always Open ... staffed around the clock by state certified Domestic Violence Advocates.",
+      "snapshot_url": null,
+      "content_hash": "sha256:43b58aefc65dbf46feec69ca79338a9c96ca393e3e096452861f9802747e9d3f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-027",
+      "pass": "B",
+      "field": "service_area",
+      "value": "Cumberland Valley ADD counties: Bell, Clay, Harlan, Jackson, Knox, Laurel, Rockcastle, Whitley",
+      "source_url": "https://www.laurelcohealthdept.org/resources-dv",
+      "source_type": "gov-directory",
+      "text_excerpt": "The center serves the Cumberland Valley Area Development District, which includes the following counties: Bell, Clay, Harlan, Jackson, Knox, Laurel, Rockcastle, and Whitley.",
+      "snapshot_url": null,
+      "content_hash": "sha256:43b58aefc65dbf46feec69ca79338a9c96ca393e3e096452861f9802747e9d3f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-028",
+      "pass": "B",
+      "field": "email",
+      "value": "info@cvdvs.org",
+      "source_url": "https://www.laurelcohealthdept.org/resources-dv",
+      "source_type": "gov-directory",
+      "text_excerpt": "Email: info@cvdvs.org",
+      "snapshot_url": null,
+      "content_hash": "sha256:43b58aefc65dbf46feec69ca79338a9c96ca393e3e096452861f9802747e9d3f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-029",
+      "pass": "B",
+      "field": "intake_process",
+      "value": "Self-referral or referral by local law enforcement or community agencies",
+      "source_url": "https://www.laurelcohealthdept.org/resources-dv",
+      "source_type": "gov-directory",
+      "text_excerpt": "Clients can refer themselves or be referred by local law enforcement or community agencies.",
+      "snapshot_url": null,
+      "content_hash": "sha256:43b58aefc65dbf46feec69ca79338a9c96ca393e3e096452861f9802747e9d3f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-030",
+      "pass": "B",
+      "field": "service_types",
+      "value": "Residential: emergency shelter, food/clothing/hygiene, case management, counseling, housing assistance, parenting classes, life skills, safety planning, legal advocacy, children's services. Non-residential: court advocacy, counseling, DV education, information & referrals, safety planning, crisis intervention, advocacy, casework.",
+      "source_url": "https://www.laurelcohealthdept.org/resources-dv",
+      "source_type": "gov-directory",
+      "text_excerpt": "Residential Services: Emergency Shelter, Food/Clothing/Hygiene, Case Management, Counseling, Housing Assistance, Parenting Classes, Life Skills, Safety Planning, Legal & Agency Advocacy, Children's Services. Non-Residential: Court Advocacy, Counseling, DV Education, Crisis Intervention, Advocacy.",
+      "snapshot_url": null,
+      "content_hash": "sha256:43b58aefc65dbf46feec69ca79338a9c96ca393e3e096452861f9802747e9d3f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    }
+  ],
+  "pass_a": {
+    "pass": "A",
+    "locked_at": "2026-09-28T15:29:34.567233+00:00",
+    "unknown_fields": [
+      "address (street address intentionally not published on org website — DV shelter; lead's 3100 HWY 30 Byp address comes from third-party directories only, not recorded as primary)",
+      "what_to_bring"
+    ],
+    "possible_duplicates": [
+      "Cumberland Valley Domestic Violence Services (cvdvs.org) — 'CVDVS' in the lead appears to be a mis-expansion as 'Corbin Valley'; actual name is Cumberland Valley Domestic Violence Services, Inc."
+    ],
+    "privacy_concerns": [
+      "DV shelter — org website does not publish a street address; only 'London, Laurel County, Kentucky' given. Do not publish the 3100 HWY 30 BYP address from third-party directories without confirmation it is not confidential."
+    ],
+    "proposed_risk_tier": "elevated",
+    "limitations": [
+      "Wayback check returned 429 (rate limited) — no snapshot recorded",
+      "Street address not on org website; lead address (3100 HWY 30 Bypass) only corroborated by third-party directories (recoveryhelper.org) in search results, not visited in Pass A",
+      "No dedicated gov-directory page for this org found in the site:.gov search"
+    ],
+    "operating_status": "active"
+  },
+  "pass_b": {
+    "pass": "B",
+    "locked_at": "2026-09-28T15:31:53.553838+00:00",
+    "unknown_fields": [
+      "specific street address (only P.O. Box 2162, London, KY 40743 found in independent sources; DV shelter street address likely confidential)"
+    ],
+    "possible_duplicates": [
+      "CVDVS / Cumberland Valley Domestic Violence Services, Inc. (same org; 'Corbin Valley' in lead name appears to be a misnomer — all sources say Cumberland Valley)"
+    ],
+    "privacy_concerns": [
+      "Emergency DV shelter street address is not published in independent sources; only a P.O. Box (2162, London, KY 40743) is listed. Do NOT publish a confidential shelter street address."
+    ],
+    "proposed_risk_tier": "critical",
+    "limitations": [
+      "211 deep-link from search results was dead (404); found working listing via site search instead.",
+      "No independent source published a physical street address — consistent with confidential DV shelter location.",
+      "Closure search returned no results (absence of news, not definitive proof)."
+    ],
+    "operating_status": "active"
+  },
+  "summary": {
+    "total_findings": 30,
+    "pass_a_count": 17,
+    "pass_b_count": 13,
+    "fields_found": [
+      "access_notes",
+      "address",
+      "cost",
+      "coverage_scope",
+      "description",
+      "eligibility",
+      "email",
+      "hours",
+      "intake_process",
+      "operating_status",
+      "phone",
+      "populations",
+      "public_access",
+      "service_area",
+      "service_types",
+      "url"
+    ],
+    "conflicts": [],
+    "operating_status": "active",
+    "risk_tier": "critical"
+  }
+}

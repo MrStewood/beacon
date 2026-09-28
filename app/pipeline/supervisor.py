@@ -182,13 +182,30 @@ def _read_leads() -> dict:
     sensitive_pending = []
     all_queued:   list[dict]    = []
 
-    # Load investigated slugs to compute "uninvestigated"
-    investigated_slugs: set[str] = set()
+    # Load investigated slugs — strip the zip prefix so we can match by name alone
+    investigated_name_slugs: set[str] = set()
     if INVESTIGATIONS_DIR.exists():
         for zd in INVESTIGATIONS_DIR.iterdir():
             if zd.is_dir():
                 for f in zd.glob("*.json"):
-                    investigated_slugs.add(f.stem)
+                    # stem is like "40743-cvdvs-london-..." — strip leading zip
+                    stem = f.stem
+                    import re as _re
+                    name_part = _re.sub(r"^\d{5}-", "", stem)
+                    investigated_name_slugs.add(stem)          # full slug
+                    investigated_name_slugs.add(name_part)     # name-only slug
+
+    # Load rejected lead names
+    rejected_names: set[str] = set()
+    if REJECTED_DIR.exists():
+        for p in REJECTED_DIR.glob("*.yaml"):
+            try:
+                r = yaml.safe_load(p.read_text()) or {}
+                n = (r.get("resource", {}).get("name") or r.get("name") or "").lower().strip()
+                if n:
+                    rejected_names.add(n)
+            except Exception:
+                pass
 
     # Read dedup.json for canonical lead list + status
     dedup: dict[str, dict] = {}
@@ -210,7 +227,14 @@ def _read_leads() -> dict:
         name = lead.get("name", "")
         cat  = cat_by_name.get(name.lower().strip(), "unknown")
         zip_ = lead.get("zip", "unknown")
-        status = "investigated" if _inv_slug(zip_, name) in investigated_slugs else "queued"
+        name_slug = _slug(name, "")
+        full_slug  = _inv_slug(zip_, name)
+        is_done = (
+            full_slug in investigated_name_slugs
+            or name_slug in investigated_name_slugs
+            or name.lower().strip() in rejected_names
+        )
+        status = "investigated" if is_done else "queued"
 
         by_category[cat] = by_category.get(cat, 0) + 1
         by_zip[zip_]      = by_zip.get(zip_, 0) + 1

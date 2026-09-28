@@ -326,7 +326,7 @@ def _pass_a_prompt(lead: dict, category_info: dict) -> str:
     7. Do ONE gov search: "{name} {area} site:.gov" — navigate top result, record any new facts
     8. Call complete_pass(pass='A', unknown_fields=[...], ...) and STOP
 
-    Total budget for Pass A: ~10 steps. Move fast.
+    Total budget for Pass A: 8 steps maximum. Stop the moment all ESSENTIAL fields are found.
 
     ## Available tools (use ONLY these — no other tool names exist)
     - navigate(url)          — load a webpage; response includes [content_hash: sha256:...]
@@ -346,9 +346,12 @@ def _pass_a_prompt(lead: dict, category_info: dict) -> str:
     - Call screenshot(label='...') on every page you extract facts from — this is your local evidence.
     - Include the content_hash from the navigate response in every record_finding call.
     - **STOP SEARCHING** if you try the same field 3 times and still can't find it.
-      Add it to unknown_fields and call complete_pass() — do not loop indefinitely.
-    - Call complete_pass(pass='A', ...) as soon as you have covered the essential fields
-      or exhausted reasonable sources. Do not wait until you run out of searches.
+      Add it to unknown_fields and call complete_pass() immediately.
+    - **MANDATORY STOP RULE**: The moment you have recorded a value for every ESSENTIAL field
+      listed above, call complete_pass(pass='A', ...) on your NEXT action. Do not navigate
+      another page. Do not search again. Call complete_pass() — that is your only allowed move.
+    - If essential fields are still missing after 8 steps, call complete_pass() anyway and list
+      them in unknown_fields. The Pass B agent will find them independently.
     """).strip()
 
 
@@ -418,9 +421,10 @@ def _pass_b_prompt(lead: dict, pass_a_findings: list[dict], category_info: dict)
     - If you find a conflicting value, record both and set conflicts_with
     - Call screenshot(label='...') on every corroborating page you extract facts from
     - Include the content_hash from the navigate response in each record_finding call
-    - **STOP SEARCHING** after 3 failed attempts on the same field — add to unknown_fields
-    - Call complete_pass(pass='B', ...) as soon as you have found 2+ independent sources
-      for the essential fields or exhausted reasonable avenues. Do not over-search.
+    - **STOP SEARCHING** after 3 failed attempts on the same field — add to unknown_fields.
+    - **MANDATORY STOP RULE**: After visiting 2 independent sources, call complete_pass(pass='B', ...)
+      on your NEXT action. Do not visit a third source unless the first two gave zero useful data.
+    - Maximum 5 steps total for Pass B. If you reach step 5 without calling complete_pass, do it now.
     """).strip()
 
 
@@ -525,7 +529,21 @@ class InvestigationStore:
 # Main investigation runner
 # ---------------------------------------------------------------------------
 
-async def investigate(lead: dict, *, max_steps_per_pass: int = 60) -> dict:
+def _checkpoint(store: "InvestigationStore", lead: dict) -> None:
+    """Write a partial investigation result to disk after Pass A."""
+    try:
+        result = store.to_investigation_result()
+        out_dir = INVESTIGATIONS_DIR / lead.get("zip", "unknown")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_path = out_dir / f"{_lead_id(lead)}.json"
+        out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False))
+        log.info("checkpoint saved → %s", out_path.relative_to(BEACON_ROOT))
+    except Exception as e:
+        log.warning("checkpoint failed: %s", e)
+
+
+
+async def investigate(lead: dict, *, max_steps_per_pass: int = 20) -> dict:
     """Run two-pass investigation on a lead. Returns investigation result dict."""
     category = lead.get("category", "community")
     cat_info = _CATEGORY_FIELDS.get(category, _CATEGORY_FIELDS["community"])
@@ -555,6 +573,9 @@ async def investigate(lead: dict, *, max_steps_per_pass: int = 60) -> dict:
                 extra_handlers=all_handlers,
                 max_steps=max_steps_per_pass,
             )
+
+            # Checkpoint after Pass A so a timeout doesn't lose all work
+            _checkpoint(store, lead)
 
             # --- Pass B: corroborating sources ---
             log.info("--- Pass B: corroborating sources ---")

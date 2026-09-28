@@ -262,14 +262,14 @@ class BrowserSession:
 
         await asyncio.sleep(random.uniform(1.0, 2.5))
         try:
-            await self._page.goto(url, wait_until="networkidle", timeout=30_000)
-        except Exception:
-            # networkidle times out on some SPAs — fall back to domcontentloaded
+            # domcontentloaded first (fast); then wait briefly for JS to settle
+            await self._page.goto(url, wait_until="domcontentloaded", timeout=15_000)
             try:
-                await self._page.goto(url, wait_until="domcontentloaded", timeout=20_000)
-                await asyncio.sleep(2.0)
-            except Exception as exc:
-                return f"[NAVIGATE ERROR] {exc}"
+                await self._page.wait_for_load_state("networkidle", timeout=5_000)
+            except Exception:
+                pass  # networkidle optional — content is already readable
+        except Exception as exc:
+            return f"[NAVIGATE ERROR] {exc}"
 
         self._domain_hits[domain] += 1
         await asyncio.sleep(random.uniform(0.5, 1.2))
