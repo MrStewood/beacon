@@ -47,6 +47,18 @@ jobs:
         run: pip install jsonschema pytest pyyaml
       - name: Build all outputs and assemble _site/
         run: python scripts/build.py
+      - name: Verify _site/data/resources.json exists and is non-empty
+        run: |
+          if [ ! -f _site/data/resources.json ]; then
+            echo "FATAL: _site/data/resources.json missing — refusing to deploy broken site"
+            exit 1
+          fi
+          count=$(python3 -c "import json; d=json.load(open('_site/data/resources.json')); print(len(d.get('resources',[])))")
+          if [ "$count" -eq 0 ]; then
+            echo "FATAL: _site/data/resources.json has zero resources — refusing to deploy"
+            exit 1
+          fi
+          echo "OK: _site/data/resources.json contains $count resource(s)"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

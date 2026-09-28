@@ -14,6 +14,7 @@ Outputs:
                     (gitignored; assembled from the above + static assets)
 """
 
+import json
 import shutil
 import sys
 import subprocess
@@ -77,7 +78,32 @@ def assemble_site():
 
     Only public-facing content lands here. Operational directories
     (leads/, pilot/, source/candidates/, scripts/, tests/) are never included.
+
+    Raises SystemExit(2) if data/resources.json is missing or contains zero
+    resources — a broken artifact must never reach the deploy step.
     """
+    # Hard gate: resources.json must exist and contain at least one resource.
+    resources_src = REPO_ROOT / "data" / "resources.json"
+    if not resources_src.exists():
+        print(
+            "\n[FATAL] data/resources.json does not exist.\n"
+            "  build_from_yaml.py must run successfully before _site/ can be assembled.\n"
+            "  Refusing to deploy an empty site.",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+    with open(resources_src) as fh:
+        _rdata = json.load(fh)
+    _rcount = len(_rdata.get("resources", []))
+    if _rcount == 0:
+        print(
+            "\n[FATAL] data/resources.json contains zero resources.\n"
+            "  The site would serve a 404 on every data request.\n"
+            "  Fix source/approved/ records and re-run the build.",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+
     site = REPO_ROOT / "_site"
     if site.exists():
         shutil.rmtree(site)
@@ -111,7 +137,20 @@ def assemble_site():
                 shutil.copytree(src, site / "data" / entry)
             elif src.is_file():
                 shutil.copy2(src, site / "data" / entry)
+
+    # Post-copy gate: confirm the file actually landed in _site/
+    site_resources = site / "data" / "resources.json"
+    if not site_resources.exists():
+        print(
+            "\n[FATAL] _site/data/resources.json was not written during assembly.\n"
+            "  This should never happen if the pre-copy gate passed.\n"
+            "  Check assemble_site() logic.",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+
     print(f"\n  _site/ assembled ({sum(1 for _ in site.rglob('*') if _.is_file())} files)")
+    print(f"  _site/data/resources.json — {_rcount} resource(s) ✓")
 
 
 def main():
