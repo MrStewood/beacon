@@ -1,14 +1,2340 @@
 {
   "version": 2,
-  "processed_zips": {},
-  "zip_runs": {},
-  "discovered": {},
+  "processed_zips": {
+    "40744": {
+      "county": "Laurel",
+      "state": "KY",
+      "processed_at": "2026-09-28T04:40:30Z",
+      "latest_run_id": "leadgen-40744-20260928T044030Z",
+      "resources_found": 50,
+      "new_leads": 25,
+      "needs_ai_review": 25,
+      "duplicates": 0,
+      "out_of_area": 0
+    }
+  },
+  "zip_runs": {
+    "40744": [
+      "leadgen-40744-20260928T041914Z",
+      "leadgen-40744-20260928T044030Z"
+    ]
+  },
+  "discovered": {
+    "laurel county health department food pantries resource guide|laurelcohealthdept.org": {
+      "name": "Laurel County Health Department Food Pantries Resource Guide",
+      "normalized_names": [
+        "laurel county health department food pantries resource guide"
+      ],
+      "phones": [],
+      "domains": [
+        "laurelcohealthdept.org"
+      ],
+      "urls": [
+        "laurelcohealthdept.org/resources-food"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "god s pantry food bank london|6068626693": {
+      "name": "God's Pantry Food Bank - London",
+      "normalized_names": [
+        "god s pantry food bank london"
+      ],
+      "phones": [
+        "6068626693"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "1215 east 4th st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "come unity op care|6068642351": {
+      "name": "Come-Unity Co-Op Care",
+      "normalized_names": [
+        "come unity op care"
+      ],
+      "phones": [
+        "6068642351"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "755 s dixie st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "fed by grace food pantry grace fellowship|6068644635": {
+      "name": "Fed By Grace Food Pantry (Grace Fellowship)",
+      "normalized_names": [
+        "fed by grace food pantry grace fellowship"
+      ],
+      "phones": [
+        "6068644635"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "911 tlc lane"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "fpc food pantry|6068646789": {
+      "name": "FPC Food Pantry",
+      "normalized_names": [
+        "fpc food pantry"
+      ],
+      "phones": [
+        "6068646789"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "123 keavy rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "hart baptist church food pantry|6062318450": {
+      "name": "Hart Baptist Church Food Pantry",
+      "normalized_names": [
+        "hart baptist church food pantry"
+      ],
+      "phones": [
+        "6062318450"
+      ],
+      "domains": [
+        "hartbaptistchurch.org"
+      ],
+      "urls": [
+        "hartbaptistchurch.org/FeedTheNeed"
+      ],
+      "addresses": [
+        "1 hart church rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "helping hands food pantry|6065289416": {
+      "name": "Helping Hands Food Pantry",
+      "normalized_names": [
+        "helping hands food pantry"
+      ],
+      "phones": [
+        "6065289416"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "2386 n hwy 1223"
+      ],
+      "zip": "40744",
+      "located_zip": "40701",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "laurel county family support dcbs snap|6063068959": {
+      "name": "Laurel County Family Support (DCBS) - SNAP",
+      "normalized_names": [
+        "laurel county family support dcbs snap"
+      ],
+      "phones": [
+        "6063068959"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "31 south laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "new harvest church pantry|6062609164": {
+      "name": "New Harvest Church Pantry",
+      "normalized_names": [
+        "new harvest church pantry"
+      ],
+      "phones": [
+        "6062609164"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "4185 west laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "new salem baptist food pantry|6068437822": {
+      "name": "New Salem Baptist Food Pantry",
+      "normalized_names": [
+        "new salem baptist food pantry"
+      ],
+      "phones": [
+        "6068437822"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "2182 north laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "second mile 541 outreach client food pantry|6066575504": {
+      "name": "Second Mile 541 Outreach Client Food Pantry",
+      "normalized_names": [
+        "second mile 541 outreach client food pantry"
+      ],
+      "phones": [
+        "6066575504"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "280 levi jackson mill rd ste a"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "new life worship center|6063345523": {
+      "name": "New Life Worship Center",
+      "normalized_names": [
+        "new life worship center"
+      ],
+      "phones": [
+        "6063345523"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "60 alumni circle"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "good samaritan house soup kitchen|6068622872": {
+      "name": "Good Samaritan House Soup Kitchen",
+      "normalized_names": [
+        "good samaritan house soup kitchen"
+      ],
+      "phones": [
+        "6068622872"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "220 east 4th st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "cvdvs london corbin valley domestic violence services|6068432022": {
+      "name": "CVDVS London (Corbin Valley Domestic Violence Services)",
+      "normalized_names": [
+        "cvdvs london corbin valley domestic violence services"
+      ],
+      "phones": [
+        "6068432022"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "3100 hwy 30 bypass"
+      ],
+      "zip": "40744",
+      "located_zip": "40743",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "laurel county housing authority|6068780512": {
+      "name": "Laurel County Housing Authority",
+      "normalized_names": [
+        "laurel county housing authority"
+      ],
+      "phones": [
+        "6068780512"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "194 county extension rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://rentassistance.org/program/laurel_county_london_ky.html"
+    },
+    "grace health mountain view clinic|6068772850": {
+      "name": "Grace Health - Mountain View Clinic",
+      "normalized_names": [
+        "grace health mountain view clinic"
+      ],
+      "phones": [
+        "6068772850"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "272 london mountain view dr"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.freeclinics.com/cit/ky-london"
+    },
+    "horizon health london|6066572030": {
+      "name": "Horizon Health (London)",
+      "normalized_names": [
+        "horizon health london"
+      ],
+      "phones": [
+        "6066572030"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "934 s laurel rd ste 2"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-food"
+    },
+    "grace health bishop street clinic|6065282124": {
+      "name": "Grace Health - Bishop Street Clinic",
+      "normalized_names": [
+        "grace health bishop street clinic"
+      ],
+      "phones": [
+        "6065282124"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "121 bishop st"
+      ],
+      "zip": "40744",
+      "located_zip": "40701",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.freeclinics.com/cit/ky-london"
+    },
+    "grace health cumberland falls highway clinic|6065284481": {
+      "name": "Grace Health - Cumberland Falls Highway Clinic",
+      "normalized_names": [
+        "grace health cumberland falls highway clinic"
+      ],
+      "phones": [
+        "6065284481"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "1419 cumberland falls hwy"
+      ],
+      "zip": "40744",
+      "located_zip": "40701",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.freeclinics.com/cit/ky-london"
+    },
+    "grace health levi center clinic|findcare.care": {
+      "name": "Grace Health Levi Center Clinic",
+      "normalized_names": [
+        "grace health levi center clinic"
+      ],
+      "phones": [],
+      "domains": [
+        "findcare.care"
+      ],
+      "urls": [
+        "findcare.care/providers/grace-health-levi-center-clinic"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://findcare.care/providers/grace-health-levi-center-clinic/"
+    },
+    "cumberland river victims services rape crisis center|6065285286": {
+      "name": "Cumberland River Victims Services (Rape Crisis Center)",
+      "normalized_names": [
+        "cumberland river victims services rape crisis center"
+      ],
+      "phones": [
+        "6065285286",
+        "8006564673"
+      ],
+      "domains": [
+        "crvsky.org"
+      ],
+      "urls": [
+        "crvsky.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40702",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://crvsky.org/"
+    },
+    "appalred legal aid|6065465115": {
+      "name": "AppalReD Legal Aid",
+      "normalized_names": [
+        "appalred legal aid"
+      ],
+      "phones": [
+        "6065465115",
+        "8662775733"
+      ],
+      "domains": [
+        "ardfky.org"
+      ],
+      "urls": [
+        "ardfky.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-legal-aid"
+    },
+    "cumberland river behavioral health|6065269552": {
+      "name": "Cumberland River Behavioral Health",
+      "normalized_names": [
+        "cumberland river behavioral health"
+      ],
+      "phones": [
+        "6065269552",
+        "6065287010"
+      ],
+      "domains": [
+        "crbhky.org"
+      ],
+      "urls": [
+        "crbhky.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40702",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-behavioral"
+    },
+    "heartstrings mental health pllc|6067705086": {
+      "name": "Heartstrings Mental Health, PLLC",
+      "normalized_names": [
+        "heartstrings mental health pllc"
+      ],
+      "phones": [
+        "6067705086"
+      ],
+      "domains": [
+        "heartstringsmentalhealth.org"
+      ],
+      "urls": [
+        "heartstringsmentalhealth.org"
+      ],
+      "addresses": [
+        "95 s laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-behavioral"
+    },
+    "london women s care behavioral health|6068783240": {
+      "name": "London Women's Care - Behavioral Health",
+      "normalized_names": [
+        "london women s care behavioral health"
+      ],
+      "phones": [
+        "6068783240"
+      ],
+      "domains": [
+        "londonwomenscare.com"
+      ],
+      "urls": [
+        "londonwomenscare.com"
+      ],
+      "addresses": [
+        "803 meyers baker rd ste 200"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-behavioral"
+    },
+    "operation unite|18338": {
+      "name": "Operation UNITE",
+      "normalized_names": [
+        "operation unite"
+      ],
+      "phones": [
+        "18338",
+        "1866",
+        "186690",
+        "6063301400"
+      ],
+      "domains": [
+        "operationunite.org"
+      ],
+      "urls": [
+        "operationunite.org"
+      ],
+      "addresses": [
+        "350 c a p dr"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-behavioral"
+    },
+    "spero health london|6066575470": {
+      "name": "Spero Health - London",
+      "normalized_names": [
+        "spero health london"
+      ],
+      "phones": [
+        "6066575470"
+      ],
+      "domains": [
+        "sperohealth.com"
+      ],
+      "urls": [
+        "sperohealth.com"
+      ],
+      "addresses": [
+        "189 west hwy 192"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-behavioral"
+    },
+    "white flag isaiah 58 10|6066572028": {
+      "name": "White Flag Ministry (Isaiah 58:10)",
+      "normalized_names": [
+        "white flag isaiah 58 10"
+      ],
+      "phones": [
+        "6066572028"
+      ],
+      "domains": [
+        "facebook.com"
+      ],
+      "urls": [
+        "facebook.com/is5810"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-housing"
+    },
+    "daniel boone community action agency|6063667433": {
+      "name": "Daniel Boone Community Action Agency",
+      "normalized_names": [
+        "daniel boone community action agency"
+      ],
+      "phones": [
+        "6063667433"
+      ],
+      "domains": [
+        "danielboonecaa.org"
+      ],
+      "urls": [
+        "danielboonecaa.org"
+      ],
+      "addresses": [
+        "188 dog patch trading center"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-housing"
+    },
+    "housing authority of london|6068645474": {
+      "name": "Housing Authority of London",
+      "normalized_names": [
+        "housing authority of london"
+      ],
+      "phones": [
+        "6068645474"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "100 scott st ste 100"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-housing"
+    },
+    "laurel county adult education|6068789134": {
+      "name": "Laurel County Adult Education",
+      "normalized_names": [
+        "laurel county adult education"
+      ],
+      "phones": [
+        "6068789134"
+      ],
+      "domains": [
+        "laureladulted.org"
+      ],
+      "urls": [
+        "laureladulted.org"
+      ],
+      "addresses": [
+        "103 south broad st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-education"
+    },
+    "kentucky career center cumberlands|6063302215": {
+      "name": "Kentucky Career Center - Cumberlands",
+      "normalized_names": [
+        "kentucky career center cumberlands"
+      ],
+      "phones": [
+        "6063302215"
+      ],
+      "domains": [
+        "kcc.ky.gov"
+      ],
+      "urls": [
+        "kcc.ky.gov/Pages/index.aspx"
+      ],
+      "addresses": [
+        "100 university dr"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-income"
+    },
+    "the job shop|6066822605": {
+      "name": "The Job Shop",
+      "normalized_names": [
+        "the job shop"
+      ],
+      "phones": [
+        "6066822605",
+        "6068649675"
+      ],
+      "domains": [
+        "thejobshop.cc"
+      ],
+      "urls": [
+        "thejobshop.cc"
+      ],
+      "addresses": [
+        "85 south laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-income"
+    },
+    "voa employment services|6064045446": {
+      "name": "VOA Employment Services",
+      "normalized_names": [
+        "voa employment services"
+      ],
+      "phones": [
+        "6064045446"
+      ],
+      "domains": [
+        "voamid.org"
+      ],
+      "urls": [
+        "voamid.org/services/employment-services"
+      ],
+      "addresses": [
+        "805 s main st ste 203"
+      ],
+      "zip": "40744",
+      "located_zip": "40701",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-income"
+    },
+    "rtec public transportation|8003217832": {
+      "name": "RTEC Public Transportation",
+      "normalized_names": [
+        "rtec public transportation"
+      ],
+      "phones": [
+        "8003217832"
+      ],
+      "domains": [
+        "ridertec.org"
+      ],
+      "urls": [
+        "ridertec.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-transportation"
+    },
+    "kentucky division of veterans affairs kdva london office|6063441003": {
+      "name": "Kentucky Division of Veterans Affairs (KDVA) - London Office",
+      "normalized_names": [
+        "kentucky division of veterans affairs kdva london office"
+      ],
+      "phones": [
+        "6063441003"
+      ],
+      "domains": [
+        "veterans.ky.gov"
+      ],
+      "urls": [
+        "veterans.ky.gov/Pages/index.aspx"
+      ],
+      "addresses": [
+        "122 s main st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-transportation-1"
+    },
+    "veterans crisis line|988": {
+      "name": "Veterans Crisis Line",
+      "normalized_names": [
+        "veterans crisis line"
+      ],
+      "phones": [
+        "988"
+      ],
+      "domains": [
+        "veteranscrisisline.net"
+      ],
+      "urls": [
+        "veteranscrisisline.net"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-transportation-1"
+    },
+    "disabled american veterans dav chapter 66|6068771308": {
+      "name": "Disabled American Veterans (DAV) Chapter 66",
+      "normalized_names": [
+        "disabled american veterans dav chapter 66"
+      ],
+      "phones": [
+        "6068771308"
+      ],
+      "domains": [
+        "davwebsites.dav.org"
+      ],
+      "urls": [
+        "davwebsites.dav.org/ky/66/SystemPages/Home.aspx"
+      ],
+      "addresses": [
+        "300 dav lane"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-transportation-1"
+    },
+    "american legion auxiliary post 16|6068642627": {
+      "name": "American Legion Auxiliary Post 16",
+      "normalized_names": [
+        "american legion auxiliary post 16"
+      ],
+      "phones": [
+        "6068642627"
+      ],
+      "domains": [
+        "americanlegionpost16.org"
+      ],
+      "urls": [
+        "americanlegionpost16.org"
+      ],
+      "addresses": [
+        "1785 barbourville st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-transportation-1"
+    },
+    "laurel county 4 h youth development|6068644167": {
+      "name": "Laurel County 4-H Youth Development",
+      "normalized_names": [
+        "laurel county 4 h youth development"
+      ],
+      "phones": [
+        "6068644167"
+      ],
+      "domains": [
+        "laurel.mgcafe.uky.edu"
+      ],
+      "urls": [
+        "laurel.mgcafe.uky.edu/4h-youth-development"
+      ],
+      "addresses": [
+        "200 county extension rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-youth"
+    },
+    "family resource and youth service centers frysc laurel county|laurel.k12.ky.us": {
+      "name": "Family Resource & Youth Service Centers (FRYSC) - Laurel County",
+      "normalized_names": [
+        "family resource and youth service centers frysc laurel county"
+      ],
+      "phones": [],
+      "domains": [
+        "laurel.k12.ky.us"
+      ],
+      "urls": [
+        "laurel.k12.ky.us"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-youth"
+    },
+    "rural up|ruralup.org": {
+      "name": "Rural Up",
+      "normalized_names": [
+        "rural up"
+      ],
+      "phones": [],
+      "domains": [
+        "ruralup.org"
+      ],
+      "urls": [
+        "ruralup.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40743",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-youth"
+    },
+    "hope for london kentucky|hopeforlondonky.org": {
+      "name": "Hope For London, Kentucky",
+      "normalized_names": [
+        "hope for london kentucky"
+      ],
+      "phones": [],
+      "domains": [
+        "hopeforlondonky.org"
+      ],
+      "urls": [
+        "hopeforlondonky.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://hopeforlondonky.org/"
+    },
+    "laurel mission|6065583780": {
+      "name": "Laurel Mission",
+      "normalized_names": [
+        "laurel mission"
+      ],
+      "phones": [
+        "6065583780"
+      ],
+      "domains": [
+        "laurelmission.com"
+      ],
+      "urls": [
+        "laurelmission.com"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelmission.com/our-ministries"
+    },
+    "laurel county clerk s office|laurelcountyclerk.ky.gov": {
+      "name": "Laurel County Clerk's Office",
+      "normalized_names": [
+        "laurel county clerk s office"
+      ],
+      "phones": [],
+      "domains": [
+        "laurelcountyclerk.ky.gov"
+      ],
+      "urls": [
+        "laurelcountyclerk.ky.gov"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://laurelcountyclerk.ky.gov/"
+    },
+    "social security administration london ky|6068770000": {
+      "name": "Social Security Administration - London KY",
+      "normalized_names": [
+        "social security administration london ky"
+      ],
+      "phones": [
+        "6068770000"
+      ],
+      "domains": [
+        "ssa.gov"
+      ],
+      "urls": [
+        "ssa.gov/locator"
+      ],
+      "addresses": [
+        "1105 w 5th st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.chamberofcommerce.com/business-directory/kentucky/london/corporate-office/2025860923-social-security-administration"
+    },
+    "united way of laurel county|unitedwaylaurelcounty.com": {
+      "name": "United Way of Laurel County",
+      "normalized_names": [
+        "united way of laurel county"
+      ],
+      "phones": [],
+      "domains": [
+        "unitedwaylaurelcounty.com"
+      ],
+      "urls": [
+        "unitedwaylaurelcounty.com"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://unitedwaylaurelcounty.com/"
+    },
+    "kceoc community action child development head start|kceoc.org": {
+      "name": "KCEOC Community Action - Child Development/Head Start",
+      "normalized_names": [
+        "kceoc community action child development head start"
+      ],
+      "phones": [],
+      "domains": [
+        "kceoc.org"
+      ],
+      "urls": [
+        "kceoc.org/child-development"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://kceoc.org/child-development/"
+    },
+    "the prep academy community action council head start|6063895373": {
+      "name": "The Prep Academy (Community Action Council) - Head Start",
+      "normalized_names": [
+        "the prep academy community action council head start"
+      ],
+      "phones": [
+        "6063895373"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "225 commonwealth dr"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-daycare"
+    },
+    "time to shine childcare center|6068640783": {
+      "name": "Time to Shine Childcare Center",
+      "normalized_names": [
+        "time to shine childcare center"
+      ],
+      "phones": [
+        "6068640783"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "1366 s laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurelcohealthdept.org/resources-daycare"
+    },
+    "hagar s well|hagarswellministries.org": {
+      "name": "Hagar's Well Ministries",
+      "normalized_names": [
+        "hagar s well"
+      ],
+      "phones": [],
+      "domains": [
+        "hagarswellministries.org"
+      ],
+      "urls": [
+        "hagarswellministries.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://hagarswellministries.org/"
+    },
+    "celebrate recovery warriors anonymous london ky|churchrecovery.org": {
+      "name": "Celebrate Recovery / Warriors Anonymous - London KY",
+      "normalized_names": [
+        "celebrate recovery warriors anonymous london ky"
+      ],
+      "phones": [],
+      "domains": [
+        "churchrecovery.org"
+      ],
+      "urls": [
+        "churchrecovery.org/locations/faith-recovery-london-ky.html"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.wymt.com/2026/04/15/laurel-county-recovery-ministry-launches-local-cinema/"
+    },
+    "laurel county older persons activity center opac home delivered meals|cvadd.org": {
+      "name": "Laurel County Older Persons Activity Center (OPAC) - Home Delivered Meals",
+      "normalized_names": [
+        "laurel county older persons activity center opac home delivered meals"
+      ],
+      "phones": [],
+      "domains": [
+        "cvadd.org"
+      ],
+      "urls": [
+        "cvadd.org/aging-independent-living/senior-centers"
+      ],
+      "addresses": [
+        "426 1 2 east 4th st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://uwbg211.org/search/732928eb-7b07-5cff-a1ae-beac4c77157d?entry=search_card"
+    },
+    "calvary baptist church food pantry|6066820621": {
+      "name": "Calvary Baptist Church Food Pantry",
+      "normalized_names": [
+        "calvary baptist church food pantry"
+      ],
+      "phones": [
+        "6066820621"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "111 n mcwhorter st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://feedam.org/food-pantry/ky/london"
+    },
+    "laurel county crime victims assistance|localoffices.org": {
+      "name": "Laurel County Crime Victims Assistance",
+      "normalized_names": [
+        "laurel county crime victims assistance"
+      ],
+      "phones": [],
+      "domains": [
+        "localoffices.org"
+      ],
+      "urls": [
+        "localoffices.org/victim-assistance/kentucky/laurel-county"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.localoffices.org/victim-assistance/kentucky/laurel-county"
+    },
+    "laurel county judicial center|6063302079": {
+      "name": "Laurel County Judicial Center",
+      "normalized_names": [
+        "laurel county judicial center"
+      ],
+      "phones": [
+        "6063302079"
+      ],
+      "domains": [
+        "kyjustice.org"
+      ],
+      "urls": [
+        "kyjustice.org/county/laurel"
+      ],
+      "addresses": [
+        "305 s main st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.kyjustice.org/county/laurel"
+    },
+    "laurel county public library|laurellibrary.org": {
+      "name": "Laurel County Public Library",
+      "normalized_names": [
+        "laurel county public library"
+      ],
+      "phones": [],
+      "domains": [
+        "laurellibrary.org"
+      ],
+      "urls": [
+        "laurellibrary.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.laurellibrary.org/"
+    },
+    "grace health levi center clinic fqhc|6065268604": {
+      "name": "Grace Health Levi Center Clinic (FQHC)",
+      "normalized_names": [
+        "grace health levi center clinic fqhc"
+      ],
+      "phones": [
+        "6065268604"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "934 s laurel rd ste 1"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://feedam.org/health-centers/ky/london"
+    },
+    "lake cumberland rheumatology|6064255768": {
+      "name": "Lake Cumberland Rheumatology",
+      "normalized_names": [
+        "lake cumberland rheumatology"
+      ],
+      "phones": [
+        "6064255768"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "1675 s main st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://feedam.org/health-centers/ky/london"
+    },
+    "london ky warming center city m partnership|fox56news.com": {
+      "name": "London KY Warming Center (City/M Ministry Partnership)",
+      "normalized_names": [
+        "london ky warming center city m partnership"
+      ],
+      "phones": [],
+      "domains": [
+        "fox56news.com"
+      ],
+      "urls": [
+        "fox56news.com/news/kentucky/london-unveils-new-warming-center-in-partnership-with-ministry-group"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://fox56news.com/news/kentucky/london-unveils-new-warming-center-in-partnership-with-ministry-group/"
+    },
+    "stepworks of london|rehab.com": {
+      "name": "Stepworks of London",
+      "normalized_names": [
+        "stepworks of london"
+      ],
+      "phones": [],
+      "domains": [
+        "rehab.com"
+      ],
+      "urls": [
+        "rehab.com/stepworks-of-london"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:19:14Z",
+      "last_seen": "2026-09-28T04:19:14Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T041914Z"
+      ],
+      "source_url": "https://www.rehab.com/stepworks-of-london"
+    },
+    "cumberland valley domestic violence services|8007555348": {
+      "name": "Cumberland Valley Domestic Violence Services",
+      "normalized_names": [
+        "cumberland valley domestic violence services"
+      ],
+      "phones": [
+        "8007555348"
+      ],
+      "domains": [
+        "cvdvs.org"
+      ],
+      "urls": [
+        "cvdvs.org"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://cvdvs.org/"
+    },
+    "daniel boone community action agency laurel county|6068649121": {
+      "name": "Daniel Boone Community Action Agency - Laurel County",
+      "normalized_names": [
+        "daniel boone community action agency laurel county"
+      ],
+      "phones": [
+        "6068649121"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "188 dogpatch trading center"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.homelessassistance.us/li/ky_london_Daniel-Boone-Community-Action-Agency"
+    },
+    "brightview addiction treatment center london|8885019865": {
+      "name": "BrightView Addiction Treatment Center - London",
+      "normalized_names": [
+        "brightview addiction treatment center london"
+      ],
+      "phones": [
+        "8885019865"
+      ],
+      "domains": [
+        "brightviewhealth.com"
+      ],
+      "urls": [
+        "brightviewhealth.com/locations/london-addiction-treatment-center"
+      ],
+      "addresses": [
+        "2645 n laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.brightviewhealth.com/locations/london-addiction-treatment-center/"
+    },
+    "saint william catholic church outreach team|6068647500": {
+      "name": "Saint William Catholic Church Outreach Team",
+      "normalized_names": [
+        "saint william catholic church outreach team"
+      ],
+      "phones": [
+        "6068647500"
+      ],
+      "domains": [
+        "stwilliamlondon.com"
+      ],
+      "urls": [
+        "stwilliamlondon.com/outreach-team"
+      ],
+      "addresses": [
+        "saint william campus religious education building lower level"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://stwilliamlondon.com/outreach-team"
+    },
+    "london family support center snap dcbs|11be134ad8c2efd4": {
+      "name": "London Family Support Center (SNAP/DCBS)",
+      "normalized_names": [
+        "london family support center snap dcbs"
+      ],
+      "phones": [],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "31 s laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40743",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.foodstampsoffices.com/office/1159/london-family-support/"
+    },
+    "cumberland valley area development district legal services|606546": {
+      "name": "Cumberland Valley Area Development District Legal Services",
+      "normalized_names": [
+        "cumberland valley area development district legal services"
+      ],
+      "phones": [
+        "606546"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "700 pitzer st ste 1"
+      ],
+      "zip": "40744",
+      "located_zip": "40906",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://cvadd.org/aging-independent-living/legal-services/"
+    },
+    "rural mental health solutions|6067705170": {
+      "name": "Rural Mental Health Solutions",
+      "normalized_names": [
+        "rural mental health solutions"
+      ],
+      "phones": [
+        "6067705170"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "201 west dixie st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.lindsey.edu/academics/Community-Campus-Counseling/London-Counseling-Services.cfm"
+    },
+    "new hope counseling and recovery|6065947479": {
+      "name": "New Hope Counseling and Recovery",
+      "normalized_names": [
+        "new hope counseling and recovery"
+      ],
+      "phones": [
+        "6065947479"
+      ],
+      "domains": [
+        "nhcr4u.com"
+      ],
+      "urls": [
+        "nhcr4u.com"
+      ],
+      "addresses": [
+        "60 bennett circle"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.lindsey.edu/academics/Community-Campus-Counseling/London-Counseling-Services.cfm"
+    },
+    "cumberland river behavioral health london office|6064046515": {
+      "name": "Cumberland River Behavioral Health - London Office",
+      "normalized_names": [
+        "cumberland river behavioral health london office"
+      ],
+      "phones": [
+        "6064046515"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "225 north laurel rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://rehabs.com/listings/cumberland-river-behavioral-health-546933609/"
+    },
+    "isaiah 58 10 and outreach soup kitchen|2aced6971b8b6aa3": {
+      "name": "Isaiah 58:10 Ministries & Outreach Soup Kitchen",
+      "normalized_names": [
+        "isaiah 58 10 and outreach soup kitchen"
+      ],
+      "phones": [],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "110 burley ave"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.facebook.com/is5810/"
+    },
+    "first pentecostal church food pantry|5b84da8d74315523": {
+      "name": "First Pentecostal Church Food Pantry",
+      "normalized_names": [
+        "first pentecostal church food pantry"
+      ],
+      "phones": [],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "1505 s main st"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.kentuckyneighborinneed.org/resources"
+    },
+    "restoration food program|6062617926": {
+      "name": "Restoration Ministries Food Program",
+      "normalized_names": [
+        "restoration food program"
+      ],
+      "phones": [
+        "6062617926"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.kentuckyneighborinneed.org/resources"
+    },
+    "operation unite london|6062244556": {
+      "name": "Operation UNITE (London)",
+      "normalized_names": [
+        "operation unite london"
+      ],
+      "phones": [
+        "6062244556"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.kentuckyneighborinneed.org/resources"
+    },
+    "addiction recovery care arc|6062495444": {
+      "name": "Addiction Recovery Care (ARC)",
+      "normalized_names": [
+        "addiction recovery care arc"
+      ],
+      "phones": [
+        "6062495444"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.kentuckyneighborinneed.org/resources"
+    },
+    "lake cumberland recovery|6064019158": {
+      "name": "Lake Cumberland Recovery",
+      "normalized_names": [
+        "lake cumberland recovery"
+      ],
+      "phones": [
+        "6064019158"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.kentuckyneighborinneed.org/resources"
+    },
+    "fuse london|8599725886": {
+      "name": "Fuse (London)",
+      "normalized_names": [
+        "fuse london"
+      ],
+      "phones": [
+        "8599725886"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.kentuckyneighborinneed.org/resources"
+    },
+    "living clean peer support|6067318184": {
+      "name": "Living Clean Peer Support",
+      "normalized_names": [
+        "living clean peer support"
+      ],
+      "phones": [
+        "6067318184"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.kentuckyneighborinneed.org/resources"
+    },
+    "sophie s place clothes closet|ec32ebbeaef1f438": {
+      "name": "Sophie's Place Clothes Closet",
+      "normalized_names": [
+        "sophie s place clothes closet"
+      ],
+      "phones": [],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "420 tobacco rd"
+      ],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.facebook.com/is5810/posts/theres-a-clothes-closet-in-london-its-called-sophies-place-and-the-clothes-are-f/122139573506441040/"
+    },
+    "disabled american veterans london ky|1f3b0a69564f05ca": {
+      "name": "Disabled American Veterans - London KY",
+      "normalized_names": [
+        "disabled american veterans london ky"
+      ],
+      "phones": [],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "300 dav ln"
+      ],
+      "zip": "40744",
+      "located_zip": "40741",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://warriorsfund.org/city/ky/london"
+    },
+    "kentucky medicaid non emergency medical transportation nemt|8889417433": {
+      "name": "Kentucky Medicaid Non-Emergency Medical Transportation (NEMT)",
+      "normalized_names": [
+        "kentucky medicaid non emergency medical transportation nemt"
+      ],
+      "phones": [
+        "8889417433"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://transportation.ky.gov/TransportationDelivery/Pages/How-to-Schedule-Non-Emergency-Medical-Transportation-(NEMT).aspx"
+    },
+    "social security administration corbin field office serves london ky|8774050470": {
+      "name": "Social Security Administration - Corbin Field Office (serves London KY)",
+      "normalized_names": [
+        "social security administration corbin field office serves london ky"
+      ],
+      "phones": [
+        "8774050470"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://moneyhop.socialsecurityhop.com/offices/social-security-office-london-ky-40741-kentucky"
+    },
+    "kentucky office of vital statistics|chfs.ky.gov": {
+      "name": "Kentucky Office of Vital Statistics",
+      "normalized_names": [
+        "kentucky office of vital statistics"
+      ],
+      "phones": [],
+      "domains": [
+        "chfs.ky.gov"
+      ],
+      "urls": [
+        "chfs.ky.gov/agencies/dph/dehp/vsb/Pages/birth-certificates.aspx"
+      ],
+      "addresses": [],
+      "zip": "40744",
+      "located_zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://chfs.ky.gov/agencies/dph/dehp/vsb/Pages/birth-certificates.aspx"
+    },
+    "vva chapter 1050 vietnam veterans of america|e62ab59118235d8e": {
+      "name": "VVA Chapter 1050 (Vietnam Veterans of America)",
+      "normalized_names": [
+        "vva chapter 1050 vietnam veterans of america"
+      ],
+      "phones": [],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "po box 1168"
+      ],
+      "zip": "40744",
+      "located_zip": "40743",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://warriorsfund.org/city/ky/london"
+    },
+    "vfw post 3302|540480420d5a1e65": {
+      "name": "VFW Post 3302 Inc",
+      "normalized_names": [
+        "vfw post 3302"
+      ],
+      "phones": [],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "po box 3342"
+      ],
+      "zip": "40744",
+      "located_zip": "40743",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://warriorsfund.org/city/ky/london"
+    },
+    "christian homeless shelter london ky|6063300785": {
+      "name": "Christian Homeless Shelter (London KY)",
+      "normalized_names": [
+        "christian homeless shelter london ky"
+      ],
+      "phones": [
+        "6063300785"
+      ],
+      "domains": [],
+      "urls": [],
+      "addresses": [
+        "p o box 1465"
+      ],
+      "zip": "40744",
+      "located_zip": "40743",
+      "county": "Laurel",
+      "state": "KY",
+      "status": "queued",
+      "first_seen": "2026-09-28T04:40:30Z",
+      "last_seen": "2026-09-28T04:40:30Z",
+      "times_seen": 1,
+      "source_run_ids": [
+        "leadgen-40744-20260928T044030Z"
+      ],
+      "source_url": "https://www.thehelplist.com/co/ky-laurel"
+    }
+  },
   "out_of_area": {},
   "stats": {
-    "total_discovered": 0,
-    "total_new": 0,
+    "total_discovered": 86,
+    "total_new": 86,
+    "total_needs_review": 25,
     "total_duplicates": 0,
     "total_out_of_area": 0,
-    "last_run": null
+    "last_run": "2026-09-28T04:40:30Z"
   }
 }
