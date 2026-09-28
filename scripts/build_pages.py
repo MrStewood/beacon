@@ -303,9 +303,6 @@ def resource_page(r, data):
         .resource-related a:hover{{text-decoration:underline}}
     </style>
 </head>
-        footer a{{color:#93c5fd;text-decoration:none}}
-    </style>
-</head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
 
