@@ -2,6 +2,21 @@
 
 All notable changes to Beacon are documented here.
 
+## Unreleased — Pipeline Supervisor CLI (2026-09-28)
+
+- `app/pipeline/dashboard.py` — data-centric CLI dashboard (requires `rich`):
+  pipeline funnel with pending/done per stage, per-run counters, health flags
+  (unacked alerts, sensitive leads pending, approved reviews not published),
+  goals progress (Wave-1 counties, categories, lead queue), coverage by
+  category with GAP markers, geography (lead ZIPs → county), recent reviews
+  and commits, priority queue
+- `supervisor --dashboard` renders the dashboard once and exits
+- `supervisor --loop` runs continuously, re-rendering the dashboard between
+  steps; stops itself on `idle` or `alert_human`
+- Ctrl+C once = finish current step and stop cleanly; Ctrl+C again = force quit
+- `_read_leads` now tracks `by_cat_status` (queued/investigated per category)
+- `beacon-supervisor.timer` disabled — loop mode is started manually
+
 ## Unreleased — Repo Restructuring (2026-09-27)
 
 ### GitHub Pages — serve only public content

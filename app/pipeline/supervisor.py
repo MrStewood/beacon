@@ -4,7 +4,9 @@ Beacon Pipeline Supervisor
 Reads pipeline state, decides the single best next action, optionally executes it.
 
 Usage:
-  python -m app.pipeline.supervisor              # decide + execute
+  python -m app.pipeline.supervisor              # decide + execute one step
+  python -m app.pipeline.supervisor --loop       # run until idle/alert_human; dashboard between steps; Ctrl+C stops cleanly
+  python -m app.pipeline.supervisor --dashboard  # render the data dashboard and exit
   python -m app.pipeline.supervisor --dry-run    # decide, print, don't execute
   python -m app.pipeline.supervisor --status     # print state snapshot only
   python -m app.pipeline.supervisor ack <slug>   # acknowledge a human alert
@@ -228,6 +230,7 @@ def _read_leads() -> dict:
     by_category:  dict[str, int] = {}
     by_zip:       dict[str, int] = {}
     by_status:    dict[str, int] = {}
+    by_cat_status: dict[str, dict[str, int]] = {}
     sensitive_pending = []
     all_queued:   list[dict]    = []
 
@@ -332,6 +335,8 @@ def _read_leads() -> dict:
         by_category[cat] = by_category.get(cat, 0) + 1
         by_zip[zip_]      = by_zip.get(zip_, 0) + 1
         by_status[status] = by_status.get(status, 0) + 1
+        cs = by_cat_status.setdefault(cat, {"queued": 0, "investigated": 0})
+        cs[status] = cs.get(status, 0) + 1
 
         if cat in SENSITIVE_CATEGORIES and status == "queued":
             sensitive_pending.append({"name": name, "category": cat, "zip": zip_})
@@ -351,6 +356,7 @@ def _read_leads() -> dict:
     return {
         "total":             len(dedup),
         "by_category":       by_category,
+        "by_cat_status":     by_cat_status,
         "by_zip":            by_zip,
         "by_status":         by_status,
         "queued_count":      by_status.get("queued", 0),
@@ -755,11 +761,17 @@ def _print_snapshot(snap: dict) -> None:
 _STOP_ACTIONS = {"idle", "alert_human"}
 
 
-def _run_one(*, dry_run: bool = False) -> str:
+def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
     """Snapshot → decide → execute. Returns the action taken."""
     import asyncio
-    snap   = snapshot_state()
-    _print_snapshot(snap)
+    snap = snapshot_state()
+    if view == "dashboard":
+        from app.pipeline import dashboard
+        dash = dashboard.get_console()
+        dash.clear()
+        dashboard.render(snap=snap, run=run)
+    else:
+        _print_snapshot(snap)
     print("Deciding next action...")
     action = asyncio.run(decide(snap))
     print(f"\n{'='*60}")
@@ -774,6 +786,8 @@ def _run_one(*, dry_run: bool = False) -> str:
         execute(action)
     else:
         print("(dry-run — not executing)")
+    if run is not None:
+        run.record(action["action"], action.get("target"))
     return action["action"]
 
 
@@ -785,6 +799,8 @@ def main() -> None:
     ap.add_argument("--status",  action="store_true", help="Print state snapshot only")
     ap.add_argument("--loop",    action="store_true",
                     help="Run continuously until idle, alert_human, or Ctrl+C")
+    ap.add_argument("--dashboard", action="store_true",
+                    help="Render the data dashboard once and exit")
     ap.add_argument("command",   nargs="?", help="ack <slug> to acknowledge alert")
     ap.add_argument("slug",      nargs="?", help="Alert slug to acknowledge")
     args = ap.parse_args()
@@ -796,12 +812,19 @@ def main() -> None:
         acknowledge_alert(args.slug)
         return
 
+    if args.dashboard:
+        from app.pipeline import dashboard
+        dashboard.render()
+        return
+
     if args.status:
         _print_snapshot(snapshot_state())
         return
 
     if args.loop:
         import signal, time
+        from app.pipeline.dashboard import RunStats
+        run = RunStats()
         _stop_requested = False
 
         def _handle_sigint(sig, frame):
@@ -821,10 +844,7 @@ def main() -> None:
                 print("Stopped cleanly.")
                 break
             step += 1
-            print(f"\n{'#'*60}")
-            print(f"  LOOP STEP {step}")
-            print(f"{'#'*60}")
-            taken = _run_one(dry_run=args.dry_run)
+            taken = _run_one(dry_run=args.dry_run, view="dashboard", run=run)
             if taken in _STOP_ACTIONS:
                 print(f"\nLoop stopped: action={taken}. Nothing more to do right now.")
                 break
