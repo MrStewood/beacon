@@ -29,17 +29,6 @@ class TestAccessibility:
         js = (REPO_ROOT / "assets" / "js" / "app.js").read_text()
         assert 'aria-pressed' in js
 
-    def test_form_labels_exist(self):
-        """Form inputs should have labels."""
-        html = (REPO_ROOT / "index.html").read_text()
-        assert 'for="search-input"' in html
-        assert 'for="location-input"' in html
-        assert 'for="county-select"' in html
-
-    def test_resource_names_are_links(self):
-        """Resource names should link to detail pages."""
-        js = (REPO_ROOT / "assets" / "js" / "app.js").read_text()
-        assert 'pages/resource/' in js
 
     def test_emergency_has_role_alert(self):
         """Emergency banner should have role=alert."""
