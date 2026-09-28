@@ -66,10 +66,14 @@ Save each valid resource immediately with create_lead(). Do not batch results at
 
 **search(query, category)**
   - Discovery tool. One targeted query per category minimum.
-  - Always include county + state: "Laurel County Kentucky food bank"
-  - Use category="social media" for orgs that may only have Facebook pages
-  - Use category="map" for location-specific lookups
-  - Budget is limited — make queries count; don't repeat similar ones
+  - Use all three query shapes — each finds different things:
+      "{county} County {state} food bank"   ← county-wide resources (most common)
+      "{city} {state} food bank"            ← city-specific resources
+      "{zip_} food bank"                    ← ZIP lookups, 211, local directories
+  - Don't rely on only one shape: a resource may appear in city searches but not county
+  - Use category="social media" for orgs that may only have a Facebook page
+  - Use category="map" for address/location lookups
+  - Budget is limited — vary the shape; don't repeat the same query with minor rewording
 
 **check_url(url)**
   - Call before navigate() on any URL from search results
