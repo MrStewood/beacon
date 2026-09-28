@@ -40,15 +40,17 @@ CANDIDATES_DIR = BEACON_ROOT / "source" / "candidates"
 REJECTED_DIR   = BEACON_ROOT / "leads" / "rejected"
 REVIEWS_DIR    = BEACON_ROOT / "leads" / "reviews"
 
-# Workflow states that mean "ready for review"
+# Workflow states that are ready for review (or have no prior review decision)
 _REVIEWABLE_STATES = {
+    "yaml-created",
     "research-b-locked", "evidence-compared", "verified",
     "risk-verification-complete", "policy-checked", "trust-scored", "decision-signed",
 }
 
-# Workflow states that are already past review
+# Workflow states that are already past review — skip re-review
 _PAST_REVIEW_STATES = {
-    "yaml-created", "pr-opened", "ci-passed", "merged",
+    "approved", "rejected", "needs_human_review",
+    "pr-opened", "ci-passed", "merged",
     "deployed", "production-verified", "monitoring",
 }
 
@@ -70,11 +72,12 @@ COMPLETE_REVIEW_SCHEMA = {
             "properties": {
                 "decision": {
                     "type": "string",
-                    "enum": ["approve", "reject", "needs_more_research"],
+                    "enum": ["approve", "reject", "needs_more_research", "needs_human_review"],
                     "description": (
                         "approve: publish as-is (or with minor corrections). "
                         "reject: not suitable for the directory. "
-                        "needs_more_research: specific questions remain unanswered."
+                        "needs_more_research: specific questions remain unanswered — pipeline will re-investigate. "
+                        "needs_human_review: only for the two cases that genuinely require human judgment (see prompt)."
                     ),
                 },
                 "reasoning": {
@@ -105,8 +108,17 @@ COMPLETE_REVIEW_SCHEMA = {
                         "duplicate",
                         "out_of_scope",         # commercial, not a community resource
                         "insufficient_evidence",# can't confirm it's real
-                        "sensitive_requires_manual", # DV shelter location, crisis
                     ],
+                },
+
+                # needs_human_review fields
+                "human_reason": {
+                    "type": "string",
+                    "enum": [
+                        "closing_existing_record",      # would mark an approved resource as closed
+                        "public_access_unresolvable",   # two full passes, still unknown
+                    ],
+                    "description": "needs_human_review only: which of the two legitimate human-escalation triggers applies.",
                 },
 
                 # needs_more_research fields
@@ -245,15 +257,24 @@ Review this candidate and call complete_review() with ONE decision:
 **reject** — if ANY of these are true:
   - public_access=no, or investigation evidence shows warehouse/distribution/agency-only
   - Eligibility text says "not listed as a public pantry" or "does not serve individuals"
-  - Permanently closed
+  - Permanently closed (and NOT already an approved record — see needs_human_review)
   - Duplicate of an already-approved record
   - Not a genuine community resource (commercial, admin-only, etc.)
-  - Sensitive resource requiring manual review (DV shelter location)
+  NOTE: sensitive category (DV, crisis, children's) is NOT a reject reason.
+  If the org's own website explicitly withholds an address, omit that field — that is handled.
+  A crisis hotline with a confirmed public phone number should be APPROVED.
 
 **needs_more_research** — if BOTH:
   - The resource is probably real and publicly accessible, BUT
-  - Public access status is unconfirmed, OR hours/eligibility are unverified
+  - Specific questions remain (hours unverified, eligibility unclear, phone unconfirmed)
   Provide concrete `guidance` and `questions_to_answer` for the next investigation pass.
+
+**needs_human_review** — ONLY for these two cases, nothing else:
+  1. The candidate would mark an *existing approved record* as permanently closed
+     (`human_reason: closing_existing_record`)
+  2. Two full investigation passes have been completed and public_access is STILL unknown
+     (`human_reason: public_access_unresolvable`)
+  Do NOT use this for sensitive categories, missing addresses, or any other reason.
 
 ## Tools available (use sparingly — 2–3 searches max)
   - search(query) — for targeted clarification only
@@ -279,6 +300,7 @@ async def review_candidate(candidate_path: Path) -> dict:
     # --- Pre-flight gates (no LLM call needed) ---
     resource_pre = candidate.get("resource", {})
     public_access = str(resource_pre.get("public_access", "unknown")).lower().strip()
+    county = (candidate_path.parent.name or "unknown").lower()
 
     if public_access == "no":
         reason = (
@@ -288,7 +310,7 @@ async def review_candidate(candidate_path: Path) -> dict:
             "If public access is actually available, re-investigate and record public_access=yes."
         )
         log.info("AUTO-REJECT %s — public_access=no", candidate_path.name)
-        _do_reject(candidate, candidate_path, county, {
+        _do_reject(candidate, candidate_path, {
             "decision": "reject",
             "reasoning": reason,
             "confidence": "high",
@@ -296,6 +318,22 @@ async def review_candidate(candidate_path: Path) -> dict:
         return {"decision": "reject", "reasoning": reason, "auto": True}
 
     if public_access == "unknown":
+        # If a requeue guidance file already exists this is the second attempt —
+        # escalate to human rather than loop indefinitely.
+        prior_requeue = candidate_path.with_suffix(".requeue.json").exists()
+        if prior_requeue:
+            log.info("NEEDS-HUMAN %s — public_access unknown after requeue", candidate_path.name)
+            result = {
+                "decision": "needs_human_review",
+                "human_reason": "public_access_unresolvable",
+                "reasoning": (
+                    "Two investigation passes completed and public access is still unconfirmed. "
+                    "A human must verify whether this location serves the general public."
+                ),
+                "confidence": "low",
+            }
+            _do_needs_human(candidate, candidate_path, result)
+            return result
         log.info("AUTO-NEEDS-MORE-RESEARCH %s — public_access=unknown", candidate_path.name)
         result = {
             "decision": "needs_more_research",
@@ -318,7 +356,7 @@ async def review_candidate(candidate_path: Path) -> dict:
 
     candidate_id = candidate.get("candidate_id", candidate_path.stem)
     resource     = candidate.get("resource", {})
-    county       = (candidate_path.parent.name or "unknown").lower()
+    county       = (candidate_path.parent.name or "unknown").lower()  # set in pre-flight too; reuse same value
     zip_         = (resource.get("locations") or [{}])[0].get("address", {}).get("zip", "")
 
     # Load matching investigation if it exists
@@ -389,6 +427,8 @@ async def review_candidate(candidate_path: Path) -> dict:
         _do_reject(candidate, candidate_path, result)
     elif decision == "needs_more_research":
         _do_requeue(candidate, candidate_path, result)
+    elif decision == "needs_human_review":
+        _do_needs_human(candidate, candidate_path, result)
 
     return result
 
@@ -489,6 +529,18 @@ def _do_requeue(candidate: dict, candidate_path: Path, review: dict) -> None:
     }, indent=2, ensure_ascii=False))
     log.info("NEEDS MORE RESEARCH → guidance written to %s", guidance_path.name)
     log.info("  Questions: %s", review.get("questions_to_answer", []))
+
+
+def _do_needs_human(candidate: dict, candidate_path: Path, review: dict) -> None:
+    """Move candidate to needs-human-review queue."""
+    HUMAN_DIR = BEACON_ROOT / "leads" / "needs_human_review"
+    HUMAN_DIR.mkdir(parents=True, exist_ok=True)
+    dest = HUMAN_DIR / candidate_path.name
+    dest.write_text(candidate_path.read_text())
+    candidate_path.unlink()
+    reason = review.get("human_reason", "unspecified")
+    log.info("NEEDS HUMAN REVIEW → %s (reason: %s)", dest.name, reason)
+    log.info("  Reasoning: %s", review.get("reasoning", ""))
 
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,83 @@
+# Approved resource — CVDVS London (Cumberland Valley Domestic Violence Services)
+# Reviewed: 2026-09-28T20:22:32Z
+# Reviewer decision: Phone (606-843-2022 / 1-800-755-5348) and address (3100 Highway 30 Bypass, London, KY 40741) are corroborated across multiple independent sources (Chamber of Commerce, Laurel County Health Department, govcb, kycompanydir, buzzfile, MapQuest), and the org's own site confirms 24/7 safe shelter with trained DV advocates — a genuine public-facing crisis resource. Operating status is current (site advertises 2025 award and Aug 2026 events; no closure evidence). Name discrepancy ('Corbin Valley' vs 'Cumberland Valley') should be corrected, and the description should be trimmed to two sentences.
+
+id: laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf
+name: CVDVS London (Cumberland Valley Domestic Violence Services)
+status: active
+coverage_scope: multi-county
+needs:
+- crisis
+locations:
+- id: laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: London, Laurel County, Kentucky (specific street address not published on website)
+  city: London
+  state: KY
+  postal_code: '40743'
+  county_name: Laurel
+  latitude: 37.1283343
+  longitude: -84.0835576
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-28'
+  county_fips: '21125'
+verification_status: verified
+last_verified: '2026-09-28'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: 'Call 1-800-755-5348 (24-hour crisis line) or 606-843-2022; self-referral accepted. Website does not publish
+  a street address — call for location. Emergency: 911.'
+phones:
+- (606) 843-2022
+url: https://cvdvs.org/
+hours: 24/7 crisis line; safe shelter available around the clock
+description: Cumberland Valley Domestic Violence Services, Inc. provides 24/7 safe shelter and domestic violence advocacy
+  for residents and non-residential clients across 8 Kentucky counties; named 2025 Non-Profit of the Year by the London–Laurel
+  County Chamber of Commerce. All staff are trained domestic violence advocates.
+eligibility: All services free of charge for participants and their dependent children; no income eligibility standards
+cost: free
+populations:
+- women
+- families
+email: info@cvdvs.org
+intake_process: Self-referral or referral by local law enforcement or community agencies; call 1-800-755-5348
+source_urls:
+- https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46
+- https://cvdvs.org/services/
+- https://www.laurelcohealthdept.org/resources-dv
+- https://cvdvs.org/about/
+- https://cvdvs.org/
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Laurel
+    fips: '21125'
+  - name: Knox
+    fips: '21121'
+  - name: Jackson
+    fips: '21109'
+  - name: Whitley
+    fips: '21235'
+  - name: Rockcastle
+    fips: '21203'
+  - name: Bell
+    fips: '21013'
+  - name: Clay
+    fips: '21051'
+  - name: Harlan
+    fips: '21095'
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46
+- source_type: official-provider
+  url: https://cvdvs.org/services/
+- source_type: official-provider
+  url: https://www.laurelcohealthdept.org/resources-dv

@@ -1,13 +1,13 @@
 {
   "candidate_id": "laurel-god-s-pantry-food-bank-london-92aa5d",
-  "reviewed_at": "2026-09-28T05:40:07Z",
+  "reviewed_at": "2026-09-28T05:46:32Z",
   "candidate_path": "source/candidates/laurel/laurel-god-s-pantry-food-bank-london-92aa5d.yaml",
   "decision": "approve",
-  "reasoning": "Address and phone are confirmed by two independent sources (Laurel County Health Department food resource guide lists God's Pantry Food Bank at 1215 East 4th Street, London KY 40741, 606-862-6693, Mon-Fri 7:00 AM-3:30 PM; godspantry.org confirms the same address as its Southeast Regional Distribution Center), and the health department guide lists it among public food pantries, indicating public-facing access. Operating status is verified with no closure evidence, category is accurate, and no duplicate record is confirmed in the directory.",
+  "reasoning": "Address confirmed by two independent sources (godspantry.org contact page lists the London site as its Southeast Regional Distribution Center; Laurel County Health Department food resource guide lists God's Pantry Food Bank at 1215 East 4th St). The health department guide — a public-facing food resource list — also supplies the London phone 606-862-6693 and hours Mon–Fri 7:00 AM–3:30 PM, resolving the researcher's unknown phone/hours fields. Organization is active (Facebook page updated April 2025), category 'food' is accurate, and the flagged duplicates are the parent org/alternate-name listings rather than separate approved records.",
   "confidence": "medium",
   "corrections": {
-    "hours": "Mon-Fri 7:00 AM - 3:30 PM",
-    "phone": "(606) 862-6693",
-    "description": "God's Pantry Food Bank's Southeast Regional Distribution Center in London, KY, providing food assistance to food-insecure residents of Central and Eastern Kentucky."
+    "phone": "606-862-6693",
+    "hours": "Mon-Fri 7:00 AM-3:30 PM",
+    "description": "God's Pantry Food Bank's Southeast Regional Distribution Center at 1215 E 4th St, London, KY — part of the Kentucky non-profit serving 50 counties with free food for food-insecure residents (income eligibility applies to USDA TEFAP/CSFP commodities; Health Care Pantry boxes via provider referral)."
   }
 }

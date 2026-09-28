@@ -435,11 +435,26 @@ def _build_resource(result: dict, candidate_id: str, category: str) -> dict:
     if eligibility:
         resource["eligibility"] = eligibility
     if cost:
-        resource["cost"] = cost
-    if clean_svc:
-        resource["service_types"] = clean_svc
+        _cost_norm = str(cost).lower()
+        if "free" in _cost_norm or "no cost" in _cost_norm or "no charge" in _cost_norm:
+            resource["cost"] = "free"
+        elif "sliding" in _cost_norm:
+            resource["cost"] = "sliding-scale"
+        elif "insurance" in _cost_norm:
+            resource["cost"] = "insurance"
+        elif "private" in _cost_norm or "pay" in _cost_norm:
+            resource["cost"] = "private-pay"
+        else:
+            resource["cost"] = "unknown"
+    _VALID_POPULATIONS = {
+        "anyone", "families", "women", "men", "youth", "seniors",
+        "veterans", "lgbtq+", "disability", "re-entry", "pregnant",
+        "substance-use", "recovery",
+    }
     if populations:
-        resource["populations"] = populations
+        if isinstance(populations, str):
+            populations = [populations]
+        resource["populations"] = [p for p in populations if p in _VALID_POPULATIONS]
     if languages:
         resource["languages"] = languages
     if _get("email"):

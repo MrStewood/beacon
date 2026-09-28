@@ -1,9 +1,13 @@
 {
   "candidate_id": "laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf",
-  "reviewed_at": "2026-09-28T15:32:53Z",
+  "reviewed_at": "2026-09-28T20:22:32Z",
   "candidate_path": "source/candidates/laurel/laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf.yaml",
-  "decision": "reject",
-  "reasoning": "Sensitive resource requiring manual review: this is a domestic violence safe-shelter whose physical street address is intentionally unpublished (only a P.O. Box and a third-party-corroborated highway address exist), and the lead's name 'Corbin Valley Domestic Violence Services' is a mis-expansion of CVDVS (the org is Cumberland Valley Domestic Violence Services), raising a possible duplicate concern. DV shelter locations must go through manual review rather than auto-publish.",
-  "confidence": "medium",
-  "reject_reason": "sensitive_requires_manual"
+  "decision": "approve",
+  "reasoning": "Phone (606-843-2022 / 1-800-755-5348) and address (3100 Highway 30 Bypass, London, KY 40741) are corroborated across multiple independent sources (Chamber of Commerce, Laurel County Health Department, govcb, kycompanydir, buzzfile, MapQuest), and the org's own site confirms 24/7 safe shelter with trained DV advocates — a genuine public-facing crisis resource. Operating status is current (site advertises 2025 award and Aug 2026 events; no closure evidence). Name discrepancy ('Corbin Valley' vs 'Cumberland Valley') should be corrected, and the description should be trimmed to two sentences.",
+  "confidence": "high",
+  "corrections": {
+    "name": "CVDVS London (Cumberland Valley Domestic Violence Services)",
+    "description": "Cumberland Valley Domestic Violence Services, Inc. provides 24/7 safe shelter and domestic violence advocacy for residents and non-residential clients across 8 Kentucky counties; named 2025 Non-Profit of the Year by the London–Laurel County Chamber of Commerce. All staff are trained domestic violence advocates.",
+    "hours": "24/7 crisis line; safe shelter available around the clock"
+  }
 }
