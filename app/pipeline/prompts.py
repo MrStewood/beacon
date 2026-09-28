@@ -111,10 +111,10 @@ Save each valid resource immediately with create_lead(). Do not batch results at
 3. A name alone is not enough. Need at least one of: phone, url, address.
 4. Do not navigate to Google, Bing, DuckDuckGo — use search() instead.
 5. Check all 17 categories before deciding you are done.
-6. If a county has sparse results, search neighboring counties that may serve {county} residents.
+6. If a county has sparse results, search neighboring counties — save everything you find there too.
 7. If you find a directory page listing many orgs (211, United Way, county DSS),
    extract EVERY listed organization — one directory can yield 10–20 leads.
-8. County-wide or statewide programs that serve {county} are in scope even if located elsewhere.
+8. Save ALL leads you find regardless of location. We are building a national directory. A resource found in a neighboring county or another state is still valuable — record its actual location accurately and save it. Nothing gets dropped.
 9. Do not re-research a resource after create_lead returns status=duplicate.
 10. Crisis resources (hotlines, DV shelters) — save them but note they need extra verification.
 

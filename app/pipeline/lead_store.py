@@ -166,11 +166,17 @@ class LeadStore:
         lead_id = f"{self.run_id}-{len(self.session_leads):03d}"
         log.info("saved lead #%d: %s", len(self.session_leads), lead["name"])
 
+        # Checkpoint every 10 leads — work survives timeouts and crashes
+        if len(self.session_leads) % 10 == 0:
+            self._checkpoint()
+
         return {
             "status": "saved",
             "id": lead_id,
             "name": lead["name"],
             "category": lead["category"],
+            "located_zip": lead.get("zip"),
+            "out_of_area": lead.get("zip") != self.zip_code,
             "session_total": len(self.session_leads),
             "flags": flags,
         }
@@ -201,14 +207,43 @@ class LeadStore:
         return json.dumps({"seen": False, "hint": "URL not previously evaluated — safe to visit."})
 
     # ------------------------------------------------------------------
+    # Checkpoint: persist work-in-progress so crashes don't lose leads
+    # ------------------------------------------------------------------
+
+    def _checkpoint(self) -> None:
+        """Write current session leads to disk. Called every 10 leads and at finalize."""
+        if not self.session_leads:
+            return
+        run_dir = BEACON_ROOT / "leads" / "runs" / self.zip_code
+        run_dir.mkdir(parents=True, exist_ok=True)
+        ckpt = run_dir / f"{self.run_id}-checkpoint.json"
+        ckpt.write_text(json.dumps({
+            "zip": self.zip_code,
+            "county": self.zip_info["county"],
+            "state": self.zip_info["state"],
+            "run_id": self.run_id,
+            "checkpoint_at": _utc_now(),
+            "lead_count": len(self.session_leads),
+            "resources_found": self.session_leads,
+        }, indent=2, ensure_ascii=False))
+        _su.save(self._seen_urls)
+        log.debug("checkpoint: %d leads saved to %s", len(self.session_leads), ckpt.name)
+
+    # ------------------------------------------------------------------
     # Finalize: save session leads and update bookkeeping
     # ------------------------------------------------------------------
 
     def finalize(self) -> dict:
-        """Write run artifact and update dedup.json + seen_urls.json."""
+        """Write run artifact and update dedup.json + seen_urls.json.
+
+        Safe to call even if the agent was interrupted — checkpoint() has been
+        writing incrementally every 10 leads. finalize() promotes the checkpoint
+        to a permanent processed run file.
+        """
+        self._checkpoint()  # ensure latest state is on disk regardless
+
         if not self.session_leads:
             log.info("finalize: no new leads this session")
-            _su.save(self._seen_urls)
             return {"new_leads": 0, "run_id": self.run_id}
 
         # Write raw results in the format research.py process expects
@@ -255,9 +290,18 @@ class LeadStore:
     # ------------------------------------------------------------------
 
     def _find_duplicate(self, lead: dict) -> dict | None:
-        """Check against all known indexes + session leads. Returns match info or None."""
-        # _r._match expects both args to be identity() results
-        cand = _r.identity(lead)
+        """Check against all known indexes + session leads. Returns match info or None.
+
+        source_urls is evidence of WHERE we found a resource, not the resource's
+        identity. Strip it before computing identity so that two different orgs
+        discovered on the same directory page don't falsely match each other.
+        """
+        def _id(r: dict) -> dict:
+            stripped = {k: v for k, v in r.items()
+                        if k not in ("source_urls", "source_url")}
+            return _r.identity(stripped)
+
+        cand = _id(lead)
         source_map = [
             ("published",    self._indexes["published"]),
             ("candidates",   self._indexes["cases"]),
@@ -267,7 +311,7 @@ class LeadStore:
         ]
         for source_name, items in source_map:
             for existing in items:
-                m = _r._match(cand, _r.identity(existing))
+                m = _r._match(cand, _id(existing))
                 if m:
                     match_type, fields = m
                     return {
