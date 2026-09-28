@@ -305,12 +305,29 @@ def process_yaml(path: Path, fips_map: dict[str, str], force: bool = False) -> b
         if geocode_location(loc, force=force):
             changed = True
 
-    # 2. Derive service_areas if missing or empty
+    # 2. Derive service_areas if missing or empty (candidate.py may have already set them)
     if not r.get("service_areas"):
         areas = _derive_service_areas(r, fips_map)
         if areas:
             r["service_areas"] = areas
             changed = True
+    else:
+        # Enrich existing county service_areas with FIPS if absent
+        for area in r.get("service_areas", []):
+            if area.get("type") == "county":
+                for v in area.get("values", []):
+                    if v.get("name") and not v.get("fips"):
+                        fips = fips_map.get(v["name"])
+                        if fips:
+                            v["fips"] = fips
+                            changed = True
+        # Attach radius center lat/lng from location if missing
+        loc = _first_physical(r)
+        for area in r.get("service_areas", []):
+            if area.get("type") == "radius" and not area.get("center"):
+                if loc and loc.get("latitude") and loc.get("longitude"):
+                    area["center"] = {"latitude": loc["latitude"], "longitude": loc["longitude"]}
+                    changed = True
 
     # 3. Add county_fips to locations that have county_name
     for loc in r.get("locations", []):

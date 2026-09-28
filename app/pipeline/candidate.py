@@ -341,6 +341,7 @@ def _build_resource(result: dict, candidate_id: str, category: str) -> dict:
     service_types = _get("service_types") or lead.get("service_types") or []
     languages = _get("languages") or []
     coverage_scope = _get("coverage_scope") or "county"
+    service_area_raw = _get("service_area")   # agent's free-text finding
     operating_status = summary.get("operating_status", "active")
 
     # Location: schema v3 uses flat fields (address_line_1, city, state, postal_code)
@@ -428,7 +429,94 @@ def _build_resource(result: dict, candidate_id: str, category: str) -> dict:
     if all_source_urls:
         resource["source_urls"] = all_source_urls[:5]
 
+    # Service areas — prefer agent-found, fall back to derivation from coverage_scope
+    _svc_areas = _parse_service_area(
+        service_area_raw,
+        state or lead.get("state", ""),
+        county or lead.get("county", ""),
+    )
+    if _svc_areas:
+        resource["service_areas"] = _svc_areas
+
     return resource
+
+
+def _parse_service_area(raw: str, state: str, county_name: str) -> list[dict]:
+    """Convert agent free-text service_area finding into schema service_areas[].
+
+    Recognises (in order of specificity):
+      radius   — "within 25 miles", "25-mile radius"
+      zip      — "40741", "40741 and 40742"
+      county   — "Laurel County, KY", "Laurel, Clay, and Whitley Counties"
+      city     — "London KY", "London and surrounding areas"
+    Falls back to the known county_name if nothing else matches.
+    """
+    import re as _re
+
+    if not raw:
+        if county_name and state:
+            return [{"type": "county", "state": state, "country": "US",
+                     "values": [{"name": county_name}]}]
+        return []
+
+    text = str(raw).strip()
+
+    # --- Radius ---
+    radius_m = _re.search(r"(\d+)\s*[\-\u2013]?\s*mile", text, _re.I)
+    if radius_m:
+        return [{"type": "radius", "radius_miles": int(radius_m.group(1))}]
+
+    # --- ZIP codes (5-digit sequences) ---
+    zips = _re.findall(r"(?<![\d])(\d{5})(?![\d])", text)
+    if zips:
+        return [{
+            "type": "postal-code",
+            "state": state or "KY",
+            "country": "US",
+            "values": [{"name": z} for z in zips],
+        }]
+
+    # --- County names (matches "Laurel County" and "Laurel, Clay, and Whitley Counties") ---
+    # First try plural form — captures comma-separated county names before "Counties"
+    plural_m = _re.search(r"([A-Za-z,\s]+)\s+[Cc]ounties", text)
+    if plural_m:
+        raw_names = _re.split(r",|\band\b", plural_m.group(1), flags=_re.I)
+        names = [n.strip().rstrip(",") for n in raw_names if n.strip()]
+        if names:
+            return [{
+                "type": "county",
+                "state": state or "KY",
+                "country": "US",
+                "values": [{"name": n} for n in names if n],
+            }]
+    # Singular "County"
+    singular_m = _re.findall(r"([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s+[Cc]ounty", text)
+    if singular_m:
+        return [{
+            "type": "county",
+            "state": state or "KY",
+            "country": "US",
+            "values": [{"name": c.strip()} for c in singular_m],
+        }]
+
+    # --- City / town (first proper noun before KY/Kentucky/and/comma) ---
+    city_m = _re.match(r"^([A-Z][a-zA-Z\s]+?)(?:\s+(?:KY|Kentucky|and)|,|$)", text)
+    if city_m:
+        city_cand = city_m.group(1).strip()
+        skip = ("county", "mile", "area", "state", "national", "serves", "surrounding")
+        if len(city_cand.split()) <= 4 and not any(w in city_cand.lower() for w in skip):
+            return [{
+                "type": "city",
+                "state": state or "KY",
+                "country": "US",
+                "values": [{"name": city_cand}],
+            }]
+
+    # --- Fallback: county from location ---
+    if county_name and state:
+        return [{"type": "county", "state": state, "country": "US",
+                 "values": [{"name": county_name}]}]
+    return []
 
 
 # ---------------------------------------------------------------------------

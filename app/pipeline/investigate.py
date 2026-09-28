@@ -52,88 +52,88 @@ INVESTIGATIONS_DIR = BEACON_ROOT / "leads" / "investigations"
 _CATEGORY_FIELDS: dict[str, dict] = {
     "food": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "what_to_bring", "description"],
+        "material":  ["hours", "eligibility", "what_to_bring", "description", "service_area"],
         "guidance":  "Hours and distribution schedule are critical. Note whether walk-in or appointment. Check what ID or proof of address is required. Find out what kinds of food are distributed (box, choice pantry, hot meal).",
     },
     "shelter": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "capacity", "intake_process", "populations"],
+        "material":  ["hours", "eligibility", "capacity", "intake_process", "populations", "service_area"],
         "guidance":  "Who is served (men/women/families/anyone)? Is sobriety required? What is the intake process? Is there a waitlist? What is the nightly or stay limit?",
     },
     "housing": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["eligibility", "intake_process", "description"],
+        "material":  ["eligibility", "intake_process", "description", "service_area"],
         "guidance":  "Is there a waitlist? Income limits? Application process? Section 8 vs transitional vs permanent supportive?",
     },
     "health": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "cost", "intake_process", "description"],
+        "material":  ["hours", "eligibility", "cost", "intake_process", "description", "service_area"],
         "guidance":  "What insurance is accepted? Is there a sliding fee scale? Appointment vs walk-in? What services are offered (primary care, dental, vision, Rx)?",
     },
     "mental-health": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "cost", "intake_process"],
+        "material":  ["hours", "eligibility", "cost", "intake_process", "service_area"],
         "guidance":  "Medicaid/Medicare accepted? Sliding scale? Crisis line available 24/7? Specific populations served (youth, adults, veterans)?",
     },
     "addiction": {
         "essential": ["phone", "operating_status"],
-        "material":  ["address", "eligibility", "cost", "intake_process", "populations", "description"],
+        "material":  ["address", "eligibility", "cost", "intake_process", "populations", "description", "service_area"],
         "guidance":  "Level of care: detox, residential, outpatient, MAT? Gender-specific? Insurance/Medicaid accepted? Walk-in or referral required?",
     },
     "crisis": {
         "essential": ["phone", "operating_status"],
-        "material":  ["hours", "eligibility", "populations", "intake_process"],
+        "material":  ["hours", "eligibility", "populations", "intake_process", "service_area"],
         "guidance":  "Is this a hotline (phone only) or physical location? 24/7? If physical location: is address confidential (DV shelter)? Do NOT publish a confidential shelter address.",
         "sensitive": True,
     },
     "family": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["eligibility", "hours", "populations", "description"],
+        "material":  ["eligibility", "hours", "populations", "description", "service_area"],
         "guidance":  "Age ranges for children served? Income limits? Appointment or walk-in? Head Start vs Early Head Start vs childcare?",
     },
     "legal": {
         "essential": ["phone", "operating_status"],
-        "material":  ["address", "hours", "eligibility", "intake_process", "description"],
+        "material":  ["address", "hours", "eligibility", "intake_process", "description", "service_area"],
         "guidance":  "Income eligibility? Case types accepted (family, housing, benefits, criminal)? Walk-in clinics or appointment only?",
     },
     "documents": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "cost", "description"],
+        "material":  ["hours", "eligibility", "cost", "description", "service_area"],
         "guidance":  "What documents can be obtained? Fee assistance available? Walk-in or appointment?",
     },
     "education": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "cost", "description"],
+        "material":  ["hours", "eligibility", "cost", "description", "service_area"],
         "guidance":  "GED, ESL, literacy, vocational? Cost or free? Online or in-person?",
     },
     "jobs": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "description"],
+        "material":  ["hours", "eligibility", "description", "service_area"],
         "guidance":  "Resume help, job placement, training programs? What industries? Income eligibility?",
     },
     "transportation": {
         "essential": ["phone", "operating_status"],
-        "material":  ["hours", "eligibility", "cost", "description"],
+        "material":  ["hours", "eligibility", "cost", "description", "service_area"],
         "guidance":  "Medical transport vs general? Medicaid-funded? Appointment required? Service area?",
     },
     "utility-assistance": {
         "essential": ["phone", "operating_status"],
-        "material":  ["address", "hours", "eligibility", "description"],
+        "material":  ["address", "hours", "eligibility", "description", "service_area"],
         "guidance":  "LIHEAP, ECIP, or local fund? Income limits? Season or year-round? Electric, gas, water?",
     },
     "clothing": {
         "essential": ["phone", "address", "operating_status"],
-        "material":  ["hours", "eligibility", "description"],
+        "material":  ["hours", "eligibility", "description", "service_area"],
         "guidance":  "Free or voucher? Walk-in or appointment? What items available?",
     },
     "community": {
         "essential": ["phone", "operating_status"],
-        "material":  ["address", "hours", "description"],
+        "material":  ["address", "hours", "description", "service_area"],
         "guidance":  "What specific services does this organization provide?",
     },
     "veterans": {
         "essential": ["phone", "operating_status"],
-        "material":  ["address", "hours", "eligibility", "description"],
+        "material":  ["address", "hours", "eligibility", "description", "service_area"],
         "guidance":  "Which branch/era? VSO vs VA? Benefits counseling, employment, housing, healthcare? Walk-in or appointment?",
     },
 }
@@ -186,7 +186,7 @@ RECORD_FINDING_SCHEMA = {
                 },
                 "field": {
                     "type": "string",
-                    "description": "Field: phone|address|hours|eligibility|what_to_bring|cost|operating_status|description|url|email|facebook|intake_process|populations|service_types|languages|capacity|coverage_scope",
+                    "description": "Field: phone|address|hours|eligibility|what_to_bring|cost|operating_status|description|url|email|facebook|intake_process|populations|service_types|languages|capacity|coverage_scope|service_area",
                 },
                 "value": {
                     "description": "The actual value found. Exact quote or structured value — never paraphrase phone numbers or addresses.",
@@ -291,6 +291,13 @@ def _pass_a_prompt(lead: dict, category_info: dict) -> str:
     ESSENTIAL (required for publication): {', '.join(essential)}
     MATERIAL (enriches the record): {', '.join(material)}
 
+    ## Service area — ALWAYS research this
+    Who does this resource actually serve geographically?
+    Look for: "serving Laurel County", "residents of 40741", "within 25 miles", "we serve London and surrounding areas"
+    → record_finding(field='service_area', value='<exact description>')
+    Express as one of: county names (e.g. "Laurel County, KY"), ZIP codes, city names, or radius.
+    Also record field='coverage_scope' with one of: county | multi-county | city | postal-code | radius | state | national
+
     ## Your workflow — PASS A (Primary Sources)
 
     **DO THIS IN ORDER — record_finding after EVERY page, do not batch:**
@@ -376,11 +383,13 @@ def _pass_b_prompt(lead: dict, pass_a_findings: list[dict], category_info: dict)
        → record_finding for each field (pass='B', source_type='established-directory', content_hash='sha256:...')
     2. Search: "{name} {area}" on feedingky.org or the county health dept directory
        → navigate → screenshot → record_finding with content_hash
-    3. Search: "{name} {area} closed 2025 OR 2026" — if closure found, record operating_status='closed'
-    4. Call complete_pass(pass='B', ...) and STOP
+    3. Look for service area in whatever you find: county served, ZIP codes, city boundaries, radius.
+       → If Pass A didn't find service_area, record it now: record_finding(field='service_area', value='...')
+    4. Search: "{name} {area} closed 2025 OR 2026" — if closure found, record operating_status='closed'
+    5. Call complete_pass(pass='B', ...) and STOP
 
-    4 steps maximum. The content_hash from navigate is your evidence integrity — include it in every record_finding.
-    The goal is independent corroboration of phone/address/hours — not exhaustive research.
+    5 steps maximum. The content_hash from navigate is your evidence integrity — include it in every record_finding.
+    The goal is independent corroboration of phone/address/hours/service_area — not exhaustive research.
 
     ## Available tools (use ONLY these)
     - navigate(url)          — load a webpage; response includes [content_hash: sha256:...]
