@@ -6,14 +6,11 @@ Maintain an accurate, safe, transparent community-resource directory using trace
 
 ## Git Rules
 
-- Never commit directly to `main`.
-- Work only on a feature branch.
-- Use one branch per assigned issue.
-- Use the isolated worktree supplied for the task.
+- Commit code and schema changes directly to `main`; no PR required.
+- Resource data changes (`source/approved/**/*.yaml`) require explicit human
+  direction before committing — never self-publish a candidate.
 - Never force-push.
-- Never bypass tests.
-- Never use administrator merge options.
-- Never approve or merge your own pull request.
+- Never bypass tests — run `python scripts/build.py --test` before pushing.
 - Stop and mark the task blocked when required evidence is unavailable.
 
 ## Data Rules
@@ -44,30 +41,27 @@ this is not a prompt instruction an agent could choose to ignore.
 - The verifying agent cannot approve, publish, or merge it.
 - The Resource Operations Director who signs the decision (`scripts/sign_candidate.py`)
   must be distinct from every researcher and verifier on that candidate.
-- The publishing agent cannot approve its own PR (also enforced by GitHub
-  branch protection on `main`: 1 required approving review + required status
-  checks `validate` and `recompute-decision`).
+- The publishing agent may not commit a candidate to `source/approved/` without
+  explicit human instruction; `scripts/validate_candidate.py` independently
+  recomputes every trust score from raw evidence.
 - Sensitive resources require human approval.
 - No claim may move to `verified`/`verified-with-limitation` on the strength
   of an agent's own restated conclusion; `scripts/validate_candidate.py`
   independently recomputes every score from the raw evidence and fails the
   build if the committed decision does not match.
 
-## Pull Request Rules
+## Committing Changes
 
-Every PR must include:
+Push directly to `main`. CI (`build.yml`) runs on every push and deploys the
+site automatically on success. No PR or review step is required.
 
-- Paperclip issue ID
-- Candidate issue reference
+When committing resource data changes, include in the commit message:
+
 - Resource IDs changed
 - Fields changed
 - Evidence supporting each change
-- Verification method
-- Remaining uncertainty
-- Sensitive-resource considerations
-- Tests and build commands run
+- Verification method and remaining uncertainty
 
-Move work into review only when CI passes.
 
 ## Sensitive Resource Handling
 
