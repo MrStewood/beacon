@@ -1,0 +1,629 @@
+"""
+Beacon Pipeline Supervisor
+==========================
+Reads pipeline state, decides the single best next action, optionally executes it.
+
+Usage:
+  python -m app.pipeline.supervisor              # decide + execute
+  python -m app.pipeline.supervisor --dry-run    # decide, print, don't execute
+  python -m app.pipeline.supervisor --status     # print state snapshot only
+  python -m app.pipeline.supervisor ack <slug>   # acknowledge a human alert
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+import yaml
+
+BEACON_ROOT = Path(__file__).resolve().parents[2]
+log = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Paths
+# ---------------------------------------------------------------------------
+
+APPROVED_DIR     = BEACON_ROOT / "source" / "approved"
+CANDIDATES_DIR   = BEACON_ROOT / "source" / "candidates"
+LEADS_DIR        = BEACON_ROOT / "leads"
+INVESTIGATIONS_DIR = LEADS_DIR / "investigations"
+REJECTED_DIR     = LEADS_DIR / "rejected"
+ALERTS_DIR       = LEADS_DIR / "alerts"
+DEDUP_FILE       = LEADS_DIR / "dedup.json"
+EXPANSION_FILE   = LEADS_DIR / "EXPANSION.md"
+
+# Category priority weights (higher = more urgent to fill)
+CATEGORY_PRIORITY = {
+    "crisis":           10,
+    "shelter":           9,
+    "food":              9,
+    "health":            8,
+    "mental-health":     8,
+    "addiction":         7,
+    "housing":           7,
+    "family":            6,
+    "legal":             6,
+    "utility-assistance":5,
+    "transportation":    5,
+    "veterans":          4,
+    "jobs":              4,
+    "education":         3,
+    "documents":         3,
+    "clothing":          2,
+    "community":         2,
+}
+
+SENSITIVE_CATEGORIES = {"crisis", "domestic-violence"}
+
+# ---------------------------------------------------------------------------
+# State snapshot
+# ---------------------------------------------------------------------------
+
+def snapshot_state() -> dict[str, Any]:
+    """Read all pipeline state into a structured dict. No LLM calls."""
+
+    snap: dict[str, Any] = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "alerts":       _read_alerts(),
+        "approved":     _read_approved(),
+        "candidates":   _read_candidates(),
+        "investigations": _read_investigations(),
+        "leads":        _read_leads(),
+        "geography":    _read_geography(),
+    }
+    snap["coverage_gaps"] = _compute_gaps(snap)
+    snap["recommended_priority"] = _priority_order(snap)
+    return snap
+
+
+def _read_alerts() -> dict:
+    ALERTS_DIR.mkdir(parents=True, exist_ok=True)
+    alerts = []
+    for p in sorted(ALERTS_DIR.glob("*.yaml")):
+        try:
+            a = yaml.safe_load(p.read_text()) or {}
+            a["file"] = p.name
+            alerts.append(a)
+        except Exception:
+            pass
+    unacked = [a for a in alerts if not a.get("acknowledged")]
+    return {
+        "total": len(alerts),
+        "unacknowledged": len(unacked),
+        "items": unacked,
+    }
+
+
+def _read_approved() -> dict:
+    by_category: dict[str, int] = {}
+    by_county:   dict[str, int] = {}
+    total = 0
+    for p in APPROVED_DIR.rglob("*.yaml"):
+        try:
+            r = yaml.safe_load(p.read_text()) or {}
+            for cat in r.get("needs", []):
+                by_category[cat] = by_category.get(cat, 0) + 1
+            county = p.parent.name
+            by_county[county] = by_county.get(county, 0) + 1
+            total += 1
+        except Exception:
+            pass
+    return {"total": total, "by_category": by_category, "by_county": by_county}
+
+
+def _read_candidates() -> dict:
+    pending = []
+    requeued = []
+    for p in CANDIDATES_DIR.rglob("*.yaml"):
+        try:
+            c = yaml.safe_load(p.read_text()) or {}
+            state = c.get("workflow_state", "")
+            if state == "research-b-locked":
+                pending.append({"path": str(p.relative_to(BEACON_ROOT)), "id": c.get("candidate_id", p.stem)})
+            elif state == "needs-followup":
+                requeued.append({
+                    "path": str(p.relative_to(BEACON_ROOT)),
+                    "id":   c.get("candidate_id", p.stem),
+                    "questions": c.get("requeue", {}).get("questions_to_answer", []),
+                })
+        except Exception:
+            pass
+    return {
+        "pending_review": len(pending),
+        "requeued":       len(requeued),
+        "pending_items":  pending,
+        "requeued_items": requeued,
+    }
+
+
+def _read_investigations() -> dict:
+    """Find investigations that don't yet have a matching candidate."""
+    investigated: list[dict] = []
+    candidate_ids = {
+        p.stem for p in CANDIDATES_DIR.rglob("*.yaml")
+    }
+    for zip_dir in INVESTIGATIONS_DIR.iterdir():
+        if not zip_dir.is_dir():
+            continue
+        for p in zip_dir.glob("*.json"):
+            try:
+                inv = json.loads(p.read_text())
+                # Only complete investigations (both passes done)
+                if not inv.get("complete"):
+                    continue
+                lead = inv.get("lead", {})
+                cid  = inv.get("candidate_id") or _slug(lead.get("name", ""), zip_dir.name)
+                if cid not in candidate_ids:
+                    investigated.append({
+                        "path":     str(p.relative_to(BEACON_ROOT)),
+                        "zip":      zip_dir.name,
+                        "name":     lead.get("name", p.stem),
+                        "category": lead.get("category", "unknown"),
+                    })
+            except Exception:
+                pass
+    return {
+        "needs_candidate": len(investigated),
+        "items":           investigated,
+    }
+
+
+def _read_leads() -> dict:
+    """Aggregate leads from run files — richer than dedup.json (has category)."""
+    by_category:  dict[str, int] = {}
+    by_zip:       dict[str, int] = {}
+    by_status:    dict[str, int] = {}
+    sensitive_pending = []
+    all_queued:   list[dict]    = []
+
+    # Load investigated slugs to compute "uninvestigated"
+    investigated_slugs: set[str] = set()
+    if INVESTIGATIONS_DIR.exists():
+        for zd in INVESTIGATIONS_DIR.iterdir():
+            if zd.is_dir():
+                for f in zd.glob("*.json"):
+                    investigated_slugs.add(f.stem)
+
+    # Read dedup.json for canonical lead list + status
+    dedup: dict[str, dict] = {}
+    if DEDUP_FILE.exists():
+        raw = json.loads(DEDUP_FILE.read_text())
+        dedup = raw.get("discovered", {})
+
+    # Enrich with category from run files
+    cat_by_name: dict[str, str] = {}
+    for run_file in LEADS_DIR.glob("leads_*.json"):
+        try:
+            run = json.loads(run_file.read_text())
+            for lead in run.get("new_leads", []):
+                cat_by_name[lead["name"].lower().strip()] = lead.get("category", "unknown")
+        except Exception:
+            pass
+
+    for slug, lead in dedup.items():
+        name = lead.get("name", "")
+        cat  = cat_by_name.get(name.lower().strip(), "unknown")
+        zip_ = lead.get("zip", "unknown")
+        status = "investigated" if _inv_slug(zip_, name) in investigated_slugs else "queued"
+
+        by_category[cat] = by_category.get(cat, 0) + 1
+        by_zip[zip_]      = by_zip.get(zip_, 0) + 1
+        by_status[status] = by_status.get(status, 0) + 1
+
+        if cat in SENSITIVE_CATEGORIES and status == "queued":
+            sensitive_pending.append({"name": name, "category": cat, "zip": zip_})
+
+        if status == "queued":
+            all_queued.append({
+                "slug":     slug,
+                "name":     name,
+                "category": cat,
+                "zip":      zip_,
+                "priority": CATEGORY_PRIORITY.get(cat, 1),
+            })
+
+    # Sort queued leads by category priority desc
+    all_queued.sort(key=lambda x: -x["priority"])
+
+    return {
+        "total":             len(dedup),
+        "by_category":       by_category,
+        "by_zip":            by_zip,
+        "by_status":         by_status,
+        "queued_count":      by_status.get("queued", 0),
+        "investigated_count":by_status.get("investigated", 0),
+        "sensitive_pending": sensitive_pending,
+        "next_queued":       all_queued[:10],   # top 10 for LLM context
+    }
+
+
+def _read_geography() -> dict:
+    """Read expansion plan ZIPs."""
+    zips_done = []
+    zips_next = []
+    if DEDUP_FILE.exists():
+        raw = json.loads(DEDUP_FILE.read_text())
+        zips_done = list(raw.get("processed_zips", {}).keys())
+
+    if EXPANSION_FILE.exists():
+        text = EXPANSION_FILE.read_text()
+        import re
+        # Extract ZIP codes from expansion file lines not marked done
+        for line in text.splitlines():
+            zips_in_line = re.findall(r"\b4\d{4}\b", line)
+            if zips_in_line and "done" not in line.lower() and "complete" not in line.lower():
+                for z in zips_in_line:
+                    if z not in zips_done and z not in zips_next:
+                        zips_next.append(z)
+
+    return {
+        "zips_researched": zips_done,
+        "zips_pending":    zips_next[:5],
+    }
+
+
+def _compute_gaps(snap: dict) -> list[dict]:
+    """Which categories have leads available but zero approved records?"""
+    approved_cats = snap["approved"]["by_category"]
+    lead_cats     = snap["leads"]["by_category"]
+    gaps = []
+    for cat, lead_count in sorted(lead_cats.items(), key=lambda x: -CATEGORY_PRIORITY.get(x[0], 1)):
+        if cat == "unknown":
+            continue
+        approved = approved_cats.get(cat, 0)
+        if approved == 0 and lead_count > 0:
+            gaps.append({
+                "category": cat,
+                "priority": CATEGORY_PRIORITY.get(cat, 1),
+                "leads_available": lead_count,
+                "approved": 0,
+            })
+    return gaps
+
+
+def _priority_order(snap: dict) -> list[str]:
+    """Deterministic priority queue the LLM uses as a tiebreaker."""
+    order = []
+    if snap["alerts"]["unacknowledged"] > 0:
+        order.append("alert_human: unacknowledged alerts exist")
+    if snap["leads"]["sensitive_pending"]:
+        order.append("alert_human: sensitive leads pending investigation")
+    if snap["candidates"]["requeued"] > 0:
+        order.append("run_followup")
+    if snap["candidates"]["pending_review"] > 0:
+        order.append("review_candidate")
+    if snap["investigations"]["needs_candidate"] > 0:
+        order.append("build_candidate")
+    if snap["leads"]["queued_count"] > 0:
+        order.append("investigate_lead")
+    if snap["leads"]["queued_count"] < 5 and snap["geography"]["zips_pending"]:
+        order.append("research_zip or expand_geography")
+    if not order:
+        order.append("idle")
+    return order
+
+
+# ---------------------------------------------------------------------------
+# Decision (one LLM call)
+# ---------------------------------------------------------------------------
+
+async def decide(snap: dict) -> dict:
+    """Ask the LLM for one typed action decision. Returns action dict."""
+    import app.llm as llm
+
+    # Hard-coded gates — no LLM needed
+    if snap["alerts"]["unacknowledged"] > 0:
+        alert = snap["alerts"]["items"][0]
+        return {
+            "action": "alert_human",
+            "target": alert.get("file", "unknown"),
+            "reason": f"Unacknowledged alert: {alert.get('message', 'see alerts dir')}",
+            "priority": 5,
+            "auto": True,
+        }
+
+    if snap["leads"]["sensitive_pending"]:
+        items = snap["leads"]["sensitive_pending"]
+        return {
+            "action": "alert_human",
+            "target": items[0]["name"],
+            "reason": f"{len(items)} sensitive lead(s) in queue require human review before investigation",
+            "priority": 5,
+            "auto": True,
+            "human_message": (
+                f"{len(items)} sensitive resource lead(s) found in the queue that require human approval:\n"
+                + "\n".join(f"  - {i['name']} ({i['category']})" for i in items)
+                + "\n\nReview each lead. If the address should be kept confidential, "
+                "mark sensitive=true in the lead before investigation runs."
+            ),
+        }
+
+    # LLM decision for everything else
+    prompt = _build_prompt(snap)
+    resp = await llm.flash(
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_object"},
+        temperature=0,
+    )
+    raw = resp.choices[0].message.content
+    try:
+        action = json.loads(raw)
+        action.setdefault("action", "idle")
+        action.setdefault("reason", "")
+        action.setdefault("priority", 1)
+        action.setdefault("target", None)
+        return action
+    except Exception as e:
+        log.error("Failed to parse LLM decision: %s\nRaw: %s", e, raw)
+        return {"action": "idle", "reason": f"parse error: {e}", "priority": 0}
+
+
+def _build_prompt(snap: dict) -> str:
+    approved   = snap["approved"]
+    candidates = snap["candidates"]
+    leads      = snap["leads"]
+    invs       = snap["investigations"]
+    gaps       = snap["coverage_gaps"]
+    geo        = snap["geography"]
+    priority   = snap["recommended_priority"]
+
+    gap_text = "\n".join(
+        f"  - {g['category']} (priority {g['priority']}/10): {g['leads_available']} leads available, 0 approved"
+        for g in gaps[:8]
+    ) or "  none"
+
+    next_leads = "\n".join(
+        f"  - [{l['category']} p{l['priority']}] {l['name']} (ZIP {l['zip']})"
+        for l in leads["next_queued"][:6]
+    ) or "  none"
+
+    requeued_text = "\n".join(
+        f"  - {r['id']}: {r['questions'][0][:80] if r['questions'] else 'no questions listed'}"
+        for r in candidates["requeued_items"][:3]
+    ) or "  none"
+
+    pending_text = "\n".join(
+        f"  - {c['id']}"
+        for c in candidates["pending_items"][:3]
+    ) or "  none"
+
+    needs_cand_text = "\n".join(
+        f"  - {i['name']} ({i['category']}, {i['zip']})"
+        for i in invs["items"][:3]
+    ) or "  none"
+
+    return f"""You are the Beacon Pipeline Supervisor. Decide the single best next pipeline action.
+
+## Current State
+
+### Approved records
+Total: {approved['total']}
+By category: {json.dumps(approved['by_category'])}
+By county: {json.dumps(approved['by_county'])}
+
+### Candidates
+Pending review: {candidates['pending_review']}
+{pending_text}
+Requeued (need follow-up): {candidates['requeued']}
+{requeued_text}
+
+### Investigations without a candidate yet
+{invs['needs_candidate']} items:
+{needs_cand_text}
+
+### Lead queue
+Total leads: {leads['total']}
+Queued (uninvestigated): {leads['queued_count']}
+Already investigated: {leads['investigated_count']}
+By category: {json.dumps(leads['by_category'])}
+
+### Coverage gaps (0 approved, leads available)
+{gap_text}
+
+### Top queued leads by priority
+{next_leads}
+
+### Geography
+Researched ZIPs: {geo['zips_researched']}
+Next ZIPs in expansion plan: {geo['zips_pending']}
+
+### Deterministic priority order
+{chr(10).join(f"  {i+1}. {p}" for i,p in enumerate(priority))}
+
+## Your task
+
+Return a JSON object with exactly these fields:
+{{
+  "action": one of: investigate_lead | build_candidate | review_candidate | run_followup | research_zip | expand_geography | alert_human | idle,
+  "target": the specific lead slug, candidate path, ZIP code, or alert subject (string or null),
+  "reason": 1-2 sentence explanation of why this action is the best choice right now,
+  "priority": integer 1-5 (5 = most urgent),
+  "human_message": only if action=alert_human — what to tell the human (string or null)
+}}
+
+Rules:
+- Pick exactly ONE action
+- Follow the deterministic priority order unless you have a strong specific reason not to
+- For investigate_lead: set target to the name of the highest-priority queued lead
+- Do not invent leads, candidates, or ZIPs not shown above
+- Be terse — reason should be factual, not chatty
+""".strip()
+
+
+# ---------------------------------------------------------------------------
+# Execution stubs (wire to real modules)
+# ---------------------------------------------------------------------------
+
+def execute(action: dict) -> None:
+    """Dispatch the decided action to the appropriate pipeline module."""
+    a = action["action"]
+    target = action.get("target")
+
+    if a == "investigate_lead":
+        print(f"  → would run: python -m app.pipeline.investigate --lead {target!r}")
+        print("    (execute wiring pending)")
+
+    elif a == "build_candidate":
+        print(f"  → would run: python -m app.pipeline.candidate {target!r}")
+
+    elif a == "review_candidate":
+        print(f"  → would run: python -m app.pipeline.review_candidate {target!r}")
+
+    elif a == "run_followup":
+        print(f"  → would run: python -m app.pipeline.followup {target!r}")
+
+    elif a == "research_zip":
+        print(f"  → would run: python -m app.pipeline.research {target!r}")
+
+    elif a == "expand_geography":
+        print(f"  → would run: python -m app.pipeline.research {target!r} (new ZIP)")
+
+    elif a == "alert_human":
+        _write_alert(action)
+        print(f"  ⚠ Alert written to leads/alerts/")
+
+    elif a == "idle":
+        print("  → nothing to do right now")
+
+    else:
+        print(f"  → unknown action: {a!r}")
+
+
+def _write_alert(action: dict) -> None:
+    ALERTS_DIR.mkdir(parents=True, exist_ok=True)
+    slug = _slug(action.get("target", "unknown"), "alert")
+    ts   = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    path = ALERTS_DIR / f"{ts}-{slug[:40]}.yaml"
+    with open(path, "w") as f:
+        yaml.dump({
+            "created_at":    datetime.now(timezone.utc).isoformat(),
+            "acknowledged":  False,
+            "action":        action["action"],
+            "target":        action.get("target"),
+            "reason":        action.get("reason"),
+            "human_message": action.get("human_message"),
+        }, f, allow_unicode=True, sort_keys=False)
+
+
+def acknowledge_alert(slug: str) -> None:
+    ALERTS_DIR.mkdir(parents=True, exist_ok=True)
+    matches = list(ALERTS_DIR.glob(f"*{slug}*"))
+    if not matches:
+        print(f"No alert matching {slug!r}")
+        return
+    for p in matches:
+        a = yaml.safe_load(p.read_text()) or {}
+        a["acknowledged"] = True
+        a["acknowledged_at"] = datetime.now(timezone.utc).isoformat()
+        with open(p, "w") as f:
+            yaml.dump(a, f, allow_unicode=True, sort_keys=False)
+        print(f"Acknowledged: {p.name}")
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _slug(name: str, zip_: str) -> str:
+    import re
+    return re.sub(r"[^a-z0-9]+", "-", name.lower())[:60].strip("-")
+
+
+def _inv_slug(zip_: str, name: str) -> str:
+    import re
+    n = re.sub(r"[^a-z0-9]+", "-", name.lower())[:50].strip("-")
+    return f"{zip_}-{n}"
+
+
+def _print_snapshot(snap: dict) -> None:
+    a  = snap["approved"]
+    ca = snap["candidates"]
+    l  = snap["leads"]
+    iv = snap["investigations"]
+    g  = snap["coverage_gaps"]
+    al = snap["alerts"]
+
+    print("\n" + "="*60)
+    print("  BEACON PIPELINE STATUS")
+    print("="*60)
+    print(f"  Approved records:    {a['total']}")
+    print(f"  By category:         {a['by_category'] or 'none'}")
+    print(f"  By county:           {a['by_county'] or 'none'}")
+    print()
+    print(f"  Candidates pending:  {ca['pending_review']}")
+    print(f"  Candidates requeued: {ca['requeued']}")
+    print(f"  Needs candidate:     {iv['needs_candidate']}")
+    print()
+    print(f"  Total leads:         {l['total']}")
+    print(f"  Queued (uninvestig): {l['queued_count']}")
+    print(f"  Investigated:        {l['investigated_count']}")
+    print()
+    print(f"  Coverage gaps ({len(g)}):")
+    for gap in g[:6]:
+        print(f"    [{gap['priority']:2d}] {gap['category']:20s} {gap['leads_available']} leads, 0 approved")
+    print()
+    print(f"  Unacknowledged alerts: {al['unacknowledged']}")
+    print()
+    print(f"  Priority order:")
+    for i, p in enumerate(snap["recommended_priority"]):
+        print(f"    {i+1}. {p}")
+    print("="*60 + "\n")
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def main() -> None:
+    logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s — %(message)s")
+
+    ap = argparse.ArgumentParser(description="Beacon Pipeline Supervisor")
+    ap.add_argument("--dry-run",  action="store_true", help="Decide but don't execute")
+    ap.add_argument("--status",   action="store_true", help="Print state snapshot only")
+    ap.add_argument("command",    nargs="?",           help="ack <slug> to acknowledge alert")
+    ap.add_argument("slug",       nargs="?",           help="Alert slug to acknowledge")
+    args = ap.parse_args()
+
+    if args.command == "ack":
+        if not args.slug:
+            print("Usage: supervisor ack <slug>")
+            sys.exit(1)
+        acknowledge_alert(args.slug)
+        return
+
+    snap = snapshot_state()
+
+    if args.status:
+        _print_snapshot(snap)
+        return
+
+    _print_snapshot(snap)
+
+    print("Deciding next action...")
+    import asyncio
+    action = asyncio.run(decide(snap))
+
+    print(f"\n{'='*60}")
+    print(f"  DECISION: {action['action'].upper()}")
+    print(f"  Target:   {action.get('target') or '—'}")
+    print(f"  Priority: {action.get('priority')}/5")
+    print(f"  Reason:   {action.get('reason')}")
+    if action.get("human_message"):
+        print(f"  Message:  {action['human_message']}")
+    print(f"{'='*60}\n")
+
+    if args.dry_run:
+        print("(dry-run — not executing)")
+        return
+
+    execute(action)
+
+
+if __name__ == "__main__":
+    main()
