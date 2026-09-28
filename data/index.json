@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "version": "3.0",
+    "source": "Canonical YAML records",
+    "last_updated": "2026-09-28",
+    "total_resources": 3,
+    "regions": {
+      "KY": [
+        "Laurel"
+      ]
+    },
+    "needs": [
+      "community",
+      "crisis"
+    ],
+    "service_types": [
+      "hotline"
+    ],
+    "populations": [
+      "anyone",
+      "families",
+      "women"
+    ]
+  },
+  "resources": [
+    {
+      "id": "national-211-helpline",
+      "name": "211 Helpline",
+      "county": "National",
+      "city": null,
+      "needs": [
+        "community"
+      ],
+      "phones": [
+        "211"
+      ],
+      "address": null,
+      "status": "active",
+      "confidence": "high",
+      "coverage_scope": "national"
+    },
+    {
+      "id": "national-988-suicide-crisis-lifeline",
+      "name": "988 Suicide & Crisis Lifeline",
+      "county": "National",
+      "city": null,
+      "needs": [
+        "crisis"
+      ],
+      "phones": [
+        "988"
+      ],
+      "address": null,
+      "status": "active",
+      "confidence": "high",
+      "coverage_scope": "national"
+    },
+    {
+      "id": "laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf",
+      "name": "CVDVS London (Cumberland Valley Domestic Violence Services)",
+      "county": "Laurel",
+      "city": "London",
+      "needs": [
+        "crisis"
+      ],
+      "phones": [
+        "(606) 843-2022"
+      ],
+      "address": "London, Laurel County, Kentucky (specific street address not published on website)",
+      "status": "active",
+      "confidence": "high",
+      "coverage_scope": "multi-county"
+    }
+  ]
+}

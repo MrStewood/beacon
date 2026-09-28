@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "version": "3.0",
+    "source": "Canonical YAML records",
+    "last_updated": "2026-09-28",
+    "total_resources": 3,
+    "regions": {
+      "KY": [
+        "Laurel"
+      ]
+    },
+    "needs": [
+      "community",
+      "crisis"
+    ],
+    "service_types": [
+      "hotline"
+    ],
+    "populations": [
+      "anyone",
+      "families",
+      "women"
+    ]
+  },
+  "resources": [
+    {
+      "id": "national-211-helpline",
+      "name": "211 Helpline",
+      "alternate_names": [],
+      "description": "Dial 211 to connect with local health and human services \u2014 food, shelter, utility assistance, and more.",
+      "status": "active",
+      "phones": [
+        "211"
+      ],
+      "email": null,
+      "url": "https://www.211.org",
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": "24/7",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "national",
+      "service_areas": [],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "national-211-loc-1",
+          "location_type": "virtual",
+          "publicly_displayed": true
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-28",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://www.211.org"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "National",
+      "address": null,
+      "city": null,
+      "state": null,
+      "zip": null,
+      "map_url": null
+    },
+    {
+      "id": "national-988-suicide-crisis-lifeline",
+      "name": "988 Suicide & Crisis Lifeline",
+      "alternate_names": [],
+      "description": "Free, confidential crisis support for anyone in suicidal crisis or emotional distress. Call or text 988.",
+      "status": "active",
+      "phones": [
+        "988"
+      ],
+      "email": null,
+      "url": "https://988lifeline.org",
+      "facebook": null,
+      "needs": [
+        "crisis"
+      ],
+      "service_types": [
+        "hotline"
+      ],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "free",
+      "hours": "24/7",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "national",
+      "service_areas": [],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "national-988-loc-1",
+          "location_type": "virtual",
+          "publicly_displayed": true
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-28",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://988lifeline.org"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "National",
+      "address": null,
+      "city": null,
+      "state": null,
+      "zip": null,
+      "map_url": null
+    },
+    {
+      "id": "laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf",
+      "name": "CVDVS London (Cumberland Valley Domestic Violence Services)",
+      "alternate_names": [],
+      "description": "Cumberland Valley Domestic Violence Services, Inc. provides 24/7 safe shelter and domestic violence advocacy for residents and non-residential clients across 8 Kentucky counties; named 2025 Non-Profit of the Year by the London\u2013Laurel County Chamber of Commerce. All staff are trained domestic violence advocates.",
+      "status": "active",
+      "phones": [
+        "(606) 843-2022"
+      ],
+      "email": "info@cvdvs.org",
+      "url": "https://cvdvs.org/",
+      "facebook": null,
+      "needs": [
+        "crisis"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [
+        "women",
+        "families"
+      ],
+      "eligibility": "All services free of charge for participants and their dependent children; no income eligibility standards",
+      "cost": "free",
+      "hours": "24/7 crisis line; safe shelter available around the clock",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": "Self-referral or referral by local law enforcement or community agencies; call 1-800-755-5348",
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "multi-county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "Laurel",
+              "fips": "21125"
+            },
+            {
+              "name": "Knox",
+              "fips": "21121"
+            },
+            {
+              "name": "Jackson",
+              "fips": "21109"
+            },
+            {
+              "name": "Whitley",
+              "fips": "21235"
+            },
+            {
+              "name": "Rockcastle",
+              "fips": "21203"
+            },
+            {
+              "name": "Bell",
+              "fips": "21013"
+            },
+            {
+              "name": "Clay",
+              "fips": "21051"
+            },
+            {
+              "name": "Harlan",
+              "fips": "21095"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "London, Laurel County, Kentucky (specific street address not published on website)",
+          "city": "London",
+          "state": "KY",
+          "postal_code": "40743",
+          "county_name": "Laurel",
+          "latitude": 37.1283343,
+          "longitude": -84.0835576,
+          "geocoding_status": "approximate",
+          "geocoding_source": "nominatim",
+          "geocoded_at": "2026-09-28",
+          "county_fips": "21125"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-28",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://uwbg211.org/search/24c221c7-7b4d-58b9-9afe-6ed2ff6cfc46",
+        "https://cvdvs.org/services/",
+        "https://www.laurelcohealthdept.org/resources-dv"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "London, Laurel County, Kentucky (specific street address not published on website)",
+      "city": "London",
+      "state": "KY",
+      "zip": "40743",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=London,+Laurel+County,+Kentucky+(specific+street+address+not+published+on+website)+London+KY+40743"
+    }
+  ]
+}

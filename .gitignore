@@ -29,12 +29,13 @@ node_modules/
 _site/
 pages/
 print/
-data/resources.json
-data/resources.csv
-data/index.json
-data/catalog.json
 data/change-report.json
-data/v3/
+data/csv-by-county/
+
+# data/resources.json and related public data files ARE committed —
+# they are the source of truth for the live site. GitHub Pages serves
+# them directly without a build step, eliminating the class of 404 bugs
+# caused by CI failing to generate them at deploy time.
 
 # AI operational runtime state — written during research/pipeline runs
 leads/runs/

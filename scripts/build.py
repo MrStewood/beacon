@@ -154,10 +154,25 @@ def assemble_site():
 
 
 def main():
-    """Run the full build pipeline."""
+    """Run the full build pipeline.
+
+    --assemble-only   Skip data generation; just run assemble_site().
+                      Use in CI when data files are already committed.
+    --test / -t       Also run pytest.
+    --strict          Stop on first failure.
+    """
     print("Beacon Data Pipeline")
     print(f"Repository: {REPO_ROOT}")
     print(f"Python: {sys.version}")
+
+    if "--assemble-only" in sys.argv:
+        print("\n  Mode: assemble-only (data files already committed)")
+        print(f"\n{'='*60}")
+        print(f"  Assembling _site/ for GitHub Pages")
+        print(f"{'='*60}")
+        assemble_site()
+        print("\n  BUILD SUCCESSFUL")
+        return 0
 
     steps = [
         ("python3 scripts/geocode.py", "Geocoding addresses and deriving service areas"),
@@ -180,9 +195,6 @@ def main():
             if "--strict" in sys.argv:
                 break
 
-    # Always assemble _site/ so CI has something to deploy, even on partial failure.
-    # A failed validate step will have already set exit code; _site/ contents will
-    # be incomplete but the deploy step won't run because CI fails before it.
     print(f"\n{'='*60}")
     print(f"  Assembling _site/ for GitHub Pages")
     print(f"{'='*60}")
@@ -196,10 +208,8 @@ def main():
     else:
         print("  BUILD SUCCESSFUL")
         print(f"{'='*60}")
-
         resources_file = DATA_DIR / "resources.json"
         if resources_file.exists():
-            import json
             with open(resources_file) as f:
                 data = json.load(f)
             count = len(data.get("resources", []))
