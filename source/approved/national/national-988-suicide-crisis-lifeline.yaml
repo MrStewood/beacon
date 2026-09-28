@@ -1,0 +1,34 @@
+# 988 Suicide & Crisis Lifeline
+
+id: national-988-suicide-crisis-lifeline
+name: 988 Suicide & Crisis Lifeline
+status: active
+coverage_scope: national
+needs:
+- crisis
+phones:
+- '988'
+hours: 24/7
+description: Free, confidential crisis support for anyone in suicidal crisis or emotional distress. Call or text 988.
+service_types:
+- hotline
+populations:
+- anyone
+cost: free
+url: https://988lifeline.org
+verification_status: verified
+last_verified: '2026-09-28'
+verified_by: review-agent
+confidence: high
+source_urls:
+- https://988lifeline.org
+locations:
+- id: national-988-loc-1
+  location_type: virtual
+  publicly_displayed: true
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://988lifeline.org

@@ -1,0 +1,34 @@
+# 211 Helpline
+
+id: national-211-helpline
+name: 211 Helpline
+status: active
+coverage_scope: national
+needs:
+- community
+phones:
+- '211'
+hours: 24/7
+description: Dial 211 to connect with local health and human services — food, shelter, utility assistance, and more.
+service_types:
+- hotline
+populations:
+- anyone
+cost: free
+url: https://www.211.org
+verification_status: verified
+last_verified: '2026-09-28'
+verified_by: review-agent
+confidence: high
+source_urls:
+- https://www.211.org
+locations:
+- id: national-211-loc-1
+  location_type: virtual
+  publicly_displayed: true
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://www.211.org

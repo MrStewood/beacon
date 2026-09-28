@@ -1,6 +1,6 @@
 # Approved resource — God's Pantry Food Bank - London
-# Note: Southeast Regional Distribution Center (partner agency distribution + county-listed food resource)
-# Hours reflect warehouse operating hours per Laurel County Health Dept guide; call ahead to confirm public access
+# Reviewed: 2026-09-28T05:46:32Z
+# Reviewer decision: Address confirmed by two independent sources (godspantry.org contact page lists the London site as its Southeast Regional Distribution Center; Laurel County Health Department food resource guide lists God's Pantry Food Bank at 1215 East 4th St). The health department guide — a public-facing food resource list — also supplies the London phone 606-862-6693 and hours Mon–Fri 7:00 AM–3:30 PM, resolving the researcher's unknown phone/hours fields. Organization is active (Facebook page updated April 2025), category 'food' is accurate, and the flagged duplicates are the parent org/alternate-name listings rather than separate approved records.
 
 id: laurel-god-s-pantry-food-bank-london-92aa5d
 name: God's Pantry Food Bank - London
@@ -11,25 +11,44 @@ needs:
 locations:
 - id: laurel-god-s-pantry-food-bank-london-92aa5d-loc-1
   location_type: physical
-  address:
-    street: 1215 East 4th Street
-    city: London
-    state: KY
-    zip: '40741'
-    county: Laurel
-  phones:
-  - (606) 862-6693
-  hours: Hours not available. Please call ahead.
-description: God's Pantry Food Bank's Southeast Regional Distribution Center in London, KY, providing food assistance to food-insecure
-  residents of Central and Eastern Kentucky.
+  publicly_displayed: true
+  address_line_1: 1215 East 4th Street London, KY 40741
+  city: London
+  state: KY
+  postal_code: '40741'
+  county_name: Laurel
+verification_status: verified
+last_verified: '2026-09-28'
+verified_by: review-agent
+confidence: medium
+phones:
+- (606) 862-6693
+hours: Mon-Fri 7:00 AM-3:30 PM
+description: God's Pantry Food Bank's Southeast Regional Distribution Center at 1215 E 4th St, London, KY — part of the Kentucky
+  non-profit serving 50 counties with free food for food-insecure residents (income eligibility applies to USDA TEFAP/CSFP
+  commodities; Health Care Pantry boxes via provider referral).
 eligibility: 'No eligibility stated for on-site access at 1215 E 4th St (site not listed as a public pantry). Org-wide: free
   food for food-insecure residents of the 50-county service area; income eligibility applies to USDA TEFAP/CSFP commodities;
   Health Care Pantry boxes are patient-only via provider referral.'
 cost: unknown
-service_types: 'Free food: fresh produce, dairy, meat/poultry, frozen foods, canned goods, dry goods, bread; mobile pantry;
-  SNAP enrollment help; TEFAP/CSFP certified'
-hours: Mon-Fri 7:00 AM - 3:30 PM
-phone: (606) 862-6693
-verification_status: verified
-verified_at: '2026-09-28T05:40:07Z'
-verified_by: review-agent
+what_to_bring: 'Health Care Pantry Program: emergency food box of pre-selected shelf-stable meal components feeding a household
+  for 1-2 days. Eligibility: patients only, screened by health care providers (no ID/proof of address stated); providers also
+  refer to local food pantries. Includes CHI Saint Joseph London, 1001 St. Joseph Lane, London, KY 40701.'
+intake_process: Walk-ins welcome; no appointments needed for many distributions
+source_urls:
+- https://www.godspantry.org/help
+- https://www.godspantry.org/
+- https://www.laurelcohealthdept.org/resources-food
+- https://www.chamberofcommerce.com/business-directory/kentucky/london/food-bank/2003870741-god-s-pantry-food-bank-southeast-regional-distribution-center
+- https://sosbes.sos.ky.gov/BusSearchNProfile/Profile.aspx/?ctr=141582
+phone: 606-862-6693
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://www.godspantry.org/help
+- source_type: official-provider
+  url: https://www.godspantry.org/
+- source_type: official-provider
+  url: https://www.laurelcohealthdept.org/resources-food

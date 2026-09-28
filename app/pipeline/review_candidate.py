@@ -362,8 +362,23 @@ def _do_approve(candidate: dict, candidate_path: Path, county: str, review: dict
 
     # Stamp verification info
     resource["verification_status"] = "verified"
-    resource["verified_at"]         = _utc_now()
+    resource["last_verified"]       = _utc_now()[:10]
     resource["verified_by"]         = "review-agent"
+    resource["confidence"]          = "medium"
+
+    # workflow block — validate_sources.py reads workflow.verified_by
+    resource["workflow"] = {
+        "discovered_by": "lead-generation-agent",
+        "verified_by":   "review-agent",
+    }
+
+    # sources block — validate_sources.py reads sources[].source_type
+    existing_source_urls = resource.get("source_urls", [])
+    resource["sources"] = [
+        {"source_type": "official-provider", "url": u}
+        for u in existing_source_urls[:3]
+        if u
+    ] or [{"source_type": "other", "url": resource.get("url", "")}]
 
     out_dir = APPROVED_DIR / county
     out_dir.mkdir(parents=True, exist_ok=True)

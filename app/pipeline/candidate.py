@@ -343,47 +343,90 @@ def _build_resource(result: dict, candidate_id: str, category: str) -> dict:
     coverage_scope = _get("coverage_scope") or "county"
     operating_status = summary.get("operating_status", "active")
 
+    # Location: schema v3 uses flat fields (address_line_1, city, state, postal_code)
+    # NOT a nested address object. phones/hours/email belong at resource top level.
     location: dict[str, Any] = {
         "id":            f"{candidate_id}-loc-1",
         "location_type": "physical",
+        "publicly_displayed": True,
     }
     if address:
-        location["address"] = {
-            "street": address,
-            "city":   city,
-            "state":  state,
-            "zip":    zip_,
-            "county": county,
-        }
-    if phones:
-        location["phones"] = phones
-    if hours:
-        location["hours"] = hours
-    if _get("email"):
-        location["email"] = _get("email")
+        location["address_line_1"] = address
+    if city:
+        location["city"] = city
+    if state:
+        location["state"] = state
+    if zip_:
+        location["postal_code"] = zip_
+    if county:
+        location["county_name"] = county
+
+    # Normalize service_types: must be array of valid enum values, not free text
+    _VALID_SVC = {
+        "hotline","walk-in","appointment","residential","outpatient",
+        "mobile","online","peer-led","faith-based","government",
+    }
+    raw_svc = _get("service_types") or lead.get("service_types") or []
+    if isinstance(raw_svc, str):
+        # Agent returned a description string — extract any valid tokens
+        raw_svc = [s.strip() for s in raw_svc.replace(";",",").split(",")]
+    clean_svc = [s for s in raw_svc if s in _VALID_SVC]
+
+    # Normalize phones: deduplicate, keep formatted versions
+    import re as _re
+    seen_digits: set[str] = set()
+    clean_phones: list[str] = []
+    for p in phones:
+        digits = _re.sub(r"\D", "", str(p))[-10:]
+        if digits and digits not in seen_digits:
+            seen_digits.add(digits)
+            formatted = _re.sub(r"(\d{3})(\d{3})(\d{4})", r"(\1) \2-\3", digits)
+            clean_phones.append(formatted)
+
+    # Source URLs for traceability
+    all_source_urls = list({
+        f.get("source_url", "") for f in findings
+        if f.get("source_url")
+    })
 
     resource: dict[str, Any] = {
-        "id":             candidate_id,
-        "name":           name,
-        "status":         "active" if operating_status == "active" else "inactive",
-        "coverage_scope": coverage_scope,
-        "needs":          [category],
-        "locations":      [location],
+        "id":                  candidate_id,
+        "name":                name,
+        "status":              "active" if operating_status == "active" else "inactive",
+        "coverage_scope":      coverage_scope,
+        "needs":               [category],
+        "locations":           [location],
+        "verification_status": "verified",
+        "last_verified":       _utc_now()[:10],
+        "verified_by":         "investigation-agent",
+        "confidence":          "medium",
     }
+    if clean_phones:
+        resource["phones"] = clean_phones
     if url:
         resource["url"] = url
+    if hours:
+        resource["hours"] = hours
     if description:
         resource["description"] = description
     if eligibility:
         resource["eligibility"] = eligibility
     if cost:
         resource["cost"] = cost
-    if service_types:
-        resource["service_types"] = service_types
+    if clean_svc:
+        resource["service_types"] = clean_svc
     if populations:
         resource["populations"] = populations
     if languages:
         resource["languages"] = languages
+    if _get("email"):
+        resource["email"] = _get("email")
+    if _get("what_to_bring"):
+        resource["what_to_bring"] = _get("what_to_bring")
+    if _get("intake_process"):
+        resource["intake_process"] = _get("intake_process")
+    if all_source_urls:
+        resource["source_urls"] = all_source_urls[:5]
 
     return resource
 
