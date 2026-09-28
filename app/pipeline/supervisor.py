@@ -751,14 +751,42 @@ def _print_snapshot(snap: dict) -> None:
 # CLI
 # ---------------------------------------------------------------------------
 
+# Actions that require human input before the loop can continue
+_STOP_ACTIONS = {"idle", "alert_human"}
+
+
+def _run_one(*, dry_run: bool = False) -> str:
+    """Snapshot → decide → execute. Returns the action taken."""
+    import asyncio
+    snap   = snapshot_state()
+    _print_snapshot(snap)
+    print("Deciding next action...")
+    action = asyncio.run(decide(snap))
+    print(f"\n{'='*60}")
+    print(f"  DECISION: {action['action'].upper()}")
+    print(f"  Target:   {action.get('target') or '—'}")
+    print(f"  Priority: {action.get('priority')}/5")
+    print(f"  Reason:   {action.get('reason')}")
+    if action.get("human_message"):
+        print(f"  Message:  {action['human_message']}")
+    print(f"{'='*60}\n")
+    if not dry_run:
+        execute(action)
+    else:
+        print("(dry-run — not executing)")
+    return action["action"]
+
+
 def main() -> None:
     logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s — %(message)s")
 
     ap = argparse.ArgumentParser(description="Beacon Pipeline Supervisor")
-    ap.add_argument("--dry-run",  action="store_true", help="Decide but don't execute")
-    ap.add_argument("--status",   action="store_true", help="Print state snapshot only")
-    ap.add_argument("command",    nargs="?",           help="ack <slug> to acknowledge alert")
-    ap.add_argument("slug",       nargs="?",           help="Alert slug to acknowledge")
+    ap.add_argument("--dry-run", action="store_true", help="Decide but don't execute")
+    ap.add_argument("--status",  action="store_true", help="Print state snapshot only")
+    ap.add_argument("--loop",    action="store_true",
+                    help="Run continuously until idle, alert_human, or Ctrl+C")
+    ap.add_argument("command",   nargs="?", help="ack <slug> to acknowledge alert")
+    ap.add_argument("slug",      nargs="?", help="Alert slug to acknowledge")
     args = ap.parse_args()
 
     if args.command == "ack":
@@ -768,32 +796,29 @@ def main() -> None:
         acknowledge_alert(args.slug)
         return
 
-    snap = snapshot_state()
-
     if args.status:
-        _print_snapshot(snap)
+        _print_snapshot(snapshot_state())
         return
 
-    _print_snapshot(snap)
-
-    print("Deciding next action...")
-    import asyncio
-    action = asyncio.run(decide(snap))
-
-    print(f"\n{'='*60}")
-    print(f"  DECISION: {action['action'].upper()}")
-    print(f"  Target:   {action.get('target') or '—'}")
-    print(f"  Priority: {action.get('priority')}/5")
-    print(f"  Reason:   {action.get('reason')}")
-    if action.get("human_message"):
-        print(f"  Message:  {action['human_message']}")
-    print(f"{'='*60}\n")
-
-    if args.dry_run:
-        print("(dry-run — not executing)")
+    if args.loop:
+        step = 0
+        try:
+            while True:
+                step += 1
+                print(f"\n{'#'*60}")
+                print(f"  LOOP STEP {step}")
+                print(f"{'#'*60}")
+                taken = _run_one(dry_run=args.dry_run)
+                if taken in _STOP_ACTIONS:
+                    print(f"\nLoop stopped: action={taken}. Nothing more to do right now.")
+                    break
+                import time
+                time.sleep(3)   # brief pause between steps
+        except KeyboardInterrupt:
+            print("\nLoop interrupted by user.")
         return
 
-    execute(action)
+    _run_one(dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
