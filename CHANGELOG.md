@@ -10,9 +10,10 @@ All notable changes to Beacon are documented here.
   truncation instead of dense full-catalog tables
 - `supervisor --dashboard` renders the dashboard once and exits; output is
   capped to the terminal height so fullscreen watch mode never requires scrollback
-- `supervisor --loop` runs continuously, re-rendering the dashboard between
-  steps; dashboard mode suppresses the plain-text decision banner and stops
-  itself on `idle` or `alert_human`
+- `supervisor --loop` runs continuously, re-rendering a stable top dashboard
+  while step output accumulates in a bounded bottom messages pane; dashboard
+  mode suppresses the plain-text decision banner and stops itself on `idle` or
+  `alert_human`
 - Ctrl+C once = finish current step and stop cleanly; Ctrl+C again = force quit
 - `_read_leads` now tracks `by_cat_status` (queued/investigated per category)
 - Rejected record cleanup: God's Pantry London is explicitly marked

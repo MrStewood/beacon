@@ -11,6 +11,7 @@ from __future__ import annotations
 import io
 import json
 import subprocess
+from collections import deque
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -52,12 +53,27 @@ class RunStats:
         self.actions: Counter[str] = Counter()
         self.last_action = ""
         self.last_target = ""
+        self.messages: deque[str] = deque(maxlen=200)
+        self.log("dashboard started")
 
-    def record(self, action: str, target: str | None = None) -> None:
+    def record(self, action: str, target: str | None = None, reason: str | None = None) -> None:
         self.steps += 1
         self.actions[action] += 1
         self.last_action = action
         self.last_target = target or ""
+        message = f"step {self.steps}: {action}"
+        if target:
+            message += f" → {target}"
+        if reason:
+            message += f" — {reason}"
+        self.log(message)
+
+    def log(self, message: str) -> None:
+        ts = datetime.now().astimezone().strftime("%H:%M:%S")
+        for line in str(message).splitlines() or [""]:
+            line = line.strip()
+            if line:
+                self.messages.append(f"{ts}  {line}")
 
     @property
     def elapsed(self) -> str:
@@ -327,6 +343,18 @@ def _render_work_queue(console: Console, d: dict, *, rows: int) -> None:
     console.print()
 
 
+def _render_messages(console: Console, run: RunStats | None, *, rows: int) -> None:
+    if rows <= 0:
+        return
+    messages = list(run.messages)[-rows:] if run is not None else ["start with --loop to see step messages here"]
+    body = Text()
+    for i, message in enumerate(messages):
+        if i:
+            body.append("\n")
+        body.append(shorten(message, width=max(console.size.width - 6, 20), placeholder="…"), style="dim")
+    console.print(Panel(body, title="messages", box=box.ROUNDED, border_style="dim", padding=(0, 1)))
+
+
 def _render_footer(console: Console, d: dict) -> None:
     evidence = d["investigations"]
     text = f"evidence {evidence['findings']} findings · {evidence['complete']} investigations"
@@ -341,8 +369,12 @@ def _render_body(console: Console, d: dict, run: RunStats | None) -> None:
     _render_header(console, d)
     _render_focus(console, d, run)
     _render_progress(console, d)
-    if height >= 28:
-        _render_work_queue(console, d, rows=3 if height < 36 else 5)
+    if height >= 34:
+        _render_work_queue(console, d, rows=3)
+    fixed_rows = len(console.file.getvalue().splitlines()) if isinstance(console.file, io.StringIO) else 0
+    message_rows = max(height - fixed_rows - 4, 0)
+    if message_rows:
+        _render_messages(console, run, rows=message_rows)
     _render_footer(console, d)
 
 

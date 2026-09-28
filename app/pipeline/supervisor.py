@@ -766,15 +766,24 @@ def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
     import asyncio
     snap = snapshot_state()
     if view == "dashboard":
+        import contextlib, io
         from app.pipeline import dashboard
         dash = dashboard.get_console()
+        if run is not None:
+            run.log("deciding next action")
         dash.clear()
         dashboard.render(snap=snap, run=run)
-        action = asyncio.run(decide(snap))
-        if not dry_run:
-            execute(action)
+        captured = io.StringIO()
+        with contextlib.redirect_stdout(captured):
+            action = asyncio.run(decide(snap))
+            if not dry_run:
+                execute(action)
+            else:
+                print("(dry-run — not executing)")
         if run is not None:
-            run.record(action["action"], action.get("target"))
+            run.record(action["action"], action.get("target"), action.get("reason"))
+            for line in captured.getvalue().splitlines():
+                run.log(line)
         dash.clear()
         dashboard.render(snap=snapshot_state(), run=run)
         return action["action"]
