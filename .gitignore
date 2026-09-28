@@ -38,7 +38,7 @@ data/v3/
 
 # AI operational runtime state — written during research/pipeline runs
 leads/runs/
-leads/investigations/
+# leads/investigations/ — committed; evidence trail for candidates
 pilot/cases/
 pilot/audit/
 pilot/rejected/

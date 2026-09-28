@@ -426,10 +426,13 @@ class BrowserSession:
     # ------------------------------------------------------------------
 
     async def _page_text(self) -> str:
+        import hashlib
         url = self._page.url
         html = await self._page.content()
         text = _extract_text(html)
-        return f"[PAGE: {url}]\n\n{text}"
+        # Compute content hash so agents can include it as evidence retrieval_integrity
+        h = "sha256:" + hashlib.sha256(text.encode("utf-8", errors="replace")).hexdigest()
+        return f"[PAGE: {url}]\n[content_hash: {h}]\n\n{text}"
 
     async def _wait_stable(self) -> None:
         """Wait for network to settle after an interaction."""

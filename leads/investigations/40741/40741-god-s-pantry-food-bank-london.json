@@ -1,0 +1,307 @@
+{
+  "lead_id": "40741-god-s-pantry-food-bank-london",
+  "investigated_at": "2026-09-28T05:21:53.730227+00:00",
+  "lead": {
+    "name": "God's Pantry Food Bank - London",
+    "category": "food",
+    "description": "Food bank distribution site serving Laurel County with weekday hours.",
+    "phones": [
+      "6068626693"
+    ],
+    "url": null,
+    "address": "1215 East 4th Street",
+    "city": "London",
+    "county": "Laurel",
+    "state": "KY",
+    "zip": "40741",
+    "hours": "Monday-Friday: 7:00 AM – 3:30 PM",
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-food",
+      "https://www.godspantry.org/help"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T01:57:04Z"
+  },
+  "findings": [
+    {
+      "ev_id": "ev-a-001",
+      "pass": "A",
+      "field": "address",
+      "value": "1215 East 4th Street London, KY 40741",
+      "source_url": "https://www.godspantry.org/contact",
+      "source_type": "org-website",
+      "text_excerpt": "Southeast Regional Distribution Center\n1215 East 4th Street London, KY 40741",
+      "snapshot_url": null,
+      "content_hash": "sha256:fd2f0c3f65a622c72afc1006df9b4cbd8dde9757f8e7c559eb5456548a8cd395",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-002",
+      "pass": "A",
+      "field": "description",
+      "value": "God's Pantry Food Bank operates a statewide network of partner food pantries, meal sites, senior programs and shelters; the London site is listed as the Southeast Regional Distribution Center (warehouse), not a direct-to-public pantry in this directory.",
+      "source_url": "https://www.godspantry.org/help",
+      "source_type": "org-website",
+      "text_excerpt": "Find a Pantry | God's Pantry Food Bank — searchable directory of partner pantries, soup kitchens/meal sites, senior programs and shelters across Central and Eastern Kentucky.",
+      "snapshot_url": null,
+      "content_hash": "sha256:7e4e96642a8779cfbecc8ee7c12aeeaf695ff3e7e755006edff35837752dc60f",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-003",
+      "pass": "A",
+      "field": "description",
+      "value": "God's Pantry Food Bank is a Kentucky food bank serving 50 counties across Central and Eastern Kentucky (48,252,930 lbs distributed FY2026). Programs include partner pantries, produce distribution, mobile pantry, children's programs, healthcare pantry, SNAP assistance, Sharing Thanksgiving, and senior programs. The London location is its Southeast Regional Distribution Center.",
+      "source_url": "https://www.godspantry.org/",
+      "source_type": "org-website",
+      "text_excerpt": "UNTIL NO KENTUCKIAN GOES HUNGRY. ... 50 counties served across Central and Eastern Kentucky ... Programs: Find a pantry, Produce distribution, Mobile pantry, Children's programs, Healthcare pantry program, SNAP assistance, Sharing Thanksgiving, Senior's Program",
+      "snapshot_url": null,
+      "content_hash": "sha256:ec7c16293cc7edea0a479be4b9bcc19647d5b694b4ed8bf399b20c8131c70f0e",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-004",
+      "pass": "A",
+      "field": "description",
+      "value": "Founded 1955 (first pantry 1959) by Mim Hunt in Lexington. God's Pantry Food Bank is a Feeding America/Feeding Kentucky member that acquires food and distributes it to partner food pantries, soup kitchens, homeless shelters, and schools/youth programs across 50 counties; partner pantries provide food directly to neighbors. Member of Feeding Kentucky and Feeding America.",
+      "source_url": "https://www.godspantry.org/learn/about-us",
+      "source_type": "org-website",
+      "text_excerpt": "As a food bank, we collect food and deliver it to food pantries. Our partner food pantries — located in cities, towns, and neighborhoods across the region — provide it directly to neighbors in need. ... God's Pantry Food Bank was born out of this work in 1955 ... now an organization serving 50 counties",
+      "snapshot_url": null,
+      "content_hash": "sha256:59b3eedc5c446c914c5fad637fa89eb198b214b75bcdb287ff1cc21e270868ce",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-005",
+      "pass": "A",
+      "field": "operating_status",
+      "value": "active",
+      "source_url": "https://sosbes.sos.ky.gov/BusSearchNProfile/Profile.aspx/?ctr=141582",
+      "source_type": "gov-directory",
+      "text_excerpt": "Status A - Active | Standing G - Good | GOD'S PANTRY FOOD BANK, INC. | Kentucky Corporation | Last Annual Report 2/4/2026",
+      "snapshot_url": null,
+      "content_hash": "sha256:0f03d7870dc3806e059cce91062ab61e30367b6bfa70834d94d536bf9649d4ab",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-006",
+      "pass": "A",
+      "field": "description",
+      "value": "Kentucky non-profit corporation GOD'S PANTRY FOOD BANK, INC. (Org #0142378), industry \"Social Services\", 20-99 employees, incorporated 11/14/1979, principal office 2201 Innovation Drive, Lexington, KY 40511-1084. Status: Active, Good Standing.",
+      "source_url": "https://sosbes.sos.ky.gov/BusSearchNProfile/Profile.aspx/?ctr=141582",
+      "source_type": "gov-directory",
+      "text_excerpt": "GOD'S PANTRY FOOD BANK, INC. | Non-profit | KCO - Kentucky Corporation | Industry: Social Services | Number of Employees: Medium (20-99) | File Date 11/14/1979 | Status A - Active",
+      "snapshot_url": null,
+      "content_hash": "sha256:0f03d7870dc3806e059cce91062ab61e30367b6bfa70834d94d536bf9649d4ab",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-a-007",
+      "pass": "A",
+      "field": "what_to_bring",
+      "value": "Health Care Pantry Program: emergency food box of pre-selected shelf-stable meal components feeding a household for 1-2 days. Eligibility: patients only, screened by health care providers (no ID/proof of address stated); providers also refer to local food pantries. Includes CHI Saint Joseph London, 1001 St. Joseph Lane, London, KY 40701.",
+      "source_url": "https://www.godspantry.org/get-help/health-care-pantry-program",
+      "source_type": "org-website",
+      "text_excerpt": "Health care pantries serve as emergency food box programs. This program is only available to patients. We pre-select shelf-stable meal components ... packed into a box ... Health care providers screen patients and provide boxes on an as-needed basis.",
+      "snapshot_url": null,
+      "content_hash": "sha256:2d3a0ce6e5d15ec7da2b2a46381bbe641796c87205149f4f1e6afc11cc7faf64",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-008",
+      "pass": "B",
+      "field": "address",
+      "value": "1215 E 4th St, London, KY 40741",
+      "source_url": "https://pantrypath.com/kentucky/london/god-s-pantry-food-bank-southeast-regional-distribution-center-london-ky/",
+      "source_type": "established-directory",
+      "text_excerpt": "1215 E 4th St\nLondon, KY 40741\n(606) 862-6693",
+      "snapshot_url": null,
+      "content_hash": "sha256:c8ea33944b00d78e6ed3c95084b18c9678cc7c6b32cbd14a783495a9515f7cd4",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-009",
+      "pass": "B",
+      "field": "phone",
+      "value": "(606) 862-6693",
+      "source_url": "https://pantrypath.com/kentucky/london/god-s-pantry-food-bank-southeast-regional-distribution-center-london-ky/",
+      "source_type": "established-directory",
+      "text_excerpt": "1215 E 4th St\nLondon, KY 40741\n(606) 862-6693",
+      "snapshot_url": null,
+      "content_hash": "sha256:c8ea33944b00d78e6ed3c95084b18c9678cc7c6b32cbd14a783495a9515f7cd4",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-010",
+      "pass": "B",
+      "field": "hours",
+      "value": "Hours not available. Please call ahead.",
+      "source_url": "https://pantrypath.com/kentucky/london/god-s-pantry-food-bank-southeast-regional-distribution-center-london-ky/",
+      "source_type": "established-directory",
+      "text_excerpt": "Hours of Operation\nHours not available. Please call ahead.",
+      "snapshot_url": null,
+      "content_hash": "sha256:c8ea33944b00d78e6ed3c95084b18c9678cc7c6b32cbd14a783495a9515f7cd4",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-011",
+      "pass": "B",
+      "field": "intake_process",
+      "value": "Walk-ins welcome; no appointments needed for many distributions",
+      "source_url": "https://pantrypath.com/kentucky/london/god-s-pantry-food-bank-southeast-regional-distribution-center-london-ky/",
+      "source_type": "established-directory",
+      "text_excerpt": "Walk-ins Welcome ... Walk-in access and mobile pantries offer easy support ... with no appointments needed for many distributions.",
+      "snapshot_url": null,
+      "content_hash": "sha256:c8ea33944b00d78e6ed3c95084b18c9678cc7c6b32cbd14a783495a9515f7cd4",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-012",
+      "pass": "B",
+      "field": "service_types",
+      "value": "Free food: fresh produce, dairy, meat/poultry, frozen foods, canned goods, dry goods, bread; mobile pantry; SNAP enrollment help; TEFAP/CSFP certified",
+      "source_url": "https://pantrypath.com/kentucky/london/god-s-pantry-food-bank-southeast-regional-distribution-center-london-ky/",
+      "source_type": "established-directory",
+      "text_excerpt": "Fresh produce, Dairy products, Meat and poultry, Frozen foods, Canned goods, Dry goods and grains, Bread and bakery ... SNAP application assistance ... USDA TEFAP Certified, CSFP",
+      "snapshot_url": null,
+      "content_hash": "sha256:c8ea33944b00d78e6ed3c95084b18c9678cc7c6b32cbd14a783495a9515f7cd4",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-013",
+      "pass": "B",
+      "field": "hours",
+      "value": "Mon-Fri 7:00 AM - 3:30 PM; Sat-Sun Closed",
+      "source_url": "https://www.chamberofcommerce.com/business-directory/kentucky/london/food-bank/2003870741-god-s-pantry-food-bank-southeast-regional-distribution-center",
+      "source_type": "established-directory",
+      "text_excerpt": "Monday: 7:00 AM - 3:30 PM ... Friday: 7:00 AM - 3:30 PM Saturday: Closed Sunday: Closed",
+      "snapshot_url": null,
+      "content_hash": "sha256:792f71025005108ac8e8b8221b79110a243d451da307bf6021750733a05244bd",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-014",
+      "pass": "B",
+      "field": "address",
+      "value": "1215 E 4th St, London, KY 40741",
+      "source_url": "https://www.chamberofcommerce.com/business-directory/kentucky/london/food-bank/2003870741-god-s-pantry-food-bank-southeast-regional-distribution-center",
+      "source_type": "established-directory",
+      "text_excerpt": "God's Pantry Food Bank Southeast Regional Distribution Center is located at 1215 E 4th St in London, Kentucky 40741.",
+      "snapshot_url": null,
+      "content_hash": "sha256:792f71025005108ac8e8b8221b79110a243d451da307bf6021750733a05244bd",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-015",
+      "pass": "B",
+      "field": "phone",
+      "value": "606-862-6693",
+      "source_url": "https://www.chamberofcommerce.com/business-directory/kentucky/london/food-bank/2003870741-god-s-pantry-food-bank-southeast-regional-distribution-center",
+      "source_type": "established-directory",
+      "text_excerpt": "The phone number for God's Pantry Food Bank Southeast Regional Distribution Center is: 606-862-6693.",
+      "snapshot_url": null,
+      "content_hash": "sha256:792f71025005108ac8e8b8221b79110a243d451da307bf6021750733a05244bd",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    },
+    {
+      "ev_id": "ev-b-016",
+      "pass": "B",
+      "field": "operating_status",
+      "value": "active — listing shows current weekday hours; no closure notices found in 2025/2026 search",
+      "source_url": "https://www.chamberofcommerce.com/business-directory/kentucky/london/food-bank/2003870741-god-s-pantry-food-bank-southeast-regional-distribution-center",
+      "source_type": "established-directory",
+      "text_excerpt": "What days is God's Pantry Food Bank Southeast Regional Distribution Center open? A: ... Monday: 7:00 AM - 3:30 PM ... Friday: 7:00 AM - 3:30 PM",
+      "snapshot_url": null,
+      "content_hash": "sha256:792f71025005108ac8e8b8221b79110a243d451da307bf6021750733a05244bd",
+      "conflicts_with": null,
+      "retrieved_at": "2026-09-28"
+    }
+  ],
+  "pass_a": {
+    "pass": "A",
+    "locked_at": "2026-09-28T05:19:42.394155+00:00",
+    "unknown_fields": [
+      "phone (London site-specific number 606-862-6693 not found on godspantry.org; only main/program lines 859-259-2308, 859-288-53xx listed)",
+      "hours (no hours listed for the London Southeast Regional Distribution Center on the org website)",
+      "eligibility (general walk-in eligibility/proof-of-address requirements for the London site not published)",
+      "cost"
+    ],
+    "possible_duplicates": [
+      "God's Pantry Food Bank Southeast Regional Distribution Center (same org/location, alternate listing name)",
+      "God's Pantry Food Bank, Inc. (parent org, Lexington KY)"
+    ],
+    "privacy_concerns": [],
+    "proposed_risk_tier": "low",
+    "limitations": [
+      "godspantry.org does not publish a phone number or hours for the London facility; the lead's phone 6068626693 and hours Mon-Fri 7:00 AM-3:30 PM come from the Laurel County Health Department page (Pass B source), not yet corroborated in Pass A.",
+      "The London address is listed on the org site as a warehouse/distribution center (Southeast Regional Distribution Center), not as a direct-to-client pantry; the Find a Pantry directory does not list 1215 E 4th St as a public distribution site.",
+      "Wayback Machine returned no usable snapshots for godspantry.org pages (status stale/none).",
+      "PDF gov source (KY Legislature Farm to Food Banks report) could not be rendered (download-only); text was taken from search snippet only and not recorded as a finding.",
+      "No walk-in/appointment or ID requirements published for the London site."
+    ],
+    "operating_status": "active"
+  },
+  "pass_b": {
+    "pass": "B",
+    "locked_at": "2026-09-28T05:21:45.111976+00:00",
+    "unknown_fields": [
+      "what_to_bring",
+      "eligibility",
+      "walk-in vs appointment confirmation from 211 listing (211 page not directly accessible; foodbanks.net returned 403)"
+    ],
+    "possible_duplicates": [
+      "God's Pantry Food Bank (Lexington HQ, godspantry.org)",
+      "God's Pantry (Pomona, CA - gods-pantry.com, unrelated)"
+    ],
+    "privacy_concerns": [],
+    "proposed_risk_tier": "low",
+    "limitations": [
+      "211/findhelp listing could not be directly loaded (foodbanks.net returned 403 Forbidden)",
+      "PantryPath listing shows 'Hours not available'; hours sourced from Chamber of Commerce directory instead",
+      "Chamber of Commerce hours may reflect warehouse/distribution center hours rather than public distribution hours",
+      "No independent confirmation of ID/proof-of-address requirements found in this pass"
+    ],
+    "operating_status": "active"
+  },
+  "summary": {
+    "total_findings": 16,
+    "pass_a_count": 7,
+    "pass_b_count": 9,
+    "fields_found": [
+      "address",
+      "description",
+      "hours",
+      "intake_process",
+      "operating_status",
+      "phone",
+      "service_types",
+      "what_to_bring"
+    ],
+    "conflicts": [],
+    "operating_status": "active",
+    "risk_tier": "low"
+  }
+}
