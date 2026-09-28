@@ -22,12 +22,14 @@ import asyncio
 import json
 import logging
 import re
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import yaml
+
 
 from app import agent
 from app.tools import BrowserSession, SearchSession, session_tools
@@ -479,14 +481,44 @@ def _do_approve(candidate: dict, candidate_path: Path, county: str, review: dict
                   default_flow_style=False, width=120)
 
     log.info("APPROVED → %s", out_path.relative_to(BEACON_ROOT))
+    _git_commit_and_push(out_path, resource.get("name", "unknown"), county)
 
-    # Remove from candidates — the approved copy in source/approved/ is now the
-    # canonical record. Leaving it in source/candidates/ causes validate_candidate.py
-    # to re-check (and fail on signature mismatch after corrections are applied).
+    # Remove from candidates
     candidate_path.unlink(missing_ok=True)
-    # Also remove any requeue guidance file written by a prior review cycle.
     requeue = candidate_path.with_suffix(".requeue.json")
     requeue.unlink(missing_ok=True)
+
+
+def _git_commit_and_push(approved_path: Path, name: str, county: str) -> None:
+    """Stage the approved YAML, commit, and push to origin main."""
+    def _run(cmd: list[str]) -> tuple[int, str]:
+        r = subprocess.run(cmd, cwd=BEACON_ROOT, capture_output=True, text=True)
+        return r.returncode, (r.stdout + r.stderr).strip()
+
+    # Rebuild generated data files so the commit is self-consistent
+    rc, out = _run([sys.executable, "scripts/build_from_yaml.py"])
+    if rc != 0:
+        log.warning("build_from_yaml failed (will still commit YAML): %s", out)
+
+    # Stage the approved YAML and any regenerated data files
+    rel = str(approved_path.relative_to(BEACON_ROOT))
+    _run(["git", "add", rel,
+          "data/resources.json", "data/resources.csv",
+          "data/index.json", "data/catalog.json"])
+
+    msg = f"feat(resource): add {name} [{county}] [auto-approved]"
+    rc, out = _run(["git", "commit", "-m", msg,
+                    "--author=Beacon Review Agent <beacon-agent@mrstewood.github.io>"])
+    if rc != 0:
+        log.warning("git commit failed: %s", out)
+        return
+    log.info("git commit: %s", msg)
+
+    rc, out = _run(["git", "push", "origin", "main"])
+    if rc != 0:
+        log.error("git push failed: %s", out)
+    else:
+        log.info("git push OK → CI will deploy")
 
 
 def _do_reject(candidate: dict, candidate_path: Path, review: dict) -> None:

@@ -208,6 +208,30 @@ def _read_leads() -> dict:
             except Exception:
                 pass
 
+    # Load approved resource signals — leads matching any of these are already published
+    import re as _re2
+    approved_names:   set[str] = set()
+    approved_phones:  set[str] = set()
+    approved_domains: set[str] = set()
+    if APPROVED_DIR.exists():
+        for p in APPROVED_DIR.rglob("*.yaml"):
+            try:
+                r = yaml.safe_load(p.read_text()) or {}
+                n = (r.get("name") or "").lower().strip()
+                if n:
+                    approved_names.add(n)
+                    approved_names.add(_slug(n, ""))
+                for ph in r.get("phones", []):
+                    approved_phones.add(_re2.sub(r"\D", "", str(ph)))
+                for u in [r.get("url", "")] + r.get("source_urls", []):
+                    if u:
+                        m = _re2.search(r"(?:https?://)?(?:www\.)?([^/]+)", u)
+                        if m:
+                            approved_domains.add(m.group(1).lower())
+            except Exception:
+                pass
+
+
     # Read dedup.json for canonical lead list + status
     dedup: dict[str, dict] = {}
     if DEDUP_FILE.exists():
@@ -225,15 +249,35 @@ def _read_leads() -> dict:
             pass
 
     for slug, lead in dedup.items():
-        name = lead.get("name", "")
-        cat  = cat_by_name.get(name.lower().strip(), "unknown")
-        zip_ = lead.get("zip", "unknown")
+        name   = lead.get("name", "")
+        cat    = cat_by_name.get(name.lower().strip(), "unknown")
+        zip_   = lead.get("zip", "unknown")
         name_slug = _slug(name, "")
-        full_slug  = _inv_slug(zip_, name)
+        full_slug = _inv_slug(zip_, name)
+
+        # Phone digits from the lead slug key (format: "name|digits")
+        lead_phones: set[str] = set()
+        if "|" in slug:
+            lead_phones.add(slug.split("|", 1)[1].strip())
+        for ph in lead.get("phones", []):
+            lead_phones.add(_re2.sub(r"\D", "", str(ph)))
+
+        # Domain from lead URL
+        lead_domains: set[str] = set()
+        for u in ([lead.get("source_url", "")] + lead.get("urls", []) + lead.get("domains", [])):
+            if u:
+                m = _re2.search(r"(?:https?://)?(?:www\.)?([^/\s]+)", str(u))
+                if m:
+                    lead_domains.add(m.group(1).lower())
+
         is_done = (
             full_slug in investigated_name_slugs
             or name_slug in investigated_name_slugs
             or name.lower().strip() in rejected_names
+            or name.lower().strip() in approved_names
+            or _slug(name, "") in approved_names
+            or bool(lead_phones & approved_phones)
+            or bool(lead_domains & approved_domains)
         )
         status = "investigated" if is_done else "queued"
 
