@@ -5,7 +5,7 @@
 id: laurel-god-s-pantry-food-bank-london-92aa5d
 name: God's Pantry Food Bank - London
 status: active
-coverage_scope: county
+coverage_scope: multi-county
 needs:
 - food
 locations:
@@ -65,3 +65,13 @@ service_areas:
   values:
   - name: Laurel
     fips: '21125'
+  - name: Knox
+    fips: '21121'
+  - name: Whitley
+    fips: '21235'
+  - name: Rockcastle
+    fips: '21203'
+  - name: Jackson
+    fips: '21109'
+  - name: Clay
+    fips: '21051'
