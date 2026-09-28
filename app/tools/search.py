@@ -35,7 +35,7 @@ _MAX_DELAY = 9.0
 
 # Hard cap on searches per session.
 # A thorough ZIP research run needs ~15–25 searches across all categories.
-_DEFAULT_SESSION_CAP = 30
+_DEFAULT_SESSION_CAP = 50
 
 # Timeout for SearXNG HTTP call (seconds)
 _HTTP_TIMEOUT = 20

@@ -101,22 +101,36 @@ Save each valid resource immediately with create_lead(). Do not batch results at
 **create_lead(...)** — see schema below
   - Call as soon as you have enough info: name + at least one of (phone/url/address) + source_urls
   - Do NOT wait until end of run to save. Save immediately, then keep researching.
-  - If you get status=duplicate, move on — do not re-save or re-research it
+  - If you get status=duplicate, move on — hard duplicate (same phone+address). Do not re-save.
+  - If you get flags containing 'Possible duplicate of', the lead WAS saved but flagged for AI review.
+    Use your judgment: if you believe they are genuinely the same org, note it and move on.
+    If clearly different orgs (e.g. same org name, different locations), ignore the flag.
   - If you get status=error, fix the listed fields and retry once
 
 ## Rules
 
 1. NEVER invent phone numbers, addresses, hours, or eligibility rules. Use null.
 2. source_urls is REQUIRED — it is the evidence trail. Always provide where you found it.
-3. A name alone is not enough. Need at least one of: phone, url, address.
+3. A name alone is not enough. Non-hotline leads MUST have phone OR address — not just a URL.
+   If you only have a URL, navigate to the org's own site to find a phone number or address first.
 4. Do not navigate to Google, Bing, DuckDuckGo — use search() instead.
-5. Check all 17 categories before deciding you are done.
-6. If a county has sparse results, search neighboring counties — save everything you find there too.
-7. If you find a directory page listing many orgs (211, United Way, county DSS),
-   extract EVERY listed organization — one directory can yield 10–20 leads.
-8. Save ALL leads you find regardless of location. We are building a national directory. A resource found in a neighboring county or another state is still valuable — record its actual location accurately and save it. Nothing gets dropped.
-9. Do not re-research a resource after create_lead returns status=duplicate.
-10. Crisis resources (hotlines, DV shelters) — save them but note they need extra verification.
+5. Call check_url(url) before navigating to any URL you haven't visited this session.
+6. Check all 17 categories before deciding you are done.
+7. If a county has sparse results, search neighboring counties — save everything you find there too.
+8. If you find a directory page listing many orgs (211, United Way, county health dept), navigate
+   to it and extract EVERY listed organization — one directory page can yield 10–20 leads.
+   Do NOT save the directory page itself as a lead. Save the individual orgs listed on it.
+9. Save ALL leads you find regardless of location. We are building a national directory.
+   A resource found in a neighboring county or another state is still valuable.
+10. Do not re-research a resource after create_lead returns status=duplicate.
+11. Crisis resources (hotlines, DV shelters) — save them but note they need extra verification.
+12. url field = the org's OWN website. Aggregator sites (211, findcare.care, needhelppayingbills,
+    localoffices.org, veteranai.co, rentassistance.org, feedam.org) go in source_urls ONLY.
+    If you don't know the org's own URL, leave url blank.
+13. Use specific program-page URLs when possible (e.g. agency.org/programs/liheap),
+    not the org homepage — this prevents sibling programs from being falsely flagged as duplicates.
+14. Skip private specialty medical practices (rheumatology, orthopedics, etc.) unless they
+    explicitly advertise free or sliding-scale services for low-income patients.
 
 ## Definition of done
 You are done when:

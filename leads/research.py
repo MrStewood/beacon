@@ -194,18 +194,21 @@ def _phones(record: dict[str, Any]) -> list[str]:
 
 
 def _urls(record: dict[str, Any]) -> list[str]:
+    # source_urls / source_url is WHERE we found the resource (evidence trail),
+    # not the resource's own identity. Exclude from dedup URL matching so that
+    # two different orgs discovered on the same directory page are never falsely
+    # matched against each other via same_canonical_url.
     values: list[Any] = []
-    for key in ("url", "website", "source_url", "proposed_url"):
+    for key in ("url", "website", "proposed_url"):
         values.extend(_as_list(record.get(key)))
-    values.extend(_as_list(record.get("source_urls")))
     return sorted({_canonical_url(str(v)) for v in values if _canonical_url(str(v))})
 
 
 def _domains(record: dict[str, Any]) -> list[str]:
+    # Same exclusion: source_urls is evidence, not identity.
     values: list[Any] = []
-    for key in ("url", "website", "source_url", "proposed_url"):
+    for key in ("url", "website", "proposed_url"):
         values.extend(_as_list(record.get(key)))
-    values.extend(_as_list(record.get("source_urls")))
     return sorted({_normalize_domain(str(v)) for v in values if _normalize_domain(str(v))})
 
 
@@ -384,6 +387,11 @@ def _first_source(record: dict[str, Any]) -> str:
     return str(record.get("_source_path") or record.get("source_run_id") or record.get("case_id") or record.get("dedup_key") or "unknown")
 
 
+def _root_url(url: str) -> bool:
+    """True if the URL has no meaningful path (bare homepage / org root)."""
+    return "/" not in url or url.split("/", 1)[1] in ("", "/")
+
+
 def _match(candidate: dict[str, Any], existing: dict[str, Any]) -> tuple[str, list[str]] | None:
     names = _name_overlap(candidate, existing)
     phones = _overlap(candidate["phones"], existing["phones"])
@@ -392,6 +400,14 @@ def _match(candidate: dict[str, Any], existing: dict[str, Any]) -> tuple[str, li
     addresses = _overlap(candidate["addresses"], existing["addresses"])
 
     if urls:
+        # Root-domain-only URLs (e.g. "danielboonecaa.org") are weak identity
+        # signals — many distinct programs at the same org share the homepage.
+        # Require at least one additional field match before treating as same org.
+        all_root = all(_root_url(u) for u in urls)
+        if all_root and not (names or phones or addresses):
+            # Demote to shared_locator so it goes to near_duplicate_review
+            # rather than hard-blocking the lead.
+            return "shared_locator", ["domain"]
         return "same_canonical_url", ["url"]
     if names and phones:
         return "same_name_same_phone", ["normalized_name", "phone"]
@@ -441,7 +457,23 @@ def _minimum_locator(resource: dict[str, Any], ident: dict[str, Any]) -> bool:
     return bool(resource.get("source_url") or resource.get("source_urls"))
 
 
+
+# Match types where we are conclusively certain two records are the same org.
+# Everything else is a soft flag for AI review.
+_HARD_MATCH_TYPES: frozenset[str] = frozenset({
+    "same_phone_same_address",   # same physical location
+    "same_name_same_phone",      # same org name + same contact
+    "same_name_same_address",    # same org name + same building
+    "same_domain_same_address",  # same website + same building
+})
+
 def classify_lead(resource: dict[str, Any], indexes: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
+    """Classify a lead against all known indexes.
+
+    Hard matches (conclusive) → duplicate_* (blocked).
+    Soft matches (suspicious) → needs_ai_review (saved, AI decides).
+    Previously flagged by the research agent (review_flag present) → also needs_ai_review.
+    """
     cand = identity(resource)
     category = resource.get("category")
     if category and category not in CATEGORIES:
@@ -449,6 +481,8 @@ def classify_lead(resource: dict[str, Any], indexes: dict[str, list[dict[str, An
     if not _minimum_locator(resource, cand):
         return _classification("insufficient_info", "lead_generation_policy", "missing_locator", ["name", "locator"], "high")
 
+    # Published resources and active cases: hard-block on any match
+    # (we never want to re-research something already in the system)
     for source, classification in (
         ("published", "duplicate_existing_resource"),
         ("cases", "duplicate_existing_case"),
@@ -458,12 +492,11 @@ def classify_lead(resource: dict[str, Any], indexes: dict[str, list[dict[str, An
             if not match:
                 continue
             match_type, fields = match
-            if match_type == "shared_locator":
+            if match_type in {"shared_locator", "same_name"}:
                 return _classification("possible_related_program", _first_source(item), match_type, fields, "medium")
-            if match_type == "same_name":
-                return _classification("near_duplicate_review", _first_source(item), match_type, fields, "medium")
             return _classification(classification, _first_source(item), match_type, fields)
 
+    # Dedup index (leads from prior runs): hard vs soft split
     for item in indexes["dedup"]:
         match = _match(cand, identity(item))
         if not match:
@@ -474,18 +507,27 @@ def classify_lead(resource: dict[str, Any], indexes: dict[str, list[dict[str, An
             if resource.get("source_url") and resource.get("source_url") != item.get("source_url"):
                 return _classification("reconsider_rejected", _first_source(item), match_type, fields, "medium")
             return _classification("previously_rejected", _first_source(item), match_type, fields)
-        if match_type in {"same_name", "shared_locator"}:
-            return _classification("near_duplicate_review", _first_source(item), match_type, fields, "medium")
-        return _classification("duplicate_existing_lead", _first_source(item), match_type, fields)
+        if match_type in _HARD_MATCH_TYPES:
+            return _classification("duplicate_existing_lead", _first_source(item), match_type, fields)
+        # Soft match against prior known leads → AI review
+        return _classification("needs_ai_review", _first_source(item), match_type, fields, "medium")
 
+    # Prior runs from same session batch
     for item in indexes["prior_runs"]:
         match = _match(cand, identity(item))
         if not match:
             continue
         match_type, fields = match
-        if match_type in {"same_name", "shared_locator"}:
-            return _classification("near_duplicate_review", _first_source(item), match_type, fields, "medium")
-        return _classification("duplicate_prior_run", _first_source(item), match_type, fields)
+        if match_type in _HARD_MATCH_TYPES:
+            return _classification("duplicate_prior_run", _first_source(item), match_type, fields)
+        return _classification("needs_ai_review", _first_source(item), match_type, fields, "medium")
+
+    # The research agent already flagged this as a possible duplicate during the run
+    if resource.get("review_flag"):
+        rf = resource["review_flag"]
+        return _classification("needs_ai_review", rf.get("source", "session"),
+                               rf.get("match_type", "agent_flagged"),
+                               rf.get("matched_fields", []), "medium")
 
     for item in indexes["rejected"]:
         match = _match(cand, identity(item))
@@ -605,8 +647,8 @@ def cmd_process(args: list[str]) -> None:
 
     buckets: dict[str, list[dict[str, Any]]] = {
         "new_leads": [],
+        "needs_ai_review": [],   # soft matches — AI decides same_org vs different
         "duplicates": [],
-        "near_duplicates": [],
         "possible_related_programs": [],
         "out_of_area": [],
         "insufficient_info": [],
@@ -643,8 +685,9 @@ def cmd_process(args: list[str]) -> None:
         elif classification == "out_of_area_new":
             buckets["out_of_area"].append(resource)
             indexes["dedup"].append(resource)
-        elif classification in {"near_duplicate_review"}:
-            buckets["near_duplicates"].append(resource)
+        elif classification == "needs_ai_review":
+            buckets["needs_ai_review"].append(resource)
+            indexes["dedup"].append(resource)   # still block hard-dups against it
         elif classification == "possible_related_program":
             buckets["possible_related_programs"].append(resource)
         elif classification == "reconsider_rejected":
@@ -696,12 +739,13 @@ def cmd_process(args: list[str]) -> None:
             "latest_run_id": run_id,
             "resources_found": len(resources),
             "new_leads": len(buckets["new_leads"]),
+            "needs_ai_review": len(buckets["needs_ai_review"]),
             "duplicates": len(buckets["duplicates"]),
-            "near_duplicates": len(buckets["near_duplicates"]),
             "out_of_area": len(buckets["out_of_area"]),
         }
         dedup["stats"]["total_discovered"] = len(dedup.get("discovered", {}))
         dedup["stats"]["total_new"] = dedup["stats"].get("total_new", 0) + len(buckets["new_leads"])
+        dedup["stats"]["total_needs_review"] = dedup["stats"].get("total_needs_review", 0) + len(buckets["needs_ai_review"])
         dedup["stats"]["total_duplicates"] = dedup["stats"].get("total_duplicates", 0) + len(buckets["duplicates"])
         dedup["stats"]["total_out_of_area"] = len(dedup.get("out_of_area", {}))
         dedup["stats"]["last_run"] = now
@@ -718,8 +762,8 @@ def cmd_process(args: list[str]) -> None:
         "summary": {
             "total_found": len(resources),
             "new": len(buckets["new_leads"]),
+            "needs_ai_review": len(buckets["needs_ai_review"]),
             "duplicates": len(buckets["duplicates"]),
-            "near_duplicates": len(buckets["near_duplicates"]),
             "possible_related_programs": len(buckets["possible_related_programs"]),
             "out_of_area": len(buckets["out_of_area"]),
             "insufficient_info": len(buckets["insufficient_info"]),
