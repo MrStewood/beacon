@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 3,
+    "total_resources": 4,
     "regions": {
       "KY": [
         "Laurel"
@@ -152,6 +152,86 @@
       "state": null,
       "zip": null,
       "map_url": null
+    },
+    {
+      "id": "laurel-calvary-baptist-church-food-pantry-0cb551",
+      "name": "Calvary Baptist Church Food Pantry",
+      "alternate_names": [],
+      "description": "Church-run food pantry providing free groceries to Laurel County residents in need. Walk-in service; free of charge.",
+      "status": "active",
+      "phones": [
+        "(606) 682-0621"
+      ],
+      "email": null,
+      "url": "https://www.facebook.com/calvarylondonky/",
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": "Resident of Laurel County; Income guidelines. Required documents: Picture ID, Proof of income, Proof of residency",
+      "cost": "unknown",
+      "hours": "Second and fourth Monday of each month, 11:00am-8:00pm (per 211 listing, last assured 02/05/2026)",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "Laurel"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-calvary-baptist-church-food-pantry-0cb551-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "111 North McWhorter Street, London, KY 40741",
+          "state": "KY",
+          "postal_code": "40744",
+          "county_name": "Laurel"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-28",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://uwbg211.org/search/88d65b42-895a-56be-af6d-479f5a936769",
+        "https://uwbg211.org/search/88d65b42-895a-56be-af6d-479f5a936769?entry=search_card",
+        "https://www.laurelcohealthdept.org/resources-food"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "111 North McWhorter Street, London, KY 40741",
+      "city": null,
+      "state": "KY",
+      "zip": "40744",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=111+North+McWhorter+Street,+London,+KY+40741+KY+40744"
     },
     {
       "id": "laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf",

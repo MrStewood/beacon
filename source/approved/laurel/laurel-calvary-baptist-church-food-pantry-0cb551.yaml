@@ -1,0 +1,53 @@
+# Approved resource — Calvary Baptist Church Food Pantry
+# Reviewed: 2026-09-28T22:08:06Z
+# Reviewer decision: Address (111 N McWhorter St, London KY 40741) confirmed in two independent sources (211/UWBG listing and Feed America/Plentiful directory); phone 606-682-0621 found in 211 listing and (606) 864-7071 on Kentucky Baptist Convention directory; Facebook posts confirm the pantry is actively operating and open to "anyone in need." Public walk-in access, free, community food pantry — category accurate. Adding corrections for missing phone/hours/address fields and a plain-language description.
+
+id: laurel-calvary-baptist-church-food-pantry-0cb551
+name: Calvary Baptist Church Food Pantry
+status: active
+coverage_scope: county
+needs:
+- community
+locations:
+- id: laurel-calvary-baptist-church-food-pantry-0cb551-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: 111 North McWhorter Street, London, KY 40741
+  state: KY
+  postal_code: '40744'
+  county_name: Laurel
+verification_status: verified
+last_verified: '2026-09-28'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: Walk-in service, free of charge; must bring picture ID, proof of income, and proof of residency
+phones:
+- (606) 682-0621
+url: https://www.facebook.com/calvarylondonky/
+hours: Second and fourth Monday of each month, 11:00am-8:00pm (per 211 listing, last assured 02/05/2026)
+description: Church-run food pantry providing free groceries to Laurel County residents in need. Walk-in service; free of
+  charge.
+eligibility: 'Resident of Laurel County; Income guidelines. Required documents: Picture ID, Proof of income, Proof of residency'
+source_urls:
+- https://uwbg211.org/search/88d65b42-895a-56be-af6d-479f5a936769
+- https://uwbg211.org/search/88d65b42-895a-56be-af6d-479f5a936769?entry=search_card
+- https://www.laurelcohealthdept.org/resources-food
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Laurel
+phone: 606-682-0621
+address: 111 N McWhorter St, London, KY 40741
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://uwbg211.org/search/88d65b42-895a-56be-af6d-479f5a936769
+- source_type: official-provider
+  url: https://uwbg211.org/search/88d65b42-895a-56be-af6d-479f5a936769?entry=search_card
+- source_type: official-provider
+  url: https://www.laurelcohealthdept.org/resources-food
