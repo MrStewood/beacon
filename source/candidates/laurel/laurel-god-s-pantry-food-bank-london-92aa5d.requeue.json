@@ -1,0 +1,16 @@
+{
+  "candidate_id": "laurel-god-s-pantry-food-bank-london-92aa5d",
+  "requeue_at": "2026-09-28T05:32:51Z",
+  "reviewer_reasoning": "Address and phone are confirmed by two independent sources (org website lists 1215 East 4th Street as Southeast Regional Distribution Center; Laurel County Health Dept resource guide lists same address with 606-862-6693 and Mon-Fri 7:00 AM-3:30 PM hours). However, the org itself labels this location a 'warehouse' under 'Warehouse locations,' and it's unclear whether individuals can receive food directly there or only partner agencies — this determines approve vs. reject.",
+  "guidance": "Check godspantry.org's 'Find Food' tool (findfood.godspantry.org or similar) to see if 1215 E 4th St London appears as a direct-service pantry location or only as a warehouse. Also check the Facebook page 'God's Pantry Food Bank of Southeast Kentucky' (facebook.com/foodbanksoutheastky) for posts about public distributions/hours at the London site, and call 606-862-6693 to ask whether individuals can pick up food on-site or are referred to partner pantries. If it's agency-only, reject as not public-facing; if walk-in distribution exists, approve with hours Mon-Fri 7:00 AM-3:30 PM.",
+  "questions_to_answer": [
+    "Does the London 1215 E 4th St location distribute food directly to individuals/families, or only to partner agencies/pantries?",
+    "Are the hours Monday-Friday 7:00 AM-3:30 PM (per Laurel County Health Dept) current and accurate for public access?",
+    "Is there a separate public-facing pantry or distribution site in London operated by God's Pantry for walk-in clients?"
+  ],
+  "missing_fields": [
+    "hours",
+    "eligibility",
+    "intake_process"
+  ]
+}
