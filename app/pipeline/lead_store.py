@@ -1,0 +1,372 @@
+"""LeadStore — inline dedup and validation for the research agent.
+
+Wraps the existing research.py dedup logic into a tool-callable interface.
+Every create_lead() call is validated and deduped in real time — the agent
+gets immediate feedback rather than discovering duplicates in post-processing.
+
+Also manages seen_urls so repeat runs on the same ZIP skip already-evaluated
+URLs and only surface genuinely new resources.
+"""
+
+from __future__ import annotations
+
+import json
+import logging
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+BEACON_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(BEACON_ROOT / "leads"))
+sys.path.insert(0, str(BEACON_ROOT / "scripts"))
+
+import research as _r           # leads/research.py
+import seen_urls as _su         # leads/seen_urls.py
+
+log = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Validation constants (mirrors resource.schema.json enums)
+# ---------------------------------------------------------------------------
+
+VALID_CATEGORIES = {
+    "food", "shelter", "housing", "health", "mental-health", "addiction",
+    "crisis", "family", "legal", "documents", "education", "jobs",
+    "transportation", "utility-assistance", "clothing", "community", "veterans",
+}
+
+VALID_POPULATIONS = {
+    "anyone", "families", "women", "men", "youth", "seniors", "veterans",
+    "lgbtq+", "disability", "re-entry", "pregnant", "substance-use", "recovery",
+}
+
+VALID_SERVICE_TYPES = {
+    "hotline", "walk-in", "appointment", "residential", "outpatient",
+    "mobile", "online", "peer-led", "faith-based", "government",
+}
+
+VALID_COSTS = {"free", "sliding-scale", "insurance", "unknown"}
+
+SENSITIVE_CATEGORIES = {"crisis"}  # require extra care; flag but don't block
+
+
+# ---------------------------------------------------------------------------
+# LeadStore
+# ---------------------------------------------------------------------------
+
+class LeadStore:
+    """Stateful store for one research run.
+
+    Maintains:
+      - indexes: published resources + candidates + dedup dict + prior leads
+      - seen_urls registry: URLs already evaluated (persists across runs)
+      - session_leads: leads saved so far in this run (for in-session dedup)
+
+    Call finalize() at the end of the run to write all session leads to the
+    run artifact file and call research.py process for bookkeeping.
+    """
+
+    def __init__(self, zip_code: str, zip_info: dict):
+        self.zip_code = zip_code
+        self.zip_info = zip_info
+        self.run_id = _r.make_run_id(zip_code)
+        self.started_at = _utc_now()
+
+        # Load dedup indexes from all existing sources
+        self._indexes = _r.build_indexes()
+
+        # Session-level leads saved so far (for within-run dedup)
+        self.session_leads: list[dict] = []
+        # Index of session leads for fast dedup
+        self._session_index: list[dict] = []
+
+        # Seen-URL registry (persists between runs)
+        self._seen_urls: dict[str, dict] = _su.load()
+
+        log.info(
+            "LeadStore ready — %d published, %d cases, %d dedup, %d seen_urls",
+            len(self._indexes["published"]),
+            len(self._indexes["cases"]),
+            len(self._indexes["dedup"]),
+            len(self._seen_urls),
+        )
+
+    # ------------------------------------------------------------------
+    # Public context summary (for system prompt)
+    # ------------------------------------------------------------------
+
+    def context_summary(self) -> dict:
+        """Counts the agent needs to know up front."""
+        return {
+            "published_resources": len(self._indexes["published"]),
+            "in_progress_candidates": len(self._indexes["cases"]),
+            "known_leads": len(self._indexes["dedup"]),
+            "seen_urls": len(self._seen_urls),
+            "session_leads_so_far": len(self.session_leads),
+        }
+
+    # ------------------------------------------------------------------
+    # Tool: create_lead
+    # ------------------------------------------------------------------
+
+    async def handle_create_lead(self, args: dict) -> str:
+        result = self._create_lead(args)
+        return json.dumps(result, indent=2)
+
+    def _create_lead(self, args: dict) -> dict:
+        # 1. Validate required fields
+        errors = _validate_lead(args)
+        if errors:
+            return {
+                "status": "error",
+                "errors": errors,
+                "hint": "Fix the errors above and try again. source_urls is required evidence.",
+            }
+
+        # 2. Normalize
+        lead = _normalize_lead(args, self.zip_code, self.zip_info)
+
+        # 3. Dedup against all sources
+        dup = self._find_duplicate(lead)
+        if dup:
+            log.info("duplicate: %s → %s", lead["name"], dup["match_type"])
+            return {
+                "status": "duplicate",
+                "name": lead["name"],
+                "match_type": dup["match_type"],
+                "matched_fields": dup["matched_fields"],
+                "matched_name": dup.get("matched_name", ""),
+                "source": dup["source"],
+                "hint": "This resource is already known. Move on.",
+            }
+
+        # 4. Flag sensitive categories (don't block, but note it)
+        flags = []
+        if lead.get("category") in SENSITIVE_CATEGORIES:
+            flags.append(f"Sensitive category '{lead['category']}' — requires extra verification before promotion")
+
+        # 5. Save to session
+        lead["session_run_id"] = self.run_id
+        lead["found_at"] = _utc_now()
+        self.session_leads.append(lead)
+        # Add to in-session index immediately so next call deduplicates against it
+        self._session_index.append(lead)
+
+        # 6. Mark source_urls as seen
+        for url in lead.get("source_urls", []):
+            if url and url not in self._seen_urls:
+                self._seen_urls[url] = {
+                    "outcome": "new_lead",
+                    "name": lead["name"],
+                    "run_id": self.run_id,
+                    "zip": self.zip_code,
+                }
+
+        lead_id = f"{self.run_id}-{len(self.session_leads):03d}"
+        log.info("saved lead #%d: %s", len(self.session_leads), lead["name"])
+
+        return {
+            "status": "saved",
+            "id": lead_id,
+            "name": lead["name"],
+            "category": lead["category"],
+            "session_total": len(self.session_leads),
+            "flags": flags,
+        }
+
+    # ------------------------------------------------------------------
+    # Tool: check_url
+    # ------------------------------------------------------------------
+
+    async def handle_check_url(self, args: dict) -> str:
+        url = args.get("url", "").strip()
+        if not url:
+            return json.dumps({"error": "url is required"})
+
+        entry = self._seen_urls.get(url)
+        if entry:
+            return json.dumps({
+                "seen": True,
+                "outcome": entry["outcome"],
+                "name": entry.get("name", ""),
+                "run_id": entry.get("run_id", ""),
+                "hint": (
+                    "Already processed. "
+                    + ("This URL produced a lead — skip it." if entry["outcome"] == "new_lead"
+                       else "This URL was visited and produced no new lead.")
+                ),
+            })
+
+        return json.dumps({"seen": False, "hint": "URL not previously evaluated — safe to visit."})
+
+    # ------------------------------------------------------------------
+    # Finalize: save session leads and update bookkeeping
+    # ------------------------------------------------------------------
+
+    def finalize(self) -> dict:
+        """Write run artifact and update dedup.json + seen_urls.json."""
+        if not self.session_leads:
+            log.info("finalize: no new leads this session")
+            _su.save(self._seen_urls)
+            return {"new_leads": 0, "run_id": self.run_id}
+
+        # Write raw results in the format research.py process expects
+        raw = {
+            "zip": self.zip_code,
+            "county": self.zip_info["county"],
+            "state": self.zip_info["state"],
+            "resources_found": self.session_leads,
+        }
+        run_dir = BEACON_ROOT / "leads" / "runs" / self.zip_code
+        run_dir.mkdir(parents=True, exist_ok=True)
+        raw_path = run_dir / f"{self.run_id}-raw.json"
+        raw_path.write_text(json.dumps(raw, indent=2, ensure_ascii=False))
+
+        # Call research.py process (handles dedup.json update + classification)
+        import subprocess
+        result = subprocess.run(
+            [sys.executable, str(BEACON_ROOT / "leads" / "research.py"),
+             "process", self.zip_code, str(raw_path)],
+            capture_output=True, text=True, cwd=str(BEACON_ROOT),
+        )
+        if result.returncode != 0:
+            log.error("research.py process failed: %s", result.stderr)
+        else:
+            try:
+                summary = json.loads(result.stdout)
+                log.info("process summary: %s", summary.get("summary", {}))
+            except json.JSONDecodeError:
+                log.warning("process output not JSON: %s", result.stdout[:200])
+
+        # Persist seen_urls
+        _su.save(self._seen_urls)
+        log.info("finalize: saved %d leads, updated seen_urls (%d total)",
+                 len(self.session_leads), len(self._seen_urls))
+
+        return {
+            "run_id": self.run_id,
+            "new_leads": len(self.session_leads),
+            "raw_file": str(raw_path.relative_to(BEACON_ROOT)),
+        }
+
+    # ------------------------------------------------------------------
+    # Internal dedup
+    # ------------------------------------------------------------------
+
+    def _find_duplicate(self, lead: dict) -> dict | None:
+        """Check against all known indexes + session leads. Returns match info or None."""
+        # _r._match expects both args to be identity() results
+        cand = _r.identity(lead)
+        source_map = [
+            ("published",    self._indexes["published"]),
+            ("candidates",   self._indexes["cases"]),
+            ("prior_leads",  self._indexes["dedup"]),
+            ("rejected",     self._indexes["rejected"]),
+            ("this_session", self._session_index),
+        ]
+        for source_name, items in source_map:
+            for existing in items:
+                m = _r._match(cand, _r.identity(existing))
+                if m:
+                    match_type, fields = m
+                    return {
+                        "source": source_name,
+                        "match_type": match_type,
+                        "matched_fields": fields,
+                        "matched_name": existing.get("name", ""),
+                    }
+        return None
+
+
+# ---------------------------------------------------------------------------
+# Validation
+# ---------------------------------------------------------------------------
+
+def _validate_lead(args: dict) -> list[str]:
+    errors = []
+
+    name = (args.get("name") or "").strip()
+    if not name:
+        errors.append("name is required")
+
+    category = args.get("category", "")
+    if category not in VALID_CATEGORIES:
+        errors.append(
+            f"category must be one of: {', '.join(sorted(VALID_CATEGORIES))}. "
+            f"Got: {category!r}"
+        )
+
+    # Minimum locator: need at least one of phone, url, address
+    has_phone   = bool((args.get("phones") or [args.get("phone")]) and
+                       any(args.get("phones") or [args.get("phone")]))
+    has_url     = bool(args.get("url", "").strip())
+    has_address = bool(args.get("address", "").strip())
+    if not (has_phone or has_url or has_address):
+        errors.append(
+            "At least one of 'phone', 'url', or 'address' is required. "
+            "Do not save a lead with only a name."
+        )
+
+    # source_urls: evidence trail
+    source_urls = args.get("source_urls") or []
+    if not source_urls:
+        errors.append(
+            "source_urls is required — provide at least one URL where you found this resource. "
+            "This is the evidence trail."
+        )
+
+    # Optional field validation
+    for pop in (args.get("populations") or []):
+        if pop not in VALID_POPULATIONS:
+            errors.append(f"Unknown population: {pop!r}. Valid: {', '.join(sorted(VALID_POPULATIONS))}")
+
+    for st in (args.get("service_types") or []):
+        if st not in VALID_SERVICE_TYPES:
+            errors.append(f"Unknown service_type: {st!r}. Valid: {', '.join(sorted(VALID_SERVICE_TYPES))}")
+
+    if args.get("cost") and args["cost"] not in VALID_COSTS:
+        errors.append(f"cost must be one of: {', '.join(VALID_COSTS)}")
+
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# Normalization
+# ---------------------------------------------------------------------------
+
+def _normalize_lead(args: dict, zip_code: str, zip_info: dict) -> dict:
+    """Produce a clean, consistently structured lead dict."""
+    phones = args.get("phones") or ([args["phone"]] if args.get("phone") else [])
+    phones = [_r._normalize_phone(p) for p in phones if p]
+    phones = [p for p in phones if p]
+
+    source_urls = args.get("source_urls") or []
+    url = (args.get("url") or "").strip() or None
+
+    return {
+        "name":          args["name"].strip(),
+        "category":      args["category"],
+        "description":   (args.get("description") or "").strip() or None,
+        "phones":        phones,
+        "url":           url,
+        "address":       (args.get("address") or "").strip() or None,
+        "city":          (args.get("city") or zip_info.get("city", "")).strip() or None,
+        "county":        (args.get("county") or zip_info["county"]).strip(),
+        "state":         (args.get("state") or zip_info["state"]).strip(),
+        "zip":           (args.get("zip") or zip_code).strip(),
+        "hours":         (args.get("hours") or "").strip() or None,
+        "eligibility":   (args.get("eligibility") or "").strip() or None,
+        "cost":          args.get("cost") or "unknown",
+        "populations":   args.get("populations") or [],
+        "service_types": args.get("service_types") or [],
+        "source_urls":   source_urls,
+        "notes":         (args.get("notes") or "").strip() or None,
+        "verification_status": "unverified",
+        "confidence":    "medium",
+        "found_in_zip":  zip_code,
+    }
+
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
