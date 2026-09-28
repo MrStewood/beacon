@@ -320,18 +320,26 @@ function renderCards(sorted) {
 // ── Map ───────────────────────────────────────────────────────────
 
 function syncMap(visibleResources) {
+  const mappable = visibleResources.filter(r => r.lat && !r.privateAddr);
+  const hasPts = mappable.length > 0 || !!state.loc;
+
+  // Show/hide the entire map panel
+  const panel = document.getElementById('map-panel');
+  if (panel) panel.style.display = hasPts ? 'flex' : 'none';
+  if (!hasPts) return;
+
   const el = document.getElementById('map-container');
   if (!el || typeof L === 'undefined') return;
 
   if (!beaconMap) {
     beaconMap = L.map(el, { scrollWheelZoom: false }).setView([39.5, -98.35], 4);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '© OpenStreetMap © CARTO', maxZoom: 18,
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
     }).addTo(beaconMap);
     mapLayer = L.layerGroup().addTo(beaconMap);
   }
 
-  const mappable = visibleResources.filter(r => r.lat && !r.privateAddr);
   const newKey = mappable.map(r => r.id).join(',') + (state.loc ? 'L' : '');
   if (newKey === mapKey) return;
   mapKey = newKey;
@@ -351,8 +359,8 @@ function syncMap(visibleResources) {
 
   if (state.loc) {
     L.circleMarker([state.loc.lat, state.loc.lng], {
-      radius: 8, weight: 4, color: 'oklch(0.85 0.14 80)',
-      fillColor: 'oklch(0.24 0.045 262)', fillOpacity: 1,
+      radius: 8, weight: 4, color: '#e5a020',
+      fillColor: '#1e2d5c', fillOpacity: 1,
     }).bindTooltip('You').addTo(mapLayer);
     pts.push([state.loc.lat, state.loc.lng]);
   }
