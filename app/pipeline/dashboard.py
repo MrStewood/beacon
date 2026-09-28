@@ -15,6 +15,7 @@ import json
 import subprocess
 from collections import Counter
 from datetime import datetime
+import io
 from pathlib import Path
 
 from rich import box
@@ -496,30 +497,48 @@ def _render_activity(console: Console, d: dict) -> None:
     console.print(t)
 
 
-def _render_priority(console: Console, d: dict) -> None:
-    order = d["snap"]["recommended_priority"]
+def _render_priority(console: Console, d: dict, *, limit: int = 3) -> None:
+    order = d["snap"]["recommended_priority"][:limit]
     t = Table(title="PRIORITY QUEUE", box=box.SIMPLE_HEAVY, header_style="bold bright_cyan",
-              show_edge=False)
+              show_edge=False, expand=True)
     t.add_column("#", justify="right", style="dim", width=3, no_wrap=True)
-    t.add_column("Next action", style="bold")
+    t.add_column("Next action", style="bold", overflow="ellipsis")
     for i, item in enumerate(order, 1):
         t.add_row(str(i), item)
     console.print(t)
 
 
-# ---------------------------------------------------------------------------
-# Public entry
-# ---------------------------------------------------------------------------
-
-def render(snap: dict | None = None, run: RunStats | None = None) -> None:
-    """Render the full dashboard to the terminal."""
-    console = get_console()
-    d = collect(snap)
+def _render_body(console: Console, d: dict, run: RunStats | None) -> None:
+    height = console.size.height
     _render_header(console, d)
     _render_funnel(console, d)
     _render_run_and_health(console, d, run)
-    _render_goals(console, d)
-    _render_coverage(console, d)
-    _render_geography(console, d)
-    _render_activity(console, d)
-    _render_priority(console, d)
+    if height >= 32:
+        _render_goals(console, d)
+    if height >= 42:
+        _render_coverage(console, d)
+    if height >= 70:
+        _render_geography(console, d)
+    if height >= 80:
+        _render_activity(console, d)
+        _render_priority(console, d)
+
+
+def render(snap: dict | None = None, run: RunStats | None = None) -> None:
+    """Render the dashboard, capped to the current terminal height."""
+    console = get_console()
+    d = collect(snap)
+    height = max(console.size.height, 12)
+    capture_file = io.StringIO()
+    capture = Console(
+        file=capture_file,
+        force_terminal=console.is_terminal,
+        color_system=console.color_system,
+        width=console.size.width,
+        height=height,
+    )
+    _render_body(capture, d, run)
+    lines = capture_file.getvalue().splitlines()
+    if len(lines) > height:
+        lines = lines[:height - 1] + ["[dim]… dashboard clipped to one screen; enlarge terminal for more rows[/dim]"]
+    console.print("\n".join(lines))

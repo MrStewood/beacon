@@ -770,8 +770,16 @@ def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
         dash = dashboard.get_console()
         dash.clear()
         dashboard.render(snap=snap, run=run)
-    else:
-        _print_snapshot(snap)
+        action = asyncio.run(decide(snap))
+        if not dry_run:
+            execute(action)
+        if run is not None:
+            run.record(action["action"], action.get("target"))
+        dash.clear()
+        dashboard.render(snap=snapshot_state(), run=run)
+        return action["action"]
+
+    _print_snapshot(snap)
     print("Deciding next action...")
     action = asyncio.run(decide(snap))
     print(f"\n{'='*60}")

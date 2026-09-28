@@ -10,9 +10,11 @@ All notable changes to Beacon are documented here.
   goals progress (Wave-1 counties, categories, lead queue), coverage by
   category with GAP markers, geography (lead ZIPs → county), recent reviews
   and commits, priority queue
-- `supervisor --dashboard` renders the dashboard once and exits
+- `supervisor --dashboard` renders the dashboard once and exits; output is
+  capped to the terminal height so fullscreen watch mode never requires scrollback
 - `supervisor --loop` runs continuously, re-rendering the dashboard between
-  steps; stops itself on `idle` or `alert_human`
+  steps; dashboard mode suppresses the plain-text decision banner and stops
+  itself on `idle` or `alert_human`
 - Ctrl+C once = finish current step and stop cleanly; Ctrl+C again = force quit
 - `_read_leads` now tracks `by_cat_status` (queued/investigated per category)
 - Rejected record cleanup: God's Pantry London is explicitly marked
