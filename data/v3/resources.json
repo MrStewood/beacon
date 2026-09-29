@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 8,
+    "total_resources": 9,
     "regions": {
       "KY": [
         "Laurel"
@@ -618,6 +618,114 @@
       "state": "KY",
       "zip": "40741",
       "map_url": "https://www.google.com/maps/search/?api=1&query=220+E+4th+Street+London+KY+40741"
+    },
+    {
+      "id": "laurel-cumberland-river-victims-services-rape-crisis-center-670966",
+      "name": "Cumberland River Victims Services (Rape Crisis Center)",
+      "alternate_names": [],
+      "description": "Regional rape crisis center operated by Cumberland River Behavioral Health serving Bell, Clay, Knox, Harlan, Jackson, Laurel, Rockcastle, and Whitley counties in Southeast Kentucky; provides 24/7 crisis line, free counseling, medical/legal advocacy, and outreach to survivors of sexual assault and other crimes.",
+      "status": "active",
+      "phones": [
+        "(606) 528-5286",
+        "(800) 656-4673"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": "Crisis line: 24/7 \u2014 (800) 656-4673. Administrative office: (606) 528-5286 (hours not published).",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "multi-county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "Bell"
+            },
+            {
+              "name": "Clay"
+            },
+            {
+              "name": "Knox"
+            },
+            {
+              "name": "Harlan"
+            },
+            {
+              "name": "Jackson"
+            },
+            {
+              "name": "Laurel"
+            },
+            {
+              "name": "Rockcastle"
+            },
+            {
+              "name": "Whitley"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-cumberland-river-victims-services-rape-crisis-center-670966-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "1203 American Greeting Rd.",
+          "state": "KY",
+          "postal_code": "40702",
+          "county_name": "Laurel",
+          "latitude": 36.9486986,
+          "longitude": -84.0968761,
+          "geocoding_status": "approximate",
+          "geocoding_source": "nominatim",
+          "geocoded_at": "2026-09-28",
+          "city": "Corbin"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-29",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://prd.webapps.chfs.ky.gov/kyrise/home/CumberlandRegion",
+        "https://www.nooneleftoutside.org/organizations/cumberland-river-victim-services",
+        "https://ctac.uky.edu/projects-and-programs/wellwork/rape-crisis-centers-kentucky"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "1203 American Greeting Rd.",
+      "city": "Corbin",
+      "state": "KY",
+      "zip": "40702",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=1203+American+Greeting+Rd.+Corbin+KY+40702"
     },
     {
       "id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e",

@@ -1,0 +1,66 @@
+# Approved resource — Cumberland River Victims Services (Rape Crisis Center)
+# Reviewed: 2026-09-29T04:58:35Z
+# Reviewer decision: Org's own site (crvsky.org) confirms 24/7 crisis line (800) 656-4673 and office (606) 528-5286 with regional office address at 1203 American Greeting Rd, Corbin KY; phone corroborated independently by KASAP and UK Center on Trauma & Children listings. It is an active public-facing rape crisis center offering free counseling/advocacy to survivors — genuine community resource, not a duplicate of the Behavioral Health parent record (distinct program record). Description is 2 sentences and accurate; hours field correctly left as crisis line availability.
+
+id: laurel-cumberland-river-victims-services-rape-crisis-center-670966
+name: Cumberland River Victims Services (Rape Crisis Center)
+status: active
+coverage_scope: multi-county
+needs:
+- community
+locations:
+- id: laurel-cumberland-river-victims-services-rape-crisis-center-670966-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: 1203 American Greeting Rd.
+  state: KY
+  postal_code: '40702'
+  county_name: Laurel
+  latitude: 36.9486986
+  longitude: -84.0968761
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-28'
+  city: Corbin
+verification_status: verified
+last_verified: '2026-09-29'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: 24-hour crisis line at 800-656-4673; counseling available at outpatient offices across the 8-county region;
+  email not monitored 24/7.
+phones:
+- (606) 528-5286
+- (800) 656-4673
+hours: 'Crisis line: 24/7 — (800) 656-4673. Administrative office: (606) 528-5286 (hours not published).'
+description: Regional rape crisis center operated by Cumberland River Behavioral Health serving Bell, Clay, Knox, Harlan,
+  Jackson, Laurel, Rockcastle, and Whitley counties in Southeast Kentucky; provides 24/7 crisis line, free counseling, medical/legal
+  advocacy, and outreach to survivors of sexual assault and other crimes.
+source_urls:
+- https://prd.webapps.chfs.ky.gov/kyrise/home/CumberlandRegion
+- https://www.nooneleftoutside.org/organizations/cumberland-river-victim-services
+- https://ctac.uky.edu/projects-and-programs/wellwork/rape-crisis-centers-kentucky
+- https://crvsky.org/
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Bell
+  - name: Clay
+  - name: Knox
+  - name: Harlan
+  - name: Jackson
+  - name: Laurel
+  - name: Rockcastle
+  - name: Whitley
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://prd.webapps.chfs.ky.gov/kyrise/home/CumberlandRegion
+- source_type: official-provider
+  url: https://www.nooneleftoutside.org/organizations/cumberland-river-victim-services
+- source_type: official-provider
+  url: https://ctac.uky.edu/projects-and-programs/wellwork/rape-crisis-centers-kentucky

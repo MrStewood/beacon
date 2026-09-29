@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 8,
+    "total_resources": 9,
     "regions": {
       "KY": [
         "Laurel"
@@ -133,6 +133,23 @@
         "(606) 862-2872"
       ],
       "address": "220 E 4th Street",
+      "status": "active",
+      "confidence": "high",
+      "coverage_scope": "multi-county"
+    },
+    {
+      "id": "laurel-cumberland-river-victims-services-rape-crisis-center-670966",
+      "name": "Cumberland River Victims Services (Rape Crisis Center)",
+      "county": "Laurel",
+      "city": "Corbin",
+      "needs": [
+        "community"
+      ],
+      "phones": [
+        "(606) 528-5286",
+        "(800) 656-4673"
+      ],
+      "address": "1203 American Greeting Rd.",
       "status": "active",
       "confidence": "high",
       "coverage_scope": "multi-county"
