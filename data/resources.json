@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 7,
+    "total_resources": 8,
     "regions": {
       "KY": [
         "Laurel"
@@ -358,6 +358,92 @@
       "state": "KY",
       "zip": "40743",
       "map_url": "https://www.google.com/maps/search/?api=1&query=London,+Laurel+County,+Kentucky+(specific+street+address+not+published+on+website)+London+KY+40743"
+    },
+    {
+      "id": "laurel-grace-health-mountain-view-clinic-6e431c",
+      "name": "Grace Health - Mountain View Clinic",
+      "alternate_names": [],
+      "description": "Primary care clinic providing compassionate, comprehensive care for all stages of life, with an on-site community pharmacy (Mountain View Pharmacy) serving Grace Health patients and the surrounding community.",
+      "status": "active",
+      "phones": [
+        "(606) 877-2850"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": "No restrictions; bring Picture ID, private health insurance card (if insured), proof of income if uninsured or underinsured",
+      "cost": "sliding-scale",
+      "hours": "Clinic & Pharmacy: Mon-Fri 8:00AM-6:00PM",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": "Walk-in or call",
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "multi-county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "Grace Health operates locations across six"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-grace-health-mountain-view-clinic-6e431c-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "272 London Mountain View Drive",
+          "state": "KY",
+          "postal_code": "40741",
+          "county_name": "Laurel",
+          "latitude": 37.152422,
+          "longitude": -84.1191387,
+          "geocoding_status": "approximate",
+          "geocoding_source": "nominatim",
+          "geocoded_at": "2026-09-28",
+          "city": "London"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-29",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://gracehealthky.org/",
+        "https://gracehealthky.org/locations/mountain-view-clinic-pharmacy/",
+        "https://www.freeclinics.com/det/ky_40741_grace-health-mountain-view-clinic"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "272 London Mountain View Drive",
+      "city": "London",
+      "state": "KY",
+      "zip": "40741",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=272+London+Mountain+View+Drive+London+KY+40741"
     },
     {
       "id": "laurel-restoration-ministries-food-program-465ee9",

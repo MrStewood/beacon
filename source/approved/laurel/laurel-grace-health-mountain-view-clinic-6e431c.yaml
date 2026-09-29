@@ -1,0 +1,64 @@
+# Approved resource — Grace Health - Mountain View Clinic
+# Reviewed: 2026-09-29T04:52:23Z
+# Reviewer decision: Address (272 London Mountain View Drive, London, KY 40741) and phone (606-877-2850) confirmed on Grace Health's official location page plus Yelp, Chamber of Commerce, MapQuest, and freeclinics.com. It is a public-facing primary care clinic and pharmacy serving individuals, currently operating (listed on org's active locations page), and category 'community' fits. The 'possible duplicates' are alternate listings for this same location, not directory duplicates.
+
+id: laurel-grace-health-mountain-view-clinic-6e431c
+name: Grace Health - Mountain View Clinic
+status: active
+coverage_scope: multi-county
+needs:
+- community
+locations:
+- id: laurel-grace-health-mountain-view-clinic-6e431c-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: 272 London Mountain View Drive
+  state: KY
+  postal_code: '40741'
+  county_name: Laurel
+  latitude: 37.152422
+  longitude: -84.1191387
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-28'
+  city: London
+verification_status: verified
+last_verified: '2026-09-29'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: Walk-in/appointment primary care clinic with on-site pharmacy; appointment scheduling offered online and by
+  phone.
+phones:
+- (606) 877-2850
+hours: 'Clinic & Pharmacy: Mon-Fri 8:00AM-6:00PM'
+description: Primary care clinic providing compassionate, comprehensive care for all stages of life, with an on-site community
+  pharmacy (Mountain View Pharmacy) serving Grace Health patients and the surrounding community.
+eligibility: No restrictions; bring Picture ID, private health insurance card (if insured), proof of income if uninsured or
+  underinsured
+cost: sliding-scale
+intake_process: Walk-in or call
+source_urls:
+- https://gracehealthky.org/
+- https://gracehealthky.org/locations/mountain-view-clinic-pharmacy/
+- https://www.freeclinics.com/det/ky_40741_grace-health-mountain-view-clinic
+- https://gracehealthky.org/locations/
+- https://uwbg211.org/search/789b0a4f-1c76-5dbe-8d58-3fbbe3e7f3ce
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Grace Health operates locations across six
+phone: 606-877-2850 (clinic); 606-877-2743 (pharmacy)
+address: 272 London Mountain View Drive, London, KY 40741
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://gracehealthky.org/
+- source_type: official-provider
+  url: https://gracehealthky.org/locations/mountain-view-clinic-pharmacy/
+- source_type: official-provider
+  url: https://www.freeclinics.com/det/ky_40741_grace-health-mountain-view-clinic
