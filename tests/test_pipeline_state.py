@@ -7,8 +7,12 @@ escalated it again forever.
 """
 
 import json
+import sys
+from pathlib import Path
 
 import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app.pipeline import supervisor as sup
 
