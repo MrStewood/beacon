@@ -200,6 +200,9 @@ def _health_line(d: dict) -> Text:
     problems = []
     if alerts:
         problems.append((f"{alerts} alert", "red"))
+    needs_human = snap.get("needs_human", {}).get("count", 0)
+    if needs_human:
+        problems.append((f"{needs_human} awaiting human review", "yellow"))
     if sensitive:
         problems.append((f"{sensitive} sensitive queued", "yellow"))
     if publish:
@@ -223,6 +226,9 @@ def _next_focus(d: dict) -> tuple[str, str, str]:
     if snap["alerts"]["unacknowledged"]:
         item = snap["alerts"].get("items", [{}])[0]
         return "Alert needs human", item.get("message") or item.get("title") or item.get("file", "unknown alert"), "red"
+    nh = snap.get("needs_human", {})
+    if nh.get("count"):
+        return "Needs human review", nh.get("items", ["candidate"])[0], "yellow"
     if snap["candidates"]["requeued"]:
         item = snap["candidates"].get("requeued_items", [{}])[0]
         return "Follow-up needed", item.get("id") or item.get("path", "candidate"), "yellow"

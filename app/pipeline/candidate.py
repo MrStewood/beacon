@@ -96,6 +96,13 @@ def build_candidate(investigation_path: Path) -> Path:
     candidate_id = _candidate_id(name, county, zip_)
     log.info("building candidate %s", candidate_id)
 
+    # Escalated to the human queue — rebuilding would restart the
+    # build→review→escalate livelock. A human resolves by moving/removing it.
+    escalated = BEACON_ROOT / "leads" / "needs_human_review" / f"{candidate_id}.yaml"
+    if escalated.exists():
+        log.info("skipping rebuild — already escalated to needs-human-review: %s", escalated.name)
+        return escalated
+
     # Determine risk tier (elevated/critical for sensitive categories)
     risk_tier = _risk_tier(category, result)
 

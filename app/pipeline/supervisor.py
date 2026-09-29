@@ -37,6 +37,7 @@ CANDIDATES_DIR   = BEACON_ROOT / "source" / "candidates"
 LEADS_DIR        = BEACON_ROOT / "leads"
 INVESTIGATIONS_DIR = LEADS_DIR / "investigations"
 REJECTED_DIR     = LEADS_DIR / "rejected"
+HUMAN_REVIEW_DIR = LEADS_DIR / "needs_human_review"
 ALERTS_DIR       = LEADS_DIR / "alerts"
 DEDUP_FILE       = LEADS_DIR / "dedup.json"
 EXPANSION_FILE   = LEADS_DIR / "EXPANSION.md"
@@ -76,6 +77,7 @@ def snapshot_state() -> dict[str, Any]:
         "alerts":       _read_alerts(),
         "approved":     _read_approved(),
         "candidates":   _read_candidates(),
+        "needs_human":  _read_needs_human(),
         "investigations": _read_investigations(),
         "leads":        _read_leads(),
         "geography":    _read_geography(),
@@ -118,6 +120,14 @@ def _read_approved() -> dict:
         except Exception:
             pass
     return {"total": total, "by_category": by_category, "by_county": by_county}
+
+
+def _read_needs_human() -> dict:
+    """Candidates escalated to the human-review queue (leads/needs_human_review/)."""
+    if not HUMAN_REVIEW_DIR.exists():
+        return {"count": 0, "items": []}
+    items = sorted(p.name for p in HUMAN_REVIEW_DIR.glob("*.yaml"))
+    return {"count": len(items), "items": items}
 
 
 def _read_candidates() -> dict:
@@ -183,6 +193,21 @@ def _read_investigations() -> dict:
             except Exception:
                 pass
 
+    # Escalated candidates await a human — never rebuild their investigation
+    # into a fresh candidate, or the loop livelocks build→review→escalate.
+    escalated_ids: set[str] = set()
+    escalated_names: set[str] = set()
+    if HUMAN_REVIEW_DIR.exists():
+        for p in HUMAN_REVIEW_DIR.glob("*.yaml"):
+            escalated_ids.add(p.stem)
+            try:
+                c = yaml.safe_load(p.read_text()) or {}
+                n = ((c.get("resource") or {}).get("name") or (c.get("lead") or {}).get("name") or "").lower().strip()
+                if n:
+                    escalated_names.add(n)
+            except Exception:
+                pass
+
     investigated: list[dict] = []
     if not INVESTIGATIONS_DIR.exists():
         return {"needs_candidate": 0, "items": []}
@@ -207,9 +232,11 @@ def _read_investigations() -> dict:
                         lead_domains.add(m.group(1).lower())
                 already_done = (
                     cid in candidate_ids
+                    or cid in escalated_ids
                     or name in approved_names
                     or _slug(name, "") in approved_names
                     or name in rejected_names
+                    or name in escalated_names
                     or bool(lead_phones & approved_phones)
                     or bool(lead_domains & approved_domains)
                 )
@@ -771,6 +798,7 @@ def _print_snapshot(snap: dict) -> None:
     print()
     print(f"  Candidates pending:  {ca['pending_review']}")
     print(f"  Candidates requeued: {ca['requeued']}")
+    print(f"  Needs human review:  {snap.get('needs_human', {}).get('count', 0)}")
     print(f"  Needs candidate:     {iv['needs_candidate']}")
     print()
     print(f"  Total leads:         {l['total']}")

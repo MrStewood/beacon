@@ -12,6 +12,12 @@ All notable changes to Beacon are documented here.
 - Step output and in-process exceptions are persisted to `leads/runs/loop.log`;
   a step exception shows the traceback in the messages pane and stops the loop
   with a pointer to the log instead of crashing silently
+- Fixed a build→review→escalate livelock: investigations whose candidate sat in
+  `leads/needs_human_review/` were still counted as "needs candidate", so the
+  loop rebuilt and re-escalated them every step forever — escalated candidates
+  now count as done, `build_candidate` refuses to rebuild them, and the
+  dashboard/status show a "Needs human review" count and focus line
+- Added `tests/test_pipeline_state.py` regression coverage
 
 ## Unreleased — Geography Publication Gates (2026-09-29)
 
