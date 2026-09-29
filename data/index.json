@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 6,
+    "total_resources": 7,
     "regions": {
       "KY": [
         "Laurel"
@@ -103,6 +103,23 @@
       "status": "active",
       "confidence": "high",
       "coverage_scope": "county"
+    },
+    {
+      "id": "laurel-christian-homeless-shelter-london-ky-889383",
+      "name": "Christian Homeless Shelter (London KY)",
+      "county": "Laurel",
+      "city": "London",
+      "needs": [
+        "community"
+      ],
+      "phones": [
+        "(606) 330-0785",
+        "(606) 862-2872"
+      ],
+      "address": "220 E 4th Street",
+      "status": "active",
+      "confidence": "high",
+      "coverage_scope": "multi-county"
     },
     {
       "id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e",

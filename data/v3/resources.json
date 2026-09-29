@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 6,
+    "total_resources": 7,
     "regions": {
       "KY": [
         "Laurel"
@@ -444,6 +444,94 @@
       "state": "KY",
       "zip": "40740",
       "map_url": "https://www.google.com/maps/search/?api=1&query=420+Lily+School+Rd+Lily+KY+40740"
+    },
+    {
+      "id": "laurel-christian-homeless-shelter-london-ky-889383",
+      "name": "Christian Homeless Shelter (London KY)",
+      "alternate_names": [],
+      "description": "Good Samaritan House is the operating name of Christian Homeless Shelter of London, Inc., a Christian homeless shelter in London, Kentucky serving men, women, and families. It offers a 90-day structured program with a bed, meals, laundry, and hygiene supplies at no charge, plus Bible study, job application help, and life-skills preparation; there is an intake process and no religious test for entry.",
+      "status": "active",
+      "phones": [
+        "(606) 330-0785",
+        "(606) 862-2872"
+      ],
+      "email": "info@goodsamaritanhouseinc.com",
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [],
+      "eligibility": "Men, women, and families; no religious requirement; no drugs/alcohol during stay; random drug screens required.",
+      "cost": "free",
+      "hours": "Intake by appointment/phone \u2014 call 606-862-2872 for current intake hours",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": "Admission at the shelter: warrant check (police report), on-site drug test, review of house rules/policies. No appointment, ID, or paperwork needed to start a conversation.",
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "multi-county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "London"
+            },
+            {
+              "name": "surrounding"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-christian-homeless-shelter-london-ky-889383-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "220 E 4th Street",
+          "state": "KY",
+          "postal_code": "40741",
+          "county_name": "Laurel",
+          "latitude": 37.1291952,
+          "longitude": -84.0814967,
+          "geocoding_status": "approximate",
+          "geocoding_source": "nominatim",
+          "geocoded_at": "2026-09-28",
+          "city": "London"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-29",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://www.homelessshelterdirectory.org/shelter/ky_good-samaritan-house-homeless-shelter",
+        "https://corrections.ky.gov/reentry/Documents/Community%20Resource%20Manuals/2018/D10%20Community%20Resource%20Manual%202018.pdf",
+        "https://www.goodsamaritanhouse.com/get-help/"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "220 E 4th Street",
+      "city": "London",
+      "state": "KY",
+      "zip": "40741",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=220+E+4th+Street+London+KY+40741"
     },
     {
       "id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e",
