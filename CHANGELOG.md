@@ -2,6 +2,17 @@
 
 All notable changes to Beacon are documented here.
 
+## Unreleased — Loop Error Visibility (2026-09-29)
+
+- Fixed `NameError: datetime is not defined` — the geography-gates import edit
+  had dropped `from datetime import datetime, timezone`, so any review decision
+  that hit `_do_requeue`/`_utc_now` crashed the loop's review step
+- Dashboard mode now captures subprocess output instead of letting it race the
+  screen redraw (child stack traces used to flash for one frame and vanish)
+- Step output and in-process exceptions are persisted to `leads/runs/loop.log`;
+  a step exception shows the traceback in the messages pane and stops the loop
+  with a pointer to the log instead of crashing silently
+
 ## Unreleased — Geography Publication Gates (2026-09-29)
 
 - `scripts/geocode.py` now splits venue names and embedded city/state/ZIP values

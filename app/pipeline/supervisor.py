@@ -576,53 +576,89 @@ Rules:
 # Execution stubs (wire to real modules)
 # ---------------------------------------------------------------------------
 
+def _run_module(*args: str) -> None:
+    """Run `python -m …`; capture output whenever stdout is redirected.
+
+    The loop dashboard clears and redraws the terminal every step, so a child
+    process writing to the inherited tty would flash a stack trace for one
+    frame and vanish. In dashboard mode stdout is a StringIO — detect that,
+    capture the child, and re-print through the parent so the output lands in
+    the messages pane and the step log instead of racing the redraw.
+    """
+    cmd = [sys.executable, "-m"] + list(args)
+    log.info("running: %s", " ".join(cmd))
+    try:
+        sys.stdout.fileno()          # real stdout → stream straight through
+        streaming = True
+    except (AttributeError, ValueError, OSError):
+        streaming = False
+
+    if streaming:
+        result = subprocess.run(cmd, cwd=BEACON_ROOT)
+        if result.returncode != 0:
+            log.warning("command exited %d: %s", result.returncode, " ".join(cmd))
+        return
+
+    result = subprocess.run(cmd, cwd=BEACON_ROOT, capture_output=True,
+                            text=True, errors="replace")
+    out = ((result.stdout or "") + (result.stderr or "")).strip()
+    if out:
+        print(out)
+    if result.returncode != 0:
+        print(f"WARNING: command exited {result.returncode}: {' '.join(cmd)}")
+
+
+def _append_step_log(action: dict, lines: list[str]) -> None:
+    """Persist step output — the dashboard redraw clears the terminal."""
+    runs_dir = LEADS_DIR / "runs"
+    runs_dir.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    with open(runs_dir / "loop.log", "a") as f:
+        f.write(f"[{ts}] {action.get('action')} -> {action.get('target') or '-'}\n")
+        for line in lines:
+            f.write(f"  {line}\n")
+
+
 def execute(action: dict) -> None:
     """Dispatch the decided action to the appropriate pipeline module."""
     a      = action["action"]
     target = action.get("target")
     meta   = action.get("meta", {})   # extra data the LLM may pass (lead dict, paths, etc.)
 
-    def _run(*args: str) -> None:
-        cmd = [sys.executable, "-m"] + list(args)
-        log.info("running: %s", " ".join(cmd))
-        result = subprocess.run(cmd, cwd=BEACON_ROOT)
-        if result.returncode != 0:
-            log.warning("command exited %d: %s", result.returncode, " ".join(cmd))
-
     if a == "investigate_lead":
         # target is the lead name; look it up in dedup.json to get full lead data
         lead_json = _resolve_lead(target)
         if lead_json is None:
-            log.error("investigate_lead: could not find lead %r in dedup.json", target)
+            print(f"ERROR: investigate_lead: could not find lead {target!r} in dedup.json")
             return
-        _run("app.pipeline.investigate", "--json", json.dumps(lead_json))
+        _run_module("app.pipeline.investigate", "--json", json.dumps(lead_json))
 
     elif a == "build_candidate":
         # target is the investigation JSON file path
         inv_path = _resolve_investigation(target)
         if inv_path is None:
-            log.error("build_candidate: no investigation file found for %r", target)
+            print(f"ERROR: build_candidate: no investigation file found for {target!r}")
             return
-        _run("app.pipeline.candidate", str(inv_path))
+        _run_module("app.pipeline.candidate", str(inv_path))
 
     elif a == "review_candidate":
         # target is the candidate YAML path or candidate ID
         cand_path = _resolve_candidate(target)
         if cand_path is None:
-            log.error("review_candidate: no candidate file found for %r", target)
+            print(f"ERROR: review_candidate: no candidate file found for {target!r}")
             return
-        _run("app.pipeline.review_candidate", str(cand_path))
+        _run_module("app.pipeline.review_candidate", str(cand_path))
 
     elif a == "run_followup":
         cand_path = _resolve_candidate(target)
         if cand_path:
-            _run("app.pipeline.followup", str(cand_path))
+            _run_module("app.pipeline.followup", str(cand_path))
 
     elif a == "research_zip":
-        _run("app.pipeline.research", str(target))
+        _run_module("app.pipeline.research", str(target))
 
     elif a == "expand_geography":
-        _run("app.pipeline.research", str(target))
+        _run_module("app.pipeline.research", str(target))
 
     elif a == "alert_human":
         _write_alert(action)
@@ -758,7 +794,7 @@ def _print_snapshot(snap: dict) -> None:
 # ---------------------------------------------------------------------------
 
 # Actions that require human input before the loop can continue
-_STOP_ACTIONS = {"idle", "alert_human"}
+_STOP_ACTIONS = {"idle", "alert_human", "error"}
 
 
 def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
@@ -766,7 +802,7 @@ def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
     import asyncio
     snap = snapshot_state()
     if view == "dashboard":
-        import contextlib, io
+        import contextlib, io, traceback
         from app.pipeline import dashboard
         dash = dashboard.get_console()
         if run is not None:
@@ -774,16 +810,25 @@ def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
         dash.clear()
         dashboard.render(snap=snap, run=run)
         captured = io.StringIO()
-        with contextlib.redirect_stdout(captured):
-            action = asyncio.run(decide(snap))
-            if not dry_run:
-                execute(action)
-            else:
-                print("(dry-run — not executing)")
+        try:
+            with contextlib.redirect_stdout(captured):
+                action = asyncio.run(decide(snap))
+                if not dry_run:
+                    execute(action)
+                else:
+                    print("(dry-run — not executing)")
+        except Exception:
+            # Never lose a traceback to the redraw — keep it in the pane and the log.
+            traceback.print_exc(file=captured)
+            action = {"action": "error", "target": None,
+                      "reason": "step raised an exception — full traceback in messages and leads/runs/loop.log"}
         if run is not None:
             run.record(action["action"], action.get("target"), action.get("reason"))
-            for line in captured.getvalue().splitlines():
+            lines = captured.getvalue().splitlines()
+            for line in lines:
                 run.log(line)
+            if lines:
+                _append_step_log(action, lines)
         dash.clear()
         dashboard.render(snap=snapshot_state(), run=run)
         return action["action"]
@@ -863,7 +908,11 @@ def main() -> None:
             step += 1
             taken = _run_one(dry_run=args.dry_run, view="dashboard", run=run)
             if taken in _STOP_ACTIONS:
-                print(f"\nLoop stopped: action={taken}. Nothing more to do right now.")
+                if taken == "error":
+                    print("\nLoop stopped: the last step raised an exception.")
+                    print("Full traceback: leads/runs/loop.log (and the messages pane above).")
+                else:
+                    print(f"\nLoop stopped: action={taken}. Nothing more to do right now.")
                 break
             time.sleep(3)
         return
