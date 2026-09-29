@@ -442,6 +442,8 @@ def _priority_order(snap: dict) -> list[str]:
     order = []
     if snap["alerts"]["unacknowledged"] > 0:
         order.append("alert_human: unacknowledged alerts exist")
+    if snap.get("needs_human", {}).get("count", 0) > 0:
+        order.append("alert_human: candidates await human review")
     if snap["candidates"]["requeued"] > 0:
         order.append("run_followup")
     if snap["candidates"]["pending_review"] > 0:
@@ -463,7 +465,6 @@ def _priority_order(snap: dict) -> list[str]:
 
 async def decide(snap: dict) -> dict:
     """Ask the LLM for one typed action decision. Returns action dict."""
-    import app.llm as llm
 
     # Hard-coded gates — no LLM needed; target is always deterministic here
     if snap["alerts"]["unacknowledged"] > 0:
@@ -471,6 +472,14 @@ async def decide(snap: dict) -> dict:
         return {"action": "alert_human", "target": alert.get("file", "unknown"),
                 "reason": f"Unacknowledged alert: {alert.get('message', 'see alerts dir')}",
                 "priority": 5, "auto": True}
+    needs_human = snap.get("needs_human", {})
+    if needs_human.get("count", 0) > 0:
+        item = (needs_human.get("items") or ["unknown"])[0]
+        count = needs_human.get("count", 0)
+        return {"action": "alert_human", "target": item,
+                "reason": f"{count} candidate(s) await human review in leads/needs_human_review.",
+                "priority": 5, "auto": True,
+                "human_message": f"Review {item} in leads/needs_human_review before continuing automation."}
     if snap["candidates"]["requeued"] > 0:
         item = snap["candidates"]["requeued_items"][0]
         return {"action": "run_followup", "target": item["id"],
@@ -488,6 +497,8 @@ async def decide(snap: dict) -> dict:
                 "priority": 5, "auto": True}
 
     # LLM decision for everything else
+    import app.llm as llm
+
     prompt = _build_prompt(snap)
     resp = await llm.flash(
         messages=[{"role": "user", "content": prompt}],
@@ -627,7 +638,11 @@ def _run_module(*args: str) -> None:
         return
 
     result = subprocess.run(cmd, cwd=BEACON_ROOT, capture_output=True,
-                            text=True, errors="replace")
+                            text=True, errors="replace",
+                            # Own process group: the supervisor's Ctrl+C must
+                            # not SIGINT the step (it would kill the Playwright
+                            # driver mid-run and lose the investigation).
+                            start_new_session=True)
     out = ((result.stdout or "") + (result.stderr or "")).strip()
     if out:
         print(out)
@@ -635,13 +650,18 @@ def _run_module(*args: str) -> None:
         print(f"WARNING: command exited {result.returncode}: {' '.join(cmd)}")
 
 
-def _append_step_log(action: dict, lines: list[str]) -> None:
+def _append_step_log(action: dict, lines: list[str], *, event: str = "complete") -> None:
     """Persist step output — the dashboard redraw clears the terminal."""
     runs_dir = LEADS_DIR / "runs"
     runs_dir.mkdir(parents=True, exist_ok=True)
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    label = f"{event} " if event != "complete" else ""
     with open(runs_dir / "loop.log", "a") as f:
-        f.write(f"[{ts}] {action.get('action')} -> {action.get('target') or '-'}\n")
+        f.write(f"[{ts}] {label}{action.get('action')} -> {action.get('target') or '-'}\n")
+        if action.get("reason"):
+            f.write(f"  reason: {action.get('reason')}\n")
+        if action.get("human_message"):
+            f.write(f"  human_message: {action.get('human_message')}\n")
         for line in lines:
             f.write(f"  {line}\n")
 
@@ -830,17 +850,56 @@ def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
     import asyncio
     snap = snapshot_state()
     if view == "dashboard":
-        import contextlib, io, traceback
+        import contextlib, io, threading, traceback
         from app.pipeline import dashboard
         dash = dashboard.get_console()
+        # Pin to the real stdout: the heartbeat renders while step output is
+        # redirected to a StringIO, and rich otherwise resolves sys.stdout live.
+        dash.file = sys.stdout
+        render_lock = threading.RLock()
+
+        def _render() -> None:
+            with render_lock:
+                dash.clear()
+                dashboard.render(snap=snapshot_state(), run=run)
+
         if run is not None:
             run.log("deciding next action")
-        dash.clear()
-        dashboard.render(snap=snap, run=run)
+        _render()
+
+        # Long steps (investigate = minutes) used to freeze the screen with no
+        # feedback — tick the messages pane so the user can see it's alive.
+        stop_hb = threading.Event()
+
+        def _heartbeat() -> None:
+            ticks = 0
+            while not stop_hb.wait(15):
+                ticks += 1
+                if run is not None:
+                    run.log(f"… still working ({ticks * 15}s into this step)")
+                _render()
+
+        threading.Thread(target=_heartbeat, daemon=True).start()
+
         captured = io.StringIO()
         try:
             with contextlib.redirect_stdout(captured):
                 action = asyncio.run(decide(snap))
+            if run is not None:
+                tgt = action.get("target") or ""
+                run.log(f"▶ {action['action']}" + (f" → {tgt}" if tgt else "") + " — running")
+                _append_step_log(action, [
+                    "state: "
+                    f"alerts={snap['alerts']['unacknowledged']} "
+                    f"needs_human={snap.get('needs_human', {}).get('count', 0)} "
+                    f"requeued={snap['candidates']['requeued']} "
+                    f"pending_review={snap['candidates']['pending_review']} "
+                    f"needs_candidate={snap['investigations']['needs_candidate']} "
+                    f"queued_leads={snap['leads']['queued_count']}",
+                    "executing" if not dry_run else "dry-run; not executing",
+                ], event="start")
+            _render()
+            with contextlib.redirect_stdout(captured):
                 if not dry_run:
                     execute(action)
                 else:
@@ -850,15 +909,15 @@ def _run_one(*, dry_run: bool = False, view: str = "plain", run=None) -> str:
             traceback.print_exc(file=captured)
             action = {"action": "error", "target": None,
                       "reason": "step raised an exception — full traceback in messages and leads/runs/loop.log"}
+        finally:
+            stop_hb.set()
         if run is not None:
             run.record(action["action"], action.get("target"), action.get("reason"))
             lines = captured.getvalue().splitlines()
             for line in lines:
                 run.log(line)
-            if lines:
-                _append_step_log(action, lines)
-        dash.clear()
-        dashboard.render(snap=snapshot_state(), run=run)
+            _append_step_log(action, lines)
+        _render()
         return action["action"]
 
     _print_snapshot(snap)

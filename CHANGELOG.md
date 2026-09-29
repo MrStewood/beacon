@@ -17,6 +17,13 @@ All notable changes to Beacon are documented here.
   loop rebuilt and re-escalated them every step forever — escalated candidates
   now count as done, `build_candidate` refuses to rebuild them, and the
   dashboard/status show a "Needs human review" count and focus line
+- Loop dashboard now stays alive during long steps: a `▶ action → target`
+  start line plus a 15-second "still working" heartbeat re-renders the pane
+  (steps used to freeze the screen with no feedback, looking hung)
+- Step subprocesses run in their own session (`start_new_session`), so the
+  supervisor's Ctrl+C no longer SIGINTs the investigation child and kills its
+  Playwright driver mid-run — the first Ctrl+C now genuinely "finishes the
+  current step" as the message promises
 - Added `tests/test_pipeline_state.py` regression coverage
 
 ## Unreleased — Geography Publication Gates (2026-09-29)
