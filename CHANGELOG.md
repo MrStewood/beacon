@@ -15,6 +15,8 @@ All notable changes to Beacon are documented here.
   service areas or public physical locations lack coordinates
 - Added `tests/test_geography_gates.py`; corrected and geocoded Calvary Baptist
   Food Pantry and London KY Warming Center records
+- Detail drawer now links to the full resource page with its coverage map
+  (`Full page with coverage map →`)
 
 ## Unreleased — Pipeline Supervisor CLI (2026-09-28)
 

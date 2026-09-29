@@ -417,6 +417,7 @@ function openDetail(id) {
         <dd style="margin:0;font-size:17px;line-height:1.5">${esc(v)}</dd>
       </div>`).join('')}
     </dl>
+    <a href="/beacon/pages/resource/${esc(r.id)}.html" style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px;min-height:54px;padding:0 20px;border-radius:14px;border:1.5px solid oklch(0.86 0.012 85);color:oklch(0.24 0.03 255);text-decoration:none;font:700 17px 'Atkinson Hyperlegible',sans-serif">Full page with coverage map <span aria-hidden="true">→</span></a>
     <div style="margin-top:24px;padding:20px;border-radius:16px;background:oklch(0.95 0.035 155);color:oklch(0.28 0.05 155)">
       <div style="font:700 18px 'Bricolage Grotesque',sans-serif">✓ How we checked this</div>
       <p style="margin:8px 0 0;font-size:16px;line-height:1.5">Last checked ${esc(dateLong(r.checked))} against ${r.sources === 1 ? '1 official source' : `${r.sources} independent sources`}. Confidence: <strong>${esc(r.conf)}</strong>.</p>
