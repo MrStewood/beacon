@@ -22,6 +22,7 @@ locations:
   geocoding_source: nominatim
   geocoded_at: '2026-09-28'
   city: Corbin
+  county_fips: '21125'
 verification_status: verified
 last_verified: '2026-09-29'
 verified_by: review-agent
@@ -47,13 +48,21 @@ service_areas:
   country: US
   values:
   - name: Bell
+    fips: '21013'
   - name: Clay
+    fips: '21051'
   - name: Knox
+    fips: '21121'
   - name: Harlan
+    fips: '21095'
   - name: Jackson
+    fips: '21109'
   - name: Laurel
+    fips: '21125'
   - name: Rockcastle
+    fips: '21203'
   - name: Whitley
+    fips: '21235'
 workflow:
   discovered_by: lead-generation-agent
   verified_by: review-agent

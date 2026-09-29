@@ -170,10 +170,16 @@ def _review_prompt(candidate: dict, investigation: dict | None) -> str:
     category   = (resource.get("needs") or ["?"])[0]
     locations  = resource.get("locations", [])
     loc        = locations[0] if locations else {}
-    addr_obj   = loc.get("address", {})
-    address    = f"{addr_obj.get('street','')}, {addr_obj.get('city','')}, {addr_obj.get('state','')}".strip(", ")
-    phones     = loc.get("phones", [])
-    hours      = loc.get("hours", "unknown")
+    address    = ", ".join(
+        str(part) for part in [
+            loc.get("address_line_1"),
+            loc.get("city"),
+            loc.get("state"),
+            loc.get("postal_code"),
+        ] if part
+    )
+    phones     = resource.get("phones", [])
+    hours      = resource.get("hours", "unknown")
     url        = resource.get("url", "")
     eligibility = resource.get("eligibility", "")
     description = resource.get("description", "")
@@ -541,19 +547,23 @@ def _requires_service_area(resource: dict) -> bool:
     return resource.get("coverage_scope") not in {"national", "multi-state", "state", "online"}
 
 def _git_commit_and_push(approved_path: Path, name: str, county: str) -> None:
-    """Stage the approved YAML, commit, and push to origin main."""
+    """Stage approved YAML, regenerated public data, commit, and push to origin main."""
     def _run(cmd: list[str]) -> tuple[int, str]:
         r = subprocess.run(cmd, cwd=BEACON_ROOT, capture_output=True, text=True)
         return r.returncode, (r.stdout + r.stderr).strip()
 
-    # Rebuild generated data files so the commit is self-consistent
-    rc, out = _run([sys.executable, "scripts/build_from_yaml.py"])
+    # Build.py is the publication pipeline: geocode/enrich approved YAML first,
+    # then regenerate committed public data. build_from_yaml alone misses FIPS
+    # enrichment, which makes CI reject the commit before Pages can deploy.
+    rc, out = _run([sys.executable, "scripts/build.py", "--strict"])
     if rc != 0:
-        log.warning("build_from_yaml failed (will still commit YAML): %s", out)
+        log.warning("publication build failed; not committing approved resource: %s", out)
+        return
 
-    # Stage the approved YAML and any regenerated data files
-    rel = str(approved_path.relative_to(BEACON_ROOT))
-    _run(["git", "add", rel,
+    # Stage the approved YAML plus any deterministic enrichment applied to
+    # approved records during geocoding, and the generated data files CI deploys.
+    _run(["git", "add",
+          "source/approved",
           "data/resources.json", "data/resources.csv",
           "data/index.json", "data/catalog.json",
           "data/v3/resources.json"])
@@ -596,16 +606,20 @@ def _do_reject(candidate: dict, candidate_path: Path, review: dict) -> None:
 
 
 def _do_requeue(candidate: dict, candidate_path: Path, review: dict) -> None:
-    """Write guidance file so next investigation pass knows what to find."""
+    """Write guidance file and mark candidate for the follow-up queue."""
     guidance_path = candidate_path.with_suffix(".requeue.json")
-    guidance_path.write_text(json.dumps({
+    requeue = {
         "candidate_id":      candidate.get("candidate_id"),
         "requeue_at":        _utc_now(),
         "reviewer_reasoning": review.get("reasoning", ""),
         "guidance":          review.get("guidance", ""),
         "questions_to_answer": review.get("questions_to_answer", []),
         "missing_fields":    review.get("missing_fields", []),
-    }, indent=2, ensure_ascii=False))
+    }
+    guidance_path.write_text(json.dumps(requeue, indent=2, ensure_ascii=False))
+    candidate["workflow_state"] = "needs-followup"
+    candidate["requeue"] = requeue
+    candidate_path.write_text(yaml.dump(candidate, allow_unicode=True, sort_keys=False, width=120))
     log.info("NEEDS MORE RESEARCH → guidance written to %s", guidance_path.name)
     log.info("  Questions: %s", review.get("questions_to_answer", []))
 

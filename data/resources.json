@@ -422,7 +422,8 @@
           "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
           "geocoded_at": "2026-09-28",
-          "city": "London"
+          "city": "London",
+          "county_fips": "21125"
         }
       ],
       "verification_status": "verified",
@@ -486,7 +487,8 @@
           "country": "US",
           "values": [
             {
-              "name": "Laurel"
+              "name": "Laurel",
+              "fips": "21125"
             }
           ]
         }
@@ -508,7 +510,8 @@
           "longitude": -84.071487,
           "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
-          "geocoded_at": "2026-09-29"
+          "geocoded_at": "2026-09-29",
+          "county_fips": "21125"
         }
       ],
       "verification_status": "verified",
@@ -572,7 +575,8 @@
           "country": "US",
           "values": [
             {
-              "name": "Laurel"
+              "name": "Laurel",
+              "fips": "21125"
             }
           ]
         }
@@ -594,7 +598,8 @@
           "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
           "geocoded_at": "2026-09-28",
-          "city": "Lily"
+          "city": "Lily",
+          "county_fips": "21125"
         }
       ],
       "verification_status": "verified",
@@ -680,7 +685,8 @@
           "longitude": -84.0664674,
           "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
-          "geocoded_at": "2026-09-29"
+          "geocoded_at": "2026-09-29",
+          "county_fips": "21125"
         }
       ],
       "verification_status": "verified",
@@ -768,7 +774,8 @@
           "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
           "geocoded_at": "2026-09-28",
-          "city": "London"
+          "city": "London",
+          "county_fips": "21125"
         }
       ],
       "verification_status": "verified",
@@ -833,28 +840,36 @@
           "country": "US",
           "values": [
             {
-              "name": "Bell"
+              "name": "Bell",
+              "fips": "21013"
             },
             {
-              "name": "Clay"
+              "name": "Clay",
+              "fips": "21051"
             },
             {
-              "name": "Knox"
+              "name": "Knox",
+              "fips": "21121"
             },
             {
-              "name": "Harlan"
+              "name": "Harlan",
+              "fips": "21095"
             },
             {
-              "name": "Jackson"
+              "name": "Jackson",
+              "fips": "21109"
             },
             {
-              "name": "Laurel"
+              "name": "Laurel",
+              "fips": "21125"
             },
             {
-              "name": "Rockcastle"
+              "name": "Rockcastle",
+              "fips": "21203"
             },
             {
-              "name": "Whitley"
+              "name": "Whitley",
+              "fips": "21235"
             }
           ]
         }
@@ -876,7 +891,8 @@
           "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
           "geocoded_at": "2026-09-28",
-          "city": "Corbin"
+          "city": "Corbin",
+          "county_fips": "21125"
         }
       ],
       "verification_status": "verified",

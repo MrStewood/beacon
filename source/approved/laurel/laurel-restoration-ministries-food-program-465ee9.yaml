@@ -22,6 +22,7 @@ locations:
   geocoding_source: nominatim
   geocoded_at: '2026-09-28'
   city: Lily
+  county_fips: '21125'
 verification_status: verified
 last_verified: '2026-09-29'
 verified_by: review-agent
@@ -47,6 +48,7 @@ service_areas:
   country: US
   values:
   - name: Laurel
+    fips: '21125'
 workflow:
   discovered_by: lead-generation-agent
   verified_by: review-agent

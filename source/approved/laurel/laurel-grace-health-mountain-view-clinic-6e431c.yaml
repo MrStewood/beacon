@@ -22,6 +22,7 @@ locations:
   geocoding_source: nominatim
   geocoded_at: '2026-09-28'
   city: London
+  county_fips: '21125'
 verification_status: verified
 last_verified: '2026-09-29'
 verified_by: review-agent
