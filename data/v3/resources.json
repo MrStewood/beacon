@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-29",
-    "total_resources": 10,
+    "total_resources": 11,
     "regions": {
       "KY": [
         "Laurel"
@@ -616,6 +616,92 @@
       "state": "KY",
       "zip": "40740",
       "map_url": "https://www.google.com/maps/search/?api=1&query=420+Lily+School+Rd+Lily+KY+40740"
+    },
+    {
+      "id": "laurel-grace-health-levi-center-clinic-488583",
+      "name": "Grace Health Levi Center Clinic",
+      "alternate_names": [],
+      "description": "Grace Health Levi Center Clinic provides comprehensive primary care for all ages, from newborns to seniors, including preventive care, wellness exams, chronic disease management, pediatric and women's health services, and sick visits. An on-site pharmacy offers prescription filling, medication counseling, drive-thru service, and free local delivery.",
+      "status": "active",
+      "phones": [
+        "(606) 526-8604"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": "No restrictions; documents as requested when appointment is scheduled",
+      "cost": "sliding-scale",
+      "hours": "Clinic: Mon-Fri 8:00AM-6:00PM; Pharmacy: Mon-Fri 8:00AM-6:00PM; Closed for meal break daily 1:00PM-1:30PM",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": "Appointment required, please call",
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "multi-county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "Six"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-grace-health-levi-center-clinic-488583-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "934 South Laurel Rd",
+          "city": "London",
+          "state": "KY",
+          "postal_code": "40744",
+          "county_name": "Laurel",
+          "latitude": 37.0958833,
+          "longitude": -84.0664674,
+          "geocoding_status": "approximate",
+          "geocoding_source": "nominatim",
+          "geocoded_at": "2026-09-29"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-29",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://uwbg211.org/search/bde7ad97-f60f-54cf-97e0-2ab01b211f7b",
+        "https://gracehealthky.org/locations/",
+        "https://npiregistry.cms.hhs.gov/provider-view/1518555168"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "934 South Laurel Rd",
+      "city": "London",
+      "state": "KY",
+      "zip": "40744",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=934+South+Laurel+Rd+London+KY+40744"
     },
     {
       "id": "laurel-christian-homeless-shelter-london-ky-889383",

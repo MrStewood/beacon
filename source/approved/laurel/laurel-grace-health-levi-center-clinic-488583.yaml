@@ -1,0 +1,62 @@
+# Approved resource — Grace Health Levi Center Clinic
+# Reviewed: 2026-09-29T14:08:51Z
+# Reviewer decision: Address (934 S Laurel Rd, London KY 40744) and phone (606-526-8604) confirmed on Grace Health's official location page plus multiple independent directories (Healthgrades, 211, Chamber of Commerce, Loc8NearMe). It is a public-facing primary care clinic and pharmacy serving all ages with no eligibility restrictions, currently operating, and the 'community' category fits. The listed clinic and pharmacy hours match the official site exactly.
+
+id: laurel-grace-health-levi-center-clinic-488583
+name: Grace Health Levi Center Clinic
+status: active
+coverage_scope: multi-county
+needs:
+- community
+locations:
+- id: laurel-grace-health-levi-center-clinic-488583-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: 934 South Laurel Rd
+  city: London
+  state: KY
+  postal_code: '40744'
+  county_name: Laurel
+  latitude: 37.0958833
+  longitude: -84.0664674
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-29'
+verification_status: verified
+last_verified: '2026-09-29'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: Walk-in/appointment clinic with on-site pharmacy; drive-thru and free delivery available. Pharmacy closed for
+  meal break daily 1:00PM-1:30PM.
+phones:
+- (606) 526-8604
+hours: 'Clinic: Mon-Fri 8:00AM-6:00PM; Pharmacy: Mon-Fri 8:00AM-6:00PM; Closed for meal break daily 1:00PM-1:30PM'
+description: Grace Health Levi Center Clinic provides comprehensive primary care for all ages, from newborns to seniors, including
+  preventive care, wellness exams, chronic disease management, pediatric and women's health services, and sick visits. An
+  on-site pharmacy offers prescription filling, medication counseling, drive-thru service, and free local delivery.
+eligibility: No restrictions; documents as requested when appointment is scheduled
+cost: sliding-scale
+intake_process: Appointment required, please call
+source_urls:
+- https://uwbg211.org/search/bde7ad97-f60f-54cf-97e0-2ab01b211f7b
+- https://gracehealthky.org/locations/
+- https://npiregistry.cms.hhs.gov/provider-view/1518555168
+- https://npino.com/primary-clinic/1518555168-grace-health-levi-center-clinic/
+- https://gracehealthky.org/
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Six
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://uwbg211.org/search/bde7ad97-f60f-54cf-97e0-2ab01b211f7b
+- source_type: official-provider
+  url: https://gracehealthky.org/locations/
+- source_type: official-provider
+  url: https://npiregistry.cms.hhs.gov/provider-view/1518555168
