@@ -2,6 +2,20 @@
 
 All notable changes to Beacon are documented here.
 
+## Unreleased — Geography Publication Gates (2026-09-29)
+
+- `scripts/geocode.py` now splits venue names and embedded city/state/ZIP values
+  out of `address_line_1`, preferring the verified embedded ZIP over the lead ZIP
+- Auto-approval geocodes every public physical address before writing
+  `source/approved/`; an address that cannot be geocoded returns the candidate
+  to `needs_more_research`
+- Local active services must carry explicit `service_areas`; approval derives
+  them from `coverage_scope`/location when possible and otherwise blocks
+- `scripts/validate_sources.py` now fails CI when approved local records lack
+  service areas or public physical locations lack coordinates
+- Added `tests/test_geography_gates.py`; corrected and geocoded Calvary Baptist
+  Food Pantry and London KY Warming Center records
+
 ## Unreleased — Pipeline Supervisor CLI (2026-09-28)
 
 - `app/pipeline/dashboard.py` — readable single-screen CLI dashboard (requires

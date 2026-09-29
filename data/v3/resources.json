@@ -208,13 +208,16 @@
           "id": "laurel-calvary-baptist-church-food-pantry-0cb551-loc-1",
           "location_type": "physical",
           "publicly_displayed": true,
-          "address_line_1": "111 North McWhorter Street, London, KY 40741",
+          "address_line_1": "111 North McWhorter Street",
           "state": "KY",
-          "postal_code": "40744",
+          "postal_code": "40741",
           "county_name": "Laurel",
-          "geocoding_status": "failed",
+          "latitude": 37.1359729,
+          "longitude": -84.0713106,
+          "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
           "geocoded_at": "2026-09-28",
+          "city": "London",
           "county_fips": "21125"
         }
       ],
@@ -232,11 +235,11 @@
       "notes": null,
       "related": [],
       "county": "Laurel",
-      "address": "111 North McWhorter Street, London, KY 40741",
-      "city": null,
+      "address": "111 North McWhorter Street",
+      "city": "London",
       "state": "KY",
-      "zip": "40744",
-      "map_url": "https://www.google.com/maps/search/?api=1&query=111+North+McWhorter+Street,+London,+KY+40741+KY+40744"
+      "zip": "40741",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=111+North+McWhorter+Street+London+KY+40741"
     },
     {
       "id": "laurel-cvdvs-london-corbin-valley-domestic-violence-services-5781cf",
@@ -411,13 +414,16 @@
           "id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e-loc-1",
           "location_type": "physical",
           "publicly_displayed": true,
-          "address_line_1": "London Community Center, 529 S. Main Street, London, KY 40741",
+          "address_line_1": "110 Burley Ave",
           "state": "KY",
-          "postal_code": "40744",
+          "postal_code": "40741",
           "county_name": "Laurel",
-          "geocoding_status": "failed",
+          "latitude": 37.1392642,
+          "longitude": -84.0783415,
+          "geocoding_status": "approximate",
           "geocoding_source": "nominatim",
           "geocoded_at": "2026-09-28",
+          "city": "London",
           "county_fips": "21125"
         }
       ],
@@ -435,11 +441,11 @@
       "notes": null,
       "related": [],
       "county": "Laurel",
-      "address": "London Community Center, 529 S. Main Street, London, KY 40741",
-      "city": null,
+      "address": "110 Burley Ave",
+      "city": "London",
       "state": "KY",
-      "zip": "40744",
-      "map_url": "https://www.google.com/maps/search/?api=1&query=London+Community+Center,+529+S.+Main+Street,+London,+KY+40741+KY+40744"
+      "zip": "40741",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=110+Burley+Ave+London+KY+40741"
     }
   ]
 }

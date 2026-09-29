@@ -96,6 +96,39 @@ def validate_sensitive(resources):
     return errors, warnings
 
 
+def _requires_service_area(resource):
+    return resource.get('coverage_scope') not in {'national', 'multi-state', 'state', 'online'}
+
+
+def validate_geography(resources):
+    """Check public geography needed for routing, maps, and service-area filtering."""
+    errors = []
+    warnings = []
+
+    for r in resources:
+        rid = r.get('id', 'unknown')
+
+        if r.get('status') == 'active' and _requires_service_area(r) and not r.get('service_areas'):
+            errors.append(f"{rid}: local active service missing service_areas")
+
+        for loc in r.get('locations', []):
+            loc_type = loc.get('location_type')
+            public = loc.get('publicly_displayed', True)
+            if loc_type in {'virtual', 'confidential', 'mobile'} or not public:
+                continue
+            if loc_type == 'physical':
+                if not loc.get('address_line_1'):
+                    errors.append(f"{rid}: public physical location missing address_line_1")
+                    continue
+                if loc.get('geocoding_status') == 'failed':
+                    errors.append(f"{rid}: public physical location has failed geocoding")
+                if loc.get('latitude') is None or loc.get('longitude') is None:
+                    errors.append(f"{rid}: public physical location missing latitude/longitude")
+
+    return errors, warnings
+
+
+
 def load_approved_resources():
     resources = []
     source_dir = REPO_ROOT / "source" / "approved"
@@ -115,7 +148,7 @@ def main():
     all_errors = []
     all_warnings = []
 
-    for validator in [validate_workflow, validate_sources, validate_sensitive]:
+    for validator in [validate_workflow, validate_sources, validate_sensitive, validate_geography]:
         errors, warnings = validator(resources)
         all_errors.extend(errors)
         all_warnings.extend(warnings)

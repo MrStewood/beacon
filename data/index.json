@@ -59,14 +59,14 @@
       "id": "laurel-calvary-baptist-church-food-pantry-0cb551",
       "name": "Calvary Baptist Church Food Pantry",
       "county": "Laurel",
-      "city": null,
+      "city": "London",
       "needs": [
         "community"
       ],
       "phones": [
         "(606) 682-0621"
       ],
-      "address": "111 North McWhorter Street, London, KY 40741",
+      "address": "111 North McWhorter Street",
       "status": "active",
       "confidence": "high",
       "coverage_scope": "county"
@@ -92,14 +92,14 @@
       "id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e",
       "name": "London KY Warming Center (City/M Ministry Partnership)",
       "county": "Laurel",
-      "city": null,
+      "city": "London",
       "needs": [
         "community"
       ],
       "phones": [
         "(606) 878-7004"
       ],
-      "address": "London Community Center, 529 S. Main Street, London, KY 40741",
+      "address": "110 Burley Ave",
       "status": "active",
       "confidence": "high",
       "coverage_scope": "multi-county"

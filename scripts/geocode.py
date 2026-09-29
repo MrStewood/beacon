@@ -59,13 +59,54 @@ def _load_fips(state: str = "KY") -> dict[str, str]:
 # Address parsing
 # ---------------------------------------------------------------------------
 
-def _clean_address_line(raw: str, city: str | None, state: str | None, postal: str | None) -> str:
-    """Strip city/state/zip from address_line_1 if the agent embedded them.
+_STREET_SUFFIX_RE = re.compile(
+    r"\b(?:ave(?:nue)?|blvd|boulevard|cir(?:cle)?|ct|court|dr(?:ive)?|hwy|highway|ln|lane|pkwy|parkway|pl|place|rd|road|st(?:reet)?|ter|terrace|way)\.?\b",
+    re.IGNORECASE,
+)
 
-    Anchors on the known city name to avoid stripping real street words.
+
+def _looks_like_street(segment: str) -> bool:
+    return bool(re.search(r"\d", segment) and _STREET_SUFFIX_RE.search(segment))
+
+
+def _split_embedded_address(raw: str) -> dict[str, str]:
+    """Extract street/city/state/postal from a single-line US address.
+
+    Research agents sometimes put the full address, and occasionally a venue
+    name, into address_line_1. Nominatim structured search expects only
+    house-number + street in the street field.
     """
+    parts = [p.strip() for p in str(raw or "").split(",") if p.strip()]
+    if len(parts) < 3:
+        return {}
+
+    state_zip = re.match(r"^(?P<state>[A-Z]{2})\s+(?P<postal>\d{5})(?:-\d{4})?$", parts[-1].strip(), re.I)
+    if not state_zip:
+        return {}
+
+    city = parts[-2].strip()
+    street_parts = parts[:-2]
+    street = next((p for p in reversed(street_parts) if _looks_like_street(p)), street_parts[-1]).strip()
+    if not street:
+        return {}
+
+    return {
+        "street": street,
+        "city": city,
+        "state": state_zip.group("state").upper(),
+        "postal": state_zip.group("postal"),
+    }
+
+
+def _clean_address_line(raw: str, city: str | None, state: str | None, postal: str | None) -> str:
+    """Return only the street portion of a location address."""
     if not raw:
         return raw
+
+    embedded = _split_embedded_address(raw)
+    if embedded:
+        return embedded["street"]
+
     # Anchor on known city name followed by optional ", STATE ZIP"
     if city:
         pattern = re.compile(
@@ -77,10 +118,12 @@ def _clean_address_line(raw: str, city: str | None, state: str | None, postal: s
             street = raw[:m.start()].strip().rstrip(",")
             if street:
                 return street
+
     # Fallback: strip trailing STATE ZIP only
     if state and postal:
         p2 = re.compile(
-            r",?\s+" + re.escape(state) + r"\s+" + re.escape(postal[:5]) + r"(?:-\d{4})?\s*$"
+            r",?\s+" + re.escape(state) + r"\s+" + re.escape(postal[:5]) + r"(?:-\d{4})?\s*$",
+            re.IGNORECASE,
         )
         m2 = p2.search(raw)
         if m2:
@@ -93,9 +136,11 @@ def _clean_address_line(raw: str, city: str | None, state: str | None, postal: s
 def _build_query(loc: dict) -> dict[str, str]:
     """Build Nominatim structured query params from a location dict."""
     raw = loc.get("address_line_1") or ""
-    city   = loc.get("city")
-    state  = loc.get("state")
-    postal = loc.get("postal_code")
+    embedded = _split_embedded_address(raw)
+    city   = loc.get("city") or embedded.get("city")
+    state  = loc.get("state") or embedded.get("state")
+    # Prefer a postal code embedded in the verified address over a lead ZIP.
+    postal = embedded.get("postal") or loc.get("postal_code")
     street = _clean_address_line(raw, city, state, postal)
 
     params: dict[str, str] = {
@@ -256,11 +301,16 @@ def geocode_location(loc: dict, force: bool = False) -> bool:
     loc["geocoding_source"] = "nominatim"
     loc["geocoded_at"]      = str(date.today())
 
-    # Also clean address_line_1 if city/state/zip were embedded
-    raw    = loc.get("address_line_1", "")
-    street = _clean_address_line(raw, loc.get("city"), loc.get("state"), loc.get("postal_code"))
+    # Also normalize address parts if address_line_1 embedded city/state/ZIP.
+    raw = loc.get("address_line_1", "")
+    embedded = _split_embedded_address(raw)
+    street = _clean_address_line(raw, loc.get("city") or embedded.get("city"), loc.get("state") or embedded.get("state"), embedded.get("postal") or loc.get("postal_code"))
     if street != raw:
         loc["address_line_1"] = street
+    if embedded:
+        loc.setdefault("city", embedded["city"])
+        loc.setdefault("state", embedded["state"])
+        loc["postal_code"] = embedded["postal"]
 
     # Backfill city/state/postal from Nominatim if missing
     addr = hit.get("address", {})

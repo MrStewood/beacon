@@ -19,12 +19,12 @@ Usage
 from __future__ import annotations
 
 import asyncio
+import copy
 import json
 import logging
 import re
 import subprocess
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -353,7 +353,7 @@ async def review_candidate(candidate_path: Path) -> dict:
                 "Are the listed hours (if any) public walk-in hours or internal warehouse/office hours?",
             ],
         }
-        _write_requeue(candidate, candidate_path, result)
+        _do_requeue(candidate, candidate_path, result)
         return result
 
     candidate_id = candidate.get("candidate_id", candidate_path.stem)
@@ -424,7 +424,18 @@ async def review_candidate(candidate_path: Path) -> dict:
 
     # Act on the decision
     if decision == "approve":
-        _do_approve(candidate, candidate_path, county, result)
+        blockers = _do_approve(candidate, candidate_path, county, result)
+        if blockers:
+            result["decision"] = "needs_more_research"
+            result["confidence"] = "low"
+            result["reasoning"] = "Approval blocked by publication readiness checks: " + "; ".join(blockers)
+            result["guidance"] = (
+                "Resolve every publication blocker before re-review. Public physical locations need a geocodable street "
+                "address split into address_line_1/city/state/postal_code, and local services need explicit service_areas."
+            )
+            result["questions_to_answer"] = blockers
+            review_path.write_text(json.dumps(result, indent=2, ensure_ascii=False))
+            _do_requeue(candidate, candidate_path, result)
     elif decision == "reject":
         _do_reject(candidate, candidate_path, result)
     elif decision == "needs_more_research":
@@ -439,9 +450,9 @@ async def review_candidate(candidate_path: Path) -> dict:
 # Decision actions
 # ---------------------------------------------------------------------------
 
-def _do_approve(candidate: dict, candidate_path: Path, county: str, review: dict) -> None:
-    """Write approved resource YAML to source/approved/<county>/<id>.yaml."""
-    resource = dict(candidate.get("resource", {}))
+def _do_approve(candidate: dict, candidate_path: Path, county: str, review: dict) -> list[str]:
+    """Write approved resource YAML to source/approved/<county>/<id>.yaml. Returns blockers."""
+    resource = copy.deepcopy(candidate.get("resource", {}))
 
     # Apply any corrections the reviewer specified
     corrections = review.get("corrections") or {}
@@ -469,6 +480,11 @@ def _do_approve(candidate: dict, candidate_path: Path, county: str, review: dict
         if u
     ] or [{"source_type": "other", "url": resource.get("url", "")}]
 
+    blockers = _prepare_publication_resource(resource)
+    if blockers:
+        log.warning("approval blocked for %s: %s", candidate_path.name, "; ".join(blockers))
+        return blockers
+
     out_dir = APPROVED_DIR / county
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{candidate.get('candidate_id', 'unknown')}.yaml"
@@ -487,7 +503,41 @@ def _do_approve(candidate: dict, candidate_path: Path, county: str, review: dict
     candidate_path.unlink(missing_ok=True)
     requeue = candidate_path.with_suffix(".requeue.json")
     requeue.unlink(missing_ok=True)
+    return []
 
+
+def _prepare_publication_resource(resource: dict) -> list[str]:
+    """Mutate resource with geocoding/service-area enrichment; return publish blockers."""
+    from scripts import geocode
+
+    blockers: list[str] = []
+    fips_map = geocode._load_fips((resource.get("states_served") or ["KY"])[0] or "KY")
+
+    for loc in resource.get("locations", []) or []:
+        loc_type = loc.get("location_type")
+        if loc_type in {"virtual", "confidential", "mobile"} or loc.get("publicly_displayed") is False:
+            continue
+        if loc_type == "physical" and not loc.get("address_line_1"):
+            blockers.append(f"location {loc.get('id', '?')} has no street address to geocode")
+            continue
+        if loc.get("address_line_1"):
+            geocode.geocode_location(loc, force=True)
+            if loc.get("geocoding_status") == "failed" or loc.get("latitude") is None or loc.get("longitude") is None:
+                blockers.append(f"location {loc.get('id', '?')} is not geocodable from {loc.get('address_line_1')!r}")
+
+    if not resource.get("service_areas"):
+        areas = geocode._derive_service_areas(resource, fips_map)
+        if areas:
+            resource["service_areas"] = areas
+
+    if _requires_service_area(resource) and not resource.get("service_areas"):
+        blockers.append(f"coverage_scope={resource.get('coverage_scope')!r} requires explicit service_areas")
+
+    return blockers
+
+
+def _requires_service_area(resource: dict) -> bool:
+    return resource.get("coverage_scope") not in {"national", "multi-state", "state", "online"}
 
 def _git_commit_and_push(approved_path: Path, name: str, county: str) -> None:
     """Stage the approved YAML, commit, and push to origin main."""

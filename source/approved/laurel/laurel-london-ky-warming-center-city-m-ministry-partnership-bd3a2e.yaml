@@ -12,10 +12,17 @@ locations:
 - id: laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e-loc-1
   location_type: physical
   publicly_displayed: true
-  address_line_1: London Community Center, 529 S. Main Street, London, KY 40741
+  address_line_1: 110 Burley Ave
   state: KY
-  postal_code: '40744'
+  postal_code: '40741'
   county_name: Laurel
+  latitude: 37.1392642
+  longitude: -84.0783415
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-28'
+  city: London
+  county_fips: '21125'
 verification_status: verified
 last_verified: '2026-09-28'
 verified_by: review-agent
@@ -42,6 +49,7 @@ service_areas:
   country: US
   values:
   - name: Laurel
+    fips: '21125'
 phone: null
 workflow:
   discovered_by: lead-generation-agent
