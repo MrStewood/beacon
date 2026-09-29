@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "source": "Canonical YAML records",
-    "last_updated": "2026-09-28",
-    "total_resources": 9,
+    "last_updated": "2026-09-29",
+    "total_resources": 10,
     "regions": {
       "KY": [
         "Laurel"
@@ -444,6 +444,92 @@
       "state": "KY",
       "zip": "40741",
       "map_url": "https://www.google.com/maps/search/?api=1&query=272+London+Mountain+View+Drive+London+KY+40741"
+    },
+    {
+      "id": "laurel-london-family-support-center-snap-dcbs-37a057",
+      "name": "London Family Support Center (SNAP/DCBS)",
+      "alternate_names": [],
+      "description": "Local DCBS Family Support office where residents can apply for SNAP (food stamps), get EBT cards issued, and complete eligibility interviews; part of the KY Department for Community Based Services Division of Family Support.",
+      "status": "active",
+      "phones": [
+        "(855) 306-8959"
+      ],
+      "email": null,
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": "Must meet income guidelines",
+      "cost": "free",
+      "hours": "Tue-Fri 8:00 AM \u2013 4:30 PM (per Laurel County Health Department; call (855) 306-8959 to confirm)",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": "Picture ID, Social Security card, Proof of household income",
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": "Walk-in or call",
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "Laurel"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-london-family-support-center-snap-dcbs-37a057-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "31 South Laurel Road",
+          "state": "KY",
+          "postal_code": "40744",
+          "county_name": "Laurel",
+          "city": "London",
+          "latitude": 37.105402,
+          "longitude": -84.071487,
+          "geocoding_status": "approximate",
+          "geocoding_source": "nominatim",
+          "geocoded_at": "2026-09-29"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-29",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://www.localoffices.org/food-stamp/kentucky/laurel-county",
+        "https://uwbg211.org/search/c73c674f-6c6f-57a8-8f9a-bb4c9a14cb31",
+        "https://kynect.ky.gov/benefits/s/find-dcbs-office?language=en_US"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "31 South Laurel Road",
+      "city": "London",
+      "state": "KY",
+      "zip": "40744",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=31+South+Laurel+Road+London+KY+40744"
     },
     {
       "id": "laurel-restoration-ministries-food-program-465ee9",

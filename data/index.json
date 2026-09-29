@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "source": "Canonical YAML records",
-    "last_updated": "2026-09-28",
-    "total_resources": 9,
+    "last_updated": "2026-09-29",
+    "total_resources": 10,
     "regions": {
       "KY": [
         "Laurel"
@@ -103,6 +103,22 @@
       "status": "active",
       "confidence": "high",
       "coverage_scope": "multi-county"
+    },
+    {
+      "id": "laurel-london-family-support-center-snap-dcbs-37a057",
+      "name": "London Family Support Center (SNAP/DCBS)",
+      "county": "Laurel",
+      "city": "London",
+      "needs": [
+        "community"
+      ],
+      "phones": [
+        "(855) 306-8959"
+      ],
+      "address": "31 South Laurel Road",
+      "status": "active",
+      "confidence": "high",
+      "coverage_scope": "county"
     },
     {
       "id": "laurel-restoration-ministries-food-program-465ee9",

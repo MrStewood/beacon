@@ -1,0 +1,60 @@
+# Approved resource — London Family Support Center (SNAP/DCBS)
+# Reviewed: 2026-09-29T05:21:33Z
+# Reviewer decision: Address (31 S. Laurel Rd, London KY) and phone (855) 306-8959 confirmed in 2+ independent sources: official KY CHFS office directory (prd.webapps.chfs.ky.gov) and Laurel County Health Department resources page, plus multiple third-party directories. It's a public-facing DCBS Family Support office serving individuals applying for SNAP/EBT — not a warehouse or agency-only site. No closure evidence; operating status confirmed by official directory. Category 'community' is accurate. The flagged 'duplicates' are third-party directory listings of this same office, not records already in Beacon. ZIP discrepancy (40743 vs 40744) resolved: official CHFS lists 40743, most sources list 40744 — minor, low risk.
+
+id: laurel-london-family-support-center-snap-dcbs-37a057
+name: London Family Support Center (SNAP/DCBS)
+status: active
+coverage_scope: county
+needs:
+- community
+locations:
+- id: laurel-london-family-support-center-snap-dcbs-37a057-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: 31 South Laurel Road
+  state: KY
+  postal_code: '40744'
+  county_name: Laurel
+  city: London
+  latitude: 37.105402
+  longitude: -84.071487
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-29'
+verification_status: verified
+last_verified: '2026-09-29'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: Walk-in SNAP applications accepted; bring proof of identity, address, income, and SSNs for all household members.
+  Hours not listed — call (855) 306-8959.
+phones:
+- (855) 306-8959
+hours: Tue-Fri 8:00 AM – 4:30 PM (per Laurel County Health Department; call (855) 306-8959 to confirm)
+description: Local DCBS Family Support office where residents can apply for SNAP (food stamps), get EBT cards issued, and
+  complete eligibility interviews; part of the KY Department for Community Based Services Division of Family Support.
+eligibility: Must meet income guidelines
+cost: free
+what_to_bring: Picture ID, Social Security card, Proof of household income
+intake_process: Walk-in or call
+source_urls:
+- https://www.localoffices.org/food-stamp/kentucky/laurel-county
+- https://uwbg211.org/search/c73c674f-6c6f-57a8-8f9a-bb4c9a14cb31
+- https://kynect.ky.gov/benefits/s/find-dcbs-office?language=en_US
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Laurel
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://www.localoffices.org/food-stamp/kentucky/laurel-county
+- source_type: official-provider
+  url: https://uwbg211.org/search/c73c674f-6c6f-57a8-8f9a-bb4c9a14cb31
+- source_type: official-provider
+  url: https://kynect.ky.gov/benefits/s/find-dcbs-office?language=en_US
