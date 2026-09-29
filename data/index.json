@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 5,
+    "total_resources": 6,
     "regions": {
       "KY": [
         "Laurel"
@@ -87,6 +87,22 @@
       "status": "active",
       "confidence": "high",
       "coverage_scope": "multi-county"
+    },
+    {
+      "id": "laurel-restoration-ministries-food-program-465ee9",
+      "name": "Restoration Ministries Food Program",
+      "county": "Laurel",
+      "city": "Lily",
+      "needs": [
+        "community"
+      ],
+      "phones": [
+        "(606) 261-7926"
+      ],
+      "address": "420 Lily School Rd",
+      "status": "active",
+      "confidence": "high",
+      "coverage_scope": "county"
     },
     {
       "id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e",

@@ -3,7 +3,7 @@
     "version": "3.0",
     "source": "Canonical YAML records",
     "last_updated": "2026-09-28",
-    "total_resources": 5,
+    "total_resources": 6,
     "regions": {
       "KY": [
         "Laurel"
@@ -358,6 +358,92 @@
       "state": "KY",
       "zip": "40743",
       "map_url": "https://www.google.com/maps/search/?api=1&query=London,+Laurel+County,+Kentucky+(specific+street+address+not+published+on+website)+London+KY+40743"
+    },
+    {
+      "id": "laurel-restoration-ministries-food-program-465ee9",
+      "name": "Restoration Ministries Food Program",
+      "alternate_names": [],
+      "description": "Non-denominational church in Lily, KY offering community outreach including a Sack Lunch Ministry that provides free meals to hungry community members, plus Threads of Grace (winter clothing), Nursing Home Ministry, and other programs.",
+      "status": "active",
+      "phones": [
+        "(606) 261-7926"
+      ],
+      "email": "info@restorationministries.us",
+      "url": null,
+      "facebook": null,
+      "needs": [
+        "community"
+      ],
+      "service_types": [],
+      "resource_type": "unknown",
+      "populations": [
+        "anyone"
+      ],
+      "eligibility": null,
+      "cost": "unknown",
+      "hours": "unknown",
+      "languages": [
+        "English"
+      ],
+      "what_to_bring": null,
+      "referral_required": null,
+      "intake_hours": null,
+      "intake_process": null,
+      "capacity": null,
+      "waitlist": null,
+      "accepts_insurance": null,
+      "coverage_scope": "county",
+      "service_areas": [
+        {
+          "type": "county",
+          "state": "KY",
+          "country": "US",
+          "values": [
+            {
+              "name": "Laurel"
+            }
+          ]
+        }
+      ],
+      "states_served": [],
+      "remote_service": false,
+      "location_restrictions": null,
+      "locations": [
+        {
+          "id": "laurel-restoration-ministries-food-program-465ee9-loc-1",
+          "location_type": "physical",
+          "publicly_displayed": true,
+          "address_line_1": "420 Lily School Rd",
+          "state": "KY",
+          "postal_code": "40740",
+          "county_name": "Laurel",
+          "latitude": 37.0200059,
+          "longitude": -84.0718168,
+          "geocoding_status": "approximate",
+          "geocoding_source": "nominatim",
+          "geocoded_at": "2026-09-28",
+          "city": "Lily"
+        }
+      ],
+      "verification_status": "verified",
+      "last_verified": "2026-09-29",
+      "verified_by": "review-agent",
+      "confidence": "high",
+      "source_urls": [
+        "https://restorationministries.us/",
+        "https://restorationministries.us/contact",
+        "https://www.kentuckyneighborinneed.org/resources"
+      ],
+      "first_seen": null,
+      "tags": [],
+      "notes": null,
+      "related": [],
+      "county": "Laurel",
+      "address": "420 Lily School Rd",
+      "city": "Lily",
+      "state": "KY",
+      "zip": "40740",
+      "map_url": "https://www.google.com/maps/search/?api=1&query=420+Lily+School+Rd+Lily+KY+40740"
     },
     {
       "id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e",

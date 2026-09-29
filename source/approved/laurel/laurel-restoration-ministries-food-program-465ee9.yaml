@@ -1,0 +1,59 @@
+# Approved resource — Restoration Ministries Food Program
+# Reviewed: 2026-09-29T04:42:51Z
+# Reviewer decision: Address (420 Lily School Road, Lily, KY 40740) and phone (606-261-7926) confirmed across multiple independent sources: org website (restorationministries.us/about-us and /contact), Facebook page, Chamber of Commerce, MapQuest, and Yellow Pages. Operating status confirmed via active website, recent news coverage (Sentinel-Echo article on their free meal distribution), and live Facebook page. Public access is confirmed: the Sack Lunch Ministry explicitly feeds "the hungry in our community," and a news article documents 300+ meals handed directly to community members — this is a public-facing service, not agency-only. The Harvey IL and Albuquerque NM Restoration Ministries are distinct organizations (different domains/states), so no duplicate. Category "community" fits a church outreach feeding program. Corrections needed: description is 2 sentences but should be tightened to this location's actual services, and office hours (Mon-Fri 8am-4pm) are not confirmed food-program distribution hours, so they should be moved to access_notes with a caveat.
+
+id: laurel-restoration-ministries-food-program-465ee9
+name: Restoration Ministries Food Program
+status: active
+coverage_scope: county
+needs:
+- community
+locations:
+- id: laurel-restoration-ministries-food-program-465ee9-loc-1
+  location_type: physical
+  publicly_displayed: true
+  address_line_1: 420 Lily School Rd
+  state: KY
+  postal_code: '40740'
+  county_name: Laurel
+  latitude: 37.0200059
+  longitude: -84.0718168
+  geocoding_status: approximate
+  geocoding_source: nominatim
+  geocoded_at: '2026-09-28'
+  city: Lily
+verification_status: verified
+last_verified: '2026-09-29'
+verified_by: review-agent
+confidence: medium
+public_access: 'yes'
+access_notes: Office hours Mon-Fri 8am-4pm; food program distribution hours not published — call 606-261-7926 for Sack Lunch
+  times. Worship services Sat 6pm and Sun 11am.
+phones:
+- (606) 261-7926
+hours: unknown
+description: Non-denominational church in Lily, KY offering community outreach including a Sack Lunch Ministry that provides
+  free meals to hungry community members, plus Threads of Grace (winter clothing), Nursing Home Ministry, and other programs.
+email: info@restorationministries.us
+source_urls:
+- https://restorationministries.us/
+- https://restorationministries.us/contact
+- https://www.kentuckyneighborinneed.org/resources
+- https://restorationministries.us/faithinaction
+- https://feedam.org/food-pantry/ky/london
+service_areas:
+- type: county
+  state: KY
+  country: US
+  values:
+  - name: Laurel
+workflow:
+  discovered_by: lead-generation-agent
+  verified_by: review-agent
+sources:
+- source_type: official-provider
+  url: https://restorationministries.us/
+- source_type: official-provider
+  url: https://restorationministries.us/contact
+- source_type: official-provider
+  url: https://www.kentuckyneighborinneed.org/resources
