@@ -504,7 +504,8 @@ def _git_commit_and_push(approved_path: Path, name: str, county: str) -> None:
     rel = str(approved_path.relative_to(BEACON_ROOT))
     _run(["git", "add", rel,
           "data/resources.json", "data/resources.csv",
-          "data/index.json", "data/catalog.json"])
+          "data/index.json", "data/catalog.json",
+          "data/v3/resources.json"])
 
     msg = f"feat(resource): add {name} [{county}] [auto-approved]"
     rc, out = _run(["git", "commit", "-m", msg,
