@@ -1,12 +1,18 @@
 # n8n resource operations
 
 - `config.json`: explicit discovery ZIP scope, service priorities, pause switch, claim expiry, and reverification intervals. Validate against `schema/operations.schema.json`. Claim acquisition and reverification scheduling are not implemented yet.
-- `leads/<lead_id>.json`: stable identity and authoritative queue status, validated against `schema/lead.schema.json`. IDs survive name, phone, domain, and address changes. Migration IDs were generated once from old queue keys; new intake should generate a random 20-hex suffix and preserve it thereafter.
-- `source/candidates/<county>/<candidate_id>.yaml`: authoritative research/review progression once a lead has `status: candidate` and `candidate_id`. Link the candidate back through `lead_id` (supported by the candidate schema). Published resource IDs are preserved.
-- `leads/investigations/`, `leads/reviews/`, `leads/rejected/`, and lead batches: historical observations and evidence, not queue state. Name-based migration links require confirmation during intake. Imported `published` means a matching approved record exists; it is not a new verification claim.
+- Lead records use stable `lead-<20 hex>.json` filenames and `schema/lead.schema.json`. IDs survive name, phone, domain, and address changes.
+- **Buckets (directory = lifecycle):**
+  - `inbox/` — active work (`queued`, `researching`, `candidate`). Only `queued` is intake-eligible.
+  - `resolved/` — closed as already published / duplicate of `source/approved/` (`published` + `resource_id`).
+  - `rejected/` — will-not-pursue (`rejected` + audit reason).
+  - `held/` — rare extreme/ambiguous human holds (`needs-review`, `awaiting-human`).
+- Move the file when the outcome changes; do not leave copies in two buckets. Keep `status` inside the JSON aligned with the bucket.
+- `source/candidates/<county>/<candidate_id>.yaml`: research/review progression once a lead has `status: candidate` and `candidate_id`.
+- Legacy `leads/investigations/`, `leads/reviews/`, `leads/rejected/`, and batches: historical evidence only, not queue state.
 
-Queue statuses: queued, researching, needs-review, awaiting-human, candidate, published, rejected. Only queued records are intake tasks. A candidate owns subsequent workflow progression. A published lead is terminal queue history; reverify through a new linked update candidate. Never publish observations directly.
+A published lead in `resolved/` is terminal queue history; reverify through a new linked update candidate. Never publish observations directly.
 
-Writes use GitHub APIs with a commit-pinned read and current blob SHA conflict checks. Claims identify execution and actor with an expiry; persist acquisition before work and completion after work. Acquisition is not yet implemented. Record audit events and approval artifacts. Shared domains/phones indicate possible relationships, not duplicates.
+Writes use GitHub APIs with a commit-pinned read and current blob SHA conflict checks. Claims identify execution and actor with an expiry; persist acquisition before work and completion after work. Acquisition is not yet implemented. Record audit events. Shared domains/phones indicate possible relationships, not duplicates. Routine `same_as_approved` intake may auto-move inbox → resolved without human review; ambiguous matches go to `held/`.
 
 Files excluded from the website are still visible in this public repository. Store confidential operational material separately.

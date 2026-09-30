@@ -1,3 +1,7 @@
+# Operations bucket layout — 2026-09-30
+
+Split lead queue files into `operations/inbox/`, `operations/resolved/`, `operations/rejected/`, and `operations/held/`. Removed flat `operations/leads/`. n8n reads inbox for work and reconciled buckets for dedup; routine same-as-approved intake moves inbox → resolved on main.
+
 # Direct-to-main workflow — 2026-09-30
 
 Repository process no longer requires pull requests. Maintainers and authorized automation commit and push directly to `main`. Human authorization is still required before promoting records into `source/approved/`. CI continues to validate on push.

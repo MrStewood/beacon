@@ -16,6 +16,6 @@ Retain `scripts/workflow_state.py`, `trust_scoring.py`, and `validate_candidate.
 
 ## Durable state
 
-Read `operations/README.md`. One file in `operations/leads/` owns each lead's queue status. Candidate progression belongs to the linked candidate's `workflow_state`; evidence artifacts do not own active status. All reads in one n8n run stay pinned to its resolved commit. Writes must compare the current blob SHA, preserve audit history, and stop on conflicts. Record explicit human authorization before publication into `source/approved/`.
+Read `operations/README.md`. Lead queue files live under `operations/inbox/`, `operations/resolved/`, `operations/rejected/`, and `operations/held/`. Candidate progression belongs to the linked candidate's `workflow_state`; evidence artifacts do not own active status. All reads in one n8n run stay pinned to its resolved commit. Writes must compare the current blob SHA, preserve audit history, and stop on conflicts. Record explicit human authorization before publication into `source/approved/`.
 
 The repository currently commits generated public data and checks it against YAML. Until the separate CI migration removes this duplication, regenerate these outputs with the official build; never edit them manually.
