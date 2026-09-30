@@ -1,0 +1,68 @@
+{
+  "lead_id": "lead-bb7e286fa9e33de20b09",
+  "name": "Cumberland Valley Area Development District Legal Services",
+  "status": "queued",
+  "category": "legal",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Cumberland Valley Area Development District Legal Services",
+    "normalized_names": [
+      "cumberland valley area development district legal services"
+    ],
+    "phones": [
+      "606546"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "700 pitzer st ste 1"
+    ],
+    "zip": "40744",
+    "located_zip": "40906",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://cvadd.org/aging-independent-living/legal-services/",
+    "category": "legal",
+    "description": null,
+    "url": null,
+    "address": "700 Pitzer Street, Suite 1",
+    "city": "Barbourville",
+    "hours": null,
+    "eligibility": "Low-income residents of Bell, Clay, Harlan, Knox, Laurel, Whitley counties",
+    "cost": "free",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://cvadd.org/aging-independent-living/legal-services/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:34:11Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

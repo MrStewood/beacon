@@ -1,0 +1,70 @@
+{
+  "lead_id": "lead-74670c6084e08667defe",
+  "name": "Lake Cumberland Rheumatology",
+  "status": "queued",
+  "category": "health",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Lake Cumberland Rheumatology",
+    "normalized_names": [
+      "lake cumberland rheumatology"
+    ],
+    "phones": [
+      "6064255768"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "1675 s main st"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://feedam.org/health-centers/ky/london",
+    "category": "health",
+    "description": "Lake Cumberland Rheumatology - HRSA-funded health center in London KY offering sliding-scale specialty care.",
+    "url": null,
+    "address": "1675 S Main St",
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "sliding-scale",
+    "populations": [],
+    "service_types": [
+      "appointment"
+    ],
+    "source_urls": [
+      "https://feedam.org/health-centers/ky/london"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:15:04Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

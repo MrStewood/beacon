@@ -1,0 +1,72 @@
+{
+  "lead_id": "lead-854f31cf4eb4b9a95181",
+  "name": "Grace Health Levi Center Clinic (FQHC)",
+  "status": "queued",
+  "category": "health",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Grace Health Levi Center Clinic (FQHC)",
+    "normalized_names": [
+      "grace health levi center clinic fqhc"
+    ],
+    "phones": [
+      "6065268604"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "934 s laurel rd ste 1"
+    ],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://feedam.org/health-centers/ky/london",
+    "category": "health",
+    "description": "Grace Health Levi Center Clinic - HRSA-funded FQHC offering sliding-scale primary care, dental, and behavioral health. All patients welcome; accepts Medicaid/Medicare/uninsured.",
+    "url": null,
+    "address": "934 S Laurel Rd, Ste 1",
+    "city": "London",
+    "hours": null,
+    "eligibility": "All patients welcome; sliding scale based on income",
+    "cost": "sliding-scale",
+    "populations": [],
+    "service_types": [
+      "walk-in",
+      "appointment"
+    ],
+    "source_urls": [
+      "https://feedam.org/health-centers/ky/london",
+      "https://findcare.care/providers/grace-health-levi-center-clinic/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:15:04Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

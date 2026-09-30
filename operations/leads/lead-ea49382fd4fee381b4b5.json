@@ -1,0 +1,74 @@
+{
+  "lead_id": "lead-ea49382fd4fee381b4b5",
+  "name": "Hope For London, Kentucky",
+  "status": "queued",
+  "category": "community",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Hope For London, Kentucky",
+    "normalized_names": [
+      "hope for london kentucky"
+    ],
+    "phones": [],
+    "domains": [
+      "hopeforlondonky.org"
+    ],
+    "urls": [
+      "hopeforlondonky.org"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://hopeforlondonky.org/",
+    "category": "community",
+    "description": "Hope For London KY - disaster rapid relief, coordinated rebuilding, and long-term recovery support for London and Laurel County community.",
+    "url": "https://hopeforlondonky.org/",
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "free",
+    "populations": [
+      "families",
+      "anyone"
+    ],
+    "service_types": [
+      "faith-based"
+    ],
+    "source_urls": [
+      "https://hopeforlondonky.org/",
+      "https://hopeforlondonky.org/about-us/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:11:43Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

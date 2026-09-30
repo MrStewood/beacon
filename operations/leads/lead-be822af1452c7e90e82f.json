@@ -1,0 +1,71 @@
+{
+  "lead_id": "lead-be822af1452c7e90e82f",
+  "name": "Time to Shine Childcare Center",
+  "status": "queued",
+  "category": "family",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Time to Shine Childcare Center",
+    "normalized_names": [
+      "time to shine childcare center"
+    ],
+    "phones": [
+      "6068640783"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "1366 s laurel rd"
+    ],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-daycare",
+    "category": "family",
+    "description": "Childcare center in London KY 40744.",
+    "url": null,
+    "address": "1366 S Laurel Road",
+    "city": "London",
+    "hours": "Mon-Fri 7:00am-5:30pm",
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [
+      "families",
+      "youth"
+    ],
+    "service_types": [],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-daycare"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:12:34Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

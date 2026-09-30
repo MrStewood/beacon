@@ -1,0 +1,66 @@
+{
+  "lead_id": "lead-813fa7bb8dbee4121533",
+  "name": "Operation UNITE (London)",
+  "status": "queued",
+  "category": "addiction",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Operation UNITE (London)",
+    "normalized_names": [
+      "operation unite london"
+    ],
+    "phones": [
+      "6062244556"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://www.kentuckyneighborinneed.org/resources",
+    "category": "addiction",
+    "description": null,
+    "url": null,
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://www.kentuckyneighborinneed.org/resources"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:38:22Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

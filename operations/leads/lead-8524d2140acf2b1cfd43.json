@@ -1,0 +1,73 @@
+{
+  "lead_id": "lead-8524d2140acf2b1cfd43",
+  "name": "RTEC Public Transportation",
+  "status": "queued",
+  "category": "transportation",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "RTEC Public Transportation",
+    "normalized_names": [
+      "rtec public transportation"
+    ],
+    "phones": [
+      "8003217832"
+    ],
+    "domains": [
+      "ridertec.org"
+    ],
+    "urls": [
+      "ridertec.org"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-transportation",
+    "category": "transportation",
+    "description": "RTEC public transportation providing affordable rides in Southeastern Kentucky, including Health Scheduled Transportation (HSTD) for medical appointments and 24/7 urgent care transportation. 24-hour notice for cash-paying trips; 72-hour notice for HSTD (urgent care excepted).",
+    "url": "https://www.ridertec.org/",
+    "address": null,
+    "city": "London",
+    "hours": "Scheduling: Mon-Fri 8:00am-4:30pm, Sat 8:00am-1:00pm; Service: Mon-Fri 6:00am-8:00pm, Sat 8:00am-1:00pm",
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "appointment"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-transportation",
+      "https://www.ridertec.org/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:09:26Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

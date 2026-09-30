@@ -1,0 +1,66 @@
+{
+  "lead_id": "lead-7943301aa74a1e1b8ba0",
+  "name": "Social Security Administration - Corbin Field Office (serves London KY)",
+  "status": "queued",
+  "category": "documents",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Social Security Administration - Corbin Field Office (serves London KY)",
+    "normalized_names": [
+      "social security administration corbin field office serves london ky"
+    ],
+    "phones": [
+      "8774050470"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://moneyhop.socialsecurityhop.com/offices/social-security-office-london-ky-40741-kentucky",
+    "category": "documents",
+    "description": null,
+    "url": null,
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": "Anyone needing Social Security benefits or card services",
+    "cost": "free",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://moneyhop.socialsecurityhop.com/offices/social-security-office-london-ky-40741-kentucky"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:39:15Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "lead_id": "lead-5fc65eb8197215b999cc",
+  "name": "Laurel County Judicial Center",
+  "status": "queued",
+  "category": "legal",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Laurel County Judicial Center",
+    "normalized_names": [
+      "laurel county judicial center"
+    ],
+    "phones": [
+      "6063302079"
+    ],
+    "domains": [
+      "kyjustice.org"
+    ],
+    "urls": [
+      "kyjustice.org/county/laurel"
+    ],
+    "addresses": [
+      "305 s main st"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.kyjustice.org/county/laurel",
+    "category": "legal",
+    "description": "Laurel County Judicial Center - courthouse with court services, self-help resources, and referrals to AppalReD Legal Aid (866-277-5733).",
+    "url": "https://www.kyjustice.org/county/laurel",
+    "address": "305 S. Main Street",
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "walk-in",
+      "government"
+    ],
+    "source_urls": [
+      "https://www.kyjustice.org/county/laurel"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:14:28Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

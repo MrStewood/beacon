@@ -1,0 +1,68 @@
+{
+  "lead_id": "lead-c8292eb4de462f03a466",
+  "name": "Rural Mental Health Solutions",
+  "status": "queued",
+  "category": "mental-health",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Rural Mental Health Solutions",
+    "normalized_names": [
+      "rural mental health solutions"
+    ],
+    "phones": [
+      "6067705170"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "201 west dixie st"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://www.lindsey.edu/academics/Community-Campus-Counseling/London-Counseling-Services.cfm",
+    "category": "mental-health",
+    "description": null,
+    "url": null,
+    "address": "201 West Dixie Street",
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://www.lindsey.edu/academics/Community-Campus-Counseling/London-Counseling-Services.cfm"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:36:11Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

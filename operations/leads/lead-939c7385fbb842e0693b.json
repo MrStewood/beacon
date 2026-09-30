@@ -1,0 +1,76 @@
+{
+  "lead_id": "lead-939c7385fbb842e0693b",
+  "name": "Kentucky Career Center - Cumberlands",
+  "status": "queued",
+  "category": "jobs",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Kentucky Career Center - Cumberlands",
+    "normalized_names": [
+      "kentucky career center cumberlands"
+    ],
+    "phones": [
+      "6063302215"
+    ],
+    "domains": [
+      "kcc.ky.gov"
+    ],
+    "urls": [
+      "kcc.ky.gov/Pages/index.aspx"
+    ],
+    "addresses": [
+      "100 university dr"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-income",
+    "category": "jobs",
+    "description": "Kentucky Career Center - Cumberlands: one-stop job search, career resources, and WIOA workforce program providing financial assistance for tuition, textbooks, supplies, and daily stipends for child care/travel for eligible students. Job placement assistance included.",
+    "url": "https://kcc.ky.gov/Pages/index.aspx",
+    "address": "100 University Drive",
+    "city": "London",
+    "hours": "Mon-Fri 8:00am-4:00pm",
+    "eligibility": "Economically disadvantaged, special needs populations, dislocated workers; eligibility by economic/employment status",
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "walk-in",
+      "appointment"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-income",
+      "https://kcc.ky.gov/Pages/index.aspx"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:08:50Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

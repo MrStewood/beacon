@@ -1,0 +1,72 @@
+{
+  "lead_id": "lead-2888d4676d2ef8170673",
+  "name": "New Hope Counseling and Recovery",
+  "status": "queued",
+  "category": "mental-health",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "New Hope Counseling and Recovery",
+    "normalized_names": [
+      "new hope counseling and recovery"
+    ],
+    "phones": [
+      "6065947479"
+    ],
+    "domains": [
+      "nhcr4u.com"
+    ],
+    "urls": [
+      "nhcr4u.com"
+    ],
+    "addresses": [
+      "60 bennett circle"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://www.lindsey.edu/academics/Community-Campus-Counseling/London-Counseling-Services.cfm",
+    "category": "mental-health",
+    "description": null,
+    "url": "http://www.nhcr4u.com",
+    "address": "60 Bennett Circle",
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://www.lindsey.edu/academics/Community-Campus-Counseling/London-Counseling-Services.cfm"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:36:11Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

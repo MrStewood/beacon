@@ -1,0 +1,76 @@
+{
+  "lead_id": "lead-170b3cba3da762e86b71",
+  "name": "London Women's Care - Behavioral Health",
+  "status": "queued",
+  "category": "mental-health",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "London Women's Care - Behavioral Health",
+    "normalized_names": [
+      "london women s care behavioral health"
+    ],
+    "phones": [
+      "6068783240"
+    ],
+    "domains": [
+      "londonwomenscare.com"
+    ],
+    "urls": [
+      "londonwomenscare.com"
+    ],
+    "addresses": [
+      "803 meyers baker rd ste 200"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-behavioral",
+    "category": "mental-health",
+    "description": "Behavioral health services including diagnosis/treatment for depression, anxiety, bipolar, schizophrenia, OCD, eating disorders, PTSD, SUD & opioid addiction, ADHD; medication management all ages and counseling.",
+    "url": "https://londonwomenscare.com/",
+    "address": "803 Meyers Baker Road, Suite 200",
+    "city": "London",
+    "hours": "Mon-Fri 8am-5pm",
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "appointment",
+      "outpatient"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-behavioral",
+      "https://londonwomenscare.com/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:07:56Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

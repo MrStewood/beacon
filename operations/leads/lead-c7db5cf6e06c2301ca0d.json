@@ -1,0 +1,68 @@
+{
+  "lead_id": "lead-c7db5cf6e06c2301ca0d",
+  "name": "Kentucky Office of Vital Statistics",
+  "status": "queued",
+  "category": "documents",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Kentucky Office of Vital Statistics",
+    "normalized_names": [
+      "kentucky office of vital statistics"
+    ],
+    "phones": [],
+    "domains": [
+      "chfs.ky.gov"
+    ],
+    "urls": [
+      "chfs.ky.gov/agencies/dph/dehp/vsb/Pages/birth-certificates.aspx"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://chfs.ky.gov/agencies/dph/dehp/vsb/Pages/birth-certificates.aspx",
+    "category": "documents",
+    "description": null,
+    "url": "https://chfs.ky.gov/agencies/dph/dehp/vsb/Pages/birth-certificates.aspx",
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": "Anyone needing a certified copy of a Kentucky birth, death, or marriage certificate",
+    "cost": "free",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://chfs.ky.gov/agencies/dph/dehp/vsb/Pages/birth-certificates.aspx"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:39:24Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

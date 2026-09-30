@@ -37,10 +37,5 @@ data/csv-by-county/
 # them directly without a build step, eliminating the class of 404 bugs
 # caused by CI failing to generate them at deploy time.
 
-# AI operational runtime state — written during research/pipeline runs
+# Temporary discovery runs (durable queue is operations/leads/)
 leads/runs/
-leads/needs_human_review/
-# leads/investigations/ — committed; evidence trail for candidates
-pilot/cases/
-pilot/audit/
-pilot/rejected/

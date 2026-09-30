@@ -1,0 +1,71 @@
+{
+  "lead_id": "lead-8cbce9c10a01983c954e",
+  "name": "Housing Authority of London",
+  "status": "queued",
+  "category": "housing",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Housing Authority of London",
+    "normalized_names": [
+      "housing authority of london"
+    ],
+    "phones": [
+      "6068645474"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "100 scott st ste 100"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-housing",
+    "category": "housing",
+    "description": "Housing Authority of London provides public housing for low-income families, seniors, and people with disabilities.",
+    "url": null,
+    "address": "100 Scott Street, Suite 100",
+    "city": "London",
+    "hours": "Mon-Fri 8:00am-5:00pm",
+    "eligibility": "Low-income families, seniors, people with disabilities",
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "government"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-housing",
+      "https://affordablehousinghub.org/housing/kentucky/laurel-county/london/housing-authority-of-london-1207-authority"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:08:17Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

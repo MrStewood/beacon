@@ -1,79 +1,21 @@
-# Beacon Agent Rules
+# Beacon operating policy
 
-## Mission
+n8n coordinates discovery, intake, independent research, review, and publication preparation. GitHub holds durable records. GitHub Actions validates changes and builds the website. Old Python/Paperclip orchestration is retired.
 
-Maintain an accurate, safe, transparent community-resource directory using traceable evidence and independent review.
+## Change process
 
-## Git Rules
+Use a branch and pull request for repository changes. Never force-push, bypass CI, approve your own publication, or merge without explicit human authorization. Every resource publication and correction requires human approval. Sensitive resources, closures, schema changes, Actions changes, and governance changes require explicit human approval as well. Credential access grants no publication authority.
 
-- Commit code and schema changes directly to `main`; no PR required.
-- Resource data changes (`source/approved/**/*.yaml`) require explicit human
-  direction before committing — never self-publish a candidate.
-- Never force-push.
-- Never bypass tests — run `python scripts/build.py --test` before pushing.
-- Stop and mark the task blocked when required evidence is unavailable.
+## Resource integrity
 
-## Data Rules
+Edit canonical resources only in `source/approved/`; preserve stable resource IDs and URLs. Never invent facts, verification dates, or service areas. Keep unknown facts unknown. Search snippets and AI summaries are discovery clues, never verification evidence. Website checks are not direct provider confirmation. Do not infer closure from one failed website or unanswered call. Never commit secrets, confidential locations, or individual client/help-seeker information.
 
-- Edit only canonical source records in `source/` directory.
-- Never edit generated JSON, CSV, HTML, GeoJSON, sitemap, or print files manually.
-- Regenerate all outputs through the official build command: `python scripts/build.py`
-- Never invent a phone number, address, service, eligibility rule, verification date, or service area.
-- Use null, unknown, or needs-review when facts cannot be established.
-- Do not treat a search snippet or AI summary as authoritative evidence.
-- Do not describe a website check as direct provider confirmation.
-- Do not publish a confidential location.
-- Never include information about individual clients or help seekers.
-- Preserve stable resource IDs and legacy URLs.
-- Do not mark a resource closed based on one broken website or unanswered call.
+## Independence and validation
 
-## Separation of Duties (code-enforced, not advisory)
+Retain `scripts/workflow_state.py`, `trust_scoring.py`, and `validate_candidate.py` as deterministic enforcement. Research A and B must have isolated contexts until both packages are locked. Discovery, verification, decision signing, and publication must obey the distinct-actor rules in the state machine. n8n must invoke or obtain these checks before advancing; workflow prompts alone do not enforce them. Required checks must pass before merging. Run `python3 scripts/build.py --test` before proposing publication.
 
-`scripts/workflow_state.py` enforces every rule below in code. An agent
-identity that already acted in one role is technically blocked
-(`IllegalTransition`) from acting in a role listed in `DISTINCT_FROM` for it —
-this is not a prompt instruction an agent could choose to ignore.
+## Durable state
 
-- Research Agent A and Research Agent B must work independently: neither may
-  read the other's notes/conclusions before both `research_packages` are
-  locked.
-- The discovering agent cannot verify the same candidate.
-- The verifying agent cannot approve, publish, or merge it.
-- The Resource Operations Director who signs the decision (`scripts/sign_candidate.py`)
-  must be distinct from every researcher and verifier on that candidate.
-- The publishing agent may not commit a candidate to `source/approved/` without
-  explicit human instruction; `scripts/validate_candidate.py` independently
-  recomputes every trust score from raw evidence.
-- Sensitive resources require human approval.
-- No claim may move to `verified`/`verified-with-limitation` on the strength
-  of an agent's own restated conclusion; `scripts/validate_candidate.py`
-  independently recomputes every score from the raw evidence and fails the
-  build if the committed decision does not match.
+Read `operations/README.md`. One file in `operations/leads/` owns each lead's queue status. Candidate progression belongs to the linked candidate's `workflow_state`; evidence artifacts do not own active status. All reads in one n8n run stay pinned to its resolved commit. Writes must compare the current blob SHA, preserve audit history, and stop on conflicts. Record explicit human authorization before publication.
 
-## Committing Changes
-
-Push directly to `main`. CI (`build.yml`) runs on every push and deploys the
-site automatically on success. No PR or review step is required.
-
-When committing resource data changes, include in the commit message:
-
-- Resource IDs changed
-- Fields changed
-- Evidence supporting each change
-- Verification method and remaining uncertainty
-
-
-## Sensitive Resource Handling
-
-The following require explicit human approval before publication:
-
-- 911, 988, or 211 resources
-- Crisis hotlines
-- Domestic violence services
-- Children's services
-- Medical or treatment intake
-- Confidential shelter locations
-- Resource closures
-- Schema changes
-- GitHub Actions changes
-- License or governance changes
+The repository currently commits generated public data and checks it against YAML. Until the separate CI migration removes this duplication, regenerate these outputs with the official build; never edit them manually.

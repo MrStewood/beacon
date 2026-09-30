@@ -1,4 +1,4 @@
-"""End-to-end readiness test for Paperclip pilot."""
+"""End-to-end readiness test for n8n resource management."""
 
 import json
 import pytest
@@ -24,7 +24,7 @@ def _resource_count() -> int:
     reason="empty dataset (0 resources) — known intermediate state",
 )
 class TestEndToEndReadiness:
-    """Verify the complete workflow is ready for Paperclip pilot."""
+    """Verify the complete workflow is ready for n8n resource management."""
 
     def test_canonical_yaml_exists(self):
         """At least one canonical YAML resource must exist."""

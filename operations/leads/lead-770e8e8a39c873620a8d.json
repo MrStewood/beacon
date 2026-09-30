@@ -1,0 +1,74 @@
+{
+  "lead_id": "lead-770e8e8a39c873620a8d",
+  "name": "Hagar's Well Ministries",
+  "status": "queued",
+  "category": "addiction",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Hagar's Well Ministries",
+    "normalized_names": [
+      "hagar s well"
+    ],
+    "phones": [],
+    "domains": [
+      "hagarswellministries.org"
+    ],
+    "urls": [
+      "hagarswellministries.org"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://hagarswellministries.org/",
+    "category": "addiction",
+    "description": "Hagar's Well - faith-based transitional living facility at Grace Abounding Full Gospel Missions in London, KY, helping recovering drug addicts improve their living conditions and support recovery.",
+    "url": "https://hagarswellministries.org/",
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": "Recovering drug addicts seeking transitional housing",
+    "cost": "free",
+    "populations": [
+      "substance-use",
+      "recovery"
+    ],
+    "service_types": [
+      "residential",
+      "faith-based"
+    ],
+    "source_urls": [
+      "https://hagarswellministries.org/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:13:22Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

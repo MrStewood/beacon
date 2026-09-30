@@ -30,8 +30,10 @@ If you notice a resource with wrong phone numbers, closed status, or other data 
 ```bash
 git clone git@github.com:MrStewood/beacon.git
 cd beacon
-pip install jsonschema pytest
+pip install jsonschema pytest pyyaml
 ```
+
+n8n is the automation coordinator. See [AGENTS.md](AGENTS.md) for authorization and [operations/README.md](operations/README.md) for durable work state.
 
 ### Making Changes
 

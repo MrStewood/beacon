@@ -1,0 +1,81 @@
+{
+  "lead_id": "lead-8038348d265a4b66299a",
+  "name": "Cumberland River Victims Services (Rape Crisis Center)",
+  "status": "published",
+  "category": "crisis",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": "laurel-cumberland-river-victims-services-rape-crisis-center-670966",
+  "history_paths": [
+    "source/approved/laurel/laurel-cumberland-river-victims-services-rape-crisis-center-670966.yaml"
+  ],
+  "observations": {
+    "name": "Cumberland River Victims Services (Rape Crisis Center)",
+    "normalized_names": [
+      "cumberland river victims services rape crisis center"
+    ],
+    "phones": [
+      "6065285286",
+      "8006564673"
+    ],
+    "domains": [
+      "crvsky.org"
+    ],
+    "urls": [
+      "crvsky.org"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40702",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://crvsky.org/",
+    "category": "crisis",
+    "description": "Regional rape crisis center serving Bell, Clay, Knox, Harlan, Jackson, Laurel, Rockcastle, and Whitley counties. 24/7 crisis line, medical advocacy, individual/couples/family therapy, legal advocacy, and free educational programs. All services free.",
+    "url": "https://crvsky.org/",
+    "address": null,
+    "city": "Corbin",
+    "hours": "24-hour crisis line",
+    "eligibility": "Survivors of sexual assault and their families; all services free",
+    "cost": "free",
+    "populations": [
+      "anyone",
+      "families",
+      "youth"
+    ],
+    "service_types": [
+      "hotline",
+      "appointment",
+      "outpatient"
+    ],
+    "source_urls": [
+      "https://crvsky.org/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:05:06Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

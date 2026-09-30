@@ -1,0 +1,66 @@
+{
+  "lead_id": "lead-6881f20e34311af2d95d",
+  "name": "Fuse (London)",
+  "status": "queued",
+  "category": "community",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Fuse (London)",
+    "normalized_names": [
+      "fuse london"
+    ],
+    "phones": [
+      "8599725886"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://www.kentuckyneighborinneed.org/resources",
+    "category": "community",
+    "description": null,
+    "url": null,
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://www.kentuckyneighborinneed.org/resources"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:38:29Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

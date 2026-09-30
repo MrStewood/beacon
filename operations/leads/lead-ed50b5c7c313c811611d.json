@@ -1,0 +1,77 @@
+{
+  "lead_id": "lead-ed50b5c7c313c811611d",
+  "name": "Spero Health - London",
+  "status": "queued",
+  "category": "addiction",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Spero Health - London",
+    "normalized_names": [
+      "spero health london"
+    ],
+    "phones": [
+      "6066575470"
+    ],
+    "domains": [
+      "sperohealth.com"
+    ],
+    "urls": [
+      "sperohealth.com"
+    ],
+    "addresses": [
+      "189 west hwy 192"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-behavioral",
+    "category": "addiction",
+    "description": "Integrated drug and alcohol addiction treatment combining medical (including medication-assisted treatment), behavioral health counseling, recovery support, IOP, telehealth, and partial hospitalization under one roof.",
+    "url": "https://sperohealth.com/",
+    "address": "189 West Highway 192",
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "outpatient",
+      "appointment",
+      "online"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-behavioral",
+      "https://sperohealth.com/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:08:17Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

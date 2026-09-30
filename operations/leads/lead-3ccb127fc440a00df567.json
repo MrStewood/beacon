@@ -1,0 +1,69 @@
+{
+  "lead_id": "lead-3ccb127fc440a00df567",
+  "name": "Isaiah 58:10 Ministries & Outreach Soup Kitchen",
+  "status": "queued",
+  "category": "food",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Isaiah 58:10 Ministries & Outreach Soup Kitchen",
+    "normalized_names": [
+      "isaiah 58 10 and outreach soup kitchen"
+    ],
+    "phones": [],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "110 burley ave"
+    ],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://www.facebook.com/is5810/",
+    "category": "food",
+    "description": null,
+    "url": null,
+    "address": "110 Burley Ave",
+    "city": "London",
+    "hours": "Thursdays and Fridays",
+    "eligibility": null,
+    "cost": "free",
+    "populations": [],
+    "service_types": [
+      "walk-in",
+      "faith-based"
+    ],
+    "source_urls": [
+      "https://www.facebook.com/is5810/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:37:03Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

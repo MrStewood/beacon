@@ -67,8 +67,8 @@ source/
   approved/         ← canonical published records (YAML) — build reads only here
   candidates/       ← in-progress candidates with claim/evidence metadata
 
-leads/              ← AI research tooling and runtime state (never served publicly)
-pilot/              ← workflow state machine and case management
+operations/         ← n8n scheduling configuration and individual lead records
+leads/              ← historical discovery observations and evidence
 
 scripts/            ← build, validation, geocoding, trust scoring
 tests/              ← test suite
@@ -88,8 +88,10 @@ _site/              ← GITIGNORED complete built site (deployed to GitHub Pages
 ### Data Pipeline
 
 Canonical resource data lives in `source/approved/**/*.yaml`.
-Generated outputs (`data/`, `pages/`, `print/`, `_site/`) are never committed —
-CI builds them fresh on every push to `main`.
+Public data in `data/` is currently committed and checked against approved YAML.
+Use the official build to regenerate it; never edit it manually. Pages and `_site/` are generated.
+
+[n8n operating rules](AGENTS.md) and [queue layout](operations/README.md) govern automation.
 
 ### Adding a Resource
 

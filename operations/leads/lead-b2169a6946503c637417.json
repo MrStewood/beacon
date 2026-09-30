@@ -1,0 +1,75 @@
+{
+  "lead_id": "lead-b2169a6946503c637417",
+  "name": "Veterans Crisis Line",
+  "status": "queued",
+  "category": "veterans",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Veterans Crisis Line",
+    "normalized_names": [
+      "veterans crisis line"
+    ],
+    "phones": [
+      "988"
+    ],
+    "domains": [
+      "veteranscrisisline.net"
+    ],
+    "urls": [
+      "veteranscrisisline.net"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-transportation-1",
+    "category": "veterans",
+    "description": "Veterans Crisis Line - 24/7 confidential crisis support for Veterans and their loved ones. Dial 988 then PRESS 1, text 838255, or chat online. No VA enrollment required.",
+    "url": "https://www.veteranscrisisline.net/",
+    "address": null,
+    "city": "London",
+    "hours": "24/7",
+    "eligibility": null,
+    "cost": "free",
+    "populations": [
+      "veterans"
+    ],
+    "service_types": [
+      "hotline"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-transportation-1",
+      "https://www.veteranscrisisline.net/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:09:26Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

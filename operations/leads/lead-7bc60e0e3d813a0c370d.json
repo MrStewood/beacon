@@ -1,0 +1,73 @@
+{
+  "lead_id": "lead-7bc60e0e3d813a0c370d",
+  "name": "Hart Baptist Church Food Pantry",
+  "status": "queued",
+  "category": "food",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Hart Baptist Church Food Pantry",
+    "normalized_names": [
+      "hart baptist church food pantry"
+    ],
+    "phones": [
+      "6062318450"
+    ],
+    "domains": [
+      "hartbaptistchurch.org"
+    ],
+    "urls": [
+      "hartbaptistchurch.org/FeedTheNeed"
+    ],
+    "addresses": [
+      "1 hart church rd"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-food",
+    "category": "food",
+    "description": "Church food pantry feeding the need in Laurel County.",
+    "url": "http://hartbaptistchurch.org/FeedTheNeed",
+    "address": "1 Hart Church Rd",
+    "city": "London",
+    "hours": "Tuesday: 12:00 PM",
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-food",
+      "http://hartbaptistchurch.org/FeedTheNeed"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T01:58:04Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

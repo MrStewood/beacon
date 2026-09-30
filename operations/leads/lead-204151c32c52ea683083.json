@@ -1,0 +1,76 @@
+{
+  "lead_id": "lead-204151c32c52ea683083",
+  "name": "Heartstrings Mental Health, PLLC",
+  "status": "queued",
+  "category": "mental-health",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Heartstrings Mental Health, PLLC",
+    "normalized_names": [
+      "heartstrings mental health pllc"
+    ],
+    "phones": [
+      "6067705086"
+    ],
+    "domains": [
+      "heartstringsmentalhealth.org"
+    ],
+    "urls": [
+      "heartstringsmentalhealth.org"
+    ],
+    "addresses": [
+      "95 s laurel rd"
+    ],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-behavioral",
+    "category": "mental-health",
+    "description": "Mental health clinic in London KY offering psychiatric evaluation, medication management, psychotherapy, MAT appointments, targeted case management, psychological testing, and primary care.",
+    "url": "https://heartstringsmentalhealth.org/",
+    "address": "95 S Laurel Rd",
+    "city": "London",
+    "hours": "Monday-Friday 9am-5pm; Saturday by appointment only",
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "appointment",
+      "outpatient"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-behavioral",
+      "https://heartstringsmentalhealth.org/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:07:56Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

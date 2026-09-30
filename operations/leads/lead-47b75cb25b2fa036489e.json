@@ -1,0 +1,75 @@
+{
+  "lead_id": "lead-47b75cb25b2fa036489e",
+  "name": "London KY Warming Center (City/M Ministry Partnership)",
+  "status": "published",
+  "category": "shelter",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": "laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e",
+  "history_paths": [
+    "source/approved/laurel/laurel-london-ky-warming-center-city-m-ministry-partnership-bd3a2e.yaml"
+  ],
+  "observations": {
+    "name": "London KY Warming Center (City/M Ministry Partnership)",
+    "normalized_names": [
+      "london ky warming center city m partnership"
+    ],
+    "phones": [],
+    "domains": [
+      "fox56news.com"
+    ],
+    "urls": [
+      "fox56news.com/news/kentucky/london-unveils-new-warming-center-in-partnership-with-ministry-group"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://fox56news.com/news/kentucky/london-unveils-new-warming-center-in-partnership-with-ministry-group/",
+    "category": "shelter",
+    "description": "London KY warming center - city leaders partnered with a nonprofit ministry group to open an emergency warming space for residents during winter storms. Community center opens as emergency warming space.",
+    "url": "https://fox56news.com/news/kentucky/london-unveils-new-warming-center-in-partnership-with-ministry-group/",
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": "Residents during extreme winter weather",
+    "cost": "free",
+    "populations": [
+      "anyone"
+    ],
+    "service_types": [
+      "walk-in"
+    ],
+    "source_urls": [
+      "https://fox56news.com/news/kentucky/london-unveils-new-warming-center-in-partnership-with-ministry-group/",
+      "https://fox56news.com/news/kentucky/london-community-groups-open-warming-spaces-to-help-residents-through-winter-storm/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:15:20Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

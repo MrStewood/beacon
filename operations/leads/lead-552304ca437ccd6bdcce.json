@@ -1,0 +1,76 @@
+{
+  "lead_id": "lead-552304ca437ccd6bdcce",
+  "name": "VOA Employment Services",
+  "status": "queued",
+  "category": "jobs",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "VOA Employment Services",
+    "normalized_names": [
+      "voa employment services"
+    ],
+    "phones": [
+      "6064045446"
+    ],
+    "domains": [
+      "voamid.org"
+    ],
+    "urls": [
+      "voamid.org/services/employment-services"
+    ],
+    "addresses": [
+      "805 s main st ste 203"
+    ],
+    "zip": "40744",
+    "located_zip": "40701",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-income",
+    "category": "jobs",
+    "description": "Volunteers of America Employment Services - job seeking/placement, training, continuing education, career counseling, mentoring, interview/resume prep, financial assistance, follow-up, and wraparound services.",
+    "url": "https://www.voamid.org/services/employment-services/",
+    "address": "805 S Main Street Suite #203",
+    "city": "Corbin",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "appointment",
+      "walk-in"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-income",
+      "https://www.voamid.org/services/employment-services/"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:08:50Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

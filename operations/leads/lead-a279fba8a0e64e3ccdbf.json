@@ -1,0 +1,79 @@
+{
+  "lead_id": "lead-a279fba8a0e64e3ccdbf",
+  "name": "Kentucky Division of Veterans Affairs (KDVA) - London Office",
+  "status": "queued",
+  "category": "veterans",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Kentucky Division of Veterans Affairs (KDVA) - London Office",
+    "normalized_names": [
+      "kentucky division of veterans affairs kdva london office"
+    ],
+    "phones": [
+      "6063441003"
+    ],
+    "domains": [
+      "veterans.ky.gov"
+    ],
+    "urls": [
+      "veterans.ky.gov/Pages/index.aspx"
+    ],
+    "addresses": [
+      "122 s main st"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-transportation-1",
+    "category": "veterans",
+    "description": "Kentucky Division of Veterans Affairs - benefits counseling, long-term care at state veterans centers, interment at state veterans cemeteries, health care, education, employment, and special programs for women veterans and homeless veterans.",
+    "url": "https://veterans.ky.gov/Pages/index.aspx",
+    "address": "122 S. Main Street",
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [
+      "veterans"
+    ],
+    "service_types": [
+      "walk-in",
+      "appointment",
+      "government"
+    ],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-transportation-1",
+      "https://veterans.ky.gov/Pages/index.aspx"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:09:26Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

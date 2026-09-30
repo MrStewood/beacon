@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "lead_id",
+    "name",
+    "status",
+    "category",
+    "county",
+    "state",
+    "zip",
+    "first_seen",
+    "candidate_id",
+    "resource_id",
+    "history_paths",
+    "observations",
+    "claim",
+    "audit"
+  ],
+  "properties": {
+    "lead_id": {
+      "type": "string",
+      "pattern": "^lead-[a-f0-9]{20}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "researching",
+        "needs-review",
+        "awaiting-human",
+        "candidate",
+        "published",
+        "rejected"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "county": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "state": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "zip": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "first_seen": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "candidate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "resource_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "history_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "observations": {
+      "type": "object"
+    },
+    "claim": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "execution_id",
+            "actor",
+            "expires_at"
+          ],
+          "properties": {
+            "execution_id": {
+              "type": "string"
+            },
+            "actor": {
+              "type": "string"
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "audit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event",
+          "at",
+          "note"
+        ],
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "at": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

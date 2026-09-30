@@ -1,0 +1,68 @@
+{
+  "lead_id": "lead-c532b64d2d1d72d542ce",
+  "name": "New Salem Baptist Food Pantry",
+  "status": "queued",
+  "category": "food",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "New Salem Baptist Food Pantry",
+    "normalized_names": [
+      "new salem baptist food pantry"
+    ],
+    "phones": [
+      "6068437822"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "2182 north laurel rd"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.laurelcohealthdept.org/resources-food",
+    "category": "food",
+    "description": "Baptist church food pantry in London, KY.",
+    "url": null,
+    "address": "2182 North Laurel Rd",
+    "city": "London",
+    "hours": "Tuesday: 6:00 \u2013 7:00 PM; Thursday: 11:00 AM-1:00 PM",
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [],
+    "source_urls": [
+      "https://www.laurelcohealthdept.org/resources-food"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T01:58:04Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

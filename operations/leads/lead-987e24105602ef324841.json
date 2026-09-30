@@ -1,0 +1,73 @@
+{
+  "lead_id": "lead-987e24105602ef324841",
+  "name": "Laurel County Clerk's Office",
+  "status": "queued",
+  "category": "documents",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Laurel County Clerk's Office",
+    "normalized_names": [
+      "laurel county clerk s office"
+    ],
+    "phones": [],
+    "domains": [
+      "laurelcountyclerk.ky.gov"
+    ],
+    "urls": [
+      "laurelcountyclerk.ky.gov"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://laurelcountyclerk.ky.gov/",
+    "category": "documents",
+    "description": "Laurel County Clerk's Office issues marriage licenses, records documents, and handles vital records requests. Note: official birth certificates must be obtained from the Kentucky Office of Vital Statistics.",
+    "url": "https://laurelcountyclerk.ky.gov/",
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": null,
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "walk-in",
+      "government"
+    ],
+    "source_urls": [
+      "https://laurelcountyclerk.ky.gov/",
+      "https://www.laurelcohealthdept.org/vital-statistics",
+      "https://www.localoffices.org/clerk/kentucky/laurel-county"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:11:43Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

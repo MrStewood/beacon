@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "system_paused": false,
+  "discovery_scope": [
+    {
+      "zip": "40744",
+      "county": "Laurel",
+      "state": "KY",
+      "discovery_complete": false
+    }
+  ],
+  "service_weights": {
+    "crisis": 10,
+    "shelter": 9,
+    "food": 9,
+    "health": 8,
+    "mental-health": 8,
+    "addiction": 7,
+    "housing": 7,
+    "family": 6,
+    "legal": 6,
+    "utility-assistance": 5,
+    "transportation": 5,
+    "veterans": 4,
+    "jobs": 4,
+    "education": 3,
+    "documents": 3,
+    "clothing": 2,
+    "community": 2
+  },
+  "claim_ttl_minutes": 30,
+  "reverification_days": {
+    "verified": 365,
+    "website-checked": 180,
+    "source-only": 90
+  }
+}

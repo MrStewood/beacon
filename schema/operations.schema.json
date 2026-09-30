@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "version",
+    "system_paused",
+    "discovery_scope",
+    "service_weights",
+    "claim_ttl_minutes",
+    "reverification_days"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "system_paused": {
+      "type": "boolean"
+    },
+    "discovery_scope": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "zip",
+          "county",
+          "state",
+          "discovery_complete"
+        ],
+        "properties": {
+          "zip": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "county": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "discovery_complete": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "service_weights": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "claim_ttl_minutes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "reverification_days": {
+      "type": "object",
+      "required": [
+        "verified",
+        "website-checked",
+        "source-only"
+      ],
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}

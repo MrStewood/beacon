@@ -1,3 +1,7 @@
+# Geographic planning reference
+
+This document is historical planning, not scheduling state. Only operations/config.json authorizes active discovery scope. Counts below describe earlier runs and must not drive n8n decisions.
+
 # Beacon Geographic Expansion Plan
 
 ## Strategy

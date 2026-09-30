@@ -1,0 +1,75 @@
+{
+  "lead_id": "lead-8a028fbcda637ef3b2d0",
+  "name": "Celebrate Recovery / Warriors Anonymous - London KY",
+  "status": "queued",
+  "category": "community",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Celebrate Recovery / Warriors Anonymous - London KY",
+    "normalized_names": [
+      "celebrate recovery warriors anonymous london ky"
+    ],
+    "phones": [],
+    "domains": [
+      "churchrecovery.org"
+    ],
+    "urls": [
+      "churchrecovery.org/locations/faith-recovery-london-ky.html"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://www.wymt.com/2026/04/15/laurel-county-recovery-ministry-launches-local-cinema/",
+    "category": "community",
+    "description": "Celebrate Recovery and Warriors Anonymous - faith-based recovery ministry launched by four London KY churches (Faith Assembly of God, Freedom Christian, and others) meeting at Regency Cinema in London.",
+    "url": "https://churchrecovery.org/locations/faith-recovery-london-ky.html",
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": "Anyone seeking faith-based recovery support",
+    "cost": "free",
+    "populations": [
+      "recovery",
+      "substance-use"
+    ],
+    "service_types": [
+      "peer-led",
+      "faith-based"
+    ],
+    "source_urls": [
+      "https://www.wymt.com/2026/04/15/laurel-county-recovery-ministry-launches-local-cinema/",
+      "https://churchrecovery.org/locations/faith-recovery-london-ky.html"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:13:22Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

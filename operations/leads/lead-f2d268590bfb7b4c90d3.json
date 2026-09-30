@@ -1,0 +1,72 @@
+{
+  "lead_id": "lead-f2d268590bfb7b4c90d3",
+  "name": "Laurel County Housing Authority",
+  "status": "queued",
+  "category": "housing",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:19:14Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Laurel County Housing Authority",
+    "normalized_names": [
+      "laurel county housing authority"
+    ],
+    "phones": [
+      "6068780512"
+    ],
+    "domains": [],
+    "urls": [],
+    "addresses": [
+      "194 county extension rd"
+    ],
+    "zip": "40744",
+    "located_zip": "40741",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:19:14Z",
+    "last_seen": "2026-09-28T04:19:14Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T041914Z"
+    ],
+    "source_url": "https://rentassistance.org/program/laurel_county_london_ky.html",
+    "category": "housing",
+    "description": "Laurel County Housing Authority - Section 8 Housing Choice Voucher and public housing programs for low-income residents.",
+    "url": null,
+    "address": "194 County Extension Road",
+    "city": "London",
+    "hours": null,
+    "eligibility": "Low-income households; income limits apply",
+    "cost": "unknown",
+    "populations": [],
+    "service_types": [
+      "government",
+      "appointment"
+    ],
+    "source_urls": [
+      "https://rentassistance.org/program/laurel_county_london_ky.html",
+      "https://www.shelterlistings.org/county/ky-laurel-county.html"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T015514Z",
+    "found_at": "2026-09-28T02:01:08Z",
+    "source_run_id": "leadgen-40744-20260928T041914Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}

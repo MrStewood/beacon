@@ -1,0 +1,75 @@
+{
+  "lead_id": "lead-d178948f9951a41ff44c",
+  "name": "Cumberland Valley Domestic Violence Services",
+  "status": "queued",
+  "category": "crisis",
+  "county": "Laurel",
+  "state": "KY",
+  "zip": "40744",
+  "first_seen": "2026-09-28T04:40:30Z",
+  "candidate_id": null,
+  "resource_id": null,
+  "history_paths": [],
+  "observations": {
+    "name": "Cumberland Valley Domestic Violence Services",
+    "normalized_names": [
+      "cumberland valley domestic violence services"
+    ],
+    "phones": [
+      "8007555348"
+    ],
+    "domains": [
+      "cvdvs.org"
+    ],
+    "urls": [
+      "cvdvs.org"
+    ],
+    "addresses": [],
+    "zip": "40744",
+    "located_zip": "40744",
+    "county": "Laurel",
+    "state": "KY",
+    "first_seen": "2026-09-28T04:40:30Z",
+    "last_seen": "2026-09-28T04:40:30Z",
+    "times_seen": 1,
+    "source_run_ids": [
+      "leadgen-40744-20260928T044030Z"
+    ],
+    "source_url": "https://cvdvs.org/",
+    "category": "crisis",
+    "description": null,
+    "url": "https://cvdvs.org/",
+    "address": null,
+    "city": "London",
+    "hours": null,
+    "eligibility": "Victims of domestic violence in Laurel, Knox, Jackson, Whitley, Rockcastle, Bell, Clay, Harlan counties",
+    "cost": "free",
+    "populations": [],
+    "service_types": [
+      "hotline",
+      "residential",
+      "walk-in"
+    ],
+    "source_urls": [
+      "https://cvdvs.org/",
+      "https://www.domesticshelters.org/help/ky/london/40741/cumberland-valley-domestic-violence-services"
+    ],
+    "notes": null,
+    "verification_status": "unverified",
+    "confidence": "medium",
+    "found_in_zip": "40744",
+    "session_run_id": "leadgen-40744-20260928T042829Z",
+    "found_at": "2026-09-28T04:31:08Z",
+    "source_run_id": "leadgen-40744-20260928T044030Z",
+    "classification": "new",
+    "matched": null
+  },
+  "claim": null,
+  "audit": [
+    {
+      "event": "imported",
+      "at": "2026-09-30",
+      "note": "Imported discovery observations; history links are name matches requiring intake confirmation."
+    }
+  ]
+}
