@@ -21,8 +21,9 @@ The `status` field must be `active`. Only records with `verification_status` of
 
 ## Rules
 
-- **Never edit manually.** Records arrive here via a PR from `source/candidates/`
-  after human approval and CI pass.
+- **Do not publish here without explicit human authorization.** Records arrive from
+  `source/candidates/` after required checks pass and a human authorizes the
+  promotion commit on `main`.
 - **Never delete manually.** Use a closure candidate (`status: closed`) instead.
 - The build pipeline (`scripts/build.py`) reads only this directory to generate
   `data/resources.json` and all public HTML.

@@ -4,7 +4,7 @@ n8n coordinates discovery, intake, independent research, review, and publication
 
 ## Change process
 
-Use a branch and pull request for repository changes. Never force-push, bypass CI, approve your own publication, or merge without explicit human authorization. Every resource publication and correction requires human approval. Sensitive resources, closures, schema changes, Actions changes, and governance changes require explicit human approval as well. Credential access grants no publication authority.
+Commit and push directly to `main`. Do not use a pull-request workflow for this repository. Never force-push or bypass CI checks on push. Every promotion into `source/approved/` (new or corrected public resources) requires explicit human authorization before the commit. Sensitive resources, closures, schema changes, Actions changes, and governance changes also require explicit human authorization. Credential access grants no publication authority. Routine operations updates (queue moves, intake resolution, rejected/resolved lead files, docs that do not publish resources) may be pushed to `main` by authorized automation once the step is designed and approved.
 
 ## Resource integrity
 
@@ -12,10 +12,10 @@ Edit canonical resources only in `source/approved/`; preserve stable resource ID
 
 ## Independence and validation
 
-Retain `scripts/workflow_state.py`, `trust_scoring.py`, and `validate_candidate.py` as deterministic enforcement. Research A and B must have isolated contexts until both packages are locked. Discovery, verification, decision signing, and publication must obey the distinct-actor rules in the state machine. n8n must invoke or obtain these checks before advancing; workflow prompts alone do not enforce them. Required checks must pass before merging. Run `python3 scripts/build.py --test` before proposing publication.
+Retain `scripts/workflow_state.py`, `trust_scoring.py`, and `validate_candidate.py` as deterministic enforcement. Research A and B must have isolated contexts until both packages are locked. Discovery, verification, decision signing, and publication must obey the distinct-actor rules in the state machine. n8n must invoke or obtain these checks before advancing; workflow prompts alone do not enforce them. Required checks must pass on push to `main`. Run `python3 scripts/build.py --test` before publishing resource changes.
 
 ## Durable state
 
-Read `operations/README.md`. One file in `operations/leads/` owns each lead's queue status. Candidate progression belongs to the linked candidate's `workflow_state`; evidence artifacts do not own active status. All reads in one n8n run stay pinned to its resolved commit. Writes must compare the current blob SHA, preserve audit history, and stop on conflicts. Record explicit human authorization before publication.
+Read `operations/README.md`. One file in `operations/leads/` owns each lead's queue status. Candidate progression belongs to the linked candidate's `workflow_state`; evidence artifacts do not own active status. All reads in one n8n run stay pinned to its resolved commit. Writes must compare the current blob SHA, preserve audit history, and stop on conflicts. Record explicit human authorization before publication into `source/approved/`.
 
 The repository currently commits generated public data and checks it against YAML. Until the separate CI migration removes this duplication, regenerate these outputs with the official build; never edit them manually.

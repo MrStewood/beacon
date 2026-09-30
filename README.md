@@ -7,10 +7,10 @@ Community Resource Directory — helping people find food, shelter, healthcare, 
 ## How This Works
 
 ```
-source/candidates/    ← AI researches leads, writes candidate YAMLs, opens PRs
-        ↓  (CI validates trust scores; human approves PR)
+source/candidates/    ← research writes candidate YAMLs on main
+        ↓  (CI validates trust scores on push; human authorizes publication)
 source/approved/      ← canonical published records
-        ↓  (CI builds on merge to main)
+        ↓  (CI builds on push to main)
 _site/                ← public website deployed to GitHub Pages
 ```
 
@@ -95,10 +95,10 @@ Use the official build to regenerate it; never edit it manually. Pages and `_sit
 
 ### Adding a Resource
 
-1. AI agent researches lead → writes `source/candidates/<county>/<id>.yaml`
-2. PR opened → CI runs schema validation + trust score recomputation
-3. Human reviews and approves PR
-4. On merge: CI builds the site and deploys to GitHub Pages
+1. AI agent researches lead → writes `source/candidates/<county>/<id>.yaml` on `main`
+2. Push → CI runs schema validation + trust score recomputation
+3. Human authorizes promotion into `source/approved/`
+4. Push of approved + generated data → CI builds the site and deploys to GitHub Pages
 
 ### Testing
 

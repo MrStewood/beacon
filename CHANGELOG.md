@@ -1,3 +1,7 @@
+# Direct-to-main workflow — 2026-09-30
+
+Repository process no longer requires pull requests. Maintainers and authorized automation commit and push directly to `main`. Human authorization is still required before promoting records into `source/approved/`. CI continues to validate on push.
+
 # n8n migration — 2026-09-30
 
 Migrated 86 discovery entries to stable individual lead records under operations/leads/. Added scheduling configuration, queue schemas, candidate lead links, and validation tests. Retired Python/Paperclip orchestration and old queue registries. Preserved approved records and evidence history. Unified operating policies around n8n and human-approved publication. Public-data/CI migration remains separate.

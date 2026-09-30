@@ -37,12 +37,13 @@ n8n is the automation coordinator. See [AGENTS.md](AGENTS.md) for authorization 
 
 ### Making Changes
 
-1. Fork the repository
-2. Create a branch for your changes
-3. Make your edits
-4. Run tests: `pytest tests/ -v`
-5. Run validation: `python scripts/validate.py`
-6. Submit a pull request
+1. Clone the repository
+2. Make your edits on `main` (or a local branch you fast-forward into `main`)
+3. Run tests: `pytest tests/ -v`
+4. Run validation: `python scripts/validate.py`
+5. Commit and push directly to `main`
+
+External suggestions can still use [Issues](https://github.com/MrStewood/beacon/issues). This repository does not require pull requests for maintainer or authorized automation changes.
 
 ### Data Changes
 
@@ -51,7 +52,7 @@ Canonical records live in `source/approved/**/*.yaml`. Unpublished research belo
 1. Prepare canonical YAML only after the required evidence and publication checks
 2. Run the build: `python scripts/build.py`
 3. Verify the output in `data/resources.json`
-4. Include canonical YAML and generated changes in the reviewed pull request
+4. Commit canonical YAML and generated outputs together on `main` only with explicit human authorization for publication
 
 ### Schema Changes
 

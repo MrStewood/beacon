@@ -57,7 +57,7 @@ Rules:
 ## Incident Response
 
 If private data is accidentally published:
-1. Immediately create revert PR
+1. Immediately push a revert commit to `main`
 2. Notify repository owner
 3. Document the incident
 4. Review and update controls

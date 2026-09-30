@@ -20,19 +20,20 @@ It carries full claim/evidence/decision metadata plus the embedded resource draf
 ## Lifecycle
 
 ```
-leads/runs/<zip>/       ← AI discovers leads
+operations/ inbox leads   ← discovery / intake
       ↓
-source/candidates/      ← AI writes candidate YAML (PR opened)
-      ↓  CI: validate + recompute-decision
-source/approved/        ← human approves PR; candidate promoted to approved record
+source/candidates/        ← research candidate YAML on main
+      ↓  CI on push: validate + recompute-decision
+source/approved/          ← human-authorized promotion on main
 ```
 
 ## Rules
 
-- AI agents write here and open PRs; they never write directly to `source/approved/`.
-- CI runs `scripts/validate_candidate.py --all` on every PR touching this directory.
+- Authorized automation may write candidates directly on `main`.
+- Do not write directly to `source/approved/` without explicit human publication authorization.
+- CI runs `scripts/validate_candidate.py --all` on pushes touching this directory.
   Trust scores are recomputed from raw evidence; the agent's own decision is not trusted.
 - A candidate may only move to `source/approved/` after `workflow_state` reaches
-  `publication-authorized` and a human approves the PR.
+  `publication-authorized` and a human authorizes that publication commit.
 - Quarantined or rejected candidates stay here with their terminal state for audit.
   Never delete them.

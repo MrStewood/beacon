@@ -74,6 +74,7 @@ None of the above is voluntary. Every candidate under `source/candidates/**`
 is validated by `scripts/validate_candidate.py`, which independently
 recomputes claim/record scores and the publication decision and compares
 them to the signed `decision` block in the file. `.github/workflows/candidate-verification.yml`
-runs this as a required branch-protection check on `main` — a PR cannot merge
+runs this as a required check on pushes to `main` that touch candidates — a
+bad decision artifact fails the build
 if the recomputed decision disagrees with the committed one, or if a
 quarantined candidate has reached `pr-opened` or later. See TRUST_SCORING.md.

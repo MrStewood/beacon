@@ -69,10 +69,6 @@ class TestEndToEndReadiness:
         yml_files = list(forms_dir.glob("*.yml"))
         assert len(yml_files) >= 4, f"Need at least 4 issue forms, found {len(yml_files)}"
 
-    def test_pr_template_exists(self):
-        """PR template must exist."""
-        assert (REPO_ROOT / ".github" / "PULL_REQUEST_TEMPLATE.md").exists()
-
     def test_codeowners_exists(self):
         """CODEOWNERS must exist."""
         assert (REPO_ROOT / ".github" / "CODEOWNERS").exists()
